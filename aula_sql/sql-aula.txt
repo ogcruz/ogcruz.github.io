@@ -1,0 +1,111 @@
+create table paciente (
+	ID INTEGER PRIMARY KEY,
+	Nome TEXT,
+	SNome TEXT,
+	Idade INTEGER,
+	Sexo VARCHAR(1),
+	Peso DOUBLE,
+	Altura FLOAT
+	 ) ;
+	 
+INSERT INTO paciente VALUES(100, "Joao", "Silva",43,"M",87,1.78 );
+INSERT INTO paciente VALUES(101, "Paulo", "Coelho",64,"M",78,1.72 );
+INSERT INTO paciente VALUES(102, "Maria", "Sabina",48,"F",67,1.63 );
+INSERT INTO paciente VALUES(103, "Carlos", "Pinto",38,"M",82,1.68 );
+INSERT INTO paciente VALUES(104, "Joana", "Braga",34,"F",55,1.58 );
+
+# seleciona todos os registros
+
+select * from paciente;
+
+# seleciona so sexo = feminino
+
+# liga o label das colunas
+.header on 
+
+#form.mode columnata as colunas
+.mode column
+
+select *,peso/(altura*altura)  as imc from paciente; 
+
+# cria uma nova tabela com IMC
+
+create table imc as select *,peso/(altura*altura)  as imc from paciente;
+
+select * from imc;
+
+# deleta a tabela IMC
+drop table imc;
+
+
+create table estudo (
+	ID INTEGER ,
+	Grupo VARCHAR(1),
+	Contagem INTEGER ,
+	Peso DOUBLE,
+	Semana INTEGER,
+	Data DATE
+	 ) ;
+
+INSERT INTO estudo VALUES(100,"E",16,88,1,NULL);
+INSERT INTO estudo VALUES(100,"E",32,87,2,NULL);
+INSERT INTO estudo VALUES(100,"E",16,88.5,3,NULL);
+INSERT INTO estudo VALUES(100,"E",32,87,4,NULL);
+INSERT INTO estudo VALUES(101,"C",32,79,1,NULL);
+INSERT INTO estudo VALUES(101,"C",64,81.2,2,NULL);
+INSERT INTO estudo VALUES(101,"C",64,80.5,3,NULL);
+INSERT INTO estudo VALUES(101,"C",128,81,4,NULL);
+INSERT INTO estudo VALUES(102,"E",8,66.5,1,NULL);
+INSERT INTO estudo VALUES(102,"E",32,67,2,NULL);
+INSERT INTO estudo VALUES(102,"E",16,68.5,3,NULL);
+INSERT INTO estudo VALUES(102,"E",32,68,4,NULL);
+INSERT INTO estudo VALUES(103,"E",16,83.5,1,NULL);
+INSERT INTO estudo VALUES(103,"E",32,84.5,2,NULL);
+INSERT INTO estudo VALUES(103,"E",32,84,3,NULL);
+INSERT INTO estudo VALUES(103,"E",64,86,4,NULL);
+INSERT INTO estudo VALUES(104,"C",8,56,1,NULL);
+INSERT INTO estudo VALUES(104,"C",8,55.5,2,NULL);
+INSERT INTO estudo VALUES(104,"C",8,56.5,3,NULL);
+INSERT INTO estudo VALUES(104,"C",8,56,4,NULL);
+
+
+ 
+ 
+ # demonstracao do SOUNDEX
+  
+INSERT INTO paciente VALUES(105, "Mario", "Sabino",67,"M",82,1.70 );
+INSERT INTO paciente VALUES(106, "Joao", "Braganca",37,"M",95,1.86 );
+INSERT INTO paciente VALUES(107, "Carla", "Pantojas",27,"F",57.5,1.66 );
+
+select nome,snome,soundex(nome)||soundex(snome) from paciente;
+
+
+
+select causabas,count(*) as freq as  from dorj2004 
+group by causbas order by freq desc ;
+
+
+select * from dorj2004 limit 100;
+
+
+## inner join
+select * 
+from nvivos, pop
+where nvivos.codigo = pop.codigo ;
+
+
+### left join
+select *
+from nvivos
+left outer join  pop on nvivos.codigo=pop.codigo ;
+
+## taxas
+
+select 
+codigo, muni, 
+(nv2001+0.0 / pop2001 + 0.0) * 1000 as tx2001 ,
+(nv2002+0.0 / pop2002 + 0.0) * 1000 as tx2002 ,
+(nv2003+0.0 / pop2003 + 0.0) * 1000 as tx2003 ,
+(nv2004+0.0 / pop2004 + 0.0) * 1000 as tx2004
+ from juntas3 ; 
+

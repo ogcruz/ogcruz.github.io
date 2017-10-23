@@ -1,0 +1,8 @@
+CREATE TABLE AVC2004 AS
+SELECT numerodo ,dtobito ,dtnasc ,idade ,sexo ,racacor ,estciv ,esc ,
+       codmunres ,lococor ,codmunocor ,causabas ,
+       linhaa||linhab||linhac||linhad||linhaii as causadois ,
+       substr( dtobito,  5 ,4) AS ANO
+FROM
+      DORJ2004
+WHERE (causabas >= "I60" AND causabas <= "I69") OR causadois LIKE "%*I6%";
