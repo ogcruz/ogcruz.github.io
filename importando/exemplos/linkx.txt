@@ -1,0 +1,6 @@
+
+Casos TB WHO
+https://extranet.who.int/tme/generateCSV.asp?ds=notifications
+
+CodigoISO nome pais!
+https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv

@@ -1,0 +1,223 @@
+## Importando dados
+
+A antividade de obtenção de dados é uma das mais importantes e necessesarias para se trabalhar em data science.  
+
+Podemos ver no diagrama abaixo  (adaptado de Wickham & Grolemund, 2017), as principais etapas queveremos nesse curso e como tudo começa com a Importação  dos dados. 
+
+![](Diagrama-Dados.png)
+
+#### Existem diversas maneiras de importar o dados em R
+
+as principais maneiras são:
+
+* Imortando de arquivos locais 
+* Importação via WEB 
+* Aceso a banco de Dados
+
+vamos olhar cada uma delas
+
+#### 1 Importando de arquivos locais
+
+essa é a maneira que todos estão mais acostumados , em geral se importa um arquivo texto do tipo **CSV** ou ainda **TXT** com algum tipo de delimitador, que pode ser espaço, ou qualquer outro. 
+
+em geral se utiliza a função **read.table** ou alguma de suas variantes como **read.csv** ou **read.csv2** 
+
+alguns exemplos:
+
+	
+	dados <- read.csv2("planilha.csv")  
+	
+	dados2  <- read.table ("arquivo.txt",header=F,sep=";")
+	
+	
+tambem algumas vezes podemos estar importando algum formato oriundo de outro software, como o SPSS,STATA,SAS, ou até mesmo o exitnto formato DBF.  no **R** é necessario chamar a library **foreign**
+
+
+	library(foreign)
+	dados <- read.spss("dados.sav") 
+	dados2 <- read.dbf("datasus.dbf")
+
+alem desses formatos mais usuais existem varios outros formatos que podem ser lidos, entre eles destacam-se o **XML** ,  **JSON** e o **NetCDF** 
+
+
+#### 2 Importando via WEB
+
+uma das facilidade do **R** que é pouco explorada é a possibilidade de ler arquivo atravez da internet. algumas das funções podem ser acessadas diretamente e referenciar um link remoto (**URL**).
+
+veja o exemplo abaixo:
+
+
+	indicadores <- read.csv2("http://www.campinas.sp.gov.br/arquivos/financas/ra_indicadores_2015.csv")
+
+o **R** simplesmente vai acessar e importar o dados atravez da **URL** 
+
+Veja o exemplo abaixo, repare que apesar da AVISA dizer que é 
+um arquivo do tipo **CSV**, na verade , trata-se de um arquivo **TEXTO** delimitado pelo caracter **|** 
+
+
+
+
+	 anvisa <- read.table("https://dados.anvisa.gov.br/dados/TA_PRECOS_MEDICAMENTOS.csv",sep = '|',header=T)
+	 
+podemo tambem pedir ao **R** que faça o download de um arquivo por exemplo
+
+	download.file("ftp://ftp.datasus.gov.br/territorio/tabelas/base_territorial.zip","base_terr.zip")
+
+vamos agora "abrir" o arquivo **ZIP**  em primeiro lugar vamos descobir qual local o sistema operacional esta usando como temporario.
+	
+	loc <- tempdir()
+	loc
+	
+em seguida vamos mandar extrair o conteudo do **ZIP** nesse diretorio temporario e usar o dir desse local para verificar se o conteudo foi expandido.
+
+
+	unzip("base_terr.zip",exdir=loc)
+	dir(loc)
+	
+a partir dai você poderia importar um ou mais dos arquivos que foram expandidos. 
+
+	
+	arq <- paste0(loc,"/","tb_uf.csv")
+	tb_uf <- read.csv2(arq)
+
+#### 2.1 Importando o SINASC diretamente do DATASUS
+
+até aqui você já viu todos os elementos necessarios para fazer a importação de dados direto do FTP do DATASUS , o que precisamos é um workflow ou seja, um plano , para fazer a importação.
+
+<br>
+
+![](fluxo.png) 
+
+em primeiro lugar vamos usar o pacote RCurl que permite acesso a paginas http , https, ftp etc...
+
+
+	library(RCurl)
+	url <- 'ftp://ftp.datasus.gov.br/dissemin/publicos/SINASC/NOV/DNRES/'
+	lista <- getURL(url)
+
+
+vamos inspecionar o objeto *lista*. como vocês podem observar esse arquivo precisa ainda ser transformado para ser usado.
+
+	lista <- strsplit(lista,'\n')
+	
+após pedirmos ao **R** para inserir uma quebra aṕos o caracter '**\n**' agora fica mais facil de entender a listagem que obtivemos!
+
+vamos selecionar como **UF** o Acre pois o tamanho dos arquivos é pequeno e a rede da ENSP em geral não é rapida.
+
+Aqui vamos fazer um parentesis para falar de um recurso extremamente poderoso, as [**expressões regulares**](regex.md) conhecidas por  [**REGEX**](regex.md)
+
+Agora que vocês já aprenderam um pouco sobre as REGEX vamos selecionar as linhas que possuem as DN do ACRE
+
+		l2 <- grep ('DNAC',lista[[1]],value = T) ## DN do ACRE 
+de uma maneira simples selecionames todas que possuem o padrão DNAC no nome. Veja a variavel "l2" , ainda existem varias colunas, e so queremos o nome do arquivo!
+
+
+uma abordagem simples seria simplesmente:
+
+		l3 <- substr(l2,40,52)
+
+mas suponhas que a posição não fosse sempre a mesma, seria possivel fazer com REGEX? veja só:
+
+		l3 <- gsub('.*(DNAC[1-2][0-9]{3})','\\1',lista[[1]][grepl("DNAC",lista[[1]])])
+
+bom verifique o objeto l3 para se certificar que tenhamos somente um vetor de caracteres com o nome dos arquivos!
+	
+Aqui temos 20 nomes de arquivos , em virtude da falta de velocidade da internet na ENSP vamos trazer somente os 5 primeiros anos!
+
+como fazer isso?
+
+vamos precisar de um pacote chamado [**read.dbc**](https://github.com/danicat/read.dbc) recentemente colocado no CRAN. Foi desenvolvido por uma engenheira de software da globo.com chamada  Daniela Petruzalek.
+
+		install.packages('read.dbc')
+		
+agora vamos precisar criar um local para armazenar os arquivos.o mais simples nesse caso é criar uma **lista**. vamos chama-la sinasc!
+
+		sinasc <- list()
+
+em seguida precisamos façes um **loop** (laço)  no **R** para fazer o download e ler cada um dos arquivos , armazenando os resultados e em seguida removendo o arquivo temporario! 
+
+	for (i in 1:5) {
+    	loc <- paste0(url,l3[i])
+    	download.file(loc,"temp.dbc")
+    	sinasc[[i]] <- read.dbc("temp.dbc",as.is=T)
+    	file.remove("temp.dbc")
+    }
+
+
+Se tudo correr bem você vera os arquivos sendo baixados!
+
+vamos inspecionar o primeiro data.frame (repare o tipo de cada variavel)
+
+		str(sinan[[1]])
+
+
+vamos pegar o ano para nomear nossa lista!
+
+		anos <- substr(l3,5,8) 
+		## OU
+		anos <- gsub('.*([0-9]{4})\\.[A-Z,a-z]{3}','\\1',l3)
+
+		names(sinasc) <- anos[1:5]
+
+agora que demos um nome a nossa lista vamos ver o comportamento do PESO usando um **summary** para cada ano. 
+
+
+		lapply(sinan, function(x) {summary(as.numeric(x$PESO))})
+
+
+
+convertendo para um unico DF
+
+		todos <- do.call(rbind,sinasc)
+
+		todos$ANO <- substr(all$DTNASC,5,8)
+		
+vamos verificar o numero de nascidos por ano!
+
+		table(todos$ANO)
+		
+#### 2.1 Acessando o feed de noticias RSS do Ministerio da Saúde
+
+vamos acessar o RSS que é o serviço de noticias do MS. O formato dos dados está em XML. 
+
+	library(XML)
+
+	ms <- "http://portalsaude.saude.gov.br/index.php/cidadao/principal/agencia-saude?format=feed&type=rss"
+
+	doc <- xmlTreeParse(ms)
+	xmlRoot(doc)
+
+	src <- xpathApply(xmlRoot(doc), "//item")
+	src
+
+
+
+
+podemos obter dados de uma unica noticia 
+	
+	um <- xmlSApply(src[[1]], xmlValue)
+	um[[1]]
+	um[[6]]
+
+ou de um conjunto de noticias
+
+	tit <- xpathApply(xmlRoot(doc), "//title")
+
+e finalmente podemos como no exemplo anterior fazer um **LOOP** e transformar todas as noticias  em um unico data.frame 
+
+ 	 NOTICIA <- NULL
+  
+  	for (i in 1:length(src)) {
+        foo <- xmlSApply(src[[i]], xmlValue)
+        tmp <- data.frame(t(foo), stringsAsFactors=FALSE)
+        NOTICIA <-rbind(NOTICIA, tmp)
+    }
+    
+    
+e vamos ver o DF final.
+
+		NOTICIA
+
+#### 3 Acesso a Base de Dados
+
+

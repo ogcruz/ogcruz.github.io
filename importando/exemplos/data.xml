@@ -1,0 +1,4706 @@
+<Data>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>60.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>58.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>61.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>59.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>57.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>61.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>58.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>57.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>60.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>58.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>56.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>59.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>57.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>56.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>59.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>57.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>55.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>58.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>56.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>54.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>57.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>55.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>54.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>56.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>54.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>53.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>55.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>53.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>52.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>55.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>53.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>51.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>54.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>52.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>51.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>53.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>16.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>51.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>50.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>52.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>15.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>51.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>50.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>52.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>15.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>51.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>49.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>52.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>15.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>50.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>49.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>52.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>15.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>14.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Africa</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>15.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>74.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>21.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>24.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>21.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>24.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>24.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>24.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>20.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>70.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>70.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Americas</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>69.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>68.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>68.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>65.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>65.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>66.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>64.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>63.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>66.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>64.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>63.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>65.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>64.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>63.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>65.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>63.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>62.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>65.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>63.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>62.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>64.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>16.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>15.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>South-East Asia</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>17.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>80.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>22.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>80.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>79.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>21.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>23.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>70.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>70.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>69.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>69.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>69.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>72.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>72.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>72.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>72.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Europe</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>68.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>68.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>68.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>65.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>65.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>65.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>67.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>65.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>66.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>17.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>16.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Eastern Mediterranean</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>18.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>74.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>74.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>76.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>74.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>78.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>19.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>73.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>22.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>75.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>77.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>74.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>72.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>76.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>71.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>75.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>73.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>70.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>75.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>72.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>70.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>74.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Western Pacific</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>71.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>69.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>73.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2015</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>71.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>73.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2014</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>70.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>73.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2013</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>70.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>72.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2012</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>70.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>68.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>72.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>20.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2011</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>69.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>72.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2010</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>69.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>67.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>71.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2009</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>69.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>71.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2008</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>71.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>18.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2007</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>21.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>66.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2006</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>68.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>70.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2005</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2004</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.6</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>65.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>19.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2003</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>67.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.8</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.2</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2002</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.5</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>69.0</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.9</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2001</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.3</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>66.4</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>64.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at birth (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>68.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Both sexes</SEX>
+    <Display>18.7</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Male</SEX>
+    <Display>17.1</Display>
+  </Fact>
+  <Fact>
+    <REGION>Global</REGION>
+    <YEAR>2000</YEAR>
+    <GHO>Life expectancy at age 60 (years)</GHO>
+    <SEX>Female</SEX>
+    <Display>20.2</Display>
+  </Fact>
+</Data>
