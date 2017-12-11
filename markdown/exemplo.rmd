@@ -1,0 +1,136 @@
+---
+title: 'Exemplo em Rmarkdown '
+author: "Oswaldo"
+date: ""
+output: html_document
+---
+
+Vamos aprendendo um pouco de **Rmarkdown** 
+ 
+ o makrdown  não se importa com espaços           nem                 nada disso  
+ 
+ 
+## vamos ao primeiro exemplo
+ 
+ 
+ usaremos a série __ldeaths__ disponível como exemplo no _**R**_
+ 
+ para saber mais sobre essa série acesse clicando no [LINK](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/UKLungDeaths.html)
+ 
+ 
+ 
+ 
+ 
+###saída básica do rmarkdown
+
+```{r}
+ldeaths
+```
+
+
+###formatando a saída
+
+```{r}
+library(pander)
+pander(ldeaths)
+```
+
+### sumario 
+
+```{r}
+pander(summary(ldeaths))
+```
+
+### examinem a série abaixo
+
+```{r}
+plot(ldeaths)
+```
+
+
+
+###vamos calcular uma media móvel usando 3 pontos
+
+```{r}
+dados <- as.vector(ldeaths)
+mm <- filter(dados,c(1,1,1))/3
+plot(dados)
+lines(1:72,mm,col=2)
+```
+
+### definindo uma função para MM e em seguida gerando gráficos com janelas de tamanho 3, 5  18 e 24 dias (18 dias equivalem a 1/4 e 24 a 1/3 da série )
+
+```{r}
+mediamovel <- function(x,j) {filter(x,rep(1,j),sides = 2 )/j}
+
+
+
+plot(dados)
+lines(1:72,mediamovel(dados,3),col=2)
+lines(1:72,mediamovel(dados,5),col=3)
+lines(1:72,mediamovel(dados,18),col=4) 
+lines(1:72,mediamovel(dados,24),col='orange',lwd=3)
+
+```
+
+
+### explorando com boxplot
+
+```{r}
+meses <- c('Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez')
+boxplot(ldeaths ~ cycle(ldeaths),names=meses,col=3)
+
+```
+
+###verificando a tendencia 
+
+
+```{r}
+#ano <- rep(1974:1979,each=12)
+
+ano <- floor(time(ldeaths))
+resp <- boxplot(ldeaths ~ ano,col=3)
+medianas <- resp$stat[3,]
+lines(1:6,medianas,col=2,lwd=3)
+
+```
+
+
+### fazendo decomposição por loess
+
+Recordando a estrutura de uma série temporal:
+
+$$Z_{t} = T_{ t } + S_{ t } +a_{ t }$$ , onde
+
+$Z_{t}$ = é o valor observado no tempo t  
+$T_{ t }$ é a tendencia e $S_{ t }$ a sazonalidade no tempo t  
+$a_{t}$ é o erro aleatório no tempo t
+
+
+
+```{r}
+ldeaths.stl <- stl(ldeaths,12)
+plot(ldeaths.stl)
+hist(ldeaths.stl$time.series[,3],br=20,col="#aa2200")
+
+```
+
+### decompondo por medias moveis
+
+```{r}
+plot(decompose(ldeaths))
+```
+
+
+
+### Algumas referencias para  aprender mais sobre rmarkdown
+
+1. [Tutorial do rmarkdown](http://rmarkdown.rstudio.com/lesson-1.html)
+2. [Livro _Authoring Books with R Markdown_](https://bookdown.org/yihui/bookdown/)
+3. [Guia de referencia rápida](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+
+
+
+# Aproveitem  ![](http://www.infoniac.com/uimg/smile-small.jpg)
+
