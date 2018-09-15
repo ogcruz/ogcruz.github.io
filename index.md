@@ -1,7 +1,9 @@
 # Pagina Cursos Oswaldo 
 
-* [Curso DataScience aplicada](Livro_2017)
+* [Curso DataScience aplicada](livro_2017)
+* [Curso DataScience aplicada 2017](livro_2017/index.html)
 
-* sei la 
+* [visite o **PROCC**](www.procc.fiocruz.br)
+
 
  
