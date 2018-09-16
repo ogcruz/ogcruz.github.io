@@ -1,9 +1,11 @@
-# Pagina Cursos Oswaldo 
+# Curso Introdução a datascience aplicada Epidemiologia 
+
+## Oswaldo G Cruz [PROCC](www.procc.fiocruz.br) / [FIOCRUZ](www.fiocruz.br)
+
+## Programa de Epidemiologia em Saúde Pública / ENSP 
 
 * [Curso DataScience aplicada](livro_2017)
-* [Curso DataScience aplicada 2017](livro_2017/index.html)
 
-* [visite o **PROCC**](www.procc.fiocruz.br)
 
 
  
