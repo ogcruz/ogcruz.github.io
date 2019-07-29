@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Introdução às Séries Temporais | ESTUDOS ECOLÓGICOS</title>
+  <meta name="description" content=" 2 Introdução às Séries Temporais | ESTUDOS ECOLÓGICOS" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Introdução às Séries Temporais | ESTUDOS ECOLÓGICOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Introdução às Séries Temporais | ESTUDOS ECOLÓGICOS" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
+
+
+<meta name="date" content="2019-07-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="estudos-ecologicos.html">
+<link rel="next" href="analise-exploratoria-de-uma-series-temporal.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.7/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Bookdown Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html"><i class="fa fa-check"></i><b>1</b> Estudos Ecológicos</a><ul>
+<li class="chapter" data-level="1.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#o-que-sao-de-estudos-ecologicos"><i class="fa fa-check"></i><b>1.1</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="1.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#o-que-sao-de-estudos-ecologicos-1"><i class="fa fa-check"></i><b>1.2</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="1.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#objetivos-dos-estudos-ecologicos"><i class="fa fa-check"></i><b>1.3</b> Objetivos dos Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="1.4" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas"><i class="fa fa-check"></i><b>1.4</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="1.5" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas-1"><i class="fa fa-check"></i><b>1.5</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="1.6" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-desenhos-de-estudos-ecologicos"><i class="fa fa-check"></i><b>1.6</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="1.7" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#estudos-ecologicos---conceitos"><i class="fa fa-check"></i><b>1.7</b> Estudos Ecológicos - Conceitos</a></li>
+<li class="chapter" data-level="1.8" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>1.8</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="1.9" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#falacia-ecologica-ou-vies-de-agregacao"><i class="fa fa-check"></i><b>1.9</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="1.10" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#arvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>1.10</b> Árvores, Bosques ou as Florestas ?</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-arvores"><i class="fa fa-check"></i><b>1.10.1</b> As Árvores</a></li>
+<li class="chapter" data-level="1.10.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#os-bosques"><i class="fa fa-check"></i><b>1.10.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="1.10.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-florestas"><i class="fa fa-check"></i><b>1.10.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#problemas-praticos"><i class="fa fa-check"></i><b>1.11</b> Problemas práticos</a></li>
+<li class="chapter" data-level="1.12" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#vantagens"><i class="fa fa-check"></i><b>1.12</b> Vantagens</a></li>
+<li class="chapter" data-level="1.13" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#desvantagens"><i class="fa fa-check"></i><b>1.13</b> Desvantagens</a></li>
+<li class="chapter" data-level="1.14" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#resumindo"><i class="fa fa-check"></i><b>1.14</b> Resumindo:</a></li>
+<li class="chapter" data-level="1.15" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#exercicio-1"><i class="fa fa-check"></i><b>1.15</b> Exercício 1:</a></li>
+<li class="chapter" data-level="1.16" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#exercicio-2"><i class="fa fa-check"></i><b>1.16</b> Exercício 2:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html"><i class="fa fa-check"></i><b>2</b> Introdução às Séries Temporais</a><ul>
+<li class="chapter" data-level="2.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#material-on-line-sobre-series-temporais"><i class="fa fa-check"></i><b>2.1</b> Material on line sobre Séries Temporais</a></li>
+<li class="chapter" data-level="2.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#o-que-sao-series-temporais"><i class="fa fa-check"></i><b>2.2</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="2.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#um-exemplo-de-serie-temporal"><i class="fa fa-check"></i><b>2.3</b> Um exemplo de Série Temporal</a></li>
+<li class="chapter" data-level="2.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tipos-de-st---classificacao"><i class="fa fa-check"></i><b>2.4</b> Tipos de ST - classificação</a></li>
+<li class="chapter" data-level="2.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#processo-estocastico"><i class="fa fa-check"></i><b>2.5</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="2.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#notacao-e-nomenclatura"><i class="fa fa-check"></i><b>2.6</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="2.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-st"><i class="fa fa-check"></i><b>2.7</b> Objetivos : análise de ST</a></li>
+<li class="chapter" data-level="2.8" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-st-1"><i class="fa fa-check"></i><b>2.8</b> Objetivos : análise de ST</a></li>
+<li class="chapter" data-level="2.9" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal"><i class="fa fa-check"></i><b>2.9</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="2.10" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#independencia"><i class="fa fa-check"></i><b>2.10</b> Independência</a></li>
+<li class="chapter" data-level="2.11" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#dependencia"><i class="fa fa-check"></i><b>2.11</b> Dependência</a></li>
+<li class="chapter" data-level="2.12" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocorrelacao"><i class="fa fa-check"></i><b>2.12</b> Função de autocorrelação</a></li>
+<li class="chapter" data-level="2.13" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tratamento-dos-dados"><i class="fa fa-check"></i><b>2.13</b> Tratamento dos dados</a></li>
+<li class="chapter" data-level="2.14" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal-1"><i class="fa fa-check"></i><b>2.14</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="2.15" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>2.15</b> Estacionariedade</a><ul>
+<li class="chapter" data-level="2.15.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#porque-a-estacionariedade-e-importante"><i class="fa fa-check"></i><b>2.15.1</b> Porque a Estacionariedade é Importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.16" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia"><i class="fa fa-check"></i><b>2.16</b> Tendência</a></li>
+<li class="chapter" data-level="2.17" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>2.17</b> Sazonalidade</a><ul>
+<li class="chapter" data-level="2.17.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>2.17.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.18" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#ciclo"><i class="fa fa-check"></i><b>2.18</b> Ciclo</a></li>
+<li class="chapter" data-level="2.19" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#transformacoes"><i class="fa fa-check"></i><b>2.19</b> Transformações</a></li>
+<li class="chapter" data-level="2.20" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia-e-sazonalidade"><i class="fa fa-check"></i><b>2.20</b> Tendência e sazonalidade</a></li>
+<li class="chapter" data-level="2.21" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#alisamentos---medias-moveis"><i class="fa fa-check"></i><b>2.21</b> Alisamentos - Médias móveis</a><ul>
+<li class="chapter" data-level="2.21.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#utilizando-a-st-mensal-referente-as-mortes-por-doencas-pulmonares-no-reino-unido-19741979-temos"><i class="fa fa-check"></i><b>2.21.1</b> Utilizando a ST mensal referente as mortes por Doenças Pulmonares no Reino Unido (1974–1979), temos:</a></li>
+<li class="chapter" data-level="2.21.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#para-tendencia"><i class="fa fa-check"></i><b>2.21.2</b> Para Tendência</a></li>
+<li class="chapter" data-level="2.21.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#para-sazonalidade"><i class="fa fa-check"></i><b>2.21.3</b> Para Sazonalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="2.22" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#alisamentos---lowess"><i class="fa fa-check"></i><b>2.22</b> Alisamentos - Lowess</a><ul>
+<li class="chapter" data-level="2.22.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#locally-weighted-sum-of-square-lowess"><i class="fa fa-check"></i><b>2.22.1</b> Locally Weighted Sum of Square (Lowess)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html"><i class="fa fa-check"></i><b>3</b> Análise Exploratória de uma Séries Temporal</a><ul>
+<li class="chapter" data-level="3.1" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#analise-exploratoria"><i class="fa fa-check"></i><b>3.1</b> Análise Exploratória</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#a-funcao-ts-e-a-mais-utilizada-no-pacote-r."><i class="fa fa-check"></i><b>3.1.1</b> A função <em>ts</em> é a mais utilizada no pacote R.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#criando-uma-serie-temporal"><i class="fa fa-check"></i><b>3.1.2</b> Criando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.1.3" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#importando-uma-tabela-em-formato-de-serie-temporal"><i class="fa fa-check"></i><b>3.1.3</b> Importando uma tabela em formato de Série Temporal</a></li>
+<li class="chapter" data-level="3.1.4" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#utilizando-um-banco-de-dados-real-em-uma-analise-de-serie-temporal"><i class="fa fa-check"></i><b>3.1.4</b> Utilizando um banco de dados real em uma análise de Série Temporal</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#decompondo-a-serie-temporal"><i class="fa fa-check"></i><b>3.2</b> Decompondo a Série Temporal</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#avaliando-a-estacionariedade-da-st"><i class="fa fa-check"></i><b>3.2.1</b> Avaliando a Estacionariedade da ST</a></li>
+<li class="chapter" data-level="3.2.2" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#avaliando-a-tendencia-em-uma-st"><i class="fa fa-check"></i><b>3.2.2</b> Avaliando a tendência em uma ST</a></li>
+<li class="chapter" data-level="3.2.3" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#avaliando-a-sazonalidade-da-st"><i class="fa fa-check"></i><b>3.2.3</b> Avaliando a Sazonalidade da ST</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#transformacao"><i class="fa fa-check"></i><b>3.3</b> Transformação</a></li>
+<li class="chapter" data-level="3.4" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#medias-moveis"><i class="fa fa-check"></i><b>3.4</b> Médias Móveis</a></li>
+<li class="chapter" data-level="3.5" data-path="analise-exploratoria-de-uma-series-temporal.html"><a href="analise-exploratoria-de-uma-series-temporal.html#analise-dos-residuos"><i class="fa fa-check"></i><b>3.5</b> Análise dos Resíduos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html"><i class="fa fa-check"></i><b>4</b> Análises Preditivas - Parte I</a><ul>
+<li class="chapter" data-level="4.1" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#predicao"><i class="fa fa-check"></i><b>4.1</b> Predição</a></li>
+<li class="chapter" data-level="4.2" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#por-que-dos-erros"><i class="fa fa-check"></i><b>4.2</b> Por que dos erros ?</a></li>
+<li class="chapter" data-level="4.3" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#regressao-linear-vs-series-temporais"><i class="fa fa-check"></i><b>4.3</b> Regressão Linear vs Séries Temporais</a></li>
+<li class="chapter" data-level="4.4" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#como-prever-usando-series-temporais"><i class="fa fa-check"></i><b>4.4</b> Como prever usando séries temporais ?</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#modelagem-aprendizado-e-previsao"><i class="fa fa-check"></i><b>4.4.1</b> Modelagem, aprendizado e previsão</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#consideracoes-sobre-previsoes"><i class="fa fa-check"></i><b>4.5</b> Considerações sobre previsões</a></li>
+<li class="chapter" data-level="4.6" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#algumas-tecnicas-para-previsao-em-st"><i class="fa fa-check"></i><b>4.6</b> Algumas técnicas para previsão em ST</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#tecnicas-simples"><i class="fa fa-check"></i><b>4.6.1</b> <strong>Técnicas Simples</strong></a></li>
+<li class="chapter" data-level="4.6.2" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#tecnicas-classicas"><i class="fa fa-check"></i><b>4.6.2</b> <strong>Técnicas Clássicas</strong></a></li>
+<li class="chapter" data-level="4.6.3" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#tecnicas-avancadas"><i class="fa fa-check"></i><b>4.6.3</b> <strong>Técnicas Avançadas</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#naive"><i class="fa fa-check"></i><b>4.7</b> Naive</a></li>
+<li class="chapter" data-level="4.8" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#mean"><i class="fa fa-check"></i><b>4.8</b> Mean</a></li>
+<li class="chapter" data-level="4.9" data-path="analises-preditivas-parte-i.html"><a href="analises-preditivas-parte-i.html#drift"><i class="fa fa-check"></i><b>4.9</b> Drift</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html"><i class="fa fa-check"></i><b>5</b> Análises Preditivas - Parte II</a><ul>
+<li class="chapter" data-level="5.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#suavizacao-exponencial"><i class="fa fa-check"></i><b>5.1</b> Suavização Exponencial</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#principio-basico"><i class="fa fa-check"></i><b>5.1.1</b> Principio básico:</a></li>
+<li class="chapter" data-level="5.1.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#holt-winters-sazonal"><i class="fa fa-check"></i><b>5.1.2</b> Holt-Winters Sazonal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#analise-dos-residuos-1"><i class="fa fa-check"></i><b>5.2</b> Análise dos Resíduos</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#pressupostos-para-previsao"><i class="fa fa-check"></i><b>5.2.1</b> Pressupostos para Previsão</a></li>
+<li class="chapter" data-level="5.2.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#comparando-o-acf-de-ambos-os-modelos"><i class="fa fa-check"></i><b>5.2.2</b> Comparando o ACF de ambos os modelos</a></li>
+<li class="chapter" data-level="5.2.3" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#executando-o-teste-ljung-box"><i class="fa fa-check"></i><b>5.2.3</b> Executando o teste Ljung-Box</a></li>
+<li class="chapter" data-level="5.2.4" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#distribuicao-dos-residuos-no-tempo"><i class="fa fa-check"></i><b>5.2.4</b> Distribuição dos Resíduos no tempo</a></li>
+<li class="chapter" data-level="5.2.5" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#normalidade-dos-residuos"><i class="fa fa-check"></i><b>5.2.5</b> Normalidade dos Resíduos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#arima"><i class="fa fa-check"></i><b>5.3</b> ARIMA</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#arima-nao-sazonal"><i class="fa fa-check"></i><b>5.3.1</b> Arima não sazonal</a></li>
+<li class="chapter" data-level="5.3.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#arima-sazonal"><i class="fa fa-check"></i><b>5.3.2</b> Arima Sazonal</a></li>
+<li class="chapter" data-level="5.3.3" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#como-definir-valores-de-pd-e-q"><i class="fa fa-check"></i><b>5.3.3</b> Como definir valores de p,d e q ?</a></li>
+<li class="chapter" data-level="5.3.4" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#como-saber-qual-o-melhor-modelo"><i class="fa fa-check"></i><b>5.3.4</b> Como saber qual o melhor modelo ?</a></li>
+<li class="chapter" data-level="5.3.5" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#auto.arima"><i class="fa fa-check"></i><b>5.3.5</b> Auto.arima()</a></li>
+<li class="chapter" data-level="5.3.6" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#comparando-o-acf-de-ambos-os-modelos-1"><i class="fa fa-check"></i><b>5.3.6</b> Comparando o ACF de ambos os modelos</a></li>
+<li class="chapter" data-level="5.3.7" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#executando-o-teste-ljung-box-1"><i class="fa fa-check"></i><b>5.3.7</b> Executando o teste Ljung-Box</a></li>
+<li class="chapter" data-level="5.3.8" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#distribuicao-dos-residuos-no-tempo-1"><i class="fa fa-check"></i><b>5.3.8</b> Distribuição dos Resíduos no tempo</a></li>
+<li class="chapter" data-level="5.3.9" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#normalidade-dos-residuos-1"><i class="fa fa-check"></i><b>5.3.9</b> Normalidade dos Resíduos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#regressao-com-series-temporais"><i class="fa fa-check"></i><b>5.4</b> Regressão com Séries Temporais</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#no-r"><i class="fa fa-check"></i><b>5.4.1</b> No R</a></li>
+<li class="chapter" data-level="5.4.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#distribuicao-da-serie-multipla"><i class="fa fa-check"></i><b>5.4.2</b> Distribuição da Série Múltipla</a></li>
+<li class="chapter" data-level="5.4.3" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#ajustando-os-modelos"><i class="fa fa-check"></i><b>5.4.3</b> Ajustando os modelos</a></li>
+<li class="chapter" data-level="5.4.4" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#fazendo-o-diagnostico-do-modelo"><i class="fa fa-check"></i><b>5.4.4</b> Fazendo o diagnóstico do modelo</a></li>
+<li class="chapter" data-level="5.4.5" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#fazendo-a-previsao"><i class="fa fa-check"></i><b>5.4.5</b> Fazendo a previsão</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a><ul>
+<li class="chapter" data-level="6.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#material-on-line-sobre-estatistica-espacial"><i class="fa fa-check"></i><b>6.1</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#o-que-e-analise-estatistica-espacial"><i class="fa fa-check"></i><b>6.2</b> O que é Análise Estatística Espacial ?</a></li>
+<li class="chapter" data-level="6.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#objetivos-da-estatistica-espacial"><i class="fa fa-check"></i><b>6.3</b> Objetivos da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.4" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dependencia-espaciais"><i class="fa fa-check"></i><b>6.4</b> Dependência Espaciais</a></li>
+<li class="chapter" data-level="6.5" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dr.john-snow-1813-1858"><i class="fa fa-check"></i><b>6.5</b> Dr. John Snow (1813-1858)</a></li>
+<li class="chapter" data-level="6.6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#tipos-de-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipos de Dados Espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#padroes-pontuais"><i class="fa fa-check"></i><b>6.7</b> Padrões Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dados-de-area"><i class="fa fa-check"></i><b>6.8</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.9" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#geoestatistica"><i class="fa fa-check"></i><b>6.9</b> Geoestatística</a></li>
+<li class="chapter" data-level="6.10" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#sistema-de-informacoes-geograficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a><ul>
+<li class="chapter" data-level="6.12.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.13</b> Onde encontrar dados espaciais ?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais</a><ul>
+<li class="chapter" data-level="7.1" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#o-que-sao-padroes-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="7.2" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#objetivos"><i class="fa fa-check"></i><b>7.2</b> Objetivos</a></li>
+<li class="chapter" data-level="7.3" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#tipos-de-distribuicoes"><i class="fa fa-check"></i><b>7.3</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.4" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#processos-pontuais"><i class="fa fa-check"></i><b>7.4</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.5" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#processo-de-primeira-ordem"><i class="fa fa-check"></i><b>7.5</b> Processo de primeira ordem</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#testando-a-completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.5.1</b> Testando a Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5.2" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5.2</b> Estimativa de Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#algumas-funcoes-kernel-kbullet"><i class="fa fa-check"></i><b>7.6</b> Algumas funções kernel <span class="math inline">\(K(\bullet)\)</span>:</a></li>
+<li class="chapter" data-level="7.7" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#diferencas-entre-as-funcoes-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Diferenças entre as funções de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#funcao-g---distancia-do-vizinho-mais-proximo"><i class="fa fa-check"></i><b>7.8</b> Função G - Distância do vizinho mais próximo</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html#funcao-k-de-ripley-ou-apenas-funcao-k."><i class="fa fa-check"></i><b>7.8.1</b> Função K de Ripley (ou apenas função K).</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="dados-de-area-1.html"><a href="dados-de-area-1.html"><i class="fa fa-check"></i><b>8</b> Dados de Área</a></li>
+<li class="chapter" data-level="9" data-path="geoestatistica-1.html"><a href="geoestatistica-1.html"><i class="fa fa-check"></i><b>9</b> Geoestatística</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introducao-as-series-temporais" class="section level1">
+<h1><span class="header-section-number"> 2</span> Introdução às Séries Temporais</h1>
+<div id="material-on-line-sobre-series-temporais" class="section level2">
+<h2><span class="header-section-number">2.1</span> Material on line sobre Séries Temporais</h2>
+<p><strong>Time Series Task View:</strong></p>
+<p><a href="https://cran.r-project.org/web/views/TimeSeries.html" class="uri">https://cran.r-project.org/web/views/TimeSeries.html</a></p>
+<p><strong>Blog, Ebook and Forecast Documentation by Rob Hyndman:</strong></p>
+<p><a href="https://otexts.org/fpp2/intro.html" class="uri">https://otexts.org/fpp2/intro.html</a></p>
+<p><strong>Stackoverflow Community:</strong></p>
+<p><a href="https://stackoverflow.com/questions" class="uri">https://stackoverflow.com/questions</a></p>
+<hr />
+</div>
+<div id="o-que-sao-series-temporais" class="section level2">
+<h2><span class="header-section-number">2.2</span> O que são Séries Temporais ?</h2>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/st1.png" width="770" /></p>
+<ul>
+<li><p><strong>Definição</strong>: É o estudo de um determinado fenômeno que ocorre ao longo do tempo. E os dados desse fenômeno precisam ser coletados em intervalos regulares de tempo de forma ordenada.</p></li>
+<li><p>A escala do tempo de uma ST pode ser expressa como dia, semana, mês ou ano. A maneira mais comum de visualizar séries temporais é usar um gráfico de linhas simples, em que o eixo horizontal representa os incrementos de tempo e o eixo vertical representa a variável que está sendo medida.</p></li>
+<li><p>As ST podem ser de natureza <strong>regular</strong> ou <strong>irregular</strong>. As <strong>ST regulares</strong> são aquelas que os dados são mensurados no mesmo período de tempo (ex: hora, minuto, segundo, dia, mês, trimestre, ano, etc.). Já as <strong>ST irregulares</strong>, os dados podem ser mensurados em periodos de tempo diferentes e/ou apresentar dados ausentes (<em>missing data</em>). Para tratar tais tipos de ST, podemos interpolar os dados mensurados em um determinado período e/ou imputar os dados de forma que a ST passe a ser considerada regular.</p></li>
+<li><p><strong>Condição</strong>: Esses dados seguem uma ordenação em função do tempo (dependencia temporal).</p></li>
+</ul>
+<hr />
+</div>
+<div id="um-exemplo-de-serie-temporal" class="section level2">
+<h2><span class="header-section-number">2.3</span> Um exemplo de Série Temporal</h2>
+<ul>
+<li><p><strong>Ex</strong>: Total de pessoas atendidas em um hospital por dia.</p></li>
+<li><p><strong>Medida</strong>: “Total…”</p></li>
+<li><p><strong>Fato</strong>: “…de pessoas atendidas em um hospital…”</p></li>
+<li><p><strong>Unidade de tempo</strong>: “…por dia.”</p></li>
+</ul>
+<hr />
+</div>
+<div id="tipos-de-st---classificacao" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tipos de ST - classificação</h2>
+<ul>
+<li><p><strong>Contínuas:</strong> A informação é obtida em qualquer intervalo de tempo (podendo ser discretizando em intervalos iguais) ou é acumulada por período.
+<strong>Ex:</strong> Temperatura, pluviosidade, partículas em suspensão.</p></li>
+<li><p><strong>Discretas:</strong> Observações obtidas em intervalos de tempo discreto e equidistantes (ano, mês, dias, semanas epidemiológicas).
+<strong>Ex:</strong> Mortalidade infantil, notificações por DIC.</p></li>
+<li><p><strong>Multivariada ou Multidimensional:</strong> São várias coleções de observações para a mesma
+sequência de períodos de tempo, ou seja,envolvem mais de uma série histórica.
+<strong>Ex:</strong> Número de homicídios e acidentes no Sudeste.</p></li>
+</ul>
+<hr />
+</div>
+<div id="processo-estocastico" class="section level2">
+<h2><span class="header-section-number">2.5</span> Processo Estocástico</h2>
+<ul>
+<li>Um processo estocástico pode ser pensado de duas formas:
+<ul>
+<li>um conjunto de possíveis trajetórias de um fenômeno físico que poderiam ser observadas;</li>
+<li>um conjunto de variáveis aleatórias uma para cada tempo <span class="math inline">\(t\)</span>.</li>
+</ul></li>
+<li><p>Cada valor observado de uma trajetória é um dos possíveis valores que poderiam ter sido observado, de acordo com a distribuição de probabilidades da respectiva variável aleatória.</p></li>
+<li><p>Série temporal é o conjunto de observações disponíveis para análise - uma parte de uma trajetória entre muitas que poderiam ter sido observadas.</p></li>
+<li><p><span class="math inline">\(y = f(tempo, \varepsilon)\)</span>, sendo <span class="math inline">\(\varepsilon\)</span> a componente aleatória associada à função matemática do tempo.</p></li>
+<li><p>Série com a mesma estrutura: cada série é uma possível realização do
+mesmo processo estocástico.</p></li>
+</ul>
+<div class="figure">
+<img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/st2.png" alt="Trajetória ou série temporal ou função amostral" width="670" />
+<p class="caption">Trajetória ou série temporal ou função amostral</p>
+</div>
+<hr />
+</div>
+<div id="notacao-e-nomenclatura" class="section level2">
+<h2><span class="header-section-number">2.6</span> Notação e Nomenclatura</h2>
+<ul>
+<li><p>Matematicamente, uma série temporal discreta é representada por: <span class="math inline">\(Z_t = (Z_1 , Z_2 , Z_3 , ... , Z_n)\)</span>, sendo: <span class="math inline">\(Z\)</span>, a variável observável e <span class="math inline">\(t = 1,2,...,n\)</span>, o parâmetro do tempo.</p></li>
+<li><p>Utilizando o exemplo óbitos por causa por local:</p></li>
+</ul>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/st3.png" width="770" /></p>
+<hr />
+</div>
+<div id="objetivos-analise-de-st" class="section level2">
+<h2><span class="header-section-number">2.7</span> Objetivos : análise de ST</h2>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/st4.png" width="770" /></p>
+<hr />
+</div>
+<div id="objetivos-analise-de-st-1" class="section level2">
+<h2><span class="header-section-number">2.8</span> Objetivos : análise de ST</h2>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/st5.png" width="770" /></p>
+<hr />
+</div>
+<div id="componentes-de-uma-serie-temporal" class="section level2">
+<h2><span class="header-section-number">2.9</span> Componentes de uma Série Temporal</h2>
+<ul>
+<li><p>Tendência</p></li>
+<li><p>Sazonalidade</p></li>
+<li><p>Ciclo</p></li>
+<li><p>Aleatório (Erro)</p></li>
+</ul>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/componentes.png" width="670" /></p>
+<p><font size="4"> <strong>Fonte:</strong> Minerva’s Data Lab,
+Cambridge, Reino Unido</font></p>
+<hr />
+</div>
+<div id="independencia" class="section level2">
+<h2><span class="header-section-number">2.10</span> Independência</h2>
+<ul>
+<li><p>Os métodos usuais de análise estatística de dados têm como pressuposto básico a <strong>independência</strong> dos eventos (casos). Ou seja, a ocorrência de um caso de doença em uma dada pessoa é independente da ocorrência em outra pessoa.</p></li>
+<li><p>Pressupostos básicos para uma análise de regressão:</p>
+<ul>
+<li><p><span class="math inline">\(E(e_i) = 0\)</span></p></li>
+<li><p>Variância <span class="math inline">\(\sigma^2\)</span> constante (homocedasticidade);</p></li>
+<li><p><span class="math inline">\(e_i \sim N(0, \sigma^2)\)</span></p></li>
+<li><p><span class="math inline">\(e_i \neq e_j\)</span>, são independentes</p></li>
+</ul></li>
+<li><p>Na análise da incidência de doenças (ou qq outro indicador ecológico) ao longo do tempo isso não é verdade: a incidência em um determinado dia/mês ou ano em geral é <strong>correlacionada</strong> com a ocorrência no dia/mês/ano anterior.</p></li>
+<li><p>Esta correlação é expressa em uma função denominada <strong>função de autocorrelação</strong>.</p></li>
+</ul>
+<hr />
+</div>
+<div id="dependencia" class="section level2">
+<h2><span class="header-section-number">2.11</span> Dependência</h2>
+<ul>
+<li><p>Quanto a dependência uma ST pode possuir:</p>
+<ul>
+<li><p><strong>Independência</strong> (sem dependência serial): série puramente aleatória ou ruído branco;</p></li>
+<li><p><strong>Memória longa</strong>: a dependência desaparece lentamente (os valores de pontos no passado influenciam momentos muito
+adiante no tempo - exemplo: doenças com grande latência);</p></li>
+<li><p><strong>Memória curta</strong>: dependência desaparece rapidamente (doenças de alta infecciosidade e “explosivas”&quot; - exemplo: gripe).</p></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="funcao-de-autocorrelacao" class="section level2">
+<h2><span class="header-section-number">2.12</span> Função de autocorrelação</h2>
+<p><span class="math display">\[r_i = \dfrac{\sum_{t=1}^{N-1} (Z_t - \bar{Z})(Z_{t+j} - \bar{Z})}{\sum_{t=1}^{N} (Z_t - \bar{Z})^2}\]</span></p>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/autocor1.png" width="370" /></p>
+<ul>
+<li><p>Para cada intervalo de tempo fixo <span class="math inline">\(j\)</span>, pode-se calcular a correlação amostral entre os valores de <span class="math inline">\(Z_t\)</span> e <span class="math inline">\(Z_{t+j}\)</span>. O gráfico destes valores para cada <span class="math inline">\(j\)</span> denomina-se correlograma.</p></li>
+<li><p>O correlograma é uma das principais ferramentas de análise exploratória em séries temporais, pois indica como cada valor em um dado instante de tempo <span class="math inline">\(t\)</span> se relaciona com os valores em <span class="math inline">\(t+1, t+2,...,t+j\)</span></p></li>
+</ul>
+<hr />
+</div>
+<div id="tratamento-dos-dados" class="section level2">
+<h2><span class="header-section-number">2.13</span> Tratamento dos dados</h2>
+<ul>
+<li><p><strong>Tamanho do intervalo amostral</strong></p>
+<ul>
+<li>A periodicidade só é detectada se for maior que o intervalo amostral</li>
+</ul></li>
+<li><p><strong>Estacionariedade:</strong></p>
+<ul>
+<li><p>1<span class="math inline">\(^a\)</span> ordem - média constante ao longo de todo o período</p></li>
+<li><p>2<span class="math inline">\(^a\)</span> ordem - variância constante ao longo de todo o período</p></li>
+</ul></li>
+<li><p><strong>Como estabilizar uma série ?</strong></p>
+<ul>
+<li><p>Diferenças sucessivas
+<span class="math display">\[\Delta Z_t = Z_t - Z_{t-1}\]</span></p></li>
+<li><p>Logaritmo dos dados - Estabilizar a variância
+<span class="math display">\[\Delta log Z_t = log Z_t - log Z_{t-1}\]</span></p></li>
+<li><p>Transformações Box-Cox</p></li>
+</ul></li>
+<li><p><strong>Observações perdidas (<em>missing</em>) ou irregulares</strong></p>
+<ul>
+<li>interpolação, etc.</li>
+</ul></li>
+<li><p><strong>Outliers</strong></p>
+<ul>
+<li>exclusão ou tratamento</li>
+</ul></li>
+<li><p><strong>Registros curtos</strong> - CUIDADO!</p></li>
+</ul>
+<hr />
+</div>
+<div id="componentes-de-uma-serie-temporal-1" class="section level2">
+<h2><span class="header-section-number">2.14</span> Componentes de uma Série Temporal</h2>
+<ul>
+<li><p>Tendência</p></li>
+<li><p>Sazonalidade</p></li>
+<li><p>Ciclo</p></li>
+<li><p>Aleatório</p></li>
+</ul>
+<hr />
+</div>
+<div id="estacionariedade" class="section level2">
+<h2><span class="header-section-number">2.15</span> Estacionariedade</h2>
+<ul>
+<li>A média e a variância se mantêm constante durante o tempo</li>
+</ul>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/estacionaria2.png" width="1270" /></p>
+<div id="porque-a-estacionariedade-e-importante" class="section level3">
+<h3><span class="header-section-number">2.15.1</span> Porque a Estacionariedade é Importante ?</h3>
+<ul>
+<li><p>Existem técnicas analíticas de séries temporais que dependem da estacionariedade da série para
+funcionarem</p></li>
+<li><p>Se a série não é estacionária, pode-se aplicar algum tipo de transformação</p></li>
+</ul>
+<p>Como saber ?</p>
+<ul>
+<li><p>Visualmente</p>
+<ul>
+<li>Decomposição</li>
+</ul></li>
+<li><p>Testes Estatísticos (ex: Dickey-Fuller)</p></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="tendencia" class="section level2">
+<h2><span class="header-section-number">2.16</span> Tendência</h2>
+<ul>
+<li><p>É o efeito de longo prazo na média;</p></li>
+<li><p>Aumento ou redução a longo prazo…</p></li>
+</ul>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/tendencia1.png" width="1270" /></p>
+<hr />
+</div>
+<div id="sazonalidade" class="section level2">
+<h2><span class="header-section-number">2.17</span> Sazonalidade</h2>
+<ul>
+<li><p>Efeitos ligados à variações periódicas (semanal,
+mensal, anual, etc.);</p></li>
+<li><p>Padrões que ocorrem em intervalos fixos.</p></li>
+</ul>
+<p>Ex: Medidas de Temperatura (aumenta no verão e diminui no inverno).</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<hr />
+<div id="como-detectar-a-sazonalidade" class="section level3">
+<h3><span class="header-section-number">2.17.1</span> Como detectar a sazonalidade ?</h3>
+<ul>
+<li><p>Visualmente</p>
+<ul>
+<li>Boxplots</li>
+<li>seasonplot</li>
+<li>monthplot</li>
+<li>decomposição</li>
+</ul></li>
+<li><p>Testes Estatísticos (ex: Kruskall-Wallis)</p></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="ciclo" class="section level2">
+<h2><span class="header-section-number">2.18</span> Ciclo</h2>
+<ul>
+<li><p>Variações que apesar de periódicas não são associadas automaticamente a nenhuma medida temporal;</p></li>
+<li><p>Aumento ou redução de frequência sem intervalos fixos.</p></li>
+</ul>
+<p>Ex: Ciclos Econômicos e Ciclos de epidemias.</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<hr />
+<ul>
+<li>A série pode ser descrita como sendo a soma dos componentes:
+tendência, sazonalidade, ciclicidade e termo aleatório.</li>
+</ul>
+<p><span class="math display">\[Z_t = T_t + S_t + C_t + a_t\]</span></p>
+<p>sendo <span class="math inline">\(t = 1,2, ..., N\)</span></p>
+<ul>
+<li>Se a sazonalidade varia em conjunto com a tendência (aumenta de
+amplitude quando aumenta a tendência), o modelo melhor é multiplicativo, que pode ser transformado em aditivo usando <span class="math inline">\(log\)</span>.</li>
+</ul>
+<p><span class="math display">\[Z_t = T_t . S_t . \varepsilon_t\]</span></p>
+<p><span class="math display">\[log(Z_t) = log(T_t) + log(S_t) + log(\varepsilon_t)\]</span></p>
+<hr />
+</div>
+<div id="transformacoes" class="section level2">
+<h2><span class="header-section-number">2.19</span> Transformações</h2>
+<ul>
+<li><p>As vezes os dados precisam ser transformados para a utilização de determinados métodos/modelos;</p></li>
+<li><p>O objetivo é tornar os modelos mais simples, no caso das ST o objetivo seria melhorar as previsões;</p></li>
+<li><p>As transformações devem ser feitas exclusivamente para aplicação do modelo, e não como uma;
+técnica de analise dos dados em si.</p></li>
+</ul>
+<hr />
+<p>Alguns exemplos de transfomação dos dados em ST:</p>
+<ul>
+<li><p><strong>Utilização de funções:</strong> Logarítmicas, Potências, Exponenciais, ou transformação <em>Box-Cox</em></p></li>
+<li><p><strong>Diferenciação:</strong> Series não estacionárias, objetivo é transformar a série em estacionária (ex: log)</p></li>
+<li><p><strong>Médias Móveis:</strong> suavização: reduz outliers e reduz efeitos sazonais</p></li>
+</ul>
+<p>Para mostrar o resultado dessas transformações, temos:</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-21-1.png" width="100%" /></p>
+<hr />
+<ul>
+<li><p>Removendo as componentes <span class="math inline">\(T\)</span> e <span class="math inline">\(S\)</span>, supõe-se que sobra ?</p>
+<ul>
+<li><p>Ruído branco;</p>
+<ul>
+<li><p>cada <span class="math inline">\(\varepsilon_t\)</span> é “determinado” pelo <span class="math inline">\(\varepsilon_{t-1}\)</span> - <strong>modelo AR</strong></p></li>
+<li><p>a variância de <span class="math inline">\(\varepsilon_t\)</span> é “determinada” por <span class="math inline">\(\varepsilon_{t-1}\)</span> - <strong>modelo MA</strong></p></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="tendencia-e-sazonalidade" class="section level2">
+<h2><span class="header-section-number">2.20</span> Tendência e sazonalidade</h2>
+<ul>
+<li><p><strong>Estimar a tendência ou a sazonalidade:</strong></p>
+<ul>
+<li><p>ajustar polinômio, curva exponencial ou reta (paramétrico);</p></li>
+<li><p>suavizar (filtros - não paramétricos);</p></li>
+<li><p>diferenciar.</p></li>
+</ul></li>
+<li><p><strong>Diferenças:</strong></p>
+<ul>
+<li><p>pode-se diferenciar tantas vezes quanto necessário até estabilizar (não + que duas diferenças);</p></li>
+<li><p>para sazonalidade usa-se diferenciação com período igual ao da sazonalidade.</p></li>
+</ul>
+<p><span class="math display">\[\Delta_{s} Z_t = Z_t - Z_{t-s}\]</span></p>
+<p>sendo <span class="math inline">\(s\)</span> é o período da sazonalidade.</p></li>
+<li><p>A série pode ser descrita como sendo a soma dos componentes:
+tendência, sazonalidade, ciclicidade e termo aleatório.</p></li>
+</ul>
+<p><span class="math display">\[Z_t = T_t + S_t + C_t + a_t\]</span></p>
+<p>sendo <span class="math inline">\(t = 1,2, ..., N\)</span></p>
+<ul>
+<li>Se a sazonalidade varia em conjunto com a tendência (aumenta de
+amplitude quando aumenta a tendência), o modelo melhor é multiplicativo, que pode ser transformado em aditivo usando <span class="math inline">\(log\)</span>.</li>
+</ul>
+<p><span class="math display">\[Z_t = T_t . S_t . \varepsilon_t\]</span></p>
+<p><span class="math display">\[log(Z_t) = log(T_t) + log(S_t) + log(\varepsilon_t)\]</span></p>
+<ul>
+<li><p>Removendo as componentes <span class="math inline">\(T\)</span> e <span class="math inline">\(S\)</span>, supõe-se que sobra ?</p>
+<ul>
+<li><p>Ruído branco;</p>
+<ul>
+<li><p>cada <span class="math inline">\(\varepsilon_t\)</span> é “determinado” pelo <span class="math inline">\(\varepsilon_{t-1}\)</span> - <strong>modelo AR</strong></p></li>
+<li><p>a variância de <span class="math inline">\(\varepsilon_t\)</span> é “determinada” por <span class="math inline">\(\varepsilon_{t-1}\)</span> - <strong>modelo MA</strong></p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Estimar a tendência ou a sazonalidade:</strong></p>
+<ul>
+<li><p>ajustar polinômio, curva exponencial ou reta (paramétrico);</p></li>
+<li><p>suavizar (filtros - não paramétricos);</p></li>
+<li><p>diferenciar.</p></li>
+</ul></li>
+<li><p><strong>Diferenças:</strong></p>
+<ul>
+<li><p>pode-se diferenciar tantas vezes quanto necessário até estabilizar (não + que duas diferenças);</p></li>
+<li><p>para sazonalidade usa-se diferenciação com período igual ao da sazonalidade.</p></li>
+</ul>
+<p><span class="math display">\[\Delta_{s} Z_t = Z_t - Z_{t-s}\]</span></p>
+<p>sendo <span class="math inline">\(s\)</span> é o período da sazonalidade.</p></li>
+</ul>
+<hr />
+</div>
+<div id="alisamentos---medias-moveis" class="section level2">
+<h2><span class="header-section-number">2.21</span> Alisamentos - Médias móveis</h2>
+<ul>
+<li><p>Processo de Transformação - “Suavização da Série”</p></li>
+<li><p>Remoção de outliers</p></li>
+<li><p>Identificação de tendências</p></li>
+<li><p>Simples e Exponencial</p></li>
+</ul>
+<p><strong>Ex:</strong> Médias Móveis - ordem 5</p>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/mediamovel2019.png" width="1270" /></p>
+<div id="utilizando-a-st-mensal-referente-as-mortes-por-doencas-pulmonares-no-reino-unido-19741979-temos" class="section level3">
+<h3><span class="header-section-number">2.21.1</span> Utilizando a ST mensal referente as mortes por Doenças Pulmonares no Reino Unido (1974–1979), temos:</h3>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><strong><em>tsclean</em></strong>: Função do pacote <em>forecast</em> que é utilizado para suavização e limpesa de outliers</p>
+</div>
+<div id="para-tendencia" class="section level3">
+<h3><span class="header-section-number">2.21.2</span> Para Tendência</h3>
+<ul>
+<li><p>A tendência no instante <span class="math inline">\(t\)</span> será estimada usando <span class="math inline">\(l\)</span> observações ao redor de <span class="math inline">\(t\)</span>.</p>
+<p><span class="math display">\[T_t = F(Z_t)\]</span> <span class="math display">\[t_t = \dfrac{1}{2k+1} \sum_{j=-k}^{k}Z_{t+j}\]</span>, ordem <span class="math inline">\(2k+1\)</span></p></li>
+<li><p>o tamanho da janela é empírico</p></li>
+<li><p>perde-se k observações nos extremos da série</p></li>
+<li><p>o tamanho da janela é empírico</p></li>
+<li><p>perde-se k observações nos extremos da série</p></li>
+<li><p>quando o dado apresenta sazonalidade utiliza-se um alisamento média móvel de ordem <span class="math inline">\(s\)</span> (o período da sazonalidade)</p></li>
+<li><p>não pode ser usado para previsão</p></li>
+</ul>
+</div>
+<div id="para-sazonalidade" class="section level3">
+<h3><span class="header-section-number">2.21.3</span> Para Sazonalidade</h3>
+<ul>
+<li><p>Suponha uma série mensal já livre de tendência e com sazonalidade igual a 12 meses</p>
+<p><span class="math display">\[S_j = \frac{\bar{Y}_{.j}}{\bar{Y}}\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(S_j\)</span>, a sazonalidade,</p></li>
+<li><p><span class="math inline">\(\bar{Y}_{.j}\)</span>, a média de cada mês <span class="math inline">\(j\)</span></p></li>
+<li><p><span class="math inline">\(\bar{Y}\)</span>, a média das médias dos meses <span class="math inline">\(j\)</span></p></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="alisamentos---lowess" class="section level2">
+<h2><span class="header-section-number">2.22</span> Alisamentos - Lowess</h2>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/LOESS2.png" width="470" /></p>
+<p><img src="/home/oswaldo/Documentos/cursos_ecologicos_2019/figuras/LOESS1.png" width="670" /></p>
+<div id="locally-weighted-sum-of-square-lowess" class="section level3">
+<h3><span class="header-section-number">2.22.1</span> Locally Weighted Sum of Square (Lowess)</h3>
+<ul>
+<li><p>É uma regressão linear local ponderada</p></li>
+<li><p>A largura da janela é indicado por uma fração dos dados que varia de 0 a 1</p>
+<ul>
+<li><p>Exemplo: largura 0,1 significa que a janela tem largura que equivale a 10% do eixo horizontal</p></li>
+<li><p>Quanto maior o tamanho da janela, maior o alisamento e vice-versa</p></li>
+</ul></li>
+</ul>
+<hr />
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estudos-ecologicos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analise-exploratoria-de-uma-series-temporal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

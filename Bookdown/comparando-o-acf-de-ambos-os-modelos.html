@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Comparando o ACF de ambos os modelos | capitulo5.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Comparando o ACF de ambos os modelos | capitulo5.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Comparando o ACF de ambos os modelos | capitulo5.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analises-preditivas-parte-ii.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Bookdown Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html"><i class="fa fa-check"></i><b>1</b> Análises Preditivas - Parte II</a><ul>
+<li class="chapter" data-level="1.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#suavizacao-exponencial"><i class="fa fa-check"></i><b>1.1</b> Suavização Exponencial</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#principio-basico"><i class="fa fa-check"></i><b>1.1.1</b> Principio básico:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#holt-winters-sazonal"><i class="fa fa-check"></i><b>1.1.2</b> Holt-Winters Sazonal</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#analise-dos-residuos"><i class="fa fa-check"></i><b>1.2</b> Análise dos Resíduos</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#pressupostos-para-previsao"><i class="fa fa-check"></i><b>1.2.1</b> Pressupostos para Previsão</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html"><i class="fa fa-check"></i><b>2</b> Comparando o ACF de ambos os modelos</a><ul>
+<li class="chapter" data-level="2.1" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#arima"><i class="fa fa-check"></i><b>2.1</b> ARIMA</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#arima-nao-sazonal"><i class="fa fa-check"></i><b>2.1.1</b> Arima não sazonal</a></li>
+<li class="chapter" data-level="2.1.2" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#arima-sazonal"><i class="fa fa-check"></i><b>2.1.2</b> Arima Sazonal</a></li>
+<li class="chapter" data-level="2.1.3" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#como-definir-valores-de-pd-e-q"><i class="fa fa-check"></i><b>2.1.3</b> Como definir valores de p,d e q ?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#analise-dos-residuos-1"><i class="fa fa-check"></i><b>2.2</b> Análise dos Resíduos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#pressupostos-para-previsao-1"><i class="fa fa-check"></i><b>2.2.1</b> Pressupostos para Previsão</a></li>
+<li class="chapter" data-level="2.2.2" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#como-saber-qual-o-melhor-modelo"><i class="fa fa-check"></i><b>2.2.2</b> Como saber qual o melhor modelo ?</a></li>
+<li class="chapter" data-level="2.2.3" data-path="comparando-o-acf-de-ambos-os-modelos.html"><a href="comparando-o-acf-de-ambos-os-modelos.html#auto.arima"><i class="fa fa-check"></i><b>2.2.3</b> Auto.arima()</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="comparando-o-acf-de-ambos-os-modelos" class="section level1">
+<h1><span class="header-section-number"> 2</span> Comparando o ACF de ambos os modelos</h1>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
+<span class="kw">acf</span>(mdl1<span class="op">$</span>residuals, <span class="dt">lag.max=</span><span class="dv">20</span>, <span class="dt">main=</span><span class="st">&quot;Modelo Aditivo&quot;</span>)
+<span class="kw">acf</span>(mdl2<span class="op">$</span>residuals, <span class="dt">lag.max=</span><span class="dv">20</span>, <span class="dt">main=</span><span class="st">&quot;Modelo Multiplicativo&quot;</span>)</code></pre>
+<p><img src="capitulo5_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+<div id="arima" class="section level2">
+<h2><span class="header-section-number">2.1</span> ARIMA</h2>
+<div id="arima-nao-sazonal" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Arima não sazonal</h3>
+<ul>
+<li><p>Robusto: Pode ser usado em praticamente qualquer tipo de ST</p></li>
+<li><p>Dados estáveis, com poucos outliers</p></li>
+<li><p>Requer dados estacionários: pode ser transformada usando diferenciação: remove tendências</p></li>
+<li><p>Subtrai a observação do período atual do período anterior</p></li>
+<li><p>A diferenciação pode ser feita 1x: diferenciação de primeira ordem</p></li>
+<li><p>Ou pode ser necessário uma segunda vez: diferenciação de segunda ordem (mais raro)</p></li>
+</ul>
+<p>Termos:</p>
+<p><img src="/home/tassinari/Documentos/cursos_ecologicos_2019/figuras/ARIMA.png" width="70%" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p><strong>AR – Autoregressivo</strong>: avalia a relação entre os períodos (lags): autocorrelação. Extrai essa influência;</p></li>
+<li><p><strong>I – Integrated</strong>: Aplica a diferenciação, se necessária;</p></li>
+<li><p><strong>MA – Moving Average</strong>: Avalia erros entre períodos e extrai estes erros (não tem relação com MA usados para suavização de st);</p></li>
+</ul>
+<p>Exemplos:</p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p = 1\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pela observação prévia + erro</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p = 2\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada por duas observações prévias + erro</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d = 0\)</span></td>
+<td>Significa que não é aplica diferenciação</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d = 1\)</span></td>
+<td>Significa que será aplicada diferenciação de primeira ordem</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d = 2\)</span></td>
+<td>Significa que será aplicada diferenciação de segunda ordem</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q = 1\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pelo erro da observação prévia</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q = 2\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pelo erro de duas observações prévias</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">ARIMA</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">AR(1) ou ARIMA(1,0,0)</td>
+<td align="center">Apenas elemento autoregressivo , de <span class="math inline">\(1^{a}\)</span> ordem</td>
+</tr>
+<tr class="even">
+<td align="center">AR(2) ou ARIMA(2,0,0)</td>
+<td align="center">Apenas elemento autoregressivo , de <span class="math inline">\(2^{a}\)</span> ordem</td>
+</tr>
+<tr class="odd">
+<td align="center">MA(1) ou ARIMA(0,0,1)</td>
+<td align="center">Apenas Média Móvel</td>
+</tr>
+<tr class="even">
+<td align="center">ARMA(1,1)</td>
+<td align="center">Autorregressão e média móvel de <span class="math inline">\(1^{a}\)</span> ordem</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="arima-sazonal" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Arima Sazonal</h3>
+<ul>
+<li>Inclui, além (p,d,q), os elementos (P,D,Q), tornando o modelo mais complexo.</li>
+</ul>
+</div>
+<div id="como-definir-valores-de-pd-e-q" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Como definir valores de p,d e q ?</h3>
+<ul>
+<li><p><strong>p</strong>: ordem da parte autoregressiva - PACF</p></li>
+<li><p><strong>d</strong>: grau de diferenciação – Teste de Estacionariedade</p></li>
+<li><p><strong>q</strong>: ordem da média móvel - ACF</p></li>
+</ul>
+<p>Esse processo pode ser extremamente difícil, mesmo para experientes. E Nem sempre o modelo mais sugestivo é o melhor.</p>
+<hr />
+</div>
+</div>
+<div id="analise-dos-residuos-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> Análise dos Resíduos</h2>
+<div id="pressupostos-para-previsao-1" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Pressupostos para Previsão</h3>
+<p>•Não devem estar relacionados (autocorrelação)
+• Se existe autocorrelação, existe informação nos resíduos que deveria ser utilizada na previsão
+•Média deve ser zero (Aproximadamente)
+•Outros (Recomendado)
+• Variância Constante
+• Distribuídos normalmente</p>
+<hr />
+</div>
+<div id="como-saber-qual-o-melhor-modelo" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Como saber qual o melhor modelo ?</h3>
+<ul>
+<li><p>Akaike Information Criteria (AIC e AICc)</p></li>
+<li><p>Bayesian Information Criteria (BIC)</p></li>
+<li><p>Outros</p></li>
+</ul>
+<p>Ou testar todas as combinações prováveis, mas isso pode ser um pouco demorado se for feito de forma manual.</p>
+<p>Sugestão: Usar a função <strong><em>auto.arima()</em></strong></p>
+<hr />
+</div>
+<div id="auto.arima" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Auto.arima()</h3>
+<ul>
+<li><p>Testa diferentes combinações de p,d e r</p></li>
+<li><p>Extremamente flexível</p></li>
+<li><p>Mesmo intuindo um modelo, você pode usa-la para confirmar sua parametrização</p></li>
+</ul>
+<p>Alguns parâmetros importantes da função <em>auto.arima()</em></p>
+<ul>
+<li><p>stationary - If TRUE, restricts search to stationary models.</p></li>
+<li><p>seasonal - If FALSE, restricts search to non-seasonal models</p></li>
+<li><p>stepwise - If TRUE, will do stepwise selection (faster). Otherwise, it searches over all models. Non-stepwise selection can be very slow, especially for seasonal models.</p></li>
+<li><p>trace - If TRUE, the list of ARIMA models considered will be reported.</p></li>
+<li><p>approximation - If TRUE, estimation is via conditional sums of squares and the information criteria used for model selection are approximated. The final model is still computed using maximum likelihood estimation. Approximation should be used for long time series or a high seasonal period to avoid excessive computation times.</p></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Utilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos</span>
+modelo1 =<span class="st"> </span><span class="kw">auto.arima</span>(denguecasests, <span class="dt">trace =</span> F)
+<span class="kw">kable</span>(<span class="kw">summary</span>(modelo1))</code></pre>
+<p>Series: denguecasests
+ARIMA(0,1,1)(0,0,1)[12]</p>
+<p>Coefficients:
+ma1 sma1
+-0.8234 0.3703
+s.e. 0.0504 0.1004</p>
+<p>sigma^2 estimated as 16200: log likelihood=-670.8
+AIC=1347.59 AICc=1347.82 BIC=1355.61</p>
+<p>Training set error measures:
+ME RMSE MAE MPE MAPE MASE
+Training set 0.5186493 125.4989 91.75439 -55.42405 85.13066 0.7477389
+ACF1
+Training set 0.02407242</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">ME</th>
+<th align="right">RMSE</th>
+<th align="right">MAE</th>
+<th align="right">MPE</th>
+<th align="right">MAPE</th>
+<th align="right">MASE</th>
+<th align="right">ACF1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Training set</td>
+<td align="right">0.5186493</td>
+<td align="right">125.4989</td>
+<td align="right">91.75439</td>
+<td align="right">-55.42405</td>
+<td align="right">85.13066</td>
+<td align="right">0.7477389</td>
+<td align="right">0.0240724</td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Neste modelo, será feito uma busca maior para uma solução &quot;mais ótima&quot;</span>
+modelo2 =<span class="st"> </span><span class="kw">auto.arima</span>(denguecasests, <span class="dt">trace =</span> F, <span class="dt">stepwise =</span> F, <span class="dt">approximation =</span> F)
+<span class="kw">kable</span>(<span class="kw">summary</span>(modelo2))</code></pre>
+<p>Series: denguecasests
+ARIMA(0,1,4)(0,0,1)[12]</p>
+<p>Coefficients:
+ma1 ma2 ma3 ma4 sma1
+-0.7508 -0.1857 -0.1451 0.3934 0.3164
+s.e. 0.0972 0.1069 0.1283 0.1094 0.1079</p>
+<p>sigma^2 estimated as 14698: log likelihood=-664.23
+AIC=1340.45 AICc=1341.29 BIC=1356.49</p>
+<p>Training set error measures:
+ME RMSE MAE MPE MAPE MASE
+Training set -0.6774146 117.8192 85.3214 -45.61906 74.10152 0.6953141
+ACF1
+Training set -0.05583687</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">ME</th>
+<th align="right">RMSE</th>
+<th align="right">MAE</th>
+<th align="right">MPE</th>
+<th align="right">MAPE</th>
+<th align="right">MASE</th>
+<th align="right">ACF1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Training set</td>
+<td align="right">-0.6774146</td>
+<td align="right">117.8192</td>
+<td align="right">85.3214</td>
+<td align="right">-45.61906</td>
+<td align="right">74.10152</td>
+<td align="right">0.6953141</td>
+<td align="right">-0.0558369</td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimando as previsões</span>
+prev1 =<span class="st"> </span><span class="kw">forecast</span>(modelo1, <span class="dt">h=</span><span class="dv">12</span>)
+<span class="kw">autoplot</span>(prev1) <span class="op">+</span><span class="st"> </span>
+<span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="kw">range</span>(<span class="dv">0</span>), <span class="dt">color=</span><span class="st">&#39;black&#39;</span>, <span class="dt">size=</span><span class="fl">0.5</span>)</code></pre>
+<p><img src="capitulo5_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r">prev2 =<span class="st"> </span><span class="kw">forecast</span>(modelo2, <span class="dt">h=</span><span class="dv">12</span>)
+<span class="kw">autoplot</span>(prev2) <span class="op">+</span><span class="st"> </span>
+<span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="kw">range</span>(<span class="dv">0</span>), <span class="dt">color=</span><span class="st">&#39;black&#39;</span>, <span class="dt">size=</span><span class="fl">0.5</span>)</code></pre>
+<p><img src="capitulo5_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Comparar os modelos</span>
+<span class="kw">plot</span>(prev1, <span class="dt">main=</span><span class="st">&#39;Comparação Modelo 1 vs Modelo 2&#39;</span>)
+<span class="kw">lines</span>(prev2<span class="op">$</span>mean, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">add=</span>T)
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">color=</span><span class="st">&#39;gray&#39;</span>, <span class="dt">size=</span><span class="dv">1</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Adirtivo&quot;</span>, <span class="st">&quot;Multiplicativo&quot;</span>),
+       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">cex=</span><span class="fl">0.8</span>)</code></pre>
+<p><img src="capitulo5_files/figure-html/unnamed-chunk-8-3.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">meses</th>
+<th align="right">Modelo_1</th>
+<th align="right">Modelo_2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2017-01-01</td>
+<td align="right">91.55672</td>
+<td align="right">27.78412</td>
+</tr>
+<tr class="even">
+<td align="left">2017-02-01</td>
+<td align="right">165.12106</td>
+<td align="right">133.14828</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-03-01</td>
+<td align="right">153.66652</td>
+<td align="right">134.93483</td>
+</tr>
+<tr class="even">
+<td align="left">2017-04-01</td>
+<td align="right">200.94246</td>
+<td align="right">162.30890</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-05-01</td>
+<td align="right">156.74707</td>
+<td align="right">122.72440</td>
+</tr>
+<tr class="even">
+<td align="left">2017-06-01</td>
+<td align="right">128.03768</td>
+<td align="right">95.41404</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-07-01</td>
+<td align="right">84.62545</td>
+<td align="right">63.20041</td>
+</tr>
+<tr class="even">
+<td align="left">2017-08-01</td>
+<td align="right">187.44091</td>
+<td align="right">146.33454</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-09-01</td>
+<td align="right">71.03300</td>
+<td align="right">51.57168</td>
+</tr>
+<tr class="even">
+<td align="left">2017-10-01</td>
+<td align="right">160.56290</td>
+<td align="right">127.87395</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-11-01</td>
+<td align="right">129.26032</td>
+<td align="right">98.92913</td>
+</tr>
+<tr class="even">
+<td align="left">2017-12-01</td>
+<td align="right">144.79419</td>
+<td align="right">108.31671</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analises-preditivas-parte-ii.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

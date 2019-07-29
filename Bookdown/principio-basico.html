@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Principio básico: | capitulo5.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Principio básico: | capitulo5.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Principio básico: | capitulo5.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analises-preditivas-parte-ii.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Bookdown Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html"><i class="fa fa-check"></i><b>1</b> Análises Preditivas - Parte II</a><ul>
+<li class="chapter" data-level="1.1" data-path="analises-preditivas-parte-ii.html"><a href="analises-preditivas-parte-ii.html#suavizacao-exponencial"><i class="fa fa-check"></i><b>1.1</b> Suavização Exponencial</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="principio-basico.html"><a href="principio-basico.html"><i class="fa fa-check"></i><b>2</b> Principio básico:</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="principio-basico" class="section level1">
+<h1><span class="header-section-number"> 2</span> Principio básico:</h1>
+<ul>
+<li><p>As observações passadas possuem pesos;</p></li>
+<li><p>Quanto mais recentes as observações, maiores seus pesos para as previsões;</p></li>
+<li><p>Utiliza médias que reduzem quanto mais distantes são as observações;</p></li>
+<li><p>O parâmetro <span class="math inline">\(\alpha\)</span> determina o índice de redução: valor entre 0 e 1</p>
+<ul>
+<li><p>Próximo de 0: observações antigas tem maior peso</p></li>
+<li><p>Próximo de 1: observações recentes tem mais peso</p></li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Intervalo</th>
+<th align="center">Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(t-1\)</span></td>
+<td align="center">0,5</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(t-2\)</span></td>
+<td align="center">0,2</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(t-3\)</span></td>
+<td align="center">0,07</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(t-4\)</span></td>
+<td align="center">0,01</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(t-5\)</span></td>
+<td align="center">0,005</td>
+</tr>
+</tbody>
+</table>
+<p>```</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analises-preditivas-parte-ii.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

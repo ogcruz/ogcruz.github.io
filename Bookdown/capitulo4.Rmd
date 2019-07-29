@@ -1,0 +1,300 @@
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE}
+
+library(knitr)
+library(pander)
+library(forecast)
+
+# Preparando o banco de incidencia de dengue
+dengue_original=read.csv("~/Documentos/cursos_ecologicos_2019/dados/denguecases.csv")
+denguecases=aggregate(Dengue_Cases~Month+Year,dengue_original,sum)
+denguecasests=ts(denguecases$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
+
+# Set so that long lines in R will be wrapped:
+opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
+
+```
+
+
+
+# Análises Preditivas - Parte I
+
+
+## Predição
+
+
+Predizer o futuro possibilita:
+
+- Fazer planos a longo, médio e curto prazo;
+
+- Tomar decisões apropriadas.
+
+
+Futuro envolve incerteza $\Leftrightarrow$ previsões não são perfeitas.
+
+Objetivo é reduzir ao máximo os erros de previsão.
+
+---
+
+## Por que dos erros ?
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/granada1.png")
+```
+
+---
+
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/copa.png")
+```
+
+---
+
+- Conceitualmente, toda previsão está errada
+
+- O objetivo é minimizar o erro (torna-lo menor possível)
+
+---
+
+## Regressão Linear vs Séries Temporais
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/regressaost.png")
+```
+
+---
+
+## Como prever usando séries temporais ?
+
+- Usando os próprios dados – **Séries temporais puras**
+
+- Usando outras variáveis – **Modelo explanatório**
+
+- Usando as duas técnicas – **Modelo misto**
+
+---
+
+### Modelagem, aprendizado e previsão
+
+- A parte central da análise de ST, é a construção de um modelo. Tal modelo pode ser do âmbito matemático, estatístico e/ou computacional.
+
+- **Modelo** - esquema de descrição (explicação) que organiza a informação (experiência) de forma a propiciar aprendizagem (informação) e previsão.
+
+- Bom modelo permite aprendizado levando a previsões adequadas.
+
+    • Devido à incerteza presente, modelo é probabilístico;
+    
+    • Deve também ser parcimonioso;
+    
+    • Deve ser relativamente simples e flexível para poder se adaptar ao futuro (incerto) e facilitar aprendizado;
+
+    • **Aprendizado** é o processamento de informaçãoo através do modelo;
+    
+    • **Previsão** é a hipótese, conjectiva ou especulação sobre o futuro.
+ 
+---
+
+Esquema de um sistema de previsão:
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/esquemaST.png")
+```
+
+[Análise de Séries Temporais - Prof. Hélio Migon (IM/DME/UFRJ)](http://www.dme.ufrj.br/dani/pdf/slidespartefrequentista.pdf)
+
+---
+
+## Considerações sobre previsões
+
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/previsso.png")
+```
+
+---
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/previsso2.png")
+```
+
+---
+
+Para ajustar um bom modelos devemos:
+
+- Avaliar os resíduos;
+
+- Avaliar a performance do modelos  (MAE,RMSE etc.);
+
+- Avaliar as  métricas (AIC, BIC etc.).
+
+Dicas gerais:
+
+- Uma boa análise dos resíduos em conformidade não indicam por si só um bom modelo;
+
+- Um primeiro modelo bom, provavelmente pode ser melhorado;
+
+- Inteligência inclui a capacidade de escolher as informações relevantes (seleção de variáveis).
+ 
+---
+
+## Algumas técnicas para previsão em ST
+
+### **Técnicas Simples**
+
+  - Naive
+    
+  - Mean
+    
+  - Drift
+    
+
+### **Técnicas Clássicas**
+
+  - Suavização Exponencial (Holt-Winters)
+  
+  - ARIMA
+  
+  - Regressão
+    
+### **Técnicas Avançadas**
+
+  - Modelos de equações simultâneas ou econométricos
+    
+  - Redes Neurais
+    
+  - Modelos de espaço de estados ou dinâmicos
+    
+---
+
+## Naive 
+
+- **Naive Simples:** Projeta o último valor para o futuro.
+
+- **Naive Sazonal:** Para dados com sazonalidade presente, ele considera o último valor no mesmo período de tempo.
+
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/naive1.png")
+```
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/naive2.png")
+```
+
+Aplicando a técnica de previsão nos casos de dengue:
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# Naive Simples
+# Faz a previsao para cinco meses
+prev = naive(denguecasests, h=5, level = c(80, 95))
+autoplot(prev)
+kable(prev)
+
+```
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# Naive Sazonal
+# Faz a previsao para cinco meses
+# Default level = c(80, 95)
+prev = snaive(denguecasests, h=5, level = c(80, 95)) 
+autoplot(prev)
+kable(prev)
+
+# Comparando os valores preditos com os valores observados
+kable(window(denguecasests, start=c(2016,1), end=c(2016,5)))
+
+```
+
+---
+
+## Mean
+
+- Calcula a média e usa como previsão para o futuro.
+
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/meanf.png")
+```
+
+Aplicando a técnica de previsão nos casos de dengue:
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# Faz a previsao para cinco meses
+prev = meanf(denguecasests, h=5)
+autoplot(prev)
+kable(prev)
+#verifica a media
+mean(fdeaths)
+
+```
+
+Previsão baseada apenas no último ano da ST.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# fazendo uma previsao com um subconjunto dos dados
+denguecasests2 = window(denguecasests,start=c(2016,1),end=c(2016,12))
+autoplot(denguecasests2)
+mean(denguecasests2)
+prev2 = meanf(denguecasests2, h=5)
+autoplot(prev2)
+kable(prev2)
+
+# compara as duas previsoes
+plot(prev)
+lines(prev2$mean, col="red")
+
+```
+
+---
+
+## Drift
+
+- Faz uma previsão linear para o futuro acompanhando a tendência da série;
+
+- Equivale a plotar uma reta entre o primeiro e último valor da série;
+
+- Pode sr utilizado em ST com a tendência expressiva.
+
+
+```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/drift1.png")
+```
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/drift2.png")
+```
+
+Aplicando a técnica de previsão nos casos de dengue:
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# Faz a previsao para 12 meses
+par(mfrow=c(2,2))
+# Exatamente igual ao Naive
+prev1 = rwf(denguecasests, h=12, drift = F)
+autoplot(prev1)
+
+# Drift propriamente dito
+prev2 = rwf(denguecasests, h=12, drift = T)
+autoplot(prev2)
+
+```
+
+Para visualizar melhor o uso dessa função, vamos utilizar o dataset do próprio R chamado *austres* (Números (em milhares) de residentes australianos medidos trimestralmente de março de 1971 a março de 1994).
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# Faz a previsao para 12 meses
+par(mfrow=c(2,2))
+# Exatamente igual ao Naive
+prev1 = rwf(austres, h=12, drift = F)
+autoplot(prev1)
+
+# Drift propriamente dito
+prev2 = rwf(austres, h=12, drift = T)
+autoplot(prev2)
+
+```
