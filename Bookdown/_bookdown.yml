@@ -2,6 +2,7 @@ book_filename: "bookdown-start"
 chapter_name: " "
 repo: https://github.com/ogcruz/ogcruz.github.io/Bookdown
 output_dir: docs
-rmd_files: ["ecologico_book.Rmd", "capitulo1.Rmd", "capitulo2.Rmd"]
+rmd_files: ["ecologico_book.Rmd", "capitulo1.Rmd", "capitulo2.Rmd", "capitulo3.Rmd","capitulo4.Rmd","capitulo5.Rmd"
+"capitulo6.Rmd","capitulo7.Rmd","capitulo8.Rmd","capitulo9.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
