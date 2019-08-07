@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564855179762.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1996291068",
+    "id" : "2314DC66",
+    "lastKnownWriteTime" : 1565182990,
+    "last_content_update" : 1565182990873,
+    "path" : "~/Documentos/cursos_ecologicos_2019/scripts/testa_instala_pacotes.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "2,69",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

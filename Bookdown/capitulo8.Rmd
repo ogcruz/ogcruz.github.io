@@ -1,0 +1,12 @@
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+library(knitr)
+library(pander)
+# Set so that long lines in R will be wrapped:
+opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
+
+```
+
+
+# Dados de Área
+

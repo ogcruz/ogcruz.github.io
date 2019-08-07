@@ -1,0 +1,10 @@
+if (require(pacman) == FALSE) install.packages('pacman')
+pacman::p_load(dplyr,DT,forecast,fpp2,ggfortify,ggplot2,Kendall,knitr,lmtest,pander,plotly,seasonal,
+              seasonalview,spatstat,tseries,urca,PerformanceAnalytics)
+
+### em bash grep  -hn library *.Rmd  |cut -d "(" -f2 | cut -d ")" -f1 |sort -u
+
+
+
+pacotes <- system('grep  -hn library ~/Documentos/cursos_ecologicos_2019/Bookdown/*.Rmd  | 
+                   tr -d "\\"" |cut -d "(" -f2 | cut -d ")" -f1 |sort -u',  intern = TRUE)

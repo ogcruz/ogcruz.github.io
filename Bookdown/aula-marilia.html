@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="transformacoes.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="transformacoes.html"><a href="transformacoes.html"><i class="fa fa-check"></i><b>1</b> Transformações</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="transformacoes.html"><a href="transformacoes.html#alguns-exemplos-de-transfomacao-dos-dados-em-st"><i class="fa fa-check"></i><b>1.0.1</b> Alguns exemplos de transfomação dos dados em ST:</a></li>
+<li class="chapter" data-level="1.0.2" data-path="transformacoes.html"><a href="transformacoes.html#transformacoes-box-cox-digferenciacao-e-logaritmica"><i class="fa fa-check"></i><b>1.0.2</b> Transformações Box-Cox, Digferenciação e Logarítmica</a></li>
+<li class="chapter" data-level="1.1" data-path="transformacoes.html"><a href="transformacoes.html#metodos-de-suavizacao"><i class="fa fa-check"></i><b>1.1</b> Métodos de Suavização</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="transformacoes.html"><a href="transformacoes.html#alisamentos---medias-moveis"><i class="fa fa-check"></i><b>1.1.1</b> Alisamentos - Médias móveis</a></li>
+<li class="chapter" data-level="1.1.2" data-path="transformacoes.html"><a href="transformacoes.html#alisamentos"><i class="fa fa-check"></i><b>1.1.2</b> Alisamentos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="aula-marilia.html"><a href="aula-marilia.html"><i class="fa fa-check"></i><b>2</b> Aula marilia</a><ul>
+<li class="chapter" data-level="2.1" data-path="aula-marilia.html"><a href="aula-marilia.html#alisamentos---lowess"><i class="fa fa-check"></i><b>2.1</b> Alisamentos - Lowess</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="aula-marilia.html"><a href="aula-marilia.html#locally-weighted-sum-of-square-lowess"><i class="fa fa-check"></i><b>2.1.1</b> Locally Weighted Sum of Square (Lowess)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="aula-marilia.html"><a href="aula-marilia.html#pratica-no-r"><i class="fa fa-check"></i><b>2.2</b> Prática no R</a></li>
+<li class="chapter" data-level="2.3" data-path="aula-marilia.html"><a href="aula-marilia.html#medias-moveis"><i class="fa fa-check"></i><b>2.3</b> Médias Móveis</a></li>
+<li class="chapter" data-level="2.4" data-path="aula-marilia.html"><a href="aula-marilia.html#analise-dos-residuos"><i class="fa fa-check"></i><b>2.4</b> Análise dos Resíduos</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="aula-marilia" class="section level1">
+<h1><span class="header-section-number"> 2</span> Aula marilia</h1>
+<div id="alisamentos---lowess" class="section level2">
+<h2><span class="header-section-number">2.1</span> Alisamentos - Lowess</h2>
+<div class="figure">
+<img src="/home/wagner/Documentos/cursos_ecologicos_2019/figuras/LOESS2.png" width="470" />
+
+</div>
+<div class="figure">
+<img src="/home/wagner/Documentos/cursos_ecologicos_2019/figuras/LOESS1.png" width="670" />
+
+</div>
+<div id="locally-weighted-sum-of-square-lowess" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Locally Weighted Sum of Square (Lowess)</h3>
+<pre><code>- É uma regressão linear local ponderada
+
+- A largura da janela é indicado por uma fração dos dados que varia de 0 a 1
+
+- Exemplo: largura 0,1 significa que a janela tem largura que equivale a 10% do eixo horizontal 
+
+- Quanto maior o tamanho da janela, maior o alisamento e vice-versa</code></pre>
+</div>
+</div>
+<div id="pratica-no-r" class="section level2">
+<h2><span class="header-section-number">2.2</span> Prática no R</h2>
+</div>
+<div id="medias-moveis" class="section level2">
+<h2><span class="header-section-number">2.3</span> Médias Móveis</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;~/Documentos/cursos_ecologicos_2019/dados&quot;</span>)
+dengue_original=<span class="kw">read.csv</span>(<span class="st">&quot;denguecases2.csv&quot;</span>)
+denguecasests=<span class="kw">ts</span>(dengue_original<span class="op">$</span>Dengue_Cases,<span class="dt">start=</span><span class="kw">c</span>(<span class="dv">2008</span>,<span class="dv">1</span>),<span class="dt">end=</span><span class="kw">c</span>(<span class="dv">2016</span>,<span class="dv">12</span>),<span class="dt">frequency=</span><span class="dv">12</span>)
+
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))
+<span class="kw">plot</span>(denguecasests, <span class="dt">main=</span><span class="st">&quot;ST original&quot;</span>)
+<span class="co">#Função do pacote forecast que é utilizado para suavização e limpeza de outliers</span>
+dengue3 =<span class="st"> </span><span class="kw">tsclean</span>(denguecasests)
+<span class="kw">plot</span>(dengue3, <span class="dt">main=</span><span class="st">&quot;Suavização e Limpeza&quot;</span>)
+<span class="co"># Média móvel de ordem = 5</span>
+dengue1 =<span class="st"> </span><span class="kw">ma</span>(denguecasests, <span class="dt">order =</span> <span class="dv">5</span> )
+<span class="kw">plot</span>(dengue1, <span class="dt">main=</span><span class="st">&quot;MA ordem 5&quot;</span>)
+<span class="co"># Média móvel de ordem = 12</span>
+dengue2 =<span class="st"> </span><span class="kw">ma</span>(denguecasests,<span class="dt">order=</span><span class="dv">12</span>)
+<span class="kw">plot</span>(dengue2, <span class="dt">main=</span><span class="st">&quot;MA ordem 12&quot;</span>)</code></pre></div>
+<p><img src="capitulo3_files/figure-html/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(denguecasests, <span class="dt">lwd=</span><span class="fl">1.5</span>)
+<span class="kw">lines</span>(dengue1, <span class="dt">lwd=</span><span class="fl">1.5</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+<span class="kw">lines</span>(dengue2, <span class="dt">lwd=</span><span class="fl">1.5</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">lines</span>(dengue3, <span class="dt">lwd=</span><span class="fl">1.5</span>, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)
+<span class="co">#legenda</span>
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Original&quot;</span>,<span class="st">&quot;MA 5&quot;</span>,<span class="st">&quot;MA 12&quot;</span>,<span class="st">&quot;tsclean&quot;</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>), <span class="dt">lty=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">cex=</span><span class="dv">1</span>)</code></pre></div>
+<p><img src="capitulo3_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<hr />
+</div>
+<div id="analise-dos-residuos" class="section level2">
+<h2><span class="header-section-number">2.4</span> Análise dos Resíduos</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prev =<span class="st"> </span><span class="kw">auto.arima</span>(denguecasests)
+<span class="kw">head</span>(prev<span class="op">$</span>residuals)</code></pre></div>
+<pre><code>         Jan         Feb         Mar         Apr         May</code></pre>
+<p>2008 0.1311332 20.8814031 -43.3428168 -68.3229542 -23.0091775 Jun 2008 48.7772048</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#analisando os residuais</span>
+<span class="kw">autoplot</span>(prev<span class="op">$</span>residuals)</code></pre></div>
+<p><img src="capitulo3_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(prev<span class="op">$</span>residuals)</code></pre></div>
+<p><img src="capitulo3_files/figure-html/unnamed-chunk-5-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(prev<span class="op">$</span>residuals,<span class="dt">na.rm =</span> T)</code></pre></div>
+<p>[1] 15896.91</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">as.vector</span>(prev<span class="op">$</span>residuals),<span class="dt">na.rm =</span> T)</code></pre></div>
+<p>[1] 0.5186493</p>
+<p>Segundo o teste de autocorrelação <strong><em>Ljung-Box</em></strong>, temos:</p>
+<p><span class="math inline">\(H_{0}\)</span>: Os resíduos são i.i.d.</p>
+<p><span class="math inline">\(H_{1}\)</span>: Os resíduos não são i.i.d.</p>
+<p>Segundo o teste de normalidade <strong><em>Shapiro-Wilk</em></strong>, temos:</p>
+<p><span class="math inline">\(H_{0}\)</span>: Os resíduos apresentam normalidade na distribuição</p>
+<p><span class="math inline">\(H_{1}\)</span>: Os resíduos não apresentam normalidade na distribuição</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#acf </span>
+<span class="kw">acf</span>(prev<span class="op">$</span>residuals, <span class="dt">na.action =</span> na.pass)</code></pre></div>
+<p><img src="capitulo3_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#funcao especial para checar residuais</span>
+<span class="kw">checkresiduals</span>(prev)</code></pre></div>
+<p><img src="capitulo3_files/figure-html/unnamed-chunk-6-2.png" width="100%" style="display: block; margin: auto;" /> Ljung-Box test</p>
+<p>data: Residuals from ARIMA(0,1,1)(0,0,1)[12] Q* = 26.006, df = 20, p-value = 0.1656</p>
+<p>Model df: 2. Total lags used: 22</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#teste de normalidade</span>
+<span class="kw">shapiro.test</span>(prev<span class="op">$</span>residuals)</code></pre></div>
+<pre><code>Shapiro-Wilk normality test</code></pre>
+<p>data: prev$residuals W = 0.96905, p-value = 0.01275</p>
+<ul>
+<li><p>Como o <em>p-valor = 0.1656</em> para o tete de Ljung-Box, podemos dizer que não existe evidências de que exista autocorrelação entre as incidências de dengue no período de estudo.</p></li>
+<li><p>Também podemos verificar que o pressuposto de noralidade não pode sr aceito, pois *p-valor = 0.01275 do teste de shapiro-wilk.</p></li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="transformacoes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
