@@ -5,7 +5,7 @@
 
 * [Curso DataScience aplicada - 2017](livro_2017)
 
-* [Curso Estudos Ecologicos - 2019](Bookdown)
+* [Curso Estudos Ecologicos - 2019](Bookdown/apresentacao.html)
 
 
 

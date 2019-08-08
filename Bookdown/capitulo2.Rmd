@@ -1,54 +1,52 @@
+```{r, echo=FALSE}
+# Pacotes necessarios
+library(zoo)
+library(quantmod)
+library(DT)
+# library(dplyr)
+# library(magrittr)
+# library(highcharter)
+library(PerformanceAnalytics)
+library(htmltools)
+```
 
 # Introdução às Séries Temporais
 
 
-## Material on line sobre Séries Temporais
-
-**Time Series Task View:**
-
-https://cran.r-project.org/web/views/TimeSeries.html
-
-**Blog, Ebook and Forecast Documentation by Rob Hyndman:**
-
-https://otexts.org/fpp2/intro.html
-
-**Stackoverflow Community:**
-
-https://stackoverflow.com/questions
-
----
-
 ## O que são Séries Temporais ?
 
-
-![](~/Documentos/cursos_ecologicos_2019/figuras/st1.png){width=770px}
-
-
-- **Definição**: É o estudo de um determinado fenômeno que ocorre ao longo do tempo. E os dados desse fenômeno precisam ser coletados em intervalos regulares de tempo de forma ordenada.
-
-- A escala do tempo de uma ST pode ser expressa como dia, semana, mês ou ano. A maneira mais comum de visualizar séries temporais é usar um gráfico de linhas simples, em que o eixo horizontal representa os incrementos de tempo e o eixo vertical representa a variável que está sendo medida.
-
-- As ST podem ser de natureza **regular** ou **irregular**. As **ST regulares** são aquelas que os dados são mensurados no mesmo período de tempo (ex: hora, minuto, segundo, dia, mês, trimestre, ano, etc.). Já as **ST irregulares**, os dados podem ser mensurados em periodos de tempo diferentes e/ou apresentar dados ausentes (*missing data*). Para tratar tais tipos de ST, podemos interpolar os dados mensurados em um determinado período e/ou imputar os dados de forma que a ST passe a ser considerada regular.
-
+- **Definição**: Entende-se por Séries Temporariais (ST) todo e qualquer conjunto de dados (absolutos ou relativos, discretos ou contínuos), ordenados cronologicamente em intervalos regulares de tempo.
 
 - **Condição**: Esses dados seguem uma ordenação em função do tempo (dependencia temporal).
 
----
+- De modo geral, as ST apresentam sequências de observações relativas a determinada variável ao longo de um intervalo específico de tempo (dia, mês, trimestre, ano, etc.), isto é, referem-se a fluxos de valores periódicos, os quais dão uma visão geral sobre o andamento ou comportamento da variável em análise.
 
-##  Um exemplo de Série Temporal
+- A maneira mais comum de visualizar séries temporais é usar um gráfico de linhas simples, em que o eixo horizontal representa os incrementos de tempo e o eixo vertical representa a variável que está sendo medida.
 
-- **Ex**: Total de pessoas atendidas em um hospital por dia. 
+- Seguem abaixo alguns exemplo de séries temporais:
 
-- **Medida**: "Total..."
+![](~/Documentos/cursos_ecologicos_2019/figuras/st1.png){width=770px}
 
-- **Fato**: "...de pessoas atendidas em um hospital..."
+- As ST podem ser de natureza **regular** ou **irregular**. 
 
-- **Unidade de tempo**: "...por dia."
+    - As **ST regulares ou uniformes** são aquelas que podem ser expressas sempre o mesmo intervalo de tempo (ex: dia, hora, minuto, segundo).
+    
+    - As **ST irregulares ou não uniformes** podem ser expressas em períodos de tempo diferentes (ex: semana, mês, semestre, ano) e/ou apresentar dados ausentes (*missing data*). Há meses  com 28, 29, 30, 31 dias. O ano pode ser bissexto. Podemos estar interessados em mensurar os dados em semanas epidemiológicas. Como estamos trabalhando com dados agregados, nesses casos podemos trabalhar com a média ou o somatório dos dados nesse período e tratar tais ST como sendo de natureza **regular**. Já quando os dados estão ausentes, podemos interpolar os dados mensurados em um determinado período e/ou imputar os dados de forma que a ST também passe a ser considerada regular.
 
 
----
+##  Hipóteses básicas do estudo das ST
 
-## Tipos de ST - classificação
+- Há um sistema causal relacionando as variáveis no tempo;
+
+- Ao longo do tempo, o sistema influencia todos os dados sob análise, de modo regular  e permanente;
+
+- Os dados históricos refletem a influência média de um conjunto de fatores.
+
+
+Tais hipóteses se baseiam no pressuposto de que as relações apontadas pela experiência pregressa permitem prever o possível comportamento das variáveis sob análises, determinando se seu comportamento apresenta propriedades **determinísticas** e/ou **aleatórias**.
+
+
+## Classificação dos tipos de ST
 
 - **Contínuas:** A informação é obtida em qualquer intervalo de tempo (podendo ser discretizando em intervalos iguais) ou é acumulada por período.
 **Ex:** Temperatura, pluviosidade, partículas em suspensão.
@@ -57,31 +55,33 @@ https://stackoverflow.com/questions
 - **Discretas:** Observações obtidas em intervalos de tempo discreto e equidistantes (ano, mês, dias, semanas epidemiológicas).
 **Ex:** Mortalidade infantil, notificações por DIC.
 
-- **Multivariada ou Multidimensional:**  São várias coleções de observações para a mesma
-sequência de períodos de tempo, ou seja,envolvem mais de uma série histórica.
+- **Multivariada ou Multidimensional:**  São várias coleções de observações para a mesma sequência de períodos de tempo, ou seja,envolvem mais de uma série histórica.
 **Ex:** Número de homicídios e acidentes no Sudeste.
 
----
 
 ## Processo Estocástico
 
 - Um processo estocástico pode ser pensado de duas formas:
+
     - um conjunto de possíveis trajetórias de um fenômeno físico que poderiam ser observadas;
+    
     - um conjunto de variáveis aleatórias uma para cada tempo $t$.
     
 - Cada valor observado de uma trajetória é um dos possíveis valores que poderiam ter sido observado, de acordo com a distribuição de probabilidades da respectiva variável aleatória.
 
-- Série temporal é o conjunto de observações disponíveis para análise - uma parte de uma trajetória entre muitas que poderiam ter sido observadas.
+- Definir uma ST consiste em determinar as funções matemáticas que apontam suas componentes básicas e permitem prever a evolução dos fenômenos estudados (como um eventual crescimento ou decrescimento futuro).
 
-- $y = f(tempo, \varepsilon)$, sendo $\varepsilon$ a componente aleatória associada à função matemática do tempo.
+- As ST podem ser matemátia mente representadas por funções do tipo:
+
+ $$Z_t = f(tempo, a)$$
+
+Sendo $Z_t$, o valor da variável $Z$ no tempo $t$ e $a$ a componente aleatória associada à função matemática do tempo.
 
 
-- Série com a mesma estrutura: cada série é uma possível realização do
-mesmo processo estocástico.
+- Série com a mesma estrutura: cada série é uma possível realização do mesmo processo estocástico.
 
 ![Trajetória ou série temporal ou função amostral](~/Documentos/cursos_ecologicos_2019/figuras/st2.png){width=670px}
 
----
 
 ## Notação e Nomenclatura
 
@@ -91,19 +91,93 @@ mesmo processo estocástico.
 
 ![](~/Documentos/cursos_ecologicos_2019/figuras/st3.png){width=770px}
 
----
 
 ## Objetivos : análise de ST
 
 ![](~/Documentos/cursos_ecologicos_2019/figuras/st4.png){width=770px}
 
----
-
-## Objetivos : análise de ST
-
 ![](~/Documentos/cursos_ecologicos_2019/figuras/st5.png){width=770px}
 
----
+## Estacionariedade
+
+- Uma série temporal é dita estacionária quando ela se desenvolve no tempo aleatoriamente ao redor de uma média constante e com uma variância constante, refletindo alguma forma de equilíbrio estável. 
+
+![](~/Documentos/cursos_ecologicos_2019/figuras/estacionaria2.png){width=1270px}
+
+- Na prática, a maioria das séries que encontramos apresentam algum tipo de não estacionariedade, por exemplo, tendência.
+
+- O modelo mais simples de uma ST estacionária pode ser representado por:
+
+$$Z_t = \mu + a_t$$
+
+Sendo $\mu$ a média do processo temporal e $a_t$ a componente aleatória, chama de **Ruído Branco** em análises de ST. 
+
+
+- A estacionariedade da ST pode ser:
+
+    - 1$^a$ ordem - média constante ao longo de todo o período
+    
+    - 2$^a$ ordem - variância constante ao longo de todo o período
+
+
+### Função de Autocovariância de um processo estacionário
+
+$$\gamma_h = E{\{[Z_t - E(Z_t)][Z_{t-h} - E(Z_{t-h})]\}}$$
+
+- A covariância não depende do tempo, mas da distância entre as observações.
+
+- Um processo é considerado fracamente estacionário se:
+
+    i) $E(Z_t)=\mu$, $\forall t$ (constante)
+    
+    ii) $var(Z_t) = \sigma^2$, $\forall t$ (constante)
+    
+    iii) $Cov(Z_t, Z_{t-h}) = \gamma_h$, $\forall t$ (não depende do instante no tempo, apenas da distância h)
+
+- Sendo o ruído branco uma variável aleatória $a_t$, com média zero e variância $\sigma²_a$:
+
+    i) $a_t \sim N(0, \sigma^2_a)$
+    
+    ii) $Cov(a_t, a_{t-h}) = 0$, $\forall h \neq 0$ (Não correlacionados)
+    
+
+### Porque a Estacionariedade é Importante ?
+
+- A maioria das técnicas estatísticas utilizadas em séries temporais supõe que estas sejam estacionárias, caso não a ST não seja estacionária, será necessário transformar os dados originais se estes não formam uma série estacionária. 
+
+- A transformação mais comum consiste em tomar diferenças sucessivas da série original, até se obter uma série estacionária. 
+
+    - A primeira diferença de $Z_t$:
+
+       $$\Delta Z_t = Z_t - Z_{t-1}$$
+       
+       
+    - A segunda diferença de $Z_t$:
+
+       $$\Delta^{2} Z_t = \Delta[\Delta Z_t] = \Delta[Z_t - Z_{t-1}]$$
+       
+     
+     - A *n-ésima* diferença de $Z_t$:
+
+       $$\Delta^{n} Z_t = \Delta[\Delta^{n-1} Z_t]$$
+       
+       
+    - Logaritmo dos dados - Estabilizar a variância 
+    
+       $$\Delta log Z_t = log Z_t - log Z_{t-1}$$
+       
+  
+    - Transformações Box-Cox
+    
+
+- Pode-se diferenciar tantas vezes quanto necessário até estabilizar (não + que duas diferenças);
+
+**Como saber se um processo é estacionário ?**
+
+- Visualmente, através da **decomposição**
+    
+- Testes Estatísticos, ex: **Dickey-Fuller**
+
 
 ## Componentes de uma Série Temporal 
 
@@ -139,7 +213,7 @@ Cambridge, Reino Unido</font>
     - $e_i \neq e_j$, são independentes
     
 
-- Na análise da incidência de doenças (ou qq outro indicador ecológico) ao longo do tempo isso não é verdade: a incidência em um determinado dia/mês ou ano em geral é **correlacionada** com a ocorrência no dia/mês/ano anterior.
+- Na análise da incidência de doenças (ou qualquer outro indicador ecológico) ao longo do tempo isso não é verdade: a incidência em um determinado dia/mês ou ano em geral é **correlacionada** com a ocorrência no dia/mês/ano anterior.
 
 - Esta correlação é expressa em uma função denominada **função de autocorrelação**.
 
@@ -156,113 +230,139 @@ Cambridge, Reino Unido</font>
     
     - **Memória curta**: dependência desaparece rapidamente (doenças de alta infecciosidade e "explosivas"" - exemplo: gripe).
 
----
 
-## Função de autocorrelação
-
-$$r_i = \dfrac{\sum_{t=1}^{N-1} (Z_t - \bar{Z})(Z_{t+j} - \bar{Z})}{\sum_{t=1}^{N} (Z_t - \bar{Z})^2}$$
-
-![](~/Documentos/cursos_ecologicos_2019/figuras/autocor1.png){width=370px}
+## Função de Autocorrelação (FAC)
 
 
-- Para cada intervalo de tempo fixo $j$, pode-se calcular a correlação amostral entre os valores de $Z_t$ e $Z_{t+j}$. O gráfico destes valores para cada $j$ denomina-se correlograma.
+O coeficiente de correlação entre $Z_{t}$ e $Z_{t-h}$ é chamado de autocorrelação de *h-ésima* ordem e é denotadado por:
+
+$$
+{\rho}_{k}=\frac {Cov\left({Z}_{t},{Z}_{t-h} \right)}{\sqrt{Var\left({Z}_{t},{Z}_{t-h} \right)}} =\frac{Cov\left({Z}_{t},{Z}_{t-h} \right)}{Var\left({Z}_{t} \right)} =\frac{{\gamma}_{k}}{{\gamma}_{0}}
+$$
+
+Temos então:
+
+- ${\rho}_{0}=1$
+
+- $-1\leq {\rho}_{l} \leq 1$
+
+Um conjunto de autocorrelações, $\left\{\rho_{h}\right\}$, é chamado de **função de autocorrelação de $Z_{t}$**. Para uma dada amostra, $\left\{Z_{t}\right\}_{t=1}^{T}$, suponha que $\overline{Z}$ é a média amostral. Então, a autocorrelação amostral de primeira ordem de $Z_{t}$ é:
+
+$$
+{\hat{\rho}}_{1}=\frac{\sum _{t=2}^{T}{\left({Z}_{t}-\overline{Z}\right) \left({Z}_{t-1}-\overline{Z}\right)}}{\sum_{t=1}^{T}{{\left({Z}_{t}-\overline{Z}\right)}^{2}}}
+$$
+
+que é um estimador consistente de ${\rho}_{1}$. Em geral, a autocorrelação amostral de *h-ésima* ordem de $Z_{t}$ pode ser definida como:
+
+$$
+{\hat{\rho}}_{h}=\frac{\sum_{t=h+1}^{T}{\left({Z}_{t}-\overline{Z}\right) \left({Z}_{t-h}-\overline{Z} \right)}}{\sum_{t=1}^{T}{{\left({Z}_{t}-\overline{Z}\right)}^{2}}} 
+$$
+para $0\leq h \leq T-1$. 
+
+Por exemplo, suponha que você está avaliando uma série temporal qualquer e quer visualizar como as defasagens da série podem impactar seu valor atual (ou seja, se $Z_{t}$ é relacionado com $Z_{t-h}$ para $k\ge1$). A função de autocorrelação pode ser usada para obter tal informação.
+
+Num primeiro momento, visualize os dados da série para 10 lags (defasagens). Observe que os lagss se tornam novas colunas e na medida que elas aumentam, incrementa-se as linhas sem observações.
+
+```{r, echo=FALSE, tidy=TRUE, results='asis', warning = FALSE}
+from = as.Date("1974-01-01")
+to = as.Date("1989-12-31")
+days = seq.Date(from=from,to=to,by="days")
+timeseries = as.zoo((arima.sim(list(order = c(3,0,0), ar = c(0.5,0.15,0.05)), n = 10000)))
+lags = Lag(timeseries, k=1:10)
+final = round(zoo::cbind.zoo(timeseries,lags), 4)
+colnames(final) = c("atual", "lag1", "lag2", "lag3", "lag4", "lag5",
+                    "lag6", "lag7", "lag8", "lag9", "lag10")
+DT::datatable(final[1:10,], rownames = FALSE, options = list(columnDefs = list(list(className = 'dt-center', targets="_all")), dom = 't'))
+       
+```
+
+
+Apesar da simples correlação entre os dados nos ajudar a identificar defasagens que poderíam contribuir para o comportamento da série em $t$, precisamos fazer uso de testes estatísticos que verifiquem a significância da relação entre o valor atual e suas lags. Neste sentido, a função de autocorrelação tem grande importância. 
+
+Abaixo, um exemplo de **função de autocorrelação**. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes. Neste documento, apresentaremos o teste que é realizado.
+
+
+```{r, echo=FALSE, tidy=TRUE, results='asis', warning = FALSE, fig.align='center', fig.height=7}
+# Calcular a autocorrelação 
+acf = stats::acf(timeseries, na.action = na.pass, plot = FALSE, lag.max = 15)
+
+# Gráfico da função de autocorrelação. 
+plot(acf, main = "", ylab = "", xlab = "Lags")
+title("Função de Autocorrelação (FAC)", adj = 0.5, line = 1)
+
+```
 
 - O correlograma é uma das principais ferramentas de análise exploratória em séries temporais, pois indica como cada valor em um dado instante de tempo $t$ se relaciona com os valores em $t+1, t+2,...,t+j$
 
 
----
+Para um dado $k$, os resultados da **Função de Autocorrelação** podem ser testados usando um teste que verifique se:
 
-##  Tratamento dos dados
-
-- **Tamanho do intervalo amostral**
-
-    - A periodicidade só é detectada se for maior que o intervalo amostral
-
-
-- **Estacionariedade:**
-
-    - 1$^a$ ordem - média constante ao longo de todo o período
-    
-    - 2$^a$ ordem - variância constante ao longo de todo o período
+$$
+\begin{aligned}
+&& H_{0}: \rho_{h}=0 \\
+&& H_{1}: \rho_{h}\neq 0
+\end{aligned}
+$$
 
 
-- **Como estabilizar uma série ?**
-
-    - Diferenças sucessivas 
-    $$\Delta Z_t = Z_t - Z_{t-1}$$
-
-    - Logaritmo dos dados - Estabilizar a variância 
-    $$\Delta log Z_t = log Z_t - log Z_{t-1}$$
-  
-    - Transformações Box-Cox
-  
-
-- **Observações perdidas (*missing*) ou irregulares**
-
-    - interpolação, etc.
-  
-
-- **Outliers**
-
-    - exclusão ou tratamento
-
-
-- **Registros curtos** - CUIDADO!
-
----
 
 ## Componentes de uma Série Temporal 
 
-- Tendência
+- A ST pode ser desmembrável em componentes *sistemáticas* (apontam movimentos regulares) e *não sistemáticas* (apontam movimentos irregulares). 
 
-- Sazonalidade
+São elas: 
 
-- Ciclo
+- Componentes Sistemáticas
 
-- Aleatório
+    - Tendência
 
+    - Sazonalidade
 
----
+    - Ciclo
 
-## Estacionariedade
+- Componentes Não Sistemáticas
 
-- A média e a variância se mantêm constante durante o tempo
+    - Aleatória ou Ruído Branco
 
-![](~/Documentos/cursos_ecologicos_2019/figuras/estacionaria2.png){width=1270px}
+- As análises exploratórias de ST buscam isolar e interpretar as componentes. Tais componentes podem atuar de maneira isolada ou inter-relacionadas.
 
-
-### Porque a Estacionariedade é Importante ?
-
-- Existem técnicas analíticas de séries temporais que dependem da estacionariedade da série para
-funcionarem
-
-- Se a série não é estacionária, pode-se aplicar algum tipo de transformação
-
-Como saber ?
-
-- Visualmente
-
-    - Decomposição
-    
-
-- Testes Estatísticos (ex: Dickey-Fuller)
-
----
 
 ## Tendência
 
-- É o efeito de longo prazo na média;
+- É a indicadora da direção global dos dados (ou movimento geral da variável), do percurso traçado e de sua linha contínua;
 
-- Aumento ou redução a longo prazo...
+- É o efeito de longo prazo na média. Pode ser o aumento ou redução a longo prazo...
 
 ![](~/Documentos/cursos_ecologicos_2019/figuras/tendencia1.png){width=1270px}
 
----
+## Ciclo
+
+- Os ciclos são oscilações (proximadamente regulares) em torno da tendência. Podem dever-se a fenômenos naturais, socioculturais ou econômicos, como variações climáticas (ex: excesso ou falta de chuva pode produzir ciclos agrícolas)
+
+- Variações que apesar de periódicas não são associadas automaticamente a nenhuma medida do calendário;
+
+- Aumento ou redução de frequência sem intervalos fixos.
+
+Ex: Ciclos Econômicos e Ciclos de epidemias.
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+library(ggfortify)
+library(tseries)
+library(forecast)
+library(fpp2)
+
+ts.plot(lynx, ylab = "Number of lynx trapped",main="Number of lynx trapped in the McKenzie river in Canada (1821-1934)")
+
+```
 
 ## Sazonalidade
 
-- Efeitos ligados à variações periódicas (semanal,
-mensal, anual, etc.);
+- São cilcos de curto prazo (não maiores que um ano), em torno da tendência;
+
+- Costumam se referir a eventos ligados a estação do ano, vinculados ao calendário e geralemnte repetidos a cada doze meses.
+
+- Efeitos ligados à variações periódicas (semanal, mensal, anual, etc.);
 
 - Padrões que ocorrem em intervalos fixos.
 
@@ -278,8 +378,10 @@ ts.plot(AirPassengers, ylab = "Passenger numbers (1000's)",main="Air Passenger n
 
 ```
 
+- A diferença entre os ciclos, propriamente ditos, e a sazonalidade, é o período de avaliação (curto e longo);
 
----
+- A semelhança entre ambos, é que definem oscilações relativamente regulares em torno da tendência.
+
 
 ### Como detectar a sazonalidade ?
 
@@ -291,277 +393,409 @@ ts.plot(AirPassengers, ylab = "Passenger numbers (1000's)",main="Air Passenger n
     - decomposição
     
     
-- Testes Estatísticos (ex: Kruskall-Wallis)
+- Muito raramente por testes Estatísticos (ex: Kruskall-Wallis)
 
+## Termo Aleatório ou Ruído Branco
+
+- Conceitualmente, a componente aleatória é uma mistura de pertubações bruscas, irregulares e esporádicas nos movimentos das séries que tipificam os fenômenos. Na realidade é resultante dos efeitos de múltiplas causas.
+
+- Exemplos típicos de eventos aleatórios:
+
+      - Secas
+      - Enchentes 
+      - Terremotos
+      - Epidemias
+      - Crise política
+      - Conflitos Socioeconomicos
+      
+      
+## Composição dos Modelos de uma ST
+
+- A série pode ser descrita como sendo a soma dos componentes (tendência, sazonalidade, ciclicidade e termo aleatório).
+
+### Modelo Aditivo
+
+$$Z_t = T_t + S_t + C_t + a_t$$ 
+
+sendo $t = 1,2, ..., N$
+
+- Essa composição de modelo sugere que a variação sazonal parece constante, não muda quando da série temporal aumenta.
+
+### Modelo Multiplicativo 
+
+$$Z_t = T_t . S_t . a_t$$
+
+- Essa composição de modelo sugere que a sazonalidade varia em conjunto com a tendência (aumenta de amplitude quando aumenta a tendência), que pode ser transformado em aditivo usando $log$.
+
+
+
+$$log(Z_t) = log(T_t . S_t . a_t) = log(T_t) + log(S_t) + log(a_t)$$
+
+![](~/Documentos/cursos_ecologicos_2019/figuras/composicao.png)
+
+[Comomposição dos modelos em Séries Temporais](https://anomaly.io/seasonal-trend-decomposition-in-r/index.html)
+
+## Decomposição de um ST 
+
+![](~/Documentos/cursos_ecologicos_2019/figuras/decomposicao.png)
+
+[Decomposição em Séries Temporais: Método Cássico (decompose) vs stl](https://anomaly.io/seasonal-trend-decomposition-in-r/index.html)
+
+
+## Prática no R
+
+### A função *ts* é a mais utilizada no pacote R.
+
+- ***data***: um vetor ou matriz com dados para a série
+
+- ***start***: tempo da primeira observação
+
+- ***end***: tempo da última observação
+
+- ***frequency***: quantidade de observações por unidade de tempo, podendo representar: Anual = 1, Trimestral = 4, Mensal = 12 e Semanal = 52
 
 ---
 
-## Ciclo
+### Simulando uma Série Temporal
 
-- Variações que apesar de periódicas não são associadas automaticamente a nenhuma medida temporal;
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+library(forecast)
+library(ggplot2)
+library(urca)
+library(lmtest)
+library(seasonal)
+library(seasonalview)
 
-- Aumento ou redução de frequência sem intervalos fixos.
+# Uma serie temporal normalmente distribuida
+myts = rnorm(60)
+myts = ts(myts,start = c(2012,1), end=c(2016,12), frequency=12)
+plot(myts)
 
-Ex: Ciclos Econômicos e Ciclos de epidemias.
+```
 
 
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+### Importando uma tabela em formato de Série Temporal
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+# Para escolher o diretório
+# tempts = read.csv(file.choose(), sep=",",header = F) 
+
+tempts = read.csv("~/Documentos/cursos_ecologicos_2019/dados/exemplo.csv", sep=",",header = F) 
+tempts = ts(tempts[2],start = 1884, end=1939, frequency=1)
+class(tempts)
+plot(tempts)
+
+```
+
+### Utilizando um banco de dados real em uma análise de Série Temporal
+
+- Incidência de dengue nas Filipinas, 2008 - 2016
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+setwd("~/Documentos/cursos_ecologicos_2019/dados")
+dengue_original=read.csv("denguecases2.csv")
+library(DT)
+datatable(dengue_original)
+
+```
+\
+Colocando em formato de Série temporal utilizando a biblioteca *ts* do R.
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+# Convertendo os dados para o formato de Séries Temporais
+# A frequency=12 foi especificado pois queremos mostrar dos dados mensais
+# dengue_original=read.csv("denguecases2.csv")
+denguecasests=ts(dengue_original$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
+plot(denguecasests, ylab="Casos de Dengue", xlab="Tempo")
+
+```
+
+
+Verificando e testando a autocorrelação dos casos de dengue.
+
+$$
+\begin{aligned}
+&& H_{0}: \rho_{h}=0 \\
+&& H_{1}: \rho_{h}\neq 0
+\end{aligned}
+$$
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+acf(denguecasests, lag.max=20, main="Dados Original")
+Box.test(denguecasests, lag=20, type="Ljung-Box")
+```
+
+Através do gráfico e do teste do ACF, é possível verificar que os a incidência de dengue é altamente correlacionada ao longo do tempo.
+
+
+
+- Fazendo uma análise descritiva da série temporal.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+max(denguecasests)
+min(denguecasests)
+mean(denguecasests)
+median(denguecasests)
+summary(denguecasests)
+length(denguecasests)
+start(denguecasests)
+end(denguecasests)
+frequency(denguecasests)
+
+```
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+hist(denguecasests)
+
+```
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+boxplot(denguecasests)
+
+```
+
+
+Mudando a janela de tempo da série temporal. Observando apenas os dados de Jan 2010 até Dez de 2012.
+
+```{r, echo=T, warning=FALSE, echo =F, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+
+denguecasests2 <- window(denguecasests, start=c(2010,1),end=c(2012,12),frequency=12)
+plot(denguecasests2, ylab="Casos de Dengue", xlab="Tempo")
+
+```
+
+Decompondo a ST dos casos de dengue via o método clássico **decompose**
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+plot(decompose(denguecasests))
+
+```
+
+Decompondo a ST dos casos de dengue via **STL (Seasonal and Trend decomposition using Loess)**
+
+- É mais robusta, é mais sensível a vários tipos de sazonalidade e lida melhor com os *outliers*.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+plot(stl(denguecasests, s.window="periodic"))
+
+```
+
+[STL: A seasonal-trend decomposition procedure based on loess](https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/stl-a-seasonal-trend-decomposition-procedure-based-on-loess.pdf)
+
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+decom_dengue <- decompose(denguecasests)
+plot(decom_dengue)
+Trend <- decom_dengue$trend
+Seasonal <- decom_dengue$seasonal
+Random <- decom_dengue$random
+ts.plot(cbind(Trend, Trend * Seasonal), lty = 1:2)
+# library(ggfortify)
+# autoplot(decompose(denguecasests))
+
+```
+
+Refazendo o sinal original da ST através das componentes.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+recomposed_dengue = Trend+Seasonal+Random
+
+par(mfrow=c(1,2))
+plot(denguecasests, ylab="Incidência Dengue", main="Original")
+plot(as.ts(recomposed_dengue), ylab="Incidência Dengue", main="Recomposta")
+
+```
+
+Em algumas ST não é fácil avaliar suas componentes de maneira visual, ou seja, de maneira gráfica. Para podemos avaliar melhor precisamos utilizar alguns testes estatísticos que possíbilitem tal avaliação. 
+
+Outra forma através do ggplot
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
 
 library(ggfortify)
-library(tseries)
-library(forecast)
-library(fpp2)
+autoplot(denguecasests)
+autoplot(decompose(denguecasests))
 
-ts.plot(lynx, ylab = "Number of lynx trapped",main="Number of lynx trapped in the McKenzie river in Canada (1821-1934)")
+```
+
+### Avaliando a Estacionariedade da ST
+
+Segundo o teste de ***Dickey-Fuller***:
+
+$H_{0}$: A ST não é Estacionária
+
+$H_{1}$: A ST é Estacionária
+
+Alguns exemplos:
+
+![](~/Documentos/cursos_ecologicos_2019/figuras/estacionaria1.png){out.width = "100%"}
+
+
+
+Testando a estacionariedade da série dos casos de dengue: 
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+library(tseries)
+adf.test(denguecasests)
+
+```
+
+Como *p-valor = 0,5442*, não rejeitamos a hipótese nula, ou seja, não há indícios da ST ser estacionária.
+
+### Avaliando a tendência em uma ST
+
+Cosntruindo uma reta baseado no modelo de regressão linear smples para verificar tendência da incidência da dengue.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+plot(denguecasests, main = "Incidência de Dengue 20080 and 2016")
+abline(reg=lm(denguecasests ~ time(denguecasests)), col = "red")## plotting the trend line of linear regression
 
 ```
 
 ---
 
-- A série pode ser descrita como sendo a soma dos componentes:
-tendência, sazonalidade, ciclicidade e termo aleatório.
+Cosntruindo uma curva suavizada baseada na função *lowess* para verificar tendência da incidência da dengue.
 
-$$Z_t = T_t + S_t + C_t + a_t$$ 
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+plot(denguecasests, ylab="Casos de Dengue", xlab="Tempo") 
+library(Kendall)
+lines(lowess(time(denguecasests),denguecasests),lwd=3, col=2)
 
-sendo $t = 1,2, ..., N$
+```
 
-- Se a sazonalidade varia em conjunto com a tendência (aumenta de
-amplitude quando aumenta a tendência), o modelo melhor é multiplicativo, que pode ser transformado em aditivo usando $log$.
 
-$$Z_t = T_t . S_t . \varepsilon_t$$
+Uma outra forma de mostrar a tendência da ST, fazendo a média anual. Observe que a curva se parece um pouco com a curva do *loess* porém menos suave.
 
-$$log(Z_t) = log(T_t) + log(S_t) + log(\varepsilon_t)$$
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+plot(aggregate(denguecasests, FUN=mean))
+
+```
+
+
+
+### Avaliando a Sazonalidade da ST
+
+De maneira visual podemos utilizar algumas técnicas gráficas, tais como:
+
+
+**Boxplot**
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+boxplot(denguecasests ~ cycle(denguecasests))  
+
+```
+
+
+**Monthplot**
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+monthplot(denguecasests) 
+# ggsubseriesplot(denguecasests)  
+
+```
 
 ---
 
-## Transformações
+**Seasonplot**
 
-- As vezes os dados precisam ser transformados para a utilização de determinados métodos/modelos;
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+seasonplot(denguecasests)  
 
-- O objetivo é tornar os modelos mais simples, no caso das ST o objetivo seria melhorar as previsões;
-
-- As transformações devem ser feitas exclusivamente para aplicação do modelo, e não como uma;
-técnica de analise dos dados em si.
-
----
-
-Alguns exemplos de transfomação dos dados em ST:
-
-- **Utilização de funções:** Logarítmicas, Potências, Exponenciais, ou  transformação *Box-Cox*
-
-- **Diferenciação:** Series não estacionárias, objetivo é transformar a série em estacionária (ex: log)
-
-- **Médias Móveis:** suavização: reduz outliers e reduz efeitos sazonais
+```
 
 
-Para mostrar o resultado dessas transformações, temos:
 
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%"}
+Outrs possibilidades de fazer utilizando a biblioteca ggplot
 
-par(mfrow=c(3,2))
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+ggsubseriesplot(denguecasests)  # monthplot
+ggseasonplot(denguecasests)  # seasonplot
+ggseasonplot(denguecasests, polar = T)
+
+```
+
+Segundo o teste de ***Kruskall-Wallis***:
+
+$H_{0}$: Não existe diferença entre os períodos, ou seja, a série não apresenta sazonalidade
+
+$H_{1}$: Existe diferença em pelo menos um período em relação aos demais, ou seja, há indícios da ST apresentar sazonalidade
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+kruskal.test(denguecasests ~ cycle(denguecasests))  
+
+```
+
+Neste caso, podemos dizer que existe indícios da da série apresentar períodos que são maiores ou menores que outros.
+
+
+## Transformação 
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+par(mfrow=c(2,2))
 
 #serie original
-plot(AirPassengers, ylab="Passageiros", main="Original")
+plot(denguecasests, ylab="Casos", main="Original")
 
 #lambda = 0, logaritmica 
-t1 = BoxCox(AirPassengers,lambda =0 )
-plot(t1, ylab="Passageiros", main="Lambda = 0, Logaritmica")
-
-#lambda = 0.34 
-t2 = BoxCox(AirPassengers,lambda =.1 )
-plot(t2, ylab="Passageiros", main="Lambda = 0.34")
+t1 = BoxCox(denguecasests,lambda =0 )
+plot(t1, ylab="Casos", main="Lambda = 0, Logarítmica")
 
 #gera labda automático
-lbd = BoxCox.lambda(AirPassengers)
+lbd = BoxCox.lambda(denguecasests)
 # print(lbd)
-t3 = BoxCox(AirPassengers,lambda =lbd )
-plot(t3, ylab="Passageiros", main="Labda Automático")
+t3 = BoxCox(denguecasests,lambda =lbd )
+plot(t3, ylab="Casos", main="Labda Automático")
 
 #diferenciacao 
-t4 = diff(AirPassengers)
-plot(t4, ylab="Passageiros", main="Diferenciacao")
-
-
-```
-
----
-
-- Removendo as componentes $T$ e $S$, supõe-se que sobra ?
-
-    - Ruído branco;
-    
-        - cada $\varepsilon_t$ é "determinado" pelo $\varepsilon_{t-1}$ - **modelo AR**
-        
-        - a variância de $\varepsilon_t$ é "determinada" por $\varepsilon_{t-1}$ - **modelo MA**
-
----
-
-## Tendência e sazonalidade
-
-- **Estimar a tendência ou a sazonalidade:**
-
-    - ajustar polinômio, curva exponencial ou reta (paramétrico);
-    
-    - suavizar (filtros - não paramétricos);
-    
-    - diferenciar.
-
-- **Diferenças:**
-
-    - pode-se diferenciar tantas vezes quanto necessário até estabilizar (não + que duas diferenças);
-    
-    - para sazonalidade usa-se diferenciação com período igual ao da sazonalidade.
-    
-    $$\Delta_{s} Z_t = Z_t - Z_{t-s}$$ 
-    
-    sendo $s$ é o período da sazonalidade.
-    
-- A série pode ser descrita como sendo a soma dos componentes:
-tendência, sazonalidade, ciclicidade e termo aleatório.
-
-$$Z_t = T_t + S_t + C_t + a_t$$ 
-
-sendo $t = 1,2, ..., N$
-
-- Se a sazonalidade varia em conjunto com a tendência (aumenta de
-amplitude quando aumenta a tendência), o modelo melhor é multiplicativo, que pode ser transformado em aditivo usando $log$.
-
-$$Z_t = T_t . S_t . \varepsilon_t$$
-
-$$log(Z_t) = log(T_t) + log(S_t) + log(\varepsilon_t)$$
-
-
-- Removendo as componentes $T$ e $S$, supõe-se que sobra ?
-
-    - Ruído branco;
-    
-        - cada $\varepsilon_t$ é "determinado" pelo $\varepsilon_{t-1}$ - **modelo AR**
-        
-        - a variância de $\varepsilon_t$ é "determinada" por $\varepsilon_{t-1}$ - **modelo MA**
-
-
-- **Estimar a tendência ou a sazonalidade:**
-
-    - ajustar polinômio, curva exponencial ou reta (paramétrico);
-    
-    - suavizar (filtros - não paramétricos);
-    
-    - diferenciar.
-
-- **Diferenças:**
-
-    - pode-se diferenciar tantas vezes quanto necessário até estabilizar (não + que duas diferenças);
-    
-    - para sazonalidade usa-se diferenciação com período igual ao da sazonalidade.
-    
-    $$\Delta_{s} Z_t = Z_t - Z_{t-s}$$ 
-    
-    sendo $s$ é o período da sazonalidade.
-    
----
-
-## Alisamentos - Médias móveis
-
-- Processo de Transformação - "Suavização da Série"
-
-- Remoção de outliers
-
-- Identificação de tendências
-
-- Simples e Exponencial
-
-**Ex:** Médias Móveis - ordem 5
-
-![](~/Documentos/cursos_ecologicos_2019/figuras/mediamovel2019.png){width=1270px}
-
-### Utilizando a ST mensal referente as mortes por Doenças Pulmonares no Reino Unido (1974–1979), temos:
-
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-# par(mfrow=c(2,2))
-
-# plot(fdeaths, main="ST original")
-
-#calculando a media movel com ordem 5
-fdeaths2 = ma(fdeaths, order = 5 )
-# plot(fdeaths2, main="Média Móvel ordem = 5")
-
-#novamente, ordem 12
-fdeaths3 = ma(fdeaths,order=12)
-# plot(fdeaths3, main="Média Móvel ordem = 12")
-
-#Função do pacote forecast que é utilizado para suavização e limpeza de outliers
-fdeaths4 = tsclean(fdeaths)
-# plot(fdeaths4, main="Suavização e Limpeza de uma ST")
-
-#comparando 
-plot(fdeaths, lwd=1.5)
-lines(fdeaths2, lwd=1.5, col="red")
-lines(fdeaths3, lwd=1.5, col="blue")
-lines(fdeaths4, lwd=1.5, col="green")
-
-#legenda
-legend("topright",legend=c("Original","MA 5","MA 12","tsclean"), col = c("black","red","blue","green"), lty=1:2, cex=1)
-
+t4 = diff(denguecasests)
+plot(t4, ylab="Casos", main="Diferenciação")
 
 ```
 
-***tsclean***: Função do pacote *forecast* que é utilizado para suavização e limpesa de outliers 
+## Exercícios Propostos
+
+Utilizando os bancos: ldeaths (do próprio R) e *denguecases2.csv*, nesse último supondo alguma janela de tempo mensal com 6 anos, e faça: 
+
+i) Uma análise exploratórias dos dados em formato ST;
+
+ii) Decomponha a ST;
+
+iii) Através de análises gráficas e/ou testes estatísticos, avalie e verifique a existencia de cada componente.
 
 
-### Para Tendência
 
-- A tendência no instante $t$ será estimada usando $l$ observações ao redor de $t$.
-    
-    $$T_t = F(Z_t)$$ $$t_t = \dfrac{1}{2k+1} \sum_{j=-k}^{k}Z_{t+j}$$, ordem $2k+1$
+## Material on line sobre Séries Temporais
 
+**Time Series Task View:**
 
-- o tamanho da janela é empírico
+https://cran.r-project.org/web/views/TimeSeries.html
 
-- perde-se k observações nos extremos da série
+**Blog, Ebook and Forecast Documentation by Rob Hyndman:**
 
-- o tamanho da janela é empírico
+https://otexts.org/fpp2/intro.html
 
-- perde-se k observações nos extremos da série
+**Stackoverflow Community:**
 
-- quando o dado apresenta sazonalidade utiliza-se um alisamento média móvel de ordem $s$ (o período da sazonalidade)
-
-- não pode ser usado para previsão
+https://stackoverflow.com/questions
 
 
-### Para Sazonalidade
-
-- Suponha uma série mensal já livre de tendência e com sazonalidade igual a 12 meses
-    
-    $$S_j = \frac{\bar{Y}_{.j}}{\bar{Y}}$$
-    
-  Sendo:
-        
-  - $S_j$, a sazonalidade, 
-    
-  - $\bar{Y}_{.j}$, a média de cada mês $j$ 
-    
-  - $\bar{Y}$, a média das médias dos meses $j$
-
----
-
-## Alisamentos - Lowess
-
-![](~/Documentos/cursos_ecologicos_2019/figuras/LOESS2.png){width=470px}
+## Bibliografia sugerida
 
 
-![](~/Documentos/cursos_ecologicos_2019/figuras/LOESS1.png){width=670px}
+FERREIRA, Pedro Guilherme Costa. Análise de Séries Temporais em R: curso introdutório. 2018.
 
+METCALFE, Andrew V.; COWPERTWAIT, Paul SP. Introductory time series with R. Springer-Verlag New York, 2009.
 
-### Locally Weighted Sum of Square (Lowess)
+MORETTIN, Pedro A.; TOLOI, Clélia M.C. Análise de Séries Temporais: Modelos Lineares Univariados. Bluscher - ABE - Projeto Fisher. Edição 3, 2018.
 
-- É uma regressão linear local ponderada
-    
-- A largura da janela é indicado por uma fração dos dados que varia de 0 a 1
-
-    - Exemplo: largura 0,1 significa que a janela tem largura que equivale a 10% do eixo horizontal 
-        
-    - Quanto maior o tamanho da janela, maior o alisamento e vice-versa
-
-
----
+WOODWARD, Wayne A.; GRAY, Henry L.; ELLIOTT, Alan C. Applied time series analysis with R. CRC press, 2017.
 

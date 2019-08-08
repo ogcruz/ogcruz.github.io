@@ -1,336 +1,178 @@
+# Transformações
 
-#  Análise Exploratória de uma Séries Temporal 
+- As vezes os dados precisam ser transformados para a utilização de determinados métodos/modelos;
+
+- O objetivo é tornar os modelos mais simples, no caso das ST o objetivo seria melhorar as previsões;
+
+- As transformações devem ser feitas exclusivamente para aplicação do modelo, e não como uma técnica de analise dos dados em si.
 
 
-## Análise Exploratória
+### Alguns exemplos de transfomação dos dados em ST:
 
-### A função *ts* é a mais utilizada no pacote R.
+- **Utilização de funções:** Logarítmicas, Potências, Exponenciais, ou  transformação *Box-Cox*
 
-- ***data***: um vetor ou matriz com dados para a série
+- **Diferenciação:** Series não estacionárias, objetivo é transformar a série em estacionária (ex: log), estabilizando a média.
 
-- ***start***: tempo da primeira observação
+- **Box-Cox:** Estabiliza a variância.
 
-- ***end***: tempo da última observação
+- **Médias Móveis:** Permite a suavização dos dados da ST. Reduz outliers e os efeitos sazonais
 
-- ***frequency***: quantidade de observações por unidade de tempo, podendo representar: Anual = 1, Trimestral = 4, Mensal = 12 e Semanal = 52
+- **Outras técnicas mais avançadas de suavização:** Kernel, Loess, Splines e *Generalized Additive Model* (GAM)
 
----
 
-### Criando uma Série Temporal
+Para mostrar o resultado dessas transformações, iremos mostrar algumas técnicas.
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
+
+### Transformações Box-Cox, Digferenciação e Logarítmica
+
+- Box and Cox (1964) propuseram uma transformação na variável da ST $Z_t$, que depende do parâmetro $\lambda$ da seguinte forma:
+
+
+$$ Z_{t}(\lambda) = \left\{ \begin{array}{rc} \frac{Z_t^{\lambda} - 1}{\lambda}, &\mbox{se} \quad \lambda \neq 0, \\  ln(Z_t) , &\mbox{se} \quad \lambda = 0. \end{array}\right.$$
+
+Se o valor de $\lambda$ é igual a zero, a transformação logarítmica da sequência inicial é realizada, no caso em que o valor de lambda difere de zero, a transformação é por lei exponencial. Quando $\lambda$ é igual a 1, a série é analisada em sua escala original, enquanto o caso $\lambda = 1/2$ corresponde à transformação transformação da raiz quadrada. Para que a transformação seja aplicável, a série deve ser estritamente positiva.
+
+Ex: Utilizando os dados do dataset Air Passengers, temos:
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%"}
+
 library(forecast)
-library(ggplot2)
-library(urca)
-library(lmtest)
-library(seasonal)
-library(seasonalview)
 
-# Uma serie temporal normalmente distribuida
-myts = rnorm(60)
-myts = ts(myts,start = c(2012,1), end=c(2016,12), frequency=12)
-plot(myts)
+par(mfrow=c(3,2))
 
-```
+# Série original
+plot(AirPassengers, ylab="Passageiros", main="Original")
 
----
+# Lambda = 0, Logaritmica 
+t1 = BoxCox(AirPassengers,lambda =0 )
+plot(t1, ylab="Passageiros", main="Lambda = 0, Logaritmica")
 
-### Importando uma tabela em formato de Série Temporal
+# Lambda = 0.34 
+t2 = BoxCox(AirPassengers,lambda =.1 )
+plot(t2, ylab="Passageiros", main="Lambda = 0.34")
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-# Para escolher o diretório
-# tempts = read.csv(file.choose(), sep=",",header = F) 
-
-tempts = read.csv("~/Documentos/cursos_ecologicos_2019/dados/importar.csv", sep=",",header = F) 
-tempts = ts(tempts[2],start = 1884, end=1939, frequency=1)
-class(tempts)
-plot(tempts)
-
-```
-
----
-
-### Utilizando um banco de dados real em uma análise de Série Temporal
-
-- Incidência de dengue nas Filipinas, 2008 - 2016
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-
-setwd("~/Documentos/cursos_ecologicos_2019/dados")
-dengue_original=read.csv("denguecases.csv")
-library(DT)
-# datatable(dengue_original, filter="top", options = list(pageLength = 5, scrollX=T))
-# Como é possível observar, a incidência por dengue além de estar por mês e ano, caracterizando uma série temporal, ela está desagregada por regiões também. Se quisermos fazer uma análise com o país como um todo, precisamos agregar os dados das regiões por mês e ano.
-denguecases=aggregate(Dengue_Cases~Month+Year,dengue_original,sum)
-
-```
-
-
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-datatable(denguecases, filter="top", options = list(pageLength = 5, scrollX=T))
-
-```
-\
-Colocando em formato de Série temporal utilizando a biblioteca *ts* do R.
-
----
-
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-#Convertendo os dados para o formato de Séries Temporais
-#A frequency=12 foi especificado pois queremos mostrar dos dados mensais
-denguecasests=ts(denguecases$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
-plot(denguecasests, ylab="Casos de Dengue", xlab="Tempo")
-
-```
-
-Fazendo uma análise descritiva da série temporal.
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-max(denguecasests)
-min(denguecasests)
-mean(denguecasests)
-median(denguecasests)
-summary(denguecasests)
-length(denguecasests)
-start(denguecasests)
-end(denguecasests)
-frequency(denguecasests)
-
-```
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-hist(denguecasests)
-
-```
-
----
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-boxplot(denguecasests)
-
-```
-
----
-
-Mudando a janela de tempo da série temporal. Observando apenas os dados de Jan 2010 até Dez de 2012.
-
-```{r, echo=T, warning=FALSE, echo =F, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-
-denguecasests2 <- window(denguecasests, start=c(2010,1),end=c(2012,12),frequency=12)
-plot(denguecasests2, ylab="Casos de Dengue", xlab="Tempo")
-
-```
-
----
-
-Uma outra forma de mostrar a śerie temporal na íntegra.
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-autoplot(denguecasests)
-
-```
-
----
-
-## Decompondo a Série Temporal
-
-Existem várias técnicas de decomposição de séries temporais. São as principais delas:
-
-- **Clássica:** Geralmente utilizada quando a frequencia da  ST é mensal ou trimestral;
-
-- **X-13ARIMA-SEATS:** Similar a clássica, porém com algumas melhorias;
-
-- **STL (Seasonal and Trend decomposition using Loess):** É mais robusta, é mais sensível a vários tipos de sazonalidade e lida melhor com os *outliers*.
-
-Algumas Referências: 
-
-[Seasonal Adjustment by X-13ARIMA-SEATS in R](https://cran.r-project.org/web/packages/seasonal/vignettes/seas.pdf)
-
-[STL: A seasonal-trend decomposition procedure based on loess](https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/stl-a-seasonal-trend-decomposition-procedure-based-on-loess.pdf)
-
-
----
-
-**Decomposição Clássica**
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-library(ggfortify)
-# Decomposição da Série Temporal
-autoplot(decompose(denguecasests))
-
-```
-
-Em algumas ST não é fácil avaliar suas componentes de maneira visual, ou seja, de maneira gráfica. Para podemos avaliar melhor precisamos utilizar alguns testes estatísticos que possíbilitem tal avaliação. 
-
----
-
-**Decomposição X-13ARIMA-SEATS**
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-# Decomposição da Série Temporal
-autoplot(seas(denguecasests))
-
-```
-
----
-
-**Decomposição STL**
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-autoplot(mstl(denguecasests))
-
-```
-
----
-
-### Avaliando a Estacionariedade da ST
-
-Segundo o teste de ***Dickey-Fuller***:
-
-$H_{0}$: A ST não é Estacionária
-
-$H_{1}$: A ST é Estacionária
-
-Alguns exemplos:
-
-```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/estacionaria1.png"))
-```
-
----
-
-Fazendo o teste em nossa ST: 
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-library(tseries)
-adf.test(denguecases$Dengue_Cases)
-
-```
-
-Como *p-valor = 0,5442*, não rejeitamos a hipótese nula, ou seja, não há indícios da ST ser estacionária.
-
-### Avaliando a tendência em uma ST
-
-Cosntruindo uma reta baseado no modelo de regressão linear smples para verificar tendência da incidência da dengue.
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-plot(denguecasests, main = "Incidência de Dengue 20080 and 2016")
-abline(reg=lm(denguecasests ~ time(denguecasests)), col = "red")## plotting the trend line of linear regression
-
-```
-
----
-
-Cosntruindo uma curva suavizada baseada na função *lowess* para verificar tendência da incidência da dengue.
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-plot(denguecasests, ylab="Casos de Dengue", xlab="Tempo") 
-library(Kendall)
-lines(lowess(time(denguecasests),denguecasests),lwd=3, col=2)
-
-```
-
-
----
-
-Uma outra forma de mostrar a tendência da ST, fazendo a média anual. Observe que a curva se parece um pouco com a curva do *loess* porém menos suave.
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-plot(aggregate(denguecasests, FUN=mean))
-
-```
-
----
-
-
-### Avaliando a Sazonalidade da ST
-
-De maneira visual podemos utilizar algumas técnicas gráficas, tais como:
-
-
-**Boxplot**
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-boxplot(denguecasests ~ cycle(denguecasests))  
-
-```
-
-
-**Monthplot**
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-
-# monthplot(denguecasests)  ou
-ggsubseriesplot(denguecasests)  
-
-```
-
----
-
-**Seasonplot**
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-ggseasonplot(denguecasests)  
-
-```
-
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-ggseasonplot(denguecasests, polar = T)
-
-```
-
-
----
-
-Segundo o teste de ***Kruskall-Wallis***:
-
-$H_{0}$: Não existe diferença entre os períodos, ou seja, a série não apresenta sazonalidade
-
-$H_{1}$: Existe diferença em pelo menos um período em relação aos demais, ou seja, há indícios da ST apresentar sazonalidade
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "70%", fig.align = "center"}
-kruskal.test(denguecasests ~ cycle(denguecasests))  
-
-```
-
-Neste caso, podemos dizer que existe indícios da da série apresentar períodos que são maiores ou menores que outros.
-
----
-
-## Transformação 
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-par(mfrow=c(2,2))
-
-#serie original
-plot(denguecasests, ylab="Casos", main="Original")
-
-#lambda = 0, logaritmica 
-t1 = BoxCox(denguecasests,lambda =0 )
-plot(t1, ylab="Casos", main="Lambda = 0, Logarítmica")
-
-#gera labda automático
-lbd = BoxCox.lambda(denguecasests)
+# Gera labda automático
+lbd = BoxCox.lambda(AirPassengers)
 # print(lbd)
-t3 = BoxCox(denguecasests,lambda =lbd )
-plot(t3, ylab="Casos", main="Labda Automático")
+t3 = BoxCox(AirPassengers,lambda =lbd )
+plot(t3, ylab="Passageiros", main="Labda Automático")
 
-#diferenciacao 
-t4 = diff(denguecasests)
-plot(t4, ylab="Casos", main="Diferenciação")
+# Diferenciacao 
+t4 = diff(AirPassengers)
+plot(t4, ylab="Passageiros", main="Diferenciacao")
+
+# Logaritmo 
+t5 = log(AirPassengers)
+plot(t5, ylab="Passageiros", main="Log")
+
 
 ```
 
----
+## Métodos de Alisamento ou Suavização
+
+- Uma função é suave se contı́nua e derivável em todos os pontos.
+
+- Utiliza-se a expressão Funções de Suavização para definir funções que aplicadas sobre um conjunto numérico retornam outro conjunto cujos valores tendem à média, local ou global.
+
+- Utiliza-se funções de suavização quando se supõe que o fenômeno é de fato suave, e as observações apresentam variabilidade aleatória pouco relevante.
+
+- Também são utilizadas quando se deseja modelar a estrutura geral o fenômeno, desconsiderando cada ocorência isolada.
+
+### Algumas funções de suavização
+
+1) **Médias móveis**
+
+2) **Kernel density:** estimativa de densidade de probabilidade – equivale à
+uma média ponderada.
+
+3) **Loess:** locally weighted scatterplot smoothing – estende a mesma idéia, mas os valores entram em uma regressao ponderada (não apenas média, ou seja, inclui uma inclinação)
+
+4) **Splines:** cúbica, p-splines, thin plate
+
+Todas essas funções podem ser uni ou multi-dimensionais
+
+
+![](~/Documentos/cursos_ecologicos_2019/figuras/LOESS1.png){width=670px}
+
+
+### Médias móveis
+
+Considere a ST estacionária e localmente constante, composta de seu nível e mais um ruído aleatório.
+
+$$Z_t = \mu_t + a_t$$, $t = 1,2,...,N$
+
+ http://www.portalaction.com.br/series-temporais/31-medias-moveis-simples-mms
+
+Sendo 
+      
+    - Processo de Transformação - "Suavização da Série"
+    
+    - Remoção de outliers
+    
+    - Identificação de tendências
+    
+    - Simples e Exponencial
+    
+    **Ex:** Médias Móveis - ordem 5
+
+![](~/Documentos/cursos_ecologicos_2019/figuras/mediamovel2019.png){width=1270px}
+    
+    
+- Utilizando a ST mensal referente as mortes por Doenças Pulmonares no Reino Unido (1974–1979), temos:
+    
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+    # Calculando a media movel com ordem 5
+    fdeaths2 = ma(fdeaths, order = 5 )
+    
+    # Calculando a media movel com ordem 12
+    fdeaths3 = ma(fdeaths,order=12)
+    
+    # Comparando 
+    plot(fdeaths, lwd=1.5) 
+    lines(fdeaths2, lwd=1.5, col="red")
+    lines(fdeaths3, lwd=1.5, col="blue")
+   
+    #legenda
+    legend("topright",legend=c("Original","MA 5","MA 12"), col = c("black","red","blue"), lty=1:2, cex=1)
+    
+    
+```
+    
+ 
+
+    
+
+
+
+## Alisamentos - Lowess
+      
+![](~/Documentos/cursos_ecologicos_2019/figuras/LOESS2.png){width=470px}
+    
+    
+
+    
+    
+### Locally Weighted Sum of Square (Lowess)
+    
+    - É uma regressão linear local ponderada
+    
+    - A largura da janela é indicado por uma fração dos dados que varia de 0 a 1
+    
+    - Exemplo: largura 0,1 significa que a janela tem largura que equivale a 10% do eixo horizontal 
+    
+    - Quanto maior o tamanho da janela, maior o alisamento e vice-versa
+    
+
+## Prática no R
+
 
 ## Médias Móveis
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+setwd("~/Documentos/cursos_ecologicos_2019/dados")
+dengue_original=read.csv("denguecases2.csv")
+denguecasests=ts(dengue_original$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
 
 par(mfrow=c(2,2))
 plot(denguecasests, main="ST original")
@@ -405,3 +247,11 @@ shapiro.test(prev$residuals)
 - Como o *p-valor = 0.1656* para o tete de Ljung-Box, podemos dizer que não existe evidências de que exista autocorrelação entre as incidências de dengue no período de estudo. 
 
 - Também podemos verificar que o pressuposto de noralidade não pode sr aceito, pois *p-valor = 0.01275 do teste de shapiro-wilk.
+
+## Bibliografia sugerida
+
+Hastie, T.; Tibshirani, R. Generalised Additive Models. Chapman & Hall, 1990.
+
+Wood, S.N. Generalized Additive Models: An Introduction with R. Chapman & Hall/CRC Texts in Statistical Science Series, 2006.
+
+Faraway, J.J. Extending the Linear Model with R. Chapman & Hall/CRC Texts in Statistical Science Series, 2006.
