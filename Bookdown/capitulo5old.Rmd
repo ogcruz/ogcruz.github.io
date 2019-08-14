@@ -1,0 +1,500 @@
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE}
+
+library(knitr)
+library(pander)
+library(forecast)
+library(ggplot2)
+
+# Preparando o banco de incidencia de dengue
+dengue_original=read.csv("~/Documentos/cursos_ecologicos_2019/dados/denguecases.csv")
+denguecases=aggregate(Dengue_Cases~Month+Year,dengue_original,sum)
+denguecasests=ts(denguecases$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
+
+# Set so that long lines in R will be wrapped:
+opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
+
+```
+
+
+
+# Análises Preditivas - Parte II
+
+
+## Suavização Exponencial 
+
+- A suavização exponencial é uma técnica utilizada para suavizar dados de séries temporais usando um função de janela exponencial. 
+  
+- Enquanto na média móvel simples as observações passadas são ponderadas igualmente, as funções exponenciais são usadas para atribuir pesos exponencialmente decrescentes ao longo do tempo. 
+
+- É um procedimento de fácil aplicação para fazer alguma determinação com base em suposições anteriores do usuário, como a sazonalidade. 
+
+
+
+$$s_t = \alpha x_t + (1-\alpha) s_{t-1}, t > 0$$
+
+### Principio básico:
+
+- As observações passadas possuem pesos;
+
+- Quanto mais recentes as observações, maiores seus pesos para as previsões;
+
+- Utiliza médias que reduzem quanto mais distantes são as observações;
+
+- O parâmetro **$\alpha$** determina o índice de redução: valor entre 0 e 1
+
+    - Próximo de 0: observações antigas tem maior peso
+    
+    - Próximo de 1: observações recentes tem mais peso
+    
+| Intervalo |  Peso |
+|:---------:|:-----:|
+|   $t-1$   |  0,5  |
+|   $t-2$   |  0,2  |
+|   $t-3$   |  0,07 |
+|   $t-4$   |  0,01 |
+|   $t-5$   | 0,005 |
+
+---
+
+### Holt-Winters Sazonal
+
+- O método de Holt-Winters foi sugerido por Holt (1957) e Winters (1960), que trabalharam no *School of Industrial Administration em Carnegie Institute of Technology*.
+
+- Inclui captura de sazonalidade
+
+- Também ideal para tendência
+
+- **Aditivo**: para variação sazonal constante
+
+- **Multiplicativo**: variação sazonal não constante na série
+
+
+```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/HoltWinters.png")
+
+```
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+# Aditivo - variação sazonal constante
+mdl1 = hw(denguecasests,seasonal = "additive", h=16)
+autoplot(mdl1) + 
+geom_hline(yintercept=range(0), color='black', size=0.5)
+# geom_hline(yintercept=mean(denguecasests), color="red")
+
+# Multiplicativo - Variação sazonal não constante na série
+mdl2 = hw(denguecasests,seasonal = "multiplicative", h=16)
+autoplot(mdl2) + geom_hline(yintercept=range(0), color='black', size=0.5)
+
+# Comparar os modelos
+plot(mdl1, main='Comparação Aditivo vs Multiplicativo')
+lines(mdl2$mean, col="red")
+abline(h=0, color='gray', size=1)
+legend("topleft", legend=c("Adirtivo", "Multiplicativo"),
+       col=c("blue", "red"), lty=1:2, cex=0.8)
+
+```
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+#comparando textual
+meses   <- seq(from=as.Date("2017-01-01"), to=as.Date("2018-4-30"), by="month")
+Aditivo <- mdl1$mean
+Multiplicativo <- mdl2$mean
+tab <- data.frame(meses, Aditivo, Multiplicativo)
+kable(tab)
+
+```
+
+---
+
+## Análise dos Resíduos
+
+### Pressupostos para Previsão
+
+- $E(e_i) = 0$
+    
+- Variância $\sigma^2$ constante (homocedasticidade);
+
+- $e_i \sim N(0, \sigma^2)$
+    
+- Não devem estar relacionados (autocorrelação) - $e_i \neq e_j$, são independentes
+
+- Se existe autocorrelação, existe informação nos resíduos que deveria ser utilizada na previsão
+
+---
+
+### Comparando o ACF de ambos os modelos
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+par(mfrow=c(1,3))
+acf(denguecasests, lag.max=20, main="Dados Original")
+acf(mdl1$residuals, lag.max=20, main="Modelo Aditivo")
+acf(mdl2$residuals, lag.max=20, main="Modelo Multiplicativo")
+
+```
+
+---
+
+### Executando o teste Ljung-Box 
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+# Dados Originais
+Box.test(denguecasests, lag=20, type="Ljung-Box")
+# Modelo Aditivo
+Box.test(mdl1$residuals, lag=20, type="Ljung-Box")
+# Modelo Multiplicativo
+Box.test(mdl2$residuals, lag=20, type="Ljung-Box")
+
+```
+
+---
+
+### Distribuição dos Resíduos no tempo 
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+par(mfrow=c(1,2))
+plot.ts(mdl1$residuals, main="Modelo Aditivo")
+abline(h=0, col="red", lty = 3)
+plot.ts(mdl2$residuals, main="Modelo Multiplicativo")
+abline(h=0, col="red", lty = 3)
+
+```
+
+---
+
+### Normalidade dos Resíduos 
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+par(mfrow=c(1,2))
+hist(mdl1$residuals, main="Modelo Aditivo")
+abline(v=0, col="darkred", lty = 2)
+hist(mdl2$residuals, main="Modelo Multiplicativo")
+abline(v=0, col="darkred", lty = 2)
+
+# Teste de Shapiro-Wilk
+shapiro.test(mdl1$residuals)
+shapiro.test(mdl2$residuals)
+
+```
+
+
+---
+
+## ARIMA
+
+
+### Arima não sazonal
+
+- Robusto: Pode ser usado em praticamente qualquer tipo de ST
+
+- Dados estáveis, com poucos outliers
+
+- Requer dados estacionários: pode ser transformada usando diferenciação: remove tendências
+
+- Subtrai a observação do período atual do período anterior
+
+- A diferenciação pode ser feita 1x: diferenciação de primeira ordem
+
+- Ou pode ser necessário uma segunda vez: diferenciação de segunda ordem (mais raro)
+
+
+Termos:
+
+```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
+knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/ARIMA.png")
+```
+
+
+- **AR – Autoregressivo**: avalia a relação entre os períodos (lags): autocorrelação. Extrai essa influência;
+
+- **I – Integrated**: Aplica a diferenciação, se necessária;
+
+- **MA – Moving Average**: Avalia erros entre períodos e extrai estes erros (não tem relação com MA usados para suavização de st);
+
+Exemplos:
+
+| Parâmetro | Descrição                                                                                         |
+|-----------|---------------------------------------------------------------------------------------------------|
+| $p = 1$   | Significa que uma determinada observação pode ser explicada pela observação prévia + erro         |
+| $p = 2$   | Significa que uma determinada observação pode ser explicada por duas observações prévias + erro   |
+| $d = 0$   | Significa que não é aplica diferenciação                                                          |
+| $d = 1$   | Significa que será aplicada diferenciação de primeira ordem                                       |
+| $d = 2$   | Significa que será aplicada diferenciação de segunda ordem                                        |
+| $q = 1$   | Significa que uma determinada observação pode ser explicada pelo erro da observação prévia        |
+| $q = 2$   | Significa que uma determinada observação pode ser explicada pelo erro de duas observações prévias |
+
+
+
+|         ARIMA         |                     Descrição                     |
+|:---------------------:|:-------------------------------------------------:|
+| AR(1) ou ARIMA(1,0,0) | Apenas elemento autoregressivo , de $1^{a}$ ordem |
+| AR(2) ou ARIMA(2,0,0) | Apenas elemento autoregressivo , de $2^{a}$ ordem |
+| MA(1) ou ARIMA(0,0,1) | Apenas Média Móvel                                |
+| ARMA(1,1)             | Autorregressão e média móvel de $1^{a}$ ordem     |
+  
+---
+
+
+### Arima Sazonal
+
+- Inclui, além (p,d,q), os elementos (P,D,Q), tornando o modelo mais complexo.
+
+
+
+### Como definir valores de p,d e q ?
+
+- **p**: ordem da parte autoregressiva - PACF
+
+- **d**: grau de diferenciação – Teste de Estacionariedade
+
+- **q**: ordem da média móvel - ACF
+
+
+Esse processo pode ser extremamente difícil, mesmo para experientes. E Nem sempre o modelo mais sugestivo é o melhor.
+
+
+---
+
+### Como saber qual o melhor modelo ?
+
+- Akaike Information Criteria (AIC e AICc)
+
+- Bayesian Information Criteria (BIC)
+
+- Outros
+
+Ou testar todas as combinações prováveis, mas isso pode ser um pouco demorado se for feito de forma manual.
+
+Sugestão: Usar a função ***auto.arima()***
+
+
+---
+
+### Auto.arima()
+
+- Testa diferentes combinações de p,d e r
+
+- Extremamente flexível
+
+- Mesmo intuindo um modelo, você pode usa-la para confirmar sua parametrização
+
+
+Alguns parâmetros importantes da função *auto.arima()*
+
+- stationary - If TRUE, restricts search to stationary models.
+
+- seasonal - If FALSE, restricts search to non-seasonal models
+
+- stepwise - If TRUE, will do stepwise selection (faster). Otherwise, it searches over all models. Non-stepwise selection can be very slow, especially for seasonal models.
+
+- trace - If TRUE, the list of ARIMA models considered will be reported.
+
+- approximation - If TRUE, estimation is via conditional sums of squares and the information criteria used for model selection are approximated. The final model is still computed using maximum likelihood estimation. Approximation should be used for long time series or a high seasonal period to avoid excessive computation times.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+# Utilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos
+modelo1 = auto.arima(denguecasests, trace = F)
+kable(summary(modelo1))
+
+# Neste modelo, será feito uma busca maior para uma solução "mais ótima"
+modelo2 = auto.arima(denguecasests, trace = F, stepwise = F, approximation = F)
+kable(summary(modelo2))
+
+```
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+# Estimando as previsões
+prev1 = forecast(modelo1, h=12)
+autoplot(prev1) + 
+geom_hline(yintercept=range(0), color='black', size=0.5)
+
+
+prev2 = forecast(modelo2, h=12)
+autoplot(prev2) + 
+geom_hline(yintercept=range(0), color='black', size=0.5)
+
+
+# Comparar os modelos
+plot(prev1, main='Comparação Modelo 1 vs Modelo 2')
+lines(prev2$mean, col="red", add=T)
+abline(h=0, color='gray', size=1)
+legend("topleft", legend=c("Adirtivo", "Multiplicativo"),
+       col=c("blue", "red"), lty=1:2, cex=0.8)
+
+```
+
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+#comparando textual
+meses   <- seq(from=as.Date("2017-01-01"), to=as.Date("2017-12-30"), by="month")
+Modelo_1 <- prev1$mean
+Modelo_2 <- prev2$mean
+tab <- data.frame(meses, Modelo_1, Modelo_2)
+kable(tab)
+
+```
+
+---
+
+### Comparando o ACF de ambos os modelos
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+par(mfrow=c(1,3))
+acf(denguecasests, lag.max=20, main="Dados Original")
+acf(modelo1$residuals, lag.max=20, main="Modelo 1")
+acf(modelo2$residuals, lag.max=20, main="Modelo 2")
+
+```
+
+---
+
+### Executando o teste Ljung-Box 
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+# Dados Originais
+Box.test(denguecasests, lag=20, type="Ljung-Box")
+# Modelo 1
+Box.test(modelo1$residuals, lag=20, type="Ljung-Box")
+# Modelo 2
+Box.test(modelo2$residuals, lag=20, type="Ljung-Box")
+
+```
+
+---
+
+### Distribuição dos Resíduos no tempo 
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+par(mfrow=c(1,2))
+plot.ts(modelo1$residuals, main="Modelo 1")
+abline(h=0, col="red", lty = 3)
+plot.ts(modelo2$residuals, main="Modelo 2")
+abline(h=0, col="red", lty = 3)
+
+```
+
+---
+
+### Normalidade dos Resíduos 
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+par(mfrow=c(1,2))
+hist(modelo1$residuals, main="Modelo 1")
+abline(v=0, col="darkred", lty = 2)
+hist(modelo2$residuals, main="Modelo 2")
+abline(v=0, col="darkred", lty = 2)
+
+# Teste de Shapiro-Wilk
+shapiro.test(modelo1$residuals)
+shapiro.test(modelo2$residuals)
+
+```
+
+---
+
+## Regressão com Séries Temporais
+
+### No R
+
+- **tslm - Time Serie Linear Model**:  Estima um modelo de regressão linear adaptado para séries temporais simples ou múltipla;
+
+-  Pode ser utilizado os componentes sazonalidade e tendência como variáveis independentes;
+
+\
+$y \sim trend$ 
+   \
+      $y \sim trend + season$
+      \
+       $y \sim trend + season + x_{1} + ... + x_{k}$
+
+---
+
+- Utilzando o baco de dados do R chamado Seatbelts
+
+É uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.
+
+
+|   Variáveis   |                          Descrição                          |
+|:-------------:|:-----------------------------------------------------------:|
+| DriversKilled | Motoristas de carro mortos                                  |
+| drivers       | Mesmo que UKDriverDeaths                                                       |
+| front         | Passageiros do banco da frente mortos ou gravemente feridos |
+| rear          | Passageiros do banco traseiro mortos ou gravemente feridos  |
+| kms           | Distância percorrida                                        |
+| PetroPrice    | Preço da gasolina                                           |
+| VanKilled     | Número de condutores de van (veículo leve de mercadorias)   |
+| law           | A lei estava em vigor naquele mês (1/0)                     |
+
+
+Harvey, A. C. and Durbin, J. (1986). The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. doi: 10.2307/2981553.
+
+
+### Distribuição da Série Múltipla
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+plot(Seatbelts)
+
+```
+
+### Ajustando os modelos
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+modelo1 = tslm(DriversKilled ~ trend, data=Seatbelts)
+modelo2 = tslm(DriversKilled ~ season, data=Seatbelts)
+modelo3 = tslm(DriversKilled ~ trend + season, data=Seatbelts)
+
+```
+
+### Fazendo o diagnóstico do modelo
+
+```{r, echo=TRUE, results='hide', warning=FALSE, message = FALSE, fig.align = "center"}
+
+CV(modelo1)
+CV(modelo2)
+CV(modelo3)
+
+```
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+
+#comparando textual
+m1 <- round(CV(modelo1),2) 
+m2 <- round(CV(modelo2),2) 
+m3 <- round(CV(modelo3),2) 
+tab <- data.frame(m1,m2,m3)
+kable(tab)
+
+```
+
+
+### Fazendo a previsão
+
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+
+r1 = forecast(modelo1,h=12)
+r2 = forecast(modelo2,h=12)
+r3 = forecast(modelo3,h=12)
+
+autoplot(r1, main="Modelo1 = Tendência")
+autoplot(r2, main="Modelo2 = Sazonalidade")
+autoplot(r3, main="Modelo2 = Tendência + Sazonalidade")
+
+
+plot(r1)
+lines(r2$mean, col="red")
+lines(r3$mean, col="darkgreen")
+legend("topright",legend=c("Tendência","Sazonalidade","Tendência + Sazonalidade"), col = c("blue","red","darkgreen"), lty=1:2, cex=0.8)
+
+```
+

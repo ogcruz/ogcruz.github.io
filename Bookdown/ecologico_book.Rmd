@@ -29,10 +29,10 @@ theme: cerulean
 
 ```
 
-<!-- ```{r child="capitulo2.Rmd", echo=FALSE} -->
+```{r child="capitulo2.Rmd", echo=FALSE}
 
 
-<!-- ``` -->
+```
 
 <!-- ```{r child="capitulo3.Rmd", echo=FALSE} -->
 

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#modelagem-em-series-temporais"><i class="fa fa-check"></i><b>1</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#arima"><i class="fa fa-check"></i><b>1.1</b> ARIMA</a><ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#modelo-autoregressivo-de-ordem-p"><i class="fa fa-check"></i><b>1.1.1</b> Modelo Autoregressivo de ordem <em>p</em></a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#modelo-de-medias-moveis-de-ordem-q"><i class="fa fa-check"></i><b>1.1.2</b> Modelo de Médias Móveis de ordem <em>q</em></a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#modelo-autorregressivo-de-medias-moveis-de-ordem-p-e-q"><i class="fa fa-check"></i><b>1.1.3</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em></a></li>
+<li class="chapter" data-level="1.1.4" data-path=""><a href="#modelos-arima-nao-sazonais"><i class="fa fa-check"></i><b>1.1.4</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+<li class="chapter" data-level="1.1.5" data-path=""><a href="#modelos-arima-sazonais-sarima"><i class="fa fa-check"></i><b>1.1.5</b> <strong>Modelos ARIMA sazonais (SARIMA)</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>1.2</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a><ul>
+<li class="chapter" data-level="1.2.1" data-path=""><a href="#roteiro-para-o-ajuste-do-modelo"><i class="fa fa-check"></i><b>1.2.1</b> Roteiro para o ajuste do modelo</a></li>
+<li class="chapter" data-level="1.2.2" data-path=""><a href="#auto.arima"><i class="fa fa-check"></i><b>1.2.2</b> Auto.arima()</a></li>
+<li class="chapter" data-level="1.2.3" data-path=""><a href="#comparando-o-acf-de-ambos-os-modelos"><i class="fa fa-check"></i><b>1.2.3</b> Comparando o ACF de ambos os modelos</a></li>
+<li class="chapter" data-level="1.2.4" data-path=""><a href="#executando-o-teste-ljung-box"><i class="fa fa-check"></i><b>1.2.4</b> Executando o teste Ljung-Box</a></li>
+<li class="chapter" data-level="1.2.5" data-path=""><a href="#distribuicao-dos-residuos-no-tempo"><i class="fa fa-check"></i><b>1.2.5</b> Distribuição dos Resíduos no tempo</a></li>
+<li class="chapter" data-level="1.2.6" data-path=""><a href="#normalidade-dos-residuos"><i class="fa fa-check"></i><b>1.2.6</b> Normalidade dos Resíduos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#o-problema"><i class="fa fa-check"></i><b>1.3</b> O problema !</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#gam-generalized-additive-models"><i class="fa fa-check"></i><b>1.4</b> GAM (generalized Additive Models)</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#por-que-nao-usar"><i class="fa fa-check"></i><b>1.5</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#gam-em-series-temporais"><i class="fa fa-check"></i><b>1.6</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="1.6.1" data-path=""><a href="#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>1.6.1</b> Exemplo de um modelo GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path=""><a href="#exercicios-propostos"><i class="fa fa-check"></i><b>1.7</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="1.8" data-path=""><a href="#bibliografia-sugerida"><i class="fa fa-check"></i><b>1.8</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="modelagem-em-series-temporais" class="section level1">
+<h1><span class="header-section-number"> 1</span> Modelagem em Séries Temporais</h1>
+<div id="arima" class="section level2">
+<h2><span class="header-section-number">1.1</span> ARIMA</h2>
+<p>Em estatística e econometria, particularmente em análise de séries temporais, um modelo auto-regressivo integrado de médias móveis (autoregressive integrated moving average ou <strong>ARIMA</strong>, na sigla em inglês) é uma generalização de um modelo auto-regressivo de médias móveis (<strong>ARMA</strong>). Ambos os modelos são ajustados aos dados da série temporal para entender melhor os dados ou para prever pontos futuros na série. Modelos ARIMA são aplicados em alguns casos em que os dados mostram evidências de não estacionariedade, em que um passo inicial de diferenciação (correspondente à parte “integrada” do modelo) pode ser aplicado uma ou mais vezes para eliminar a não estacionariedade.</p>
+<ul>
+<li>Colocar pressuposto de normalidade</li>
+</ul>
+<p>Temos então:</p>
+<ul>
+<li><p><strong>AR – Autoregressivo</strong>: avalia a relação entre os períodos (lags): autocorrelação, ou seja, indica que a variável evoluinte de interesse é regressada em seus próprios valores defasados, isto é, anteriores. Extrai essa influência;</p></li>
+<li><p><strong>I – Integrated</strong>: Aplica a diferenciação, se necessária, ou seja, indica que os valores de dados foram substituídos com a diferença entre seus valores e os valores anteriores e este processo diferenciador pode ter sido realizado mais de uma vez</p></li>
+<li><p><strong>MA – Moving Average</strong>: Indica que o erro de regressão é na verdade uma combinação linear dos termos de erro, cujos valores ocorreram contemporaneamente e em vários momentos no passado, ou seja, avalia erros entre períodos e extrai estes erros (não tem relação com MA usados para suavização da ST).</p></li>
+</ul>
+<div class="figure">
+<img src="/home/wagner/Documentos/cursos_ecologicos_2019/figuras/ARIMA.png" width="700" />
+
+</div>
+<ul>
+<li><p><strong>p</strong> é a ordem (número de defasagens) do modelo auto-regressivo;</p></li>
+<li><p><strong>d</strong> é o grau de diferenciação (o número de vezes em que os dados tiveram valores passados subtraídos);</p></li>
+<li><p><strong>q</strong> é a ordem do modelo de média móvel.</p></li>
+</ul>
+<p>Exemplos:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="10%" />
+<col width="89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p = 1\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pela observação prévia + erro</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p = 2\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada por duas observações prévias + erro</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d = 0\)</span></td>
+<td>Significa que não é aplica diferenciação</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d = 1\)</span></td>
+<td>Significa que será aplicada diferenciação de primeira ordem</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d = 2\)</span></td>
+<td>Significa que será aplicada diferenciação de segunda ordem</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q = 1\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pelo erro da observação prévia</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q = 2\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pelo erro de duas observações prévias</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">ARIMA</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">AR(1) ou ARIMA(1,0,0)</td>
+<td align="center">Apenas elemento autoregressivo , de <span class="math inline">\(1^{a}\)</span> ordem</td>
+</tr>
+<tr class="even">
+<td align="center">AR(2) ou ARIMA(2,0,0)</td>
+<td align="center">Apenas elemento autoregressivo , de <span class="math inline">\(2^{a}\)</span> ordem</td>
+</tr>
+<tr class="odd">
+<td align="center">MA(1) ou ARIMA(0,0,1)</td>
+<td align="center">Apenas Média Móvel</td>
+</tr>
+<tr class="even">
+<td align="center">ARMA(1,1)</td>
+<td align="center">Autorregressão e média móvel de <span class="math inline">\(1^{a}\)</span> ordem</td>
+</tr>
+</tbody>
+</table>
+<div id="modelo-autoregressivo-de-ordem-p" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Modelo Autoregressivo de ordem <em>p</em></h3>
+<ul>
+<li>Notação: AR(p) ou ARIMA(p,0,0)</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Processo</th>
+<th align="center">Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">AR(1)</td>
+<td align="center"><span class="math display">\[z_t = \phi_1 z_{t-1} + a_t\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">AR(2)</td>
+<td align="center"><span class="math display">\[z_t = \phi_1 z_{t-1} + \phi_2 z_{t-2} + a_t\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">AR(p)</td>
+<td align="center"><span class="math display">\[z_t = \phi_1 z_{t-1} + \phi_2 z_{t-2} + ... + \phi_p z_{t-p} + a_t\]</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>No caso AR(1) basta que <span class="math inline">\(|\phi_1| &lt; 1\)</span> para que o processo seja estacionário.</li>
+</ul>
+</div>
+<div id="modelo-de-medias-moveis-de-ordem-q" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Modelo de Médias Móveis de ordem <em>q</em></h3>
+<ul>
+<li>Notação: MA(q) ou ARIMA(0,0,q)</li>
+</ul>
+<p>O modelo pode ser escrito baseado nas defasagens (informações passadas) do ruído branco</p>
+<table style="width:97%;">
+<colgroup>
+<col width="12%" />
+<col width="84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Processo</th>
+<th align="center">Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">MA(1)</td>
+<td align="center"><span class="math display">\[z_t = a_t - \theta_1 a_{t-1}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">MA(2)</td>
+<td align="center"><span class="math display">\[z_t = a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">MA(q)</td>
+<td align="center"><span class="math display">\[z_t = a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}\]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="modelo-autorregressivo-de-medias-moveis-de-ordem-p-e-q" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em></h3>
+<ul>
+<li>Notação: ARMA(p,q) ou ARIMA(p,0,q)</li>
+</ul>
+<table style="width:97%;">
+<colgroup>
+<col width="12%" />
+<col width="84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Processo</th>
+<th align="center">Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">MA(1)</td>
+<td align="center"><span class="math display">\[z_t = \phi_1 z_{t-1} + a_t - \theta_1 a_{t-1}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">MA(2)</td>
+<td align="center"><span class="math display">\[z_t = \phi_1 z_{t-1} + \phi_2 z_{t-2} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">MA(q)</td>
+<td align="center"><span class="math display">\[z_t = \phi_1 z_{t-1} + \phi_2 z_{t-2} + ... + \phi_p z_{t-p} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}\]</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>No caso ARMA(1,1), o processo será estacionário se <span class="math inline">\(|\phi_1| &lt; 1\)</span> e <span class="math inline">\(|\theta_1| &lt; 1\)</span>, respectivamente.</li>
+</ul>
+</div>
+<div id="modelos-arima-nao-sazonais" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> <strong>Modelos ARIMA não sazonais</strong></h3>
+<p>São geralmente denotados como <span class="math inline">\(ARIMA(p,d,q)\)</span>, em que os parâmetros <strong>p,d,q</strong> são números inteiros não negativos.</p>
+<ul>
+<li><p>Robusto: Pode ser usado em praticamente qualquer tipo de ST</p></li>
+<li><p>Dados estáveis, com poucos outliers</p></li>
+<li><p>Requer dados estacionários: pode ser transformada usando diferenciação: remove tendências</p></li>
+<li><p>Subtrai a observação do período atual do período anterior</p></li>
+<li><p>A diferenciação pode ser feita 1x: diferenciação de primeira ordem</p></li>
+<li><p>Ou pode ser necessário uma segunda vez: diferenciação de segunda ordem (mais raro)</p></li>
+</ul>
+</div>
+<div id="modelos-arima-sazonais-sarima" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> <strong>Modelos ARIMA sazonais (SARIMA)</strong></h3>
+<p>São geralmente denotados como <span class="math inline">\(ARIMA(p,d,q)(P,D,Q)_{m}\)</span>, em que:</p>
+<ul>
+<li><p><strong>m</strong> se refere ao número de períodos em cada temporada;</p></li>
+<li><p><strong>P, D e Q</strong> se referem aos termos de auto-regressão, diferenciação e média móvel para a parte sazonal do modelo ARIMA.</p></li>
+</ul>
+</div>
+</div>
+<div id="funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf" class="section level2">
+<h2><span class="header-section-number">1.2</span> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</h2>
+<p>Uma outra ferramenta utilizada no processo de identificação do modelo é a <strong>Função de Autocorrelação Parcial(FACP)</strong>. Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-k} $ removendo o efeito das observações <span class="math inline">\(Z_{t-1}, Z_{t-2}, \dots , Z_{t-k+1}\)</span> e é denotada por <span class="math inline">\(\rho_{k}\)</span>, ou seja</p>
+<p><span class="math display">\[\rho_{kk} = Corr(X_t, X_{t-l}|X_{t-1}, X_{t-2},\dots,X_{t-k+1})\]</span></p>
+<div id="roteiro-para-o-ajuste-do-modelo" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Roteiro para o ajuste do modelo</h3>
+<ul>
+<li>Para a construção do modelo podemos seguir o seguinte roteiro no qual a escolha da estrutura do modelo é baseado nos próprios dados:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Identifica-se um modelo com base na análise de autocorrelações, autocorrelações parciais e outros critérios;</p></li>
+<li><p>Estima-se os parâmetros do modelo identificado;</p></li>
+<li><p>Verificar se o modelo ajustado é adequado aos dados através de uma análise de resíduos.</p></li>
+<li><p>Caso o modelo não seja adequado o roteiro é repetido, voltando à fase de identificação do modelo.</p></li>
+</ol>
+<ul>
+<li><p>Como definir valores de p,d e q ?</p></li>
+<li><p><strong>p</strong>: ordem da parte autoregressiva - PACF</p></li>
+<li><p><strong>d</strong>: grau de diferenciação – Teste de Estacionariedade</p></li>
+<li><p><strong>q</strong>: ordem da média móvel - ACF</p></li>
+<li><p>Esse processo pode ser extremamente difícil, mesmo para experientes. E Nem sempre o modelo mais sugestivo é o melhor.</p></li>
+<li><p>Existem vários critérios para identificação de um modelo, por isso, é possível identificar modelos diferentes dependendo do critério que foi escolhido para identificação.</p></li>
+<li><p>Como saber qual o melhor modelo ?</p></li>
+<li><p>Akaike Information Criteria (AIC e AICc)</p></li>
+</ul>
+<p><em>AIC = - 2ln(verossimilhança) + 2(k)</em></p>
+<p><em>AICc = AIC + </em></p>
+<p>Sabendo que, <span class="math inline">\(n\)</span> é o número de observações e <span class="math inline">\(k\)</span> número de parâmetros estimados pelo modelo.</p>
+<ul>
+<li>Bayesian Information Criteria (BIC)</li>
+</ul>
+<p><em>BIC = - 2ln(verossimilhança) + ln(n)k</em></p>
+<ul>
+<li><p>Outros</p></li>
+<li><p>Ou testar todas as combinações prováveis, mas isso pode ser um pouco demorado se for feito de forma manual.</p></li>
+<li><p>Sugestão: Usar a função <strong><em>auto.arima()</em></strong></p></li>
+</ul>
+<hr />
+</div>
+<div id="auto.arima" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Auto.arima()</h3>
+<ul>
+<li><p>Testa diferentes combinações de p,d e r</p></li>
+<li><p>Extremamente flexível</p></li>
+<li><p>Mesmo intuindo um modelo, você pode usa-la para confirmar sua parametrização</p></li>
+</ul>
+<p>Alguns parâmetros importantes da função <em>auto.arima()</em></p>
+<ul>
+<li><p>stationary - If TRUE, restricts search to stationary models.</p></li>
+<li><p>seasonal - If FALSE, restricts search to non-seasonal models</p></li>
+<li><p>stepwise - If TRUE, will do stepwise selection (faster). Otherwise, it searches over all models. Non-stepwise selection can be very slow, especially for seasonal models.</p></li>
+<li><p>trace - If TRUE, the list of ARIMA models considered will be reported.</p></li>
+<li><p>approximation - If TRUE, estimation is via conditional sums of squares and the information criteria used for model selection are approximated. The final model is still computed using maximum likelihood estimation. Approximation should be used for long time series or a high seasonal period to avoid excessive computation times.</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Utilizando trace = T, será possível verificar</span>
+<span class="co"># todo o processo de criação e teste dos modelos</span>
+<span class="co"># modelo1 = auto.arima(denguecasests, trace = F)</span>
+<span class="co"># kable(summary(modelo1))</span>
+
+<span class="co"># Neste modelo, será feito uma busca maior para uma</span>
+<span class="co"># solução &#39;mais ótima&#39; modelo2 =</span>
+<span class="co"># auto.arima(denguecasests, trace = F, stepwise =</span>
+<span class="co"># F, approximation = F) kable(summary(modelo2))</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimando as previsões prev1 = forecast(modelo1,</span>
+<span class="co"># h=12) autoplot(prev1) +</span>
+<span class="co"># geom_hline(yintercept=range(0), color=&#39;black&#39;,</span>
+<span class="co"># size=0.5) prev2 = forecast(modelo2, h=12)</span>
+<span class="co"># autoplot(prev2) + geom_hline(yintercept=range(0),</span>
+<span class="co"># color=&#39;black&#39;, size=0.5) # Comparar os modelos</span>
+<span class="co"># plot(prev1, main=&#39;Comparação Modelo 1 vs Modelo</span>
+<span class="co"># 2&#39;) lines(prev2$mean, col=&#39;red&#39;, add=T)</span>
+<span class="co"># abline(h=0, color=&#39;gray&#39;, size=1)</span>
+<span class="co"># legend(&#39;topleft&#39;, legend=c(&#39;Adirtivo&#39;,</span>
+<span class="co"># &#39;Multiplicativo&#39;), col=c(&#39;blue&#39;, &#39;red&#39;), lty=1:2,</span>
+<span class="co"># cex=0.8)</span></code></pre></div>
+<hr />
+</div>
+<div id="comparando-o-acf-de-ambos-os-modelos" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Comparando o ACF de ambos os modelos</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,3)) acf(denguecasests, lag.max=20,</span>
+<span class="co"># main=&#39;Dados Original&#39;) acf(modelo1$residuals,</span>
+<span class="co"># lag.max=20, main=&#39;Modelo 1&#39;)</span>
+<span class="co"># acf(modelo2$residuals, lag.max=20, main=&#39;Modelo</span>
+<span class="co"># 2&#39;)</span></code></pre></div>
+<hr />
+</div>
+<div id="executando-o-teste-ljung-box" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Executando o teste Ljung-Box</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Dados Originais Box.test(denguecasests, lag=20,</span>
+<span class="co"># type=&#39;Ljung-Box&#39;) # Modelo 1</span>
+<span class="co"># Box.test(modelo1$residuals, lag=20,</span>
+<span class="co"># type=&#39;Ljung-Box&#39;) # Modelo 2</span>
+<span class="co"># Box.test(modelo2$residuals, lag=20,</span>
+<span class="co"># type=&#39;Ljung-Box&#39;)</span></code></pre></div>
+<hr />
+</div>
+<div id="distribuicao-dos-residuos-no-tempo" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> Distribuição dos Resíduos no tempo</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,2)) plot.ts(modelo1$residuals,</span>
+<span class="co"># main=&#39;Modelo 1&#39;) abline(h=0, col=&#39;red&#39;, lty = 3)</span>
+<span class="co"># plot.ts(modelo2$residuals, main=&#39;Modelo 2&#39;)</span>
+<span class="co"># abline(h=0, col=&#39;red&#39;, lty = 3)</span></code></pre></div>
+<hr />
+</div>
+<div id="normalidade-dos-residuos" class="section level3">
+<h3><span class="header-section-number">1.2.6</span> Normalidade dos Resíduos</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,2)) hist(modelo1$residuals,</span>
+<span class="co"># main=&#39;Modelo 1&#39;) abline(v=0, col=&#39;darkred&#39;, lty =</span>
+<span class="co"># 2) hist(modelo2$residuals, main=&#39;Modelo 2&#39;)</span>
+<span class="co"># abline(v=0, col=&#39;darkred&#39;, lty = 2) # Teste de</span>
+<span class="co"># Shapiro-Wilk shapiro.test(modelo1$residuals)</span>
+<span class="co"># shapiro.test(modelo2$residuals)</span></code></pre></div>
+</div>
+</div>
+<div id="o-problema" class="section level2">
+<h2><span class="header-section-number">1.3</span> O problema !</h2>
+<p><strong>Como as variáveis se comportam relacionadas umas com as outras ?</strong></p>
+<ul>
+<li><p>Idade <span class="math inline">\(\longleftrightarrow\)</span> mortes por causas externas de 5 a 45 anos</p></li>
+<li><p>Renda <span class="math inline">\(\longleftrightarrow\)</span> doenças cardiovasculares</p></li>
+<li><p>Distância aos serviços de saúde <span class="math inline">\(\longleftrightarrow\)</span> mamografia</p></li>
+<li><p>Adesão ao tratamento do HIV <span class="math inline">\(\longleftrightarrow\)</span> desenvolvimento de resistência a vírus</p></li>
+</ul>
+<p><span class="math inline">\(\cdots\)</span></p>
+<ul>
+<li><p>Tempo <span class="math inline">\(\longleftrightarrow\)</span> doenças transmissíveis</p></li>
+<li><p>Espaço <span class="math inline">\(\longleftrightarrow\)</span> doenças transmitidas por vetores</p></li>
+</ul>
+</div>
+<div id="gam-generalized-additive-models" class="section level2">
+<h2><span class="header-section-number">1.4</span> GAM (generalized Additive Models)</h2>
+<ul>
+<li><p>Extensão do GLM, onde o preditor linear <span class="math inline">\(\eta\)</span> não é limitado para a regressão linear</p></li>
+<li><p>O modelo inclui qualquer função das covariáveis independentes (<span class="math inline">\(x_i\)</span>)</p></li>
+</ul>
+<p><span class="math display">\[\eta = \beta_0 + f_1(x_1) + f_2(x_2) + \ldots\]</span></p>
+<ul>
+<li><p><span class="math inline">\(f(x) \rightarrow\)</span> pode ser uma função não paramétrica, como <em>loess</em></p></li>
+<li><p>Quando usar ? Quando o efeito da covariável muda dependendo do seu valor</p></li>
+</ul>
+</div>
+<div id="por-que-nao-usar" class="section level2">
+<h2><span class="header-section-number">1.5</span> Por que não usar ?</h2>
+<ul>
+<li><p>Os modelos estatísticos visam explicar os dados observados, não simplesmente reproduzi-lo <span class="math inline">\(\rightarrow\)</span> <strong>overfitting</strong></p></li>
+<li><p>Modelos paramétricos em geral são melhores para estimar erros padrão ou intervalos de confiança</p></li>
+<li><p>Modelos paramétricos são mais eficientes, se corretamente especificados (menor número de observações)</p></li>
+</ul>
+</div>
+<div id="gam-em-series-temporais" class="section level2">
+<h2><span class="header-section-number">1.6</span> GAM em Séries Temporais</h2>
+<ul>
+<li><p>A idéia principal é modelar o efeito de covariáveis em alguns eventos de saúde ao longo do tempo</p></li>
+<li><p>Razões:</p>
+<ul>
+<li><p>Permitir a inclusão da dependência do tempo</p></li>
+<li><p>Relação não-linear</p></li>
+<li><p>Tendência e sazonalidade podem ser facilmente incorporadas</p></li>
+</ul></li>
+<li><p>Considerando a variável resposta uma contagem, as escolhas para as distribuições são:</p>
+<ul>
+<li><p>Poisson: <span class="math inline">\(\lambda\)</span> <span class="math inline">\(=\)</span> valores esperados e <span class="math inline">\(=\)</span> variância <span class="math inline">\(\rightarrow\)</span> superdispersão</p></li>
+<li><p>Quasipoisson: não é uma distribuição, mas uma maneira de relaxar suposição do modelo anterior e levar em consideração a superdispersão. (Não estima o AIC automaticamente).</p></li>
+<li><p>Negative Binomial: tem uma média <span class="math inline">\(\mu\)</span>, um parâmetro de escala <span class="math inline">\(\theta\)</span> e a variância como a função <span class="math inline">\(V(\mu)=\mu+\mu^2/\theta\)</span></p></li>
+<li><p>Modelos com inflação zero: modelos de mistura que combinam uma massa pontual a zero com uma distribuição de contagem como Poisson, geométrica ou binomial negativa</p></li>
+</ul></li>
+</ul>
+<div id="exemplo-de-um-modelo-gam" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Exemplo de um modelo GAM</h3>
+<p><span class="math display">\[\text{Lepto}(t) = \text{rain}(t-?) + \text{humidity}(t-?) + AR(t,t-1) + trend + seasonality + \varepsilon\]</span></p>
+<ul>
+<li><p>Tendência e Sazonalidade <span class="math inline">\(\to\)</span> função suavizadora</p></li>
+<li><p>Covariáveis <span class="math inline">\(\to\)</span> lag no tempo</p></li>
+<li><p>É possível incluir a variabilidade populacional em risco (<em>offset</em>)</p></li>
+</ul>
+</div>
+</div>
+<div id="exercicios-propostos" class="section level2">
+<h2><span class="header-section-number">1.7</span> Exercícios Propostos</h2>
+<ol style="list-style-type: decimal">
+<li>Utilzando o baco de dados do R chamado Seatbelts, que é baseado em uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Variáveis</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">DriversKilled</td>
+<td align="center">Motoristas de carro mortos</td>
+</tr>
+<tr class="even">
+<td align="center">drivers</td>
+<td align="center">Mesmo que UKDriverDeaths</td>
+</tr>
+<tr class="odd">
+<td align="center">front</td>
+<td align="center">Passageiros do banco da frente mortos ou gravemente feridos</td>
+</tr>
+<tr class="even">
+<td align="center">rear</td>
+<td align="center">Passageiros do banco traseiro mortos ou gravemente feridos</td>
+</tr>
+<tr class="odd">
+<td align="center">kms</td>
+<td align="center">Distância percorrida</td>
+</tr>
+<tr class="even">
+<td align="center">PetroPrice</td>
+<td align="center">Preço da gasolina</td>
+</tr>
+<tr class="odd">
+<td align="center">VanKilled</td>
+<td align="center">Número de condutores de van (veículo leve de mercadorias)</td>
+</tr>
+<tr class="even">
+<td align="center">law</td>
+<td align="center">A lei estava em vigor naquele mês (1/0)</td>
+</tr>
+</tbody>
+</table>
+<p>Pede-se:</p>
+<ol style="list-style-type: decimal">
+<li>Ajuste um modelo ARIMA com a variável de desfecho DriversKilled;</li>
+<li>Ajuste um modelo GAM utilizando a variável de desfecho DriversKilled e verifique quais variáveis estão mais associadas ao modelo.</li>
+</ol>
+</div>
+<div id="bibliografia-sugerida" class="section level2">
+<h2><span class="header-section-number">1.8</span> Bibliografia sugerida</h2>
+<p>Asteriou, D.; Hall, S.G. Applied econometrics. Macmillan International Higher Education, 2015.</p>
+<p>Harvey, A. C. and Durbin, J. The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. 1986.</p>
+<p>Webster, C.E.J. Time series properties of econometric models and their implied ARIMA representation. 1983.</p>
+<p>Brockwell, Peter J.; DAVIS, Richard A.; CALDER, Matthew V. Introduction to time series and forecasting. New York: springer, 2002.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
