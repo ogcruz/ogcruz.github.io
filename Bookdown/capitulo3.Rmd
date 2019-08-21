@@ -1,5 +1,7 @@
 # Transformações
 
+## Transformações e Suavisações
+
 - As vezes os dados precisam ser transformados para a utilização de determinados métodos/modelos;
 
 - O objetivo é tornar os modelos mais simples, no caso das ST o objetivo seria melhorar as previsões;
@@ -82,7 +84,7 @@ uma média ponderada.
 
 4) **Splines:** cúbica, p-splines, thin plate
 
-- Todas essas funções podem ser uni ou multi-dimensionais
+- Todas essas funções podem ser uni ou multi-dimensionais, existem ainda outras funções para suavizar
 
 
 <!-- ![](figuras/LOESS1.png){width=700px} -->
@@ -139,11 +141,11 @@ repare as 3 primeiras observações
 
 ![](figuras/mm_fig2.png){width=1270px}
 
-Serie com Media Móvel 3 , noque que o primeiro é ultimo valores da serie agora são **NA** 
+Serie com Media Móvel 3 , note que o primeiro é ultimo valores da serie agora são **NA** 
 
 ![](figuras/mm_fig3.png){width=1270px}
 
-Note que o valor para fevereiro e calculado a partir dos 3 primeiros valores
+Observe que o valor para fevereiro e calculado a partir dos 3 primeiros valores
 
     (16.87 + 15.08 + 15.07)/3 =  15.67
 
