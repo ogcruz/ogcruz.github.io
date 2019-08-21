@@ -34,10 +34,10 @@ theme: cerulean
 
 ```
 
-<!-- ```{r child="capitulo3.Rmd", echo=FALSE} -->
+```{r child="capitulo3.Rmd", echo=FALSE}
 
 
-<!-- ``` -->
+```
 
 <!-- ```{r child="capitulo4.Rmd", echo=FALSE} -->
 

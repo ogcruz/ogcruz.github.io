@@ -40,21 +40,21 @@ par(mfrow=c(3,2))
 # Série original
 plot(AirPassengers, ylab="Passageiros", main="Original")
 # Lambda = 0, Logaritmica 
-t1 = BoxCox(AirPassengers,lambda =0 )
+t1 <- BoxCox(AirPassengers,lambda =0 )
 plot(t1, ylab="Passageiros", main="Lambda = 0, Logaritmica")
 # Lambda = 0.34 
-t2 = BoxCox(AirPassengers,lambda =.1 )
+t2 <- BoxCox(AirPassengers,lambda =.1 )
 plot(t2, ylab="Passageiros", main="Lambda = 0.34")
 # Gera labda automático
-lbd = BoxCox.lambda(AirPassengers)
+lbd <- BoxCox.lambda(AirPassengers)
 # print(lbd)
-t3 = BoxCox(AirPassengers,lambda =lbd )
+t3 <- BoxCox(AirPassengers,lambda =lbd )
 plot(t3, ylab="Passageiros", main="Labda Automático")
 # Diferenciacao 
-t4 = diff(AirPassengers)
+t4 <- diff(AirPassengers)
 plot(t4, ylab="Passageiros", main="Diferenciacao")
 # Logaritmo 
-t5 = log(AirPassengers)
+t5 <- log(AirPassengers)
 plot(t5, ylab="Passageiros", main="Log")
 
 ```
@@ -71,19 +71,31 @@ plot(t5, ylab="Passageiros", main="Log")
 
 ### Algumas funções de suavização
 
-1) **Médias móveis:**
+Existem diversas funções de suavização no **R** dentre as principais destacamos:
 
-2) **Kernel density:** estimativa de densidade de probabilidade – equivale à
+1) **Médias móveis:** O métodos mais simples de suavização.
+
+2) **Kernel density:** Estimativa de densidade de probabilidade – equivale à
 uma média ponderada.
 
-3) **Loess:** locally weighted scatterplot smoothing – estende a mesma idéia, mas os valores entram em uma regressao ponderada (não apenas média, ou seja, inclui uma inclinação)
+3) **Loess/Lowess:** locally weighted scatterplot smoothing – estende a mesma idéia, mas os valores entram em uma regressao ponderada (não apenas média, ou seja, inclui uma inclinação)
 
 4) **Splines:** cúbica, p-splines, thin plate
 
 - Todas essas funções podem ser uni ou multi-dimensionais
 
 
-![](~/Documentos/cursos_ecologicos_2019/figuras/LOESS1.png){width=700px}
+<!-- ![](figuras/LOESS1.png){width=700px} -->
+```{r echo=FALSE}
+plot(BJsales.lead,main='Box & Jenkins exemplo - Vendas diarias')
+lines(forecast::ma(BJsales.lead,7),col=4,lwd=3)
+lines(lowess(BJsales.lead,f=0.2),col=2,lwd=2,lty=2)
+lines(ksmooth(time(BJsales.lead),BJsales.lead,bandwidth = 3),col=3,lwd=2,lty=2)
+legend("bottomright",legend=c("BJSales","Media Movel 7","Lowess f=0.2",'Kernel bwt=3'),
+       col = c("black","blue","red",'green'), lty=c(1,1,2,2), cex=1)
+
+
+```
 
 
 
@@ -105,26 +117,47 @@ $$M_t = \dfrac{Z_t+Z_{t-1}+...+Z_{t-h+1}}{h}$$
 
 - Desta forma, $M_t$ é uma estimativa do nível $\mu_t$ que não leva em consideração as observações mais antigas. Note que a cada período a observação mais antiga é substituída pela mais recente, calculando-se uma média nova.
 
-![](~/Documentos/cursos_ecologicos_2019/figuras/running-eps-converted-to.png){width=700px}
+<!-- #![](figuras/running-eps-converted-to.png){width=700px} -->
+
+```{r echo=FALSE}
+acidentes <- window(UKDriverDeaths,end=c(1972,12))/100
+options(digits = 4)
+plot(acidentes,ylab='')
+#acidentes
+lines(forecast::ma(acidentes,12),col=2,lty=1,lwd=2)
+lines(forecast::ma(acidentes,5),col=4,lty=2,lwd=2)
+legend("topleft",legend=c("Série","Media Movel 5","Media Movel 12"),
+       col = c("black",'blue','red'), lty=c(1,2,1), cex=1)
 
 
-![](~/Documentos/cursos_ecologicos_2019/figuras/mediamovel2019.png){width=1270px}
+```
 
 
-**Exemplo:** Utilizando a ST mensal referente as mortes por Doenças Pulmonares no Reino Unido (1974–1979), temos:
+Série original , vamos exemplificar o que acontece com quando se usa uma janela de 3 meses,
+repare as 3 primeiras observações
+
+
+![](figuras/mm_fig2.png){width=1270px}
+
+Serie com Media Móvel 3 , noque que o primeiro é ultimo valores da serie agora são **NA** 
+
+![](figuras/mm_fig3.png){width=1270px}
+
+Note que o valor para fevereiro e calculado a partir dos 3 primeiros valores
+
+    (16.87 + 15.08 + 15.07)/3 =  15.67
+
+
+
+**Exemplo:** Utilizando a ST mensal referente as mortes em estradas  Reino Unido (1969–1984), temos:
     
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-    # Calculando a media movel com ordem 5
-    fdeaths2 = ma(fdeaths, order = 5)
-    # Calculando a media movel com ordem 12
-    fdeaths3 = ma(fdeaths,order=12)
-    # Comparando 
-    plot(fdeaths, lwd=1.5) 
-    lines(fdeaths2, lwd=1.5, col="red")
-    lines(fdeaths3, lwd=1.5, col="blue")
-    #legenda
-    legend("topright",legend=c("Original","MA 5","MA 12"), col = c("black","red","blue"), lty=1:2, cex=1)
-    
+library(forecast)
+plot(UKDriverDeaths,ylab='')
+lines(ma(UKDriverDeaths,12),col=2,lty=1,lwd=2)
+lines(ma(UKDriverDeaths,5),col=4,lty=2,lwd=2)
+legend("topright",legend=c("Obitos","Media Movel 5","Media Movel 12"),
+       col = c("black",'blue','red'), lty=c(1,2,1), cex=1)
 ```
     
 ### Utilização das Médias Móveis  
@@ -151,24 +184,38 @@ O algoritmo:
 
 $$\hat{f_h}(x) = \dfrac{1}{Nh}\sum{K \left( \dfrac{x-x_i}{h}\right)}$$
 
-  - $h$ $\textrightarrow$ largura de banda
+  - $h$ $\rightarrow$ largura de banda
 
-  - $K$ $\textrightarrow$ função de suavização
+  - $K$ $\rightarrow$ função de suavização
 
 Kernel Gaussiano: $$k(x)=\dfrac{1}{\sqrt{2\pi}} exp(1/2 x^2)$$
 
 
 ### Diferentes Funções Kernel
 
-![](~/Documentos/cursos_ecologicos_2019/figuras/variosKernels-eps-converted-to.png){width=700px}
+![](figuras/variosKernels-eps-converted-to.png){width=700px}
 
+Vamos a uma demostração:
+
+```{r eval=FALSE}
+library(tcltk)
+demo("tkdensity")
+```
+
+ao chamar a função _demo()_ você vai ver um painel de controle como o abaixo
+![](figuras/tk_fig1.png)
+
+e uma gráfico de uma função **kernel** como abaixo. ultilise o controle deslisante mostrado pela seta e altere as opções.
+
+
+![](figuras/tk_fig2.png)
 
 - Série Temporal: Leptospirose *vs* Clima
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-setwd("~/Documentos/cursos_ecologicos_2019/dados")
-lepto <- read.csv2("leptoruido.csv", header=T)
-dia <-  read.table("climadia.dat", header=T)
+
+lepto <- read.csv2("dados/leptoruido.csv", header=T)
+dia <- read.table("dados/climadia.dat", header=T)
 
 library(lattice)
 library(car)
@@ -191,7 +238,7 @@ hist(lepto$totrain, breaks=seq(0,400,by=10),freq=F, col="darkgray", main = "Chuv
 lines(density(lepto$totrain , 4),col=2)
 lines(density(lepto$totrain , 12),col="blue")
 legend("topright", c("4","12"), title="BW", col=c(2,"blue"), lty=c(1,1))
-
+  
 hist(lepto$cases, breaks=seq(0,36,by=1),freq=F, col="darkgray", main = "Casos Leptospirose")
 lines(density(lepto$cases , 1),col=2)
 lines(density(lepto$cases , 2),col="green")
@@ -284,6 +331,16 @@ legend("topright",c("21 sem.","6 sem."),fill=c(2,1), title="Janela",bty="n")
    - Polinômio de grau 0 é a média móvel;
     
    - Se a janela for de 100% dos pontos = média.
+   
+Existem varias funções que  implementam o *Lowess* no R temos dois grupos que implementa uma função de suavização como por exemplo a _lowess()_ ou como modelo _loess()_ .
+
+
+```{r echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+plot(lepto$week, lepto$totrain,cex=.3, pch=19, col="gray35",ylab="Loess Chuva", xlab="Semana", main="Loess - Bandwidth e Grau do Polinômio")
+lines(lowess(lepto$totrain ~ lepto$week ,f = 0.75),col=4)
+lines(lowess(lepto$totrain ~ lepto$week ,f = 0.015),col=2)
+```
+
 
       
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
@@ -291,14 +348,15 @@ legend("topright",c("21 sem.","6 sem."),fill=c(2,1), title="Janela",bty="n")
 plot(lepto$week, lepto$totrain,cex=.3, pch=19, col="gray35",ylab="Loess Chuva", xlab="Semana", main="Loess - Bandwidth e Grau do Polinômio")
 lines(predict(loess(totrain ~ week , data=lepto,span = 0.75, degree = 2)),col=2)
 lines(predict(loess(totrain ~ week , data=lepto,span = 0.75, degree = 1)),col=2,lwd=2,lty=2)
-lines(predict(loess(totrain ~ week , data=lepto,span = 0.25, degree = 2)),col="darkblue")
-lines(predict(loess(totrain ~ week , data=lepto,span = 0.25, degree = 1)),col="darkblue",lwd=2,lty=2)
-legend("topright",c("75% - 2o.","75% - Linear (default)","25% - 2o.","25% - Linear"),lty=c(1,2,1,2), col=c(2,2,"darkblue","darkblue"), title="Janela e Grau",bty="n")
+lines(predict(loess(totrain ~ week , data=lepto,span = 0.05, degree = 2)),col="darkblue")
+lines(predict(loess(totrain ~ week , data=lepto,span = 0.05, degree = 1)),col="darkblue",lwd=2,lty=2)
+legend("topright",c("75% - 2o.","75% - Linear (default)","5% - 2o.","5% - Linear"),lty=c(1,2,1,2), col=c(2,2,"darkblue","darkblue"), title="Janela e Grau",bty="n")
 
 ```
     
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 # Loess – Span
+# lowess - f 
 plot(lepto$week, lepto$totrain,cex=.3, pch=19, col="gray35",ylab="Loess Chuva", xlab="Semana", main="Loess - Bandwidth")
 lines(predict(loess(totrain ~ week , data=lepto,span = 0.15, degree = 2)),col=1, lwd=1.5)
 lines(predict(loess(totrain ~ week , data=lepto,span = 0.05, degree = 2)),col=2, lwd=1.5)
@@ -316,6 +374,11 @@ lines(predict(loess(totrain ~ week , data=lepto2,span = 0.10, degree = 2)),col="
 legend("topright",c("  5% (21 sem.)","10% (41 sem.)","15% (61 sem.)"),col=c(2,"darkblue",1), lty=c(1,1,1),title="Janela",bty="n")
 
 ```
+
+```{r}
+
+```
+
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 # Loess – Outra forma, mas fica pouco suave
@@ -338,12 +401,12 @@ scatter.smooth(lepto$week, lepto$cases, span = .05, degree = 2, family =  "gauss
     
 ### Comparando
 
-![Nearest neighbor smoother](~/Documentos/cursos_ecologicos_2019/figuras/suaveEX1.png){width=700px}
+<!-- ![Nearest neighbor smoother](figuras/suaveEX1.png){width=700px} -->
     
-![Kernel average smoother](~/Documentos/cursos_ecologicos_2019/figuras/suaveEX2.png){width=7000px}
+![Kernel average smoother](figuras/suaveEX2.png){width=7000px}
 
 
-![Local linear regression](~/Documentos/cursos_ecologicos_2019/figuras/suaveEX3.png){width=7000px}
+![Local linear regression](figuras/suaveEX3.png){width=7000px}
 
 
 ## Splines
@@ -401,99 +464,108 @@ legend("topright",c("Sem CV","Com CV","df=10", "df=50", "df=2"),col=c(1,5,3,4,2)
 
 ```
 
-### Tipos de splines
+<!-- ### Tipos de splines -->
 
-- Cubic regression spline – polinômios de grau 3 ajustados aos
-intervalos dos dados definidos pelos nós distribuı́dos regularmente em
-todo o escopo dos dados. A base é a soma de nós mais 2, que
-correspondem ao inı́cio e fim da curva. Os polinômios são unidos de
-forma que a existir as 1 e 2 derivadas.
+<!-- - Cubic regression spline – polinômios de grau 3 ajustados aos -->
+<!-- intervalos dos dados definidos pelos nós distribuı́dos regularmente em -->
+<!-- todo o escopo dos dados. A base é a soma de nós mais 2, que -->
+<!-- correspondem ao inı́cio e fim da curva. Os polinômios são unidos de -->
+<!-- forma que a existir as 1 e 2 derivadas. -->
 
-- Cyclic cubic regression spline – força a função a ter o mesmo valor e
-mesmas derivadas no inı́cio e final. Interessante para séries de tempo
-com sazonalidade.
+<!-- - Cyclic cubic regression spline – força a função a ter o mesmo valor e -->
+<!-- mesmas derivadas no inı́cio e final. Interessante para séries de tempo -->
+<!-- com sazonalidade. -->
 
-- P-splines – Baseia-se na B-spline, na qual a função vai
-obrigatoriamente a zero em m+3 nós adjacentes. A p-spline se baseia
-nessa, porém aplica uma penalidade diferencial entre β’s adjacentes
-para controlar a “wiggliness”.
+<!-- - P-splines – Baseia-se na B-spline, na qual a função vai -->
+<!-- obrigatoriamente a zero em m+3 nós adjacentes. A p-spline se baseia -->
+<!-- nessa, porém aplica uma penalidade diferencial entre β’s adjacentes -->
+<!-- para controlar a “wiggliness”. -->
 
-- Thin plate – menor erro quadrático, menor número de parâmetros
-considerado o estimador ótimo. Facilmente adaptável para duas/três
-dimensões.
-Tensor Product – Semelhante ao Thin Plate, mas permite escalas
-
-
-| bs=  |    Descrição     | Vantagens                                                    | Desvantagens                                                 |
-| :--: | :--------------: | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| "tp" |    Thin Plate    | Suaviza múltiplas covariáveis. Não se altera com a rotação. Estimador ótimo. | Computacionalmente custoso. Não é invariante quanto à escala. |
-| "cr" | Cubic Regression | Computacionalmente barato. Parâmetros interpretáveis diretamente. | Só uma covariável. Baseado na escolha dos nós. Estimador não ótimo. |
-| "cc" |    Cyclic CRS    | Começo e fim = 's                                            | Idem.                                                        |
-| "ps" |    P-splines     | Qualquer combinação de base e ordem.                         | Nós em intervalos iguais. Penalidades difíceis de interpretar. Estimador não ótimo. |
+<!-- - Thin plate – menor erro quadrático, menor número de parâmetros -->
+<!-- considerado o estimador ótimo. Facilmente adaptável para duas/três -->
+<!-- dimensões. -->
+<!-- Tensor Product – Semelhante ao Thin Plate, mas permite escalas -->
 
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-### Tipos de splines
-library(mgcv)
-rain.tp <- gam(totrain ~ s(week,bs="tp"), data=lepto )
-rain.ps <- gam(totrain ~ s(week,bs="ps"), data=lepto ) #
-rain.cc <- gam(totrain ~ s(week,bs="cc"), data=lepto ) #
-rain.cr <- gam(totrain ~ s(week,bs="cr"), data=lepto ) #
-rain.ad <- gam(totrain ~ s(week,bs="ad"), data=lepto ) 
-
-ThinPlate  <- predict(rain.tp)  
-P.spline <- predict(rain.ps)  
-CubicRegression <- predict(rain.cr)  
-CyclicCR <- predict(rain.cc)  
-Adaptative <- predict(rain.ad) 
+<!-- | bs=  |    Descrição     | Vantagens                                                    | Desvantagens                                                 | -->
+<!-- | :--: | :--------------: | ------------------------------------------------------------ | ------------------------------------------------------------ | -->
+<!-- | "tp" |    Thin Plate    | Suaviza múltiplas covariáveis. Não se altera com a rotação. Estimador ótimo. | Computacionalmente custoso. Não é invariante quanto à escala. | -->
+<!-- | "cr" | Cubic Regression | Computacionalmente barato. Parâmetros interpretáveis diretamente. | Só uma covariável. Baseado na escolha dos nós. Estimador não ótimo. | -->
+<!-- | "cc" |    Cyclic CRS    | Começo e fim = 's                                            | Idem.                                                        | -->
+<!-- | "ps" |    P-splines     | Qualquer combinação de base e ordem.                         | Nós em intervalos iguais. Penalidades difíceis de interpretar. Estimador não ótimo. | -->
 
 
-xyplot(Adaptative +CyclicCR  + CubicRegression+P.spline + ThinPlate~ week,
- outer=TRUE, layout=c(1, 5), pch=19, cex=.2, ylab="",
- scales=list(x=list(at=seq(0,416,52),relation='same'), y=list(relation="same")), data=lepto)
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- ### Tipos de splines -->
+<!-- library(mgcv) -->
+<!-- rain.tp <- gam(totrain ~ s(week,bs="tp"), data=lepto ) -->
+<!-- rain.ps <- gam(totrain ~ s(week,bs="ps"), data=lepto ) # -->
+<!-- rain.cc <- gam(totrain ~ s(week,bs="cc"), data=lepto ) # -->
+<!-- rain.cr <- gam(totrain ~ s(week,bs="cr"), data=lepto ) # -->
+<!-- rain.ad <- gam(totrain ~ s(week,bs="ad"), data=lepto )  -->
 
-```
+<!-- ThinPlate  <- predict(rain.tp)   -->
+<!-- P.spline <- predict(rain.ps)   -->
+<!-- CubicRegression <- predict(rain.cr)   -->
+<!-- CyclicCR <- predict(rain.cc)   -->
+<!-- Adaptative <- predict(rain.ad)  -->
 
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-par(mfrow=c(5,1),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0))
-plot(rain.tp,shade=TRUE,ylab="TP",xlab="",residuals=F,xaxp=c(0,416,8),main="Chuva", pch=19, cex=.2, xaxt="n")
-plot(rain.ps,shade=TRUE,main="",ylab="PS",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n")
-plot(rain.cr,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n")
-plot(rain.cc,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n")
-plot(rain.ad,shade=TRUE,main="",ylab="Adaptative",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2)
+<!-- xyplot(Adaptative +CyclicCR  + CubicRegression+P.spline + ThinPlate~ week, -->
+<!--  outer=TRUE, layout=c(1, 5), pch=19, cex=.2, ylab="", -->
+<!--  scales=list(x=list(at=seq(0,416,52),relation='same'), y=list(relation="same")), data=lepto) -->
+
+<!-- ``` -->
+
+
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- par(mfrow=c(5,1),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0)) -->
+<!-- plot(rain.tp,shade=TRUE,ylab="TP",xlab="",residuals=F,xaxp=c(0,416,8),main="Chuva", pch=19, cex=.2, xaxt="n") -->
+<!-- plot(rain.ps,shade=TRUE,main="",ylab="PS",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- plot(rain.cr,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- plot(rain.cc,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- plot(rain.ad,shade=TRUE,main="",ylab="Adaptative",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2) -->
 
 
 
-temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto) 
-temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto ) #
-temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto )
+<!-- temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto)  -->
+<!-- temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto ) -->
 
-par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
-plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2)
-plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2)
-plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2)
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2) -->
+<!-- plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
 
-cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica
-cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) #
-cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto)
+<!-- cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica -->
+<!-- cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto) -->
 
-par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
-plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2)
-plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2)
-plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2)
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2) -->
+<!-- plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
 
-```
+<!-- ``` -->
 
 
 
 
 ## Exercícios Propostos
   
-1) Seja $Z_t$ *(temperaturaNY.csv)* uma série temporal referente às médias anuais das temperaturas na cidade de Nova York durante os anos de 1912 e 1971. Utilize e discuta alguns métodos de transformação e/ou suavização para descrever a série.
+1) Seja $Z_t$ [*(temperaturaNY.csv)*](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/temperaturaNY.csv) uma série temporal referente às médias anuais das temperaturas na cidade de Nova York durante os anos de 1912 e 1971. Utilize e discuta alguns métodos de transformação e/ou suavização para descrever a série.
 
-2) Faça o mesmo com a série de dengue no Vietnã *(denguecases2.csv)*
+2) Faça o mesmo com a série de dengue no Vietnã [*(denguecases2.csv)*](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/denguecases2.csv)
 
+
+Verifique as series com atenção e veja como será a melhor maneira de ler e transformar o dato em ST
+lembre-se que no windows você vai precisar
+
+
+```R
+options(url.method="libcurl")
+scan.win <- function(x) {scan(url(x,method = 'libcurl'))}
+```
 
 ## Bibliografia sugerida
 
@@ -503,4 +575,4 @@ Hastie, T.; Tibshirani, R. Generalised Additive Models. Chapman & Hall, 1990.
 
 Wood, S.N. Generalized Additive Models: An Introduction with R. Chapman & Hall/CRC Texts in Statistical Science Series, 2006.
 
-https://en.wikipedia.org/wiki/Kernel_smoother
+Venables, W.N. & Ripley, B.D.  Modern Applied Statistics with S. (MASS) Fourth Edition  2002

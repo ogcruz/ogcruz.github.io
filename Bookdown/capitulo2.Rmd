@@ -556,7 +556,30 @@ observe que a partir de um dado puramente vetorial já podemos obter um objeto *
 
 para ler os dados utilizaremos a função _scan_ que importa dados vetoriais. Nesse exemplo estaremos usando os dados diretos de uma [URL](https://pt.wikipedia.org/wiki/URL) mas o dado poderia estar no seu disco, assim você importaria localmente!
 
+
+**OBSERVAÇÃO:**  
+
+    No Windows existe algum problema ao acessar sites seguros (HTTPS) 
+    assim vamos definir uma função que permita o acesso a esse tipo de site. 
+    podemos tentar duas coisas 
+    
+    
+
+```R    
+options(url.method="libcurl")
+
+ou criar uma função
+
+scan.win <- function(x) {scan(url(x,method = 'libcurl'))}
+
+```
+
+Exemplo com dados de Caxumba, não se esqueça de definir a função acima!
+
 ```{r}
+# caso esteja usando o windows    
+# scan.win <- function(x) {scan(url(x,method = 'libcurl'))}
+
 dados <- scan('https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/caxumba.dat')
 caxumba <- ts(dados,start = c(1928,1),frequency = 12)
 plot(caxumba)

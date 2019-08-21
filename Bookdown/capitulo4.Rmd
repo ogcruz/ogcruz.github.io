@@ -3,14 +3,15 @@
 library(knitr)
 library(pander)
 library(forecast)
-
-# Preparando o banco de incidencia de dengue
-dengue_original=read.csv("~/Documentos/cursos_ecologicos_2019/dados/denguecases.csv")
-denguecases=aggregate(Dengue_Cases~Month+Year,dengue_original,sum)
-denguecasests=ts(denguecases$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
-
-# Set so that long lines in R will be wrapped:
-opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
+library(zoo)
+library(quantmod)
+library(DT)
+# library(dplyr)
+# library(magrittr)
+# library(highcharter)
+library(PerformanceAnalytics)
+library(htmltools)
+options(width = 800)
 
 ```
 
@@ -130,12 +131,136 @@ São geralmente denotados como $ARIMA(p,d,q)(P,D,Q)_{m}$, em que:
 
 - **P, D e Q** se referem aos termos de auto-regressão, diferenciação e média móvel para a parte sazonal do modelo ARIMA.
 
+
 ## Função de Autocorrelação Parcial (FACP) - (*Partial Autocorrelation Function - PACF*)
 
-Uma outra ferramenta utilizada no processo de identificação do modelo é a **Função de Autocorrelação Parcial(FACP)**.  Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-k} $ removendo o efeito das observações $Z_{t-1}, Z_{t-2}, \dots , Z_{t-k+1}$  e é denotada por $\rho_{k}$, ou seja
+Uma outra ferramenta utilizada no processo de identificação do modelo é a **Função de Autocorrelação Parcial(FACP)**.  Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-k} $ removendo o efeito das observações $Z_{t-1}, Z_{t-2}, \dots , Z_{t-k+1}$  e é denotada por $\rho_{k}$, ou seja, é a correlação da série temporal com um atraso de si mesmo, com a dependência linear de todos os desfasamentos entre eles removidos.
 
 $$\rho_{kk} = Corr(X_t, X_{t-l}|X_{t-1}, X_{t-2},\dots,X_{t-k+1})$$	
 
+Segue abaixo um exemplo um exemplo de ACF, com já vimos anteriormente, e do PACF. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes. 
+
+```{r, echo=FALSE, tidy=TRUE, results='asis', warning = FALSE}
+from <-  as.Date("1974-01-01")
+to <-  as.Date("1989-12-31")
+days <-  seq.Date(from=from,to=to,by="days")
+funca <- function(x) {round(rnorm(x,10,1.5))}
+set.seed(3343545)
+timeseries <- round(zoo::as.zoo((arima.sim(list(order = c(2,0,0), ar = c(0.5,0.15)), n = 1000,rand.gen = funca))),2)
+lags <- Lag(timeseries, k=1:10)
+final <-  round(zoo::cbind.zoo(timeseries,lags), 4)
+colnames(final) <-  c("atual", "lag1", "lag2", "lag3", "lag4", "lag5",
+                    "lag6", "lag7", "lag8", "lag9", "lag10")
+DT::datatable(final[1:10,], rownames = FALSE, options = list(columnDefs = list(list(className = 'dt-center', targets="_all")), dom = 't'))
+       
+```
+
+
+```{r, echo=FALSE, tidy=TRUE, results='asis', warning = FALSE, fig.align='center', fig.height=7}
+# Calcular a autocorrelação 
+acf = stats::acf(timeseries, na.action = na.pass, plot = FALSE, lag.max = 15)
+pacf = stats::pacf(timeseries, na.action = na.pass, plot = FALSE, lag.max = 15)
+  
+par(mfrow=c(1,2))
+
+# Gráfico da função de autocorrelação. 
+plot(acf, main = "", ylab = "", xlab = "Lags")
+title("Função de Autocorrelação (ACF)", adj = 0.5, line = 1)
+
+plot(pacf, main = "", ylab = "", xlab = "Lags")
+title("Função de Autocorrelação Parcial (PACF)", adj = 0.5, line = 1)
+
+
+```
+
+
+A forma gráfica do ACF e PACF servem para definir valores de p e q. Olhando para os correlogramas, podemos determinar que tipo de modelo selecionar e quais serão os valores de p, d e q.
+
+| Modelo    | Padrão do ACF                                                | Padrão do PACF                                        |
+| --------- | ------------------------------------------------------------ | ----------------------------------------------------- |
+| AR(p)     | Decaimento exponencial ou padrão de onda senoidal amortecida ou ambos | Picos significantes através de primeiros lags         |
+| MA(q)     | Picos significantes através de primeiros lags                | Decaimento exponencial ou padrão em forma de senoides |
+| ARMA(1,1) | Decaimento exponencial a partir do lag 1                     | Decaimento exponencial a partir do lag 1              |
+| ARMA(p,q) | Decaimento exponencial                                       | Decaimento exonencial                                 |
+
+### Simulando os dados das ST com estruturas ARIMA
+
+
+Simulando um processo AR(1)
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+# Simulando 100 observações através de um processo AR(1) com média 30
+ar.sim<-arima.sim(model=list(ar=.9),n=200, mean = 30)
+
+# Construindo o gráfico de ST
+ts.plot(ar.sim) 
+
+# ACF e PACF
+par(mfrow=c(1,2))
+ar.acf <- acf(ar.sim,type="correlation",plot=T)
+ar.pacf<-acf(ar.sim,type="partial",plot=T)
+
+plot(ar.acf)
+plot(ar.pacf)
+
+```
+
+Simulando um processo AR(2)
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+# Simulando 100 observações através de um processo AR(2) com média 30
+ar.sim<-arima.sim(model=list(ar=c(.9,-.2)),n=200, mean = 30)
+
+# Construindo o gráfico de ST
+ts.plot(ar.sim) 
+
+# ACF e PACF
+par(mfrow=c(1,2))
+ar.acf <- acf(ar.sim,type="correlation",plot=T)
+ar.pacf<-acf(ar.sim,type="partial",plot=T)
+
+plot(ar.acf)
+plot(ar.pacf)
+
+```
+
+Simulando um processo MA(2)
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+# Simulando 200 observações através de um processo MA(2) com média 30
+ma.sim<-arima.sim(model=list(ma=c(-.7,.1)),n=200, mean = 30)
+
+# Construindo o gráfico de ST
+ts.plot(ma.sim) 
+
+# ACF e PACF
+par(mfrow=c(1,2))
+ma.acf <- acf(ma.sim,type="correlation",plot=T)
+ma.pacf <- acf(ma.sim,type="partial",plot=T)
+
+plot(ma.acf)
+plot(ma.pacf)
+
+```
+
+Simulando um processo ARMA(2,2)
+
+```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+# Simulando 200 observações através de um processo ARMA(2,2) com média 30
+arma.sim<-arima.sim(model=list(ar=c(.9,-.2),ma=c(-.7,.1)),n=200, mean = 30)
+
+# Construindo o gráfico de ST
+ts.plot(arma.sim) 
+
+# ACF e PACF
+par(mfrow=c(1,2))
+arma.acf <- acf(arma.sim,type="correlation",plot=T)
+arma.pacf <- acf(arma.sim,type="partial",plot=T)
+
+plot(arma.acf)
+plot(arma.pacf)
+
+```
 
 ### Roteiro para o ajuste do modelo
 
@@ -178,7 +303,6 @@ Sabendo que, $n$ é o número de observações e $k$ número de parâmetros esti
   
    *BIC = - 2ln(verossimilhança) + ln(n)k*
 
-
   - Outros
 
   - Ou testar todas as combinações prováveis, mas isso pode ser um pouco demorado se for feito de forma manual.
@@ -198,26 +322,33 @@ Sabendo que, $n$ é o número de observações e $k$ número de parâmetros esti
 
 Alguns parâmetros importantes da função *auto.arima()*
 
-- stationary - If TRUE, restricts search to stationary models.
+- stationary - Se TRUE, restringe sua busca por modelos estacionários.
 
-- seasonal - If FALSE, restricts search to non-seasonal models
+- seasonal - Se FALSE, restringe sua busca por modelos não sazonais.
 
-- stepwise - If TRUE, will do stepwise selection (faster). Otherwise, it searches over all models. Non-stepwise selection can be very slow, especially for seasonal models.
+- stepwise - Se TRUE, utilizará o métodos de *stepwise* de seleção (mais rápido). Caso contrário, irá buscar todas as combinações. O método de seleção *non-stepwise* pode ser muito lento, especialmente para os modelos sazonais.
 
-- trace - If TRUE, the list of ARIMA models considered will be reported.
+- trace - Se TRUE, a lista de modelos ARIMA considerados será reportada.
 
-- approximation - If TRUE, estimation is via conditional sums of squares and the information criteria used for model selection are approximated. The final model is still computed using maximum likelihood estimation. Approximation should be used for long time series or a high seasonal period to avoid excessive computation times.
+- approximation - Se TRUE, o processo de estimação é feito através das somas dos quadrados condicionais e os critérios de informação utilizados para a seleção de modelos são aproximados. O modelo final ainda é calculado usando estimativa de máxima verossimilhança. A aproximação deve ser usada para séries temporais longas ou um período sazonal elevado para evitar tempos de computação excessivos.
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center", comment=NA}
 
-# Utilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos
-# modelo1 = auto.arima(denguecasests, trace = F)
-# kable(summary(modelo1))
+# tilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos
+modelo1 = auto.arima(ldeaths, trace = F, allowdrift=F)
+
 
 # Neste modelo, será feito uma busca maior para uma solução "mais ótima"
-# modelo2 = auto.arima(denguecasests, trace = F, stepwise = F, approximation = F)
-# kable(summary(modelo2))
+modelo2 = auto.arima(ldeaths, trace = F, stepwise = F, approximation = F)
 
+```
+
+```{r, comment=NA}
+modelo1
+```
+
+```{r, comment=NA}
+modelo2
 ```
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
@@ -387,6 +518,7 @@ $$\text{Lepto}(t) = \text{rain}(t-?) + \text{humidity}(t-?) + AR(t,t-1) + trend 
 
 - É possível incluir a variabilidade populacional em risco (*offset*)
 
+##### - utilizar laggedTS <- lag(tsData, 3) # shifted 3 periods earlier. Use `-3` to shift by 3 periods forward.
 
 ## Exercícios Propostos
   
@@ -416,8 +548,11 @@ Pede-se:
 
 Asteriou, D.; Hall, S.G. Applied econometrics. Macmillan International Higher Education, 2015.
 
+Brockwell, Peter J.; DAVIS, Richard A.; CALDER, Matthew V. Introduction to time series and forecasting. New York: springer, 2002.
+
 Harvey, A. C. and Durbin, J. The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. 1986.
+
+Hyndman, R.J and Khandakar, Y. Automatic time series forecasting: The forecast package for R, Journal of Statistical Software, 26(3). 2008.
 
 Webster, C.E.J. Time series properties of econometric models and their implied ARIMA representation. 1983.
 
-Brockwell, Peter J.; DAVIS, Richard A.; CALDER, Matthew V. Introduction to time series and forecasting. New York: springer, 2002.

@@ -45,6 +45,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.7/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -110,12 +118,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.5" data-path=""><a href="#modelos-arima-sazonais-sarima"><i class="fa fa-check"></i><b>1.1.5</b> <strong>Modelos ARIMA sazonais (SARIMA)</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path=""><a href="#funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>1.2</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a><ul>
-<li class="chapter" data-level="1.2.1" data-path=""><a href="#roteiro-para-o-ajuste-do-modelo"><i class="fa fa-check"></i><b>1.2.1</b> Roteiro para o ajuste do modelo</a></li>
-<li class="chapter" data-level="1.2.2" data-path=""><a href="#auto.arima"><i class="fa fa-check"></i><b>1.2.2</b> Auto.arima()</a></li>
-<li class="chapter" data-level="1.2.3" data-path=""><a href="#comparando-o-acf-de-ambos-os-modelos"><i class="fa fa-check"></i><b>1.2.3</b> Comparando o ACF de ambos os modelos</a></li>
-<li class="chapter" data-level="1.2.4" data-path=""><a href="#executando-o-teste-ljung-box"><i class="fa fa-check"></i><b>1.2.4</b> Executando o teste Ljung-Box</a></li>
-<li class="chapter" data-level="1.2.5" data-path=""><a href="#distribuicao-dos-residuos-no-tempo"><i class="fa fa-check"></i><b>1.2.5</b> Distribuição dos Resíduos no tempo</a></li>
-<li class="chapter" data-level="1.2.6" data-path=""><a href="#normalidade-dos-residuos"><i class="fa fa-check"></i><b>1.2.6</b> Normalidade dos Resíduos</a></li>
+<li class="chapter" data-level="1.2.1" data-path=""><a href="#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>1.2.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+<li class="chapter" data-level="1.2.2" data-path=""><a href="#roteiro-para-o-ajuste-do-modelo"><i class="fa fa-check"></i><b>1.2.2</b> Roteiro para o ajuste do modelo</a></li>
+<li class="chapter" data-level="1.2.3" data-path=""><a href="#auto.arima"><i class="fa fa-check"></i><b>1.2.3</b> Auto.arima()</a></li>
+<li class="chapter" data-level="1.2.4" data-path=""><a href="#comparando-o-acf-de-ambos-os-modelos"><i class="fa fa-check"></i><b>1.2.4</b> Comparando o ACF de ambos os modelos</a></li>
+<li class="chapter" data-level="1.2.5" data-path=""><a href="#executando-o-teste-ljung-box"><i class="fa fa-check"></i><b>1.2.5</b> Executando o teste Ljung-Box</a></li>
+<li class="chapter" data-level="1.2.6" data-path=""><a href="#distribuicao-dos-residuos-no-tempo"><i class="fa fa-check"></i><b>1.2.6</b> Distribuição dos Resíduos no tempo</a></li>
+<li class="chapter" data-level="1.2.7" data-path=""><a href="#normalidade-dos-residuos"><i class="fa fa-check"></i><b>1.2.7</b> Normalidade dos Resíduos</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path=""><a href="#o-problema"><i class="fa fa-check"></i><b>1.3</b> O problema !</a></li>
 <li class="chapter" data-level="1.4" data-path=""><a href="#gam-generalized-additive-models"><i class="fa fa-check"></i><b>1.4</b> GAM (generalized Additive Models)</a></li>
@@ -374,10 +383,114 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf" class="section level2">
 <h2><span class="header-section-number">1.2</span> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</h2>
-<p>Uma outra ferramenta utilizada no processo de identificação do modelo é a <strong>Função de Autocorrelação Parcial(FACP)</strong>. Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-k} $ removendo o efeito das observações <span class="math inline">\(Z_{t-1}, Z_{t-2}, \dots , Z_{t-k+1}\)</span> e é denotada por <span class="math inline">\(\rho_{k}\)</span>, ou seja</p>
+<p>Uma outra ferramenta utilizada no processo de identificação do modelo é a <strong>Função de Autocorrelação Parcial(FACP)</strong>. Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-k} $ removendo o efeito das observações <span class="math inline">\(Z_{t-1}, Z_{t-2}, \dots , Z_{t-k+1}\)</span> e é denotada por <span class="math inline">\(\rho_{k}\)</span>, ou seja, é a correlação da série temporal com um atraso de si mesmo, com a dependência linear de todos os desfasamentos entre eles removidos.</p>
 <p><span class="math display">\[\rho_{kk} = Corr(X_t, X_{t-l}|X_{t-1}, X_{t-2},\dots,X_{t-k+1})\]</span></p>
+<p>Segue abaixo um exemplo um exemplo de ACF, com já vimos anteriormente, e do PACF. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes.</p>
+<div id="htmlwidget-cc8da5beb30438f489cf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cc8da5beb30438f489cf">{"x":{"filter":"none","data":[[28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89,28.24],[null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89],[null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95],[null,null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76],[null,null,null,null,28.61,27.8,28.19,28.26,30.36,30.42],[null,null,null,null,null,28.61,27.8,28.19,28.26,30.36],[null,null,null,null,null,null,28.61,27.8,28.19,28.26],[null,null,null,null,null,null,null,28.61,27.8,28.19],[null,null,null,null,null,null,null,null,28.61,27.8],[null,null,null,null,null,null,null,null,null,28.61],[null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>atual<\/th>\n      <th>lag1<\/th>\n      <th>lag2<\/th>\n      <th>lag3<\/th>\n      <th>lag4<\/th>\n      <th>lag5<\/th>\n      <th>lag6<\/th>\n      <th>lag7<\/th>\n      <th>lag8<\/th>\n      <th>lag9<\/th>\n      <th>lag10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>A forma gráfica do ACF e PACF servem para definir valores de p e q. Olhando para os correlogramas, podemos determinar que tipo de modelo selecionar e quais serão os valores de p, d e q.</p>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="48%" />
+<col width="43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Padrão do ACF</th>
+<th>Padrão do PACF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AR(p)</td>
+<td>Decaimento exponencial ou padrão de onda senoidal amortecida ou ambos</td>
+<td>Picos significantes através de primeiros lags</td>
+</tr>
+<tr class="even">
+<td>MA(q)</td>
+<td>Picos significantes através de primeiros lags</td>
+<td>Decaimento exponencial ou padrão em forma de senoides</td>
+</tr>
+<tr class="odd">
+<td>ARMA(1,1)</td>
+<td>Decaimento exponencial a partir do lag 1</td>
+<td>Decaimento exponencial a partir do lag 1</td>
+</tr>
+<tr class="even">
+<td>ARMA(p,q)</td>
+<td>Decaimento exponencial</td>
+<td>Decaimento exonencial</td>
+</tr>
+</tbody>
+</table>
+<div id="simulando-os-dados-das-st-com-estruturas-arima" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Simulando os dados das ST com estruturas ARIMA</h3>
+<p>Simulando um processo AR(1)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulando 100 observações através de um processo AR(1) com média 30</span>
+ar.sim&lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span>.<span class="dv">9</span>),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)
+
+<span class="co"># Construindo o gráfico de ST</span>
+<span class="kw">ts.plot</span>(ar.sim) </code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ACF e PACF</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+ar.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)
+ar.pacf&lt;-<span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)
+
+<span class="kw">plot</span>(ar.acf)
+<span class="kw">plot</span>(ar.pacf)</code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-4-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Simulando um processo AR(2)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulando 100 observações através de um processo AR(2) com média 30</span>
+ar.sim&lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span><span class="kw">c</span>(.<span class="dv">9</span>,<span class="op">-</span>.<span class="dv">2</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)
+
+<span class="co"># Construindo o gráfico de ST</span>
+<span class="kw">ts.plot</span>(ar.sim) </code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ACF e PACF</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+ar.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)
+ar.pacf&lt;-<span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)
+
+<span class="kw">plot</span>(ar.acf)
+<span class="kw">plot</span>(ar.pacf)</code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-5-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Simulando um processo MA(2)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulando 200 observações através de um processo MA(2) com média 30</span>
+ma.sim&lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ma=</span><span class="kw">c</span>(<span class="op">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)
+
+<span class="co"># Construindo o gráfico de ST</span>
+<span class="kw">ts.plot</span>(ma.sim) </code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ACF e PACF</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+ma.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ma.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)
+ma.pacf &lt;-<span class="st"> </span><span class="kw">acf</span>(ma.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)
+
+<span class="kw">plot</span>(ma.acf)
+<span class="kw">plot</span>(ma.pacf)</code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-6-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Simulando um processo ARMA(2,2)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulando 200 observações através de um processo ARMA(2,2) com média 30</span>
+arma.sim&lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span><span class="kw">c</span>(.<span class="dv">9</span>,<span class="op">-</span>.<span class="dv">2</span>),<span class="dt">ma=</span><span class="kw">c</span>(<span class="op">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)
+
+<span class="co"># Construindo o gráfico de ST</span>
+<span class="kw">ts.plot</span>(arma.sim) </code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ACF e PACF</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+arma.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(arma.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)
+arma.pacf &lt;-<span class="st"> </span><span class="kw">acf</span>(arma.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)
+
+<span class="kw">plot</span>(arma.acf)
+<span class="kw">plot</span>(arma.pacf)</code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-7-2.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
 <div id="roteiro-para-o-ajuste-do-modelo" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Roteiro para o ajuste do modelo</h3>
+<h3><span class="header-section-number">1.2.2</span> Roteiro para o ajuste do modelo</h3>
 <ul>
 <li>Para a construção do modelo podemos seguir o seguinte roteiro no qual a escolha da estrutura do modelo é baseado nos próprios dados:</li>
 </ul>
@@ -412,7 +525,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <hr />
 </div>
 <div id="auto.arima" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> Auto.arima()</h3>
+<h3><span class="header-section-number">1.2.3</span> Auto.arima()</h3>
 <ul>
 <li><p>Testa diferentes combinações de p,d e r</p></li>
 <li><p>Extremamente flexível</p></li>
@@ -420,69 +533,96 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>Alguns parâmetros importantes da função <em>auto.arima()</em></p>
 <ul>
-<li><p>stationary - If TRUE, restricts search to stationary models.</p></li>
-<li><p>seasonal - If FALSE, restricts search to non-seasonal models</p></li>
-<li><p>stepwise - If TRUE, will do stepwise selection (faster). Otherwise, it searches over all models. Non-stepwise selection can be very slow, especially for seasonal models.</p></li>
-<li><p>trace - If TRUE, the list of ARIMA models considered will be reported.</p></li>
-<li><p>approximation - If TRUE, estimation is via conditional sums of squares and the information criteria used for model selection are approximated. The final model is still computed using maximum likelihood estimation. Approximation should be used for long time series or a high seasonal period to avoid excessive computation times.</p></li>
+<li><p>stationary - Se TRUE, restringe sua busca por modelos estacionários.</p></li>
+<li><p>seasonal - Se FALSE, restringe sua busca por modelos não sazonais.</p></li>
+<li><p>stepwise - Se TRUE, utilizará o métodos de <em>stepwise</em> de seleção (mais rápido). Caso contrário, irá buscar todas as combinações. O método de seleção <em>non-stepwise</em> pode ser muito lento, especialmente para os modelos sazonais.</p></li>
+<li><p>trace - Se TRUE, a lista de modelos ARIMA considerados será reportada.</p></li>
+<li><p>approximation - Se TRUE, o processo de estimação é feito através das somas dos quadrados condicionais e os critérios de informação utilizados para a seleção de modelos são aproximados. O modelo final ainda é calculado usando estimativa de máxima verossimilhança. A aproximação deve ser usada para séries temporais longas ou um período sazonal elevado para evitar tempos de computação excessivos.</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Utilizando trace = T, será possível verificar</span>
-<span class="co"># todo o processo de criação e teste dos modelos</span>
-<span class="co"># modelo1 = auto.arima(denguecasests, trace = F)</span>
-<span class="co"># kable(summary(modelo1))</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># tilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos</span>
+modelo1 =<span class="st"> </span><span class="kw">auto.arima</span>(ldeaths, <span class="dt">trace =</span> F, <span class="dt">allowdrift=</span>F)
 
-<span class="co"># Neste modelo, será feito uma busca maior para uma</span>
-<span class="co"># solução &#39;mais ótima&#39; modelo2 =</span>
-<span class="co"># auto.arima(denguecasests, trace = F, stepwise =</span>
-<span class="co"># F, approximation = F) kable(summary(modelo2))</span></code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimando as previsões prev1 = forecast(modelo1,</span>
-<span class="co"># h=12) autoplot(prev1) +</span>
-<span class="co"># geom_hline(yintercept=range(0), color=&#39;black&#39;,</span>
-<span class="co"># size=0.5) prev2 = forecast(modelo2, h=12)</span>
-<span class="co"># autoplot(prev2) + geom_hline(yintercept=range(0),</span>
-<span class="co"># color=&#39;black&#39;, size=0.5) # Comparar os modelos</span>
-<span class="co"># plot(prev1, main=&#39;Comparação Modelo 1 vs Modelo</span>
-<span class="co"># 2&#39;) lines(prev2$mean, col=&#39;red&#39;, add=T)</span>
+
+<span class="co"># Neste modelo, será feito uma busca maior para uma solução &quot;mais ótima&quot;</span>
+modelo2 =<span class="st"> </span><span class="kw">auto.arima</span>(ldeaths, <span class="dt">trace =</span> F, <span class="dt">stepwise =</span> F, <span class="dt">approximation =</span> F)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modelo1</code></pre></div>
+<pre><code>Series: ldeaths 
+ARIMA(0,0,1)(2,1,0)[12] 
+
+Coefficients:
+         ma1     sar1     sar2
+      0.4269  -0.8595  -0.3613
+s.e.  0.1385   0.1426   0.1452
+
+sigma^2 estimated as 70422:  log likelihood=-423.3
+AIC=854.59   AICc=855.32   BIC=862.97</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">modelo2</code></pre></div>
+<pre><code>Series: ldeaths 
+ARIMA(2,0,0)(0,1,2)[12] with drift 
+
+Coefficients:
+         ar1      ar2     sma1    sma2    drift
+      0.2555  -0.3389  -1.1630  0.3566  -5.3336
+s.e.  0.1341   0.1402   0.3624  0.2048   0.9049
+
+sigma^2 estimated as 49449:  log likelihood=-416.42
+AIC=844.83   AICc=846.42   BIC=857.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estimando as previsões</span>
+<span class="co"># prev1 = forecast(modelo1, h=12)</span>
+<span class="co"># autoplot(prev1) + </span>
+<span class="co"># geom_hline(yintercept=range(0), color=&#39;black&#39;, size=0.5)</span>
+<span class="co"># </span>
+<span class="co"># </span>
+<span class="co"># prev2 = forecast(modelo2, h=12)</span>
+<span class="co"># autoplot(prev2) + </span>
+<span class="co"># geom_hline(yintercept=range(0), color=&#39;black&#39;, size=0.5)</span>
+<span class="co"># </span>
+<span class="co"># </span>
+<span class="co"># # Comparar os modelos</span>
+<span class="co"># plot(prev1, main=&#39;Comparação Modelo 1 vs Modelo 2&#39;)</span>
+<span class="co"># lines(prev2$mean, col=&quot;red&quot;, add=T)</span>
 <span class="co"># abline(h=0, color=&#39;gray&#39;, size=1)</span>
-<span class="co"># legend(&#39;topleft&#39;, legend=c(&#39;Adirtivo&#39;,</span>
-<span class="co"># &#39;Multiplicativo&#39;), col=c(&#39;blue&#39;, &#39;red&#39;), lty=1:2,</span>
-<span class="co"># cex=0.8)</span></code></pre></div>
+<span class="co"># legend(&quot;topleft&quot;, legend=c(&quot;Adirtivo&quot;, &quot;Multiplicativo&quot;),</span>
+<span class="co">#        col=c(&quot;blue&quot;, &quot;red&quot;), lty=1:2, cex=0.8)</span></code></pre></div>
 <hr />
 </div>
 <div id="comparando-o-acf-de-ambos-os-modelos" class="section level3">
-<h3><span class="header-section-number">1.2.3</span> Comparando o ACF de ambos os modelos</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,3)) acf(denguecasests, lag.max=20,</span>
-<span class="co"># main=&#39;Dados Original&#39;) acf(modelo1$residuals,</span>
-<span class="co"># lag.max=20, main=&#39;Modelo 1&#39;)</span>
-<span class="co"># acf(modelo2$residuals, lag.max=20, main=&#39;Modelo</span>
-<span class="co"># 2&#39;)</span></code></pre></div>
+<h3><span class="header-section-number">1.2.4</span> Comparando o ACF de ambos os modelos</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,3))</span>
+<span class="co"># acf(denguecasests, lag.max=20, main=&quot;Dados Original&quot;)</span>
+<span class="co"># acf(modelo1$residuals, lag.max=20, main=&quot;Modelo 1&quot;)</span>
+<span class="co"># acf(modelo2$residuals, lag.max=20, main=&quot;Modelo 2&quot;)</span></code></pre></div>
 <hr />
 </div>
 <div id="executando-o-teste-ljung-box" class="section level3">
-<h3><span class="header-section-number">1.2.4</span> Executando o teste Ljung-Box</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Dados Originais Box.test(denguecasests, lag=20,</span>
-<span class="co"># type=&#39;Ljung-Box&#39;) # Modelo 1</span>
-<span class="co"># Box.test(modelo1$residuals, lag=20,</span>
-<span class="co"># type=&#39;Ljung-Box&#39;) # Modelo 2</span>
-<span class="co"># Box.test(modelo2$residuals, lag=20,</span>
-<span class="co"># type=&#39;Ljung-Box&#39;)</span></code></pre></div>
+<h3><span class="header-section-number">1.2.5</span> Executando o teste Ljung-Box</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Dados Originais</span>
+<span class="co"># Box.test(denguecasests, lag=20, type=&quot;Ljung-Box&quot;)</span>
+<span class="co"># # Modelo 1</span>
+<span class="co"># Box.test(modelo1$residuals, lag=20, type=&quot;Ljung-Box&quot;)</span>
+<span class="co"># # Modelo 2</span>
+<span class="co"># Box.test(modelo2$residuals, lag=20, type=&quot;Ljung-Box&quot;)</span></code></pre></div>
 <hr />
 </div>
 <div id="distribuicao-dos-residuos-no-tempo" class="section level3">
-<h3><span class="header-section-number">1.2.5</span> Distribuição dos Resíduos no tempo</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,2)) plot.ts(modelo1$residuals,</span>
-<span class="co"># main=&#39;Modelo 1&#39;) abline(h=0, col=&#39;red&#39;, lty = 3)</span>
-<span class="co"># plot.ts(modelo2$residuals, main=&#39;Modelo 2&#39;)</span>
-<span class="co"># abline(h=0, col=&#39;red&#39;, lty = 3)</span></code></pre></div>
+<h3><span class="header-section-number">1.2.6</span> Distribuição dos Resíduos no tempo</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,2))</span>
+<span class="co"># plot.ts(modelo1$residuals, main=&quot;Modelo 1&quot;)</span>
+<span class="co"># abline(h=0, col=&quot;red&quot;, lty = 3)</span>
+<span class="co"># plot.ts(modelo2$residuals, main=&quot;Modelo 2&quot;)</span>
+<span class="co"># abline(h=0, col=&quot;red&quot;, lty = 3)</span></code></pre></div>
 <hr />
 </div>
 <div id="normalidade-dos-residuos" class="section level3">
-<h3><span class="header-section-number">1.2.6</span> Normalidade dos Resíduos</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,2)) hist(modelo1$residuals,</span>
-<span class="co"># main=&#39;Modelo 1&#39;) abline(v=0, col=&#39;darkred&#39;, lty =</span>
-<span class="co"># 2) hist(modelo2$residuals, main=&#39;Modelo 2&#39;)</span>
-<span class="co"># abline(v=0, col=&#39;darkred&#39;, lty = 2) # Teste de</span>
-<span class="co"># Shapiro-Wilk shapiro.test(modelo1$residuals)</span>
+<h3><span class="header-section-number">1.2.7</span> Normalidade dos Resíduos</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># par(mfrow=c(1,2))</span>
+<span class="co"># hist(modelo1$residuals, main=&quot;Modelo 1&quot;)</span>
+<span class="co"># abline(v=0, col=&quot;darkred&quot;, lty = 2)</span>
+<span class="co"># hist(modelo2$residuals, main=&quot;Modelo 2&quot;)</span>
+<span class="co"># abline(v=0, col=&quot;darkred&quot;, lty = 2)</span>
+<span class="co"># </span>
+<span class="co"># # Teste de Shapiro-Wilk</span>
+<span class="co"># shapiro.test(modelo1$residuals)</span>
 <span class="co"># shapiro.test(modelo2$residuals)</span></code></pre></div>
 </div>
 </div>
@@ -547,6 +687,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Covariáveis <span class="math inline">\(\to\)</span> lag no tempo</p></li>
 <li><p>É possível incluir a variabilidade populacional em risco (<em>offset</em>)</p></li>
 </ul>
+<div id="utilizar-laggedts---lagtsdata-3-shifted-3-periods-earlier.-use--3-to-shift-by-3-periods-forward." class="section level5">
+<h5><span class="header-section-number">1.6.1.0.1</span> - utilizar laggedTS &lt;- lag(tsData, 3) # shifted 3 periods earlier. Use <code>-3</code> to shift by 3 periods forward.</h5>
+</div>
 </div>
 </div>
 <div id="exercicios-propostos" class="section level2">
@@ -605,9 +748,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="bibliografia-sugerida" class="section level2">
 <h2><span class="header-section-number">1.8</span> Bibliografia sugerida</h2>
 <p>Asteriou, D.; Hall, S.G. Applied econometrics. Macmillan International Higher Education, 2015.</p>
-<p>Harvey, A. C. and Durbin, J. The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. 1986.</p>
-<p>Webster, C.E.J. Time series properties of econometric models and their implied ARIMA representation. 1983.</p>
 <p>Brockwell, Peter J.; DAVIS, Richard A.; CALDER, Matthew V. Introduction to time series and forecasting. New York: springer, 2002.</p>
+<p>Harvey, A. C. and Durbin, J. The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. 1986.</p>
+<p>Hyndman, R.J and Khandakar, Y. Automatic time series forecasting: The forecast package for R, Journal of Statistical Software, 26(3). 2008.</p>
+<p>Webster, C.E.J. Time series properties of econometric models and their implied ARIMA representation. 1983.</p>
 </div>
 </div>
             </section>
