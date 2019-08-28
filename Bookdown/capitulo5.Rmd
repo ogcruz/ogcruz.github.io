@@ -204,7 +204,7 @@ shapiro.test(mdl2$residuals)
 Termos:
 
 ```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
-knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/ARIMA.png")
+knitr::include_graphics("figuras/ARIMA.png")
 ```
 
 

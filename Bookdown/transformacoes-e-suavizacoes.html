@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 4 Transformações e Suavizações | ESTUDOS ECOLÓGICOS</title>
+  <meta name="description" content=" 4 Transformações e Suavizações | ESTUDOS ECOLÓGICOS" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 4 Transformações e Suavizações | ESTUDOS ECOLÓGICOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 4 Transformações e Suavizações | ESTUDOS ECOLÓGICOS" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
+
+
+<meta name="date" content="2019-08-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducao-as-series-temporais.html">
+<link rel="next" href="modelagem-em-series-temporais.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.8/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentacao.html"><a href="apresentacao.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a><ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#o-que-sao-de-estudos-ecologicos"><i class="fa fa-check"></i><b>2.1</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#objetivos-dos-estudos-ecologicos"><i class="fa fa-check"></i><b>2.2</b> Objetivos dos Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas-1"><i class="fa fa-check"></i><b>2.4</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-desenhos-de-estudos-ecologicos"><i class="fa fa-check"></i><b>2.5</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#alguns-conceitos"><i class="fa fa-check"></i><b>2.6</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.7</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#arvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.8</b> Árvores, Bosques ou as Florestas ?</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-arvores"><i class="fa fa-check"></i><b>2.8.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.8.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#os-bosques"><i class="fa fa-check"></i><b>2.8.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.8.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-florestas"><i class="fa fa-check"></i><b>2.8.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#falacia-ecologica-ou-vies-de-agregacao"><i class="fa fa-check"></i><b>2.9</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#problemas-praticos"><i class="fa fa-check"></i><b>2.10</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#vantagens"><i class="fa fa-check"></i><b>2.11</b> Vantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#desvantagens"><i class="fa fa-check"></i><b>2.12</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#resumindo"><i class="fa fa-check"></i><b>2.13</b> Resumindo</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#exercicios-propostos"><i class="fa fa-check"></i><b>2.14</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.15" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.15</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a><ul>
+<li class="chapter" data-level="3.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#o-que-sao-series-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#hipoteses-basicas-do-estudo-das-series-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#classificacao-dos-tipos-de-series-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#processo-estocastico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#notacao-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-series-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocovariancia-de-um-processo-estacionario"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#porque-a-estacionariedade-e-importante"><i class="fa fa-check"></i><b>3.7.2</b> Porque a Estacionariedade é Importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal"><i class="fa fa-check"></i><b>3.8</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.9" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#independencia"><i class="fa fa-check"></i><b>3.9</b> Independência</a></li>
+<li class="chapter" data-level="3.10" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#dependencia"><i class="fa fa-check"></i><b>3.10</b> Dependência</a></li>
+<li class="chapter" data-level="3.11" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocorrelacao---fac-em-ingles-autocorrelation-function-acf"><i class="fa fa-check"></i><b>3.11</b> Função de Autocorrelação - FAC (em Inglês Autocorrelation function ACF )</a></li>
+<li class="chapter" data-level="3.12" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal-1"><i class="fa fa-check"></i><b>3.12</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.13" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia"><i class="fa fa-check"></i><b>3.13</b> Tendência</a></li>
+<li class="chapter" data-level="3.14" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.14</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.15" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.15</b> Ciclo</a><ul>
+<li class="chapter" data-level="3.15.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.15.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.16" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#termo-aleatorio-ou-ruido-branco"><i class="fa fa-check"></i><b>3.16</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.17" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#composicao-dos-modelos-de-uma-series-temporais"><i class="fa fa-check"></i><b>3.17</b> Composição dos Modelos de uma séries temporais</a><ul>
+<li class="chapter" data-level="3.17.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.17.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.17.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.17.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.18" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#decomposicao-de-um-series-temporais"><i class="fa fa-check"></i><b>3.18</b> Decomposição de um séries temporais</a></li>
+<li class="chapter" data-level="3.19" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#pratica-no-r"><i class="fa fa-check"></i><b>3.19</b> Prática no R</a><ul>
+<li class="chapter" data-level="3.19.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#a-biblioteca-ts-e-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.19.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.19.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#simulando-uma-serie-temporal"><i class="fa fa-check"></i><b>3.19.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.19.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#importando-uma-vetor-e-transformando-em-serie-temporal"><i class="fa fa-check"></i><b>3.19.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.19.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#utilizando-dados-da-incidencia-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.19.4</b> Utilizando dados da Incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+<li class="chapter" data-level="3.19.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-estacionariedade-da-series-temporais"><i class="fa fa-check"></i><b>3.19.5</b> Avaliando a Estacionariedade da séries temporais</a></li>
+<li class="chapter" data-level="3.19.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-tendencia-em-uma-series-temporais"><i class="fa fa-check"></i><b>3.19.6</b> Avaliando a tendência em uma séries temporais</a></li>
+<li class="chapter" data-level="3.19.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-sazonalidade-da-series-temporais"><i class="fa fa-check"></i><b>3.19.7</b> Avaliando a Sazonalidade da séries temporais</a></li>
+</ul></li>
+<li class="chapter" data-level="3.20" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#exercicios-propostos-1"><i class="fa fa-check"></i><b>3.20</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.21" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#material-on-line-sobre-series-temporais"><i class="fa fa-check"></i><b>3.21</b> Material on line sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.22" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.22</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a><ul>
+<li class="chapter" data-level="4.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#introducao"><i class="fa fa-check"></i><b>4.1</b> Introdução</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#alguns-exemplos-de-transfomacao-dos-dados-em-st"><i class="fa fa-check"></i><b>4.1.1</b> Alguns exemplos de transfomação dos dados em ST:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#transformacoes-box-cox-digferenciacao-e-logaritmica"><i class="fa fa-check"></i><b>4.1.2</b> Transformações Box-Cox, Digferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#metodos-de-alisamento-ou-suavizacao"><i class="fa fa-check"></i><b>4.2</b> Métodos de Alisamento ou Suavização</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#algumas-funcoes-de-suavizacao"><i class="fa fa-check"></i><b>4.2.1</b> Algumas funções de suavização</a></li>
+<li class="chapter" data-level="4.2.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#medias-moveis"><i class="fa fa-check"></i><b>4.2.2</b> Médias móveis</a></li>
+<li class="chapter" data-level="4.2.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-das-medias-moveis"><i class="fa fa-check"></i><b>4.2.3</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#kernel"><i class="fa fa-check"></i><b>4.3</b> Kernel</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#diferentes-funcoes-kernel"><i class="fa fa-check"></i><b>4.3.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.3.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#largura-de-banda"><i class="fa fa-check"></i><b>4.3.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.3.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-do-kernel"><i class="fa fa-check"></i><b>4.3.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#lowess-locally-weighted-sum-of-square"><i class="fa fa-check"></i><b>4.4</b> Lowess (Locally Weighted Sum of Square)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-do-lowess"><i class="fa fa-check"></i><b>4.4.1</b> Utilização do Lowess</a></li>
+<li class="chapter" data-level="4.4.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#comparando"><i class="fa fa-check"></i><b>4.4.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#splines"><i class="fa fa-check"></i><b>4.5</b> Splines</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#splines-vs-loess"><i class="fa fa-check"></i><b>4.5.1</b> Splines <em>vs</em> Loess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#exercicios-propostos-2"><i class="fa fa-check"></i><b>4.6</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.7" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#o-que-sao-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#alguns-processos-estocasticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autoregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-de-medias-moveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-de-medias-moveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-integrado-de-medias-moveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-nao-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-identificacao"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#metricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#analise-de-residuos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-automatico-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-de-previsao"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#correlacao-cruzada-cross-corralation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Corralation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (generalized Additive Models)</a></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#por-que-nao-usar"><i class="fa fa-check"></i><b>5.15</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-em-series-temporais"><i class="fa fa-check"></i><b>5.16</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.16.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>5.16.1</b> Exemplo de um modelo GAM</a></li>
+<li class="chapter" data-level="5.16.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-serie-temporal-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.16.2</b> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.17" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exercicios-propostos-3"><i class="fa fa-check"></i><b>5.17</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="5.18" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.18</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="transformacoes-e-suavizacoes" class="section level1">
+<h1><span class="header-section-number"> 4</span> Transformações e Suavizações</h1>
+<div id="introducao" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introdução</h2>
+<ul>
+<li><p>As vezes os dados precisam ser transformados para a utilização de determinados métodos/modelos;</p></li>
+<li><p>O objetivo é tornar os modelos mais simples, no caso das ST o objetivo seria melhorar as previsões;</p></li>
+<li><p>As transformações devem ser feitas exclusivamente para aplicação do modelo, e não como uma técnica de analise dos dados em si.</p></li>
+</ul>
+<div id="alguns-exemplos-de-transfomacao-dos-dados-em-st" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Alguns exemplos de transfomação dos dados em ST:</h3>
+<ul>
+<li><p><strong>Utilização de funções:</strong> Logarítmicas, Potências, Exponenciais, ou transformação <em>Box-Cox</em></p></li>
+<li><p><strong>Diferenciação:</strong> Series não estacionárias, objetivo é transformar a série em estacionária (ex: log), estabilizando a média.</p></li>
+<li><p><strong>Box-Cox:</strong> Estabiliza a variância.</p></li>
+<li><p><strong>Médias Móveis:</strong> Permite a suavização dos dados da ST. Reduz outliers e os efeitos sazonais</p></li>
+<li><p><strong>Outras técnicas mais avançadas de suavização:</strong> Kernel, Loess, Splines e <em>Generalized Additive Model</em> (GAM)</p></li>
+</ul>
+<p>Para mostrar o resultado dessas transformações, iremos mostrar algumas técnicas.</p>
+</div>
+<div id="transformacoes-box-cox-digferenciacao-e-logaritmica" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Transformações Box-Cox, Digferenciação e Logarítmica</h3>
+<ul>
+<li>Box and Cox (1964) propuseram uma transformação na variável da ST <span class="math inline">\(Z_t\)</span>, que depende do parâmetro <span class="math inline">\(\lambda\)</span> da seguinte forma:</li>
+</ul>
+<p><span class="math display">\[ Z_{t}(\lambda) = \left\{ \begin{array}{rc} Z_t^{\lambda}, &amp;\mbox{se} \quad \lambda \neq 0, \\  ln(Z_t) , &amp;\mbox{se} \quad \lambda = 0. \end{array}\right.\]</span></p>
+<p>Se o valor de <span class="math inline">\(\lambda\)</span> é igual a zero, a transformação logarítmica da sequência inicial é realizada, no caso em que o valor de lambda difere de zero, a transformação é por lei exponencial. Quando <span class="math inline">\(\lambda\)</span> é igual a 1, a série é analisada em sua escala original, enquanto o caso <span class="math inline">\(\lambda = 1/2\)</span> corresponde à transformação transformação da raiz quadrada. Para que a transformação seja aplicável, a série deve ser estritamente positiva.</p>
+<p>Ex: Utilizando os dados do dataset Air Passengers, temos:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">library</span>(forecast)</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="co"># Série original</span></a>
+<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="kw">plot</span>(AirPassengers, <span class="dt">ylab=</span><span class="st">&quot;Passageiros&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Original&quot;</span>)</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="co"># Lambda = 0, Logaritmica </span></a>
+<a class="sourceLine" id="cb44-6" data-line-number="6">t1 &lt;-<span class="st"> </span><span class="kw">BoxCox</span>(AirPassengers,<span class="dt">lambda =</span><span class="dv">0</span> )</a>
+<a class="sourceLine" id="cb44-7" data-line-number="7"><span class="kw">plot</span>(t1, <span class="dt">ylab=</span><span class="st">&quot;Passageiros&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Lambda = 0, Logaritmica&quot;</span>)</a>
+<a class="sourceLine" id="cb44-8" data-line-number="8"><span class="co"># Lambda = 0.34 </span></a>
+<a class="sourceLine" id="cb44-9" data-line-number="9">t2 &lt;-<span class="st"> </span><span class="kw">BoxCox</span>(AirPassengers,<span class="dt">lambda =</span>.<span class="dv">1</span> )</a>
+<a class="sourceLine" id="cb44-10" data-line-number="10"><span class="kw">plot</span>(t2, <span class="dt">ylab=</span><span class="st">&quot;Passageiros&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Lambda = 0.34&quot;</span>)</a>
+<a class="sourceLine" id="cb44-11" data-line-number="11"><span class="co"># Gera labda automático</span></a>
+<a class="sourceLine" id="cb44-12" data-line-number="12">lbd &lt;-<span class="st"> </span><span class="kw">BoxCox.lambda</span>(AirPassengers)</a>
+<a class="sourceLine" id="cb44-13" data-line-number="13"><span class="co"># print(lbd)</span></a>
+<a class="sourceLine" id="cb44-14" data-line-number="14">t3 &lt;-<span class="st"> </span><span class="kw">BoxCox</span>(AirPassengers,<span class="dt">lambda =</span>lbd )</a>
+<a class="sourceLine" id="cb44-15" data-line-number="15"><span class="kw">plot</span>(t3, <span class="dt">ylab=</span><span class="st">&quot;Passageiros&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Labda Automático&quot;</span>)</a>
+<a class="sourceLine" id="cb44-16" data-line-number="16"><span class="co"># Diferenciacao </span></a>
+<a class="sourceLine" id="cb44-17" data-line-number="17">t4 &lt;-<span class="st"> </span><span class="kw">diff</span>(AirPassengers)</a>
+<a class="sourceLine" id="cb44-18" data-line-number="18"><span class="kw">plot</span>(t4, <span class="dt">ylab=</span><span class="st">&quot;Passageiros&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Diferenciacao&quot;</span>)</a>
+<a class="sourceLine" id="cb44-19" data-line-number="19"><span class="co"># Logaritmo </span></a>
+<a class="sourceLine" id="cb44-20" data-line-number="20">t5 &lt;-<span class="st"> </span><span class="kw">log</span>(AirPassengers)</a>
+<a class="sourceLine" id="cb44-21" data-line-number="21"><span class="kw">plot</span>(t5, <span class="dt">ylab=</span><span class="st">&quot;Passageiros&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Log&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-45-1.png" width="100%" /></p>
+</div>
+</div>
+<div id="metodos-de-alisamento-ou-suavizacao" class="section level2">
+<h2><span class="header-section-number">4.2</span> Métodos de Alisamento ou Suavização</h2>
+<ul>
+<li><p>Uma função é suave se contı́nua e derivável em todos os pontos.</p></li>
+<li><p>Utiliza-se a expressão Funções de Suavização para definir funções que aplicadas sobre um conjunto numérico retornam outro conjunto cujos valores tendem à média, local ou global.</p></li>
+<li><p>Utiliza-se funções de suavização quando se supõe que o fenômeno é de fato suave, e as observações apresentam variabilidade aleatória pouco relevante.</p></li>
+<li><p>Também são utilizadas quando se deseja modelar a estrutura geral o fenômeno, desconsiderando cada ocorência isolada.</p></li>
+</ul>
+<div id="algumas-funcoes-de-suavizacao" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Algumas funções de suavização</h3>
+<p>Existem diversas funções de suavização no <strong>R</strong> dentre as principais destacamos:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Médias móveis:</strong> O métodos mais simples de suavização.</p></li>
+<li><p><strong>Kernel density:</strong> Estimativa de densidade de probabilidade – equivale à
+uma média ponderada.</p></li>
+<li><p><strong>Loess/Lowess:</strong> locally weighted scatterplot smoothing – estende a mesma idéia, mas os valores entram em uma regressao ponderada (não apenas média, ou seja, inclui uma inclinação)</p></li>
+<li><p><strong>Splines:</strong> cúbica, p-splines, thin plate</p></li>
+</ol>
+<ul>
+<li>Todas essas funções podem ser uni ou multi-dimensionais, existem ainda outras funções para suavizar</li>
+</ul>
+<!-- ![](figuras/LOESS1.png){width=700px} -->
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+</div>
+<div id="medias-moveis" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Médias móveis</h3>
+<p>Considere a ST estacionária e localmente constante, composta de seu nível e mais um ruído aleatório.</p>
+<p><span class="math display">\[ Z_t = \mu_t + a_t , \]</span> <span class="math display">\[t = 1,2,...,N \]</span></p>
+<p>Sendo <span class="math inline">\(E(a_t) = 0\)</span>, <span class="math inline">\(Var(a_t)=\sigma^2_a\)</span> e <span class="math inline">\(\mu_t\)</span> é um parâmetro desconhecido que varia com o tempo.</p>
+<p>A técnica de média móvel consistew em calcular a média aritmética das <span class="math inline">\(h\)</span> observcações mais recentes, ou seja,</p>
+<p><span class="math display">\[M_t = \dfrac{Z_t+Z_{t-1}+...+Z_{t-h+1}}{h}\]</span></p>
+<ul>
+<li><p>Denotamos por <span class="math inline">\(h\)</span> sendo o comprimento da média.</p></li>
+<li><p>Desta forma, <span class="math inline">\(M_t\)</span> é uma estimativa do nível <span class="math inline">\(\mu_t\)</span> que não leva em consideração as observações mais antigas. Note que a cada período a observação mais antiga é substituída pela mais recente, calculando-se uma média nova.</p></li>
+</ul>
+<!-- #![](figuras/running-eps-converted-to.png){width=700px} -->
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p>Série original , vamos exemplificar o que acontece com quando se usa uma janela de 3 meses,
+repare as 3 primeiras observações</p>
+<p><img src="figuras/mm_fig2.png" width="1270" /></p>
+<p>Serie com Media Móvel 3 , note que o primeiro é ultimo valores da serie agora são <strong>NA</strong></p>
+<p><img src="figuras/mm_fig3.png" width="1270" /></p>
+<p>Observe que o valor para fevereiro e calculado a partir dos 3 primeiros valores</p>
+<pre><code>(16.87 + 15.08 + 15.07)/3 =  15.67</code></pre>
+<p><strong>Exemplo:</strong> Utilizando a ST mensal referente as mortes em estradas Reino Unido (1969–1984), temos:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">library</span>(forecast)</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="kw">plot</span>(UKDriverDeaths,<span class="dt">ylab=</span><span class="st">&#39;&#39;</span>)</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">ma</span>(UKDriverDeaths,<span class="dv">12</span>),<span class="dt">col=</span><span class="dv">2</span>,<span class="dt">lty=</span><span class="dv">1</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">ma</span>(UKDriverDeaths,<span class="dv">5</span>),<span class="dt">col=</span><span class="dv">4</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Obitos&quot;</span>,<span class="st">&quot;Media Movel 5&quot;</span>,<span class="st">&quot;Media Movel 12&quot;</span>),</a>
+<a class="sourceLine" id="cb46-6" data-line-number="6">       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&#39;blue&#39;</span>,<span class="st">&#39;red&#39;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>), <span class="dt">cex=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="utilizacao-das-medias-moveis" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Utilização das Médias Móveis</h3>
+<ul>
+<li><p>Processo de Transformação - “Suavização da Série”</p></li>
+<li><p>Remoção de outliers</p></li>
+<li><p>Identificação de tendências</p></li>
+</ul>
+<p><strong>Ex:</strong> Médias Móveis - ordem 5</p>
+</div>
+</div>
+<div id="kernel" class="section level2">
+<h2><span class="header-section-number">4.3</span> Kernel</h2>
+<p>O algoritmo:</p>
+<ul>
+<li><p>Seja <span class="math inline">\((x)\)</span> ponto para o qual se deseja estimar f(.)</p></li>
+<li><p>Defina a função <strong>kernel</strong>: simétrica, unimodal, centrada em <span class="math inline">\((x)\)</span>, que cai a zero nos limites da <strong>vizinhança</strong>.</p></li>
+<li><p>Esse subconjunto dos dados, também denominado  ou  ou parâmetro de suavização controla flexibilidade do kernel.</p></li>
+<li><p>Repita o procedimento para diversos <span class="math inline">\((x)\)</span> conecte os pontos</p></li>
+</ul>
+<p><span class="math display">\[\hat{f_h}(x) = \dfrac{1}{Nh}\sum{K \left( \dfrac{x-x_i}{h}\right)}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(h\)</span> <span class="math inline">\(\rightarrow\)</span> largura de banda</p></li>
+<li><p><span class="math inline">\(K\)</span> <span class="math inline">\(\rightarrow\)</span> função de suavização</p></li>
+</ul>
+<p>Kernel Gaussiano: <span class="math display">\[k(x)=\dfrac{1}{\sqrt{2\pi}} exp(1/2 x^2)\]</span></p>
+<div id="diferentes-funcoes-kernel" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Diferentes Funções Kernel</h3>
+<p><img src="figuras/variosKernels-eps-converted-to.png" width="700" /></p>
+<p>Vamos a uma demostração:</p>
+<p>ao chamar a função <em>demo()</em> você vai ver um painel de controle como o abaixo
+<img src="figuras/tk_fig1.png" /></p>
+<p>e uma gráfico de uma função <strong>kernel</strong> como abaixo. ultilise o controle deslisante mostrado pela seta e altere as opções.</p>
+<p><img src="figuras/tk_fig2.png" /></p>
+<ul>
+<li>Série Temporal: Leptospirose <em>vs</em> Clima</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="co">#declara local na internet onde estão os dados</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">local &lt;-<span class="st"> &quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&quot;</span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb47-5" data-line-number="5"><span class="co">## a função paste0 junta o local e o nome do arquivo!</span></a>
+<a class="sourceLine" id="cb47-6" data-line-number="6">lepto &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;leptoruido.csv&quot;</span>), <span class="dt">header=</span>T)</a>
+<a class="sourceLine" id="cb47-7" data-line-number="7">dia &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;climadia.dat&quot;</span>), <span class="dt">header=</span>T)</a>
+<a class="sourceLine" id="cb47-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb47-9" data-line-number="9"><span class="kw">library</span>(lattice)</a>
+<a class="sourceLine" id="cb47-10" data-line-number="10"><span class="kw">library</span>(car)</a>
+<a class="sourceLine" id="cb47-11" data-line-number="11"><span class="kw">library</span>(sm)</a>
+<a class="sourceLine" id="cb47-12" data-line-number="12"><span class="kw">library</span>(survival)</a>
+<a class="sourceLine" id="cb47-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb47-14" data-line-number="14"><span class="co">#XY condicionado</span></a>
+<a class="sourceLine" id="cb47-15" data-line-number="15"><span class="kw">xyplot</span>(cases <span class="op">+</span><span class="st"> </span>totrain <span class="op">+</span><span class="st"> </span>tempmed <span class="op">~</span><span class="st"> </span>week,</a>
+<a class="sourceLine" id="cb47-16" data-line-number="16"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,</a>
+<a class="sourceLine" id="cb47-17" data-line-number="17">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
+<a class="sourceLine" id="cb47-18" data-line-number="18"> <span class="dt">data=</span>lepto)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Exemplos de Kernel</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="co">#### density - default &quot;gaussian&quot;</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">hist</span>(lepto<span class="op">$</span>totrain, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">400</span>,<span class="dt">by=</span><span class="dv">10</span>),<span class="dt">freq=</span>F, <span class="dt">col=</span><span class="st">&quot;darkgray&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Chuva&quot;</span>)</a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>totrain , <span class="dv">4</span>),<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>totrain , <span class="dv">12</span>),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;4&quot;</span>,<span class="st">&quot;12&quot;</span>), <span class="dt">title=</span><span class="st">&quot;BW&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">hist</span>(lepto<span class="op">$</span>cases, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">36</span>,<span class="dt">by=</span><span class="dv">1</span>),<span class="dt">freq=</span>F, <span class="dt">col=</span><span class="st">&quot;darkgray&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Casos Leptospirose&quot;</span>)</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>cases , <span class="dv">1</span>),<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>cases , <span class="dv">2</span>),<span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>cases , <span class="dv">4</span>),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;4&quot;</span>), <span class="dt">title=</span><span class="st">&quot;BW&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="st">&quot;green&quot;</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-51-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">hist</span>(lepto<span class="op">$</span>cases, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">36</span>,<span class="dt">by=</span><span class="dv">1</span>),<span class="dt">freq=</span>F, <span class="dt">col=</span><span class="st">&quot;darkgray&quot;</span>)</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>cases , <span class="dv">2</span>, <span class="dt">kernel =</span> <span class="st">&quot;rectangular&quot;</span> ),<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>cases , <span class="dv">2</span>, <span class="dt">kernel =</span> <span class="st">&quot;triangular&quot;</span> ),<span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">density</span>(lepto<span class="op">$</span>cases , <span class="dv">2</span>, <span class="dt">kernel =</span> <span class="st">&quot;gaussian&quot;</span> ),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb50-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;rectangular&quot;</span>,<span class="st">&quot;triangular&quot;</span>,<span class="st">&quot;gaussian&quot;</span>), <span class="dt">title=</span><span class="st">&quot;BW&quot;</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="st">&quot;green&quot;</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-51-3.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Aplicando o Kernel em ST</li>
+</ul>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">plot</span>(totrain <span class="op">~</span><span class="st"> </span>week, <span class="dt">data=</span>lepto, <span class="dt">cex=</span>.<span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;gray35&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kernel Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, </a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">  <span class="dt">main=</span><span class="st">&quot;Kernel Smooth&quot;</span>)</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">ksmooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>, <span class="dt">bandwidth =</span> <span class="dv">52</span>), <span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">ksmooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>, <span class="dt">bandwidth =</span> <span class="dv">13</span>), <span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="kw">lines</span>(<span class="kw">ksmooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>,  <span class="dt">bandwidth =</span> <span class="dv">4</span>), <span class="dt">col=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb51-6" data-line-number="6"><span class="kw">lines</span>(<span class="kw">ksmooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>, <span class="dt">bandwidth =</span> <span class="dv">21</span>), <span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb51-7" data-line-number="7"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;52 sem.&quot;</span>,<span class="st">&quot;13 sem.&quot;</span>,<span class="st">&quot;4 sem.&quot;</span>,<span class="st">&quot;21 sem.&quot;</span>),<span class="dt">fill=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="dt">title=</span><span class="st">&quot;Janela&quot;</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="largura-de-banda" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Largura de Banda</h3>
+<p>Como estimar a largura de banda ?</p>
+<ul>
+<li>Validação cruzada</li>
+</ul>
+<p><span class="math display">\[CV(\lambda) = \frac{1}{n} \sum_{j=1}^n \left( y_i - \hat{f}_{\lambda(j)} (x_j) \right) ^2\]</span></p>
+<ul>
+<li><p>O ponto deixado fora do ajuste a cada vez,</p></li>
+<li><p><span class="math inline">\(\lambda\)</span> o valor que minimiza essa equação.</p></li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="co">### efeito de borda</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="co"># exluindo os pontos 1 a 3 para forcar borda</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3">lepto2 &lt;-<span class="st"> </span>lepto[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),]</a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="kw">hcv</span>(lepto2<span class="op">$</span>week, lepto2<span class="op">$</span>totrain, <span class="dt">display=</span><span class="st">&quot;lines&quot;</span>)</a></code></pre></div>
+<p>[1] 6.129</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">abline</span>(<span class="dt">v=</span> <span class="fl">6.129356</span>, <span class="dt">col=</span><span class="dv">2</span>,<span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">plot</span>(totrain <span class="op">~</span><span class="st"> </span>week, <span class="dt">data=</span>lepto2, <span class="dt">cex=</span>.<span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;gray35&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Kernel Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, </a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">  <span class="dt">main=</span><span class="st">&quot;Kernel Smooth -- Efeito de Borda&quot;</span>)</a>
+<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">ksmooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>, <span class="dt">bandwidth =</span> <span class="dv">21</span> ), <span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">ksmooth</span>(lepto2<span class="op">$</span>week, lepto2<span class="op">$</span>totrain, <span class="dt">kernel =</span> <span class="st">&quot;normal&quot;</span>, <span class="dt">bandwidth =</span> <span class="fl">6.1</span> ), <span class="dt">col=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;21 sem.&quot;</span>,<span class="st">&quot;6 sem.&quot;</span>),<span class="dt">fill=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>), <span class="dt">title=</span><span class="st">&quot;Janela&quot;</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="utilizacao-do-kernel" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Utilização do Kernel</h3>
+<ul>
+<li><p>Vantagens: simples, ótimo para análise exploratória.</p></li>
+<li><p>Desvantagens: efeito de borda.</p></li>
+<li><p>Muito sensı́vel à largura de banda.</p></li>
+<li><p>Escolha automática de largura de banda pode não ser o desejável.</p></li>
+<li><p>Pouco sensı́vel à forma da função, desde que suave.</p></li>
+</ul>
+</div>
+</div>
+<div id="lowess-locally-weighted-sum-of-square" class="section level2">
+<h2><span class="header-section-number">4.4</span> Lowess (Locally Weighted Sum of Square)</h2>
+<ul>
+<li><p>Semelhante ao kernel, mas os valores são estimados a partir de uma regressão local ao invés da média ponderada.</p></li>
+<li><p>A cada ponto do conjunto de dados um polinômio é ajustado utilizando um sub-conjunto através de mı́nimos quadrados ponderados de forma a dar maior peso aos pontos próximos.</p></li>
+<li><p>O subconjunto dos dados é também denominado janela ou largura de banda ou parâmetro de suavização e controla flexibilidade da função de regressão – se a janela for igual ao total de pontos fica igual à regressão.</p></li>
+<li><p>Quanto maior o tamanho da janela, maior o alisamento e vice-versa.</p></li>
+<li><p>O grau do polinômio de cada regressão local em geral é baixo. Polinômio de primeiro grau é a regressão linear local; de segundo regressão quadrática.</p></li>
+<li><p>A largura da janela é indicado por uma fração dos dados que varia de 0 a 1.</p>
+<ul>
+<li><p>Exemplo: largura 0,1 significa que a janela tem largura que equivale a 10% do eixo horizontal;</p></li>
+<li><p>Polinômio de grau 0 é a média móvel;</p></li>
+<li><p>Se a janela for de 100% dos pontos = média.</p></li>
+</ul></li>
+</ul>
+<p>Existem varias funções que implementam o <em>Lowess</em> no R temos dois grupos que implementa uma função de suavização como por exemplo a <em>lowess()</em> ou como modelo <em>loess()</em> .</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">plot</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain,<span class="dt">cex=</span>.<span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;gray35&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Loess Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Loess - Bandwidth e Grau do Polinômio&quot;</span>)</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">lowess</span>(lepto<span class="op">$</span>totrain <span class="op">~</span><span class="st"> </span>lepto<span class="op">$</span>week ,<span class="dt">f =</span> <span class="fl">0.75</span>),<span class="dt">col=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">lowess</span>(lepto<span class="op">$</span>totrain <span class="op">~</span><span class="st"> </span>lepto<span class="op">$</span>week ,<span class="dt">f =</span> <span class="fl">0.015</span>),<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="co"># Loess – Span &amp; Grau</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="kw">plot</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain,<span class="dt">cex=</span>.<span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;gray35&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Loess Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Loess - Bandwidth e Grau do Polinômio&quot;</span>)</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.75</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb56-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.75</span>, <span class="dt">degree =</span> <span class="dv">1</span>)),<span class="dt">col=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">lty=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.05</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="st">&quot;darkblue&quot;</span>)</a>
+<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.05</span>, <span class="dt">degree =</span> <span class="dv">1</span>)),<span class="dt">col=</span><span class="st">&quot;darkblue&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">lty=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb56-7" data-line-number="7"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;75% - 2o.&quot;</span>,<span class="st">&quot;75% - Linear (default)&quot;</span>,<span class="st">&quot;5% - 2o.&quot;</span>,<span class="st">&quot;5% - Linear&quot;</span>),<span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;darkblue&quot;</span>), <span class="dt">title=</span><span class="st">&quot;Janela e Grau&quot;</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="co"># Loess – Span</span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="co"># lowess - f </span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="kw">plot</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain,<span class="dt">cex=</span>.<span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;gray35&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Loess Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Loess - Bandwidth&quot;</span>)</a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.15</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="dv">1</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.05</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="dv">2</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb57-6" data-line-number="6"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto,<span class="dt">span =</span> <span class="fl">0.10</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="st">&quot;darkblue&quot;</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb57-7" data-line-number="7"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;  5% (21 sem.)&quot;</span>,<span class="st">&quot;10% (41 sem.)&quot;</span>,<span class="st">&quot;15% (61 sem.)&quot;</span>),<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="st">&quot;darkblue&quot;</span>,<span class="dv">1</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="dt">title=</span><span class="st">&quot;Janela&quot;</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="co"># Loess – Span &amp; Borda</span></a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">plot</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain,<span class="dt">cex=</span>.<span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;gray35&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Loess Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Loess - Bandwidth&quot;</span>)</a>
+<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto2,<span class="dt">span =</span> <span class="fl">0.15</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="dv">1</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto2,<span class="dt">span =</span> <span class="fl">0.05</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="dv">2</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb58-5" data-line-number="5"><span class="kw">lines</span>(<span class="kw">predict</span>(<span class="kw">loess</span>(totrain <span class="op">~</span><span class="st"> </span>week , <span class="dt">data=</span>lepto2,<span class="dt">span =</span> <span class="fl">0.10</span>, <span class="dt">degree =</span> <span class="dv">2</span>)),<span class="dt">col=</span><span class="st">&quot;darkblue&quot;</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb58-6" data-line-number="6"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;  5% (21 sem.)&quot;</span>,<span class="st">&quot;10% (41 sem.)&quot;</span>,<span class="st">&quot;15% (61 sem.)&quot;</span>),<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="st">&quot;darkblue&quot;</span>,<span class="dv">1</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="dt">title=</span><span class="st">&quot;Janela&quot;</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="co"># Loess – Outra forma, mas fica pouco suave</span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="kw">scatter.smooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>tempmed, <span class="dt">span =</span> <span class="fl">.05</span>, <span class="dt">degree =</span> <span class="dv">2</span>, <span class="dt">family =</span>  <span class="st">&quot;gaussian&quot;</span>, </a>
+<a class="sourceLine" id="cb59-3" data-line-number="3">               <span class="dt">col=</span> <span class="st">&quot;darkgray&quot;</span>, <span class="dt">cex=</span>.<span class="dv">5</span>, <span class="dt">ylab=</span><span class="st">&quot;Temperatura&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-60-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">scatter.smooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>totrain, <span class="dt">span =</span> <span class="fl">.05</span>, <span class="dt">degree =</span> <span class="dv">2</span>, <span class="dt">family =</span>  <span class="st">&quot;gaussian&quot;</span>, </a>
+<a class="sourceLine" id="cb60-2" data-line-number="2">               <span class="dt">col=</span> <span class="st">&quot;darkgray&quot;</span>, <span class="dt">cex=</span>.<span class="dv">5</span>, <span class="dt">ylab=</span><span class="st">&quot;Chuva&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-60-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">scatter.smooth</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">span =</span> <span class="fl">.05</span>, <span class="dt">degree =</span> <span class="dv">2</span>, <span class="dt">family =</span>  <span class="st">&quot;gaussian&quot;</span>, </a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">               <span class="dt">col=</span> <span class="st">&quot;darkgray&quot;</span>, <span class="dt">cex=</span>.<span class="dv">5</span>, <span class="dt">ylab=</span><span class="st">&quot;Casos Leptospirose&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-60-3.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="utilizacao-do-lowess" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Utilização do Lowess</h3>
+<ul>
+<li><p>Vantagens: simples ótimo para análise exploratória.</p></li>
+<li><p>Desvantagens: sensı́vel a valores extremos.</p></li>
+<li><p>Menos sensı́vel à borda.</p></li>
+</ul>
+</div>
+<div id="comparando" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Comparando</h3>
+<!-- ![Nearest neighbor smoother](figuras/suaveEX1.png){width=700px} -->
+<div class="figure">
+<img src="figuras/suaveEX2.png" alt="Kernel average smoother" width="7000" />
+<p class="caption">Kernel average smoother</p>
+</div>
+<div class="figure">
+<img src="figuras/suaveEX3.png" alt="Local linear regression" width="7000" />
+<p class="caption">Local linear regression</p>
+</div>
+</div>
+</div>
+<div id="splines" class="section level2">
+<h2><span class="header-section-number">4.5</span> Splines</h2>
+<ul>
+<li><p>Splines são funções polinomiais que juntam nos nós, de forma suave, o que é garantido pela existência de <span class="math inline">\(1^a\)</span> e <span class="math inline">\(2^a\)</span> derivadas.</p></li>
+<li><p>A escolha do parâmetro de suavização pode ser visual ou mais formal, quando a definição é dada pelo valor que minimiza o erro quadrático médio do ajuste, ou através de alguma forma de validação cruzada.</p></li>
+<li><p>A função que minimiza regressão penalizada é uma <em>spline cúbica natural</em> com nós em valores distintos de <span class="math inline">\(x_i\)</span>.</p></li>
+<li><p>Um problema de regressão penalizada: como encontrar a solução <span class="math inline">\(\hat{f}(x)\)</span>
+que minimize:</p></li>
+</ul>
+<p><span class="math display">\[\sum\left[y_i - f(x_i) \right]^2 + \tau  \int f&#39;&#39;(x)]^2 dx\]</span>
+sendo <span class="math inline">\(\tau\)</span> o parâmetro de alizamento:</p>
+<ul>
+<li><p>Se <span class="math inline">\(\tau = 0 \Rightarrow \hat{f}(x)\)</span> é interpolação simples</p></li>
+<li><p>Se <span class="math inline">\(\tau\)</span> é muito grande <span class="math inline">\(\Rightarrow \hat{f}(x)\)</span> será tal que <span class="math inline">\(f&#39;&#39;(x)\)</span> seja zero em todos os pontos, ou seja, mínimos quadrados.</p></li>
+</ul>
+<div id="splines-vs-loess" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Splines <em>vs</em> Loess</h3>
+<ul>
+<li><p>Como no spline se minimiza uma função-objetivo explı́cita, é mais elegante matematicamente.</p></li>
+<li><p>O ajuste dos dois é muito semelhante para o mesmo número de graus de liberdade.</p></li>
+<li><p>Pode-se ajustar essas funções para diversos preditores:</p></li>
+</ul>
+<p><span class="math display">\[ \eta = \beta_0 + f_1(x_{i1},x_{i2},\ldots,x_{ip}) + \ldots\]</span>
+mais complexo para splines (thin plate splines)</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">plot</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">ylab=</span><span class="st">&quot;Casos Leptospirose&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;spline(.) -- 3 methods&quot;</span>)</a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">n=</span><span class="dv">10</span> ), <span class="dt">col =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">n=</span><span class="dv">10</span>, <span class="dt">method =</span> <span class="st">&quot;natural&quot;</span>), <span class="dt">col =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">n=</span><span class="dv">10</span>, <span class="dt">method =</span> <span class="st">&quot;periodic&quot;</span>), <span class="dt">col =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb62-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;Defaut&quot;</span>,<span class="st">&quot;Natural&quot;</span>,<span class="st">&quot;Periódico&quot;),col=c(2,3,4), lty=c(1,1,1),title=&quot;</span>Janela<span class="st">&quot;,bty=&quot;</span>n<span class="st">&quot;)</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-61-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">lepto.spl &lt;-<span class="st"> </span><span class="kw">smooth.spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases)</a>
+<a class="sourceLine" id="cb63-2" data-line-number="2">lepto.spl.cv &lt;-<span class="st"> </span><span class="kw">smooth.spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">cv =</span>T)</a>
+<a class="sourceLine" id="cb63-3" data-line-number="3"><span class="kw">plot</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">cex=</span>.<span class="dv">6</span>, <span class="dt">col=</span><span class="st">&quot;darkgray&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Casos Leptospirose&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Semana&quot;</span>)</a>
+<a class="sourceLine" id="cb63-4" data-line-number="4"><span class="kw">lines</span>(lepto.spl, <span class="dt">col=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb63-5" data-line-number="5"><span class="kw">lines</span>(lepto.spl.cv, <span class="dt">col=</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb63-6" data-line-number="6"><span class="kw">lines</span>(<span class="kw">smooth.spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">df=</span><span class="dv">10</span>),<span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb63-7" data-line-number="7"><span class="kw">lines</span>(<span class="kw">smooth.spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">df=</span><span class="dv">50</span>),<span class="dt">col=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb63-8" data-line-number="8"><span class="kw">lines</span>(<span class="kw">smooth.spline</span>(lepto<span class="op">$</span>week, lepto<span class="op">$</span>cases, <span class="dt">df=</span><span class="dv">2</span>),<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb63-9" data-line-number="9"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;Sem CV&quot;</span>,<span class="st">&quot;Com CV&quot;</span>,<span class="st">&quot;df=10&quot;</span>, <span class="st">&quot;df=50&quot;</span>, <span class="st">&quot;df=2&quot;</span>),<span class="dt">col=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="dt">title=</span><span class="st">&quot;Janela&quot;</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-62-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<!-- ### Tipos de splines -->
+<!-- - Cubic regression spline – polinômios de grau 3 ajustados aos -->
+<!-- intervalos dos dados definidos pelos nós distribuı́dos regularmente em -->
+<!-- todo o escopo dos dados. A base é a soma de nós mais 2, que -->
+<!-- correspondem ao inı́cio e fim da curva. Os polinômios são unidos de -->
+<!-- forma que a existir as 1 e 2 derivadas. -->
+<!-- - Cyclic cubic regression spline – força a função a ter o mesmo valor e -->
+<!-- mesmas derivadas no inı́cio e final. Interessante para séries de tempo -->
+<!-- com sazonalidade. -->
+<!-- - P-splines – Baseia-se na B-spline, na qual a função vai -->
+<!-- obrigatoriamente a zero em m+3 nós adjacentes. A p-spline se baseia -->
+<!-- nessa, porém aplica uma penalidade diferencial entre β’s adjacentes -->
+<!-- para controlar a “wiggliness”. -->
+<!-- - Thin plate – menor erro quadrático, menor número de parâmetros -->
+<!-- considerado o estimador ótimo. Facilmente adaptável para duas/três -->
+<!-- dimensões. -->
+<!-- Tensor Product – Semelhante ao Thin Plate, mas permite escalas -->
+<!-- | bs=  |    Descrição     | Vantagens                                                    | Desvantagens                                                 | -->
+<!-- | :--: | :--------------: | ------------------------------------------------------------ | ------------------------------------------------------------ | -->
+<!-- | "tp" |    Thin Plate    | Suaviza múltiplas covariáveis. Não se altera com a rotação. Estimador ótimo. | Computacionalmente custoso. Não é invariante quanto à escala. | -->
+<!-- | "cr" | Cubic Regression | Computacionalmente barato. Parâmetros interpretáveis diretamente. | Só uma covariável. Baseado na escolha dos nós. Estimador não ótimo. | -->
+<!-- | "cc" |    Cyclic CRS    | Começo e fim = 's                                            | Idem.                                                        | -->
+<!-- | "ps" |    P-splines     | Qualquer combinação de base e ordem.                         | Nós em intervalos iguais. Penalidades difíceis de interpretar. Estimador não ótimo. | -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- ### Tipos de splines -->
+<!-- library(mgcv) -->
+<!-- rain.tp <- gam(totrain ~ s(week,bs="tp"), data=lepto ) -->
+<!-- rain.ps <- gam(totrain ~ s(week,bs="ps"), data=lepto ) # -->
+<!-- rain.cc <- gam(totrain ~ s(week,bs="cc"), data=lepto ) # -->
+<!-- rain.cr <- gam(totrain ~ s(week,bs="cr"), data=lepto ) # -->
+<!-- rain.ad <- gam(totrain ~ s(week,bs="ad"), data=lepto )  -->
+<!-- ThinPlate  <- predict(rain.tp)   -->
+<!-- P.spline <- predict(rain.ps)   -->
+<!-- CubicRegression <- predict(rain.cr)   -->
+<!-- CyclicCR <- predict(rain.cc)   -->
+<!-- Adaptative <- predict(rain.ad)  -->
+<!-- xyplot(Adaptative +CyclicCR  + CubicRegression+P.spline + ThinPlate~ week, -->
+<!--  outer=TRUE, layout=c(1, 5), pch=19, cex=.2, ylab="", -->
+<!--  scales=list(x=list(at=seq(0,416,52),relation='same'), y=list(relation="same")), data=lepto) -->
+<!-- ``` -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- par(mfrow=c(5,1),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0)) -->
+<!-- plot(rain.tp,shade=TRUE,ylab="TP",xlab="",residuals=F,xaxp=c(0,416,8),main="Chuva", pch=19, cex=.2, xaxt="n") -->
+<!-- plot(rain.ps,shade=TRUE,main="",ylab="PS",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- plot(rain.cr,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- plot(rain.cc,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- plot(rain.ad,shade=TRUE,main="",ylab="Adaptative",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2) -->
+<!-- temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto)  -->
+<!-- temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto ) -->
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2) -->
+<!-- plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica -->
+<!-- cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto) -->
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2) -->
+<!-- plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- ``` -->
+</div>
+</div>
+<div id="exercicios-propostos-2" class="section level2">
+<h2><span class="header-section-number">4.6</span> Exercícios Propostos</h2>
+<ol style="list-style-type: decimal">
+<li><p>Seja <span class="math inline">\(Z_t\)</span> <a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/temperaturaNY.csv"><em>(temperaturaNY.csv)</em></a> uma série temporal referente às médias anuais das temperaturas na cidade de Nova York durante os anos de 1912 e 1971. Utilize e discuta alguns métodos de transformação e/ou suavização para descrever a série.</p></li>
+<li><p>Faça o mesmo com a série de dengue no Vietnã <a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/denguecases2.csv"><em>(denguecases2.csv)</em></a></p></li>
+</ol>
+<p>Verifique as series com atenção e veja como será a melhor maneira de ler e transformar o dato em ST
+lembre-se que no windows você vai precisar</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">options</span>(<span class="dt">url.method=</span><span class="st">&quot;libcurl&quot;</span>)</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2">scan.win &lt;-<span class="st"> </span><span class="cf">function</span>(x) {<span class="kw">scan</span>(<span class="kw">url</span>(x,<span class="dt">method =</span> <span class="st">&#39;libcurl&#39;</span>))}</a></code></pre></div>
+</div>
+<div id="bibliografia-sugerida-2" class="section level2">
+<h2><span class="header-section-number">4.7</span> Bibliografia sugerida</h2>
+<p>Faraway, J.J. Extending the Linear Model with R. Chapman &amp; Hall/CRC Texts in Statistical Science Series, 2006.</p>
+<p>Hastie, T.; Tibshirani, R. Generalised Additive Models. Chapman &amp; Hall, 1990.</p>
+<p>Wood, S.N. Generalized Additive Models: An Introduction with R. Chapman &amp; Hall/CRC Texts in Statistical Science Series, 2006.</p>
+<p>Venables, W.N. &amp; Ripley, B.D. Modern Applied Statistics with S. (MASS) Fourth Edition 2002</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducao-as-series-temporais.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelagem-em-series-temporais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

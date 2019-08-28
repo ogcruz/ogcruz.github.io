@@ -1,7 +1,6 @@
-# Transformações
+# Transformações e Suavizações
 
-## Transformações e Suavisações
-
+## Introdução
 - As vezes os dados precisam ser transformados para a utilização de determinados métodos/modelos;
 
 - O objetivo é tornar os modelos mais simples, no caso das ST o objetivo seria melhorar as previsões;
@@ -107,7 +106,7 @@ legend("bottomright",legend=c("BJSales","Media Movel 7","Lowess f=0.2",'Kernel b
 
 Considere a ST estacionária e localmente constante, composta de seu nível e mais um ruído aleatório.
 
-$$Z_t = \mu_t + a_t$$, $t = 1,2,...,N$
+$$ Z_t = \mu_t + a_t , $$  $$t = 1,2,...,N $$
 
 Sendo $E(a_t) = 0$, $Var(a_t)=\sigma^2_a$ e $\mu_t$ é um parâmetro desconhecido que varia com o tempo.
 
@@ -216,8 +215,13 @@ e uma gráfico de uma função **kernel** como abaixo. ultilise o controle desli
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 
-lepto <- read.csv2("dados/leptoruido.csv", header=T)
-dia <- read.table("dados/climadia.dat", header=T)
+#declara local na internet onde estão os dados
+local <- "https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/"
+
+
+## a função paste0 junta o local e o nome do arquivo!
+lepto <- read.csv2(paste0(local,"leptoruido.csv"), header=T)
+dia <- read.table(paste0(local,"climadia.dat"), header=T)
 
 library(lattice)
 library(car)
@@ -300,7 +304,7 @@ legend("topright",c("21 sem.","6 sem."),fill=c(2,1), title="Janela",bty="n")
 
 ```
 
-
+  
 ### Utilização do Kernel
 
   - Vantagens: simples, ótimo para análise exploratória.

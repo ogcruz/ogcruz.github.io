@@ -39,10 +39,10 @@ theme: cerulean
 
 ```
 
-<!-- ```{r child="capitulo4.Rmd", echo=FALSE} -->
+```{r child="capitulo4.Rmd", echo=FALSE}
 
 
-<!-- ``` -->
+```
 
 <!-- ```{r child="capitulo5.Rmd", echo=FALSE} -->
 
