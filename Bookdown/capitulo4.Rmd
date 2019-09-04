@@ -196,10 +196,10 @@ $$Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t - \thet
 
 | Processo |                            Modelo                            |
 | :------: | :----------------------------------------------------------: |
-|  ARMA(1)   |                $$Z_t = c + \phi_1 Z_{t-1} + a_t - \theta_1 a_{t-1}$$                |
-|  ARMA(2)   |       $$Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2}$$        |
+|  ARMA(1,1)   |                $$Z_t = c + \phi_1 Z_{t-1} + a_t - \theta_1 a_{t-1}$$                |
+|  ARMA(2,2)   |       $$Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2}$$        |
 | $\dots$  |                           $\dots$                            |
-|  ARMA(q)   | $$Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}$$ |
+|  ARMA(p,q)   | $$Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}$$ |
 
 
 - No caso ARMA(1,1), o processo será estacionário se $|\phi_1| < 1$ e $|\theta_1| < 1$, respectivamente. 
@@ -485,7 +485,7 @@ Lembrando que o processo $a_t$ é um ruído branco se:
  
 ## Ajuste manual de modelo ARIMA
 
-```{r}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 library(forecast)
 ggtsdisplay(ldeaths)
 modelo0 <- Arima(ldeaths,order = c(1,0,0),seasonal = c(1,1,1))
@@ -494,7 +494,7 @@ tsdiag(modelo0)
 
 ```
 
-```{r}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 plot(ldeaths)
 lines(fitted(modelo0),col="red")
 ```
@@ -526,33 +526,54 @@ Alguns parâmetros importantes da função *auto.arima()*
 
 - approximation - Se TRUE, o processo de estimação é feito através das somas dos quadrados condicionais e os critérios de informação utilizados para a seleção de modelos são aproximados. O modelo final ainda é calculado usando estimativa de máxima verossimilhança. A aproximação deve ser usada para séries temporais longas ou um período sazonal elevado para evitar tempos de computação excessivos.
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center", comment=NA}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 
 # tilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos
 modelo1 <-  auto.arima(ldeaths, trace = F, allowdrift=F)
 
 
 # Neste modelo, será feito uma busca maior para uma solução "mais ótimizada"
-modelo2 <-  auto.arima(ldeaths, trace = F, stepwise = F, approximation = F)
+modelo2 <-  auto.arima(ldeaths, trace = F, stepwise = F, approximation = F,parallel = TRUE)
 
 ```
 
 Vamos verificar cada um dos modelos obtidos
 
-```{r, comment=NA}
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
 modelo1
+
+```
+
+```{r, echo=F, warning=FALSE, results='asis', message = NA, out.width = "100%", fig.align = "center"}
+# library(texreg)
+# texreg::htmlreg(modelo1, star.symbol = "\\*", center = TRUE, doctype = FALSE,  html.tag = TRUE, head.tag = FALSE, body.tag = FALSE)
+pander(modelo1)
+
+```
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 tsdiag(modelo1)
 ```
 
-```{r, comment=NA}
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
+pander(modelo2)
+
+```
+
+```{r, echo=F, warning=FALSE, results='asis', message = NA, out.width = "100%", fig.align = "center"}
+# texreg::htmlreg(modelo2, star.symbol = "\\*", center = TRUE, doctype = FALSE,  html.tag = TRUE, head.tag = FALSE, body.tag = FALSE)
 modelo2
+```
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
 tsdiag(modelo2)
 ```
 
 
 Comparando os ajustes dos modelos  
 
-```{r}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 plot(ldeaths)
 lines(fitted(modelo0),col="red")
 lines(fitted(modelo1),col="blue")
@@ -570,20 +591,32 @@ aqui vamos somente apresentar um exemplo utilizando um dos modelos já ajustados
 
 Uma maneira simples de obter o valor predito é usando a função *predict()* 
 
-```{r}
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
 predict(modelo1,n.ahead = 12)
 
 ```
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+predito1 <- predict(modelo1,n.ahead = 12)
+# knitr::kable(list(predito1$pred, predito1$se))
+
+DT::datatable(as.data.frame(predito1))
+```
 o pacote *forecast* possui funções para facilitar a predição e visualização. Veja na função abaixo que o modelo já retorna não só o valor predito mas os limites superior e inferior para os níveis de confiança 80 e 95.
 
-```{r}
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
 pred <- forecast(modelo1,h=12)
 pred
 ```
 
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+pred <- forecast(modelo1,h=12)
+DT::datatable(as.data.frame(pred))
+```
+
 Ele também facilita a confecção de gráficos 
 
-```{r}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 plot(pred)  # a função autoplot produz no formato ggplot
 ```
 
@@ -620,13 +653,33 @@ onde:
  
 A titulo de demostração da função de correlação cruzada (Cross-correlation Function), vamos usar como exemplo dados de temperatura da área central Reino Unido  obtidos do [UK Met Office](http://hadobs.metoffice.gov.uk/hadcet/data/download.html)  e vamos correlacionar com a serie **ldeaths** .
 
-```{r}
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 uktemp <- read.table('https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/UKtemp.tsv')
 uktemp <- ts(as.vector(t(uktemp[,2:13])),start = c(1970,1),frequency = 12)
 uktemp.ts <- window(uktemp,start=c(1974,1),end=c(1979,12))
 fcc <- ccf(uktemp.ts,ldeaths)
 #plot(fcc)
+
+```
+
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
+
 cbind(fcc$lag,fcc$acf)
+
+```
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+dt <- cbind(fcc$lag,fcc$acf)
+dt %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling()
+```
+
+
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
 max(abs(fcc$acf))
 ```
   
@@ -657,6 +710,35 @@ $$\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + \ldots$$
    
 - Quando usar ? Quando o efeito da covariável muda dependendo do seu valor
 
+### Tipos de splines
+
+- Cubic regression spline – polinômios de grau 3 ajustados aos
+intervalos dos dados definidos pelos nós distribuı́dos regularmente em
+todo o escopo dos dados. A base é a soma de nós mais 2, que
+correspondem ao inı́cio e fim da curva. Os polinômios são unidos de
+forma que a existir as 1 e 2 derivadas.
+
+- Cyclic cubic regression spline – força a função a ter o mesmo valor e
+mesmas derivadas no inı́cio e final. Interessante para séries de tempo
+com sazonalidade.
+
+- P-splines – Baseia-se na B-spline, na qual a função vai
+obrigatoriamente a zero em m+3 nós adjacentes. A p-spline se baseia
+nessa, porém aplica uma penalidade diferencial entre β’s adjacentes
+para controlar a “wiggliness”.
+
+- Thin plate – menor erro quadrático, menor número de parâmetros
+considerado o estimador ótimo. Facilmente adaptável para duas/três
+dimensões.
+Tensor Product – Semelhante ao Thin Plate, mas permite escalas
+
+
+| bs=  |    Descrição     | Vantagens                                                    | Desvantagens                                                 |
+| :--: | :--------------: | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| "tp" |    Thin Plate    | Suaviza múltiplas covariáveis. Não se altera com a rotação. Estimador ótimo. | Computacionalmente custoso. Não é invariante quanto à escala. |
+| "cr" | Cubic Regression | Computacionalmente barato. Parâmetros interpretáveis diretamente. | Só uma covariável. Baseado na escolha dos nós. Estimador não ótimo. |
+| "cc" |    Cyclic CRS    | Começo e fim = 's                                            | Idem.                                                        |
+| "ps" |    P-splines     | Qualquer combinação de base e ordem.                         | Nós em intervalos iguais. Penalidades difíceis de interpretar. Estimador não ótimo. |
 
 ## Por que não usar ?
 
@@ -691,6 +773,139 @@ eventos de saúde ao longo do tempo
     - Modelos com inflação zero: modelos de mistura que combinam uma massa pontual a zero com uma distribuição de contagem como Poisson, geométrica ou binomial negativa
 
 ### Exemplo de um modelo GAM
+
+---
+output: 
+  html_document
+---
+
+```{r, echo=F, warning=FALSE, message = FALSE}
+library(rmarkdown)
+library(knitr)
+library(pander)
+library(forecast)
+library(zoo)
+library(quantmod)
+library(DT)
+# library(dplyr)
+# library(magrittr)
+# library(highcharter)
+library(PerformanceAnalytics)
+library(htmltools)
+library(mgcv,quietly = TRUE,warn.conflicts = FALSE,verbose = FALSE)
+library(itsadug,quietly = TRUE,warn.conflicts = FALSE,verbose = FALSE)
+options(width = 800)
+
+```
+
+
+## Exemplo de  modelo GAM aplicado a Séries Temporais
+
+
+1. ldeaths
+
+Transforma o exemplo **ldeaths** de *ts* em *data.frame* preservando as estruturas temporais (tempo e mes)
+
+
+```R
+ldeaths.df <- data.frame(tempo=time(ldeaths),obitos=ldeaths,mes=cycle(ldeaths))
+```
+
+```{r paged.print=TRUE,echo=FALSE}
+ldeaths.df <- data.frame(tempo=time(ldeaths),obitos=ldeaths,mes=cycle(ldeaths))
+kable(head(ldeaths.df))
+```
+
+modelando como **GAM**
+
+```R
+mod0 <- gam ( obitos ~ s(tempo) + s(mes),data=ldeaths.df)
+mod0
+```
+
+Sumário do modelo
+
+```{r results='asis' ,echo=FALSE}
+
+mod0 <- bam ( obitos ~ s(tempo) + s(mes),data=ldeaths.df)
+gamtabs(mod0, caption='',type='html')
+
+#stargazer::stargazer(mod0,summary=FALSE,type='html')
+#require(utils)
+#toLatex(summary(mod0)$s.table) 
+
+```
+
+```{r echo=FALSE}
+lixo <- summary(mod0)
+pander(paste0('R-quadrado(ajustado) = ', round(lixo$r.sq,2), '   Deviance Explicada = ', round(lixo$dev.expl,2) , '  AIC = ',round(AIC(mod0),2) ))
+
+```
+
+Gráfico do termos suaves
+
+```{r echo=FALSE}
+par(mfrow=c(1,2))
+plot(mod0,select = 1)
+abline(h=0,lty=2,col=2)
+plot(mod0,select = 2)
+abline(h=0,lty=2,col=2)
+```
+
+
+Vamos verificar se sobraram estruturas nos residuos usando a ACF dos residuos e o teste de Ljung-Box
+
+```{r echo=FALSE,results='asis'}
+acf(residuals(mod0))
+``` 
+
+
+```{r echo=FALSE,results='asis'}
+
+pander(Box.test(residuals(mod0),type='Ljung-Box')) 
+``` 
+
+Como podemos observar a variavel *tempo* que captura a tendencia ficou completamente linear 
+vamos agora usar a variavel *tempo* de forma linear no modelo
+
+```R
+mod1 <- gam ( obitos ~ tempo + s(mes),data=ldeaths.df)
+mod1
+```
+
+
+```{r results='asis',echo=FALSE}
+mod1 <- gam( obitos ~ tempo + s(mes),data=ldeaths.df)
+#summary(mod1)
+gamtabs(mod1, caption='',type='html')
+
+#stargazer::stargazer(mod1,summary=TRUE,type = 'text')
+#print(xtable(summary(mod1)),type='html')
+```
+
+
+```{r echo=FALSE}
+lixo <- summary(mod1)
+pander(paste0('R-quadrado(ajustado) = ', round(lixo$r.sq,2), '  Deviance Explicada =', round(lixo$dev.expl,2) , '  AIC = ',round(AIC(mod1),2) ))
+```
+
+
+```{r echo=FALSE}
+acf(residuals(mod1))
+
+```
+
+
+```{r echo=FALSE}
+
+pander(Box.test(residuals(mod1),type='Ljung-Box')) 
+
+```
+
+
+
+2. lepto
+
 
 - Vamos utilizar uma a série temporal dos casos de leptospirose com as variáveis de esposição total de chuva e temperatura.
 
@@ -734,69 +949,78 @@ xyplot(totrain ~ week,
  data=lepto)
 
 # Ajustando a chuva como resposta
-rain.tp <- gam(totrain ~ s(week,bs="tp"), data=lepto )
-rain.ps <- gam(totrain ~ s(week,bs="ps"), data=lepto ) #
-rain.cc <- gam(totrain ~ s(week,bs="cc"), data=lepto ) #
-rain.cr <- gam(totrain ~ s(week,bs="cr"), data=lepto ) #
+par(mfrow=c(2,2))
+rain.tp.auto <- gam(totrain ~ s(week,bs="tp"), data=lepto )
+
+plot(rain.tp.auto,main=paste('K = ',rain.tp.auto$smooth[[1]]$bs.dim))
+
+rain.tp.k1 <- gam(totrain ~ s(week,bs="tp",k=1), data=lepto )
+
+plot(rain.tp.k1,main = paste('K =',rain.tp.k1$smooth[[1]]$bs.dim))
+
+rain.tp.k30 <- gam(totrain ~ s(week,bs="tp",k=30), data=lepto )
+
+plot(rain.tp.k30,main=paste('K =',rain.tp.k30$smooth[[1]]$bs.dim))
+
 rain.ad <- gam(totrain ~ s(week,bs="ad"), data=lepto ) 
 
-ThinPlate  <- predict(rain.tp)  
-P.spline <- predict(rain.ps)  
-CubicRegression <- predict(rain.cr)  
-CyclicCR <- predict(rain.cc)  
-Adaptative <- predict(rain.ad) 
+plot(rain.ad,main=paste('K(adaptável) =', rain.ad$smooth[[1]]$bs.dim))
+
+# ThinPlate  <- predict(rain.tp)  
+# P.spline <- predict(rain.ps)  
+# CubicRegression <- predict(rain.cr)  
+# CyclicCR <- predict(rain.cc)  
+# Adaptative <- predict(rain.ad) 
 
 
-xyplot(Adaptative +CyclicCR  + CubicRegression+P.spline + ThinPlate~ week,
-       outer=TRUE, layout=c(1, 5), pch=19, cex=.2, ylab="",
-       scales=list(x=list(at=seq(0,416,52),relation='same'), y=list(relation="same")), data=lepto)
-
-```
-
-
-- Uma outra forma de representar o efeito da chuva
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-
-par(mfrow=c(5,1),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0))
-plot(rain.tp,shade=TRUE,ylab="TP",xlab="",residuals=F,xaxp=c(0,416,8),main="Chuva", pch=19, cex=.2, xaxt="n")
-plot(rain.ps,shade=TRUE,main="",ylab="PS",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n")
-plot(rain.cr,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n")
-plot(rain.cc,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n")
-plot(rain.ad,shade=TRUE,main="",ylab="Adaptative",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2)
 
 
 ```
 
-- Série da temperatura (ThinPlate - tp, P.spline - ps, CubicRegression - cc)
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+<!-- - Uma outra forma de representar o efeito da chuva -->
 
-temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto) 
-temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto ) 
-temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto )
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- #  -->
+<!-- # par(mfrow=c(3,2),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0)) -->
+<!-- # plot(rain.tp,shade=TRUE,ylab="TP",xlab="",residuals=F,xaxp=c(0,416,8),main="Chuva", pch=19, cex=.2, xaxt="n") -->
+<!-- # plot(rain.ps,shade=TRUE,main="",ylab="PS",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- # plot(rain.cr,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- # plot(rain.cc,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- # plot(rain.ad,shade=TRUE,main="",ylab="Adaptative",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2) -->
+<!-- #  -->
 
-par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
-plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2)
-plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2)
-plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2)
+<!-- ``` -->
 
-```
+<!-- - Série da temperatura (ThinPlate - tp, P.spline - ps, CubicRegression - cc) -->
 
-- Série dos casos de leptospirose (ThinPlate - tp, P.spline - ps, CubicRegression - cc)
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+<!-- temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto)  -->
+<!-- temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto )  -->
+<!-- temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto ) -->
 
-cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica
-cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) #
-cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto)
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2) -->
+<!-- plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
 
-par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
-plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2)
-plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2)
-plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2)
+<!-- ``` -->
 
-```
+<!-- - Série dos casos de leptospirose (ThinPlate - tp, P.spline - ps, CubicRegression - cc) -->
+
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+
+<!-- cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica -->
+<!-- cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto) -->
+
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2) -->
+<!-- plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+
+<!-- ``` -->
 
 - Ajustando a série dos casos de leptospirose via distribuição Poisson
 
@@ -811,9 +1035,21 @@ chuvl3 <- gam(cases ~ s(Lag(totrain,3)),family=poisson,data=subset(lepto, week>5
 chuvl4 <- gam(cases ~ s(Lag(totrain,4)),family=poisson,data=subset(lepto, week>5))
 chuvl5 <- gam(cases ~ s(Lag(totrain,5)),family=poisson,data=subset(lepto, week>5))
 
+
+```
+
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
 AIC(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)
 
 ```
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+chuva <- data.frame(round(AIC(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5),2))
+DT::datatable(as.data.frame(chuva))
+
+```
+
+
 
 - Ajustando a série dos casos de leptospirose via distribuição Binomial Negativa
 
@@ -827,7 +1063,18 @@ chuvnb4 <- gam(cases ~ s(Lag(totrain,4)),data=lepto, family=nb(), subset=week>5)
 chuvnb5 <- gam(cases ~ s(Lag(totrain,5)),data=lepto, family=nb(), subset=week>5)
 chuvnb5$family$getTheta()
 
+
+```
+
+
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
 AIC(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)
+
+```
+
+```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+chuvanb <- data.frame(round(AIC(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5),2))
+DT::datatable(as.data.frame(chuvanb))
 
 ```
 
@@ -851,97 +1098,57 @@ boxplot(lepto$totrain)
 par(mfrow=c(3,2),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
 
 plot(chuvnb0,ylab="Lag=0")
+abline(h=0,lty=2,col=2)
 plot(chuvnb1,ylab="Lag=1")
+abline(h=0,lty=2,col=2)
 plot(chuvnb2,ylab="Lag=2")
+abline(h=0,lty=2,col=2)
 plot(chuvnb3,ylab="Lag=3")
+abline(h=0,lty=2,col=2)
 plot(chuvnb4,ylab="Lag=4")
+abline(h=0,lty=2,col=2)
 plot(chuvnb5,ylab="Lag=5")
-
-```
-
-- Incluindo todos os lags no modelo GLM e verificando o Fator de Inflação de Variação (VIF)
-
-<!-- VIF: É um fator que estima o aumento da variância, devido à multicolinearidade em modelos de regressão. -->
-<!--     - Colinearidade aumenta a variância dos betas, ou seja, diminui significância estatística (*t-teste* menor). -->
-
-<!--     - Se todos os VIFs forem 1, não há multicolinearidade, mas se alguns VIFs forem maiores do que 1, os preditores estão correlacionados. -->
-
-<!--     - VIF >  5 indica multicolinearidade média -->
-
-<!--     - VIF > 10 indica colinearidade que tende à perfeita -->
-
-```{r, echo=T, warning=FALSE, results='markup', message = FALSE, out.width = "100%", fig.align = "center"}
-
-casos.chuva.poi <- glm(cases ~ Lag(totrain,0) + Lag(totrain,1) + Lag(totrain,2) + Lag(totrain,3) + Lag(totrain,4)+Lag(totrain,5), family="poisson", data=lepto)
-summary(casos.chuva.poi)
-
-
-pander(car::vif(casos.chuva.poi))
-
-library(MASS) # Utilizar a funcao glm.nb
-casos.chuva.nb <- glm.nb(cases ~ Lag(totrain,0) + Lag(totrain,1) + Lag(totrain,2) + Lag(totrain,3) + Lag(totrain,4)+Lag(totrain,5), data=lepto)
-summary(casos.chuva.nb)
-car::vif(casos.chuva.nb)
-
-
-pander(AIC(casos.chuva.poi,casos.chuva.nb))
-
-```
-
-- Incluindo todos os lags no modelo GAM
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-
-casos.chuva.gam.6 <- gam(cases ~ s(Lag(totrain,0))+s(Lag(totrain,1)) +s(Lag(totrain,2)) +s(Lag(totrain,3)) +s(Lag(totrain,4))+ s(Lag(totrain,5)),data=lepto, family=nb(), subset=week>5)
-
-par(mfrow=c(3,2),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
-plot(casos.chuva.gam.6,shade=TRUE, residuals=T, select=1, ylab="Lag 0")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.6,shade=TRUE, residuals=T, select=2, ylab="Lag 1")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.6,shade=TRUE, residuals=T, select=3, ylab="Lag 2")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.6,shade=TRUE, residuals=T, select=4, ylab="Lag 3")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.6,shade=TRUE, residuals=T, select=5, ylab="Lag 4")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.6,shade=TRUE, residuals=T, select=6, ylab="Lag 5")
-abline(h=0, col=2, lty=3)
-
-```
-
-- Retirando os termos lag 0 e lag 5
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-
-casos.chuva.gam.4 <- gam(cases ~ s(Lag(totrain,1)) +s(Lag(totrain,2)) +s(Lag(totrain,3))+s(Lag(totrain,4)),data=lepto, family=nb(), subset=week>5)
-
-
-par(mfrow=c(2,2),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0))
-plot(casos.chuva.gam.4,shade=TRUE, residuals=T, select=1, ylab="Lag 1")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.4,shade=TRUE, residuals=T, select=2, ylab="Lag 2")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.4,shade=TRUE, residuals=T, select=3, ylab="Lag 3")
-abline(h=0, col=2, lty=3)
-plot(casos.chuva.gam.4,shade=TRUE, residuals=T, select=4, ylab="Lag 4")
-abline(h=0, col=2, lty=3)
-
-
-
+abline(h=0,lty=2,col=2)
 
 ```
 
 
-```{r}
-pander(AIC(casos.chuva.gam.6,casos.chuva.gam.4,casos.chuva.nb))
-```
+
+
+<!-- Analisando os resíduos do modelo casos.chuva.gam.4 -->
+
+
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- par(mfrow=c(2,2)) -->
+<!-- gam.check(casos.chuva.gam.4, pch=19,cex=.3) -->
+<!-- ``` -->
+
+<!-- Plotano o ACF e PACF -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- # ACF e PACF -->
+<!-- par(mfrow=c(1,2)) -->
+<!-- ar.acf <- acf(casos.chuva.gam.4$residuals,type="correlation",plot=T) -->
+<!-- ar.pacf <- acf(casos.chuva.gam.4$residuals,type="partial",plot=T) -->
+
+<!-- plot(ar.acf) -->
+<!-- plot(ar.pacf) -->
+
+<!-- ``` -->
+
+<!-- Teste de Ljung-Box  -->
+
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!--  Box.test(casos.chuva.gam.4$residuals, type = "Ljung") -->
+
+<!-- ``` -->
 
 - E agora? incluir humidade, temperatura, etc etc... 
 
+
+
 ## Exercícios Propostos
   
-1) Utilzando o baco de dados do R chamado Seatbelts, que é baseado em uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.
+1) Utilzando o baco de dados do R chamado *Seatbelts*, que é baseado em uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.
 
 
 |   Variáveis   |                          Descrição                          |
@@ -957,9 +1164,19 @@ pander(AIC(casos.chuva.gam.6,casos.chuva.gam.4,casos.chuva.nb))
 
 Pede-se:
 
-1) Ajuste um modelo ARIMA com a variável de desfecho DriversKilled;
-2) Ajuste um modelo GAM utilizando a variável de desfecho DriversKilled e verifique quais variáveis estão mais associadas ao modelo.
+* Ajuste um modelo ARIMA com a variável de desfecho DriversKilled;
+* Ajuste um modelo GAM utilizando a variável de desfecho DriversKilled e verifique quais variáveis estão mais associadas ao modelo.
 
+
+2) Dados climatológicos de temperaturas máxima, mínima e pluviosidade para as 10 áreas de planejamento (AP) da cidade do Rio de Janeiro de 2001 a 2016  estão disponíveis nos arquivos abaixo. Use a função *read.csv2* para ler o dado.
+
+* [temperatura máxima](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/max_ALL.csv)
+
+* [temperatura mínima](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/max_ALL.csv)
+
+* [pluviosidade](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/rain_ALL.csv)
+
+Escolha uma delas, descreva a série  e tente modelar usando os modelos B&J ou GAM. 
 
 
 

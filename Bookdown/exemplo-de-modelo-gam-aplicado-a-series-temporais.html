@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Exemplo de modelo GAM aplicado a Séries Temporais | capitulo4.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Exemplo de modelo GAM aplicado a Séries Temporais | capitulo4.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Exemplo de modelo GAM aplicado a Séries Temporais | capitulo4.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modelagem-em-series-temporais.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.8/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html"><i class="fa fa-check"></i><b>1</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="1.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#o-que-sao-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>1.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="1.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#alguns-processos-estocasticos"><i class="fa fa-check"></i><b>1.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="1.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>1.3</b> Modelo ARIMA</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autoregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>1.3.1</b> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="1.3.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-estacionariedade"><i class="fa fa-check"></i><b>1.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="1.3.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-de-medias-moveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>1.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="1.3.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-invertibilidade"><i class="fa fa-check"></i><b>1.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="1.3.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-de-medias-moveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>1.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="1.3.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-integrado-de-medias-moveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>1.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="1.3.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-nao-sazonais"><i class="fa fa-check"></i><b>1.3.7</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>1.4</b> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</a></li>
+<li class="chapter" data-level="1.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>1.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="1.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>1.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="1.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-identificacao"><i class="fa fa-check"></i><b>1.7</b> Processo de Identificação</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>1.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#metricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>1.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="1.9" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#analise-de-residuos"><i class="fa fa-check"></i><b>1.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="1.10" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>1.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="1.11" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-automatico-de-modelos-arima"><i class="fa fa-check"></i><b>1.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="1.12" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-de-previsao"><i class="fa fa-check"></i><b>1.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="1.13" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#correlacao-cruzada-cross-corralation"><i class="fa fa-check"></i><b>1.13</b> Correlação Cruzada (<em>Cross-Corralation</em>)</a></li>
+<li class="chapter" data-level="1.14" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>1.14</b> GAM (generalized Additive Models)</a><ul>
+<li class="chapter" data-level="1.14.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>1.14.1</b> Tipos de splines</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#por-que-nao-usar"><i class="fa fa-check"></i><b>1.15</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="1.16" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-em-series-temporais"><i class="fa fa-check"></i><b>1.16</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="1.16.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>1.16.1</b> Exemplo de um modelo GAM</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplo-de-modelo-gam-aplicado-a-series-temporais.html"><a href="exemplo-de-modelo-gam-aplicado-a-series-temporais.html"><i class="fa fa-check"></i><b>2</b> Exemplo de modelo GAM aplicado a Séries Temporais</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="exemplo-de-modelo-gam-aplicado-a-series-temporais.html"><a href="exemplo-de-modelo-gam-aplicado-a-series-temporais.html#exemplo-serie-temporal-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>2.0.1</b> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</a></li>
+<li class="chapter" data-level="2.1" data-path="exemplo-de-modelo-gam-aplicado-a-series-temporais.html"><a href="exemplo-de-modelo-gam-aplicado-a-series-temporais.html#exercicios-propostos"><i class="fa fa-check"></i><b>2.1</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.2" data-path="exemplo-de-modelo-gam-aplicado-a-series-temporais.html"><a href="exemplo-de-modelo-gam-aplicado-a-series-temporais.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.2</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exemplo-de-modelo-gam-aplicado-a-series-temporais" class="section level1">
+<h1><span class="header-section-number"> 2</span> Exemplo de modelo GAM aplicado a Séries Temporais</h1>
+<ol style="list-style-type: decimal">
+<li>ldeaths</li>
+</ol>
+<p>Transforma o exemplo <strong>ldeaths</strong> de <em>ts</em> em <em>data.frame</em> preservando as estruturas temporais (tempo e mes)</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">ldeaths.df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">tempo=</span><span class="kw">time</span>(ldeaths),<span class="dt">obitos=</span>ldeaths,<span class="dt">mes=</span><span class="kw">cycle</span>(ldeaths))</a></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+tempo
+</th>
+<th style="text-align:right;">
+obitos
+</th>
+<th style="text-align:right;">
+mes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1974.000
+</td>
+<td style="text-align:right;">
+3035
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974.083
+</td>
+<td style="text-align:right;">
+2552
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974.167
+</td>
+<td style="text-align:right;">
+2704
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974.250
+</td>
+<td style="text-align:right;">
+2554
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974.333
+</td>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974.417
+</td>
+<td style="text-align:right;">
+1655
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+<p>modelando como <strong>GAM</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">mod0 &lt;-<span class="st"> </span><span class="kw">gam</span> ( obitos <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(tempo) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(mes),<span class="dt">data=</span>ldeaths.df)</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">mod0</a></code></pre></div>
+<p>Sumário do modelo</p>
+<!-- html table generated in R 3.6.0 by xtable 1.8-4 package -->
+<!-- Tue Sep  3 22:10:42 2019 -->
+<table border="1">
+<caption align="bottom">
+</caption>
+<tr>
+<td>
+A. parametric coefficients
+</td>
+<td align="right">
+Estimate
+</td>
+<td align="right">
+Std. Error
+</td>
+<td align="right">
+t-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+(Intercept)
+</td>
+<td align="right">
+2056.6250
+</td>
+<td align="right">
+26.7125
+</td>
+<td align="right">
+76.9911
+</td>
+<td align="right">
+&lt; 0.0001
+</td>
+</tr>
+<tr>
+<td>
+B. smooth terms
+</td>
+<td align="right">
+edf
+</td>
+<td align="right">
+Ref.df
+</td>
+<td align="right">
+F-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+s(tempo)
+</td>
+<td align="right">
+1.0003
+</td>
+<td align="right">
+1.0007
+</td>
+<td align="right">
+14.4150
+</td>
+<td align="right">
+0.0003
+</td>
+</tr>
+<tr>
+<td>
+s(mes)
+</td>
+<td align="right">
+5.7942
+</td>
+<td align="right">
+6.9532
+</td>
+<td align="right">
+59.0681
+</td>
+<td align="right">
+&lt; 0.0001
+</td>
+</tr>
+<a name=tab.gam></a>
+</table>
+<p>R-quadrado(ajustado) = 0.86 Deviance Explicada = 0.88 AIC = 995.27</p>
+<p>Gráfico do termos suaves</p>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>Vamos verificar se sobraram estruturas nos residuos usando a ACF dos residuos e o teste de Ljung-Box</p>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<table style="width:44%;">
+<caption>Box-Ljung test: <code>residuals(mod0)</code></caption>
+<colgroup>
+<col width="23%" />
+<col width="6%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Test statistic</th>
+<th align="center">df</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.7716</td>
+<td align="center">1</td>
+<td align="center">0.3797</td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos observar a variavel <em>tempo</em> que captura a tendencia ficou completamente linear
+vamos agora usar a variavel <em>tempo</em> de forma linear no modelo</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">mod1 &lt;-<span class="st"> </span><span class="kw">gam</span> ( obitos <span class="op">~</span><span class="st"> </span>tempo <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(mes),<span class="dt">data=</span>ldeaths.df)</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">mod1</a></code></pre></div>
+<!-- html table generated in R 3.6.0 by xtable 1.8-4 package -->
+<!-- Tue Sep  3 22:10:43 2019 -->
+<table border="1">
+<caption align="bottom">
+</caption>
+<tr>
+<td>
+A. parametric coefficients
+</td>
+<td align="right">
+Estimate
+</td>
+<td align="right">
+Std. Error
+</td>
+<td align="right">
+t-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+(Intercept)
+</td>
+<td align="right">
+119492.6570
+</td>
+<td align="right">
+30969.4892
+</td>
+<td align="right">
+3.8584
+</td>
+<td align="right">
+0.0003
+</td>
+</tr>
+<tr>
+<td>
+tempo
+</td>
+<td align="right">
+-59.4024
+</td>
+<td align="right">
+15.6652
+</td>
+<td align="right">
+-3.7920
+</td>
+<td align="right">
+0.0003
+</td>
+</tr>
+<tr>
+<td>
+B. smooth terms
+</td>
+<td align="right">
+edf
+</td>
+<td align="right">
+Ref.df
+</td>
+<td align="right">
+F-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+s(mes)
+</td>
+<td align="right">
+5.5691
+</td>
+<td align="right">
+6.7170
+</td>
+<td align="right">
+60.8243
+</td>
+<td align="right">
+&lt; 0.0001
+</td>
+</tr>
+<a name=tab.gam></a>
+</table>
+<p>R-quadrado(ajustado) = 0.86 Deviance Explicada =0.87 AIC = 994.67</p>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<table style="width:44%;">
+<caption>Box-Ljung test: <code>residuals(mod1)</code></caption>
+<colgroup>
+<col width="23%" />
+<col width="6%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Test statistic</th>
+<th align="center">df</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.7346</td>
+<td align="center">1</td>
+<td align="center">0.3914</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li>lepto</li>
+</ol>
+<ul>
+<li>Vamos utilizar uma a série temporal dos casos de leptospirose com as variáveis de esposição total de chuva e temperatura.</li>
+</ul>
+<p><span class="math display">\[\text{Lepto}(t) = \text{rain}(t-?) + \text{humidity}(t-?) + AR(t,t-1) + trend + seasonality + \varepsilon\]</span></p>
+<ul>
+<li><p>Tendência e Sazonalidade <span class="math inline">\(\to\)</span> função suavizadora</p></li>
+<li><p>Covariáveis <span class="math inline">\(\to\)</span> lag no tempo</p></li>
+<li><p>É possível incluir a variabilidade populacional em risco (<em>offset</em>)</p></li>
+</ul>
+<div id="exemplo-serie-temporal-casos-de-leptospirose-vs-clima" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">lepto &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="st">&quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/leptoruido.csv&quot;</span>, <span class="dt">header=</span>T)</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">dia &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/climadia.dat&quot;</span>, <span class="dt">header=</span>T)</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="kw">library</span>(lattice)</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="kw">library</span>(car)</a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="kw">library</span>(sm)</a>
+<a class="sourceLine" id="cb30-7" data-line-number="7"><span class="kw">library</span>(survival)</a>
+<a class="sourceLine" id="cb30-8" data-line-number="8"><span class="kw">library</span>(mgcv)</a>
+<a class="sourceLine" id="cb30-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb30-10" data-line-number="10"><span class="co">#XY condicionado</span></a>
+<a class="sourceLine" id="cb30-11" data-line-number="11"><span class="kw">xyplot</span>(cases <span class="op">+</span><span class="st"> </span>totrain <span class="op">+</span><span class="st"> </span>tempmed <span class="op">~</span><span class="st"> </span>week,</a>
+<a class="sourceLine" id="cb30-12" data-line-number="12"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,</a>
+<a class="sourceLine" id="cb30-13" data-line-number="13">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
+<a class="sourceLine" id="cb30-14" data-line-number="14"> <span class="dt">data=</span>lepto)</a></code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-38-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Modelando a Chuva como resposta e colocando o a função suavizadoras para capturar o efeito nas semanas epidemológicas</li>
+</ul>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">xyplot</span>(totrain <span class="op">~</span><span class="st"> </span>week,</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Chuva&quot;</span>,</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"> <span class="dt">data=</span>lepto)</a></code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-39-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="co"># Ajustando a chuva como resposta</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">rain.tp.auto &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>), <span class="dt">data=</span>lepto )</a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">rain.tp.auto<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim</a></code></pre></div>
+<p>[1] 10</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">plot</span>(rain.tp.auto)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">rain.tp.k1 &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>,<span class="dt">k=</span><span class="dv">1</span>), <span class="dt">data=</span>lepto )</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">rain.tp.k1<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim</a></code></pre></div>
+<p>[1] 3</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">plot</span>(rain.tp.k1)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">rain.tp.k30 &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>,<span class="dt">k=</span><span class="dv">30</span>), <span class="dt">data=</span>lepto )</a>
+<a class="sourceLine" id="cb34-4" data-line-number="4">rain.tp.k30<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim</a></code></pre></div>
+<p>[1] 30</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">plot</span>(rain.tp.k30)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3">rain.ad &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;ad&quot;</span>), <span class="dt">data=</span>lepto ) </a>
+<a class="sourceLine" id="cb35-4" data-line-number="4">rain.ad<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim</a></code></pre></div>
+<p>[1] 40</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">plot</span>(rain.ad)</a></code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-39-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="co"># ThinPlate  &lt;- predict(rain.tp)  </span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="co"># P.spline &lt;- predict(rain.ps)  </span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="co"># CubicRegression &lt;- predict(rain.cr)  </span></a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="co"># CyclicCR &lt;- predict(rain.cc)  </span></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="co"># Adaptative &lt;- predict(rain.ad) </span></a></code></pre></div>
+<ul>
+<li>Uma outra forma de representar o efeito da chuva</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="co"># </span></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co"># par(mfrow=c(3,2),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0))</span></a>
+<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="co"># plot(rain.tp,shade=TRUE,ylab=&quot;TP&quot;,xlab=&quot;&quot;,residuals=F,xaxp=c(0,416,8),main=&quot;Chuva&quot;, pch=19, cex=.2, xaxt=&quot;n&quot;)</span></a>
+<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="co"># plot(rain.ps,shade=TRUE,main=&quot;&quot;,ylab=&quot;PS&quot;,xlab=&quot;&quot;,residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt=&quot;n&quot;)</span></a>
+<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="co"># plot(rain.cr,shade=TRUE,main=&quot;&quot;,ylab=&quot;CC&quot;,xlab=&quot;&quot;,residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt=&quot;n&quot;)</span></a>
+<a class="sourceLine" id="cb38-6" data-line-number="6"><span class="co"># plot(rain.cc,shade=TRUE,main=&quot;&quot;,ylab=&quot;CC&quot;,xlab=&quot;&quot;,residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt=&quot;n&quot;)</span></a>
+<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="co"># plot(rain.ad,shade=TRUE,main=&quot;&quot;,ylab=&quot;Adaptative&quot;,xlab=&quot;&quot;,residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2)</span></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="co"># </span></a></code></pre></div>
+<!-- - Série da temperatura (ThinPlate - tp, P.spline - ps, CubicRegression - cc) -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto)  -->
+<!-- temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto )  -->
+<!-- temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto ) -->
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2) -->
+<!-- plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- ``` -->
+<!-- - Série dos casos de leptospirose (ThinPlate - tp, P.spline - ps, CubicRegression - cc) -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica -->
+<!-- cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto) -->
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2) -->
+<!-- plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- ``` -->
+<ul>
+<li>Ajustando a série dos casos de leptospirose via distribuição Poisson</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">library</span>(quantmod) <span class="co"># para utilizar a funcao Lag </span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">chuvl0 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(totrain)        ,<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb39-4" data-line-number="4">chuvl1 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">1</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb39-5" data-line-number="5">chuvl2 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">2</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb39-6" data-line-number="6">chuvl3 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">3</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb39-7" data-line-number="7">chuvl4 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">4</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb39-8" data-line-number="8">chuvl5 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">5</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)</a></code></pre></div>
+<div id="htmlwidget-80be66e322f381e152be" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-80be66e322f381e152be">{"x":{"filter":"none","data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.72,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li>Ajustando a série dos casos de leptospirose via distribuição Binomial Negativa</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">chuvnb0 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">0</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">chuvnb1 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">1</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">chuvnb2 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">2</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">chuvnb3 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">3</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-5" data-line-number="5">chuvnb4 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">4</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-6" data-line-number="6">chuvnb5 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">5</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-7" data-line-number="7">chuvnb5<span class="op">$</span>family<span class="op">$</span><span class="kw">getTheta</span>()</a></code></pre></div>
+<p>[1] 0.4863649</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)</a></code></pre></div>
+<div id="htmlwidget-9798abe30fa66310da4e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9798abe30fa66310da4e">{"x":{"filter":"none","data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li>Comparando os AIC’s de ambos os modelos entre os lags</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">plot</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="kw">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)[,<span class="dv">2</span>], <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">2090</span>,<span class="dv">2850</span>), <span class="dt">ylab=</span><span class="st">&quot;AIC&#39;s&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Lags&quot;</span>)</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">lines</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="kw">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)[,<span class="dv">2</span>], <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="kw">legend</span>(<span class="st">&quot;right&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;Poisson&quot;</span>,<span class="st">&quot;Bin. Neg.&quot;</span>),<span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="dt">fill=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Verificando a distribuição da chuva entre todos os lags</li>
+</ul>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">boxplot</span>(lepto<span class="op">$</span>totrain)</a></code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>),<span class="dt">mai=</span><span class="kw">c</span>(<span class="fl">0.05</span>,<span class="fl">0.5412</span> ,<span class="fl">0.5412</span>,<span class="fl">0.05</span>),<span class="dt">mgp=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="kw">plot</span>(chuvnb0,<span class="dt">ylab=</span><span class="st">&quot;Lag=0&quot;</span>)</a>
+<a class="sourceLine" id="cb45-4" data-line-number="4"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb45-5" data-line-number="5"><span class="kw">plot</span>(chuvnb1,<span class="dt">ylab=</span><span class="st">&quot;Lag=1&quot;</span>)</a>
+<a class="sourceLine" id="cb45-6" data-line-number="6"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb45-7" data-line-number="7"><span class="kw">plot</span>(chuvnb2,<span class="dt">ylab=</span><span class="st">&quot;Lag=2&quot;</span>)</a>
+<a class="sourceLine" id="cb45-8" data-line-number="8"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb45-9" data-line-number="9"><span class="kw">plot</span>(chuvnb3,<span class="dt">ylab=</span><span class="st">&quot;Lag=3&quot;</span>)</a>
+<a class="sourceLine" id="cb45-10" data-line-number="10"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb45-11" data-line-number="11"><span class="kw">plot</span>(chuvnb4,<span class="dt">ylab=</span><span class="st">&quot;Lag=4&quot;</span>)</a>
+<a class="sourceLine" id="cb45-12" data-line-number="12"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb45-13" data-line-number="13"><span class="kw">plot</span>(chuvnb5,<span class="dt">ylab=</span><span class="st">&quot;Lag=5&quot;</span>)</a>
+<a class="sourceLine" id="cb45-14" data-line-number="14"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="capitulo4_files/figure-html/unnamed-chunk-48-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<!-- Analisando os resíduos do modelo casos.chuva.gam.4 -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- par(mfrow=c(2,2)) -->
+<!-- gam.check(casos.chuva.gam.4, pch=19,cex=.3) -->
+<!-- ``` -->
+<!-- Plotano o ACF e PACF -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- # ACF e PACF -->
+<!-- par(mfrow=c(1,2)) -->
+<!-- ar.acf <- acf(casos.chuva.gam.4$residuals,type="correlation",plot=T) -->
+<!-- ar.pacf <- acf(casos.chuva.gam.4$residuals,type="partial",plot=T) -->
+<!-- plot(ar.acf) -->
+<!-- plot(ar.pacf) -->
+<!-- ``` -->
+<!-- Teste de Ljung-Box  -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!--  Box.test(casos.chuva.gam.4$residuals, type = "Ljung") -->
+<!-- ``` -->
+<ul>
+<li>E agora? incluir humidade, temperatura, etc etc…</li>
+</ul>
+</div>
+<div id="exercicios-propostos" class="section level2">
+<h2><span class="header-section-number">2.1</span> Exercícios Propostos</h2>
+<ol style="list-style-type: decimal">
+<li>Utilzando o baco de dados do R chamado Seatbelts, que é baseado em uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Variáveis</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">DriversKilled</td>
+<td align="center">Motoristas de carro mortos</td>
+</tr>
+<tr class="even">
+<td align="center">drivers</td>
+<td align="center">Mesmo que UKDriverDeaths</td>
+</tr>
+<tr class="odd">
+<td align="center">front</td>
+<td align="center">Passageiros do banco da frente mortos ou gravemente feridos</td>
+</tr>
+<tr class="even">
+<td align="center">rear</td>
+<td align="center">Passageiros do banco traseiro mortos ou gravemente feridos</td>
+</tr>
+<tr class="odd">
+<td align="center">kms</td>
+<td align="center">Distância percorrida</td>
+</tr>
+<tr class="even">
+<td align="center">PetroPrice</td>
+<td align="center">Preço da gasolina</td>
+</tr>
+<tr class="odd">
+<td align="center">VanKilled</td>
+<td align="center">Número de condutores de van (veículo leve de mercadorias)</td>
+</tr>
+<tr class="even">
+<td align="center">law</td>
+<td align="center">A lei estava em vigor naquele mês (1/0)</td>
+</tr>
+</tbody>
+</table>
+<p>Pede-se:</p>
+<ol style="list-style-type: decimal">
+<li>Ajuste um modelo ARIMA com a variável de desfecho DriversKilled;</li>
+<li>Ajuste um modelo GAM utilizando a variável de desfecho DriversKilled e verifique quais variáveis estão mais associadas ao modelo.</li>
+</ol>
+</div>
+<div id="bibliografia-sugerida" class="section level2">
+<h2><span class="header-section-number">2.2</span> Bibliografia sugerida</h2>
+<p>Asteriou, D.; Hall, S.G. Applied econometrics. Macmillan International Higher Education, 2015.</p>
+<p>Brockwell, Peter J.; DAVIS, Richard A.; CALDER, Matthew V. Introduction to time series and forecasting. New York: springer, 2002.</p>
+<p>Harvey, A. C. and Durbin, J. The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. 1986.</p>
+<p>Hastie, T.; Tibshirani, R. Generalised Additive Models. Chapman &amp; Hall, 1990.</p>
+<p>Hyndman, R.J and Khandakar, Y. Automatic time series forecasting: The forecast package for R, Journal of Statistical Software, 26(3). 2008.</p>
+<p>Webster, C.E.J. Time series properties of econometric models and their implied ARIMA representation. 1983.</p>
+<p>Wood, S.N. Generalized Additive Models: An Introduction with R. Chapman &amp; Hall/CRC Texts in Statistical Science Series, 2006.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modelagem-em-series-temporais.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
