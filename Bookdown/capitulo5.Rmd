@@ -1,500 +1,449 @@
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE}
 
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(knitr)
 library(pander)
-library(forecast)
-library(ggplot2)
-
-# Preparando o banco de incidencia de dengue
-dengue_original=read.csv("~/Documentos/cursos_ecologicos_2019/dados/denguecases.csv")
-denguecases=aggregate(Dengue_Cases~Month+Year,dengue_original,sum)
-denguecasests=ts(denguecases$Dengue_Cases,start=c(2008,1),end=c(2016,12),frequency=12)
-
 # Set so that long lines in R will be wrapped:
 opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
 
 ```
 
+# Introdução à Análise Estatística Espacial
 
 
-# Análises Preditivas - Parte II
+## O que é Análise Estatística Espacial ?
+
+- São métodos estatísticos que levam em consideração a localização espacial do fenômeno estudado;
+
+- Defini-se "Análise estatı́stica espacial quando os dados são espacialmente localizados e se considera explicitamente a possı́vel importância de seu arranjo espacial na análise ou interpretação dos resultados" (Bailey & Gatrell, 1995).
+
+- Principal caracterı́stica: a localização geográfica é utilizada explicitamente na análise.
+
+- Neste curso serão abordadas basicamente as técnicas estatı́sticas de análise espacial.
+
+- Diversas operações realizadas em um SIG são também chamadas **análise espacial**, mas **não são** objeto deste curso.
+
+## Origem da Estatística Espacial
+
+- Dr. John Snow (1813-1858) Considerado pai da Epidemiologia Moderna
 
 
-## Suavização Exponencial 
-
-- A suavização exponencial é uma técnica utilizada para suavizar dados de séries temporais usando um função de janela exponencial. 
-  
-- Enquanto na média móvel simples as observações passadas são ponderadas igualmente, as funções exponenciais são usadas para atribuir pesos exponencialmente decrescentes ao longo do tempo. 
-
-- É um procedimento de fácil aplicação para fazer alguma determinação com base em suposições anteriores do usuário, como a sazonalidade. 
+ ![](figuras/snow_2019.png){width=50%}
 
 
 
-$$s_t = \alpha x_t + (1-\alpha) s_{t-1}, t > 0$$
+- Mapeamento dos casos de coléra (***$\bullet$***) e as bombas de água (***X***). (Londres, 1854)
 
-### Principio básico:
+ ![](figuras/snow2_2019.png){width=80%}
 
-- As observações passadas possuem pesos;
 
-- Quanto mais recentes as observações, maiores seus pesos para as previsões;
 
-- Utiliza médias que reduzem quanto mais distantes são as observações;
+## Quando usar métodos de análise espacial ?
 
-- O parâmetro **$\alpha$** determina o índice de redução: valor entre 0 e 1
+-  ***A primeira pergunta a ser feita é:*** A distribuição dos dados apresenta um padrão aleatório ou apresenta uma agregação definida (**clusters**) ?
 
-    - Próximo de 0: observações antigas tem maior peso
+
+ ![](figuras/Cluster.png){width=80%}
+
+
+
+- **Heterogeneidade espacial:** A magnitude e a direção do fenômeno de interesse varia no espaço.
+
+- **Violação da suposição de independência:** Os atributos da observação *i* influencia nos atributos na observação *j*. 
+
+
+## Dependência espacial
+
+- Quais as possı́veis implicações de não considerar a localização espacial na modelagem?
+
+- "Todas as coisas são parecidas, mas coisas mais próximas se parecem mais que coisas mais distantes" (Tobler, 1979). Também conhecida como 1$^a$ Lei da Geografia
+
+- "Independência é um pressuposto muito conveniente que faz grande parte da teoria estatı́stica matemática tratável. Entretanto, modelos que envolvem dependência estatı́stica são freqüentemente mais
+realı́sticos. [...] dados espaciais, onde a dependência está presente em todas as direções e fica mais fraca a medida em que aumenta a dispersão na localização dos dados." (Cressie,1991)
+
+- Generalizando, a maior parte dos fenômenos, sejam estes socioeconômicos ou da área da saúde, apresentam entre si uma relação - semelhança ou inibição - que depende da distância.
+
+
+## Aplicações em Saúde
+
+- **Mapeamento de doenças:** O objetivo geral é avaliar a variação geográfica na ocorrência das doenças
+visando identificar diferenciais de risco, orientar a alocação de recursos, levantar hipóteses etiológicas.
+
+- **Cluster:** O objetivo da detecção de cluster espacial é estabelecer a significância de um sobre-risco em um determinado espaço ou tempo e espaço. Este cluster pode ser causado por diferentes fatores: agentes infecciosos, contaminação ambiental localizada, efeitos colaterais de tratamentos, etc.
+
+- **Estudos ecológicos:** Essencialmente modelos de regressão, onde se busca explicar a variação na
+incidência da doença através de outras variáveis. 
+
+- **Avaliação e monitoramento ambiental:** Estimativa e monitoramento da distribuição espacial de fatores ambientais relevantes para a saúde. Por exemplo, poluentes quı́micos, insolação (Raios UV), vegetação, clima, etc.
+
+- A quantidade e disponibilidade de dados nesta área vem crescendo, com ênfase particular para as imagens de satélite, com resolução e acessibilidade cada vez maior.
+
+
+## Tipologia dos dados espaciais
+
+Os diferentes tipos de dados espaciais são tradicionalmente classificados de acordo com uma tipologia. Esta caracterização diz respeito a natureza estocástica da observação.
+
+  - Cressie divide a estatı́stica espacial em 3 grandes áreas:
+
+    - Dados de processos pontuais;
+
+    - Dados de geoestatı́stica;
+
+    - Dados de área;
+
+Existem métodos estatı́sticos diferentes para descrever ou analisar estes
+tipos de dados.
+
+
+ ![](figuras/slide4.jpg){width=80%}
+
+
+
+Eventualmente misturas de diferentes tipos de dados estão presentes em
+um mesmo estudo.
+
+Em algumas situações pode-se converter o dado de um tipo para outro.
+
+
+## Dados de Processos Pontuais
+
+- O principal interesse está no conjunto de coordenadas geográficas representando as localizações exatas de eventos.
+
+- Exemplos: Localização de crimes, localização da residência dos casos de dengue, localização de espécies vegetais, etc.
+
+- Neste caso, o dado aleatório de interesse é a localização espacial do evento.
+
+- O objetivo é estudar a distribuição espacial dos pontos testando a hipótese sobre o padrão observado: existe aglomeração de casos ou eles estão dispostos aleatoriamente ?
+ 
+
+
+Localização da ocorrência de todos os crimes violentos no ano de 1998 registrados pela PM de Belo Horizonte
+
+
+![](figuras/PP10.png){width=60%}
+
+
+Existe aglomeração de casos em algum ponto da cidade ?
+
+Localização da ocorrência de Dengue em Belo Horizonte
+
+![](figuras/dengueBH.png){width=60%}
+
+
+Detection and modelling of case clusters for urban leptospirosis}
+
+![](figuras/leptospirose_2019.png){width=90%}
+
+
+
+http://www6.ensp.fiocruz.br/repositorio/sites/default/files/arquivos/DetectionModelling.pdf
+
+
+
+Spatial distribution of leptospirosis in the city of Rio de Janeiro, Brazil, 1996-1999
+
+
+![](figuras/leptospirose.jpg){width=90%}
+
+
+
+http://www.scielo.br/pdf/csp/v20n6/31.pdf
+
+
+## Geoestatı́stica
+
+- São dados que compreendem um conjunto de localizações (em geral latitudes e longitudes), mas agregados a eles uma medida contı́nua, como por exemplo o volume de chuva.
+
+- Neste caso estaremos interessados em entender o padrão nos valores amostrados nestas localizações e também modelar e estimar valores em localizações não medidas.
+
+- Bastante utilizada em ciências ambientais (chuva, temperatura, umidade, poluentes no ar, etc.)
+
+- Exempplo: Mapa sobre o teor de argila no solo.
+
+ ![](figuras/geoestatistica7.png){width=90%}
+
+
+Krigagem da chuva no Rio de Janeiro
+
+[TEIXEIRA, Tatiana Rodrigues de Araujo  e  CRUZ, Oswaldo Gonçalves. Spatial modeling of dengue and socio-environmental indicators in the city of Rio de Janeiro, Brazil.](http://www.scielo.br/pdf/csp/v27n3/19.pdf)
+
+![](figuras/painel_kchuva.png)
+
+
+
+## Dados de Área
+
+- Este tipo de dado pode ser visualizado em mapas onde o espaço é particionado em áreas e cada área é colorida de acordo com alguma variável.
+
+- As áreas podem ser:
+
+    - Irregulares: divisões de caráter polı́tico ou administrativo. Por exemplo: municı́pios,   setores  censitários, etc.
     
-    - Próximo de 1: observações recentes tem mais peso
+    - Regulares: medidas em grade regular. Por exemplo, imagens de satélite.
     
-| Intervalo |  Peso |
-|:---------:|:-----:|
-|   $t-1$   |  0,5  |
-|   $t-2$   |  0,2  |
-|   $t-3$   |  0,07 |
-|   $t-4$   |  0,01 |
-|   $t-5$   | 0,005 |
+- Para cada uma destas áreas temos informações agregadas de um determinado fenômeno (em geral somas ou médias).
 
----
-
-### Holt-Winters Sazonal
-
-- O método de Holt-Winters foi sugerido por Holt (1957) e Winters (1960), que trabalharam no *School of Industrial Administration em Carnegie Institute of Technology*.
-
-- Inclui captura de sazonalidade
-
-- Também ideal para tendência
-
-- **Aditivo**: para variação sazonal constante
-
-- **Multiplicativo**: variação sazonal não constante na série
+- Bastante utilizado em epidemiologia, economia e demografia, etc.
+ 
 
 
-```{r, echo=F, fig.show = "hold", out.width = "100%", fig.align = "center"}
-knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/HoltWinters.png")
-
-```
+Taxas de câncer de pulmão na população branca masculina nos Estados Unidos, por condados no ano de 1998
 
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-# Aditivo - variação sazonal constante
-mdl1 = hw(denguecasests,seasonal = "additive", h=16)
-autoplot(mdl1) + 
-geom_hline(yintercept=range(0), color='black', size=0.5)
-# geom_hline(yintercept=mean(denguecasests), color="red")
+![](figuras/area1_2019.png){width=70%}
 
-# Multiplicativo - Variação sazonal não constante na série
-mdl2 = hw(denguecasests,seasonal = "multiplicative", h=16)
-autoplot(mdl2) + geom_hline(yintercept=range(0), color='black', size=0.5)
 
-# Comparar os modelos
-plot(mdl1, main='Comparação Aditivo vs Multiplicativo')
-lines(mdl2$mean, col="red")
-abline(h=0, color='gray', size=1)
-legend("topleft", legend=c("Adirtivo", "Multiplicativo"),
-       col=c("blue", "red"), lty=1:2, cex=0.8)
 
-```
+**Objetivo:** Identificar áreas de risco.
+ 
 
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
 
-#comparando textual
-meses   <- seq(from=as.Date("2017-01-01"), to=as.Date("2018-4-30"), by="month")
-Aditivo <- mdl1$mean
-Multiplicativo <- mdl2$mean
-tab <- data.frame(meses, Aditivo, Multiplicativo)
-kable(tab)
+Spatial-temporal analysis of dengue deaths: identifying social vulnerabilities 
 
-```
+ ![](figuras/dengue_2019.png){width=70%}
 
----
 
-## Análise dos Resíduos
 
-### Pressupostos para Previsão
+http://www.scielo.br/pdf/rsbmt/v50n1/0037-8682-rsbmt-50-01-00104.pdf
 
-- $E(e_i) = 0$
+
+
+## Geoprocessamento
+ 
+
+- O geoprocessamento é o processamento informatizado de
+dados georreferenciados;
+
+- Utiliza programas de computador que permitem o uso de
+informações cartográficas (mapas, cartas topográficas e
+plantas) e informações a que se possa associar
+coordenadas desses mapas, cartas ou plantas;
+
+
+ ![](figuras/geoprocessamento.jpg){width=50%}
+
+
+
+## Tecnologias de Geoprocessamento
+ 
+  ![](figuras/slide3.jpg){width=70%}
+
+
+
+## Sistema de Informações Geográficas
+ 
+
+* Um Sistema de Informação Geográfica (SIG ou GIS - Geographic Information System) é um sistema de hardware, software, informação espacial e procedimentos computacionais que permite e facilita a análise, gestão ou
+representação do espaço e dos fenômenos que nele
+ocorrem;
+
+  ![](figuras/sig1.jpg){width=70%}
+
+
+
+  ![](figuras/sig5.jpg){width=70%}
+
+
+
+### QGIS
+ 
+  ![](figuras/QGIS_2019.png){width=70%}
+
+
+
+
+(https://www.qgis.org/en/site/)
+
+
+  ![](figuras/QGIS2_2019.png){width=70%}
+
+ 
+
+https://www.qgis.org/en/site/
+
+
+## Análise Espacial no R
+
+[CRAN Task View: Analysis of Spatial Data](https://cran.r-project.org/web/views/Spatial.html)
+
+
+## Alguns Conceitos
+
+### Autocorrelação espacial
+
+- É uma medida estatı́stica que quantifica e testa o grau de dependência entre observações no espaço.
+
+    - Caso haja evidência de estrutura espacial, o postulado de independência das amostras, é inválido.
     
-- Variância $\sigma^2$ constante (homocedasticidade);
-
-- $e_i \sim N(0, \sigma^2)$
+    - Nestes casos os modelos de regressão devem levar em conta explicitamente o espaço em suas formulações.
     
-- Não devem estar relacionados (autocorrelação) - $e_i \neq e_j$, são independentes
+    - Dados espaciais são considerados uma única realização de um processo estocástico. Diferente da amostragem tradicional, em que cada observação traz uma informação independente, todas as observações são utilizadas de forma conjunta para descrever o padrão do fenômeno estudado.
 
-- Se existe autocorrelação, existe informação nos resíduos que deveria ser utilizada na previsão
+### Estacionariedade
 
----
+- O processo é estacionário se a média é constante e a covariância entre dois pontos quaisquer é função apenas da diferença entre as duas localizações.
 
-### Comparando o ACF de ambos os modelos
 
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-par(mfrow=c(1,3))
-acf(denguecasests, lag.max=20, main="Dados Original")
-acf(mdl1$residuals, lag.max=20, main="Modelo Aditivo")
-acf(mdl2$residuals, lag.max=20, main="Modelo Multiplicativo")
+### Isotropia
 
-```
+- O processo é isotrópico se além de estacionário, a covariância depende somente da distância entre as localizações.
 
----
+## Aplicações
 
-### Executando o teste Ljung-Box 
+### Dengue em Dourados
 
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-# Dados Originais
-Box.test(denguecasests, lag=20, type="Ljung-Box")
-# Modelo Aditivo
-Box.test(mdl1$residuals, lag=20, type="Ljung-Box")
-# Modelo Multiplicativo
-Box.test(mdl2$residuals, lag=20, type="Ljung-Box")
+  ![](figuras/exemplo15_2019.png){width=100%}
 
-```
 
----
+  ![](figuras/exemplo16_2019.png){width=100%}
 
-### Distribuição dos Resíduos no tempo 
 
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+  ![](figuras/exemplo17_2019.png){width=100%}
 
-par(mfrow=c(1,2))
-plot.ts(mdl1$residuals, main="Modelo Aditivo")
-abline(h=0, col="red", lty = 3)
-plot.ts(mdl2$residuals, main="Modelo Multiplicativo")
-abline(h=0, col="red", lty = 3)
 
-```
+### Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana
 
----
+  ![](figuras/exemplo1_2019.png){width=100%}
 
-### Normalidade dos Resíduos 
 
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
+  ![](figuras/exemplo2_2019.png){width=100%}
 
-par(mfrow=c(1,2))
-hist(mdl1$residuals, main="Modelo Aditivo")
-abline(v=0, col="darkred", lty = 2)
-hist(mdl2$residuals, main="Modelo Multiplicativo")
-abline(v=0, col="darkred", lty = 2)
 
-# Teste de Shapiro-Wilk
-shapiro.test(mdl1$residuals)
-shapiro.test(mdl2$residuals)
+  ![](figuras/exemplo3_2019.png){width=100%}
 
-```
 
+  ![](figuras/exemplo4_2019.png){width=100%}
 
----
 
-## ARIMA
 
+### Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza
 
-### Arima não sazonal
+  ![](figuras/exemplo5_2019.png){width=100%}
 
-- Robusto: Pode ser usado em praticamente qualquer tipo de ST
 
-- Dados estáveis, com poucos outliers
+- **Fonte de dados:** Sistema Nacional de Informação de Agravos de
+Notificação (SINAN) do Ministério da Saúde, Brasil.
 
-- Requer dados estacionários: pode ser transformada usando diferenciação: remove tendências
+- **Desfecho:** Casos confirmados e autóctones de influenza A (H1N1) de
+5 de abril a 26 de setembro de 2009.
 
-- Subtrai a observação do período atual do período anterior
+- **Nı́vel de agregação espacial:** Municı́pio de residência (399)
 
-- A diferenciação pode ser feita 1x: diferenciação de primeira ordem
+- **Nı́vel de agregação temporal**: Semana epidemiológica (25)
 
-- Ou pode ser necessário uma segunda vez: diferenciação de segunda ordem (mais raro)
+- **Covariáveis:** Precipitação, temperatura (mı́nima e máxima), umidade
+relativa do ar, altitude, taxa de pobreza, IDH municipal, densidade
+demográfica e presença dos principais meios de transporte (ônibus
+municipal, ônibus intermunicipal, barco e avião).
 
+  ![](figuras/exemplo6_2019.png){width=100%}
 
-Termos:
 
-```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
-knitr::include_graphics("figuras/ARIMA.png")
-```
+  ![](figuras/exemplo7_2019.png){width=100%}
 
 
-- **AR – Autoregressivo**: avalia a relação entre os períodos (lags): autocorrelação. Extrai essa influência;
+  ![](figuras/exemplo8_2019.png){width=100%}
 
-- **I – Integrated**: Aplica a diferenciação, se necessária;
 
-- **MA – Moving Average**: Avalia erros entre períodos e extrai estes erros (não tem relação com MA usados para suavização de st);
+  ![](figuras/exemplo9_2019.png){width=100%}
 
-Exemplos:
 
-| Parâmetro | Descrição                                                                                         |
-|-----------|---------------------------------------------------------------------------------------------------|
-| $p = 1$   | Significa que uma determinada observação pode ser explicada pela observação prévia + erro         |
-| $p = 2$   | Significa que uma determinada observação pode ser explicada por duas observações prévias + erro   |
-| $d = 0$   | Significa que não é aplica diferenciação                                                          |
-| $d = 1$   | Significa que será aplicada diferenciação de primeira ordem                                       |
-| $d = 2$   | Significa que será aplicada diferenciação de segunda ordem                                        |
-| $q = 1$   | Significa que uma determinada observação pode ser explicada pelo erro da observação prévia        |
-| $q = 2$   | Significa que uma determinada observação pode ser explicada pelo erro de duas observações prévias |
 
 
+### Análise da temperatura na costa central da Califórnia
 
-|         ARIMA         |                     Descrição                     |
-|:---------------------:|:-------------------------------------------------:|
-| AR(1) ou ARIMA(1,0,0) | Apenas elemento autoregressivo , de $1^{a}$ ordem |
-| AR(2) ou ARIMA(2,0,0) | Apenas elemento autoregressivo , de $2^{a}$ ordem |
-| MA(1) ou ARIMA(0,0,1) | Apenas Média Móvel                                |
-| ARMA(1,1)             | Autorregressão e média móvel de $1^{a}$ ordem     |
-  
----
+- Os dados consistem de medidas mensais de temperatura em graus
+centı́grados em 23 estações monitoradoras localizadas na 5 a Região
+Climática da Califórnia.
 
+- As séries temporais correspondem ao perı́odo de janeiro de 1992 a
+dezembro de 2002.
 
-### Arima Sazonal
+- A altitude para cada uma das estações também estava disponı́vel.
 
-- Inclui, além (p,d,q), os elementos (P,D,Q), tornando o modelo mais complexo.
+  ![](figuras/exemplo10_2019.png){width=130%}
 
 
+- A estrutura de média foi modelada usando um nı́vel variando ao longo do tempo, uma componente sazonal e um termo linear para a altitude.
 
-### Como definir valores de p,d e q ?
+  ![](figuras/exemplo11_2019.png){width=130%}
 
-- **p**: ordem da parte autoregressiva - PACF
 
-- **d**: grau de diferenciação – Teste de Estacionariedade
+### A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.
 
-- **q**: ordem da média móvel - ACF
+**Objetivos:**
 
+- Estudar as similaridades/diferenças entre as ocorrências de malária no Pará;
 
-Esse processo pode ser extremamente difícil, mesmo para experientes. E Nem sempre o modelo mais sugestivo é o melhor.
+- Estudar a relação entre a incidência de malária e a quantidade de chuva;
 
+- Verificar existência de estrutura espacial e temporal.
 
----
+**Material:**
 
-### Como saber qual o melhor modelo ?
+- As informações deste trabalho referem-se ao número de casos de malária em alguns municı́pios do estado do Pará através de dados mensais coletados durante os anos de 96 à 98.
 
-- Akaike Information Criteria (AIC e AICc)
+- Os dados de chuva são dados mensais observados durante os anos de 96 a 98 coletados em 78 estações monitoradoras espalhadas pelos municı́pios.
 
-- Bayesian Information Criteria (BIC)
 
-- Outros
+  ![](figuras/exemplo12_2019.png){width=100%}
 
-Ou testar todas as combinações prováveis, mas isso pode ser um pouco demorado se for feito de forma manual.
 
-Sugestão: Usar a função ***auto.arima()***
+  ![](figuras/exemplo13_2019.png){width=100%}
 
 
----
+  ![](figuras/exemplo14_2019.png){width=100%}
 
-### Auto.arima()
+### Mapas de Fluxo
 
-- Testa diferentes combinações de p,d e r
+![](figuras/fluxo_AR.png)
 
-- Extremamente flexível
+![](figufluxoCABA.png.png)
+Dissertação “Análisis espacial de factores socioeconómicos, de servicios de salud y de
+mortalidad por cáncer de mama, Argentina, 2009-2011” por Andrea Perinetti
 
-- Mesmo intuindo um modelo, você pode usa-la para confirmar sua parametrização
 
+## Material on line sobre Estatística Espacial
 
-Alguns parâmetros importantes da função *auto.arima()*
+**Análise Espacial de Dados Geográficos**
 
-- stationary - If TRUE, restricts search to stationary models.
+http://www.dpi.inpe.br/gilberto/livro/analise/
 
-- seasonal - If FALSE, restricts search to non-seasonal models
+**R Spatial**
 
-- stepwise - If TRUE, will do stepwise selection (faster). Otherwise, it searches over all models. Non-stepwise selection can be very slow, especially for seasonal models.
+https://www.r-spatial.org/
 
-- trace - If TRUE, the list of ARIMA models considered will be reported.
+**Geocomputation with R**
 
-- approximation - If TRUE, estimation is via conditional sums of squares and the information criteria used for model selection are approximated. The final model is still computed using maximum likelihood estimation. Approximation should be used for long time series or a high seasonal period to avoid excessive computation times.
+https://bookdown.org/robinlovelace/geocompr/
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
 
-# Utilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos
-modelo1 = auto.arima(denguecasests, trace = F)
-kable(summary(modelo1))
+## Onde encontrar dados espaciais ?
 
-# Neste modelo, será feito uma busca maior para uma solução "mais ótima"
-modelo2 = auto.arima(denguecasests, trace = F, stepwise = F, approximation = F)
-kable(summary(modelo2))
+- Geographical Place Names http://www.geonames.org/
 
-```
+- Global Administrative Areas http://gadm.org/country
 
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+- Land Cover and Elevation http://eros.usgs.gov/#/Find_Data
 
-# Estimando as previsões
-prev1 = forecast(modelo1, h=12)
-autoplot(prev1) + 
-geom_hline(yintercept=range(0), color='black', size=0.5)
+- 2000 U.S. Census Data: http://disasternets.calit2.uci.edu/census2000/
 
+- Natural Resources: http://www.prio.no/CSCW/Datasets/Geographical-and-Resource/
 
-prev2 = forecast(modelo2, h=12)
-autoplot(prev2) + 
-geom_hline(yintercept=range(0), color='black', size=0.5)
+- International Conflict Data http://www.acleddata.com/
 
+- A large number of links is also available at: http://gis.harvard.edu/
 
-# Comparar os modelos
-plot(prev1, main='Comparação Modelo 1 vs Modelo 2')
-lines(prev2$mean, col="red", add=T)
-abline(h=0, color='gray', size=1)
-legend("topleft", legend=c("Adirtivo", "Multiplicativo"),
-       col=c("blue", "red"), lty=1:2, cex=0.8)
+- http://www.people.fas.harvard.edu/~zhukov/Datasets.RData
 
-```
 
+## Bibliografia sugerida
 
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
+Bailey, Trevor C.; Gatrell, Anthony C. (1995) Interactive Spatial Data Analysis. Harlow Essex: Longman.
 
-#comparando textual
-meses   <- seq(from=as.Date("2017-01-01"), to=as.Date("2017-12-30"), by="month")
-Modelo_1 <- prev1$mean
-Modelo_2 <- prev2$mean
-tab <- data.frame(meses, Modelo_1, Modelo_2)
-kable(tab)
+Cressie, N. A. C. (1991). Statistic for Spatial Data. New York.
 
-```
+Costa, Ana C. C., et al. (2015). ”Surveillance of dengue vectors using spatio-temporal Bayesian modeling.”BMC medical informatics and decision making 15.1: 93.
 
----
+Sansó, B., Schmidt, A. M. e Nobre, A. A. (2008). Bayesian Spatio-temporal models based on discrete convolutions. Canadian Journal of Statistics, 36, 239-258.
 
-### Comparando o ACF de ambos os modelos
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-par(mfrow=c(1,3))
-acf(denguecasests, lag.max=20, main="Dados Original")
-acf(modelo1$residuals, lag.max=20, main="Modelo 1")
-acf(modelo2$residuals, lag.max=20, main="Modelo 2")
-
-```
-
----
-
-### Executando o teste Ljung-Box 
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-# Dados Originais
-Box.test(denguecasests, lag=20, type="Ljung-Box")
-# Modelo 1
-Box.test(modelo1$residuals, lag=20, type="Ljung-Box")
-# Modelo 2
-Box.test(modelo2$residuals, lag=20, type="Ljung-Box")
-
-```
-
----
-
-### Distribuição dos Resíduos no tempo 
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-
-par(mfrow=c(1,2))
-plot.ts(modelo1$residuals, main="Modelo 1")
-abline(h=0, col="red", lty = 3)
-plot.ts(modelo2$residuals, main="Modelo 2")
-abline(h=0, col="red", lty = 3)
-
-```
-
----
-
-### Normalidade dos Resíduos 
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-
-par(mfrow=c(1,2))
-hist(modelo1$residuals, main="Modelo 1")
-abline(v=0, col="darkred", lty = 2)
-hist(modelo2$residuals, main="Modelo 2")
-abline(v=0, col="darkred", lty = 2)
-
-# Teste de Shapiro-Wilk
-shapiro.test(modelo1$residuals)
-shapiro.test(modelo2$residuals)
-
-```
-
----
-
-## Regressão com Séries Temporais
-
-### No R
-
-- **tslm - Time Serie Linear Model**:  Estima um modelo de regressão linear adaptado para séries temporais simples ou múltipla;
-
--  Pode ser utilizado os componentes sazonalidade e tendência como variáveis independentes;
-
-\
-$y \sim trend$ 
-   \
-      $y \sim trend + season$
-      \
-       $y \sim trend + season + x_{1} + ... + x_{k}$
-
----
-
-- Utilzando o baco de dados do R chamado Seatbelts
-
-É uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.
-
-
-|   Variáveis   |                          Descrição                          |
-|:-------------:|:-----------------------------------------------------------:|
-| DriversKilled | Motoristas de carro mortos                                  |
-| drivers       | Mesmo que UKDriverDeaths                                                       |
-| front         | Passageiros do banco da frente mortos ou gravemente feridos |
-| rear          | Passageiros do banco traseiro mortos ou gravemente feridos  |
-| kms           | Distância percorrida                                        |
-| PetroPrice    | Preço da gasolina                                           |
-| VanKilled     | Número de condutores de van (veículo leve de mercadorias)   |
-| law           | A lei estava em vigor naquele mês (1/0)                     |
-
-
-Harvey, A. C. and Durbin, J. (1986). The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. doi: 10.2307/2981553.
-
-
-### Distribuição da Série Múltipla
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-
-plot(Seatbelts)
-
-```
-
-### Ajustando os modelos
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-
-modelo1 = tslm(DriversKilled ~ trend, data=Seatbelts)
-modelo2 = tslm(DriversKilled ~ season, data=Seatbelts)
-modelo3 = tslm(DriversKilled ~ trend + season, data=Seatbelts)
-
-```
-
-### Fazendo o diagnóstico do modelo
-
-```{r, echo=TRUE, results='hide', warning=FALSE, message = FALSE, fig.align = "center"}
-
-CV(modelo1)
-CV(modelo2)
-CV(modelo3)
-
-```
-
-```{r, echo=F, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-#comparando textual
-m1 <- round(CV(modelo1),2) 
-m2 <- round(CV(modelo2),2) 
-m3 <- round(CV(modelo3),2) 
-tab <- data.frame(m1,m2,m3)
-kable(tab)
-
-```
-
-
-### Fazendo a previsão
-
-
-```{r, echo=T, warning=FALSE, results='asis', out.width = "100%", message = FALSE, fig.align = "center"}
-
-r1 = forecast(modelo1,h=12)
-r2 = forecast(modelo2,h=12)
-r3 = forecast(modelo3,h=12)
-
-autoplot(r1, main="Modelo1 = Tendência")
-autoplot(r2, main="Modelo2 = Sazonalidade")
-autoplot(r3, main="Modelo2 = Tendência + Sazonalidade")
-
-
-plot(r1)
-lines(r2$mean, col="red")
-lines(r3$mean, col="darkgreen")
-legend("topright",legend=c("Tendência","Sazonalidade","Tendência + Sazonalidade"), col = c("blue","red","darkgreen"), lty=1:2, cex=0.8)
-
-```
-
+Nobre, A. A., Schmidt, A. M. e Lopes, H. F. (2005). Spatio-temporal models for mapping the incidence of malaria in Pará. Environmetrics, 16, 291-304.

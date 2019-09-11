@@ -20,17 +20,17 @@ Este curso se propõe a estudar métodos de séries temporais e estatística esp
 * Aula 1 (07/08) - Estudos Ecológicos
 * Aula 2 (14/08) - Séries Temporais - Análise Exploratória
 * Aula 3 (21/08) - Séries Temporais - Técnicas de Suavização
-* Aula 4 (28/08) - Séries Temporias - ARIMA
-* Aula 5 (04/09) - Prática Séries Temporais
-* Aula 6 (11/09) - Análise Espacial - Padrão de Pontos I
-* Aula 7 (18/09) - Análise Espacial - Padrão de Pontos II
-* Aula 8 (25/09) - Análise Espacial - Geoestatística
-* Aula 9 (02/10) - Análise Espacial - Dados de Área I
-* Aula 10 (09/10) - Análise Espacial - Dados de Área II
-* Aula 11 (16/10) - Análise Espacial - Dados de Área III
-* Aula 12 (23/10) - Prática de Análise Espacial 
-* Aula 13 (30/10) - Análise Espaço-Temporal
-* Aula 14 (06/11) - Apresentação e Discussão de Trabalhos
+* Aula 4 (28/08) - Modelagem em Séries Temporias - ARIMA
+* Aula 5 (04/09) - Modelagem em Séries Temporias - GAM
+* Aula 6 (11/09) - Introdução à Análise Estatística Espacial 
+* Aula 7 (18/09) - Análise Espacial - Padrão de Pontos I
+* Aula 8 (25/09) - Análise Espacial - Padrão de Pontos II
+* Aula 9 (02/10) - Não Haverá Aula
+* Aula 10 (09/10) - Análise Espacial - Geoestatística
+* Aula 11 (16/10) - Análise Espacial - Dados de Área I
+* Aula 12 (23/10) - Análise Espacial - Dados de Área II
+* Aula 13 (30/10) - Análise Espacial - Dados de Área III
+* Aula 14 (06/11) - Análise Espaço-Temporal
 * Aula 15 (13/11) - Instruções e Dúvidas para o Trabalho Final
 
 

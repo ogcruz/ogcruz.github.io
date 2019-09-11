@@ -44,10 +44,10 @@ theme: cerulean
 
 ```
 
-<!-- ```{r child="capitulo5.Rmd", echo=FALSE} -->
+```{r child="capitulo5.Rmd", echo=FALSE}
 
 
-<!-- ``` -->
+```
 
 <!-- ```{r child="capitulo6.Rmd", echo=FALSE} -->
 
