@@ -24,7 +24,7 @@
 <meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
 
 
-<meta name="date" content="2019-09-11" />
+<meta name="date" content="2019-09-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -297,6 +297,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.17" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
 <li class="chapter" data-level="6.18" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.18</b> Bibliografia sugerida</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais</a><ul>
+<li class="chapter" data-level="7.1" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#o-que-sao-padroes-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="7.2" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#tipos-de-distribuicoes"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#estimativa-de-kernel-com-correcao-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#kernel-com-variacao-da-populacao"><i class="fa fa-check"></i><b>7.6</b> Kernel com Variação da população</a></li>
+<li class="chapter" data-level="7.7" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#razao-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#funcao-f-e-g---distancia-do-vizinho-mais-proximo"><i class="fa fa-check"></i><b>7.8</b> Função F e G - Distância do vizinho mais próximo</a></li>
+<li class="chapter" data-level="7.9" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#funcao-k-de-ripley-ou-apenas-funcao-k."><i class="fa fa-check"></i><b>7.9</b> Função K de Ripley (ou apenas função K).</a></li>
+<li class="chapter" data-level="7.10" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#funcao-l"><i class="fa fa-check"></i><b>7.10</b> Função <em>L</em></a></li>
+<li class="chapter" data-level="7.11" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#deteccao-de-cluster"><i class="fa fa-check"></i><b>7.11</b> Detecção de cluster</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#testes-genericos-de-cluster"><i class="fa fa-check"></i><b>7.11.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.11.2" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#fonte-especifica"><i class="fa fa-check"></i><b>7.11.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#exercicios-propostos-4"><i class="fa fa-check"></i><b>7.12</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="7.13" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>7.13</b> Bibliografia sugerida</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -328,7 +348,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>A maneira mais comum de visualizar séries temporais é usar um gráfico de linhas simples, em que o eixo horizontal representa os incrementos de tempo e o eixo vertical representa a variável que está sendo medida.</p></li>
 <li><p>Seguem abaixo alguns exemplo de séries temporais:</p></li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <!-- ![](figuras/st1.png){width=770px} -->
 <ul>
 <li><p>As séries temporais podem ser de natureza <strong>regular</strong> ou <strong>irregular</strong>.</p>
@@ -560,11 +580,11 @@ adiante no tempo - exemplo: doenças com grande latência);</p></li>
 para <span class="math inline">\(0\leq h \leq T-1\)</span>.</p>
 <p>Por exemplo, suponha que você está avaliando uma série temporal qualquer e quer visualizar como as defasagens da série podem impactar seu valor atual (ou seja, se <span class="math inline">\(Z_{t}\)</span> é relacionado com <span class="math inline">\(Z_{t-h}\)</span> para <span class="math inline">\(k\ge1\)</span>). A função de autocorrelação pode ser usada para obter tal informação.</p>
 <p>Num primeiro momento, visualize os dados da série para 10 lags (defasagens). Observe que os lags se tornam novas colunas e na medida que elas aumentam, incrementa-se as linhas sem observações.</p>
-<div id="htmlwidget-a5df60eaa3df550fc2c1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a5df60eaa3df550fc2c1">{"x":{"filter":"none","data":[[28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89,28.24],[null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89],[null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95],[null,null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76],[null,null,null,null,28.61,27.8,28.19,28.26,30.36,30.42],[null,null,null,null,null,28.61,27.8,28.19,28.26,30.36],[null,null,null,null,null,null,28.61,27.8,28.19,28.26],[null,null,null,null,null,null,null,28.61,27.8,28.19],[null,null,null,null,null,null,null,null,28.61,27.8],[null,null,null,null,null,null,null,null,null,28.61],[null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>atual<\/th>\n      <th>lag1<\/th>\n      <th>lag2<\/th>\n      <th>lag3<\/th>\n      <th>lag4<\/th>\n      <th>lag5<\/th>\n      <th>lag6<\/th>\n      <th>lag7<\/th>\n      <th>lag8<\/th>\n      <th>lag9<\/th>\n      <th>lag10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cae2be4a55315e0bcf56" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cae2be4a55315e0bcf56">{"x":{"filter":"none","data":[[28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89,28.24],[null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89],[null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95],[null,null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76],[null,null,null,null,28.61,27.8,28.19,28.26,30.36,30.42],[null,null,null,null,null,28.61,27.8,28.19,28.26,30.36],[null,null,null,null,null,null,28.61,27.8,28.19,28.26],[null,null,null,null,null,null,null,28.61,27.8,28.19],[null,null,null,null,null,null,null,null,28.61,27.8],[null,null,null,null,null,null,null,null,null,28.61],[null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>atual<\/th>\n      <th>lag1<\/th>\n      <th>lag2<\/th>\n      <th>lag3<\/th>\n      <th>lag4<\/th>\n      <th>lag5<\/th>\n      <th>lag6<\/th>\n      <th>lag7<\/th>\n      <th>lag8<\/th>\n      <th>lag9<\/th>\n      <th>lag10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Apesar da simples correlação entre os dados nos ajudar a identificar defasagens que poderíam contribuir para o comportamento da série em <span class="math inline">\(t\)</span>, precisamos fazer uso de testes estatísticos que verifiquem a significância da relação entre o valor atual e suas lags. Neste sentido, a função de autocorrelação tem grande importância.</p>
 <p>Abaixo, um exemplo de <strong>função de autocorrelação</strong>. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes. Neste documento, apresentaremos o teste que é realizado.</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>O correlograma é uma das principais ferramentas de análise exploratória em séries temporais, pois indica como cada valor em um dado instante de tempo <span class="math inline">\(t\)</span> se relaciona com os valores em <span class="math inline">\(t+1, t+2,...,t+j\)</span></li>
 </ul>
@@ -602,7 +622,7 @@ para <span class="math inline">\(0\leq h \leq T-1\)</span>.</p>
 <li><p>É a indicadora da direção global dos dados (ou movimento geral da variável), do percurso traçado e de sua linha contínua;</p></li>
 <li><p>É o efeito de longo prazo na média. Pode ser o aumento ou redução a longo prazo…</p></li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
 <!-- ![](figuras/tendencia1.png){width=1270px} -->
 </div>
 <div id="sazonalidade" class="section level2">
@@ -614,7 +634,7 @@ para <span class="math inline">\(0\leq h \leq T-1\)</span>.</p>
 <li><p>Padrões que ocorrem em intervalos fixos.</p></li>
 </ul>
 <p>Ex: Medidas de Temperatura (aumenta no verão e diminui no inverno).</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ciclo" class="section level2">
 <h2><span class="header-section-number">3.15</span> Ciclo</h2>
@@ -624,7 +644,7 @@ para <span class="math inline">\(0\leq h \leq T-1\)</span>.</p>
 <li><p>Aumento ou redução de frequência sem intervalos fixos.</p></li>
 </ul>
 <p>Ex: Ciclos Econômicos e Ciclos de epidemias.</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>A diferença entre os ciclos, propriamente ditos, e a sazonalidade, é o período de avaliação (curto e longo);</p></li>
 <li><p>A semelhança entre ambos, é que definem oscilações relativamente regulares em torno da tendência.</p></li>
@@ -641,7 +661,7 @@ para <span class="math inline">\(0\leq h \leq T-1\)</span>.</p>
 <li>decomposição</li>
 </ul></li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="termo-aleatorio-ou-ruido-branco" class="section level2">
@@ -717,7 +737,7 @@ para <span class="math inline">\(0\leq h \leq T-1\)</span>.</p>
 2015 -0.207767801  1.831374014  0.177264382 -0.805840648  1.947932470  0.121197052 -0.354949127  1.052866250  1.163113962 -0.798832818  0.775455294 -1.995007352
 2016 -0.350562193  0.380864742  0.258213780  0.964510263 -0.491278153  0.081638756 -0.161770723  1.272817069 -0.720269271  1.541051559  0.853661550  0.802399491</code></pre>
 <p>para se obter o gráfico basta usar a função <em>plot</em></p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
 <div id="importando-uma-vetor-e-transformando-em-serie-temporal" class="section level3">
 <h3><span class="header-section-number">3.19.3</span> Importando uma vetor e transformando em Série Temporal</h3>
@@ -740,7 +760,7 @@ podemos tentar duas coisas </code></pre>
 <a class="sourceLine" id="cb15-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb15-5" data-line-number="5">scan.win &lt;-<span class="st"> </span><span class="cf">function</span>(x) {<span class="kw">scan</span>(<span class="kw">url</span>(x,<span class="dt">method =</span> <span class="st">&#39;libcurl&#39;</span>))}</a></code></pre></div>
 <p>Exemplo com dados de Caxumba, não se esqueça de definir a função acima!</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 </div>
 <div id="utilizando-dados-da-incidencia-de-dengue-nas-filipinas-2008---2016" class="section level3">
 <h3><span class="header-section-number">3.19.4</span> Utilizando dados da Incidência de dengue nas Filipinas, 2008 - 2016</h3>
@@ -750,7 +770,7 @@ podemos tentar duas coisas </code></pre>
 <a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co"># dengue_original=read.csv(&quot;denguecases2.csv&quot;)</span></a>
 <a class="sourceLine" id="cb16-4" data-line-number="4">denguecasests &lt;-<span class="st"> </span><span class="kw">ts</span>(dengue_original<span class="op">$</span>Dengue_Cases,<span class="dt">start=</span><span class="kw">c</span>(<span class="dv">2008</span>,<span class="dv">1</span>),<span class="dt">frequency=</span><span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">plot</span>(denguecasests, <span class="dt">ylab=</span><span class="st">&quot;Casos de Dengue&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Tempo&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-27-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-28-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Verificando e testando a autocorrelação dos casos de dengue.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -759,7 +779,7 @@ podemos tentar duas coisas </code></pre>
 \end{aligned}
 \]</span></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">acf</span>(denguecasests, <span class="dt">lag.max=</span><span class="dv">20</span>, <span class="dt">main=</span><span class="st">&quot;Dados Original&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-28-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-29-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">Box.test</span>(denguecasests, <span class="dt">lag=</span><span class="dv">20</span>, <span class="dt">type=</span><span class="st">&quot;Ljung-Box&quot;</span>)</a></code></pre></div>
 <pre><code>Box-Ljung test</code></pre>
 <p>data: denguecasests
@@ -837,22 +857,22 @@ X-squared = 171.88, df = 20, p-value &lt; 2.2e-16</p>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   18.95   81.18  134.62  192.05  246.27  696.56 </code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">hist</span>(denguecasests,<span class="dt">breaks =</span> <span class="dv">10</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-31-1.png" width="70%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">boxplot</span>(denguecasests,<span class="dt">col=</span><span class="st">&#39;green&#39;</span>)</a></code></pre></div>
 <p><img src="ecologico_book_files/figure-html/unnamed-chunk-32-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">boxplot</span>(denguecasests,<span class="dt">col=</span><span class="st">&#39;green&#39;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Mudando a janela de tempo da série temporal. Observando apenas os dados de Jan 2010 até Dez de 2012.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">denguecasests2 &lt;-<span class="st"> </span><span class="kw">window</span>(denguecasests, <span class="dt">start=</span><span class="kw">c</span>(<span class="dv">2010</span>,<span class="dv">1</span>),<span class="dt">end=</span><span class="kw">c</span>(<span class="dv">2012</span>,<span class="dv">12</span>),<span class="dt">frequency=</span><span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">plot</span>(denguecasests2, <span class="dt">ylab=</span><span class="st">&quot;Casos de Dengue&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Tempo&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-33-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-34-1.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Decompondo a séries temporais dos casos de dengue via o método clássico <strong>decompose</strong> (Decomposição via Médias Móveis)</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">decompose</span>(denguecasests))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Decompondo a séries temporais dos casos de dengue via <strong>STL (Seasonal and Trend decomposition using Loess)</strong></p>
 <ul>
 <li>É mais robusta, é mais sensível a vários tipos de sazonalidade e lida melhor com os <em>outliers</em>.</li>
 </ul>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">stl</span>(denguecasests, <span class="dt">s.window=</span><span class="st">&quot;periodic&quot;</span>))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">decom_dengue &lt;-<span class="st"> </span><span class="kw">stl</span>(denguecasests,<span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">head</span>(decom_dengue<span class="op">$</span>time.series)</a></code></pre></div>
 <pre><code>           seasonal    trend  remainder
@@ -863,7 +883,7 @@ Apr 2008 -30.319394 124.7942  -45.08772
 May 2008 -76.786911 123.8962   32.74986
 Jun 2008 -49.643626 122.9982   79.28485</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">plot</span>(decom_dengue)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-37-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">Trend &lt;-<span class="st"> </span>decom_dengue<span class="op">$</span>time.series[,<span class="dv">2</span>]</a>
 <a class="sourceLine" id="cb32-2" data-line-number="2">Seasonal &lt;-<span class="st">  </span>decom_dengue<span class="op">$</span>time.series[,<span class="dv">1</span>]</a>
 <a class="sourceLine" id="cb32-3" data-line-number="3">Random &lt;-<span class="st"> </span>decom_dengue<span class="op">$</span>time.series[,<span class="dv">3</span>]</a></code></pre></div>
@@ -873,14 +893,14 @@ Jun 2008 -49.643626 122.9982   79.28485</code></pre>
 <a class="sourceLine" id="cb33-3" data-line-number="3"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">plot</span>(denguecasests, <span class="dt">ylab=</span><span class="st">&quot;Incidência Dengue&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Original&quot;</span>)</a>
 <a class="sourceLine" id="cb33-5" data-line-number="5"><span class="kw">plot</span>(<span class="kw">as.ts</span>(recomposed_dengue), <span class="dt">ylab=</span><span class="st">&quot;Incidência Dengue&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Recomposta&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-37-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-38-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Em algumas séries temporais não é fácil avaliar suas componentes de maneira visual, ou seja, de maneira gráfica. Para podemos avaliar melhor precisamos utilizar alguns testes estatísticos que possibilitem tal avaliação.</p>
 <p>Outra forma através do ggplot</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">library</span>(ggfortify)</a>
 <a class="sourceLine" id="cb34-2" data-line-number="2"><span class="kw">autoplot</span>(denguecasests)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-38-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-39-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">autoplot</span>(<span class="kw">decompose</span>(denguecasests))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-38-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-39-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="avaliando-a-estacionariedade-da-series-temporais" class="section level3">
 <h3><span class="header-section-number">3.19.5</span> Avaliando a Estacionariedade da séries temporais</h3>
@@ -903,30 +923,30 @@ alternative hypothesis: stationary</p>
 <p>Construindo uma reta baseado no modelo de regressão linear simples para verificar tendência da incidência da dengue.</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">plot</span>(denguecasests, <span class="dt">main =</span> <span class="st">&quot;Incidência de Dengue 20080 and 2016&quot;</span>)</a>
 <a class="sourceLine" id="cb38-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">reg=</span><span class="kw">lm</span>(denguecasests <span class="op">~</span><span class="st"> </span><span class="kw">time</span>(denguecasests)), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)<span class="co">## plotting the trend line of linear regression</span></a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-40-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-41-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <hr />
 <p>Construindo uma curva suavizada baseada na função <em>lowess</em> para verificar tendência da incidência da dengue.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">plot</span>(denguecasests, <span class="dt">ylab=</span><span class="st">&quot;Casos de Dengue&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Tempo&quot;</span>) </a>
 <a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">library</span>(Kendall)</a>
 <a class="sourceLine" id="cb39-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">lowess</span>(<span class="kw">time</span>(denguecasests),denguecasests),<span class="dt">lwd=</span><span class="dv">3</span>, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-41-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Uma outra forma de mostrar a tendência da séries temporais, fazendo a média anual. Observe que a curva se parece um pouco com a curva do <em>loess</em> porém menos suave.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">aggregate</span>(denguecasests, <span class="dt">FUN=</span>mean))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="avaliando-a-sazonalidade-da-series-temporais" class="section level3">
 <h3><span class="header-section-number">3.19.7</span> Avaliando a Sazonalidade da séries temporais</h3>
 <p>De maneira visual podemos utilizar algumas técnicas gráficas, tais como:</p>
 <p><strong>Boxplot</strong></p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">boxplot</span>(denguecasests <span class="op">~</span><span class="st"> </span><span class="kw">cycle</span>(denguecasests))  </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p><strong>Monthplot</strong></p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">monthplot</span>(denguecasests) </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>Seasonplot</strong> (funçao disponibilizada pela library forecast)</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">seasonplot</span>(denguecasests,<span class="dt">col=</span><span class="kw">rainbow</span>(<span class="dv">6</span>),<span class="dt">lwd=</span><span class="dv">2</span>)  </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <!-- Outras possibilidades de fazer utilizando a biblioteca ggplot -->
 <!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
 <!-- ggsubseriesplot(denguecasests)  # monthplot -->

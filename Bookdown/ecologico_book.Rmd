@@ -49,10 +49,10 @@ theme: cerulean
 
 ```
 
-<!-- ```{r child="capitulo6.Rmd", echo=FALSE} -->
+```{r child="capitulo6.Rmd", echo=FALSE}
 
 
-<!-- ``` -->
+```
 
 <!-- ```{r child="capitulo7.Rmd", echo=FALSE} -->
 

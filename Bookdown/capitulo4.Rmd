@@ -503,7 +503,7 @@ lines(fitted(modelo0),col="red")
 ## Ajuste automático de modelos ARIMA
 
 O pacote [*forecast*](http://pkg.robjhyndman.com/forecast) de autoria Rob Hyndman e colaboradores possui diversas funções para 
-visualização, analise e predições de Series temporais, entre elas existe uma função que faz ajustes automáticos para modelos ARIMA.
+visualização, analise e predições de séries temporais, entre elas existe uma função que faz ajustes automáticos para modelos ARIMA.
 Essa função se chama **auto.arima()** 
 
 

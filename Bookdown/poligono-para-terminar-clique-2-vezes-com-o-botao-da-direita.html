@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 3 poligono, para terminar clique 2 vezes com o botao da direita | capitulo6.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 3 poligono, para terminar clique 2 vezes com o botao da direita | capitulo6.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 3 poligono, para terminar clique 2 vezes com o botao da direita | capitulo6.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="este-comando-e-igual-ao-identify-clique-em-cada-ponto-que-deseja-preservar-no.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html"><i class="fa fa-check"></i><b>1</b> Padrões Pontuais</a><ul>
+<li class="chapter" data-level="1.1" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#o-que-sao-padroes-pontuais"><i class="fa fa-check"></i><b>1.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="1.2" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html#tipos-de-distribuicoes"><i class="fa fa-check"></i><b>1.2</b> Tipos de Distribuições</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="este-comando-e-igual-ao-identify-clique-em-cada-ponto-que-deseja-preservar-no.html"><a href="este-comando-e-igual-ao-identify-clique-em-cada-ponto-que-deseja-preservar-no.html"><i class="fa fa-check"></i><b>2</b> este comando e’ igual ao identify, clique em cada ponto que deseja preservar no</a></li>
+<li class="chapter" data-level="3" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><i class="fa fa-check"></i><b>3</b> poligono, para terminar clique 2 vezes com o botao da direita</a><ul>
+<li class="chapter" data-level="3.1" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#processos-pontuais"><i class="fa fa-check"></i><b>3.1</b> Processos pontuais</a></li>
+<li class="chapter" data-level="3.2" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>3.2</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="3.3" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>3.3</b> Estimativa de Kernel</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#estimativa-de-kernel-com-correcao-por-bordas"><i class="fa fa-check"></i><b>3.3.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#kernel-com-variacao-da-populacao"><i class="fa fa-check"></i><b>3.4</b> Kernel com Variação da população</a></li>
+<li class="chapter" data-level="3.5" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#razao-de-kernel"><i class="fa fa-check"></i><b>3.5</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="3.6" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#funcao-f-e-g---distancia-do-vizinho-mais-proximo"><i class="fa fa-check"></i><b>3.6</b> Função F e G - Distância do vizinho mais próximo</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#funcao-k-de-ripley-ou-apenas-funcao-k."><i class="fa fa-check"></i><b>3.6.1</b> Função K de Ripley (ou apenas função K).</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#funcao-l"><i class="fa fa-check"></i><b>3.7</b> Função <em>L</em></a></li>
+<li class="chapter" data-level="3.8" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#deteccao-de-cluster"><i class="fa fa-check"></i><b>3.8</b> Detecção de cluster</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#testes-genericos-de-cluster"><i class="fa fa-check"></i><b>3.8.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="3.8.2" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#fonte-especifica"><i class="fa fa-check"></i><b>3.8.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#exercicios-propostos"><i class="fa fa-check"></i><b>3.9</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.10" data-path="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html"><a href="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>3.10</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="poligono-para-terminar-clique-2-vezes-com-o-botao-da-direita" class="section level1">
+<h1><span class="header-section-number"> 3</span> poligono, para terminar clique 2 vezes com o botao da direita</h1>
+<div id="processos-pontuais" class="section level2">
+<h2><span class="header-section-number">3.1</span> Processos pontuais</h2>
+<p>Os processos pontuais podem ser descritos como:</p>
+<ol style="list-style-type: lower-roman">
+<li><strong>Processo de primeira ordem</strong>, considerados globais ou de larga escala, que correspondem a variações no valor médio do processo no espaço.</li>
+</ol>
+<ul>
+<li>Tal processo pode ser representado por mensurações da intensidade baseado na densidade dos pontos (média dos eventos) na área de estudo (ex: Estimativa de Kernel).</li>
+</ul>
+<ol start="2" style="list-style-type: lower-roman">
+<li><strong>Processo de segunda ordem</strong>, denominados locais ou de pequena escala, é o processo representado pela interação entre dois pontos arbitrários.</li>
+</ol>
+<ul>
+<li>O objetivo desse processo é a mensuração da dependência espacial baseado na distância entre os pontos (ex: Vizinhos mais próximos, Função K).</li>
+</ul>
+<!-- ## Processos de primeira ordem -->
+<!-- A intensidade do processo é definida como: esperança de $N(S)$ - número de eventos $N$ em sub-região $S$ - para uma pequena região $dx$ em -->
+<!-- torno do ponto $x$, quando $dx$ tende a zero. -->
+<!-- $$\dfrac{E[N(dx)]}{|dx|}$$ -->
+</div>
+<div id="completa-aletoriedade-espacial-csr---complete-spatial-randomness" class="section level2">
+<h2><span class="header-section-number">3.2</span> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</h2>
+<p><span class="math inline">\(H_0\)</span>: Os pontos estão distribuidos aleatoriamente no espaço</p>
+<p><span class="math inline">\(H_1\)</span>: Os pontos podem formar clusters ou estão dispersos no espaço</p>
+<ul>
+<li><p><em>CSR</em> assume que os pontos seguem um processo homogênio de Poisson na área de estudo.</p>
+<!-- - A densidade dos pontos é constante homogênea ao longo da área de estudo; -->
+<!-- - Para uma amostra aleatória de subregiões, a distribuição da frequência do número de pontos em cada região segue uma distribuição de poisson; --></li>
+</ul>
+<!--     - O número de pontos em uma dada subregião e o mesmo para todas as subregiões na área de estudo; -->
+<p><!-- - O número de pontos na subregião, independe do número de pontos em qualquer outra subregião. --></p>
+<p>Simulando alguns padrões dos dados de ponto, temos o seguinte:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;spatstat&quot;</span>)
+<span class="kw">set.seed</span>(<span class="dv">999</span>)
+aleatorio &lt;-<span class="st"> </span><span class="kw">rpoispp</span>(<span class="dv">50</span>)
+regular &lt;-<span class="st"> </span><span class="kw">rMaternII</span>(<span class="dv">200</span>,<span class="fl">0.1</span>)
+agregado &lt;-<span class="st"> </span><span class="kw">rMatClust</span>(<span class="dv">5</span>, <span class="fl">0.05</span>, <span class="dv">10</span>)
+
+
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
+<span class="kw">plot</span>(aleatorio, <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span>
+<span class="st">plot(regular, main=&quot;</span>Regular<span class="st">&quot;)</span>
+<span class="st">plot(agregado, main=&quot;</span>Agregado<span class="st">&quot;)</span></code></pre>
+<p><img src="capitulo6_files/figure-html/unnamed-chunk-8-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Verificando a distribuição dos pontos por quadrantes</p>
+<pre class="sourceCode r"><code class="sourceCode r">aleatorioQ &lt;-<span class="st"> </span><span class="kw">quadratcount</span>(aleatorio, <span class="dt">nx =</span> <span class="dv">4</span>, <span class="dt">ny =</span> <span class="dv">4</span>)
+regularQ &lt;-<span class="st"> </span><span class="kw">quadratcount</span>(regular, <span class="dt">nx =</span> <span class="dv">4</span>, <span class="dt">ny =</span> <span class="dv">4</span>)
+agregadoQ &lt;-<span class="st"> </span><span class="kw">quadratcount</span>(agregado, <span class="dt">nx =</span> <span class="dv">4</span>, <span class="dt">ny =</span> <span class="dv">4</span>)
+
+
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
+<span class="kw">plot</span>(aleatorioQ, <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span>
+<span class="st">plot(aleatorio, add = TRUE)</span>
+
+<span class="st">plot(regularQ, main=&quot;</span>Regular<span class="st">&quot;)</span>
+<span class="st">plot(regular, add = TRUE)</span>
+
+<span class="st">plot(agregadoQ, main=&quot;</span>Agregado<span class="st">&quot;)</span>
+<span class="st">plot(agregado, add = TRUE)</span></code></pre>
+<p><img src="capitulo6_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Testando a Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quadrat.test</span>(aleatorioQ)</code></pre>
+<pre><code>Chi-squared test of CSR using quadrat counts
+Pearson X2 statistic</code></pre>
+<p>data:<br />
+X2 = 17.333, df = 15, p-value = 0.5987
+alternative hypothesis: two.sided</p>
+<p>Quadrats: 4 by 4 grid of tiles</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quadrat.test</span>(agregadoQ)</code></pre>
+<pre><code>Chi-squared test of CSR using quadrat counts
+Pearson X2 statistic</code></pre>
+<p>data:<br />
+X2 = 110.04, df = 15, p-value = 3.168e-16
+alternative hypothesis: two.sided</p>
+<p>Quadrats: 4 by 4 grid of tiles</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quadrat.test</span>(regularQ)</code></pre>
+<pre><code>Chi-squared test of CSR using quadrat counts
+Pearson X2 statistic</code></pre>
+<p>data:<br />
+X2 = 4.3333, df = 15, p-value = 0.007152
+alternative hypothesis: two.sided</p>
+<p>Quadrats: 4 by 4 grid of tiles</p>
+</div>
+<div id="estimativa-de-kernel" class="section level2">
+<h2><span class="header-section-number">3.3</span> Estimativa de Kernel</h2>
+<p>Uma análise exploratória de um processo pontual começa pela estimação da intensidade de ocorrências do processo em toda a região em estudo. Com isso, gera-se uma superfı́cie cujo valor é proporcional à intensidade de eventos por unidade de área;</p>
+<p>O estimador Kernel é um interpolador, que possibilita a estimação da intensidade do evento em toda a área, mesmo nas regiões onde o processo não tenha gerado nenhuma ocorrência real.</p>
+<p>Essa técnica de alisamento, utiliza janela móvel que para cada área estima um peso variável conforme a distância.</p>
+<p>O objetivo é de estimar a intensidade do processo pontual <span class="math inline">\(=\)</span> número de eventos por unidade de área</p>
+<p><img src="figuras/pp3.jpg" style="width:100.0%" /></p>
+<p><span class="math display">\[\hat{\lambda}(s) = \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right) \nonumber\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(\hat{\lambda}(s)\)</span> - valor estimado por área;</p></li>
+<li><p>A função <span class="math inline">\(K(\bullet)\Rightarrow\)</span> FDP, escolhida de forma adequada para construir uma superfície contínua sobre os dados;</p></li>
+<li><p>O parâmetro <span class="math inline">\(\tau\)</span> denominado “largura de banda ou faixa”&quot; (<strong>bandwidth</strong>), controla o amaciamento da superfície gerada;</p></li>
+<li><p><span class="math inline">\(s\)</span> centro da área, representada por uma localização qualquer na área de estudo;</p></li>
+<li><p><span class="math inline">\(S_i\)</span> são as localizações dos eventos observados;</p></li>
+<li><p><span class="math inline">\(n\)</span> representa o número de pontos (eventos).</p></li>
+</ul>
+<p><img src="figuras/pp5.jpg" style="width:100.0%" /></p>
+<!-- - Foi desenvolvida originalmente para obter uma estimação alisada -->
+<!-- da densidade de probabilidade uni ou multivariada, ou um -->
+<!-- histograma alisado. -->
+<!-- - Estimar a intensidade de pontos dispostos no espaço é semelhante a estimar uma densidade de probabilidade bivariada. -->
+<div id="estimativa-de-kernel-com-correcao-por-bordas" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Estimativa de Kernel com correção por bordas</h3>
+<p>Primeiramente calcula-se o volume sob o Kernel que está de fato dentro da região de estudo.</p>
+<p><span class="math display">\[\delta_{\tau}(s) = \int_{R}\dfrac{1}{\tau^2}k \left( \dfrac{(s-u)}{\tau}\right) du\]</span></p>
+<p>Aplicando a correção das bordas obtém-se um estimador corrigido:</p>
+<p><span class="math display">\[\hat{\lambda}(s) = \dfrac{1}{\delta_{\tau}(s)} \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right) \nonumber\]</span></p>
+<p>Exemplo:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
+<span class="kw">plot</span>(<span class="kw">density</span>(aleatorio, <span class="dt">bw =</span> <span class="dv">5</span>), <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span>
+<span class="st">plot(aleatorio, add = TRUE)</span>
+<span class="st">plot(density(regular, bw = 0.1), main=&quot;</span>Regular<span class="st">&quot;)</span>
+<span class="st">plot(regular, add = TRUE)</span>
+<span class="st">plot(density(agregado, bw = 0.1), main=&quot;</span>Agregado<span class="st">&quot;)</span>
+<span class="st">plot(agregado, add = TRUE)</span></code></pre>
+<p><img src="capitulo6_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="kernel-com-variacao-da-populacao" class="section level2">
+<h2><span class="header-section-number">3.4</span> Kernel com Variação da população</h2>
+<ul>
+<li><p>O alisamento Kernel permite estimar “eventos por unidade de área”, sem considerar a população.</p></li>
+<li><p>Pode-se estimar “população por unidade de área”, e fazer a razão dos dois obtendo uma estimativa alisada de “eventos por população”</p></li>
+</ul>
+<p><span class="math display">\[\hat{\lambda}(s) = \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s&#39;_j)}{\tau} \right) y_i \nonumber\]</span></p>
+<p>Sendo:</p>
+<p><span class="math inline">\(\lambda&#39;\)</span> - Estimativa populacional para unidade de área</p>
+<p><span class="math inline">\(\tau\)</span> - Largura de banda</p>
+<p><span class="math inline">\(y_i\)</span> - População em cada ponto</p>
+<p>Usa-se atribuir ao centróide do setor censitário ou ao centro populacional o número de habitantes de toda a área</p>
+</div>
+<div id="razao-de-kernel" class="section level2">
+<h2><span class="header-section-number">3.5</span> Razão de Kernel</h2>
+<p>A criação da taxa é a divisão dos alisamentos: eventos por unidade de área
+população por unidade de área</p>
+<p><span class="math display">\[\hat{\lambda}(s) = \dfrac{\sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right)}{\sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s&#39;_j)}{\tau} \right) y_i} \nonumber\]</span></p>
+<ul>
+<li><p>Pode-se usar diferentes larguras de banda (em geral maior no denominador para estabilizar mais)</p></li>
+<li><p>Pode-se usar outro evento como “estimador da população a risco”</p></li>
+</ul>
+</div>
+<div id="funcao-f-e-g---distancia-do-vizinho-mais-proximo" class="section level2">
+<h2><span class="header-section-number">3.6</span> Função F e G - Distância do vizinho mais próximo</h2>
+<ul>
+<li><p>Kernel e quadrat permitem explorar a variação da média do processo na região de
+estudo - propriedade de primeira ordem</p></li>
+<li><p>Para investigar propriedade de segunda ordem é necessário observar as distâncias
+entre os eventos</p></li>
+<li><p>O método do vizinho mais próximo estima a função de distribuição
+cumulativa baseado nas distâncias entre eventos ou pntos em uma região de análise.</p></li>
+<li><p>Dois tipos de distâncias: <strong>evento-evento (W)</strong> e <strong>ponto aleatório-evento (X)</strong></p></li>
+</ul>
+<p><span class="math display">\[\hat{F}(x) = \dfrac{\#x_i \leq x)}{m}\]</span></p>
+<p><span class="math display">\[\hat{G}(w) = \dfrac{\#w_i \leq w)}{n}\]</span></p>
+<ul>
+<li>Sabendo que:</li>
+</ul>
+<p><em>W</em> - evento-evento</p>
+<p><em>X</em> - ponto-evento</p>
+<p><em>#</em> - contagem de pontos onde a condição acontece</p>
+<p><em>n</em> - total de eventos</p>
+<p><em>m</em> - total de pontos aleatórios</p>
+<ul>
+<li><p>Em ambas funções, podemos dizer que podem ser representadas pelo número de (<span class="math inline">\(x_i\)</span>) ou ponto (<span class="math inline">\(w_i\)</span>) cuja distância é menor ou igual ao evento (<span class="math inline">\(x\)</span>) ou ponto (<span class="math inline">\(w\)</span>), dividido pelo total de pontos (<span class="math inline">\(m\)</span>) ou total de eventos (<span class="math inline">\(n\)</span>) na região.</p></li>
+<li><p>O resultado desta função empírica é o histograma das distâncias para o vizinho
+mais próximo - cada classe do histograma é uma contagem de eventos que ocorrem até
+aquela distância</p></li>
+</ul>
+<p>A plotagem dos resultados desta função de distribuição cumulativa empírica pode ser usada como um método exploratório para se verificar se existe evidência de interação entre os eventos. Se esta plotagem apresentar um crescimento rápido para pequenos valores de distância, esta situação aponta para interação entre os eventos caracterizando agrupamentos nestas escalas. Se esta plotagem apresentar valores pequenos no seu início, e só crescer rapidamente para
+valores maiores de distância, esta situação aponta para uma distribuição mais regular.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
+<span class="kw">plot</span>(<span class="kw">Gest</span>(aleatorio),<span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span>
+<span class="st">plot(Gest(regular), main=&quot;</span>Regular<span class="st">&quot;)</span>
+<span class="st">plot(Gest(agregado), main=&quot;</span>Agregado<span class="st">&quot;)</span></code></pre>
+<p><img src="capitulo6_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Embora o método do vizinho mais próximo forneça uma indicação inicial da distribuição espacial, ele considera apenas escalas pequenas. Para se ter informação mais efetiva para o padrão espacial em escalas maiores, o melhor método a ser utilizado é o da função <span class="math inline">\(K\)</span>.</p>
+<div id="funcao-k-de-ripley-ou-apenas-funcao-k." class="section level3">
+<h3><span class="header-section-number">3.6.1</span> Função K de Ripley (ou apenas função K).</h3>
+<ul>
+<li>A função <span class="math inline">\(K\)</span> permite analisar as propriedades de segunda ordem de um processo isotrópico</li>
+</ul>
+<p><span class="math display">\[\lambda K(h) = E(\#eventos)\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(#eventos\)</span> - é o número de eventos esperados até distância <span class="math inline">\(h\)</span></p></li>
+<li><p><span class="math inline">\(\lambda\)</span> é a intensidade ou número médio de eventos por unidade de área</p></li>
+</ul>
+<p>eventos contidos a uma distância h de um evento arbitrário<span class="math inline">\()\)</span></p>
+<ul>
+<li>A função <span class="math inline">\(K(h)\)</span> é, para cada distância <span class="math inline">\(h\)</span>, o somatório do total de pares cuja distância é menor de que <span class="math inline">\(h\)</span>, vezes o inverso do total de pares ordenados existente na região <span class="math inline">\(R\)</span>.</li>
+</ul>
+<p><span class="math display">\[K(h) = \dfrac{1}{\lambda^{2} R}\sum \sum\limits_{i \neq j} I_{h} (d_{ij})\]</span></p>
+<p>Supondo:</p>
+<p><span class="math display">\[I_{h}(d_{ij}) = \begin{cases} 1  \ \ se\ \  d_{ij} \leq h \\ 0 \ \ se\ \  d_{ij} &gt; h \end{cases}\]</span></p>
+<p><span class="math inline">\(I_{h}(d_{ij})\)</span> é uma função indicador</p>
+<ul>
+<li><p>Esta função também necessita de correção do efeito de borda</p></li>
+<li><p>Função K de Ripley conta quantos pontos há em círculos em torno de uma planta focal;</p></li>
+<li><p>Os círculos começam com um raio pequeno e vão até um raio que inclui toda a área de estudo;</p></li>
+<li><p>faz-se uma média do número de pontos nas classes de distâncias em torno de todas as plantas focais da população.</p></li>
+</ul>
+<p><img src="figuras/ripley.png" style="width:100.0%" /></p>
+<ul>
+<li>A distribuição é cumulativa e representa o no esperado de vizinhos em um círculo de raio <em>t</em> centrado em uma planta arbitrária dividido pela intensidade <em>λ</em> do padrão dos pontos na área de estudo;</li>
+</ul>
+<p>Possíveis resultados:</p>
+<ul>
+<li><p><strong>quando o processo é completamente aleatório</strong>, a curva se desvia relativamente pouco de <span class="math inline">\(\pi r²\)</span>. A curva <span class="math inline">\(K\)</span> permanece perto de o valor de referência <span class="math inline">\(\pi r²\)</span>;</p></li>
+<li><p><strong>no caso de um processo regular</strong>, obtemos: <span class="math inline">\(\hat{K}(r) &lt; K_{pois}(r)\)</span> porque se os pontos forem repulsivo, eles têm menos vizinhos em média em um raio <span class="math inline">\(r\)</span> do que teriam baseado no pressuposto de uma distribuição aleatória de pontos. Graficamente, a curva K reflete isso repulsão: vemos no gráfico à direita que a curva K está localizada abaixo da referência valor (<span class="math inline">\(\pi r²\)</span>);</p></li>
+<li><p><strong>no caso de um processo agregado</strong>, há em média mais pontos em um raio <span class="math inline">\(r\)</span> ao redor os pontos do que o número esperado sob uma distribuição aleatória: conseqüentemente, os pontos atraem um ao outro e <span class="math inline">\(\hat{K}(r) &gt; K_{pois}(r)\)</span>. Graficamente, a curva <span class="math inline">\(K\)</span> está neste momento localizada acima da
+valor de referência para todas as áreas de estudo.</p></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">aleatorioK &lt;-<span class="st"> </span><span class="kw">Kest</span>(aleatorio)
+agregadoK &lt;-<span class="st"> </span><span class="kw">Kest</span>(agregado)
+regularK &lt;-<span class="st"> </span><span class="kw">Kest</span>(regular)
+
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
+<span class="kw">plot</span>(aleatorioK,<span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span>
+<span class="st">plot(regularK, main=&quot;</span>Regular<span class="st">&quot;)</span>
+<span class="st">plot(agregadoK, main=&quot;</span>Agregado<span class="st">&quot;)</span></code></pre>
+<p><img src="capitulo6_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="funcao-l" class="section level2">
+<h2><span class="header-section-number">3.7</span> Função <em>L</em></h2>
+<ul>
+<li>A função <span class="math inline">\(K(h)\)</span> tem uma distribuição teórica sob condições de aleatoriedade, quando a probabilidade de ocorrência de um evento em qualquer ponto de R é independente da ocorrência de outros eventos e igual em toda a superfície.</li>
+</ul>
+<p>Neste caso, o número de eventos a uma distância <span class="math inline">\(h\)</span> será <span class="math inline">\(\pi \lambda h^2\)</span>:</p>
+<p><span class="math display">\[ K(h) = \pi h^2\]</span></p>
+<p>No caso de distribuição regular, <span class="math inline">\(K(h)\)</span> será menor que <span class="math inline">\(\pi h^2\)</span>.</p>
+<p>Distribuição em cluster, K(h) será maior que <span class="math inline">\(\pi h^2\)</span>.</p>
+<p>A função <span class="math inline">\(L(h)\)</span> permite comparar a função <span class="math inline">\(K(h)\)</span> e <span class="math inline">\(\pi h^2\)</span></p>
+<p><span class="math display">\[L(h) = \sqrt {\dfrac{K(h)}{\pi}}\]</span></p>
+<pre><code>- Picos positivos indicam atração espacial $\rightarrow$ cluster
+
+- Vales negativos $\rightarrow$ repulsão espacial ou regularidade</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">aleatorioL &lt;-<span class="st"> </span><span class="kw">Lest</span>(aleatorio)
+agregadoL &lt;-<span class="st"> </span><span class="kw">Lest</span>(agregado)
+regularL &lt;-<span class="st"> </span><span class="kw">Lest</span>(regular)
+
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))
+<span class="kw">plot</span>(aleatorioL,<span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span>
+<span class="st">plot(regularL, main=&quot;</span>Regular<span class="st">&quot;)</span>
+<span class="st">plot(agregadoL, main=&quot;</span>Agregado<span class="st">&quot;)</span></code></pre>
+<p><img src="capitulo6_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Há evidência de cluster em h=0,05 na simulação dos agregados.</p>
+</div>
+<div id="deteccao-de-cluster" class="section level2">
+<h2><span class="header-section-number">3.8</span> Detecção de cluster</h2>
+<ul>
+<li><p>Definição (Knox): grupo de ocorrências geograficamente limitado em tamanho e concentração tais que seja improvável ocorrer por mero acaso.</p></li>
+<li><p>São causas de cluster: fonte comum, contagiosidade.</p></li>
+<li><p>Clusters são em geral espaço-temporais.</p></li>
+<li><p>É importante considerar:</p>
+<ul>
+<li><p>Demais fatores de risco – sexo, idade;</p></li>
+<li><p>Residência X outros locais;</p></li>
+<li><p>Latência.</p></li>
+</ul></li>
+<li><p>Dois tipos básicos de testes:</p>
+<ul>
+<li><p><strong>Focados</strong> – testa-se a hipótese de excesso de casos ao redor de fonte suspeita, identificada antes de observar os dados;</p></li>
+<li><p><strong>Genéricos</strong> – busca identificar áreas quentes, sem especificar quais e quantas.</p></li>
+</ul></li>
+<li><p>Hipóteses dos testes:</p>
+<p><span class="math inline">\(H_0\)</span>: É ausência de cluster: completa aleatoriedade espacial (CSR).</p></li>
+<li><p><strong>CSR</strong></p></li>
+<li><p>Sendo:</p></li>
+</ul>
+<p><span class="math inline">\(n\)</span> são subdivisões da região do estudo,</p>
+<p><span class="math inline">\(y_i\)</span> número de casos observados e <span class="math inline">\(E_i\)</span> esperados,</p>
+<p><span class="math inline">\(\lambda\)</span> eventos por unidade de área (e tempo)</p>
+<ul>
+<li><p>Alternativas:</p>
+<ul>
+<li><p>Focados - <span class="math inline">\(\lambda\)</span> varia com a distância da fonte</p></li>
+<li><p>Genéricos - existe regiões onde <span class="math inline">\(\lambda\)</span> é mais elevado</p></li>
+</ul></li>
+</ul>
+<div id="testes-genericos-de-cluster" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> Testes Genéricos de Cluster</h3>
+<ul>
+<li><p><strong>Knox:</strong> Testa um número acima do esperado de pares de casos excessivamente próximos (segundo critério pré-estabelecido) no espaço e no tempo.</p></li>
+<li><p><strong>Mantel:</strong> Distância no tempo e distância no espaço, se <span class="math inline">\(x\)</span> for 1 e <span class="math inline">\(y\)</span>
+for 1, equivale ao teste de Knox.</p></li>
+</ul>
+<p><span class="math display">\[\sum \sum\limits_{i \neq j} x_{ij} y_{ij} \]</span></p>
+<ul>
+<li><strong>Cuzick-Edwards:</strong> Caso-controle onde a coincidência de casos vizinhos aumenta o peso, e a junção controle- controle ou caso-controle tem peso zero; este teste
+permite considerar a variação populacional.</li>
+</ul>
+</div>
+<div id="fonte-especifica" class="section level3">
+<h3><span class="header-section-number">3.8.2</span> Fonte Específica</h3>
+<ul>
+<li><p>Cluster ao redor de um ponto ou uma linha</p></li>
+<li><p>Compara-se a ocorrência de no excessivo de “casos” em relação à população a partir de uma função de decaimento em relação à possível fonte</p></li>
+</ul>
+<p><span class="math display">\[\lambda (s) = \rho \lambda&#39;(s)f(h;\theta)\]</span></p>
+<p><span class="math display">\[f(h;\theta) = 1 + \theta_1 e^{\theta_{2}h^2}\]</span></p>
+<p>Sendo:</p>
+<p><span class="math inline">\(\theta(s)\)</span> - estimativa do evento p/ unidade de área</p>
+<p><span class="math inline">\(\rho\)</span> - parâmetro que indica a razão entre “casos” e “controles”</p>
+<p><span class="math inline">\(\lambda&#39;(s)\)</span> - estimativa população p/ unidade de área</p>
+<p><span class="math inline">\(f\)</span> - função da distância para a fonte</p>
+<p><span class="math inline">\(θ\)</span> - parâmetros a estimar que descrevem como a incidência varia em torno da fonte</p>
+</div>
+</div>
+<div id="exercicios-propostos" class="section level2">
+<h2><span class="header-section-number">3.9</span> Exercícios Propostos</h2>
+<p>Utilizando os bancos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Série mensal de óbitos por doenças respiratória na região Sul do Brasil de 1996 a 2017<br />
+pode ser acessado na URL (<a href="https://bit.ly/2P4CJj4" class="uri">https://bit.ly/2P4CJj4</a>)
+fonte: DataSUS/MS</p></li>
+<li><p>Série semanal do numero de casos Malaria nos EUA de 1974 a 1984<br />
+pode ser acessado na URL (<a href="https://bit.ly/2KMXsCC" class="uri">https://bit.ly/2KMXsCC</a>)
+fonte:CDC/US</p></li>
+</ol>
+<p>Importe a série para um formato <strong><em>ts</em></strong> e faça:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>Uma análise exploratórias dos dados em formato séries temporais;</p></li>
+<li><p>Decomponha a séries temporais;</p></li>
+<li><p>Através de análises gráficas e/ou testes estatísticos, avalie e verifique a existência de cada componente.</p></li>
+</ol>
+</div>
+<div id="bibliografia-sugerida" class="section level2">
+<h2><span class="header-section-number">3.10</span> Bibliografia sugerida</h2>
+<p>Referência: Renato Assunção – Estatística Espacial com Aplicações em
+Epidemiologia, Economia, Sociologia</p>
+<p>DIGGLE, Peter. Time Series: A Biostatistical Introduction (Oxford Statistical Science Series, No. 5) 1st Edition, 1996</p>
+<p>FERREIRA, Pedro Guilherme Costa. Análise de Séries Temporais em R: curso introdutório. 2018.</p>
+<p>METCALFE, Andrew V.; COWPERTWAIT, Paul SP. Introductory time series with R. Springer-Verlag New York, 2009.</p>
+<p>MORETTIN, Pedro A.; TOLOI, Clélia M.C. Análise de Séries Temporais: Modelos Lineares Univariados. Bluscher - ABE - Projeto Fisher. Edição 3, 2018.</p>
+<p>WOODWARD, Wayne A.; GRAY, Henry L.; ELLIOTT, Alan C. Applied time series analysis with R. CRC press, 2017.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="este-comando-e-igual-ao-identify-clique-em-cada-ponto-que-deseja-preservar-no.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

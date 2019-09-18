@@ -345,7 +345,7 @@ p
 
 ```
 
-```{r, echo=FALSE,message=FALSE,warning=FALSE,error=FALSE, fig.align='center', fig.height=4}
+```{r, echo=FALSE,message=FALSE,warning=FALSE,error=FALSE, fig.align='center', fig.height=4,results='hide'}
 
 ## data summary
 p1 <- t2 %>%
