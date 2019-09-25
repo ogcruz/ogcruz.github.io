@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS</title>
+  <meta name="description" content=" 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
+
+
+<meta name="date" content="2019-09-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducao-a-analise-estatistica-espacial.html"/>
+<link rel="next" href="padroes-pontuais-ii.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.9/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentacao.html"><a href="apresentacao.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a><ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#o-que-sao-de-estudos-ecologicos"><i class="fa fa-check"></i><b>2.1</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#objetivos-dos-estudos-ecologicos"><i class="fa fa-check"></i><b>2.2</b> Objetivos dos Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas-1"><i class="fa fa-check"></i><b>2.4</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-desenhos-de-estudos-ecologicos"><i class="fa fa-check"></i><b>2.5</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#alguns-conceitos"><i class="fa fa-check"></i><b>2.6</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.7</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#arvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.8</b> Árvores, Bosques ou as Florestas ?</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-arvores"><i class="fa fa-check"></i><b>2.8.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.8.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#os-bosques"><i class="fa fa-check"></i><b>2.8.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.8.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-florestas"><i class="fa fa-check"></i><b>2.8.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#falacia-ecologica-ou-vies-de-agregacao"><i class="fa fa-check"></i><b>2.9</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#problemas-praticos"><i class="fa fa-check"></i><b>2.10</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#vantagens"><i class="fa fa-check"></i><b>2.11</b> Vantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#desvantagens"><i class="fa fa-check"></i><b>2.12</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#resumindo"><i class="fa fa-check"></i><b>2.13</b> Resumindo</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#exercicios-propostos"><i class="fa fa-check"></i><b>2.14</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.15" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.15</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a><ul>
+<li class="chapter" data-level="3.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#o-que-sao-series-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#hipoteses-basicas-do-estudo-das-series-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#classificacao-dos-tipos-de-series-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#processo-estocastico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#notacao-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-series-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocovariancia-de-um-processo-estacionario"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#porque-a-estacionariedade-e-importante"><i class="fa fa-check"></i><b>3.7.2</b> Porque a Estacionariedade é Importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal"><i class="fa fa-check"></i><b>3.8</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.9" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#independencia"><i class="fa fa-check"></i><b>3.9</b> Independência</a></li>
+<li class="chapter" data-level="3.10" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#dependencia"><i class="fa fa-check"></i><b>3.10</b> Dependência</a></li>
+<li class="chapter" data-level="3.11" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocorrelacao---fac-em-ingles-autocorrelation-function-acf"><i class="fa fa-check"></i><b>3.11</b> Função de Autocorrelação - FAC (em Inglês Autocorrelation function ACF )</a></li>
+<li class="chapter" data-level="3.12" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal-1"><i class="fa fa-check"></i><b>3.12</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.13" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia"><i class="fa fa-check"></i><b>3.13</b> Tendência</a></li>
+<li class="chapter" data-level="3.14" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.14</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.15" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.15</b> Ciclo</a><ul>
+<li class="chapter" data-level="3.15.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.15.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.16" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#termo-aleatorio-ou-ruido-branco"><i class="fa fa-check"></i><b>3.16</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.17" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#composicao-dos-modelos-de-uma-series-temporais"><i class="fa fa-check"></i><b>3.17</b> Composição dos Modelos de uma séries temporais</a><ul>
+<li class="chapter" data-level="3.17.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.17.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.17.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.17.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.18" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#decomposicao-de-um-series-temporais"><i class="fa fa-check"></i><b>3.18</b> Decomposição de um séries temporais</a></li>
+<li class="chapter" data-level="3.19" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#pratica-no-r"><i class="fa fa-check"></i><b>3.19</b> Prática no R</a><ul>
+<li class="chapter" data-level="3.19.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#a-biblioteca-ts-e-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.19.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.19.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#simulando-uma-serie-temporal"><i class="fa fa-check"></i><b>3.19.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.19.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#importando-uma-vetor-e-transformando-em-serie-temporal"><i class="fa fa-check"></i><b>3.19.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.19.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#utilizando-dados-da-incidencia-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.19.4</b> Utilizando dados da Incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+<li class="chapter" data-level="3.19.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-estacionariedade-da-series-temporais"><i class="fa fa-check"></i><b>3.19.5</b> Avaliando a Estacionariedade da séries temporais</a></li>
+<li class="chapter" data-level="3.19.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-tendencia-em-uma-series-temporais"><i class="fa fa-check"></i><b>3.19.6</b> Avaliando a tendência em uma séries temporais</a></li>
+<li class="chapter" data-level="3.19.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-sazonalidade-da-series-temporais"><i class="fa fa-check"></i><b>3.19.7</b> Avaliando a Sazonalidade da séries temporais</a></li>
+</ul></li>
+<li class="chapter" data-level="3.20" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#exercicios-propostos-1"><i class="fa fa-check"></i><b>3.20</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.21" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#material-on-line-sobre-series-temporais"><i class="fa fa-check"></i><b>3.21</b> Material on line sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.22" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.22</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a><ul>
+<li class="chapter" data-level="4.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#introducao"><i class="fa fa-check"></i><b>4.1</b> Introdução</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#alguns-exemplos-de-transfomacao-dos-dados-em-st"><i class="fa fa-check"></i><b>4.1.1</b> Alguns exemplos de transfomação dos dados em ST:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#transformacoes-box-cox-digferenciacao-e-logaritmica"><i class="fa fa-check"></i><b>4.1.2</b> Transformações Box-Cox, Digferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#metodos-de-alisamento-ou-suavizacao"><i class="fa fa-check"></i><b>4.2</b> Métodos de Alisamento ou Suavização</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#algumas-funcoes-de-suavizacao"><i class="fa fa-check"></i><b>4.2.1</b> Algumas funções de suavização</a></li>
+<li class="chapter" data-level="4.2.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#medias-moveis"><i class="fa fa-check"></i><b>4.2.2</b> Médias móveis</a></li>
+<li class="chapter" data-level="4.2.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-das-medias-moveis"><i class="fa fa-check"></i><b>4.2.3</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#kernel"><i class="fa fa-check"></i><b>4.3</b> Kernel</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#diferentes-funcoes-kernel"><i class="fa fa-check"></i><b>4.3.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.3.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#largura-de-banda"><i class="fa fa-check"></i><b>4.3.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.3.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-do-kernel"><i class="fa fa-check"></i><b>4.3.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#lowess-locally-weighted-sum-of-square"><i class="fa fa-check"></i><b>4.4</b> Lowess (Locally Weighted Sum of Square)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-do-lowess"><i class="fa fa-check"></i><b>4.4.1</b> Utilização do Lowess</a></li>
+<li class="chapter" data-level="4.4.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#comparando"><i class="fa fa-check"></i><b>4.4.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#splines"><i class="fa fa-check"></i><b>4.5</b> Splines</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#splines-vs-loess"><i class="fa fa-check"></i><b>4.5.1</b> Splines <em>vs</em> Loess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#exercicios-propostos-2"><i class="fa fa-check"></i><b>4.6</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.7" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#o-que-sao-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#alguns-processos-estocasticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autoregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-de-medias-moveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-de-medias-moveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-integrado-de-medias-moveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-nao-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-identificacao"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#metricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#analise-de-residuos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-automatico-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-de-previsao"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#correlacao-cruzada-cross-corralation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Corralation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (generalized Additive Models)</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#por-que-nao-usar"><i class="fa fa-check"></i><b>5.15</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-em-series-temporais"><i class="fa fa-check"></i><b>5.16</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.16.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>5.16.1</b> Exemplo de um modelo GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="5.17" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-de-modelo-gam-aplicado-a-series-temporais"><i class="fa fa-check"></i><b>5.17</b> Exemplo de modelo GAM aplicado a Séries Temporais</a><ul>
+<li class="chapter" data-level="5.17.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-serie-temporal-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.17.1</b> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.18" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exercicios-propostos-3"><i class="fa fa-check"></i><b>5.18</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="5.19" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.19</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a><ul>
+<li class="chapter" data-level="6.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#o-que-e-analise-estatistica-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial ?</a></li>
+<li class="chapter" data-level="6.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#origem-da-estatistica-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#quando-usar-metodos-de-analise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial ?</a></li>
+<li class="chapter" data-level="6.4" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dependencia-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#aplicacoes-em-saude"><i class="fa fa-check"></i><b>6.5</b> Aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#geoestatstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dados-de-area"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#sistema-de-informacoes-geograficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a><ul>
+<li class="chapter" data-level="6.12.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#analise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#alguns-conceitos-1"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a><ul>
+<li class="chapter" data-level="6.14.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#autocorrelacao-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#aplicacoes"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a><ul>
+<li class="chapter" data-level="6.15.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dengue-em-dourados"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#vigilancia-dos-vetores-da-dengue-usando-modelagem-espaco-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#modelo-espaco-temporal-para-a-analise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#analise-da-temperatura-na-costa-central-da-california"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#a-relacao-entre-a-malaria-e-a-chuva-no-estado-do-para-uma-analise-espaco-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.6</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#material-on-line-sobre-estatistica-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.18</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a><ul>
+<li class="chapter" data-level="7.1" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#o-que-sao-padroes-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="7.2" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#tipos-de-distribuicoes"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#estimativa-de-kernel-com-correcao-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#kernel-com-variacao-da-populacao"><i class="fa fa-check"></i><b>7.6</b> Kernel com Variação da população</a></li>
+<li class="chapter" data-level="7.7" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#razao-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#funcao-f-e-g---distancia-do-vizinho-mais-proximo"><i class="fa fa-check"></i><b>7.8</b> Função F e G - Distância do vizinho mais próximo</a></li>
+<li class="chapter" data-level="7.9" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#funcao-k-de-ripley-ou-apenas-funcao-k."><i class="fa fa-check"></i><b>7.9</b> Função K de Ripley (ou apenas função K).</a></li>
+<li class="chapter" data-level="7.10" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#funcao-l"><i class="fa fa-check"></i><b>7.10</b> Função <em>L</em></a></li>
+<li class="chapter" data-level="7.11" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#deteccao-de-cluster"><i class="fa fa-check"></i><b>7.11</b> Detecção de cluster</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#testes-genericos-de-cluster"><i class="fa fa-check"></i><b>7.11.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.11.2" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#fonte-especifica"><i class="fa fa-check"></i><b>7.11.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#exercicios-propostos-4"><i class="fa fa-check"></i><b>7.12</b> Exercícios Propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a><ul>
+<li class="chapter" data-level="8.1" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.2" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
+<li class="chapter" data-level="8.3" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="padroes-pontuais-i" class="section level1">
+<h1><span class="header-section-number"> 7</span> Padrões Pontuais I</h1>
+<div id="o-que-sao-padroes-pontuais" class="section level2">
+<h2><span class="header-section-number">7.1</span> O que são Padrões Pontuais ?</h2>
+<p>A análise de padrão de pontos, é o tipo mais simples de análise de dados espaciais. Baseia-se na localização dos eventos em um determinada área de estudo a partir das coordenadas. O objetivo é estudar
+a disposição espacial dos pontos a partir de suas coordenadas.</p>
+<ul>
+<li><p>Os processos pontuais são definidos como um conjunto de
+pontos cuja localização está em <span class="math inline">\(R^2\)</span>, sendo esse processo gerado por um mecanismo
+estocástico.</p></li>
+<li><p>Os pontos são os pares de coordenadas <em>(x, y)</em>, que representam os eventos (x: observações, indivíduos, lugares ou qualquer outro objeto discreto definido no espaço).</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Evento</th>
+<th align="center">Coord X</th>
+<th align="center">Coord Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">4,30</td>
+<td align="center">2,45</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">5,39</td>
+<td align="center">3,35</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">4,10</td>
+<td align="center">3,50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Na realidade o que se deseja é detectar padrões de aglomerados espaciais (“clusters”).</li>
+</ul>
+<p><img src="figuras/pontos1.jpg" style="width:90.0%" /></p>
+</div>
+<div id="tipos-de-distribuicoes" class="section level2">
+<h2><span class="header-section-number">7.2</span> Tipos de Distribuições</h2>
+<ul>
+<li><p><strong>Aleatória</strong>, qualquer ponto tem a mesma probabilidade de ocorrer em qualquer local
+e a posição de qualquer ponto não é afetada pela posição de qualquer outro ponto;</p></li>
+<li><p><strong>Uniforme</strong>: cada ponto é tão longe de todos os seus vizinhos quanto possível;</p></li>
+<li><p><strong>Cluster</strong>: Muitos pontos estão concentrados juntos, e grandes áreas podem conter pouquíssimos pontos, se houver algum.</p></li>
+</ul>
+<p><img src="figuras/pp0.jpg" style="width:70.0%" /></p>
+<p><a href="https://training.fws.gov/courses/references/tutorials/geospatial/CSP7304/">Fonte: Geospatial Training Workshop</a></p>
+<p>Lendo os bancos com as localizações dos casos de homicídios, suicídios e acidentes de carro em Porto Alegre/RS</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="kw">library</span>(splancs)</a>
+<a class="sourceLine" id="cb105-2" data-line-number="2"><span class="kw">library</span>(spatstat)</a>
+<a class="sourceLine" id="cb105-3" data-line-number="3"><span class="kw">library</span>(gpclib)</a>
+<a class="sourceLine" id="cb105-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb105-5" data-line-number="5"><span class="co"># lendo os bancos</span></a>
+<a class="sourceLine" id="cb105-6" data-line-number="6">local &lt;-<span class="st"> &#39;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&#39;</span></a>
+<a class="sourceLine" id="cb105-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb105-8" data-line-number="8">homic &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;homic.dat&quot;</span>), <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</a>
+<a class="sourceLine" id="cb105-9" data-line-number="9">suic &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;suic.dat&quot;</span>), <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</a>
+<a class="sourceLine" id="cb105-10" data-line-number="10">acid &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;acid.dat&quot;</span>), <span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</a>
+<a class="sourceLine" id="cb105-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb105-12" data-line-number="12"><span class="co"># Plotando os casos de homicídios em um plano cartesiano</span></a>
+<a class="sourceLine" id="cb105-13" data-line-number="13"><span class="kw">plot</span>(homic<span class="op">$</span>x,homic<span class="op">$</span>y)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-115-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Porto Alegre é uma cidade disposta ao longo do eixo norte/sul. O grafico perdeu a estrutura espacial, ajustando para o tamanho e forma da janela. Por isso é necessario informar ao programa que este tipo de objeto tem uma escala que deve ser preservada, um objeto do tipo <em>spatial point pattern</em>.</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1">homic.spp &lt;-<span class="st"> </span><span class="kw">as.points</span>(homic)</a>
+<a class="sourceLine" id="cb106-2" data-line-number="2">acid.spp &lt;-<span class="st"> </span><span class="kw">as.points</span>(acid)</a>
+<a class="sourceLine" id="cb106-3" data-line-number="3">suic.spp &lt;-<span class="st"> </span><span class="kw">as.points</span>(suic)</a>
+<a class="sourceLine" id="cb106-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb106-5" data-line-number="5"><span class="co"># Mapa</span></a>
+<a class="sourceLine" id="cb106-6" data-line-number="6"><span class="kw">pointmap</span>(homic.spp, <span class="dt">pch=</span><span class="dv">19</span>)</a>
+<a class="sourceLine" id="cb106-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb106-8" data-line-number="8"><span class="co"># Adicionando no mapa as outras causas externas</span></a>
+<a class="sourceLine" id="cb106-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb106-10" data-line-number="10"><span class="kw">pointmap</span>(suic.spp, <span class="dt">add=</span>T, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb106-11" data-line-number="11"><span class="kw">pointmap</span>(acid.spp, <span class="dt">add=</span>T, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="dv">3</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-116-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Importando o poligono do contorno de Porto Alegre</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="co"># contorno de porto alegre</span></a>
+<a class="sourceLine" id="cb107-2" data-line-number="2">contorno.poa &lt;-<span class="st"> </span><span class="kw">as.points</span>(<span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;/contpoa.dat&quot;</span>),<span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>)))</a>
+<a class="sourceLine" id="cb107-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb107-4" data-line-number="4"><span class="kw">polymap</span>(contorno.poa)</a>
+<a class="sourceLine" id="cb107-5" data-line-number="5"><span class="kw">pointmap</span>(homic.spp, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">add=</span>T,<span class="dt">cex=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb107-6" data-line-number="6"><span class="kw">pointmap</span>(suic.spp, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">2</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb107-7" data-line-number="7"><span class="kw">pointmap</span>(acid.spp, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">3</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-117-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Os pontos fora do contorno sao das ilhas, nao devem ser incorporados a analise.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">homic2.spp &lt;-<span class="st"> </span><span class="kw">delpoints</span>(homic.spp)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-118-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Este comando é igual ao identify, clique em cada ponto que deseja deletar. Para terminar clique 2 vezes com o botao da direita</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">polymap</span>(contorno.poa)</a>
+<a class="sourceLine" id="cb109-2" data-line-number="2"><span class="kw">pointmap</span>(homic2.spp, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">add=</span>T,<span class="dt">cex=</span><span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-120-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="processos-pontuais" class="section level2">
+<h2><span class="header-section-number">7.3</span> Processos pontuais</h2>
+<p>Os processos pontuais podem ser descritos como:</p>
+<ol style="list-style-type: lower-roman">
+<li><strong>Processo de primeira ordem</strong>, considerados globais ou de larga escala, que correspondem a variações no valor médio do processo no espaço.</li>
+</ol>
+<ul>
+<li>Tal processo pode ser representado por mensurações da intensidade baseado na densidade dos pontos (média dos eventos) na área de estudo (ex: Estimativa de Kernel).</li>
+</ul>
+<ol start="2" style="list-style-type: lower-roman">
+<li><strong>Processo de segunda ordem</strong>, denominados locais ou de pequena escala, é o processo representado pela interação entre dois pontos arbitrários.</li>
+</ol>
+<ul>
+<li>O objetivo desse processo é a mensuração da dependência espacial baseado na distância entre os pontos (ex: Vizinhos mais próximos, Função K).</li>
+</ul>
+</div>
+<div id="completa-aletoriedade-espacial-csr---complete-spatial-randomness" class="section level2">
+<h2><span class="header-section-number">7.4</span> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</h2>
+<p><span class="math inline">\(H_0\)</span>: Os pontos estão distribuidos aleatoriamente no espaço</p>
+<p><span class="math inline">\(H_1\)</span>: Os pontos podem formar clusters ou estão dispersos no espaço</p>
+<ul>
+<li><p><em>CSR</em> assume que os pontos seguem um processo homogênio de Poisson na área de estudo.</p>
+<!-- - A densidade dos pontos é constante homogênea ao longo da área de estudo; -->
+<!-- - Para uma amostra aleatória de subregiões, a distribuição da frequência do número de pontos em cada região segue uma distribuição de poisson; --></li>
+</ul>
+<!--     - O número de pontos em uma dada subregião e o mesmo para todas as subregiões na área de estudo; -->
+<!-- - O número de pontos na subregião, independe do número de pontos em qualquer outra subregião. -->
+<p>Simulando alguns padrões dos dados de ponto, temos o seguinte:</p>
+<ul>
+<li>Simulando os processo espaciais</li>
+</ul>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb110-2" data-line-number="2"><span class="co"># Criando uma caixa envoltoria</span></a>
+<a class="sourceLine" id="cb110-3" data-line-number="3">caixa &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb110-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb110-5" data-line-number="5"><span class="co"># Simulando um processo espacial aletaorio</span></a>
+<a class="sourceLine" id="cb110-6" data-line-number="6"><span class="co">#csr significa &quot;complete spatial randomness&quot;</span></a>
+<a class="sourceLine" id="cb110-7" data-line-number="7">alea.spp &lt;-<span class="st"> </span><span class="kw">csr</span>(caixa,<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb110-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb110-9" data-line-number="9"><span class="co"># Processo de poisson clusterizado</span></a>
+<a class="sourceLine" id="cb110-10" data-line-number="10">clu.spp &lt;-<span class="st"> </span><span class="kw">pcp.sim</span>(<span class="dt">rho=</span><span class="dv">20</span>,<span class="dt">m=</span><span class="dv">10</span>,<span class="dt">s2=</span><span class="fl">0.005</span>, <span class="dt">region.poly=</span>caixa)</a>
+<a class="sourceLine" id="cb110-11" data-line-number="11"><span class="co"># rho= intensidade do processo de poisson &quot;pai&quot;(gerador)</span></a>
+<a class="sourceLine" id="cb110-12" data-line-number="12"><span class="co"># m=media </span></a>
+<a class="sourceLine" id="cb110-13" data-line-number="13"><span class="co"># s2=variancia </span></a>
+<a class="sourceLine" id="cb110-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb110-15" data-line-number="15"><span class="co"># Distribuicao regular</span></a>
+<a class="sourceLine" id="cb110-16" data-line-number="16">uni.spp &lt;-<span class="st"> </span><span class="kw">jitter</span>(<span class="kw">gridpts</span>(caixa,<span class="dv">100</span>),<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb110-17" data-line-number="17"><span class="co"># o comando jitter cria uma flutuacao aleatoria sobre os valores</span></a>
+<a class="sourceLine" id="cb110-18" data-line-number="18"><span class="co"># o comando gridpts gera uma grade regular</span></a>
+<a class="sourceLine" id="cb110-19" data-line-number="19"><span class="co"># 2 e&#39; o fator de confusao adicionado ao grid regular</span></a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb111-2" data-line-number="2"><span class="kw">plot</span>(alea.spp, <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span></a>
+<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="st">plot(uni.spp, main=&quot;</span>Regular<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb111-4" data-line-number="4"><span class="st">plot(clu.spp, main=&quot;</span>Agregado<span class="st">&quot;)</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-122-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Verificando a distribuição dos pontos por quadrantes</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="co"># Convertendo para a class ppp</span></a>
+<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="kw">library</span>(spatstat)</a>
+<a class="sourceLine" id="cb112-3" data-line-number="3">alea.ppp &lt;-<span class="st"> </span><span class="kw">as.ppp</span>(alea.spp, <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-4" data-line-number="4">uni.ppp &lt;-<span class="st"> </span><span class="kw">as.ppp</span>(uni.spp, <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-5" data-line-number="5">clu.ppp &lt;-<span class="st"> </span><span class="kw">as.ppp</span>(clu.spp, <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb112-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb112-7" data-line-number="7"><span class="co"># Construindo os quadrantes com as respectivas contagens</span></a>
+<a class="sourceLine" id="cb112-8" data-line-number="8">aleatorioQ &lt;-<span class="st"> </span><span class="kw">quadratcount</span>(alea.ppp, <span class="dt">nx =</span> <span class="dv">4</span>, <span class="dt">ny =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb112-9" data-line-number="9">regularQ &lt;-<span class="st"> </span><span class="kw">quadratcount</span>(uni.ppp, <span class="dt">nx =</span> <span class="dv">4</span>, <span class="dt">ny =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb112-10" data-line-number="10">agregadoQ &lt;-<span class="st"> </span><span class="kw">quadratcount</span>(clu.ppp, <span class="dt">nx =</span> <span class="dv">4</span>, <span class="dt">ny =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb112-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb112-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb112-13" data-line-number="13"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb112-14" data-line-number="14"><span class="kw">plot</span>(aleatorioQ, <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span></a>
+<a class="sourceLine" id="cb112-15" data-line-number="15"><span class="st">plot(alea.ppp, add = TRUE)</span></a>
+<a class="sourceLine" id="cb112-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb112-17" data-line-number="17"><span class="st">plot(regularQ, main=&quot;</span>Regular<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb112-18" data-line-number="18"><span class="st">plot(uni.ppp, add = TRUE)</span></a>
+<a class="sourceLine" id="cb112-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb112-20" data-line-number="20"><span class="st">plot(agregadoQ, main=&quot;</span>Agregado<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb112-21" data-line-number="21"><span class="st">plot(clu.ppp, add = TRUE)</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-123-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Testando a Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</li>
+</ul>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">quadrat.test</span>(aleatorioQ)</a></code></pre></div>
+<pre><code>
+    Chi-squared test of CSR using quadrat counts
+
+data:  
+X2 = 12, df = 15, p-value = 0.6
+alternative hypothesis: two.sided
+
+Quadrats: 4 by 4 grid of tiles</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">quadrat.test</span>(agregadoQ)</a></code></pre></div>
+<pre><code>
+    Chi-squared test of CSR using quadrat counts
+
+data:  
+X2 = 93, df = 15, p-value = 5e-13
+alternative hypothesis: two.sided
+
+Quadrats: 4 by 4 grid of tiles</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="kw">quadrat.test</span>(regularQ)</a></code></pre></div>
+<pre><code>
+    Chi-squared test of CSR using quadrat counts
+
+data:  
+X2 = 2.4, df = 15, p-value = 2e-04
+alternative hypothesis: two.sided
+
+Quadrats: 4 by 4 grid of tiles</code></pre>
+</div>
+<div id="estimativa-de-kernel" class="section level2">
+<h2><span class="header-section-number">7.5</span> Estimativa de Kernel</h2>
+<p>Uma análise exploratória de um processo pontual começa pela estimação da intensidade de ocorrências do processo em toda a região em estudo. Com isso, gera-se uma superfı́cie cujo valor é proporcional à intensidade de eventos por unidade de área;</p>
+<p>O estimador Kernel é um interpolador, que possibilita a estimação da intensidade do evento em toda a área, mesmo nas regiões onde o processo não tenha gerado nenhuma ocorrência real.</p>
+<p>Essa técnica de alisamento, utiliza janela móvel que para cada área estima um peso variável conforme a distância.</p>
+<p>O objetivo é de estimar a intensidade do processo pontual <span class="math inline">\(=\)</span> número de eventos por unidade de área</p>
+<p><img src="figuras/pp3.jpg" style="width:100.0%" /></p>
+<p><span class="math display">\[\hat{\lambda}(s) = \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right) \nonumber\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(\hat{\lambda}(s)\)</span> - valor estimado por área;</p></li>
+<li><p>A função <span class="math inline">\(K(\bullet)\Rightarrow\)</span> FDP, escolhida de forma adequada para construir uma superfície contínua sobre os dados;</p></li>
+<li><p>O parâmetro <span class="math inline">\(\tau\)</span> denominado “largura de banda ou faixa”&quot; (<strong>bandwidth</strong>), controla o amaciamento da superfície gerada;</p></li>
+<li><p><span class="math inline">\(s\)</span> centro da área, representada por uma localização qualquer na área de estudo;</p></li>
+<li><p><span class="math inline">\(S_i\)</span> são as localizações dos eventos observados;</p></li>
+<li><p><span class="math inline">\(n\)</span> representa o número de pontos (eventos).</p></li>
+</ul>
+<p><img src="figuras/pp5.jpg" style="width:100.0%" /></p>
+<!-- - Foi desenvolvida originalmente para obter uma estimação alisada -->
+<!-- da densidade de probabilidade uni ou multivariada, ou um -->
+<!-- histograma alisado. -->
+<!-- - Estimar a intensidade de pontos dispostos no espaço é semelhante a estimar uma densidade de probabilidade bivariada. -->
+<div id="estimativa-de-kernel-com-correcao-por-bordas" class="section level3">
+<h3><span class="header-section-number">7.5.1</span> Estimativa de Kernel com correção por bordas</h3>
+<p>Primeiramente calcula-se o volume sob o Kernel que está de fato dentro da região de estudo.</p>
+<p><span class="math display">\[\delta_{\tau}(s) = \int_{R}\dfrac{1}{\tau^2}k \left( \dfrac{(s-u)}{\tau}\right) du\]</span></p>
+<p>Aplicando a correção das bordas obtém-se um estimador corrigido:</p>
+<p><span class="math display">\[\hat{\lambda}(s) = \dfrac{1}{\delta_{\tau}(s)} \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right) \nonumber\]</span></p>
+<p><strong>Exemplo:</strong></p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="co"># Analisando o efeito de primeira ordem: variacao da intensidade</span></a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="co"># kernel quartico</span></a>
+<a class="sourceLine" id="cb119-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb119-4" data-line-number="4">alea.ker &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(alea.spp,caixa,<span class="dt">h0=</span>.<span class="dv">1</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb119-5" data-line-number="5">clu.ker &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(clu.spp,caixa,<span class="dt">h0=</span>.<span class="dv">1</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb119-6" data-line-number="6">uni.ker &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(uni.spp,caixa,<span class="dt">h0=</span>.<span class="dv">1</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb119-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb119-8" data-line-number="8"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb119-9" data-line-number="9"><span class="kw">image</span>(alea.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>),  <span class="dt">main=</span><span class="st">&quot;Aleatorio&quot;</span>)</a>
+<a class="sourceLine" id="cb119-10" data-line-number="10"><span class="kw">pointmap</span>(alea.spp, <span class="dt">add=</span>T,<span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb119-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb119-12" data-line-number="12"><span class="kw">image</span>(uni.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Regular&quot;</span>)</a>
+<a class="sourceLine" id="cb119-13" data-line-number="13"><span class="kw">pointmap</span>(uni.spp, <span class="dt">add=</span>T,<span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb119-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb119-15" data-line-number="15"><span class="kw">image</span>(clu.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Cluster&quot;</span>)</a>
+<a class="sourceLine" id="cb119-16" data-line-number="16"><span class="kw">pointmap</span>(clu.spp, <span class="dt">add=</span>T,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-127-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Alterando a largura de banda de forma exploratoria</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">clu.ker &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(clu.spp,caixa,<span class="dt">h0=</span>.<span class="dv">05</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb120-2" data-line-number="2">clu.ker1 &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(clu.spp,caixa,<span class="dt">h0=</span>.<span class="dv">2</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb120-3" data-line-number="3">clu.ker2 &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(clu.spp,caixa,<span class="dt">h0=</span>.<span class="dv">5</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb120-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb120-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb120-6" data-line-number="6"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb120-7" data-line-number="7"><span class="kw">image</span>(clu.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Cluster - Tau = 0.05&quot;</span>)</a>
+<a class="sourceLine" id="cb120-8" data-line-number="8"><span class="kw">pointmap</span>(clu.spp, <span class="dt">add=</span>T)</a>
+<a class="sourceLine" id="cb120-9" data-line-number="9"><span class="kw">image</span>(clu.ker1, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Cluster - Tau = 0.2&quot;</span>)</a>
+<a class="sourceLine" id="cb120-10" data-line-number="10"><span class="kw">pointmap</span>(clu.spp, <span class="dt">add=</span>T)</a>
+<a class="sourceLine" id="cb120-11" data-line-number="11"><span class="kw">image</span>(clu.ker2, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Cluster - Tau = 0.5&quot;</span>)</a>
+<a class="sourceLine" id="cb120-12" data-line-number="12"><span class="kw">pointmap</span>(clu.spp, <span class="dt">add=</span>T)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-128-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Passando as linhas de contorno</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="kw">image</span>(alea.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>),  <span class="dt">main=</span><span class="st">&quot;Aleatorio&quot;</span>)</a>
+<a class="sourceLine" id="cb121-3" data-line-number="3"><span class="kw">contour</span>(alea.ker,<span class="dt">add=</span>T)</a>
+<a class="sourceLine" id="cb121-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb121-5" data-line-number="5"><span class="kw">image</span>(uni.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Regular&quot;</span>)</a>
+<a class="sourceLine" id="cb121-6" data-line-number="6"><span class="kw">contour</span>(uni.ker,<span class="dt">add=</span>T)</a>
+<a class="sourceLine" id="cb121-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb121-8" data-line-number="8"><span class="kw">image</span>(clu.ker, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Cluster&quot;</span>)</a>
+<a class="sourceLine" id="cb121-9" data-line-number="9"><span class="kw">contour</span>(clu.ker,<span class="dt">add=</span>T)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-129-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Kernel 3D</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="kw">persp</span>(clu.ker)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-130-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="kw">persp</span>(clu.ker,<span class="dt">theta =</span> <span class="dv">20</span>,<span class="dt">phi =</span> <span class="dv">30</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-130-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="kw">persp</span>(clu.ker,<span class="dt">phi =</span> <span class="dv">45</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-130-3.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Estimando a largura de banda otima</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="co"># Mean Square Error for a Kernel Smoothing - Mse</span></a>
+<a class="sourceLine" id="cb125-2" data-line-number="2">Mse2d &lt;-<span class="st"> </span><span class="kw">mse2d</span>(clu.spp, caixa, <span class="dt">nsmse=</span><span class="dv">20</span>,<span class="dt">range=</span><span class="fl">0.2</span>)</a>
+<a class="sourceLine" id="cb125-3" data-line-number="3"><span class="kw">plot</span>(Mse2d<span class="op">$</span>h,Mse2d<span class="op">$</span>mse, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;h&quot;</span>,  <span class="dt">ylab=</span><span class="st">&quot;Mse&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-131-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="kernel-com-variacao-da-populacao" class="section level2">
+<h2><span class="header-section-number">7.6</span> Kernel com Variação da população</h2>
+<ul>
+<li><p>O alisamento Kernel permite estimar “eventos por unidade de área”, sem considerar a população.</p></li>
+<li><p>Pode-se estimar “população por unidade de área”, e fazer a razão dos dois obtendo uma estimativa alisada de “eventos por população”</p></li>
+</ul>
+<p><span class="math display">\[\hat{\lambda}(s) = \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s&#39;_j)}{\tau} \right) y_i \nonumber\]</span></p>
+<p>Sendo:</p>
+<p><span class="math inline">\(\lambda&#39;\)</span> - Estimativa populacional para unidade de área</p>
+<p><span class="math inline">\(\tau\)</span> - Largura de banda</p>
+<p><span class="math inline">\(y_i\)</span> - População em cada ponto</p>
+<p>Usa-se atribuir ao centróide do setor censitário ou ao centro populacional o número de habitantes de toda a área</p>
+</div>
+<div id="razao-de-kernel" class="section level2">
+<h2><span class="header-section-number">7.7</span> Razão de Kernel</h2>
+<p>A criação da taxa é a divisão dos alisamentos: eventos por unidade de área
+população por unidade de área</p>
+<p><span class="math display">\[\hat{\lambda}(s) = \dfrac{\sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right)}{\sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s&#39;_j)}{\tau} \right) y_i} \nonumber\]</span></p>
+<ul>
+<li><p>Pode-se usar diferentes larguras de banda (em geral maior no denominador para estabilizar mais)</p></li>
+<li><p>Pode-se usar outro evento como “estimador da população a risco”</p></li>
+</ul>
+<p><strong>Exemplo:</strong>Comparando 2 eventos (casos clusterizados - <strong>casos</strong> vs casos aleatórios - <strong>controle</strong></p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">clu.ker2 &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(clu.spp, caixa,<span class="dt">h0=</span><span class="fl">0.2</span>,<span class="dt">nx=</span><span class="dv">100</span>, <span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb126-2" data-line-number="2">clualea.ratio &lt;-<span class="st"> </span><span class="kw">kernrat</span>(clu.spp, alea.spp,caixa, h1 &lt;-<span class="st"> </span><span class="fl">0.2</span>, h2 &lt;-<span class="st"> </span><span class="fl">0.2</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb126-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb126-4" data-line-number="4"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb126-5" data-line-number="5"><span class="kw">image</span>(clu.ker2, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Cluster&quot;</span>)</a>
+<a class="sourceLine" id="cb126-6" data-line-number="6"><span class="kw">pointmap</span>(clu.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">2</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</a>
+<a class="sourceLine" id="cb126-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb126-8" data-line-number="8"><span class="kw">image</span>(clualea.ratio, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>), <span class="dt">main=</span><span class="st">&quot;Razao Cluster/Aleatorio&quot;</span>)</a>
+<a class="sourceLine" id="cb126-9" data-line-number="9"><span class="kw">pointmap</span>(clu.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">2</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</a>
+<a class="sourceLine" id="cb126-10" data-line-number="10"><span class="kw">pointmap</span>(alea.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">4</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-132-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><strong>Exemplo</strong>: Verificando o padrão espacial de segunda ordem dos casos de homicíodos em POA/RS</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">homicKer500 &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(homic2.spp,contorno.poa,<span class="dt">h0=</span><span class="dv">100</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb127-2" data-line-number="2">homicKer1500 &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(homic2.spp,contorno.poa,<span class="dt">h0=</span><span class="dv">500</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb127-3" data-line-number="3">homicKer2500 &lt;-<span class="st"> </span><span class="kw">kernel2d</span>(homic2.spp,contorno.poa,<span class="dt">h0=</span><span class="dv">1500</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb127-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb127-5" data-line-number="5"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb127-6" data-line-number="6"><span class="kw">polymap</span>(contorno.poa,<span class="dt">axes=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb127-7" data-line-number="7"><span class="kw">image</span>(homicKer500 , <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>),<span class="dt">add=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb127-8" data-line-number="8"><span class="kw">pointmap</span>(homic2.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">4</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb127-9" data-line-number="9"><span class="kw">title</span>(<span class="st">&quot;Homicidios - 500m&quot;</span>)</a>
+<a class="sourceLine" id="cb127-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb127-11" data-line-number="11"><span class="kw">polymap</span>(contorno.poa,<span class="dt">axes=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb127-12" data-line-number="12"><span class="kw">image</span>(homicKer1500, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>),<span class="dt">add=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb127-13" data-line-number="13"><span class="kw">pointmap</span>(homic2.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">4</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb127-14" data-line-number="14"><span class="kw">title</span>(<span class="st">&quot;Homicidios - 1500m&quot;</span>)</a>
+<a class="sourceLine" id="cb127-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb127-16" data-line-number="16"><span class="kw">polymap</span>(contorno.poa,<span class="dt">axes=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb127-17" data-line-number="17"><span class="kw">image</span>(homicKer2500, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>),<span class="dt">add=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb127-18" data-line-number="18"><span class="kw">pointmap</span>(homic2.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">4</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb127-19" data-line-number="19"><span class="kw">title</span>(<span class="st">&quot;Homicidios - 2500m&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-133-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Exemplo:</strong>Fazendo a razão de kernel entre as causas de homicídio e suicídios de Porto alegre/RS</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1">kernel.ratio &lt;-<span class="st"> </span><span class="kw">kernrat</span>(homic2.spp, suic.spp,contorno.poa,</a>
+<a class="sourceLine" id="cb128-2" data-line-number="2">                        <span class="dt">h1=</span><span class="dv">500</span>, <span class="dt">h2=</span><span class="dv">750</span>,<span class="dt">nx=</span><span class="dv">100</span>,<span class="dt">ny=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb128-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb128-4" data-line-number="4"><span class="kw">polymap</span>(contorno.poa,<span class="dt">axes=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb128-5" data-line-number="5"><span class="kw">image</span>(kernel.ratio, <span class="dt">col=</span><span class="kw">gray</span>(<span class="dv">32</span><span class="op">:</span><span class="dv">0</span><span class="op">/</span><span class="dv">32</span>),<span class="dt">add=</span>T)</a>
+<a class="sourceLine" id="cb128-6" data-line-number="6"><span class="kw">pointmap</span>(homic2.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">2</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.4</span>)</a>
+<a class="sourceLine" id="cb128-7" data-line-number="7"><span class="kw">pointmap</span>(suic.spp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="dv">4</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.4</span>)</a>
+<a class="sourceLine" id="cb128-8" data-line-number="8"><span class="kw">title</span>(<span class="st">&quot;Razao Homicidio/Suicidio&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-134-1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><strong>Exemplo:</strong> Uma outra forma de fazer o kernel para os dados de homcídio de POA/RS</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="co">## construindo a grade de interpolação</span></a>
+<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="co">#range(contorno.poa[,1])</span></a>
+<a class="sourceLine" id="cb129-3" data-line-number="3"><span class="co">#range(contorno.poa[,2])</span></a>
+<a class="sourceLine" id="cb129-4" data-line-number="4"><span class="kw">bbox</span>(contorno.poa)</a></code></pre></div>
+<pre><code>     min    max
+x  17393  19826
+y 164981 168498</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">grade &lt;-<span class="st">  </span><span class="kw">GridTopology</span>(<span class="dt">cellcentre.offset=</span><span class="kw">c</span>(<span class="dv">17393</span>,<span class="dv">164998</span>),</a>
+<a class="sourceLine" id="cb131-2" data-line-number="2">                       <span class="dt">cellsize=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>),<span class="dt">cells.dim=</span><span class="kw">c</span>(<span class="dv">239</span>,<span class="dv">345</span>))</a>
+<a class="sourceLine" id="cb131-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb131-4" data-line-number="4"><span class="co">## selecao de largura de banda no olho</span></a>
+<a class="sourceLine" id="cb131-5" data-line-number="5"><span class="kw">polymap</span>(contorno.poa)</a>
+<a class="sourceLine" id="cb131-6" data-line-number="6"><span class="kw">pointmap</span>(homic2.spp,<span class="dt">add=</span>T,<span class="dt">col=</span><span class="dv">4</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.7</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-135-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>procure olhando nas coordenadas qual seria uma distancia “razoavel”
+observe que de um extremo a outro do mapa temos 2390 (na horizontal).
+Entao uma distancia razoável seria…</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="co">## seleção de largura de banda por mínimos quadrados</span></a>
+<a class="sourceLine" id="cb132-2" data-line-number="2">xx &lt;-<span class="st"> </span><span class="kw">mse2d</span>(homic2.spp, contorno.poa,<span class="dt">nsmse=</span><span class="dv">50</span>,<span class="dt">range=</span><span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="kw">plot</span>(xx<span class="op">$</span>h, xx<span class="op">$</span>mse,  <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;h&quot;</span>,  <span class="dt">ylab=</span><span class="st">&quot;Mse&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-136-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1">homic.ker5 &lt;-<span class="st"> </span><span class="kw">spkernel2d</span>(homic2.spp, contorno.poa, <span class="dt">h0=</span><span class="dv">100</span>, <span class="dt">grd=</span>grade)</a>
+<a class="sourceLine" id="cb133-2" data-line-number="2">homic.ker10 &lt;-<span class="st"> </span><span class="kw">spkernel2d</span>(homic2.spp, contorno.poa, <span class="dt">h0=</span><span class="dv">200</span>, <span class="dt">grd=</span>grade)</a>
+<a class="sourceLine" id="cb133-3" data-line-number="3">homic.ker15 &lt;-<span class="st"> </span><span class="kw">spkernel2d</span>(homic2.spp, contorno.poa, <span class="dt">h0=</span><span class="dv">500</span>, <span class="dt">grd=</span>grade)</a>
+<a class="sourceLine" id="cb133-4" data-line-number="4">homic.ker20 &lt;-<span class="st"> </span><span class="kw">spkernel2d</span>(homic2.spp, contorno.poa, <span class="dt">h0=</span><span class="dv">750</span>, <span class="dt">grd=</span>grade)</a>
+<a class="sourceLine" id="cb133-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb133-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb133-7" data-line-number="7">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ker100=</span>homic.ker5, <span class="dt">ker200=</span>homic.ker10, </a>
+<a class="sourceLine" id="cb133-8" data-line-number="8">                 <span class="dt">ker500=</span>homic.ker15,<span class="dt">ker750=</span>homic.ker20)</a>
+<a class="sourceLine" id="cb133-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb133-10" data-line-number="10">kernels &lt;-<span class="st"> </span><span class="kw">SpatialGridDataFrame</span>(grade,<span class="dt">data=</span>df)</a>
+<a class="sourceLine" id="cb133-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb133-12" data-line-number="12"><span class="kw">spplot</span>(kernels,<span class="dt">col.regions=</span><span class="kw">terrain.colors</span>(<span class="dv">16</span>),<span class="dt">cuts=</span><span class="dv">15</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-137-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="funcao-f-e-g---distancia-do-vizinho-mais-proximo" class="section level2">
+<h2><span class="header-section-number">7.8</span> Função F e G - Distância do vizinho mais próximo</h2>
+<ul>
+<li><p>Kernel e quadrat permitem explorar a variação da média do processo na região de
+estudo (propriedade de primeira ordem)</p></li>
+<li><p>Para investigar propriedade de segunda ordem é necessário observar as distâncias
+entre os eventos</p></li>
+<li><p>O método do vizinho mais próximo estima a função de distribuição
+cumulativa baseado nas distâncias entre eventos ou pntos em uma região de análise.</p></li>
+<li><p>Dois tipos de distâncias: <strong>evento-evento (W)</strong> e <strong>ponto aleatório-evento (X)</strong></p></li>
+</ul>
+<p><span class="math display">\[\hat{F}(x) = \dfrac{\#(x_i \leq x)}{m}\]</span></p>
+<p><span class="math display">\[\hat{G}(w) = \dfrac{\#(w_i \leq w)}{n}\]</span></p>
+<ul>
+<li>Sabendo que:</li>
+</ul>
+<p><em>W</em> - evento-evento</p>
+<p><em>X</em> - ponto-evento</p>
+<p><em>#</em> - contagem de pontos onde a condição acontece</p>
+<p><em>n</em> - total de eventos</p>
+<p><em>m</em> - total de pontos aleatórios</p>
+<ul>
+<li><p>Em ambas funções, podemos dizer que podem ser representadas pelo número de (<span class="math inline">\(x_i\)</span>) ou ponto (<span class="math inline">\(w_i\)</span>) cuja distância é menor ou igual ao evento (<span class="math inline">\(x\)</span>) ou ponto (<span class="math inline">\(w\)</span>), dividido pelo total de pontos (<span class="math inline">\(m\)</span>) ou total de eventos (<span class="math inline">\(n\)</span>) na região.</p></li>
+<li><p>O resultado desta função empírica é o histograma das distâncias para o vizinho
+mais próximo - cada classe do histograma é uma contagem de eventos que ocorrem até
+aquela distância</p></li>
+</ul>
+<p>A plotagem dos resultados desta função de distribuição cumulativa empírica pode ser usada como um método exploratório para se verificar se existe evidência de interação entre os eventos. Se esta plotagem apresentar um crescimento rápido para pequenos valores de distância, esta situação aponta para interação entre os eventos caracterizando agrupamentos nestas escalas. Se esta plotagem apresentar valores pequenos no seu início, e só crescer rapidamente para
+valores maiores de distância, esta situação aponta para uma distribuição mais regular.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb134-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">envelope</span>(<span class="dt">Y =</span> alea.ppp, <span class="dt">fun =</span> Gest, <span class="dt">nsim =</span> <span class="dv">99</span>), <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span></a>
+<a class="sourceLine" id="cb134-3" data-line-number="3"><span class="st">plot(envelope(Y = uni.ppp, fun = Gest, nsim = 99), main=&quot;</span>Regular<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb134-4" data-line-number="4"><span class="st">plot(envelope(Y = clu.ppp, fun = Gest, nsim = 99), main=&quot;</span>Agregado<span class="st">&quot;)</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-138-1.png" width="672" style="display: block; margin: auto;" />
+Embora o método do vizinho mais próximo forneça uma indicação inicial da distribuição espacial, ele considera apenas escalas pequenas. Para se ter informação mais efetiva para o padrão espacial em escalas maiores, o melhor método a ser utilizado é o da função <span class="math inline">\(K\)</span>.</p>
+</div>
+<div id="funcao-k-de-ripley-ou-apenas-funcao-k." class="section level2">
+<h2><span class="header-section-number">7.9</span> Função K de Ripley (ou apenas função K).</h2>
+<ul>
+<li>A função <span class="math inline">\(K\)</span> permite analisar as propriedades de segunda ordem de um processo isotrópico</li>
+</ul>
+<p><span class="math display">\[\lambda K(h) = E(\#eventos)\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(#eventos\)</span> - é o número de eventos esperados até distância <span class="math inline">\(h\)</span></p></li>
+<li><p><span class="math inline">\(\lambda\)</span> é a intensidade ou número médio de eventos por unidade de área</p></li>
+</ul>
+<p>eventos contidos a uma distância h de um evento arbitrário<span class="math inline">\()\)</span></p>
+<ul>
+<li>A função <span class="math inline">\(K(h)\)</span> é, para cada distância <span class="math inline">\(h\)</span>, o somatório do total de pares cuja distância é menor de que <span class="math inline">\(h\)</span>, vezes o inverso do total de pares ordenados existente na região <span class="math inline">\(R\)</span>.</li>
+</ul>
+<p><span class="math display">\[K(h) = \dfrac{1}{\lambda^{2} R}\sum \sum\limits_{i \neq j} I_{h} (d_{ij})\]</span></p>
+<p>Supondo:</p>
+<p><span class="math display">\[I_{h}(d_{ij}) = \begin{cases} 1  \ \ se\ \  d_{ij} \leq h \\ 0 \ \ se\ \  d_{ij} &gt; h \end{cases}\]</span></p>
+<p><span class="math inline">\(I_{h}(d_{ij})\)</span> é uma função indicador</p>
+<ul>
+<li><p>Esta função também necessita de correção do efeito de borda</p></li>
+<li><p>A função <em>K</em> de Ripley conta quantos pontos há em círculos em torno de uma planta focal;</p></li>
+<li><p>Os círculos começam com um raio pequeno e vão até um raio que inclui toda a área de estudo;</p></li>
+<li><p>Faz-se uma média do número de pontos nas classes de distâncias em torno de todas as plantas focais da população.</p></li>
+</ul>
+<p><img src="figuras/ripley.png" style="width:100.0%" /></p>
+<ul>
+<li>A distribuição é cumulativa e representa o no esperado de vizinhos em um círculo de raio <em>r</em> centrado em uma planta arbitrária dividido pela intensidade <em>λ</em> do padrão dos pontos na área de estudo;</li>
+</ul>
+<p>Possíveis resultados:</p>
+<ul>
+<li><p><strong>quando o processo é completamente aleatório</strong>, a curva se desvia relativamente pouco de <span class="math inline">\(\pi r²\)</span>. A curva <span class="math inline">\(K\)</span> permanece perto de o valor de referência <span class="math inline">\(\pi r²\)</span>;</p></li>
+<li><p><strong>no caso de um processo regular</strong>, obtemos: <span class="math inline">\(\hat{K}(r) &lt; K_{pois}(r)\)</span> porque se os pontos forem repulsivo, eles têm menos vizinhos em média em um raio <span class="math inline">\(r\)</span> do que teriam baseado no pressuposto de uma distribuição aleatória de pontos. Graficamente, a curva K reflete isso repulsão: vemos que no gráfico à abaixo, no processo regular, a curva K está localizada abaixo da referência valor (<span class="math inline">\(\pi r²\)</span>);</p></li>
+<li><p><strong>no caso de um processo agregado</strong>, há em média mais pontos em um raio <span class="math inline">\(r\)</span> ao redor os pontos do que o número esperado sob uma distribuição aleatória: consequentemente, os pontos atraem um ao outro e <span class="math inline">\(\hat{K}(r) &gt; K_{pois}(r)\)</span>. Graficamente, a curva <span class="math inline">\(K\)</span> está neste momento localizada acima da
+valor de referência para todas as áreas de estudo.</p></li>
+</ul>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb135-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">envelope</span>(<span class="dt">Y =</span> alea.ppp, <span class="dt">fun =</span> Kest, <span class="dt">nsim =</span> <span class="dv">99</span>), <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span></a>
+<a class="sourceLine" id="cb135-3" data-line-number="3"><span class="st">plot(envelope(Y = uni.ppp, fun = Kest, nsim = 99), main=&quot;</span>Regular<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb135-4" data-line-number="4"><span class="st">plot(envelope(Y = clu.ppp, fun = Kest, nsim = 99), main=&quot;</span>Agregado<span class="st">&quot;)</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-139-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="funcao-l" class="section level2">
+<h2><span class="header-section-number">7.10</span> Função <em>L</em></h2>
+<ul>
+<li>A função <span class="math inline">\(K(h)\)</span> tem uma distribuição teórica sob condições de aleatoriedade, quando a probabilidade de ocorrência de um evento em qualquer ponto de <em>R</em> é independente da ocorrência de outros eventos e igual em toda a superfície.</li>
+</ul>
+<p>Neste caso, o número de eventos a uma distância <span class="math inline">\(h\)</span> será <span class="math inline">\(\pi \lambda h^2\)</span>:</p>
+<p><span class="math display">\[ K(h) = \pi h^2\]</span></p>
+<p>No caso de distribuição regular, <span class="math inline">\(K(h)\)</span> será menor que <span class="math inline">\(\pi h^2\)</span>.</p>
+<p>Distribuição em cluster, K(h) será maior que <span class="math inline">\(\pi h^2\)</span>.</p>
+<p>A função <span class="math inline">\(L(h)\)</span> permite comparar a função <span class="math inline">\(K(h)\)</span> e <span class="math inline">\(\pi h^2\)</span></p>
+<p><span class="math display">\[L(h) = \sqrt {\dfrac{K(h)}{\pi}}\]</span></p>
+<ul>
+<li><p>Picos positivos indicam atração espacial - cluster</p>
+<ul>
+<li>Vales negativos - repulsão espacial ou regularidade</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb136-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">envelope</span>(<span class="dt">Y =</span> alea.ppp, <span class="dt">fun =</span> Lest, <span class="dt">nsim =</span> <span class="dv">99</span>), <span class="dt">main=</span><span class="st">&quot;Aleatório&quot;)</span></a>
+<a class="sourceLine" id="cb136-3" data-line-number="3"><span class="st">plot(envelope(Y = uni.ppp, fun = Lest, nsim = 99), main=&quot;</span>Regular<span class="st">&quot;)</span></a>
+<a class="sourceLine" id="cb136-4" data-line-number="4"><span class="st">plot(envelope(Y = clu.ppp, fun = Lest, nsim = 99), main=&quot;</span>Agregado<span class="st">&quot;)</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-140-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Exemplo</strong>: Verificando o padrão espacial de segunda ordem dos casos de homicíodos em POA/RS</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="co"># Convertendo para a class ppp</span></a>
+<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="kw">library</span>(spatstat)</a>
+<a class="sourceLine" id="cb137-3" data-line-number="3"><span class="co">#range(homic2[1])</span></a>
+<a class="sourceLine" id="cb137-4" data-line-number="4"><span class="co">#range(homic2[2])</span></a>
+<a class="sourceLine" id="cb137-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb137-6" data-line-number="6">w &lt;-<span class="st"> </span><span class="kw">as.owin</span>(<span class="kw">list</span>(<span class="dt">xrange=</span><span class="kw">range</span>(homic2<span class="op">$</span>x),<span class="dt">yrange=</span><span class="kw">range</span>(homic2<span class="op">$</span>y)))</a>
+<a class="sourceLine" id="cb137-7" data-line-number="7">w</a></code></pre></div>
+<p>window: rectangle = [17472, 19073] x [165625, 168269] units</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1">homic2.ppp &lt;-<span class="st"> </span><span class="kw">as.ppp</span>(homic2, w)</a>
+<a class="sourceLine" id="cb138-2" data-line-number="2"><span class="kw">plot</span>(homic2.ppp,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a>
+<a class="sourceLine" id="cb138-3" data-line-number="3"><span class="kw">polymap</span>(contorno.poa,<span class="dt">add=</span>T)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-141-1.png" width="672" style="display: block; margin: auto;" />
+Note que o restangulo envolvente (<strong>bbox</strong>) foi feito com a coordenadas dos dados<br />
+não do contorno de POA</p>
+<p>Grafícos das Funções <em>K</em> , <em>G</em> e <em>L</em> dos homicíodos em POA/RS</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb139-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">envelope</span>(<span class="dt">Y =</span> homic2.ppp, <span class="dt">fun =</span> Kest, <span class="dt">nsim =</span> <span class="dv">99</span>), <span class="dt">main=</span><span class="st">&quot;Funcao K&quot;</span>)</a>
+<a class="sourceLine" id="cb139-3" data-line-number="3"><span class="kw">plot</span>(<span class="kw">envelope</span>(<span class="dt">Y =</span> homic2.ppp, <span class="dt">fun =</span> Gest, <span class="dt">nsim =</span> <span class="dv">99</span>), <span class="dt">main=</span><span class="st">&quot;Funcao G&quot;</span>)</a>
+<a class="sourceLine" id="cb139-4" data-line-number="4"><span class="kw">plot</span>(<span class="kw">envelope</span>(<span class="dt">Y =</span> homic2.ppp, <span class="dt">fun =</span> Lest, <span class="dt">nsim =</span> <span class="dv">99</span>), <span class="dt">main=</span><span class="st">&quot;Funcao L&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-142-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Comente esses resultados!</p>
+</div>
+<div id="deteccao-de-cluster" class="section level2">
+<h2><span class="header-section-number">7.11</span> Detecção de cluster</h2>
+<ul>
+<li><p>Definição (Knox): grupo de ocorrências geograficamente limitado em tamanho e concentração tais que seja improvável ocorrer por mero acaso.</p></li>
+<li><p>São causas de cluster: fonte comum, contagiosidade.</p></li>
+<li><p>Clusters são em geral espaço-temporais.</p></li>
+<li><p>É importante considerar:</p>
+<ul>
+<li><p>Demais fatores de risco – sexo, idade;</p></li>
+<li><p>Residência X outros locais;</p></li>
+<li><p>Latência.</p></li>
+</ul></li>
+<li><p>Dois tipos básicos de testes:</p>
+<ul>
+<li><p><strong>Focados</strong>: testa-se a hipótese de excesso de casos ao redor de fonte suspeita, identificada antes de observar os dados;</p></li>
+<li><p><strong>Genéricos</strong>: busca identificar áreas quentes, sem especificar quais e quantas.</p></li>
+</ul></li>
+<li><p>Hipóteses dos testes:</p>
+<p><span class="math inline">\(H_0\)</span>: É ausência de cluster: completa aleatoriedade espacial (CSR).</p></li>
+<li><p><strong>CSR</strong></p></li>
+<li><p>Sendo:</p></li>
+</ul>
+<p><span class="math inline">\(n\)</span> são subdivisões da região do estudo,</p>
+<p><span class="math inline">\(y_i\)</span> número de casos observados e <span class="math inline">\(E_i\)</span> esperados,</p>
+<p><span class="math inline">\(\lambda\)</span> eventos por unidade de área (e tempo)</p>
+<ul>
+<li><p>Alternativas:</p>
+<ul>
+<li><p>Focados - <span class="math inline">\(\lambda\)</span> varia com a distância da fonte</p></li>
+<li><p>Genéricos - existe regiões onde <span class="math inline">\(\lambda\)</span> é mais elevado</p></li>
+</ul></li>
+</ul>
+<div id="testes-genericos-de-cluster" class="section level3">
+<h3><span class="header-section-number">7.11.1</span> Testes Genéricos de Cluster</h3>
+<ul>
+<li><p><strong>Knox:</strong> Testa um número acima do esperado de pares de casos excessivamente próximos (segundo critério pré-estabelecido) no espaço e no tempo.</p></li>
+<li><p><strong>Mantel:</strong> Distância no tempo e distância no espaço, se <span class="math inline">\(x\)</span> for 1 e <span class="math inline">\(y\)</span>
+for 1, equivale ao teste de Knox.</p></li>
+</ul>
+<p><span class="math display">\[\sum \sum\limits_{i \neq j} x_{ij} y_{ij} \]</span></p>
+<ul>
+<li><strong>Cuzick-Edwards:</strong> Caso-controle onde a coincidência de casos vizinhos aumenta o peso, e a junção controle-controle ou caso-controle tem peso zero; este teste permite considerar a variação populacional.</li>
+</ul>
+</div>
+<div id="fonte-especifica" class="section level3">
+<h3><span class="header-section-number">7.11.2</span> Fonte Específica</h3>
+<ul>
+<li><p>Cluster ao redor de um ponto ou uma linha</p></li>
+<li><p>Compara-se a ocorrência de no excessivo de “casos” em relação à população a partir de uma função de decaimento em relação à possível fonte</p></li>
+</ul>
+<p><span class="math display">\[\lambda (s) = \rho \lambda&#39;(s)f(h;\theta)\]</span></p>
+<p><span class="math display">\[f(h;\theta) = 1 + \theta_1 e^{\theta_{2}h^2}\]</span></p>
+<p>Sendo:</p>
+<p><span class="math inline">\(\theta(s)\)</span> - estimativa do evento p/ unidade de área</p>
+<p><span class="math inline">\(\rho\)</span> - parâmetro que indica a razão entre “casos” e “controles”</p>
+<p><span class="math inline">\(\lambda&#39;(s)\)</span> - estimativa população p/ unidade de área</p>
+<p><span class="math inline">\(f\)</span> - função da distância para a fonte</p>
+<p><span class="math inline">\(θ\)</span> - parâmetros a estimar que descrevem como a incidência varia em torno da fonte</p>
+</div>
+</div>
+<div id="exercicios-propostos-4" class="section level2">
+<h2><span class="header-section-number">7.12</span> Exercícios Propostos</h2>
+<ol style="list-style-type: decimal">
+<li><p>Testar a CSR e explorar os Kernels para as causas de suicídio e acidentes de carro em POA/RS</p></li>
+<li><p>Fazer a razão de kernel entre suicídios e acidentes de carro em POA/RS</p></li>
+<li><p>Inspecionar o processo pontual de segunta ordem, utilizando as funções K, G e L para as causas de suicídio e acidentes de carro em POA/RS.</p></li>
+</ol>
+<div id="exercicios-resolvidos-1" class="section level4">
+<h4><span class="header-section-number">7.12.0.1</span> Exercícios Resolvidos</h4>
+<ul>
+<li><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex_cap6_padraoponto.r">Exercícios Padrões Pontuais</a></li>
+</ul>
+<p>ASSUNÇÃO, Renato M. Estatística espacial com aplicações em epidemiologia, economia e sociologia. São Carlos: Associação Brasileira de Estatística, v. 131, 2001.</p>
+<p>DIGGLE, Peter J. et al. Statistical analysis of spatial point patterns. Academic press, 1983.</p>
+<p>GATRELL, Anthony C. et al. Spatial point pattern analysis and its application in geographical epidemiology. Transactions of the Institute of British geographers, p. 256-274, 1996.</p>
+<p>BADDELEY, Adrian , RUBAK, Ege, TURNER, Rolf Turner. Spatial Point Patterns: Methodology and Applications with R
+Chapman and Hall/CRC 810 Pages. 1st Edition 2015.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducao-a-analise-estatistica-espacial.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="padroes-pontuais-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

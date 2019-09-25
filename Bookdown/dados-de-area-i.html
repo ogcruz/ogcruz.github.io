@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 1 Dados de Área I | capitulo8.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 1 Dados de Área I | capitulo8.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 1 Dados de Área I | capitulo8.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#dados-de-area-i"><i class="fa fa-check"></i><b>1</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#introducao"><i class="fa fa-check"></i><b>1.1</b> Introdução</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#visualizacao-mapa-de-padrao"><i class="fa fa-check"></i><b>1.2</b> Visualização: Mapa de Padrão</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#analise-exploratoria"><i class="fa fa-check"></i><b>1.3</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="1.3.1" data-path=""><a href="#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>1.3.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="1.3.2" data-path=""><a href="#efeitos-de-segunda-ordem-dependencia-espacial"><i class="fa fa-check"></i><b>1.3.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#medidas-de-proximidade-em-dados-de-area"><i class="fa fa-check"></i><b>1.4</b> Medidas de proximidade em dados de área</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="dados-de-area-i" class="section level1">
+<h1><span class="header-section-number"> 1</span> Dados de Área I</h1>
+<div id="introducao" class="section level2">
+<h2><span class="header-section-number">1.1</span> Introdução</h2>
+<ul>
+<li><p>Na análise de áreas o atributo estudado é em geral resultado de uma contagem ou uma medida de sı́nte.</p></li>
+<li><p>O objetivo não é a predição para pontos não mensurados, mas a detecção e explicação de padrões e tendências observados entre áreas.</p></li>
+<li><p>Área é definida por um polı́gono cuja forma pode ser complexa bem como as relações de vizinhança.</p></li>
+</ul>
+<p>O modelo básico do banco de dados:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Local</th>
+<th align="center">Casos</th>
+<th align="center">População</th>
+<th align="center">Médico p/ 1000 hab</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Rio Bom</td>
+<td align="center">41</td>
+<td align="center">3209</td>
+<td align="center">5,4</td>
+</tr>
+<tr class="even">
+<td align="center">Serra Verde</td>
+<td align="center">320</td>
+<td align="center">16897</td>
+<td align="center">2,6</td>
+</tr>
+<tr class="odd">
+<td align="center">Poço Fundo</td>
+<td align="center">67</td>
+<td align="center">2569</td>
+<td align="center">1,3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualizacao-mapa-de-padrao" class="section level2">
+<h2><span class="header-section-number">1.2</span> Visualização: Mapa de Padrão</h2>
+<p>Reading layer <code>olinda' from data source</code>/home/tassinari/Documentos/cursos_ecologicos_2019/Bookdown/shapes/olinda.shp’ using driver `ESRI Shapefile’
+Simple feature collection with 241 features and 10 fields
+geometry type: POLYGON
+dimension: XY
+bbox: xmin: 288955.3 ymin: 9111044 xmax: 298445.7 ymax: 9120528
+epsg (SRID): NA
+proj4string: NA
+<img src="capitulo8_files/figure-html/unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="analise-exploratoria" class="section level2">
+<h2><span class="header-section-number">1.3</span> Análise exploratória</h2>
+<div id="efeitos-de-primeira-ordem" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Efeitos de primeira ordem:</h3>
+<pre><code> - Médias móveis espaciais
+
+ - Kernel
+ </code></pre>
+</div>
+<div id="efeitos-de-segunda-ordem-dependencia-espacial" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Efeitos de segunda ordem (dependência espacial):</h3>
+<pre><code>- Índice de Moran
+
+- Índice de Geary
+
+ - Correlograma
+ </code></pre>
+</div>
+</div>
+<div id="medidas-de-proximidade-em-dados-de-area" class="section level2">
+<h2><span class="header-section-number">1.4</span> Medidas de proximidade em dados de área</h2>
+<ul>
+<li><p>Quando trabalhamos com atributos variando continuamente na área de estudo (geoestatı́stica) é natural usar distância entre localizações como medida de proximidade espacial.</p></li>
+<li><p>Precisamos definir como medir proximidade espacial em dados de área.</p></li>
+<li><p>Poderı́amos calcular por exemplo a distância entre os centros ou centróides dos polı́gonos.</p></li>
+<li><p>De forma mais geral, utilizamos uma matriz <span class="math inline">\(W\)</span>, onde cada elemento <span class="math inline">\(w_{ij}\)</span> representa medida de proximidade espacial entre as áreas <span class="math inline">\(A_i\)</span> e <span class="math inline">\(A_j\)</span>.</p></li>
+<li><p>A escolha de <span class="math inline">\(w_{ij}\)</span> depende do tipo de dado, da região, dos mecanismos particulares da dependência espacial.</p></li>
+</ul>
+<p>Possíveis critérios:</p>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="92%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Tipos</th>
+<th align="left">Matrizes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left"><span class="math display">\[w_{ij} = \begin{cases} 1  \ \ \text{centróide de } A_i \ \text{é o mais próximo de } A_j \\ 0 \ \ \text{caso contrário} \end{cases}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left"><span class="math display">\[w_{ij} = \begin{cases} 1  \ \ \text{centróide de } A_i \ \text{dentro de distância especificada de } A_j \\ 0 \ \ \text{caso contrário} \end{cases}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left"><span class="math display">\[w_{ij} = \begin{cases} 1  \ \ A_i \ \text{tem fronteira comum com } A_j \\ 0 \ \ \text{caso contrário} \end{cases}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left"><span class="math display">\[w_{ij} = \dfrac{I_{ij}}{I_i} \ \text{sendo} \ I_{ij} \ \text{o comprimento da fronteira comum entre } A_i \ \text{e} \ A_j. I_{i} \ \text{é o perímetro de } \ A_i.\]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

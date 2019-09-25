@@ -1178,7 +1178,11 @@ Pede-se:
 
 Escolha uma delas, descreva a série  e tente modelar usando os modelos B&J ou GAM. 
 
+#### Exercícios Resolvidos
 
+* [Acidentes de transito UK](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex1_cap4_seatbealt.r)
+
+* [Dados Climaticos](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex2_cap4_pluviosidade.r)
 
 ## Bibliografia sugerida
 

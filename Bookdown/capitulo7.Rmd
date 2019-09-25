@@ -2,338 +2,448 @@
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(knitr)
 library(pander)
+
 # Set so that long lines in R will be wrapped:
 opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
 
 ```
 
 
-# Padrões Pontuais
+# Padrões Pontuais II
 
-## O que são Padrões Pontuais ?
+## Exemplo com os dados de dengue em Dourados/MS
 
-- Os *Padrões Pontuais*, é o tipo mais simples de de dados espaciais. São baseados
-localização dos eventos em determinada área a partir das coordenadas;
+Nesta aula serão utilizados os dados da monografia de Isis Rodrigues Reitman, apresentada ao Curso de Geografia da Faculdade de Ciências Humanas da Universidade Federal da Grande Douradosos/MS, em março de 2013. O título da monografia é "DISTRIBUIÇÃO ESPACIAL DOS CASOS DE DENGUE NO PERÍMETRO URBANO DE DOURADOS-MS E SUA RELAÇÃO COM OS FATORES SOCIOAMBIENTAIS E POLÍTICOS"
 
-- Os processos pontuais são definidos como um conjunto de pontos irregularmente distribuidos em
-um terreno cuja localização foi gerada por algum mecanismo estocástico;
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "80%", fig.align = "center"}
 
-- Os pontos são pares de coordenadas *(x, y)*, representando eventos, observação, indivíduos, lugares ou qualquer outro objeto discreto definido no espaço.
-
-```{r, echo=F, fig.show = "hold", out.width = "40%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/pontos0.jpg"))
-```
-
----
-
-```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/pontos2019.jpg"))
+library(tidyverse)
+library(sf)
+library(maptools)
+library(spatstat)
 
 ```
 
+Lendo a tabela da população por setor censitário e baixando os shapes files do contorno e por setor censitário de Dourados/MS
 
----
+```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "100%", fig.align = "center"}
 
-## Objetivos
+local <- 'https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/'
+pop2010 <- read_csv(paste0(local,'pop2010.csv'))
 
-- Estudar a disposição espacial dos pontos, a partir de suas coordenadas;
+tmpdir <- tempdir()
+download.file(paste0(local,'setores_dourados.zip'),
+              destfile = paste0(tmpdir,'/dourados.zip'))
 
-- Uma caracterı́stica importante de um padrão espacial é a localização dos pontos e a relação entre eles. 
+unzip(zipfile = paste0(tmpdir,'/dourados.zip'),exdir = tmpdir)
+dir(tmpdir)
 
-- Isto têm um efeito significativo na distribuição dos padrões;
+setor <- read_sf(paste0(tmpdir,'/Setor_UTM_SIRGAS.shp'), crs = 31981)
+contorno <- read_sf(paste0(tmpdir,'/contorno.shp'), crs = 31981)
+popsetor <- setor %>% mutate (idsetor = as.numeric(CD_GEOCODI)) %>% inner_join(pop2010,by='idsetor')
 
-- Na realidade o que se deseja é detectar padrões de aglomerados espaciais (“clusters”).
-
-
-```{r, echo=F, fig.show = "hold", out.width = "80%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/pp2.jpg"))
 
 ```
 
----
 
-```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
-knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/pontos1.jpg")
+
+```
+ [1] "contorno.dbf"                                     "contorno.sbn"                                    
+ [3] "contorno.sbx"                                     "contorno.shp"                                    
+ [5] "contorno.shx"                                     "dourados.zip"                                    
+ [7] "Setor_UTM_SIRGAS.dbf"                             "Setor_UTM_SIRGAS.prj"                            
+ [9] "Setor_UTM_SIRGAS.sbn"                             "Setor_UTM_SIRGAS.sbx"                            
+[11] "Setor_UTM_SIRGAS.shp"                             "Setor_UTM_SIRGAS.shx"                            
 ```
 
 
----
+- Lendo e plotando os casos de dengue georreferenciados em Dourados/MS
 
-## Tipos de Distribuições 
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"}
 
-- **Aleatória**, qualquer ponto tem a mesma probabilidade de ocorrer em qualquer local
-e a posição de qualquer ponto não é afetada pela posição de qualquer outro ponto;
+casos <- read_csv(paste0(local,'dengue_dourados.csv'))
 
-- **Uniforme**: cada ponto é tão longe de todos os seus vizinhos quanto possível;
+casos.pt <- st_as_sf(casos, coords = c("X", "Y"), crs = 31981)
+plot(casos.pt[-3],pch=19,cex=0.5)  ## remove data
 
-- **Cluster**: Muitos pontos estão concentrados juntos, e grandes áreas que contêm pouquíssimos pontos, se houver algum.
-
-
-```{r, echo=F, fig.show = "hold", out.width = "80%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/pp0.jpg"))
 ```
 
-^[Fonte: https://training.fws.gov/courses/references/tutorials/geospatial/CSP7304/]
+Plotando os casos de dengue segundo o sexo.
 
----
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"}
 
-## Processos pontuais 
+plot(casos.pt['CS_SEXO'],pch=19,cex=0.5)
+
+
+```
+
+Plotando apenas o contorno de Dourados/MS.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"}
+
+plot(contorno['ID'])
+
+```
+
+Usando a **ggplot()** para fazer um gráfico do contorno e dos casos.
+
+```{r}
+ggplot(casos.pt) + 
+    geom_sf(aes(color=CS_SEXO,fill=CS_SEXO),alpha=0.6) + 
+    geom_sf(data=contorno,alpha=0) + 
+    theme_void()
+
+```
+
+
+
+Formatando os pontos que representam os casos de dengue na classe **ppp** (point pattern)
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"}
+
+cont.w <- as.owin(as_Spatial(contorno))
+dengue.ppp <- ppp(casos$X,casos$Y,cont.w)
+
+plot(dengue.ppp,pch=19,cex=0.5)
+
+```
+
+Uma vez que temos o objeto em formato **ppp**, podemos verificar a melhor largura de banda sugerida por vários métodos disponíveis pela biblioteca *spatstat* para os casos de Dengue em Dourados/MS.
+
+| Nome                            | Comando R             | Resultado                 |
+| ------------------------------- | --------------------- | ------------------------- |
+| Diggle                          | bw.diggle(dengue.ppp) | `r bw.diggle(dengue.ppp)` |
+| Cronie and van Lieshout's (CvL) | bw.CvL(dengue.ppp)    | `r bw.CvL(dengue.ppp)`    |
+| Scoot                           | bw.scott(dengue.ppp)  | `r bw.scott(dengue.ppp)`  |
+| likelihood cross-validation     | bw.ppl(dengue.ppp)    | `r bw.ppl(dengue.ppp)`    |
+
+
+Existem ainda outros métodos para determinar automaticamente a largura de banda. É possível usa-los para ajudar a escolher o melhor valor, mas é preciso verificar se essa largura de banda apresenta plausibilidade dentro do contexto do estudo.
+
+
+Fazendo o mapa de kernel dos casos de dengue segundo várias larguras de banda. 
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+par(mfrow=c(2, 2))
+plot(density(dengue.ppp,250,diggle = TRUE),main='kernel 250 m',col=terrain.colors(64))
+plot(density(dengue.ppp,500,diggle = TRUE),main='kernel 500 m',col=terrain.colors(64))
+plot(density(dengue.ppp,750,diggle = TRUE),main='kernel 750 m',col=terrain.colors(64))
+plot(density(dengue.ppp,1000,diggle = TRUE),main='kernel 1000 m',col=terrain.colors(64))
+
+```
+
+
+Fazendo o kernel segundo sexo, criando padrões para cada sexo e em seguida gerando um kernel para cada categoria.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+masc <- casos %>% filter(CS_SEXO=='M')
+masc.ppp <- ppp(masc$X,masc$Y,cont.w)
+
+fem <- casos %>% filter(CS_SEXO=='F')
+fem.ppp <- ppp(fem$X,fem$Y,cont.w)
+
+D.masc <- density(masc.ppp,750,diggle = TRUE)
+D.fem  <- density(fem.ppp,750,diggle = TRUE)
+
+par(mfrow=c(1, 2))
+plot(D.masc, main='kernel Homens 750 m')
+plot(D.fem, main='kernel Mulheres 750 m')
+
+
+```
+
+Fazendo a razão de kernel entre os sexos.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+D.res <- D.masc
+D.res$v <- (D.masc$v / D.fem$v)
+plot(D.res,main='Razão de Kernel H/M')
+
+```
+
+Como podemos observar no kernel acima, não foi detectada variabilidade espacial na razão entre os sexos. Observe o efeito de borda que ocorre no Norte, onde um único indivíduo do sexo masculido é responsável pelo efeito de borda.
+
+
+Extraindo os centróides  dos setores censitários de Dourados/MS.
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"}
+
+centros <- st_centroid(st_geometry(popsetor) )
+
  
-- Os processos pontuais são definidos como um conjunto de pontos irregularmente distribuídos em um terreno, cuja localização foi gerada por um mecanismo estocástico. 
+centros.tmp <- as.data.frame(as_Spatial(centros))
+names(centros.tmp) <- c('X','Y')
 
-- Para sua caracterização, este processo estocástico pode ser descrito como:
+centros.ppp <- ppp(centros.tmp$X,centros.tmp$Y,cont.w)
 
+plot(centros.ppp,pch=19,cex=0.5)
 
-    i) **Processo de primeira ordem**, considerados globais ou de larga escala, correspondem a variações no valor médio do processo no espaço. 
-    
-     - Mensuração da intensidade baseado na densidade (média dos eventos) na área de estudo (ex: Estimativa de Kernel).
-    
-    
-    ii) **Processo de segunda ordem**,  denominados locais ou de pequena escala, é o processo representado pela interação entre dois pontos arbitrários. 
-    
-    - Mensurando a dependência espacial - baseado na distância entre os ponto (ex: Vizinhos mais próximos, Função K).
-    
----    
+```
 
-## Processo de primeira ordem
-
-### Testando a Completa Aletoriedade Espacial (*CSR - complete spatial randomness*)
-
-$H_0$: Os pontos estão distribuidos aleatoriamente no espaço
-
-$H_1$: Os pontos formam clusters ou estão dispersos no espaço
-
-
-- *CSR* assume que os pontos seguem um processo homogênio de Poisson na área de estudo.
-
-    - A densidade dos pontos é constante homogênea) ao longo da área de estudo;
-    
-    - Para uma amostra aleatória de subregiões, a distribuição da frequência do numero de pontosem cada região seguira uma distribuição de poisson;
-    
-    - O número de pontos em uma dada subregião e o mesmo para todas as subregiões na área de estudo;
-    
-    - O número de pontos na subregião, independe do número de pontos em qualquer outra subregião.
-    
----
-
-- Simulando alguns padrões dos dados de ponto, temos o seguinte:
+Fazendo o kernel dos pontos dos centróides dos setores censitários de Dourados/MS. Tal distribuição, pode se sugerida como uma *proxy* da verdadeira distribuição populacional de Dourados/MS
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 
-library("spatstat")
-aleatorio <- rpoispp(50)
-regular <- rMaternII(200,0.1)
-agregado <- rMatClust(5, 0.05, 10)
-
-
-par(mfrow=c(1, 3))
-plot(aleatorio, main="Aleatório")
-plot(regular, main="Regular")
-plot(agregado, main="Agregado")
-
+D.pop <- density(centros.ppp, 500, weights = popsetor$pop, scalekernel = TRUE)
+plot(D.pop)
 
 ```
 
-- Verificando a distribuição dos pontos por quadrantes 
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
-aleatorioQ <- quadratcount(aleatorio, nx = 4, ny = 4)
-regularQ <- quadratcount(regular, nx = 4, ny = 4)
-agregadoQ <- quadratcount(agregado, nx = 4, ny = 4)
-
-
-par(mfrow=c(1, 3))
-plot(aleatorioQ, main="Aleatório")
-plot(aleatorio, add = TRUE)
-
-plot(regularQ, main="Regular")
-plot(regular, add = TRUE)
-
-plot(agregadoQ, main="Agregado")
-plot(agregado, add = TRUE)
-
-
-
-
-
-```
-
-- Testando a CSR
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-quadrat.test(aleatorioQ)
-
-```
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-quadrat.test(agregadoQ)
-
-```
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-quadrat.test(regularQ)
-
-```
-
-### Estimativa de Kernel
-
-- Uma análise exploratória de um processo pontual começa pela estimação da intensidade de ocorrências do processo em toda a região em estudo. Com isso, gera-se uma superfı́cie cujo valor é proporcional à intensidade de eventos por unidade de área;
-
-- O estimador Kernel é um interpolador, que possibilita a estimação da intensidade do evento em toda a área, mesmo nas regiões onde o processo não tenha gerado nenhuma ocorrência real.
-
-- O objetivo é de estimar a intensidade do processo pontual $=$ numero de eventos por unidade de área 
-
-$$\lambda(s) = \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K (\frac{(s - s_i)}{\tau}) \nonumber$$
-
-Sendo:
-
-- A função $K(\bullet)\Rightarrow$ FDP, escolhida de forma adequada para construir uma
-superfície contínua sobre os dados;
-
-- O parâmetro $\tau$ denominado "largura de banda ou faixa"" (**bandwidth**), controla o amaciamento da superfície gerada;
-
-- $s$ representa uma localização qualquer na área de estudo e $S_i$ são as
-localizações dos eventos observados;
-
-- $n$ representa o número de pontos (eventos).
-
-
-```{r, echo=F, fig.show = "hold", out.width = "70%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/pp3.jpg", "~/Documentos/cursos_ecologicos_2019/figuras/pp5.jpg"))
-
-```
-
+Gerando um kernel de atributo com a população de cada setor censitário. O parâmetro *weights* nos permite entrar o valor do atributo a ser ponderado. Desta forma é possível gerar um kernel de um valor especificado (atributo).
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 
-
-par(mfrow=c(1, 3))
-plot(density(aleatorio, bw = 0.1), main="Aleatório")
-plot(aleatorio, add = TRUE)
-plot(density(regular, bw = 0.1), main="Regular")
-plot(regular, add = TRUE)
-plot(density(agregado, bw = 0.1), main="Agregado")
-plot(agregado, add = TRUE)
-
-```
-
----
-
-## Algumas funções kernel $K(\bullet)$:
-
-- Gaussiano;
-
-- Triangular;
-
-- Uniforme;
-
-- Quártico;
-
-- Etc.
-
-
-```{r, echo=F, fig.show = "hold", out.width = "50%", fig.align = "center"}
-knitr::include_graphics("~/Documentos/cursos_ecologicos_2019/figuras/kerneldensy.jpg")
-
-```
-
-## Diferenças entre as funções de Kernel
-
-- A distribuição normal pesa os pontos dentro do círculo de forma que pontos mais próximos são pesados mais intensamente comparados aos mais afastados; 
-
-- A distribuição uniforme pesa todos os pontos dentro do círculo igualmente; 
-
-- A função quártica pesa pontos próximos mais do que pontos distantes, mas o decrescimento é gradual;
-
-- A função triangular pesa pontos próximos mais do que pontos distantes dentro do círculo, mas o decrescimento é mais rápido;
-
-- A função exponencial negativa pesa pontos próximos muito mais intensamente do que pontos distantes.
-
---
-
-## Função G - Distância do vizinho mais próximo
-
-- O método do vizinho mais próximo estima a função de distribuição
-cumulativa $\hat{G}(r)$ baseado nas distâncias $h$ entre eventos em uma região de análise.
-
-- Esta função de distribuição pode ser estimada empiricamente da seguinte forma: 
-
-$$\hat{G}(h) = \dfrac{\#(d(u_{i},u_{j}) \leq h)}{n}$$
-
-onde o valor normalizado acumulado para uma distância $h$ corresponde à soma dos vizinhos mais próximos de cada evento cuja distância é menor ou igual a $h$, dividido pelo número de eventos na região. 
-
-A plotagem dos resultados desta função de distribuição cumulativa empírica $\hat{G}(r)$ pode ser usada como um método exploratório para se verificar se existe evidência de interação entre os eventos. Se esta plotagem apresentar um
-crescimento rápido para pequenos valores de distância, esta situação aponta para interação entre os eventos caracterizando agrupamentos nestas escalas. Se esta plotagem apresentar valores pequenos no seu início, e só crescer rapidamente para
-valores maiores de distância, esta situação aponta para uma distribuição mais regular. 
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-par(mfrow=c(1, 3))
-plot(Gest(aleatorio),main="Aleatório")
-plot(Gest(regular), main="Regular")
-plot(Gest(agregado), main="Agregado")
+kpop <- density(centros.ppp, 750, weights = popsetor$pop, scalekernel = TRUE)
+plot(kpop)
 
 
 ```
 
+Calculando a taxa média de casos (por 1.000 hab) de dengue do município de Dourados/MS
 
-Embora o método do vizinho mais próximo forneça uma indicação inicial da distribuição espacial, ele considera apenas escalas pequenas. Para se ter informação mais efetiva para o padrão espacial em escalas maiores, o melhor método a ser utilizado é o da função $K$. 
+```{r,comment=NA}
+nrow(casos.pt)/sum(popsetor$pop) * 1000
+```
 
-### Função K de Ripley (ou apenas função K).
+Gerando a razão de kernel (casos/população) x 1000
 
-A função $K$, também denominada medida de momento de segunda ordem reduzido, é definida para o processo univariado como:
-$\lambda K(h)$ = $E(\#$eventos contidos a uma distância h de um evento arbitrário$)$, sendo $\#$ associado ao número de eventos, $E()$ é o operador de estimativa, e $\lambda$ é a intensidade ou número médio de eventos por unidade de área, assumida constante na região. Uma estimativa de $K(h)$ é: 
+```{r}
+kcasos.b750 <- density(dengue.ppp, 750, diggle = TRUE)
 
-Tá errado, pegar no livro estatística espacial
-$$\hat{K}(s) = \frac{A}{n^2}\sum_{i=1}^{n}\sum_{i \neg j}w_{ij}^{-1} | {x_j : d(x_{i}, x_{j})}$$ 
+razao <- kcasos.b750
 
+razao$v <- (kcasos.b750$v / kpop$v)*1000
 
-- Função K de Ripley conta quantos pontos há em círculos em torno de uma planta focal; 
-
-- Os círculos começam com um raio pequeno e vão até um raio que inclui toda a área de estudo; 
-
-- faz-se uma média do número de pontos nas classes de distâncias em torno de todas as plantas focais da população. 
+plot(razao, main='Razão de kernel casos/população')
+contour(razao, add=T, levels=seq(0, 25, by=5))
+```
 
 
-```{r, echo=F, fig.show = "hold", out.width = "80%", fig.align = "center"}
-knitr::include_graphics(c("~/Documentos/cursos_ecologicos_2019/figuras/ripley.png"))
+Plotando a distribuição das taxas de 'prevalência' por dengue estimadas via razão de kernel. É possível verificar que a mediana das razões de kernel é bem próxima a taxa média de casos (por 1.000 hab) em Dourados/MS. 
+
+```{r}
+boxplot(as.numeric(razao$v), col='green', main='Boxplot da razão de kernel') 
+abline(h=mean(as.numeric(razao$v), na.rm=T), lty = 3, col="red")
+
+```
+
+Sobrepondo a malha da população por setores censitários (dados de área) com os pontos de casos de dengue (padrões pontuais)
+
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+
+<!-- plot(popsetor['pop'],pal=terrain.colors(13)) -->
+<!-- plot(casos.pt['CS_SEXO'],pch=19,add=TRUE) -->
+
+<!-- #points.lpp(dengue.ppp,pch=19,col='black') -->
+
+<!-- ``` -->
+
+<!-- Também pode ser feito dessa forma. -->
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+p1 <- ggplot(popsetor) + 
+  geom_sf(aes(fill=pop)) + 
+  geom_sf(data=casos.pt,color='white',size=0.7) +
+  theme_void()
+print(p1)
+
+```
+
+Razão de casos confirmados vs não confirmados
+
+Como verificamos abaixo  temos 713 casos *confirmados* de Dengue e 304 *não confirmados* ,
+será que existe algum padrão espacial para os casos  *não confirmados* ?
+
+```{r,comment=NA}
+table(casos$CLASSI_FIN==1)
+```
+
+
+Para visualizarmos vamos inicialmente criar dois objetos do tipo **ppp** uma para  *confirmados* e outro para  *não confirmados*.
+
+```{r}
+Confirm <- casos %>% filter(CLASSI_FIN == 1)
+NaoConfirm <- casos %>% filter(CLASSI_FIN != 1)
+
+Confirm.ppp <- ppp(Confirm$X,Confirm$Y,cont.w)
+NaoConfirm.ppp <- ppp(NaoConfirm$X,NaoConfirm$Y,cont.w)
+
+```
+
+```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
+
+plot(st_geometry(contorno))
+points(Confirm.ppp,pch=19,cex=0.5, col="red")
+points(NaoConfirm,pch=19,cex=0.5, col="blue")
+title("Distribuição dos casos Confirmados e Não Confirmados")
+legend("topright", legend=c("Confirmados", "Não Confirmados"),
+       col=c("red", "blue"),  pch = 19, cex=1,
+       title="Legenda", bg='lightblue')
+
+```
+
+Em seguida vamos fazer um kernel para cada um deles.
+
+```{r message=FALSE,warning=FALSE}
+D.confirm <- density(Confirm.ppp,750,diggle = TRUE)
+D.naoconfirm  <- density(NaoConfirm.ppp,750,diggle = TRUE)
+
+par(mfrow=c(1, 2)) #,mar=c(0.5,2,1,1.5))
+plot(D.confirm, main='kernel casos Dengue 750 m',box=FALSE)
+plot(D.naoconfirm, main='kernel casos  Descartados 750 m',box=FALSE)
+
+
+```
+
+Aparentemente existem diferenças nos padrões dos casos confirmados e descartados de dengue. O proximo passo é fazer uma razão de kernel para averiguar essa diferença de padrões.
+
+```{r}
+raz <- D.confirm 
+raz$v <- D.confirm$v / D.naoconfirm$v
+plot(raz,main='Razão Dengue Confirmado Vs Não Confirmado',box=FALSE)
+```
+
+- A razão não evidencia grande diferença, por que ?
+
+- Qual seria a melhor maneira de evidenciar essa diferença ?
+
+## Modelos Generalizados Aditivos (GAM)
+
+- Um modelo aditivo generalizado (Hastie and Tibishirani, 1990) é um modelo linear generalizado com um preditor linear envolvendo a soma de funções suavizadas das covariáveis + os efeitos fixos das mesmas. 
+
+
+$$\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + \ldots$$
+
+## Modelos Espaciais Generalizados Aditivos 
+
+- São modelos aditivos generalizados tendo como um dos preditores o efeito suavizado das componentes espaciais. 
+
+$$\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + f_3(latitude_{i}, longitude_{i}) + \ldots$$
+
+
+
+Exemplo GAM Dourados - Tipo Caso/Controle 
+
+Vamos ajustar um modelo **GAM** do tipo "caso/controle", onde casos serão representados pelos casos de dengue confirmados e controles os casos não confirmados.
+
+```{r comment=NA}
+casos.pt$X <- casos$X
+casos.pt$Y <- casos$Y
+
+grade <- expand.grid(X = seq(720900.6,734155.5,length.out = 150),
+                     Y = seq(7535267.6,7544897.2 ,length.out = 100))
+
+suppressMessages(library(mgcv,quietly = TRUE))
+
+mod0 <- gam(CLASSI_FIN==1 ~ s(X,Y),data=casos.pt,family = binomial)
+
+summary(mod0)
 
 ```
 
 
-- A distribuição é cumulativa e representa o no esperado de vizinhos em um círculo de raio *t* centrado em uma planta arbitrária dividido pela intensidade *λ* do padrão dos pontos na área de estudo;
+- Podemos observar que o modelo espacial vazio parace evidenciar que o componente espacial *s(X,Y) é significativo, ou seja, existe indícios que o espaço geográfico está influenciando a variável de desfecho.
 
+Agora vamos verificar a saída gráfica original do modelo.
 
-
-Possíveis resultados:
-
-- **quando o processo é completamente aleatório**, a curva se desvia relativamente pouco de $\pi r²$. A curva $K$ permanece perto de o valor de referência $\pi r²$;
-
-- **no caso de um processo regular**, obtemos: $\hat{K}(r) < K_{pois}(r)$ porque se os pontos forem repulsivo, eles têm menos vizinhos em média em um raio $r$ do que teriam baseado no pressuposto de uma distribuição aleatória de pontos. Graficamente, a curva K reflete isso repulsão: vemos no gráfico à direita que a curva K está localizada abaixo da referência valor ($\pi r²$);
-
-- **no caso de um processo agregado**, há em média mais pontos em um raio $r$ ao redor os pontos do que o número esperado sob uma distribuição aleatória: conseqüentemente, os pontos atraem um ao outro e $\hat{K}(r) > K_{pois}(r)$. Graficamente, a curva $K$ está neste momento localizada acima da
-valor de referência para todas as áreas de estudo.
-
-```{r, echo=T, warning=FALSE, results='asis', message = FALSE, fig.align = "center"}
-
-aleatorioK <- Kest(aleatorio)
-agregadoK <- Kest(agregado)
-regularK <- Kest(regular)
-
-par(mfrow=c(1, 3))
-plot(aleatorioK,main="Aleatório")
-plot(regularK, main="Regular")
-plot(agregadoK, main="Agregado")
-
+```{r, fig.height=7,fig.width=9,error=FALSE,warning=FALSE,message=NA,results='hide',comment=NA}
+vis.gam(mod0, main = "Modelo Vazio", plot.type = "contour",
+        color = "terrain", contour.col = "black", lwd = 2)
 
 ```
 
----
+- Essa saída não parece ser muito intuitiva, apesar ser possível observarmos as áreas onte apresentão 'pistas' de haver um risco maior e as áreas onde estão mais isentas de casos de dengue.
+
+Vamos agora tentar melhorar tal saída gráfica.
+
+```{r, fig.height=7,fig.width=9,error=FALSE,warning=FALSE,message=NA,results='hide',comment=NA}
+suppressMessages(library(splancs,quietly = TRUE))
+suppressMessages(library(fields,quietly = TRUE))
+
+TAM <- 400
+caixa <- st_bbox(contorno)
+
+grade <- expand.grid(x=seq(caixa[1],caixa[3],length.out = TAM),y=seq(caixa[2],caixa[4],length.out = TAM))
+contorno.xy <- as.data.frame(slot(slot(slot(as_Spatial(contorno),"polygons")[[1]],"Polygons")[[1]],"coords"))
+
+inside <- in.out(as.matrix(contorno.xy),as.matrix(grade))
 
 
+outside <- list(x=seq(caixa[1],caixa[3],length.out = TAM), 
+                y=seq(caixa[2],caixa[4],length.out = TAM), z=matrix(rep(0,TAM^2),ncol=TAM) )
 
+outside$z[inside] <- NA 
+x <-  outside$x
+y <-  outside$y
+
+newgam <- data.frame(X=grade[,1],Y=grade[,2])
+gg.pred <- predict(mod0,newdata=newgam, type="terms", terms="s(X,Y)",se.fit=T)
+
+gg.pred$fit[inside==F]<-NA
+gg.pred$se.fit[inside==F]<-NA
+z <- exp(matrix(gg.pred$fit,TAM,TAM))
+
+## a very rough estimate of confidence intervals 
+z.inf <- exp(gg.pred$fit + (1.96 * gg.pred$se.fit))
+z.sup <- exp(gg.pred$fit - (1.96 * gg.pred$se.fit))
+z.inf <- matrix(z.inf,TAM,TAM)
+z.sup <- matrix(z.sup,TAM,TAM)
+
+cores <- c("#053061","#2166ac","#4393c3","#92c5de","#d1e5f0","#f7f7f7","#fddbc7","#f4a582","#d6604d",
+           "#b2182b","#67001f")
+
+split.screen(rbind(c(0,.8,0,1), c(.8,1,0,1)))
+screen(1) 
+
+image(x,y,z,zlim=range(z, na.rm=T), col=cores, asp=1, xlab="", ylab="", main="",axes=F)   
+#points(den$x_coord, den$y_coord, pch=19, col="blue", cex=0.1)
+contour(x, y, z.inf, nlevels=1, add=T, col="blue", lwd=2, levels=1,cex=0.1,labels = '<1')
+contour(x, y, z.sup, nlevels=1, add=T, col="red", lwd=2, levels=1,cex=0.1,labels = '>1')
+splancs::polymap(contorno.xy,add=T,lwd=2)
+
+screen(2) # The legend
+#range(z, na.rm=T) # to make a pretty legend
+
+#ticks <- seq(0,0.5,by=0.2)
+ticks <- quantile(na.omit(as.vector(z)),prob=seq(0,1,by=1/3))
+ticks <- seq(0,5,by=0.5)
+
+image.plot(zlim=range(z, na.rm=T), col=cores, axis.args=list(at=ticks, labels=ticks),legend.only=TRUE, smallplot=c(.1,.25, .15,.85), legend.width=3, legend.shrink=.8, horizontal=F)
+title("Modelo Vazio")
+
+```
+
+Podemos também inspecionar a superfície do erro padrão do modelo.
+
+```{r error=FALSE,warning=FALSE,message=NA,results='hide',comment=NA}
+
+z <- matrix(gg.pred$se.fit,TAM,TAM) 
+split.screen(rbind(c(0,.8,0,1), c(.8,1,0,1)))
+screen(1) 
+
+image(x,y,z,zlim=range(z, na.rm=T), col=cores, asp=1, xlab="", ylab="", main="",axes=F)   
+splancs::polymap(contorno.xy,add=T,lwd=2)
+
+screen(2) # The legend
+#range(z, na.rm=T) # to make a pretty legend
+
+#ticks <- seq(0,0.5,by=0.2)
+ticks <- quantile(na.omit(as.vector(z)),prob=seq(0,1,by=1/3))
+ticks <- seq(0,10,by=1)
+
+image.plot(zlim=range(z, na.rm=T), col=cores, axis.args=list(at=ticks, labels=ticks),legend.only=TRUE, smallplot=c(.1,.25, .15,.85), legend.width=3, legend.shrink=.8, horizontal=F)
+title("Erro Padrão - Modelo Vazio")
+
+```
+
+Note que no centro, onde existe a maior qunatidade de pontos, o erro e bem menor que nas áreas onde existem menos pontos e nas bordas !
+
+## Bibliografia sugerida
+
+Wood, S.N. (2017) Generalized Additive Models: an introduction with R (2nd edition), CRC.
 
 

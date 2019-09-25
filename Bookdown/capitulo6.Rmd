@@ -8,7 +8,7 @@ opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE)
 ```
 
 
-# Padrões Pontuais
+# Padrões Pontuais I
 
 ## O que são Padrões Pontuais ?
 
@@ -91,7 +91,7 @@ Importando o poligono do contorno de Porto Alegre
 
 ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"}
 # contorno de porto alegre
-contorno.poa <- as.points(read.table(paste0(local,"contpoa.dat"),col.names=c("x","y")))
+contorno.poa <- as.points(read.table(paste0(local,"/contpoa.dat"),col.names=c("x","y")))
 
 polymap(contorno.poa)
 pointmap(homic.spp, pch=19, add=T,cex=0.5)
@@ -511,9 +511,9 @@ cumulativa baseado nas distâncias entre eventos ou pntos em uma região de aná
 
 - Dois tipos de distâncias: **evento-evento (W)** e **ponto aleatório-evento (X)**
 
-$$\hat{F}(x) = \dfrac{\#x_i \leq x)}{m}$$
+$$\hat{F}(x) = \dfrac{\#(x_i \leq x)}{m}$$
 
-$$\hat{G}(w) = \dfrac{\#w_i \leq w)}{n}$$
+$$\hat{G}(w) = \dfrac{\#(w_i \leq w)}{n}$$
 
 - Sabendo que:
 
@@ -758,9 +758,11 @@ $θ$ - parâmetros a estimar que descrevem como a incidência varia em torno da 
 
 3. Inspecionar o processo pontual de segunta ordem, utilizando as funções K, G e L para as causas de suicídio e acidentes de carro em POA/RS.
 
+#### Exercícios Resolvidos
+
+* [Exercícios Padrões Pontuais](https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex_cap6_padraoponto.r)
 
 
-## Bibliografia sugerida
 
 ASSUNÇÃO, Renato M. Estatística espacial com aplicações em epidemiologia, economia e sociologia. São Carlos: Associação Brasileira de Estatística, v. 131, 2001.
 
