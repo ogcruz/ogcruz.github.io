@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ESTUDOS ECOLÓGICOS</title>
   <meta name="description" content="ESTUDOS ECOLÓGICOS" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ESTUDOS ECOLÓGICOS" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
 
 
-<meta name="date" content="2019-09-25" />
+<meta name="date" content="2019-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="estudos-ecologicos.html"/>
+<link rel="next" href="estudos-ecologicos.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,16 +49,25 @@
 
 <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.9/datatables.js"></script>
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.7/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
 <script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
 <link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
 <script src="libs/selectize-0.12.0/selectize.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -320,7 +329,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
 <li class="chapter" data-level="8.2" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
 <li class="chapter" data-level="8.3" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
-<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#plotando-padrao-de-pontos-sobre-camada-da-osm"><i class="fa fa-check"></i><b>8.4</b> Plotando Padrão de pontos sobre camada da OSM</a></li>
+<li class="chapter" data-level="8.5" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html"><i class="fa fa-check"></i><b>9</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="9.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#introducao-1"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>9.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="9.3" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#visualizacao-mapa-tematico-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>9.3</b> Visualização: Mapa Temático usando a biblioteca <strong>tmap</strong></a></li>
+<li class="chapter" data-level="9.4" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#analise-exploratoria"><i class="fa fa-check"></i><b>9.4</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.4.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="9.4.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-segunda-ordem-dependencia-espacial"><i class="fa fa-check"></i><b>9.4.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medidas-de-proximidade-em-dados-de-area"><i class="fa fa-check"></i><b>9.5</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="9.6" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#matriz-de-vizinhanca"><i class="fa fa-check"></i><b>9.6</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="9.7" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medias-moveis-espaciais"><i class="fa fa-check"></i><b>9.7</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="9.8" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#kernel-de-area-ou-atributo"><i class="fa fa-check"></i><b>9.8</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="9.9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#correlacao-espacial-e-correlograma"><i class="fa fa-check"></i><b>9.9</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="9.10" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial"><i class="fa fa-check"></i><b>9.10</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="9.11" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial-lisa"><i class="fa fa-check"></i><b>9.11</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="9.12" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#metodo-bayesiano-emprico"><i class="fa fa-check"></i><b>9.12</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="9.13" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>9.13</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="9.14" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>9.14</b> Bibliografia sugerida</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -345,7 +374,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ESTUDOS ECOLÓGICOS</h1>
 <p class="author"><em>Oswaldo Cruz &amp; Wagner Tassinari</em></p>
-<p class="date"><em>2019-09-25</em></p>
+<p class="date"><em>2019-10-09</em></p>
 </div>
 <div id="apresentacao" class="section level1">
 <h1><span class="header-section-number"> 1</span> Apresentação</h1>
@@ -367,13 +396,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Aula 7 (18/09) - Análise Espacial - Padrão de Pontos I</li>
 <li>Aula 8 (25/09) - Análise Espacial - Padrão de Pontos II</li>
 <li>Aula 9 (02/10) - Não Haverá Aula</li>
-<li>Aula 10 (09/10) - Análise Espacial - Geoestatística</li>
-<li>Aula 11 (16/10) - Análise Espacial - Dados de Área I</li>
-<li>Aula 12 (23/10) - Análise Espacial - Dados de Área II</li>
-<li>Aula 13 (30/10) - Análise Espacial - Dados de Área III</li>
+<li>Aula 10 (09/10) - Análise Espacial - Dados de Área I</li>
+<li>Aula 11 (16/10) - Análise Espacial - Dados de Área II</li>
+<li>Aula 12 (23/10) - Análise Espacial - Dados de Área III</li>
+<li>Aula 13 (30/10) - Análise Espacial - Geoestatística</li>
 <li>Aula 14 (06/11) - Análise Espaço-Temporal</li>
 <li>Aula 15 (13/11) - Instruções e Dúvidas para o Trabalho Final</li>
 </ul>
+<p>Avaliação:</p>
+<p>Intruções para o Trabalho Final</p>
+<p>Clique <a href="instrucoes/trabalho.html">AQUI para instruções</a></p>
 </div>
             </section>
 
@@ -434,9 +466,8 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS</title>
   <meta name="description" content=" 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
 
 
-<meta name="date" content="2019-09-25" />
+<meta name="date" content="2019-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="apresentacao.html"/>
-<link rel="next" href="introducao-as-series-temporais.html"/>
+<link rel="prev" href="apresentacao.html">
+<link rel="next" href="introducao-as-series-temporais.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,16 +49,25 @@
 
 <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.9/datatables.js"></script>
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.7/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
 <script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
 <link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
 <script src="libs/selectize-0.12.0/selectize.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -320,7 +329,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
 <li class="chapter" data-level="8.2" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
 <li class="chapter" data-level="8.3" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
-<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#plotando-padrao-de-pontos-sobre-camada-da-osm"><i class="fa fa-check"></i><b>8.4</b> Plotando Padrão de pontos sobre camada da OSM</a></li>
+<li class="chapter" data-level="8.5" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html"><i class="fa fa-check"></i><b>9</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="9.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#introducao-1"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>9.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="9.3" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#visualizacao-mapa-tematico-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>9.3</b> Visualização: Mapa Temático usando a biblioteca <strong>tmap</strong></a></li>
+<li class="chapter" data-level="9.4" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#analise-exploratoria"><i class="fa fa-check"></i><b>9.4</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.4.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="9.4.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-segunda-ordem-dependencia-espacial"><i class="fa fa-check"></i><b>9.4.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medidas-de-proximidade-em-dados-de-area"><i class="fa fa-check"></i><b>9.5</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="9.6" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#matriz-de-vizinhanca"><i class="fa fa-check"></i><b>9.6</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="9.7" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medias-moveis-espaciais"><i class="fa fa-check"></i><b>9.7</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="9.8" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#kernel-de-area-ou-atributo"><i class="fa fa-check"></i><b>9.8</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="9.9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#correlacao-espacial-e-correlograma"><i class="fa fa-check"></i><b>9.9</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="9.10" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial"><i class="fa fa-check"></i><b>9.10</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="9.11" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial-lisa"><i class="fa fa-check"></i><b>9.11</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="9.12" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#metodo-bayesiano-emprico"><i class="fa fa-check"></i><b>9.12</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="9.13" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>9.13</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="9.14" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>9.14</b> Bibliografia sugerida</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -562,7 +591,7 @@ Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </smal
 </ul>
 <hr />
 <p><strong>Um outro exemplo</strong>: Um pesquisador deseja estudar a relação entre acidentes de trânsito e a renda em três cidade distintas (A, B e C).</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <table>
 <thead>
 <tr class="header">
@@ -593,7 +622,7 @@ Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </smal
 <ul>
 <li>Observando o gráfico abaixo, o pesquisador observa um possível associaçãom entre a renda e a taxa de acidentes de trânsito;</li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Quanto maior a renda, maior será a taxa de acidentes de trânsito.</li>
 </ul>
@@ -601,13 +630,13 @@ Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </smal
 <ul>
 <li>Observando os microdados, ou seja, os dados no nível individual, temos o seguinte:</li>
 </ul>
-<div id="htmlwidget-19c2daf28b5054e7d4fc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-19c2daf28b5054e7d4fc">{"x":{"filter":"top","filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10\" data-max=\"45.6\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[10.5,34.5,28.5,12.2,45.6,17.5,19.8,12.5,32.5,24.3,10,14.3,38,26.4,28.7,30.2,13.5,23.5,10.8,22.7,20.5],["A","A","A","A","A","A","A","B","B","B","B","B","B","B","C","C","C","C","C","C","C"],["Caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Caso","Caso","Nao_caso","Nao_caso","Caso","Caso","Nao_caso","Nao_caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Nao_caso","Nao_caso"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>renda<\/th>\n      <th>pop<\/th>\n      <th>casos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-045d2cb90d61cee65bc4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-045d2cb90d61cee65bc4">{"x":{"filter":"top","filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10\" data-max=\"45.6\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[10.5,34.5,28.5,12.2,45.6,17.5,19.8,12.5,32.5,24.3,10,14.3,38,26.4,28.7,30.2,13.5,23.5,10.8,22.7,20.5],["A","A","A","A","A","A","A","B","B","B","B","B","B","B","C","C","C","C","C","C","C"],["Caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Caso","Caso","Nao_caso","Nao_caso","Caso","Caso","Nao_caso","Nao_caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Nao_caso","Nao_caso"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>renda<\/th>\n      <th>pop<\/th>\n      <th>casos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <hr />
 <ul>
 <li>De posse desses dados no nível individual, é possível fazer a seguinte análise:</li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <ul>
 <li><p>Dessa forma observamos que os indivíduos que sofreram algum tipo de acidente de trânsito, apresentam a menor renda;</p></li>
@@ -802,9 +831,8 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS</title>
   <meta name="description" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
 
 
-<meta name="date" content="2019-09-25" />
+<meta name="date" content="2019-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="transformacoes-e-suavizacoes.html"/>
-<link rel="next" href="introducao-a-analise-estatistica-espacial.html"/>
+<link rel="prev" href="transformacoes-e-suavizacoes.html">
+<link rel="next" href="introducao-a-analise-estatistica-espacial.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,16 +49,25 @@
 
 <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.9/datatables.js"></script>
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.7/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
 <link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
 <script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
 <link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
 <script src="libs/selectize-0.12.0/selectize.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -320,7 +329,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
 <li class="chapter" data-level="8.2" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
 <li class="chapter" data-level="8.3" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
-<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#plotando-padrao-de-pontos-sobre-camada-da-osm"><i class="fa fa-check"></i><b>8.4</b> Plotando Padrão de pontos sobre camada da OSM</a></li>
+<li class="chapter" data-level="8.5" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html"><i class="fa fa-check"></i><b>9</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="9.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#introducao-1"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>9.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="9.3" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#visualizacao-mapa-tematico-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>9.3</b> Visualização: Mapa Temático usando a biblioteca <strong>tmap</strong></a></li>
+<li class="chapter" data-level="9.4" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#analise-exploratoria"><i class="fa fa-check"></i><b>9.4</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.4.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="9.4.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-segunda-ordem-dependencia-espacial"><i class="fa fa-check"></i><b>9.4.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medidas-de-proximidade-em-dados-de-area"><i class="fa fa-check"></i><b>9.5</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="9.6" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#matriz-de-vizinhanca"><i class="fa fa-check"></i><b>9.6</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="9.7" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medias-moveis-espaciais"><i class="fa fa-check"></i><b>9.7</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="9.8" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#kernel-de-area-ou-atributo"><i class="fa fa-check"></i><b>9.8</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="9.9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#correlacao-espacial-e-correlograma"><i class="fa fa-check"></i><b>9.9</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="9.10" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial"><i class="fa fa-check"></i><b>9.10</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="9.11" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial-lisa"><i class="fa fa-check"></i><b>9.11</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="9.12" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#metodo-bayesiano-emprico"><i class="fa fa-check"></i><b>9.12</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="9.13" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>9.13</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="9.14" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>9.14</b> Bibliografia sugerida</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -680,9 +709,9 @@ Time series analysis: Forecasting and control, San Francisco: Holden-Day.</code>
 <p>Uma outra ferramenta utilizada no processo de identificação do modelo é a <strong>Função de Autocorrelação Parcial(FACP)</strong>. Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-h} $ removendo o efeito dos pontos intermediários <span class="math inline">\(Z_{t-1}, Z_{t-2}, \dots , Z_{t-h+1}\)</span> e é denotada por <span class="math inline">\(\rho_{h}\)</span>, ou seja, é a correlação da série temporal com um atraso de si mesmo, com a dependência linear de todos os desfasamentos entre eles removidos.</p>
 <p><span class="math display">\[\rho_{kk} = Corr(X_t, X_{t-l}|X_{t-1}, X_{t-2},\dots,X_{t-h+1})\]</span></p>
 <p>Segue abaixo um exemplo um exemplo de ACF, com já vimos anteriormente, e do PACF. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes.</p>
-<div id="htmlwidget-42077823db44aab8014a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-42077823db44aab8014a">{"x":{"filter":"none","data":[[28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89,28.24],[null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89],[null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95],[null,null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76],[null,null,null,null,28.61,27.8,28.19,28.26,30.36,30.42],[null,null,null,null,null,28.61,27.8,28.19,28.26,30.36],[null,null,null,null,null,null,28.61,27.8,28.19,28.26],[null,null,null,null,null,null,null,28.61,27.8,28.19],[null,null,null,null,null,null,null,null,28.61,27.8],[null,null,null,null,null,null,null,null,null,28.61],[null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>atual<\/th>\n      <th>lag1<\/th>\n      <th>lag2<\/th>\n      <th>lag3<\/th>\n      <th>lag4<\/th>\n      <th>lag5<\/th>\n      <th>lag6<\/th>\n      <th>lag7<\/th>\n      <th>lag8<\/th>\n      <th>lag9<\/th>\n      <th>lag10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-68-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="htmlwidget-f076e77d00f8d1f18dfe" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f076e77d00f8d1f18dfe">{"x":{"filter":"none","data":[[28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89,28.24],[null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89],[null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95],[null,null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76],[null,null,null,null,28.61,27.8,28.19,28.26,30.36,30.42],[null,null,null,null,null,28.61,27.8,28.19,28.26,30.36],[null,null,null,null,null,null,28.61,27.8,28.19,28.26],[null,null,null,null,null,null,null,28.61,27.8,28.19],[null,null,null,null,null,null,null,null,28.61,27.8],[null,null,null,null,null,null,null,null,null,28.61],[null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>atual<\/th>\n      <th>lag1<\/th>\n      <th>lag2<\/th>\n      <th>lag3<\/th>\n      <th>lag4<\/th>\n      <th>lag5<\/th>\n      <th>lag6<\/th>\n      <th>lag7<\/th>\n      <th>lag8<\/th>\n      <th>lag9<\/th>\n      <th>lag10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-69-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>No <span class="math inline">\(lag = 1\)</span>, a ACF e a PACF são iguais.</p></li>
 <li><p>Na PACF somente existe correlação até o lag igual a ordem do modelo AR - ex: modelo de ordem 3 somente
@@ -759,7 +788,7 @@ apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</
 <a class="sourceLine" id="cb66-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb66-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
 <a class="sourceLine" id="cb66-5" data-line-number="5"><span class="kw">ts.plot</span>(ar.sim) </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-69-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-70-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
 <a class="sourceLine" id="cb67-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb67-3" data-line-number="3">ar.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
@@ -767,14 +796,14 @@ apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</
 <a class="sourceLine" id="cb67-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb67-6" data-line-number="6"><span class="kw">plot</span>(ar.acf)</a>
 <a class="sourceLine" id="cb67-7" data-line-number="7"><span class="kw">plot</span>(ar.pacf)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-69-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-70-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Simulando um processo AR(2)</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="co"># Simulando 100 observações através de um processo AR(2) com média 30</span></a>
 <a class="sourceLine" id="cb68-2" data-line-number="2">ar.sim &lt;-<span class="st"> </span><span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span><span class="kw">c</span>(.<span class="dv">9</span>,<span class="op">-</span>.<span class="dv">2</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
 <a class="sourceLine" id="cb68-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb68-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
 <a class="sourceLine" id="cb68-5" data-line-number="5"><span class="kw">ts.plot</span>(ar.sim) </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-70-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
 <a class="sourceLine" id="cb69-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb69-3" data-line-number="3">ar.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
@@ -782,14 +811,14 @@ apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</
 <a class="sourceLine" id="cb69-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb69-6" data-line-number="6"><span class="kw">plot</span>(ar.acf)</a>
 <a class="sourceLine" id="cb69-7" data-line-number="7"><span class="kw">plot</span>(ar.pacf)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-70-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Simulando um processo MA(2)</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="co"># Simulando 200 observações através de um processo MA(2) com média 30</span></a>
 <a class="sourceLine" id="cb70-2" data-line-number="2">ma.sim &lt;-<span class="st"> </span><span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ma=</span><span class="kw">c</span>(<span class="op">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
 <a class="sourceLine" id="cb70-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb70-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
 <a class="sourceLine" id="cb70-5" data-line-number="5"><span class="kw">ts.plot</span>(ma.sim) </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
 <a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb71-3" data-line-number="3">ma.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ma.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
@@ -797,14 +826,14 @@ apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</
 <a class="sourceLine" id="cb71-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb71-6" data-line-number="6"><span class="kw">plot</span>(ma.acf)</a>
 <a class="sourceLine" id="cb71-7" data-line-number="7"><span class="kw">plot</span>(ma.pacf)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Simulando um processo ARMA(2,2)</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="co"># Simulando 200 observações através de um processo ARMA(2,2) com média 30</span></a>
 <a class="sourceLine" id="cb72-2" data-line-number="2">arma.sim &lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span><span class="kw">c</span>(.<span class="dv">9</span>,<span class="op">-</span>.<span class="dv">2</span>),<span class="dt">ma=</span><span class="kw">c</span>(<span class="op">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
 <a class="sourceLine" id="cb72-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb72-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
 <a class="sourceLine" id="cb72-5" data-line-number="5"><span class="kw">ts.plot</span>(arma.sim) </a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
 <a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb73-3" data-line-number="3">arma.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(arma.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
@@ -812,7 +841,7 @@ apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</
 <a class="sourceLine" id="cb73-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb73-6" data-line-number="6"><span class="kw">plot</span>(arma.acf)</a>
 <a class="sourceLine" id="cb73-7" data-line-number="7"><span class="kw">plot</span>(arma.pacf)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-2.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="metricas-para-avaliar-a-qualidade-do-ajuste" class="section level2">
@@ -854,19 +883,19 @@ apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</
 <h2><span class="header-section-number">5.10</span> Ajuste manual de modelo ARIMA</h2>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">library</span>(forecast)</a>
 <a class="sourceLine" id="cb74-2" data-line-number="2"><span class="kw">ggtsdisplay</span>(ldeaths)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">modelo0 &lt;-<span class="st"> </span><span class="kw">Arima</span>(ldeaths,<span class="dt">order =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">seasonal =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a>
 <a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">checkresiduals</span>(modelo0)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-2.png" width="100%" style="display: block; margin: auto;" />
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-2.png" width="100%" style="display: block; margin: auto;" />
 Ljung-Box test</p>
 <p>data: Residuals from ARIMA(1,0,0)(1,1,1)[12]
 Q* = 11, df = 11, p-value = 0.5</p>
 <p>Model df: 3. Total lags used: 14</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">tsdiag</span>(modelo0)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-3.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-3.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">plot</span>(ldeaths)</a>
 <a class="sourceLine" id="cb77-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo0),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ajuste-automatico-de-modelos-arima" class="section level2">
 <h2><span class="header-section-number">5.11</span> Ajuste automático de modelos ARIMA</h2>
@@ -929,7 +958,7 @@ auto.arima(y = ldeaths, trace = F, allowdrift = F, x = structure(list(x = struct
 </table>
 <p>sigma^2 estimated as 70422: log likelihood = -423.3, aic = 854.6</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">tsdiag</span>(modelo1)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-78-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-79-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">pander</span>(modelo2)</a></code></pre></div>
 <p>Series: ldeaths
 ARIMA(2,0,0)(0,1,2)[12] with drift</p>
@@ -940,13 +969,13 @@ s.e. 0.134 0.140 0.362 0.205 0.905</p>
 <p>sigma^2 estimated as 49449: log likelihood=-416.4
 AIC=844.8 AICc=846.4 BIC=857.4</p>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">tsdiag</span>(modelo2)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-81-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-82-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Comparando os ajustes dos modelos</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">plot</span>(ldeaths)</a>
 <a class="sourceLine" id="cb83-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo0),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
 <a class="sourceLine" id="cb83-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo1),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
 <a class="sourceLine" id="cb83-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo2),<span class="dt">col=</span><span class="st">&quot;darkgreen&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-82-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-83-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelos-de-previsao" class="section level2">
 <h2><span class="header-section-number">5.12</span> Modelos de Previsão</h2>
@@ -956,16 +985,16 @@ obter a previsão da série no instante <span class="math inline">\(t + k\)</spa
 aqui vamos somente apresentar um exemplo utilizando um dos modelos já ajustados para a serie <strong>ldeaths</strong>.</p>
 <p>Uma maneira simples de obter o valor predito é usando a função <em>predict()</em></p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">predict</span>(modelo1,<span class="dt">n.ahead =</span> <span class="dv">12</span>)</a></code></pre></div>
-<p><div id="htmlwidget-0f692edcb1ce43f94dfe" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0f692edcb1ce43f94dfe">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[265.371941651055,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><div id="htmlwidget-05bc98ea8cd7d8c81507" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-05bc98ea8cd7d8c81507">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[265.371941651055,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 o pacote <em>forecast</em> possui funções para facilitar a predição e visualização. Veja na função abaixo que o modelo já retorna não só o valor predito mas os limites superior e inferior para os níveis de confiança 80 e 95.</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1">pred &lt;-<span class="st"> </span><span class="kw">forecast</span>(modelo1,<span class="dt">h=</span><span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb85-2" data-line-number="2">pred</a></code></pre></div>
-<div id="htmlwidget-2114cb3af27b7630525a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2114cb3af27b7630525a">{"x":{"filter":"none","data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[2350.27367537808,2387.90122927368,2188.10477876713,1795.2923339201,1431.27981190077,1216.55889827885,1138.47060268116,992.730865747083,979.877384667682,1187.09909801749,1237.71554689374,1968.77511940376],[3030.44932992712,3127.45518425865,2927.65873375211,2534.84628890508,2170.83376688574,1956.11285326382,1878.02455766613,1732.28482073206,1719.43133965266,1926.65305300247,1977.26950187871,2708.32907438874],[2170.24205450907,2192.15312164065,1992.3566711341,1599.54422628707,1235.53170426774,1020.81079064582,942.722495048123,796.982758114051,784.12927703465,991.350990384459,1041.9674392607,1773.02701177073],[3210.48095079613,3323.20329189169,3123.40684138514,2730.59439653811,2366.58187451878,2151.86096089686,2073.77266529916,1928.03292836509,1915.17944728569,2122.4011606355,2173.01760951174,2904.07718202177]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5c73d6b47e52969780e5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5c73d6b47e52969780e5">{"x":{"filter":"none","data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[2350.27367537808,2387.90122927368,2188.10477876713,1795.2923339201,1431.27981190077,1216.55889827885,1138.47060268116,992.730865747083,979.877384667682,1187.09909801749,1237.71554689374,1968.77511940376],[3030.44932992712,3127.45518425865,2927.65873375211,2534.84628890508,2170.83376688574,1956.11285326382,1878.02455766613,1732.28482073206,1719.43133965266,1926.65305300247,1977.26950187871,2708.32907438874],[2170.24205450907,2192.15312164065,1992.3566711341,1599.54422628707,1235.53170426774,1020.81079064582,942.722495048123,796.982758114051,784.12927703465,991.350990384459,1041.9674392607,1773.02701177073],[3210.48095079613,3323.20329189169,3123.40684138514,2730.59439653811,2366.58187451878,2151.86096089686,2073.77266529916,1928.03292836509,1915.17944728569,2122.4011606355,2173.01760951174,2904.07718202177]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Ele também facilita a confecção de gráficos</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">plot</span>(pred)  <span class="co"># a função autoplot produz no formato ggplot</span></a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-87-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-88-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Para saber mais sobre séries temporais e previsões recomendamos o exelente livro online
 <a href="https://otexts.com/fpp2/">Forecasting: Principles and Practice Rob J Hyndman and George Athanasopoulos</a></p>
 </div>
@@ -994,7 +1023,7 @@ onde:</p>
 <a class="sourceLine" id="cb87-2" data-line-number="2">uktemp &lt;-<span class="st"> </span><span class="kw">ts</span>(<span class="kw">as.vector</span>(<span class="kw">t</span>(uktemp[,<span class="dv">2</span><span class="op">:</span><span class="dv">13</span>])),<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1970</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb87-3" data-line-number="3">uktemp.ts &lt;-<span class="st"> </span><span class="kw">window</span>(uktemp,<span class="dt">start=</span><span class="kw">c</span>(<span class="dv">1974</span>,<span class="dv">1</span>),<span class="dt">end=</span><span class="kw">c</span>(<span class="dv">1979</span>,<span class="dv">12</span>))</a>
 <a class="sourceLine" id="cb87-4" data-line-number="4">fcc &lt;-<span class="st"> </span><span class="kw">ccf</span>(uktemp.ts,ldeaths)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-88-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-89-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="co">#plot(fcc)</span></a></code></pre></div>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="kw">cbind</span>(fcc<span class="op">$</span>lag,fcc<span class="op">$</span>acf)</a></code></pre></div>
 <table>
@@ -1335,8 +1364,8 @@ mes
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">mod0 &lt;-<span class="st"> </span><span class="kw">gam</span> ( obitos <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(tempo) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(mes),<span class="dt">data=</span>ldeaths.df)</a>
 <a class="sourceLine" id="cb92-2" data-line-number="2">mod0</a></code></pre></div>
 <p>Sumário do modelo</p>
-<!-- html table generated in R 3.6.0 by xtable 1.8-4 package -->
-<!-- Wed Sep 25 11:06:33 2019 -->
+<!-- html table generated in R 3.6.1 by xtable 1.8-4 package -->
+<!-- Wed Oct  9 00:58:12 2019 -->
 <table border="1">
 <caption align="bottom">
 </caption>
@@ -1429,9 +1458,9 @@ s(mes)
 </table>
 <p>R-quadrado(ajustado) = 0.86 Deviance Explicada = 0.88 AIC = 995.27</p>
 <p>Gráfico do termos suaves</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
-<p>Vamos verificar se sobraram estruturas nos residuos usando a ACF dos residuos e o teste de Ljung-Box</p>
 <p><img src="ecologico_book_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+<p>Vamos verificar se sobraram estruturas nos residuos usando a ACF dos residuos e o teste de Ljung-Box</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
 <table style="width:44%;">
 <caption>Box-Ljung test: <code>residuals(mod0)</code></caption>
 <colgroup>
@@ -1458,8 +1487,8 @@ s(mes)
 vamos agora usar a variavel <em>tempo</em> de forma linear no modelo</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">mod1 &lt;-<span class="st"> </span><span class="kw">gam</span> ( obitos <span class="op">~</span><span class="st"> </span>tempo <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(mes),<span class="dt">data=</span>ldeaths.df)</a>
 <a class="sourceLine" id="cb93-2" data-line-number="2">mod1</a></code></pre></div>
-<!-- html table generated in R 3.6.0 by xtable 1.8-4 package -->
-<!-- Wed Sep 25 11:06:33 2019 -->
+<!-- html table generated in R 3.6.1 by xtable 1.8-4 package -->
+<!-- Wed Oct  9 00:58:12 2019 -->
 <table border="1">
 <caption align="bottom">
 </caption>
@@ -1551,7 +1580,7 @@ s(mes)
 <a name=tab.gam></a>
 </table>
 <p>R-quadrado(ajustado) = 0.86 Deviance Explicada =0.87 AIC = 994.67</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
 <table style="width:44%;">
 <caption>Box-Ljung test: <code>residuals(mod1)</code></caption>
 <colgroup>
@@ -1602,7 +1631,7 @@ s(mes)
 <a class="sourceLine" id="cb94-12" data-line-number="12"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,</a>
 <a class="sourceLine" id="cb94-13" data-line-number="13">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
 <a class="sourceLine" id="cb94-14" data-line-number="14"> <span class="dt">data=</span>lepto)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-103-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-104-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Modelando a Chuva como resposta e colocando o a função suavizadoras para capturar o efeito nas semanas epidemológicas</li>
 </ul>
@@ -1610,7 +1639,7 @@ s(mes)
 <a class="sourceLine" id="cb95-2" data-line-number="2"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Chuva&quot;</span>,</a>
 <a class="sourceLine" id="cb95-3" data-line-number="3">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
 <a class="sourceLine" id="cb95-4" data-line-number="4"> <span class="dt">data=</span>lepto)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-104-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-105-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="co"># Ajustando a chuva como resposta</span></a>
 <a class="sourceLine" id="cb96-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb96-3" data-line-number="3">rain.tp.auto &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>), <span class="dt">data=</span>lepto )</a>
@@ -1628,7 +1657,7 @@ s(mes)
 <a class="sourceLine" id="cb96-15" data-line-number="15">rain.ad &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;ad&quot;</span>), <span class="dt">data=</span>lepto ) </a>
 <a class="sourceLine" id="cb96-16" data-line-number="16"></a>
 <a class="sourceLine" id="cb96-17" data-line-number="17"><span class="kw">plot</span>(rain.ad,<span class="dt">main=</span><span class="kw">paste</span>(<span class="st">&#39;K(adaptável) =&#39;</span>, rain.ad<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-104-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-105-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="co"># ThinPlate  &lt;- predict(rain.tp)  </span></a>
 <a class="sourceLine" id="cb97-2" data-line-number="2"><span class="co"># P.spline &lt;- predict(rain.ps)  </span></a>
 <a class="sourceLine" id="cb97-3" data-line-number="3"><span class="co"># CubicRegression &lt;- predict(rain.cr)  </span></a>
@@ -1677,8 +1706,8 @@ s(mes)
 <a class="sourceLine" id="cb98-7" data-line-number="7">chuvl4 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">4</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
 <a class="sourceLine" id="cb98-8" data-line-number="8">chuvl5 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">5</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a></code></pre></div>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)</a></code></pre></div>
-<div id="htmlwidget-7229f8921ee2fb314b37" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7229f8921ee2fb314b37">{"x":{"filter":"none","data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.72,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b0ad323f1866f3cf44bf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b0ad323f1866f3cf44bf">{"x":{"filter":"none","data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.72,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>Ajustando a série dos casos de leptospirose via distribuição Binomial Negativa</li>
 </ul>
@@ -1691,8 +1720,8 @@ s(mes)
 <a class="sourceLine" id="cb100-7" data-line-number="7">chuvnb5<span class="op">$</span>family<span class="op">$</span><span class="kw">getTheta</span>()</a></code></pre></div>
 <p>[1] 0.4864</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)</a></code></pre></div>
-<div id="htmlwidget-8727b83884b37db9f6e9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8727b83884b37db9f6e9">{"x":{"filter":"none","data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f10bc41d23b87207566e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f10bc41d23b87207566e">{"x":{"filter":"none","data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>Comparando os AIC’s de ambos os modelos entre os lags</li>
 </ul>
@@ -1700,12 +1729,12 @@ s(mes)
 <a class="sourceLine" id="cb102-2" data-line-number="2"><span class="kw">lines</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="kw">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)[,<span class="dv">2</span>], <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb102-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb102-4" data-line-number="4"><span class="kw">legend</span>(<span class="st">&quot;right&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;Poisson&quot;</span>,<span class="st">&quot;Bin. Neg.&quot;</span>),<span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="dt">fill=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-111-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-112-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Verificando a distribuição da chuva entre todos os lags</li>
 </ul>
 <div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="kw">boxplot</span>(lepto<span class="op">$</span>totrain)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-112-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-113-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>),<span class="dt">mai=</span><span class="kw">c</span>(<span class="fl">0.05</span>,<span class="fl">0.5412</span> ,<span class="fl">0.5412</span>,<span class="fl">0.05</span>),<span class="dt">mgp=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>))</a>
 <a class="sourceLine" id="cb104-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb104-3" data-line-number="3"><span class="kw">plot</span>(chuvnb0,<span class="dt">ylab=</span><span class="st">&quot;Lag=0&quot;</span>)</a>
@@ -1720,7 +1749,7 @@ s(mes)
 <a class="sourceLine" id="cb104-12" data-line-number="12"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb104-13" data-line-number="13"><span class="kw">plot</span>(chuvnb5,<span class="dt">ylab=</span><span class="st">&quot;Lag=5&quot;</span>)</a>
 <a class="sourceLine" id="cb104-14" data-line-number="14"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-112-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-113-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <!-- Analisando os resíduos do modelo casos.chuva.gam.4 -->
 <!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
 <!-- par(mfrow=c(2,2)) -->
@@ -1883,9 +1912,8 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
