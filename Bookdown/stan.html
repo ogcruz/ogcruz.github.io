@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>0.1 Usando o rstan para modelagem de Olinda | stan.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="0.1 Usando o rstan para modelagem de Olinda | stan.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="0.1 Usando o rstan para modelagem de Olinda | stan.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="0.1" data-path=""><a href="#usando-o-rstan-para-modelagem-de-olinda"><i class="fa fa-check"></i><b>0.1</b> Usando o rstan para modelagem de Olinda</a><ul>
+<li class="chapter" data-level="0.1.1" data-path=""><a href="#introducao"><i class="fa fa-check"></i><b>0.1.1</b> Introdução</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="usando-o-rstan-para-modelagem-de-olinda" class="section level2">
+<h2><span class="header-section-number">0.1</span> Usando o rstan para modelagem de Olinda</h2>
+<div id="introducao" class="section level3">
+<h3><span class="header-section-number">0.1.1</span> Introdução</h3>
+<p>Esse é uma pequena demostração de como o <em>stan</em> permite realizar Inferencia Bayesiana no <strong>R</strong>.
+Vamos ajustar um modelo espacial do tipo <em>CAR</em> para dos dados de Olinda.</p>
+<p>Em primeiro lugar vamos carregar as bibliotecas a serem utilizadas e definir uma função auxiliar!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(rstan)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(spdep)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co"># opções para o Stan</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">rstan_options</span>(<span class="dt">auto_write =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw">options</span>(<span class="dt">mc.cores =</span> parallel<span class="op">::</span><span class="kw">detectCores</span>())</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">rescale &lt;-<span class="st"> </span><span class="cf">function</span>(x) {(x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">/</span>(<span class="kw">quantile</span>(x,<span class="fl">0.975</span>) <span class="op">-</span><span class="st"> </span><span class="kw">quantile</span>(x,<span class="fl">0.025</span>))}</a></code></pre></div>
+<p>Antes de mais nada como na aula anterior vamos baixar o <em>ZIP</em> contendo os arquivos no formato <strong>shape</strong> e ler os setores de Olinda no formato <em>sf</em></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#opções para o Windows não se perder</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">options</span>(<span class="dt">download.file.method=</span><span class="st">&#39;libcurl&#39;</span>,<span class="dt">url.method=</span><span class="st">&#39;libcurl&#39;</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#local dos dados na rede</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">local &lt;-<span class="st"> &#39;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&#39;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">tmpdir &lt;-<span class="st"> </span><span class="kw">tempdir</span>()</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="kw">download.file</span>(<span class="kw">paste0</span>(local,<span class="st">&#39;olinda.zip&#39;</span>),</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">              <span class="dt">destfile =</span> <span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/olinda.zip&#39;</span>))</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="kw">unzip</span>(<span class="dt">zipfile =</span> <span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/olinda.zip&#39;</span>),<span class="dt">exdir =</span> tmpdir)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="kw">dir</span>(tmpdir)</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">olinda.sf &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/olinda.shp&#39;</span>), <span class="dt">crs =</span> <span class="dv">5535</span>)</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">olinda.sp &lt;-<span class="st"> </span><span class="kw">as_Spatial</span>(olinda.sf)</a></code></pre></div>
+<p>Criando a matriz de vizinhaça por contiguidade.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">viz &lt;-<span class="st"> </span><span class="kw">poly2nb</span>(olinda.sf,<span class="dt">snap=</span><span class="fl">0.0002</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#pesos.viz &lt;- nb2listw(viz)</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">viz</a></code></pre></div>
+<pre><code>## Neighbour list object:
+## Number of regions: 241 
+## Number of nonzero links: 1324 
+## Percentage nonzero weights: 2.279575 
+## Average number of links: 5.493776</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">plot</span>(olinda.sp)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">plot</span>(viz,<span class="dt">coords=</span><span class="kw">coordinates</span>(olinda.sp),<span class="dt">add=</span><span class="ot">TRUE</span>,<span class="dt">pch=</span><span class="dv">16</span>,<span class="dt">col=</span><span class="st">&#39;darkred&#39;</span>)</a></code></pre></div>
+<p><img src="stan_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">data { </a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">int N; </a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">vector[N] x; </a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">vector[N] y; </a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">matrix<span class="op">&lt;</span>lower=<span class="dv">0</span><span class="op">&gt;</span>[N,N] W; </a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">vector<span class="op">&lt;</span>upper=<span class="dv">1</span><span class="op">&gt;</span>[N] e; </a>
+<a class="sourceLine" id="cb6-7" data-line-number="7">matrix<span class="op">&lt;</span>lower=<span class="dv">0</span>,upper=<span class="dv">1</span><span class="op">&gt;</span>[N,N] I; </a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">}  </a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">parameters { </a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">real beta; </a>
+<a class="sourceLine" id="cb6-12" data-line-number="12">real<span class="op">&lt;</span>lower=<span class="dv">0</span>,upper=<span class="dv">100</span><span class="op">&gt;</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">alpha; </a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">real<span class="op">&lt;</span>lower =<span class="st"> </span><span class="dv">0</span><span class="op">&gt;</span><span class="st"> </span>sigma; </a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">real<span class="op">&lt;</span>lower=<span class="op">-</span><span class="dv">1</span>,upper=<span class="dv">1</span><span class="op">&gt;</span><span class="st"> </span>lambda; </a>
+<a class="sourceLine" id="cb6-16" data-line-number="16">}    </a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18">model { </a>
+<a class="sourceLine" id="cb6-19" data-line-number="19">y <span class="op">~</span><span class="st"> </span><span class="kw">multi_normal_prec</span>(alpha <span class="op">+</span><span class="st"> </span>x <span class="op">*</span><span class="st"> </span>beta, <span class="kw">crossprod</span>(I <span class="op">-</span><span class="st"> </span>lambda <span class="op">*</span><span class="st"> </span>W)<span class="op">/</span>(sigma<span class="op">*</span>sigma)); </a>
+<a class="sourceLine" id="cb6-20" data-line-number="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">34256</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">x &lt;-<span class="st"> </span>olinda.sf<span class="op">$</span>DEPRIV</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">y &lt;-<span class="st"> </span>olinda.sf<span class="op">$</span>CASES</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">N &lt;-<span class="st"> </span><span class="kw">nrow</span>(olinda.sf)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">I &lt;-<span class="st"> </span><span class="kw">diag</span>(N)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">W &lt;-<span class="st"> </span><span class="kw">nb2mat</span>(viz)</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">e &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>,N)</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">car_olinda &lt;-<span class="st"> </span><span class="kw">stan</span>(<span class="st">&#39;olinda_car.stan&#39;</span>)</a></code></pre></div>
+<pre><code>## Loading required package: raster</code></pre>
+<pre><code>## 
+## Attaching package: &#39;raster&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:rstan&#39;:
+## 
+##     extract</code></pre>
+<pre><code>## recompiling to avoid crashing R session</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Fazendo o sumário estatístico da variável taxa. | capitulo9.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Fazendo o sumário estatístico da variável taxa. | capitulo9.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Fazendo o sumário estatístico da variável taxa. | capitulo9.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dados-de-area-ii.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html"><i class="fa fa-check"></i><b>1</b> Dados de Área II</a><ul>
+<li class="chapter" data-level="1.1" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-de-regressao-espacial"><i class="fa fa-check"></i><b>1.1</b> Modelos de Regressão Espacial</a></li>
+<li class="chapter" data-level="1.2" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-com-efeitos-espaciais-globais"><i class="fa fa-check"></i><b>1.2</b> Modelos com Efeitos Espaciais Globais</a></li>
+<li class="chapter" data-level="1.3" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#spatial-lag-models-sar"><i class="fa fa-check"></i><b>1.3</b> Spatial Lag Models (SAR)</a></li>
+<li class="chapter" data-level="1.4" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#spatial-error-models-car"><i class="fa fa-check"></i><b>1.4</b> Spatial Error Models (CAR)</a></li>
+<li class="chapter" data-level="1.5" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-sar-vs-car"><i class="fa fa-check"></i><b>1.5</b> Modelos SAR vs CAR</a></li>
+<li class="chapter" data-level="1.6" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>1.6</b> Modelos com Efeitos Espaciais Locais</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fazendo-o-sumario-estatistico-da-variavel-taxa-.html"><a href="fazendo-o-sumario-estatistico-da-variavel-taxa-.html"><i class="fa fa-check"></i><b>2</b> Fazendo o sumário estatístico da variável taxa.</a><ul>
+<li class="chapter" data-level="2.1" data-path="fazendo-o-sumario-estatistico-da-variavel-taxa-.html"><a href="fazendo-o-sumario-estatistico-da-variavel-taxa-.html#modelos-com-efeitos-espaciais-locais-1"><i class="fa fa-check"></i><b>2.1</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="2.2" data-path="fazendo-o-sumario-estatistico-da-variavel-taxa-.html"><a href="fazendo-o-sumario-estatistico-da-variavel-taxa-.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.2</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="fazendo-o-sumario-estatistico-da-variavel-taxa." class="section level1">
+<h1><span class="header-section-number"> 2</span> Fazendo o sumário estatístico da variável taxa.</h1>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(olinda.sf)</code></pre>
+<pre><code>      AREA           PERIMETER          SETOR_         SETOR_ID    
+ Min.   :  12817   Min.   : 566.1   Min.   :  2.0   Min.   :  1.0  
+ 1st Qu.:  69889   1st Qu.:1306.1   1st Qu.: 62.0   1st Qu.: 61.0  
+ Median : 111374   Median :1719.0   Median :122.0   Median :121.0  
+ Mean   : 182939   Mean   :1995.7   Mean   :122.4   Mean   :121.8  
+ 3rd Qu.: 169730   3rd Qu.:2188.9   3rd Qu.:182.0   3rd Qu.:182.0  
+ Max.   :2774850   Max.   :8860.9   Max.   :244.0   Max.   :245.0  
+      VAR5         DENS_DEMO            SET            CASES       
+ Min.   :  1.0   Min.   :  375.1   Min.   :  1.0   Min.   : 0.000  
+ 1st Qu.: 63.0   1st Qu.: 8215.9   1st Qu.: 63.0   1st Qu.: 2.000  
+ Median :123.0   Median :13244.2   Median :123.0   Median : 4.000  
+ Mean   :122.8   Mean   :15041.7   Mean   :122.8   Mean   : 5.942  
+ 3rd Qu.:183.0   3rd Qu.:19671.4   3rd Qu.:183.0   3rd Qu.: 8.000  
+ Max.   :243.0   Max.   :53619.0   Max.   :243.0   Max.   :37.000  
+      POP           DEPRIV                geometry         tx        
+ Min.   : 337   Min.   :0.0070   POLYGON      :241   Min.   :  0.00  
+ 1st Qu.:1214   1st Qu.:0.1990   epsg:5535    :  0   1st Qu.: 13.21  
+ Median :1411   Median :0.3280   +proj=utm ...:  0   Median : 29.22  
+ Mean   :1432   Mean   :0.3584                       Mean   : 40.86  
+ 3rd Qu.:1636   3rd Qu.:0.5090                       3rd Qu.: 54.15  
+ Max.   :2764   Max.   :0.9070                       Max.   :230.39  </code></pre>
+<p>Criando a matriz de vizinhaça por contiguidade.</p>
+<pre class="sourceCode r"><code class="sourceCode r">viz &lt;-<span class="st"> </span><span class="kw">poly2nb</span>(olinda.sf)
+pesos.viz &lt;-<span class="st"> </span><span class="kw">nb2listw</span>(viz)</code></pre>
+<p>Ajustando o modelo de regressão linear simples.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.lm &lt;-<span class="st"> </span><span class="kw">lm</span>(tx <span class="op">~</span><span class="st"> </span>DEPRIV, <span class="dt">data =</span> olinda.sf)
+<span class="kw">summary</span>(olinda.lm)</code></pre>
+<pre><code>
+Call:
+lm(formula = tx ~ DEPRIV, data = olinda.sf)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-63.39 -25.33  -9.07  14.81 175.93 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   19.062      4.933   3.864 0.000144 ***
+DEPRIV        60.807     11.919   5.102 6.86e-07 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 38.3 on 239 degrees of freedom
+Multiple R-squared:  0.09821,   Adjusted R-squared:  0.09444 
+F-statistic: 26.03 on 1 and 239 DF,  p-value: 6.857e-07</code></pre>
+<p>Checando os residuos para verificar a presença de autocorrelação.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.lm<span class="op">$</span>lmresid &lt;-<span class="st"> </span><span class="kw">residuals</span>(olinda.lm)
+<span class="kw">moran.test</span>(olinda.lm<span class="op">$</span>lmresid, pesos.viz)</code></pre>
+<pre><code>
+    Moran I test under randomisation
+
+data:  olinda.lm$lmresid  
+weights: pesos.viz    
+
+Moran I statistic standard deviate = 7.3867, p-value = 7.525e-14
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+      0.286742137      -0.004166667       0.001550998 </code></pre>
+<p>Ajustando o modelo SAR.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.sar &lt;-<span class="st"> </span><span class="kw">lagsarlm</span>(tx <span class="op">~</span><span class="st"> </span>DEPRIV, <span class="dt">data =</span> olinda.sf, 
+    pesos.viz)
+<span class="kw">summary</span>(olinda.sar)</code></pre>
+<pre><code>
+Call:spatialreg::lagsarlm(formula = formula, data = data, listw = listw, 
+    na.action = na.action, Durbin = Durbin, type = type, method = method, 
+    quiet = quiet, zero.policy = zero.policy, interval = interval, 
+    tol.solve = tol.solve, trs = trs, control = control)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-76.4924 -21.4142  -8.9083  14.7660 169.2090 
+
+Type: lag 
+Coefficients: (asymptotic standard errors) 
+            Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept)   8.6655     4.8474  1.7877 0.073831
+DEPRIV       31.5886    10.7773  2.9310 0.003378
+
+Rho: 0.49746, LR test value: 44.557, p-value: 2.4701e-11
+Asymptotic standard error: 0.073551
+    z-value: 6.7635, p-value: 1.3471e-11
+Wald statistic: 45.745, p-value: 1.3471e-11
+
+Log likelihood: -1197.211 for lag model
+ML residual variance (sigma squared): 1146.4, (sigma: 33.858)
+Number of observations: 241 
+Number of parameters estimated: 4 
+AIC: 2402.4, (AIC for lm: 2445)
+LM test for residual autocorrelation
+test value: 26.861, p-value: 2.1863e-07</code></pre>
+<p>Checando os residuos para verificar a presença de autocorrelação.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.sar<span class="op">$</span>lagresid &lt;-<span class="st"> </span><span class="kw">residuals</span>(olinda.sar)
+<span class="kw">moran.test</span>(olinda.sar<span class="op">$</span>lagresid, pesos.viz)</code></pre>
+<pre><code>
+    Moran I test under randomisation
+
+data:  olinda.sar$lagresid  
+weights: pesos.viz    
+
+Moran I statistic standard deviate = -1.4923, p-value = 0.9322
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     -0.062890434      -0.004166667       0.001548505 </code></pre>
+<p>Ajustando o modelo CAR.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.car &lt;-<span class="st"> </span><span class="kw">errorsarlm</span>(tx <span class="op">~</span><span class="st"> </span>DEPRIV, <span class="dt">data =</span> olinda.sf, 
+    <span class="dt">listw =</span> pesos.viz)
+<span class="kw">summary</span>(olinda.car)</code></pre>
+<pre><code>
+Call:
+spatialreg::errorsarlm(formula = formula, data = data, listw = listw, 
+    na.action = na.action, Durbin = Durbin, etype = etype, method = method, 
+    quiet = quiet, zero.policy = zero.policy, interval = interval, 
+    tol.solve = tol.solve, trs = trs, control = control)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-75.7356 -22.1263  -9.0949  13.2751 171.2697 
+
+Type: error 
+Coefficients: (asymptotic standard errors) 
+            Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept)  30.6921     6.5681  4.6729 2.97e-06
+DEPRIV       25.2000    13.3899  1.8820  0.05983
+
+Lambda: 0.50975, LR test value: 39.585, p-value: 3.1416e-10
+Asymptotic standard error: 0.073988
+    z-value: 6.8896, p-value: 5.5955e-12
+Wald statistic: 47.466, p-value: 5.5955e-12
+
+Log likelihood: -1199.698 for error model
+ML residual variance (sigma squared): 1166.8, (sigma: 34.158)
+Number of observations: 241 
+Number of parameters estimated: 4 
+AIC: 2407.4, (AIC for lm: 2445)</code></pre>
+<p>Checando os residuos para verificar a presença de autocorrelação.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.car<span class="op">$</span>carresid &lt;-<span class="st"> </span><span class="kw">residuals</span>(olinda.car)
+<span class="kw">moran.test</span>(olinda.car<span class="op">$</span>carresid, pesos.viz)</code></pre>
+<pre><code>
+    Moran I test under randomisation
+
+data:  olinda.car$carresid  
+weights: pesos.viz    
+
+Moran I statistic standard deviate = -1.1264, p-value = 0.87
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     -0.048483549      -0.004166667       0.001547929 </code></pre>
+<p>Mapeando os valores observados e preditos dos modelos ajustados</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(colorspace)  <span class="co"># </span>
+
+olinda.sf<span class="op">$</span>brks &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.sf<span class="op">$</span>tx, <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, 
+    <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.01</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>, 
+        <span class="dv">100</span>, <span class="dv">231</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, <span class="st">&quot;15 - 30&quot;</span>, 
+        <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))
+
+tx.bruta &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Taxa Bruta&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+    <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+
+
+olinda.sf<span class="op">$</span>brks.lm &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.lm<span class="op">$</span>fitted.values, <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, 
+    <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.01</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>, 
+        <span class="dv">100</span>, <span class="dv">231</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, <span class="st">&quot;15 - 30&quot;</span>, 
+        <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))
+
+
+tx.lm &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks.lm), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Taxa Predita - LM&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+        <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+olinda.sf<span class="op">$</span>brks.sar &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.sar<span class="op">$</span>fitted.values, 
+    <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.01</span>, 
+        <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">100</span>, <span class="dv">231</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, 
+        <span class="st">&quot;15 - 30&quot;</span>, <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))
+
+
+tx.sar &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks.sar), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Taxa Predita - SAR&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+        <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+olinda.sf<span class="op">$</span>brks.car &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.car<span class="op">$</span>fitted.values, 
+    <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.01</span>, 
+        <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>, <span class="dv">100</span>, <span class="dv">231</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, 
+        <span class="st">&quot;15 - 30&quot;</span>, <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))
+
+
+tx.car &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks.car), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Taxa Predita - CAR&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+        <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+
+<span class="kw">library</span>(gridExtra)
+<span class="kw">grid.arrange</span>(tx.bruta, tx.lm, tx.sar, tx.car, <span class="dt">ncol =</span> <span class="dv">2</span>)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-13-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Verificando a distribuição dos resíduos.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(vioplot)
+<span class="kw">vioplot</span>(olinda.lm<span class="op">$</span>residuals, olinda.sar<span class="op">$</span>residuals, 
+    olinda.car<span class="op">$</span>residuals, <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;LM&quot;</span>, <span class="st">&quot;SAR&quot;</span>, <span class="st">&quot;CAR&quot;</span>), 
+    <span class="dt">col =</span> <span class="st">&quot;gold&quot;</span>)</code></pre>
+<pre><code>[1] -76.49242 175.93390</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">title</span>(<span class="st">&quot;Gráficos violinos da distribuição dos resíduos&quot;</span>)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-14-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Mapeando a distribuição dos resíduos.</p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.sf<span class="op">$</span>brks.res.lm &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.lm<span class="op">$</span>residuals, <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, 
+    <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">77</span>, <span class="dv">-20</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">176</span>), 
+    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&lt; -20&quot;</span>, <span class="st">&quot;-20 - 0&quot;</span>, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 20&quot;</span>, <span class="st">&quot;&gt; 20&quot;</span>))
+
+
+res.lm &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks.res.lm), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Resíduos - LM&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+        <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+
+
+olinda.sf<span class="op">$</span>brks.res.sar &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.sar<span class="op">$</span>residuals, 
+    <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">77</span>, 
+        <span class="dv">-20</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">176</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&lt; -20&quot;</span>, <span class="st">&quot;-20 - 0&quot;</span>, 
+        <span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 20&quot;</span>, <span class="st">&quot;&gt; 20&quot;</span>))
+
+res.sar &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks.res.lm), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Resíduos - SAR&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+        <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+
+
+olinda.sf<span class="op">$</span>brks.res.car &lt;-<span class="st"> </span><span class="kw">cut</span>(olinda.car<span class="op">$</span>residuals, 
+    <span class="dt">include.lowest =</span> <span class="ot">TRUE</span>, <span class="dt">right =</span> <span class="ot">TRUE</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">77</span>, 
+        <span class="dv">-20</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">176</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&lt; -20&quot;</span>, <span class="st">&quot;-20 - 0&quot;</span>, 
+        <span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 20&quot;</span>, <span class="st">&quot;&gt; 20&quot;</span>))
+
+
+res.car &lt;-<span class="st"> </span><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> brks.res.lm), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Resíduos - CAR&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_discrete_sequential</span>(<span class="dt">palette =</span> <span class="st">&quot;Heat&quot;</span>, 
+        <span class="dt">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="dt">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_void</span>()
+
+
+
+<span class="kw">library</span>(gridExtra)
+<span class="kw">grid.arrange</span>(res.lm, res.sar, res.car, <span class="dt">ncol =</span> <span class="dv">2</span>)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-15-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div id="modelos-com-efeitos-espaciais-locais-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Modelos com Efeitos Espaciais Locais</h2>
+<p><strong>Regressão Geograficamente Ponderada (GWR)</strong>: Ajusta um modelo de regressão a cada ponto observado, ponderando todas as demais observações como função da distância deste ponto;</p>
+<p><span class="math display">\[Y(s) = \beta(s)X+e\]</span></p>
+<p>Sabendo que:</p>
+<ul>
+<li><p><span class="math inline">\(Y(s)\)</span>: É a variável que representa o processo no ponto <span class="math inline">\(s\)</span>;</p></li>
+<li><p><span class="math inline">\(\beta\)</span>: São os parâmetros estimados no ponto <span class="math inline">\(s\)</span>;</p></li>
+<li><p>Para estimar os parâmetros desse modelo, a solução é o uso de um estimador baseado em mínimos quadrados generalizado por algum métodos de ajuste local (ex: <em>kernel</em>);</p></li>
+</ul>
+<p><span class="math display">\[\beta(s) = (X^T W(s) X)^{-1}X^T W(s)Y\]</span></p>
+<ul>
+<li><p>O ajuste local é feito de forma a garantir uma influência maior dos pontos mais próximos (como o kernel);</p></li>
+<li><p>Valor da largura de banda;</p></li>
+<li><p>As duas funções mais usadas para o cálculo dos pesos é a <em>“bi-square”</em> e a <em>“gaussiana”</em>;</p></li>
+<li><p>Tais modelos consideram o espaço geográfico heterogêneo ou não-estacionário e a relação entre as variáveis dependentes e independentes assume padrões mais ou menos regionalizados;</p></li>
+<li><p>Os parâmetros estimados podem ser mapeados para examinar as variações locais;</p></li>
+<li><p>Idem para os erros dos parâmetros;</p></li>
+<li><p>Possibilidade de testar, por exemplo, a hipótese da variação dos parâmetros da área de estudo ser ou não aleatória;</p></li>
+<li><p>O método <strong>GWR</strong> permite a realização de estudos de fenômenos com diferentes nı́veis de heterogeneidade espacial;</p></li>
+<li><p>Mapeamentos de diagnóstico e dos parâmetros permitem novas interpretações e <em>insights</em> de padrões espaciais.</p></li>
+</ul>
+<p>Ex: Vamos modelar a taxa de detecção de hanseníase em Olinada/PE utilizando um modelo GWR.</p>
+<p>Primeiramente vamos transformar os centroides dos setores censitários em formato <em>sp</em>, pois iremnos precisar das colunas referentes as coordenadas.</p>
+<pre class="sourceCode r"><code class="sourceCode r">centroides &lt;-<span class="st"> </span><span class="kw">st_centroid</span>(<span class="kw">st_geometry</span>(olinda.sf))
+centroides.sp &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">as_Spatial</span>(centroides))
+<span class="kw">names</span>(centroides.sp) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)
+
+<span class="kw">plot</span>(centroides.sp)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-16-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Precisamos estimar a largura de banda <strong>“ideal”</strong> para o <em>kernel</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Biblioteca para ajustar o modelos GWR</span>
+<span class="kw">library</span>(spgwr)
+GWRbanda &lt;-<span class="st"> </span><span class="kw">gwr.sel</span>(tx <span class="op">~</span><span class="st"> </span>DEPRIV, <span class="dt">data =</span> olinda.sf, 
+    <span class="dt">coords =</span> <span class="kw">cbind</span>(centroides.sp<span class="op">$</span>X, centroides.sp<span class="op">$</span>Y), 
+    <span class="dt">adapt =</span> T)</code></pre>
+<pre><code>Adaptive q: 0.381966 CV score: 317689.2 
+Adaptive q: 0.618034 CV score: 333605 
+Adaptive q: 0.236068 CV score: 296458.8 
+Adaptive q: 0.145898 CV score: 279322.4 
+Adaptive q: 0.09016994 CV score: 269226.2 
+Adaptive q: 0.05572809 CV score: 260430.2 
+Adaptive q: 0.03444185 CV score: 256831.6 
+Adaptive q: 0.02128624 CV score: 261631.5 
+Adaptive q: 0.03963216 CV score: 255670.8 
+Adaptive q: 0.04162037 CV score: 255355.5 
+Adaptive q: 0.04700904 CV score: 257702.4 
+Adaptive q: 0.04367866 CV score: 256161.1 
+Adaptive q: 0.04120965 CV score: 255348.4 
+Adaptive q: 0.04133748 CV score: 255330.9 
+Adaptive q: 0.04139918 CV score: 255322.8 
+Adaptive q: 0.04148367 CV score: 255312.2 
+Adaptive q: 0.04153589 CV score: 255325.7 
+Adaptive q: 0.04144298 CV score: 255317.2 
+Adaptive q: 0.04148367 CV score: 255312.2 </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">GWRbanda</code></pre>
+<pre><code>[1] 0.04148367</code></pre>
+<p>Ajustando o modelo <em>GWR</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">gwr.model =<span class="st"> </span><span class="kw">gwr</span>(tx <span class="op">~</span><span class="st"> </span>DEPRIV, <span class="dt">data =</span> olinda.sf, <span class="dt">coords =</span> <span class="kw">cbind</span>(centroides.sp<span class="op">$</span>X, 
+    centroides.sp<span class="op">$</span>Y), <span class="dt">adapt =</span> GWRbanda, <span class="dt">hatmatrix =</span> <span class="ot">TRUE</span>, 
+    <span class="dt">se.fit =</span> <span class="ot">TRUE</span>)
+
+gwr.model</code></pre>
+<pre><code>Call:
+gwr(formula = tx ~ DEPRIV, data = olinda.sf, coords = cbind(centroides.sp$X, 
+    centroides.sp$Y), adapt = GWRbanda, hatmatrix = TRUE, se.fit = TRUE)
+Kernel function: gwr.Gauss 
+Adaptive quantile: 0.04148367 (about 9 of 241 data points)
+Summary of GWR coefficient estimates at data points:
+                 Min.  1st Qu.   Median  3rd Qu.     Max. Global
+X.Intercept.   6.2270  20.5116  32.7315  46.7524  94.1199 19.062
+DEPRIV       -49.7653  -8.6393  15.1131  31.9628 100.1916 60.807
+Number of data points: 241 
+Effective number of parameters (residual: 2traceS - traceS&#39;S): 33.785 
+Effective degrees of freedom (residual: 2traceS - traceS&#39;S): 207.215 
+Sigma (residual: 2traceS - traceS&#39;S): 32.02594 
+Effective number of parameters (model: traceS): 24.10523 
+Effective degrees of freedom (model: traceS): 216.8948 
+Sigma (model: traceS): 31.30315 
+Sigma (ML): 29.69641 
+AICc (GWR p. 61, eq 2.33; p. 96, eq. 4.21): 2374.713 
+AIC (GWR p. 96, eq. 4.22): 2342.508 
+Residual sum of squares: 212532.4 
+Quasi-global R2: 0.45321 </code></pre>
+<p>Colocando a saída do modelo dentro de um dataframe.</p>
+<pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(gwr.model<span class="op">$</span>SDF)
+<span class="kw">head</span>(results)</code></pre>
+<pre><code>     sum.w X.Intercept.    DEPRIV X.Intercept._se DEPRIV_se      gwr.e
+1 19.32698     29.75070 -36.58183        10.66113  38.47196  14.994606
+2 17.44065     32.35174 -44.32629        12.15589  43.37909  13.804759
+3 17.19568     34.14325 -49.45474        12.38739  42.77725   4.574737
+4 16.50790     31.30963 -43.94613        12.86594  45.90555  -4.907748
+5 15.26933     32.59895 -48.49047        13.72120  48.55939 -11.849821
+6 19.07729     33.42963 -46.53327        11.14821  37.98936   6.202623
+      pred   pred.se   localR2 X.Intercept._se_EDF DEPRIV_se_EDF pred.se.1
+1 14.67898  8.463638 0.1864270            10.90729      39.36029  8.659066
+2 24.90492  6.684440 0.1933176            12.43657      44.38072  6.838786
+3 24.64794  6.359885 0.1765971            12.67342      43.76499  6.506736
+4 10.56706 11.934587 0.2108508            13.16302      46.96552 12.210160
+5 17.95483  6.765838 0.2161361            14.03802      49.68063  6.922062
+6 28.91590  8.094012 0.1522577            11.40562      38.86654  8.280905
+   coord.x coord.y
+1 295460.1 9120358
+2 295778.7 9120237
+3 296163.8 9120064
+4 295534.2 9119924
+5 295734.4 9119840
+6 296498.2 9120007</code></pre>
+<p>Verificando a distribuição dos coeficientes de regressão para a variável <strong>DEPRIVED</strong></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(results<span class="op">$</span>DEPRIV)
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">median</span>(results<span class="op">$</span>DEPRIV), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-20-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Verificando a distribuição dos <strong>localR2</strong></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(results<span class="op">$</span>localR2)
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">median</span>(results<span class="op">$</span>localR2), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-21-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Incorporando alguns parâmetros de saída do modelo na tabela <em>olinda.sf</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">olinda.sf<span class="op">$</span>coefDEPRIV &lt;-<span class="st"> </span>results<span class="op">$</span>DEPRIV
+olinda.sf<span class="op">$</span>localR2 &lt;-<span class="st"> </span>results<span class="op">$</span>localR2
+olinda.sf<span class="op">$</span>pred.gwr &lt;-<span class="st"> </span>results<span class="op">$</span>pred</code></pre>
+<p>Definindo as paletes de cores para a construção dos mapas.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(wesanderson)
+<span class="kw">names</span>(wes_palettes)</code></pre>
+<pre><code> [1] &quot;BottleRocket1&quot;  &quot;BottleRocket2&quot;  &quot;Rushmore1&quot;      &quot;Rushmore&quot;      
+ [5] &quot;Royal1&quot;         &quot;Royal2&quot;         &quot;Zissou1&quot;        &quot;Darjeeling1&quot;   
+ [9] &quot;Darjeeling2&quot;    &quot;Chevalier1&quot;     &quot;FantasticFox1&quot;  &quot;Moonrise1&quot;     
+[13] &quot;Moonrise2&quot;      &quot;Moonrise3&quot;      &quot;Cavalcanti1&quot;    &quot;GrandBudapest1&quot;
+[17] &quot;GrandBudapest2&quot; &quot;IsleofDogs1&quot;    &quot;IsleofDogs2&quot;   </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">pal &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Zissou1&quot;</span>, <span class="dv">50</span>, <span class="dt">type =</span> <span class="st">&quot;continuous&quot;</span>)</code></pre>
+<p>Mapa dos coeficientes de regressão para a variável <strong>DEPRIVED</strong></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> coefDEPRIV), 
+    <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> pal) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Distribuição dos coef. var. DEPRIV&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">theme_void</span>()</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-24-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Mapa dos coeficientes de determinação regionalizados (<span class="math inline">\(R^2\)</span> local).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> localR2), <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> pal) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;R² local&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">theme_void</span>()</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-25-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Mapa dos valores preditos a partir do GWR.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(olinda.sf) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pred.gwr), <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours =</span> pal) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Valores Preditos do GWR&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">theme_void</span>()</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-26-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Vewrificando o processo de predição do modelo.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(olinda.sf<span class="op">$</span>tx, olinda.sf<span class="op">$</span>pred.gwr)</code></pre>
+<p><img src="capitulo9_files/figure-html/unnamed-chunk-27-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(olinda.sf<span class="op">$</span>tx, olinda.sf<span class="op">$</span>pred.gwr)</code></pre>
+<pre><code>[1] 0.6810209</code></pre>
+<p>Verificando a autocorrelação espacial dos resíduos.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">moran.test</span>((olinda.sf<span class="op">$</span>tx <span class="op">-</span><span class="st"> </span>olinda.sf<span class="op">$</span>pred.gwr), pesos.viz)</code></pre>
+<pre><code>
+    Moran I test under randomisation
+
+data:  (olinda.sf$tx - olinda.sf$pred.gwr)  
+weights: pesos.viz    
+
+Moran I statistic standard deviate = -0.78012, p-value = 0.7823
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     -0.034833747      -0.004166667       0.001545316 </code></pre>
+<p>Podemos verificar que a hipótese de autocorrelaçãofoi descartada.</p>
+</div>
+<div id="bibliografia-sugerida" class="section level2">
+<h2><span class="header-section-number">2.2</span> Bibliografia sugerida</h2>
+<p>Applied Spatial Data Analysis with R; Roger S. Bivand, Edzer Pebesma , Virgilio Gomez-Rubio Springer; Edição: 2nd ed. 2013</p>
+<p>Fotheringham, A. S., Brunsdon, C., and Charlton, M. E. Geographically
+Weighted Regression: The Analysis of Spatially Varying Relationships. Wiley,
+Chichester. 2002.</p>
+<p>Lloyd, C. D. (2007). Local Models for Spatial Analysis. CRC, Boca Raton.
+Schabenberger, O. and Gotway, C. A. Statistical Methods for Spatial Data
+Analysis. Chapman &amp; Hall, London. 2005.</p>
+<p>Ver Hoef, Jay M.; Hanks, Ephraim M.; Hooten, Mevin B. On the relationship between conditional (CAR) and simultaneous (SAR) autoregressive models. Spatial statistics, v. 25, p. 68-85, 2018.</p>
+<p>Waller, L. A. and Gotway, C. A. Applied Spatial Statistics for Public Health
+Data. Wiley, Hoboken, NJ. 2004.</p>
+<p>Ward, M.D. and K.S. Gleditsch. Spatial Regression Models. Thousand Oaks, CA: Sage. 2008.</p>
+<p>Wheeler, D. and Tiefelsdorf, M. Multicollinearity and correlation among local
+regression coefficients in geographically weighted regression. Journal of Geograph-
+ical Systems, 7:161–187. 2005.</p>
+<ul>
+<li>Online</li>
+</ul>
+<p><a href="https://cran.r-project.org/web/packages/spgwr/vignettes/GWR.pdf">Geographically Weighted Regression - Roger Bivand (2017)</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dados-de-area-ii.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
