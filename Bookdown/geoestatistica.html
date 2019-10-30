@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 22 Geoestatística | ESTUDOS ECOLÓGICOS</title>
-  <meta name="description" content=" 22 Geoestatística | ESTUDOS ECOLÓGICOS" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <title> 12 Geoestatística | ESTUDOS ECOLÓGICOS</title>
+  <meta name="description" content=" 12 Geoestatística | ESTUDOS ECOLÓGICOS" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 22 Geoestatística | ESTUDOS ECOLÓGICOS" />
+  <meta property="og:title" content=" 12 Geoestatística | ESTUDOS ECOLÓGICOS" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 22 Geoestatística | ESTUDOS ECOLÓGICOS" />
+  <meta name="twitter:title" content=" 12 Geoestatística | ESTUDOS ECOLÓGICOS" />
   
   
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
 
 
-<meta name="date" content="2019-06-03" />
+<meta name="date" content="2019-10-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="dados-de-area-5.html">
-<link rel="next" href="geoestatistica-1.html">
+<link rel="prev" href="dados-de-area-iii.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +49,7 @@
 
 <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.6/datatables.js"></script>
+<script src="libs/datatables-binding-0.7/datatables.js"></script>
 <link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
@@ -59,6 +59,15 @@
 <script src="libs/selectize-0.12.0/selectize.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -67,7 +76,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -138,92 +146,262 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Bookdown Book</a></li>
+<li><a href="./">Estudos Ecológicos</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="epidemiologia-social.html"><a href="epidemiologia-social.html"><i class="fa fa-check"></i><b>1</b> <strong>Epidemiologia social</strong></a></li>
-<li class="chapter" data-level="2" data-path="desenhos-de-estudos.html"><a href="desenhos-de-estudos.html"><i class="fa fa-check"></i><b>2</b> <strong>Desenhos de Estudos</strong></a></li>
-<li class="chapter" data-level="3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html"><i class="fa fa-check"></i><b>3</b> <strong>Estudos Ecológicos</strong></a><ul>
-<li class="chapter" data-level="3.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#definicao"><i class="fa fa-check"></i><b>3.1</b> <strong>Definição</strong></a></li>
-<li class="chapter" data-level="3.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#conceitos"><i class="fa fa-check"></i><b>3.2</b> <strong>Conceitos</strong></a></li>
-<li class="chapter" data-level="3.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#arvores-ou-a-floresta"><i class="fa fa-check"></i><b>3.3</b> <strong>Árvores ou a Floresta ?</strong></a><ul>
-<li class="chapter" data-level="3.3.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-arvores"><i class="fa fa-check"></i><b>3.3.1</b> As Árvores</a></li>
-<li class="chapter" data-level="3.3.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#os-bosques"><i class="fa fa-check"></i><b>3.3.2</b> Os Bosques</a></li>
-<li class="chapter" data-level="3.3.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-florestas"><i class="fa fa-check"></i><b>3.3.3</b> As Florestas</a></li>
-<li class="chapter" data-level="3.3.4" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#problemas-praticos"><i class="fa fa-check"></i><b>3.3.4</b> Problemas práticos</a></li>
+<li class="chapter" data-level="1" data-path="apresentacao.html"><a href="apresentacao.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a><ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#o-que-sao-de-estudos-ecologicos"><i class="fa fa-check"></i><b>2.1</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#objetivos-dos-estudos-ecologicos"><i class="fa fa-check"></i><b>2.2</b> Objetivos dos Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-variaveis-utilizadas-1"><i class="fa fa-check"></i><b>2.4</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#tipos-de-desenhos-de-estudos-ecologicos"><i class="fa fa-check"></i><b>2.5</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#alguns-conceitos"><i class="fa fa-check"></i><b>2.6</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.7</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#arvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.8</b> Árvores, Bosques ou as Florestas ?</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-arvores"><i class="fa fa-check"></i><b>2.8.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.8.2" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#os-bosques"><i class="fa fa-check"></i><b>2.8.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.8.3" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#as-florestas"><i class="fa fa-check"></i><b>2.8.3</b> As Florestas</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#principais-aplicacoes"><i class="fa fa-check"></i><b>3.4</b> <strong>Principais aplicações</strong></a></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#falacia-ecologica-ou-vies-de-agregacao"><i class="fa fa-check"></i><b>2.9</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#problemas-praticos"><i class="fa fa-check"></i><b>2.10</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#vantagens"><i class="fa fa-check"></i><b>2.11</b> Vantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#desvantagens"><i class="fa fa-check"></i><b>2.12</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#resumindo"><i class="fa fa-check"></i><b>2.13</b> Resumindo</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#exercicios-propostos"><i class="fa fa-check"></i><b>2.14</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.15" data-path="estudos-ecologicos.html"><a href="estudos-ecologicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.15</b> Bibliografia sugerida</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html"><i class="fa fa-check"></i><b>4</b> <strong>Introdução às Séries Temporais</strong></a><ul>
-<li class="chapter" data-level="4.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#o-que-sao-series-temporais"><i class="fa fa-check"></i><b>4.1</b> <strong>O que são Séries Temporais ?</strong></a></li>
-<li class="chapter" data-level="4.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#um-exemplo-de-serie-temporal"><i class="fa fa-check"></i><b>4.2</b> <strong>Um exemplo de Série Temporal</strong></a></li>
-<li class="chapter" data-level="4.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tipos-de-st---classificacao"><i class="fa fa-check"></i><b>4.3</b> <strong>Tipos de ST - classificação</strong></a></li>
-<li class="chapter" data-level="4.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#processo-estocastico"><i class="fa fa-check"></i><b>4.4</b> <strong>Processo Estocástico</strong></a></li>
-<li class="chapter" data-level="4.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#notacao-e-nomenclatura"><i class="fa fa-check"></i><b>4.5</b> <strong>Notação e Nomenclatura</strong></a></li>
-<li class="chapter" data-level="4.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-st"><i class="fa fa-check"></i><b>4.6</b> <strong>Objetivos : análise de ST</strong></a></li>
-<li class="chapter" data-level="4.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-st-1"><i class="fa fa-check"></i><b>4.7</b> <strong>Objetivos : análise de ST</strong></a></li>
-<li class="chapter" data-level="4.8" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal"><i class="fa fa-check"></i><b>4.8</b> <strong>Componentes de uma Série Temporal</strong></a></li>
-<li class="chapter" data-level="4.9" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#independencia"><i class="fa fa-check"></i><b>4.9</b> <strong>Independência</strong></a></li>
-<li class="chapter" data-level="4.10" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#dependencia"><i class="fa fa-check"></i><b>4.10</b> <strong>Dependência</strong></a></li>
-<li class="chapter" data-level="4.11" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocorrelacao"><i class="fa fa-check"></i><b>4.11</b> <strong>Função de autocorrelação</strong></a></li>
-<li class="chapter" data-level="4.12" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tratamento-dos-dados"><i class="fa fa-check"></i><b>4.12</b> <strong>Tratamento dos dados</strong></a></li>
-<li class="chapter" data-level="4.13" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal-1"><i class="fa fa-check"></i><b>4.13</b> <strong>Componentes de uma Série Temporal </strong></a></li>
-<li class="chapter" data-level="4.14" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>4.14</b> <strong>Estacionariedade</strong></a><ul>
-<li class="chapter" data-level="4.14.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#porque-a-estacionariedade-e-importante"><i class="fa fa-check"></i><b>4.14.1</b> Porque a Estacionariedade é Importante ?</a></li>
+<li class="chapter" data-level="3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a><ul>
+<li class="chapter" data-level="3.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#o-que-sao-series-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#hipoteses-basicas-do-estudo-das-series-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#classificacao-dos-tipos-de-series-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#processo-estocastico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#notacao-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#objetivos-analise-de-series-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocovariancia-de-um-processo-estacionario"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#porque-a-estacionariedade-e-importante"><i class="fa fa-check"></i><b>3.7.2</b> Porque a Estacionariedade é Importante ?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.15" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia"><i class="fa fa-check"></i><b>4.15</b> <strong>Tendência</strong></a></li>
-<li class="chapter" data-level="4.16" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>4.16</b> <strong>Sazonalidade</strong></a><ul>
-<li class="chapter" data-level="4.16.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>4.16.1</b> Como detectar a sazonalidade ?</a></li>
+<li class="chapter" data-level="3.8" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal"><i class="fa fa-check"></i><b>3.8</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.9" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#independencia"><i class="fa fa-check"></i><b>3.9</b> Independência</a></li>
+<li class="chapter" data-level="3.10" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#dependencia"><i class="fa fa-check"></i><b>3.10</b> Dependência</a></li>
+<li class="chapter" data-level="3.11" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#funcao-de-autocorrelacao---fac-em-ingles-autocorrelation-function-acf"><i class="fa fa-check"></i><b>3.11</b> Função de Autocorrelação - FAC (em Inglês Autocorrelation function ACF )</a></li>
+<li class="chapter" data-level="3.12" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#componentes-de-uma-serie-temporal-1"><i class="fa fa-check"></i><b>3.12</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.13" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia"><i class="fa fa-check"></i><b>3.13</b> Tendência</a></li>
+<li class="chapter" data-level="3.14" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.14</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.15" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.15</b> Ciclo</a><ul>
+<li class="chapter" data-level="3.15.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.15.1</b> Como detectar a sazonalidade ?</a></li>
 </ul></li>
-<li class="chapter" data-level="4.17" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#ciclo"><i class="fa fa-check"></i><b>4.17</b> <strong>Ciclo</strong></a></li>
-<li class="chapter" data-level="4.18" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#tendencia-e-sazonalidade"><i class="fa fa-check"></i><b>4.18</b> <strong>Tendência e sazonalidade</strong></a></li>
-<li class="chapter" data-level="4.19" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#alisamentos---medias-moveis"><i class="fa fa-check"></i><b>4.19</b> <strong>Alisamentos - Médias móveis</strong></a><ul>
-<li class="chapter" data-level="4.19.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#para-tendencia"><i class="fa fa-check"></i><b>4.19.1</b> <strong>Para Tendência</strong></a></li>
-<li class="chapter" data-level="4.19.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#para-sazonalidade"><i class="fa fa-check"></i><b>4.19.2</b> <strong>Para Sazonalidade</strong></a></li>
+<li class="chapter" data-level="3.16" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#termo-aleatorio-ou-ruido-branco"><i class="fa fa-check"></i><b>3.16</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.17" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#composicao-dos-modelos-de-uma-series-temporais"><i class="fa fa-check"></i><b>3.17</b> Composição dos Modelos de uma séries temporais</a><ul>
+<li class="chapter" data-level="3.17.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.17.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.17.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.17.2</b> Modelo Multiplicativo</a></li>
 </ul></li>
-<li class="chapter" data-level="4.20" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#alisamentos---lowess"><i class="fa fa-check"></i><b>4.20</b> <strong>Alisamentos - Lowess</strong></a><ul>
-<li class="chapter" data-level="4.20.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#locally-weighted-sum-of-square-lowess"><i class="fa fa-check"></i><b>4.20.1</b> <strong>Locally Weighted Sum of Square (Lowess)</strong></a></li>
+<li class="chapter" data-level="3.18" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#decomposicao-de-um-series-temporais"><i class="fa fa-check"></i><b>3.18</b> Decomposição de um séries temporais</a></li>
+<li class="chapter" data-level="3.19" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#pratica-no-r"><i class="fa fa-check"></i><b>3.19</b> Prática no R</a><ul>
+<li class="chapter" data-level="3.19.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#a-biblioteca-ts-e-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.19.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.19.2" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#simulando-uma-serie-temporal"><i class="fa fa-check"></i><b>3.19.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.19.3" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#importando-uma-vetor-e-transformando-em-serie-temporal"><i class="fa fa-check"></i><b>3.19.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.19.4" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#utilizando-dados-da-incidencia-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.19.4</b> Utilizando dados da Incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+<li class="chapter" data-level="3.19.5" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-estacionariedade-da-series-temporais"><i class="fa fa-check"></i><b>3.19.5</b> Avaliando a Estacionariedade da séries temporais</a></li>
+<li class="chapter" data-level="3.19.6" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-tendencia-em-uma-series-temporais"><i class="fa fa-check"></i><b>3.19.6</b> Avaliando a tendência em uma séries temporais</a></li>
+<li class="chapter" data-level="3.19.7" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#avaliando-a-sazonalidade-da-series-temporais"><i class="fa fa-check"></i><b>3.19.7</b> Avaliando a Sazonalidade da séries temporais</a></li>
 </ul></li>
-<li class="chapter" data-level="4.21" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#analise-exploratoria-de-uma-series-temporal"><i class="fa fa-check"></i><b>4.21</b> <strong>Análise Exploratória de uma Séries Temporal</strong></a><ul>
-<li class="chapter" data-level="4.21.1" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#explorando-a-funcao-ts"><i class="fa fa-check"></i><b>4.21.1</b> <strong>Explorando a função ts</strong></a></li>
+<li class="chapter" data-level="3.20" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#exercicios-propostos-1"><i class="fa fa-check"></i><b>3.20</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.21" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#material-on-line-sobre-series-temporais"><i class="fa fa-check"></i><b>3.21</b> Material on line sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.22" data-path="introducao-as-series-temporais.html"><a href="introducao-as-series-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.22</b> Bibliografia sugerida</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a><ul>
+<li class="chapter" data-level="4.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#introducao"><i class="fa fa-check"></i><b>4.1</b> Introdução</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#alguns-exemplos-de-transfomacao-dos-dados-em-st"><i class="fa fa-check"></i><b>4.1.1</b> Alguns exemplos de transfomação dos dados em ST:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#transformacoes-box-cox-digferenciacao-e-logaritmica"><i class="fa fa-check"></i><b>4.1.2</b> Transformações Box-Cox, Digferenciação e Logarítmica</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="o-que-e-analise-estatistica-espacial.html"><a href="o-que-e-analise-estatistica-espacial.html"><i class="fa fa-check"></i><b>5</b> O que é Análise Estatística Espacial ?</a></li>
-<li class="chapter" data-level="6" data-path="objetivos-da-estatistica-espacial.html"><a href="objetivos-da-estatistica-espacial.html"><i class="fa fa-check"></i><b>6</b> Objetivos da Estatística Espacial</a></li>
-<li class="chapter" data-level="7" data-path="a-lei-da-geografia.html"><a href="a-lei-da-geografia.html"><i class="fa fa-check"></i><b>7</b> 1<span class="math inline">\(^a\)</span> Lei da Geografia</a></li>
-<li class="chapter" data-level="8" data-path="dependencia-espaciais.html"><a href="dependencia-espaciais.html"><i class="fa fa-check"></i><b>8</b> Dependência Espaciais</a></li>
-<li class="chapter" data-level="9" data-path="dr-john-snow-1813-1858.html"><a href="dr-john-snow-1813-1858.html"><i class="fa fa-check"></i><b>9</b> Dr. John Snow (1813-1858)</a></li>
-<li class="chapter" data-level="10" data-path="mapa-do-colera-no-seculo-xix-em-londres.html"><a href="mapa-do-colera-no-seculo-xix-em-londres.html"><i class="fa fa-check"></i><b>10</b> Mapa do cólera no śeculo XIX em Londres</a></li>
-<li class="chapter" data-level="11" data-path="tipos-de-dados-espaciais.html"><a href="tipos-de-dados-espaciais.html"><i class="fa fa-check"></i><b>11</b> Tipos de Dados Espaciais</a></li>
-<li class="chapter" data-level="12" data-path="padroes-pontuais.html"><a href="padroes-pontuais.html"><i class="fa fa-check"></i><b>12</b> Padrões Pontuais</a></li>
-<li class="chapter" data-level="13" data-path="padroes-pontuais-1.html"><a href="padroes-pontuais-1.html"><i class="fa fa-check"></i><b>13</b> Padrões Pontuais</a></li>
-<li class="chapter" data-level="14" data-path="padroes-pontuais-2.html"><a href="padroes-pontuais-2.html"><i class="fa fa-check"></i><b>14</b> Padrões Pontuais</a></li>
-<li class="chapter" data-level="15" data-path="padroes-pontuais-3.html"><a href="padroes-pontuais-3.html"><i class="fa fa-check"></i><b>15</b> Padrões Pontuais</a></li>
-<li class="chapter" data-level="16" data-path="dados-de-area.html"><a href="dados-de-area.html"><i class="fa fa-check"></i><b>16</b> Dados de Área</a></li>
-<li class="chapter" data-level="17" data-path="dados-de-area-1.html"><a href="dados-de-area-1.html"><i class="fa fa-check"></i><b>17</b> Dados de Área</a></li>
-<li class="chapter" data-level="18" data-path="dados-de-area-2.html"><a href="dados-de-area-2.html"><i class="fa fa-check"></i><b>18</b> Dados de Área</a></li>
-<li class="chapter" data-level="19" data-path="dados-de-area-3.html"><a href="dados-de-area-3.html"><i class="fa fa-check"></i><b>19</b> Dados de Área</a></li>
-<li class="chapter" data-level="20" data-path="dados-de-area-4.html"><a href="dados-de-area-4.html"><i class="fa fa-check"></i><b>20</b> Dados de Área</a></li>
-<li class="chapter" data-level="21" data-path="dados-de-area-5.html"><a href="dados-de-area-5.html"><i class="fa fa-check"></i><b>21</b> Dados de Área</a></li>
-<li class="chapter" data-level="22" data-path="geoestatistica.html"><a href="geoestatistica.html"><i class="fa fa-check"></i><b>22</b> Geoestatística</a></li>
-<li class="chapter" data-level="23" data-path="geoestatistica-1.html"><a href="geoestatistica-1.html"><i class="fa fa-check"></i><b>23</b> Geoestatística</a></li>
-<li class="chapter" data-level="24" data-path="geoestatistica-2.html"><a href="geoestatistica-2.html"><i class="fa fa-check"></i><b>24</b> Geoestatística</a></li>
-<li class="chapter" data-level="25" data-path="geoestatistica-3.html"><a href="geoestatistica-3.html"><i class="fa fa-check"></i><b>25</b> Geoestatística</a></li>
-<li class="chapter" data-level="26" data-path="geoprocessamento.html"><a href="geoprocessamento.html"><i class="fa fa-check"></i><b>26</b> Geoprocessamento</a></li>
-<li class="chapter" data-level="27" data-path="tecnologias-de-geoprocessamento.html"><a href="tecnologias-de-geoprocessamento.html"><i class="fa fa-check"></i><b>27</b> Tecnologias de Geoprocessamento</a></li>
-<li class="chapter" data-level="28" data-path="sistema-de-informacoes-geograficas.html"><a href="sistema-de-informacoes-geograficas.html"><i class="fa fa-check"></i><b>28</b> Sistema de Informações Geográficas</a></li>
-<li class="chapter" data-level="29" data-path="sistema-de-informacoes-geograficas-1.html"><a href="sistema-de-informacoes-geograficas-1.html"><i class="fa fa-check"></i><b>29</b> Sistema de Informações Geográficas</a></li>
-<li class="chapter" data-level="30" data-path="qgis.html"><a href="qgis.html"><i class="fa fa-check"></i><b>30</b> QGIS</a></li>
-<li class="chapter" data-level="31" data-path="qgis-1.html"><a href="qgis-1.html"><i class="fa fa-check"></i><b>31</b> QGIS</a></li>
-<li class="chapter" data-level="32" data-path="terraview.html"><a href="terraview.html"><i class="fa fa-check"></i><b>32</b> TerraView</a></li>
-<li class="chapter" data-level="33" data-path="terraview-1.html"><a href="terraview-1.html"><i class="fa fa-check"></i><b>33</b> TerraView</a></li>
-<li class="chapter" data-level="34" data-path="geoda.html"><a href="geoda.html"><i class="fa fa-check"></i><b>34</b> GeoDa</a></li>
-<li class="chapter" data-level="35" data-path="geoda-1.html"><a href="geoda-1.html"><i class="fa fa-check"></i><b>35</b> GeoDa</a></li>
-<li class="chapter" data-level="36" data-path="geoda-2.html"><a href="geoda-2.html"><i class="fa fa-check"></i><b>36</b> GeoDa</a></li>
-<li class="chapter" data-level="37" data-path="satscan-a-free-software-that-analyzes-spatial-temporal-and-space-time-data.html"><a href="satscan-a-free-software-that-analyzes-spatial-temporal-and-space-time-data.html"><i class="fa fa-check"></i><b>37</b> SatScan - A free software that analyzes spatial, temporal and space-time data</a></li>
-<li class="chapter" data-level="38" data-path="satscan-a-free-software-that-analyzes-spatial-temporal-and-space-time-data-1.html"><a href="satscan-a-free-software-that-analyzes-spatial-temporal-and-space-time-data-1.html"><i class="fa fa-check"></i><b>38</b> SatScan - A free software that analyzes spatial, temporal and space-time data</a></li>
-<li class="chapter" data-level="39" data-path="r.html"><a href="r.html"><i class="fa fa-check"></i><b>39</b> R</a></li>
-<li class="chapter" data-level="40" data-path="r-1.html"><a href="r-1.html"><i class="fa fa-check"></i><b>40</b> R</a></li>
+<li class="chapter" data-level="4.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#metodos-de-alisamento-ou-suavizacao"><i class="fa fa-check"></i><b>4.2</b> Métodos de Alisamento ou Suavização</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#algumas-funcoes-de-suavizacao"><i class="fa fa-check"></i><b>4.2.1</b> Algumas funções de suavização</a></li>
+<li class="chapter" data-level="4.2.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#medias-moveis"><i class="fa fa-check"></i><b>4.2.2</b> Médias móveis</a></li>
+<li class="chapter" data-level="4.2.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-das-medias-moveis"><i class="fa fa-check"></i><b>4.2.3</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#kernel"><i class="fa fa-check"></i><b>4.3</b> Kernel</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#diferentes-funcoes-kernel"><i class="fa fa-check"></i><b>4.3.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.3.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#largura-de-banda"><i class="fa fa-check"></i><b>4.3.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.3.3" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-do-kernel"><i class="fa fa-check"></i><b>4.3.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#lowess-locally-weighted-sum-of-square"><i class="fa fa-check"></i><b>4.4</b> Lowess (Locally Weighted Sum of Square)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#utilizacao-do-lowess"><i class="fa fa-check"></i><b>4.4.1</b> Utilização do Lowess</a></li>
+<li class="chapter" data-level="4.4.2" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#comparando"><i class="fa fa-check"></i><b>4.4.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#splines"><i class="fa fa-check"></i><b>4.5</b> Splines</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#splines-vs-loess"><i class="fa fa-check"></i><b>4.5.1</b> Splines <em>vs</em> Loess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#exercicios-propostos-2"><i class="fa fa-check"></i><b>4.6</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.7" data-path="transformacoes-e-suavizacoes.html"><a href="transformacoes-e-suavizacoes.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#o-que-sao-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#alguns-processos-estocasticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autoregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-de-medias-moveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#condicoes-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-de-medias-moveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelo-autorregressivo-integrado-de-medias-moveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-nao-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#funcao-de-autocorrelacao-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#processo-de-identificacao"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#metricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#analise-de-residuos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#ajuste-automatico-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#modelos-de-previsao"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#correlacao-cruzada-cross-corralation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Corralation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (generalized Additive Models)</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#por-que-nao-usar"><i class="fa fa-check"></i><b>5.15</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#gam-em-series-temporais"><i class="fa fa-check"></i><b>5.16</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.16.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>5.16.1</b> Exemplo de um modelo GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="5.17" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-de-modelo-gam-aplicado-a-series-temporais"><i class="fa fa-check"></i><b>5.17</b> Exemplo de modelo GAM aplicado a Séries Temporais</a><ul>
+<li class="chapter" data-level="5.17.1" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exemplo-serie-temporal-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.17.1</b> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.18" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#exercicios-propostos-3"><i class="fa fa-check"></i><b>5.18</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="5.19" data-path="modelagem-em-series-temporais.html"><a href="modelagem-em-series-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.19</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a><ul>
+<li class="chapter" data-level="6.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#o-que-e-analise-estatistica-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial ?</a></li>
+<li class="chapter" data-level="6.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#origem-da-estatistica-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#quando-usar-metodos-de-analise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial ?</a></li>
+<li class="chapter" data-level="6.4" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dependencia-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#aplicacoes-em-saude"><i class="fa fa-check"></i><b>6.5</b> Aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#geoestatstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dados-de-area"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#sistema-de-informacoes-geograficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a><ul>
+<li class="chapter" data-level="6.12.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#analise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#alguns-conceitos-1"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a><ul>
+<li class="chapter" data-level="6.14.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#autocorrelacao-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#aplicacoes"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a><ul>
+<li class="chapter" data-level="6.15.1" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#dengue-em-dourados"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#vigilancia-dos-vetores-da-dengue-usando-modelagem-espaco-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#modelo-espaco-temporal-para-a-analise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#analise-da-temperatura-na-costa-central-da-california"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#a-relacao-entre-a-malaria-e-a-chuva-no-estado-do-para-uma-analise-espaco-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.6</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#material-on-line-sobre-estatistica-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introducao-a-analise-estatistica-espacial.html"><a href="introducao-a-analise-estatistica-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.18</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a><ul>
+<li class="chapter" data-level="7.1" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#o-que-sao-padroes-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="7.2" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#tipos-de-distribuicoes"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#estimativa-de-kernel-com-correcao-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#kernel-com-variacao-da-populacao"><i class="fa fa-check"></i><b>7.6</b> Kernel com Variação da população</a></li>
+<li class="chapter" data-level="7.7" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#razao-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#funcao-f-e-g---distancia-do-vizinho-mais-proximo"><i class="fa fa-check"></i><b>7.8</b> Função F e G - Distância do vizinho mais próximo</a></li>
+<li class="chapter" data-level="7.9" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#funcao-k-de-ripley-ou-apenas-funcao-k."><i class="fa fa-check"></i><b>7.9</b> Função K de Ripley (ou apenas função K).</a></li>
+<li class="chapter" data-level="7.10" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#funcao-l"><i class="fa fa-check"></i><b>7.10</b> Função <em>L</em></a></li>
+<li class="chapter" data-level="7.11" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#deteccao-de-cluster"><i class="fa fa-check"></i><b>7.11</b> Detecção de cluster</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#testes-genericos-de-cluster"><i class="fa fa-check"></i><b>7.11.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.11.2" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#fonte-especifica"><i class="fa fa-check"></i><b>7.11.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padroes-pontuais-i.html"><a href="padroes-pontuais-i.html#exercicios-propostos-4"><i class="fa fa-check"></i><b>7.12</b> Exercícios Propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a><ul>
+<li class="chapter" data-level="8.1" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.2" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
+<li class="chapter" data-level="8.3" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.4" data-path="padroes-pontuais-ii.html"><a href="padroes-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html"><i class="fa fa-check"></i><b>9</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="9.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#introducao-1"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>9.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="9.3" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#visualizacao-mapa-tematico-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>9.3</b> Visualização: Mapa Temático usando a biblioteca <strong>tmap</strong></a></li>
+<li class="chapter" data-level="9.4" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#analise-exploratoria"><i class="fa fa-check"></i><b>9.4</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.4.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="9.4.2" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#efeitos-de-segunda-ordem-dependencia-espacial"><i class="fa fa-check"></i><b>9.4.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medidas-de-proximidade-em-dados-de-area"><i class="fa fa-check"></i><b>9.5</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="9.6" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#matriz-de-vizinhanca"><i class="fa fa-check"></i><b>9.6</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="9.7" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#medias-moveis-espaciais"><i class="fa fa-check"></i><b>9.7</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="9.8" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#kernel-de-area-ou-atributo"><i class="fa fa-check"></i><b>9.8</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="9.9" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#correlacao-espacial-e-correlograma"><i class="fa fa-check"></i><b>9.9</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="9.10" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial"><i class="fa fa-check"></i><b>9.10</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="9.11" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#indicadores-locais-de-associacao-espacial-lisa"><i class="fa fa-check"></i><b>9.11</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="9.12" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#metodo-bayesiano-emprico"><i class="fa fa-check"></i><b>9.12</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="9.13" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>9.13</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="9.14" data-path="dados-de-area-i.html"><a href="dados-de-area-i.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>9.14</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html"><i class="fa fa-check"></i><b>10</b> Dados de Área II</a><ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-de-regressao-espacial"><i class="fa fa-check"></i><b>10.1</b> Modelos de Regressão Espacial</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-com-efeitos-espaciais-globais"><i class="fa fa-check"></i><b>10.2</b> Modelos com Efeitos Espaciais Globais</a></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#spatial-lag-models-sar"><i class="fa fa-check"></i><b>10.3</b> Spatial Lag Models (SAR)</a></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#spatial-error-models-car"><i class="fa fa-check"></i><b>10.4</b> Spatial Error Models (CAR)</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-sar-vs-car"><i class="fa fa-check"></i><b>10.5</b> Modelos SAR vs CAR</a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>10.6</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#modelos-com-efeitos-espaciais-locais-1"><i class="fa fa-check"></i><b>10.7</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#errata"><i class="fa fa-check"></i><b>10.8</b> ERRATA</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-area-ii.html"><a href="dados-de-area-ii.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>10.9</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área III</a><ul>
+<li class="chapter" data-level="11.1" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html#exemplo-com-os-dados-de-dengue-em-douradosms-1"><i class="fa fa-check"></i><b>11.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="11.2" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html#kernel-por-atributos"><i class="fa fa-check"></i><b>11.2</b> Kernel por atributos</a></li>
+<li class="chapter" data-level="11.3" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html#matriz-de-vizinhanca-1"><i class="fa fa-check"></i><b>11.3</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="11.4" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html#autocorrelacao-espacial-1"><i class="fa fa-check"></i><b>11.4</b> Autocorrelação Espacial</a></li>
+<li class="chapter" data-level="11.5" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html#modelos-linear-car-e-gwr"><i class="fa fa-check"></i><b>11.5</b> Modelos Linear, CAR e GWR</a></li>
+<li class="chapter" data-level="11.6" data-path="dados-de-area-iii.html"><a href="dados-de-area-iii.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>11.6</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="geoestatistica.html"><a href="geoestatistica.html"><i class="fa fa-check"></i><b>12</b> Geoestatística</a><ul>
+<li class="chapter" data-level="12.1" data-path="geoestatistica.html"><a href="geoestatistica.html#conceito"><i class="fa fa-check"></i><b>12.1</b> Conceito</a></li>
+<li class="chapter" data-level="12.2" data-path="geoestatistica.html"><a href="geoestatistica.html#objetivos"><i class="fa fa-check"></i><b>12.2</b> Objetivos</a></li>
+<li class="chapter" data-level="12.3" data-path="geoestatistica.html"><a href="geoestatistica.html#principais-aplicacoes"><i class="fa fa-check"></i><b>12.3</b> Principais aplicações</a></li>
+<li class="chapter" data-level="12.4" data-path="geoestatistica.html"><a href="geoestatistica.html#exemplo"><i class="fa fa-check"></i><b>12.4</b> Exemplo</a></li>
+<li class="chapter" data-level="12.5" data-path="geoestatistica.html"><a href="geoestatistica.html#efeitos"><i class="fa fa-check"></i><b>12.5</b> Efeitos</a></li>
+<li class="chapter" data-level="12.6" data-path="geoestatistica.html"><a href="geoestatistica.html#formalizando"><i class="fa fa-check"></i><b>12.6</b> Formalizando</a></li>
+<li class="chapter" data-level="12.7" data-path="geoestatistica.html"><a href="geoestatistica.html#efeito-de-primeira-ordem-regressao-linear"><i class="fa fa-check"></i><b>12.7</b> Efeito de primeira ordem: regressão linear</a></li>
+<li class="chapter" data-level="12.8" data-path="geoestatistica.html"><a href="geoestatistica.html#efeito-de-segunda-ordem-regressao-espacial"><i class="fa fa-check"></i><b>12.8</b> Efeito de segunda ordem: regressão espacial</a></li>
+<li class="chapter" data-level="12.9" data-path="geoestatistica.html"><a href="geoestatistica.html#analise-exploratoria-1"><i class="fa fa-check"></i><b>12.9</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="12.9.1" data-path="geoestatistica.html"><a href="geoestatistica.html#analise-exploratoria-efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>12.9.1</b> Análise exploratória: efeitos de primeira ordem</a></li>
+</ul></li>
+<li class="chapter" data-level="12.10" data-path="geoestatistica.html"><a href="geoestatistica.html#simplificacoes-estacionariedade-e-isotropia"><i class="fa fa-check"></i><b>12.10</b> Simplificações: Estacionariedade e Isotropia</a></li>
+<li class="chapter" data-level="12.11" data-path="geoestatistica.html"><a href="geoestatistica.html#variograma-emprico"><i class="fa fa-check"></i><b>12.11</b> Variograma empı́rico</a><ul>
+<li class="chapter" data-level="12.11.1" data-path="geoestatistica.html"><a href="geoestatistica.html#relacao-entre-variograma-covariograma-e-correlograma"><i class="fa fa-check"></i><b>12.11.1</b> Relação entre variograma, covariograma e correlograma</a></li>
+<li class="chapter" data-level="12.11.2" data-path="geoestatistica.html"><a href="geoestatistica.html#estrutura-do-variograma"><i class="fa fa-check"></i><b>12.11.2</b> Estrutura do variograma</a></li>
+<li class="chapter" data-level="12.11.3" data-path="geoestatistica.html"><a href="geoestatistica.html#variogramas-para-modelos-isotropicos"><i class="fa fa-check"></i><b>12.11.3</b> Variogramas para modelos isotrópicos</a></li>
+<li class="chapter" data-level="12.11.4" data-path="geoestatistica.html"><a href="geoestatistica.html#aplicacao-1"><i class="fa fa-check"></i><b>12.11.4</b> Aplicação 1</a></li>
+<li class="chapter" data-level="12.11.5" data-path="geoestatistica.html"><a href="geoestatistica.html#aplicacao-2"><i class="fa fa-check"></i><b>12.11.5</b> Aplicação 2</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="geoestatistica.html"><a href="geoestatistica.html#modelagem-em-geoestatistica"><i class="fa fa-check"></i><b>12.12</b> Modelagem em Geoestatística</a><ul>
+<li class="chapter" data-level="12.12.1" data-path="geoestatistica.html"><a href="geoestatistica.html#modelando-dados-de-geoestatistica---dados-de-chuva-no-parana"><i class="fa fa-check"></i><b>12.12.1</b> Modelando dados de Geoestatística - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="12.13" data-path="geoestatistica.html"><a href="geoestatistica.html#krigagem"><i class="fa fa-check"></i><b>12.13</b> Krigagem</a><ul>
+<li class="chapter" data-level="12.13.1" data-path="geoestatistica.html"><a href="geoestatistica.html#krigagem-universal"><i class="fa fa-check"></i><b>12.13.1</b> Krigagem Universal</a></li>
+<li class="chapter" data-level="12.13.2" data-path="geoestatistica.html"><a href="geoestatistica.html#algumas-consideracoes-da-krigagem-em-geral"><i class="fa fa-check"></i><b>12.13.2</b> Algumas considerações da krigagem em geral:</a></li>
+<li class="chapter" data-level="12.13.3" data-path="geoestatistica.html"><a href="geoestatistica.html#krigagem---dados-de-chuva-no-parana"><i class="fa fa-check"></i><b>12.13.3</b> Krigagem - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="12.14" data-path="geoestatistica.html"><a href="geoestatistica.html#pratica-no-r-1"><i class="fa fa-check"></i><b>12.14</b> Prática no R</a></li>
+<li class="chapter" data-level="12.15" data-path="geoestatistica.html"><a href="geoestatistica.html#aplicacao-1---dados-de-temperatura"><i class="fa fa-check"></i><b>12.15</b> Aplicação 1 - Dados de temperatura</a></li>
+<li class="chapter" data-level="12.16" data-path="geoestatistica.html"><a href="geoestatistica.html#repita-a-analise-para-o-banco-de-ovos-em-higienopolis"><i class="fa fa-check"></i><b>12.16</b> Repita a análise para o banco de ovos em Higienópolis</a></li>
+<li class="chapter" data-level="12.17" data-path="geoestatistica.html"><a href="geoestatistica.html#bibliografia-sugerida-9"><i class="fa fa-check"></i><b>12.17</b> Bibliografia sugerida</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -245,16 +423,622 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="geoestatistica" class="section level1">
-<h1><span class="header-section-number"> 22</span> Geoestatística</h1>
-<p><img src="figuras/geoestatistia0.jpg" width="50%" style="display: block; margin: auto;" /><img src="figuras/geoestatistia5.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<h1><span class="header-section-number"> 12</span> Geoestatística</h1>
+<div id="conceito" class="section level2">
+<h2><span class="header-section-number">12.1</span> Conceito</h2>
+<p>Podemos definir como sendo uma análise de um atributo espacialmente contínuo amostrado em localizações fixas.</p>
+<p>Os dados compreendem um conjunto de localizações (em geral latitudes e longitudes), mas agregados a eles uma medida, como por exemplo:</p>
+<ul>
+<li><p>O volume de chuva medido em estações de monitoramento;</p></li>
+<li><p>O número de ovos do Aedes aegypti postados em ovitrampas.</p></li>
+</ul>
+</div>
+<div id="objetivos" class="section level2">
+<h2><span class="header-section-number">12.2</span> Objetivos</h2>
+<ul>
+<li><p>Entender o padrão dos valores amostrados nestas localizações;</p></li>
+<li><p>Estimar valores em localizações não medidas dado os valores observados em localizações medidas.</p></li>
+</ul>
+</div>
+<div id="principais-aplicacoes" class="section level2">
+<h2><span class="header-section-number">12.3</span> Principais aplicações</h2>
+<ul>
+<li><p>Geologia</p></li>
+<li><p>Ciências ambientais (chuva, temperatura, umidade, poluentes no ar, etc.)</p></li>
+</ul>
+</div>
+<div id="exemplo" class="section level2">
+<h2><span class="header-section-number">12.4</span> Exemplo</h2>
+<p>Estações de monitoramento pluviométrico da cidade do Rio de Janeiro.</p>
+<p><img src="figuras/geoestatistica10_2019.png" style="width:90.0%" /></p>
+<p>Interesse: Fazer previsão para alguns pontos da cidade ou para toda a cidade.</p>
+</div>
+<div id="efeitos" class="section level2">
+<h2><span class="header-section-number">12.5</span> Efeitos</h2>
+<p>Os fenômenos espaciais é o resultado de uma mistura de efeitos de primeira e segunda ordem.</p>
+<ul>
+<li><p><strong>Efeitos de primeira ordem:</strong> variação do valor médio do processo no espaço, ou seja, tendência global ou de grande escala.</p></li>
+<li><p><strong>Efeitos de segunda ordem:</strong> resultam da estrutura de correlação espacial ou dependência espacial do processo, ou seja, são efeitos locais ou de pequena escala.</p></li>
+</ul>
+</div>
+<div id="formalizando" class="section level2">
+<h2><span class="header-section-number">12.6</span> Formalizando</h2>
+<ul>
+<li><p>Seja <span class="math inline">\(Y(s)\)</span> um vetor aleatório nas localizações <span class="math inline">\(s\)</span>, onde <span class="math inline">\(s\)</span> varia continuamente sobre <span class="math inline">\(D\)</span>, um subconjunto fixo de <span class="math inline">\(R^2\)</span> .</p></li>
+<li><p>Em geral existem <span class="math inline">\(n\)</span> estações de coleta de dados onde são observadas as variáveis <span class="math inline">\((Y(s_1), ... , Y(s_n))\)</span>.</p></li>
+<li><p>Podemos particionar os dados espacialmente contı́nuos em dois termos: uma média e um erro associado,</p></li>
+</ul>
+<p><span class="math display">\[Y(s) = \mu(s) + e(s)\]</span></p>
+<ul>
+<li>A análise espacial é composta por um conjunto de procedimentos cuja finalidade é a escolha de um modelo que considere explicitamente a componente espacial existente.</li>
+</ul>
+</div>
+<div id="efeito-de-primeira-ordem-regressao-linear" class="section level2">
+<h2><span class="header-section-number">12.7</span> Efeito de primeira ordem: regressão linear</h2>
+<p>Supondo <span class="math inline">\(\mu(s) = \mu(x, y) = \beta_0 + \beta_1 x_1 + \beta_2 x_2\)</span>, temos</p>
+<p><span class="math display">\[Y(s) = \mu(s) + e(s)\]</span></p>
+<p><span class="math display">\[Y(s) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + e(s)\]</span> sendo <span class="math inline">\(e(s) \sim N(0, \sigma^2)\)</span></p>
+<p>onde</p>
+<p><span class="math display">\[  \begin{pmatrix} e(s_1) \\ e(s_2) \\ \vdots \\ e(s_n)\end{pmatrix} \sim N \begin{pmatrix} 
+\begin{pmatrix} 0 \\ 0 \\ \vdots \\ 0\end{pmatrix} , 
+\begin{pmatrix} \sigma^2 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; \sigma^2 &amp; \cdots &amp; 0 \\
+\vdots &amp; &amp; \ddots &amp;  \\ 0 &amp; \cdots &amp; &amp; \sigma^2 \end{pmatrix}
+  \end{pmatrix}\]</span></p>
+</div>
+<div id="efeito-de-segunda-ordem-regressao-espacial" class="section level2">
+<h2><span class="header-section-number">12.8</span> Efeito de segunda ordem: regressão espacial</h2>
+<p>Supondo <span class="math inline">\(\mu(s) = \mu(x, y) = \beta_0 + \beta_1 x_1 + \beta_2 x_2\)</span>, temos</p>
+<p><span class="math display">\[Y(s) = \mu(s) + e(s)\]</span></p>
+<p><span class="math display">\[Y(s) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + e(s)\]</span> sendo <span class="math inline">\(e(s) \sim N(0, \sigma^2)\)</span></p>
+<p>onde</p>
+<p><span class="math display">\[\begin{pmatrix} e(s_1) \\ e(s_2) \\ \vdots \\ e(s_n)\end{pmatrix} \sim N \begin{pmatrix} 
+\begin{pmatrix} 0 \\ 0 \\ \vdots \\ 0\end{pmatrix} , 
+\begin{pmatrix} \sigma^2 (s_1) &amp; C(s_{1}, s_{2}) &amp; \cdots &amp; C(s_{1}, s_{n}) \\ C(s_{2}, s_{1}) &amp; \sigma^2 (s_2) &amp; \cdots &amp; C(s_{2}, s_{n}) \\
+\vdots &amp; &amp; \ddots &amp;  \\ C(s_{n}, s_{1}) &amp; \cdots &amp; &amp; \sigma^2 (s_n) \end{pmatrix}
+  \end{pmatrix}\]</span></p>
+<p>Deste modo, denotamos a média e a variância do processo por:</p>
+<p><span class="math inline">\(E(Y(s)) = \mu(s)\)</span> e <span class="math inline">\(Var(Y(s)) = \sigma^2(s)\)</span></p>
+<p>A covariância desse processo em dois pontos distintos, <span class="math inline">\(s_i\)</span> e <span class="math inline">\(s_j\)</span> , será dada
+por:</p>
+<p><span class="math display">\[C(s_i, s_j) = E((Y(s_i) − \mu(s_i))(Y(s_j) − \mu(s_j))\]</span></p>
+<p>E a correlação será:</p>
+<p><span class="math display">\[\rho (s_i, s_j) = \dfrac{C(s_i, s_j)}{\sigma(s_i) \sigma(s_j)} \]</span></p>
+</div>
+<div id="analise-exploratoria-1" class="section level2">
+<h2><span class="header-section-number">12.9</span> Análise exploratória</h2>
+<p>Inicialmente são utilizadas técnicas de análise exploratórias e de
+visualização dos dados.</p>
+<p>Para os <strong>efeitos de primeira ordem</strong>:</p>
+<ul>
+<li><p>Mapa com a localização dos pontos e a intensidade do processo.</p></li>
+<li><p>Plot de <span class="math inline">\(Y(s)\)</span> versus cada coordenada, por exemplo latitude e longitude.</p></li>
+</ul>
+<p>Para os <strong>efeitos de segunda ordem</strong>:</p>
+<ul>
+<li><p>Covariograma</p></li>
+<li><p>Variograma</p></li>
+</ul>
+<div id="analise-exploratoria-efeitos-de-primeira-ordem" class="section level3">
+<h3><span class="header-section-number">12.9.1</span> Análise exploratória: efeitos de primeira ordem</h3>
+<p>Exemplo: Medidas pluviométricas em 143 estações monitoradoras no estado do Paraná</p>
+<p><img src="figuras/geoestatistica11_2019.png" style="width:90.0%" /></p>
+<p><img src="figuras/geoestatistica12_2019.png" style="width:90.0%" /></p>
+</div>
+</div>
+<div id="simplificacoes-estacionariedade-e-isotropia" class="section level2">
+<h2><span class="header-section-number">12.10</span> Simplificações: Estacionariedade e Isotropia</h2>
+<p>Quando o processo é <strong>estacionário</strong>:</p>
+<ul>
+<li><p>A média <span class="math inline">\(E(Y(s)) = \mu\)</span> para todo <span class="math inline">\(s\)</span></p></li>
+<li><p>A variância <span class="math inline">\(Var(Y(s + h) − Y (s)) = 2 \gamma (h)\)</span></p></li>
+</ul>
+<p>onde <span class="math inline">\(2 \gamma (h)\)</span> é chamado de variograma e <span class="math inline">\(\gamma (h)\)</span> é o semi-variograma.</p>
+<ul>
+<li>A covariância</li>
+</ul>
+<p><span class="math display">\[C(s_i, s_j) = C (s_i − s_j ) = C(h)\]</span></p>
+<p>Sendo <span class="math inline">\(C(h)\)</span> é chamado covariograma do processo.</p>
+<p>Quando o processo é <strong>isotrópico</strong></p>
+<p><span class="math display">\[C(s_i, s_j ) = C(||s_i − s_j ||) = C(h)\]</span></p>
+<p>onde <span class="math inline">\(||.||\)</span> denota distância euclideana.</p>
+</div>
+<div id="variograma-emprico" class="section level2">
+<h2><span class="header-section-number">12.11</span> Variograma empı́rico</h2>
+<p>Um estimador natural para o variograma (variograma empı́rico) ,considerando a distância <span class="math inline">\(h\)</span>, é:</p>
+<p><span class="math display">\[2 \gamma^2 (h) = \dfrac{1}{n(h)} \sum_{s_{i} - s_{j} = h} (y(s_i) - y(s_j))^2\]</span></p>
+<p>onde a soma é feita sobre todos os pares de dados observados com uma distância <span class="math inline">\(h\)</span> e <span class="math inline">\(n(h)\)</span> é o número de pares com distância <span class="math inline">\(h\)</span>.</p>
+<p>Exemplo: Variograma empı́rico para os dados de chuva do Paraná</p>
+<p><img src="figuras/geoestatistica13_2019.png" style="width:60.0%" /></p>
+<div id="relacao-entre-variograma-covariograma-e-correlograma" class="section level3">
+<h3><span class="header-section-number">12.11.1</span> Relação entre variograma, covariograma e correlograma</h3>
+<p><img src="figuras/geoestatistica14_2019.png" style="width:70.0%" /></p>
+<ul>
+<li><p>Para um processo espacial estacionário, o covariograma, o correlograma e o variograma fornecem informações similares;</p></li>
+<li><p>O covariograma e o correlograma têm a mesma forma, sendo que o correlograma possui como máximo, o valor 1;</p></li>
+<li><p>O variograma também tem a mesma forma do covariograma, mas aparece “invertido”;</p></li>
+<li><p>Enquanto o covariograma começa de um máximo em <span class="math inline">\(\sigma^2\)</span> em <span class="math inline">\(h = 0\)</span> e decresce até 0, o variograma inicia em 0 e cresce até um máximo de <span class="math inline">\(\sigma^2\)</span>.</p></li>
+</ul>
+</div>
+<div id="estrutura-do-variograma" class="section level3">
+<h3><span class="header-section-number">12.11.2</span> Estrutura do variograma</h3>
+<p><img src="figuras/geoestatistica15_2019.png" style="width:70.0%" /></p>
+<p>Observando o gráfico do variograma podemos destacar alguns elementos importantes:</p>
+<ul>
+<li><p><strong>Nugget (Efeito pepita):</strong> representa os possíveis erros de medida, por exemplo, devidos ao processo de coleta; é o valor de <span class="math inline">\(\gamma(0) = \tau^2\)</span>;</p></li>
+<li><p><strong>Sill (Patamar):</strong> é o valor do variograma onde concluı́mos não haver mais correlação entre as observações, ou que elas sejam pouco correlacionadas;</p></li>
+<li><p><strong>Range (Amplitude):</strong> é o valor da distância a partir de onde concluímos não haver mais correlacão entre as observações, ou que elas são pouco correlacionadas. No variograma a amplitude é o ponto de <span class="math inline">\(x\)</span> onde a curva atinge um patamar.</p></li>
+</ul>
+</div>
+<div id="variogramas-para-modelos-isotropicos" class="section level3">
+<h3><span class="header-section-number">12.11.3</span> Variogramas para modelos isotrópicos</h3>
+<p>Alguns exemplos de funções de variogramas para modelos isotrópicos:</p>
+<ul>
+<li><strong>Esférica:</strong></li>
+</ul>
+<p><span class="math inline">\(\gamma (h) = \left\{ \begin{array}{rll} \sigma^2 &amp; h &gt; \phi \\ \sigma^2 \left\{ \dfrac{2}{3} \left( \dfrac{h}{\phi} \right) - \dfrac{1}{2} \left( \dfrac{h}{\phi}\right)^3 \right\} &amp; 0 &lt; h &lt; \phi \end{array}\right.\)</span></p>
+<ul>
+<li><strong>Exponencial</strong></li>
+</ul>
+<p><span class="math inline">\(\gamma(h)= \sigma^2(1 - exp\{-(\dfrac{h}{\phi})\})\)</span> , <span class="math inline">\(h &gt; 0\)</span></p>
+<ul>
+<li><strong>Gaussiano</strong></li>
+</ul>
+<p><span class="math inline">\(\gamma(h)= \sigma^2(1 - exp\{-(\dfrac{h}{\phi})^2\})\)</span> , <span class="math inline">\(h &gt; 0\)</span></p>
+<p><img src="figuras/geoestatistica16_2019.png" style="width:60.0%" /></p>
+<ul>
+<li><p>O modelo gaussiano, por exemplo, apresenta um crescimento lento e um comportamento parabólico próximo a origem e fornece um modelo para fenômenos extremamente contínuos.</p></li>
+<li><p>O modelo exponencial cresce mais rapidamente perto da origem mas
+a aproximação da função ao patamar é mais lenta.</p></li>
+<li><p>Frequentemente os modelos são ajustados aos dados observados no
+variograma empírico, apenas por uma comparação visual.</p></li>
+</ul>
+<p>Por exemplo, para os dados de chuva do Paraná, utilizando diferentes
+variogramas</p>
+<p><img src="figuras/geoestatistica17_2019.png" style="width:70.0%" /></p>
+</div>
+<div id="aplicacao-1" class="section level3">
+<h3><span class="header-section-number">12.11.4</span> Aplicação 1</h3>
+<ul>
+<li><p>Dados de temperatura para uma região do oceano pacífico na costa
+da Califórnia.</p></li>
+<li><p>As medidas correspondem a uma grade regular 10 x 4(longitude x
+latitude) com uma resolução espacial de 0,5 (<span class="math inline">\(n = 40\)</span>).</p></li>
+<li><p>Os dados foram registrados a cada 8 dias de julho de 2000 a maio de
+2005 (T=240).</p></li>
+</ul>
+<p><img src="figuras/geoestatistica18_2019.png" style="width:90.0%" /></p>
+</div>
+<div id="aplicacao-2" class="section level3">
+<h3><span class="header-section-number">12.11.5</span> Aplicação 2</h3>
+<ul>
+<li><p>Contagem de ovos de Aedes aegypti em armadilhas de oviposição colocadas em Higienópolis (área urbana).</p></li>
+<li><p>Os dados foram registrados por semana epidemiológica de setembro de 2006 a março de 2008.</p></li>
+</ul>
+<p><img src="figuras/geoestatistica19_2019.png" style="width:90.0%" /></p>
+</div>
+</div>
+<div id="modelagem-em-geoestatistica" class="section level2">
+<h2><span class="header-section-number">12.12</span> Modelagem em Geoestatística</h2>
+<p>Em geral, assumimos que <span class="math inline">\(Y(s)\)</span> segue um processo Gaussiano tal que</p>
+<p><span class="math display">\[Y(.) \sim PG(\mu(.), c(.; .))\]</span></p>
+<p>sendo <span class="math inline">\(\mu(.)\)</span> é a tendência do processo <span class="math inline">\(Y(.)\)</span> e <span class="math inline">\(c(.; .)\)</span>, sua função de
+covariância.</p>
+<p>A tendência pode ser explicada através de funções polinomias das coordenadas geográficas, funções suaves (ex: <em>thin plate splines</em>) e covariáveis
+medidas nas mesmas localizações.</p>
+<ul>
+<li><p>Os variogramas e covariogramas empíricos correspondem a uma estimativa da estrutura de covariância, sob a hipótese de alguma estacionaridade.</p></li>
+<li><p>Se não temos estacionaridade, os variogramas e covariogramas empı́ricos podem ser dominados por efeitos de primeira ordem.</p></li>
+<li><p>A matriz de covariância deve ser simétrica e positiva definida.</p></li>
+<li><p>A matriz de covariância é estimada através de modelos paramétricos.</p></li>
+</ul>
+<p>Por exemplo: função de covariância exponencial, gaussiana, Matérn, etc.</p>
+<div id="modelando-dados-de-geoestatistica---dados-de-chuva-no-parana" class="section level3">
+<h3><span class="header-section-number">12.12.1</span> Modelando dados de Geoestatística - Dados de chuva no Paraná</h3>
+<p>Podemos ajustar o seguinte modelo:</p>
+<p><span class="math display">\[chuva(s) = \beta_0 + \beta_1 lat(s) + \beta_2 long (s) + Z (s) + e(s)\]</span></p>
+<p>onde,</p>
+<ul>
+<li><p>Z(.) é um processo Gaussiano com média 0 e estrutura de correlação, <span class="math inline">\(\rho(.; \phi)\)</span>, dada pela função exponencial e variância igual a <span class="math inline">\(\sigma^2\)</span>.</p></li>
+<li><p>A componente <span class="math inline">\(e(.)\)</span> representa o erro de medida (<strong>efeito pepita</strong>) tal que <span class="math inline">\(e(.) \sim N(0, \tau^2)\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div id="krigagem" class="section level2">
+<h2><span class="header-section-number">12.13</span> Krigagem</h2>
+<ul>
+<li><p>O principal interesse em geoestatística é prever valores de uma variável que é espacialmente contínua, em localizações em que esta não foi medida.</p></li>
+<li><p>A técnica de prever para localizações não medidas, é chamada frequentemente de <strong>krigagem</strong>.</p></li>
+<li><p>O nome deriva do geólogo sul africano <em>D. G. Krige</em> que desenvolveu a primeira versão do método.</p></li>
+<li><p>Estimar o processo em uma localização não observada <span class="math inline">\(s&#39;\)</span>, <span class="math inline">\(\hat{Y}(s&#39;)\)</span></p></li>
+</ul>
+<p>Uma forma simples de obter estimativas para uma localização não medida é:</p>
+<p><span class="math display">\[\hat{y}(s&#39;) = \hat{\mu}(s&#39;)\]</span></p>
+<p>Neste caso, estamos considerando apenas efeitos globais.</p>
+<p>Podemos utilizar o conhecimento sobre a função de covariancia <span class="math inline">\(C\)</span> para adicionar à previsão uma estrutura de efeitos locais.</p>
+<p><strong>Tipos de krigagem:</strong></p>
+<ul>
+<li><p>Krigagem simples</p></li>
+<li><p>Krigagem ordinária</p></li>
+<li><p>Krigagem universal</p></li>
+<li><p>Krigagem bayesiana</p></li>
+</ul>
+<div id="krigagem-universal" class="section level3">
+<h3><span class="header-section-number">12.13.1</span> Krigagem Universal</h3>
+<ul>
+<li><p>Assume-se que existe um componente de tendência, ou seja, <span class="math inline">\(\mu(s) = x(s)\beta\)</span></p></li>
+<li><p>Vamos estimar <span class="math inline">\(\hat{y}(s&#39;)\)</span> através de uma combinação linear ponderada dos valores observados nas localizações medidas.</p></li>
+</ul>
+<p><span class="math display">\[\hat{y}(s&#39;) = \sum_{i=1}^{n} \lambda_i(s&#39;)y(s_i)\]</span></p>
+<p>sendo <span class="math inline">\(\lambda_i(s&#39;)\)</span> o peso dado a cada <span class="math inline">\(y(s_i)\)</span> e esse peso é função da covariância.</p>
+</div>
+<div id="algumas-consideracoes-da-krigagem-em-geral" class="section level3">
+<h3><span class="header-section-number">12.13.2</span> Algumas considerações da krigagem em geral:</h3>
+<ul>
+<li><p>Vale lembrar que todo processo está suscetível à escolha dos modelos para a tendência e para o variograma.</p></li>
+<li><p>Uma maneira de avaliar todo o procedimento é fazer uma validação cruzada.</p></li>
+<li><p>Na validação cruzada, cada elemento observado, <span class="math inline">\(y(s_i)\)</span>, é retirado e utilizando o restante dos dados fazemos uma previsão para a localização retirada. Como resultado obtemos, um conjunto de <span class="math inline">\(n\)</span> erros de previsão entre o valor observado e o valor predito.</p></li>
+<li><p>Esses erros podem ser analisados e podemos avaliar o processo de krigagem e se necessário podemos fazer ajustes no modelo para o variograma ou para a superfície de tendência.</p></li>
+</ul>
+</div>
+<div id="krigagem---dados-de-chuva-no-parana" class="section level3">
+<h3><span class="header-section-number">12.13.3</span> Krigagem - Dados de chuva no Paraná</h3>
+<p>O modelo ajustado com as estimativas dos parâmetros são:</p>
+<p><span class="math display">\[chuva(s) = 421.8 − 0.15 lat(s) − 0.39 long (s) + Z (s) + e(s)\]</span></p>
+<p>onde,</p>
+<ul>
+<li><p><span class="math inline">\(Z(s)\)</span> é um processo Gaussiano com média <span class="math inline">\(0\)</span> e estrutura de correlação exponencial com <span class="math inline">\(\phi = 130\)</span> e variância igual a <span class="math inline">\(\sigma^2 = 685\)</span>.</p></li>
+<li><p>A variância do efeito pepita foi <span class="math inline">\(\tau^2 = 480\)</span>.</p></li>
+</ul>
+<p>Utilizando a krigagem universal, obtemos:</p>
+<p><img src="figuras/geoestatistica20_2019.png" style="width:80.0%" /></p>
+</div>
+</div>
+<div id="pratica-no-r-1" class="section level2">
+<h2><span class="header-section-number">12.14</span> Prática no R</h2>
+</div>
+<div id="aplicacao-1---dados-de-temperatura" class="section level2">
+<h2><span class="header-section-number">12.15</span> Aplicação 1 - Dados de temperatura</h2>
+<p>Lendo o banco</p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb338-1" data-line-number="1">local &lt;-<span class="st"> &#39;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&#39;</span></a>
+<a class="sourceLine" id="cb338-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb338-3" data-line-number="3">temperatura &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;temperatura.dat&quot;</span>))</a></code></pre></div>
+<p>Carregando o pacote geoR</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" data-line-number="1"><span class="kw">library</span>(geoR)</a></code></pre></div>
+<p>Transformando em objeto geodata</p>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb340-1" data-line-number="1">temp.geo&lt;-<span class="kw">as.geodata</span>(temperatura, <span class="dt">coords.col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">data.col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb340-2" data-line-number="2"><span class="kw">summary</span>(temp.geo)</a></code></pre></div>
+<pre><code>Number of data points: 40 
+
+Coordinates summary
+    latitude longitude
+min    230.0      32.5
+max    234.5      34.0
+
+Distance summary
+  min   max 
+0.500 4.743 
+
+Data summary
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.43   17.13   17.94   17.83   18.38   19.07 </code></pre>
+<p>Análise exploratória</p>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb342-1" data-line-number="1"><span class="kw">points</span>(temp.geo) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-299-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Explorando a função <em>points.geodata</em></p>
+<p>Controlando o tamanho dos pontos</p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">pt.div=</span><span class="st">&quot;equal&quot;</span>)  </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-300-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb344-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">cex.min=</span>.<span class="dv">6</span>, <span class="dt">cex.max=</span>.<span class="dv">6</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-300-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">cex.min=</span>.<span class="dv">3</span>, <span class="dt">cex.max=</span><span class="dv">3</span>,<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-300-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Dividindo os dados em quantis</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb346-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">cex.min=</span><span class="dv">1</span>, <span class="dt">cex.max=</span><span class="dv">1</span>, <span class="dt">pt.div=</span><span class="st">&quot;quart&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-301-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">pt.div=</span><span class="st">&quot;quart&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-301-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">pt.div=</span><span class="st">&quot;dec&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-301-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">cex.min=</span><span class="dv">1</span>, <span class="dt">cex.max=</span><span class="dv">1</span>, <span class="dt">pt.div=</span><span class="st">&quot;quint&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-301-4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Modificando o caracter dos pontos</p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb350-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">pt.div=</span><span class="st">&quot;equal&quot;</span>, <span class="dt">pch.seq=</span><span class="st">&quot;+&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-302-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb351-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">pt.div=</span><span class="st">&quot;data.proportional&quot;</span>, <span class="dt">pch.seq=</span><span class="st">&quot;+&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-302-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Removendo a tendência, isto é, fazendo o gráfico dos resíduos de uma regressão linear nas coordenadas</p>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb352-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">trend=</span><span class="st">&quot;cte&quot;</span>,<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-303-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb353-1" data-line-number="1"><span class="kw">points</span>(temp.geo, <span class="dt">trend=</span><span class="st">&quot;1st&quot;</span>,<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-303-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Outro gráfico</p>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb354-1" data-line-number="1"><span class="kw">plot.geodata</span>(temp.geo)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-304-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb355-1" data-line-number="1"><span class="kw">plot.geodata</span>(temp.geo, <span class="dt">low=</span>T)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-304-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb356-1" data-line-number="1"><span class="kw">plot.geodata</span>(temp.geo, <span class="dt">trend=</span><span class="st">&quot;1st&quot;</span>, <span class="dt">low=</span>T)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-304-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Calculando variograma</p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb357-1" data-line-number="1">variog.temp &lt;-<span class="st"> </span><span class="kw">variog</span>(temp.geo, <span class="dt">max.dist=</span><span class="dv">4</span>)</a></code></pre></div>
+<pre><code>variog: computing omnidirectional variogram</code></pre>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb359-1" data-line-number="1"><span class="kw">plot</span>(variog.temp, <span class="dt">main=</span><span class="st">&quot;variogram&quot;</span>) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-305-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb360-1" data-line-number="1">variog.temp2 &lt;-<span class="st"> </span><span class="kw">variog</span>(temp.geo, <span class="dt">max.dist=</span><span class="dv">4</span>, <span class="dt">trend=</span><span class="st">&quot;1st&quot;</span>)</a></code></pre></div>
+<pre><code>variog: computing omnidirectional variogram</code></pre>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb362-1" data-line-number="1"><span class="kw">plot</span>(variog.temp2, <span class="dt">main=</span><span class="st">&quot;variogram&quot;</span>) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-305-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Utilizando a função variofit para estimar os parâmetros da função de covariância</p>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb363-1" data-line-number="1">wls1 &lt;-<span class="st"> </span><span class="kw">variofit</span>(variog.temp2,<span class="dt">cov.model=</span><span class="st">&quot;matern&quot;</span>,<span class="dt">fix.nugget=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>variofit: covariance model used is matern 
+variofit: weights used: npairs 
+variofit: minimisation function used: optim 
+variofit: searching for best initial value ... selected values:
+              sigmasq phi    tausq kappa
+initial.value &quot;0.13&quot;  &quot;0.59&quot; &quot;0&quot;   &quot;0.5&quot;
+status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
+loss value: 0.967481567978338 </code></pre>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" data-line-number="1"><span class="kw">summary</span>(wls1)</a></code></pre></div>
+<pre><code>$pmethod
+[1] &quot;WLS (weighted least squares)&quot;
+
+$cov.model
+[1] &quot;matern&quot;
+
+$spatial.component
+sigmasq     phi 
+ 0.1363  0.5372 
+
+$spatial.component.extra
+kappa 
+  0.5 
+
+$nugget.component
+tausq 
+    0 
+
+$fix.nugget
+[1] FALSE
+
+$fix.kappa
+[1] TRUE
+
+$practicalRange
+[1] 1.609
+
+$sum.of.squares
+ value 
+0.9415 
+
+$estimated.pars
+  tausq sigmasq     phi 
+ 0.0000  0.1363  0.5372 
+
+$weights
+[1] &quot;npairs&quot;
+
+$call
+variofit(vario = variog.temp2, cov.model = &quot;matern&quot;, fix.nugget = FALSE)
+
+attr(,&quot;class&quot;)
+[1] &quot;summary.variomodel&quot;</code></pre>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb367-1" data-line-number="1">wls2 &lt;-<span class="st"> </span><span class="kw">variofit</span>(variog.temp2,<span class="dt">cov.model=</span><span class="st">&quot;exponential&quot;</span>,<span class="dt">fix.nugget=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>variofit: covariance model used is exponential 
+variofit: weights used: npairs 
+variofit: minimisation function used: optim 
+variofit: searching for best initial value ... selected values:
+              sigmasq phi    tausq kappa
+initial.value &quot;0.13&quot;  &quot;0.59&quot; &quot;0&quot;   &quot;0.5&quot;
+status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
+loss value: 0.967481567978338 </code></pre>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" data-line-number="1"><span class="kw">summary</span>(wls2)</a></code></pre></div>
+<pre><code>$pmethod
+[1] &quot;WLS (weighted least squares)&quot;
+
+$cov.model
+[1] &quot;exponential&quot;
+
+$spatial.component
+sigmasq     phi 
+ 0.1363  0.5372 
+
+$spatial.component.extra
+kappa 
+  0.5 
+
+$nugget.component
+tausq 
+    0 
+
+$fix.nugget
+[1] FALSE
+
+$fix.kappa
+[1] TRUE
+
+$practicalRange
+[1] 1.609
+
+$sum.of.squares
+ value 
+0.9415 
+
+$estimated.pars
+  tausq sigmasq     phi 
+ 0.0000  0.1363  0.5372 
+
+$weights
+[1] &quot;npairs&quot;
+
+$call
+variofit(vario = variog.temp2, cov.model = &quot;exponential&quot;, fix.nugget = FALSE)
+
+attr(,&quot;class&quot;)
+[1] &quot;summary.variomodel&quot;</code></pre>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb371-1" data-line-number="1">wls3 &lt;-<span class="st"> </span><span class="kw">variofit</span>(variog.temp2,<span class="dt">cov.model=</span><span class="st">&quot;gaussian&quot;</span>,<span class="dt">fix.nugget=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>variofit: covariance model used is gaussian 
+variofit: weights used: npairs 
+variofit: minimisation function used: optim 
+variofit: searching for best initial value ... selected values:
+              sigmasq phi    tausq kappa
+initial.value &quot;0.13&quot;  &quot;0.59&quot; &quot;0&quot;   &quot;0.5&quot;
+status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
+loss value: 0.815547531351043 </code></pre>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" data-line-number="1"><span class="kw">summary</span>(wls3)</a></code></pre></div>
+<pre><code>$pmethod
+[1] &quot;WLS (weighted least squares)&quot;
+
+$cov.model
+[1] &quot;gaussian&quot;
+
+$spatial.component
+sigmasq     phi 
+ 0.1371  0.7150 
+
+$spatial.component.extra
+kappa 
+  0.5 
+
+$nugget.component
+tausq 
+    0 
+
+$fix.nugget
+[1] FALSE
+
+$fix.kappa
+[1] TRUE
+
+$practicalRange
+[1] 1.238
+
+$sum.of.squares
+ value 
+0.7637 
+
+$estimated.pars
+  tausq sigmasq     phi 
+ 0.0000  0.1371  0.7150 
+
+$weights
+[1] &quot;npairs&quot;
+
+$call
+variofit(vario = variog.temp2, cov.model = &quot;gaussian&quot;, fix.nugget = FALSE)
+
+attr(,&quot;class&quot;)
+[1] &quot;summary.variomodel&quot;</code></pre>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1">wls4 &lt;-<span class="st"> </span><span class="kw">variofit</span>(variog.temp2,<span class="dt">cov.model=</span><span class="st">&quot;spherical&quot;</span>,<span class="dt">fix.nugget=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>variofit: covariance model used is spherical 
+variofit: weights used: npairs 
+variofit: minimisation function used: optim 
+variofit: searching for best initial value ... selected values:
+              sigmasq phi    tausq kappa
+initial.value &quot;0.13&quot;  &quot;1.76&quot; &quot;0&quot;   &quot;0.5&quot;
+status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
+loss value: 0.835325143183182 </code></pre>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb377-1" data-line-number="1"><span class="kw">summary</span>(wls4)</a></code></pre></div>
+<pre><code>$pmethod
+[1] &quot;WLS (weighted least squares)&quot;
+
+$cov.model
+[1] &quot;spherical&quot;
+
+$spatial.component
+sigmasq     phi 
+  0.137   1.558 
+
+$spatial.component.extra
+kappa 
+  0.5 
+
+$nugget.component
+tausq 
+    0 
+
+$fix.nugget
+[1] FALSE
+
+$fix.kappa
+[1] TRUE
+
+$practicalRange
+[1] 1.558
+
+$sum.of.squares
+ value 
+0.7751 
+
+$estimated.pars
+  tausq sigmasq     phi 
+  0.000   0.137   1.558 
+
+$weights
+[1] &quot;npairs&quot;
+
+$call
+variofit(vario = variog.temp2, cov.model = &quot;spherical&quot;, fix.nugget = FALSE)
+
+attr(,&quot;class&quot;)
+[1] &quot;summary.variomodel&quot;</code></pre>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb379-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb379-2" data-line-number="2"><span class="kw">plot</span>(variog.temp2, <span class="dt">main=</span><span class="st">&quot;matern&quot;</span>)</a>
+<a class="sourceLine" id="cb379-3" data-line-number="3"><span class="kw">lines</span>(wls1)</a>
+<a class="sourceLine" id="cb379-4" data-line-number="4"><span class="kw">plot</span>(variog.temp2, <span class="dt">main=</span><span class="st">&quot;exponencial&quot;</span>)</a>
+<a class="sourceLine" id="cb379-5" data-line-number="5"><span class="kw">lines</span>(wls2)</a>
+<a class="sourceLine" id="cb379-6" data-line-number="6"><span class="kw">plot</span>(variog.temp2, <span class="dt">main=</span><span class="st">&quot;gaussian&quot;</span>)</a>
+<a class="sourceLine" id="cb379-7" data-line-number="7"><span class="kw">lines</span>(wls3)</a>
+<a class="sourceLine" id="cb379-8" data-line-number="8"><span class="kw">plot</span>(variog.temp2, <span class="dt">main=</span><span class="st">&quot;esférico&quot;</span>)</a>
+<a class="sourceLine" id="cb379-9" data-line-number="9"><span class="kw">lines</span>(wls4)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-307-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb380-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb380-2" data-line-number="2"><span class="kw">plot</span>(variog.temp2)</a>
+<a class="sourceLine" id="cb380-3" data-line-number="3"><span class="kw">lines</span>(wls1)</a>
+<a class="sourceLine" id="cb380-4" data-line-number="4"><span class="kw">lines</span>(wls2, <span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb380-5" data-line-number="5"><span class="kw">lines</span>(wls3, <span class="dt">col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb380-6" data-line-number="6"><span class="kw">lines</span>(wls4, <span class="dt">col=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb380-7" data-line-number="7"><span class="kw">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;matern&quot;</span>,<span class="st">&quot;exponencial&quot;</span>,<span class="st">&quot;gaussiano&quot;</span>,<span class="st">&quot;esférico&quot;</span>), <span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">lty=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-308-1.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="repita-a-analise-para-o-banco-de-ovos-em-higienopolis" class="section level2">
+<h2><span class="header-section-number">12.16</span> Repita a análise para o banco de ovos em Higienópolis</h2>
+<p>Lendo o banco</p>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb381-1" data-line-number="1">higi &lt;-<span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;ovoshigi.dat&quot;</span>))</a>
+<a class="sourceLine" id="cb381-2" data-line-number="2">higi.borda &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">paste0</span>(local,<span class="st">&quot;points_higi.dat&quot;</span>))</a></code></pre></div>
+<p>Transformando em objeto geodata</p>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb382-1" data-line-number="1">ovo.geo&lt;-<span class="kw">as.geodata</span>(higi, <span class="dt">coords.col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">data.col=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb382-2" data-line-number="2"><span class="kw">summary</span>(ovo.geo)</a></code></pre></div>
+<pre><code>Number of data points: 40 
+
+Coordinates summary
+         x       y
+min 677963 7469028
+max 678725 7469672
+
+Distance summary
+    min     max 
+  6.083 826.473 
+
+Data summary
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    909    3944    6663    6025    7992   12655 </code></pre>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb384-1" data-line-number="1"><span class="kw">points</span>(ovo.geo, <span class="dt">col=</span><span class="dv">2</span>, <span class="dt">bor=</span>higi.borda)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-310-1.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bibliografia-sugerida-9" class="section level2">
+<h2><span class="header-section-number">12.17</span> Bibliografia sugerida</h2>
+<p>Diggle, Peter J. &amp; Ribeiro Jr, Paulo Justiniano; Model-based Geostatistics
+Series: Springer Series in Statistics, 2007</p>
+<p>Isaaks and Srivastava; An Introduction to Applied Geostatistics 1st Edition, 1989</p>
+<p>CRESSIE, N. A. Statistics For Spatial Data. Revised edition. Iowa State Univesity, New York: A Wiley Interscience Publication, 1993.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dados-de-area-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="geoestatistica-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dados-de-area-iii.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
