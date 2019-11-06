@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS</title>
+  <meta name="description" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
+
+
+<meta name="date" content="2019-11-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="transformações-e-suavizações.html"/>
+<link rel="next" href="introdução-à-análise-estatística-espacial.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.9/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentação.html"><a href="apresentação.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a><ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#o-que-são-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.1</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#objetivos-dos-estudos-ecológicos"><i class="fa fa-check"></i><b>2.2</b> Objetivos dos Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas-1"><i class="fa fa-check"></i><b>2.4</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-desenhos-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.5</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#alguns-conceitos"><i class="fa fa-check"></i><b>2.6</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.7</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#árvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.8</b> Árvores, Bosques ou as Florestas ?</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-árvores"><i class="fa fa-check"></i><b>2.8.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.8.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#os-bosques"><i class="fa fa-check"></i><b>2.8.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.8.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-florestas"><i class="fa fa-check"></i><b>2.8.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#falácia-ecológica-ou-viés-de-agregação"><i class="fa fa-check"></i><b>2.9</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#problemas-práticos"><i class="fa fa-check"></i><b>2.10</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#vantagens"><i class="fa fa-check"></i><b>2.11</b> Vantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#desvantagens"><i class="fa fa-check"></i><b>2.12</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#resumindo"><i class="fa fa-check"></i><b>2.13</b> Resumindo</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#exercícios-propostos"><i class="fa fa-check"></i><b>2.14</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.15" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.15</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a><ul>
+<li class="chapter" data-level="3.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#o-que-são-séries-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#hipóteses-básicas-do-estudo-das-séries-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#classificação-dos-tipos-de-séries-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#processo-estocástico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#notação-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#objetivos-análise-de-séries-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocovariância-de-um-processo-estacionário"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#porque-a-estacionariedade-é-importante"><i class="fa fa-check"></i><b>3.7.2</b> Porque a Estacionariedade é Importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal"><i class="fa fa-check"></i><b>3.8</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.9" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#independência"><i class="fa fa-check"></i><b>3.9</b> Independência</a></li>
+<li class="chapter" data-level="3.10" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#dependência"><i class="fa fa-check"></i><b>3.10</b> Dependência</a></li>
+<li class="chapter" data-level="3.11" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocorrelação---fac-em-inglês-autocorrelation-function-acf"><i class="fa fa-check"></i><b>3.11</b> Função de Autocorrelação - FAC (em Inglês Autocorrelation function ACF )</a></li>
+<li class="chapter" data-level="3.12" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal-1"><i class="fa fa-check"></i><b>3.12</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.13" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#tendência"><i class="fa fa-check"></i><b>3.13</b> Tendência</a></li>
+<li class="chapter" data-level="3.14" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.14</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.15" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.15</b> Ciclo</a><ul>
+<li class="chapter" data-level="3.15.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.15.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.16" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#termo-aleatório-ou-ruído-branco"><i class="fa fa-check"></i><b>3.16</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.17" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#composição-dos-modelos-de-uma-séries-temporais"><i class="fa fa-check"></i><b>3.17</b> Composição dos Modelos de uma séries temporais</a><ul>
+<li class="chapter" data-level="3.17.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.17.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.17.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.17.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.18" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#decomposição-de-um-séries-temporais"><i class="fa fa-check"></i><b>3.18</b> Decomposição de um séries temporais</a></li>
+<li class="chapter" data-level="3.19" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#prática-no-r"><i class="fa fa-check"></i><b>3.19</b> Prática no R</a><ul>
+<li class="chapter" data-level="3.19.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#a-biblioteca-ts-é-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.19.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.19.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#simulando-uma-série-temporal"><i class="fa fa-check"></i><b>3.19.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.19.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#importando-uma-vetor-e-transformando-em-série-temporal"><i class="fa fa-check"></i><b>3.19.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.19.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#utilizando-dados-da-incidência-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.19.4</b> Utilizando dados da Incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+<li class="chapter" data-level="3.19.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#avaliando-a-estacionariedade-da-séries-temporais"><i class="fa fa-check"></i><b>3.19.5</b> Avaliando a Estacionariedade da séries temporais</a></li>
+<li class="chapter" data-level="3.19.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#avaliando-a-tendência-em-uma-séries-temporais"><i class="fa fa-check"></i><b>3.19.6</b> Avaliando a tendência em uma séries temporais</a></li>
+<li class="chapter" data-level="3.19.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#avaliando-a-sazonalidade-da-séries-temporais"><i class="fa fa-check"></i><b>3.19.7</b> Avaliando a Sazonalidade da séries temporais</a></li>
+</ul></li>
+<li class="chapter" data-level="3.20" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>3.20</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.21" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#material-on-line-sobre-séries-temporais"><i class="fa fa-check"></i><b>3.21</b> Material on line sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.22" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.22</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a><ul>
+<li class="chapter" data-level="4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#alguns-exemplos-de-transfomação-dos-dados-em-st"><i class="fa fa-check"></i><b>4.1.1</b> Alguns exemplos de transfomação dos dados em ST:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transformações-box-cox-digferenciação-e-logarítmica"><i class="fa fa-check"></i><b>4.1.2</b> Transformações Box-Cox, Digferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#métodos-de-alisamento-ou-suavização"><i class="fa fa-check"></i><b>4.2</b> Métodos de Alisamento ou Suavização</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#algumas-funções-de-suavização"><i class="fa fa-check"></i><b>4.2.1</b> Algumas funções de suavização</a></li>
+<li class="chapter" data-level="4.2.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#médias-móveis"><i class="fa fa-check"></i><b>4.2.2</b> Médias móveis</a></li>
+<li class="chapter" data-level="4.2.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-das-médias-móveis"><i class="fa fa-check"></i><b>4.2.3</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#kernel"><i class="fa fa-check"></i><b>4.3</b> Kernel</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#diferentes-funções-kernel"><i class="fa fa-check"></i><b>4.3.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.3.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#largura-de-banda"><i class="fa fa-check"></i><b>4.3.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.3.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-kernel"><i class="fa fa-check"></i><b>4.3.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#lowess-locally-weighted-sum-of-square"><i class="fa fa-check"></i><b>4.4</b> Lowess (Locally Weighted Sum of Square)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-lowess"><i class="fa fa-check"></i><b>4.4.1</b> Utilização do Lowess</a></li>
+<li class="chapter" data-level="4.4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#comparando"><i class="fa fa-check"></i><b>4.4.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines"><i class="fa fa-check"></i><b>4.5</b> Splines</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines-vs-loess"><i class="fa fa-check"></i><b>4.5.1</b> Splines <em>vs</em> Loess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#exercícios-propostos-2"><i class="fa fa-check"></i><b>4.6</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.7" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#o-que-são-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#alguns-processos-estocásticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autoregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-de-médias-móveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-médias-móveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-integrado-de-médias-móveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-não-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#função-de-autocorrelação-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-identificação"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#métricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#análise-de-resíduos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-automático-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-de-previsão"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#correlação-cruzada-cross-corralation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Corralation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (generalized Additive Models)</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#por-que-não-usar"><i class="fa fa-check"></i><b>5.15</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-em-séries-temporais"><i class="fa fa-check"></i><b>5.16</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.16.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>5.16.1</b> Exemplo de um modelo GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="5.17" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-modelo-gam-aplicado-a-séries-temporais"><i class="fa fa-check"></i><b>5.17</b> Exemplo de modelo GAM aplicado a Séries Temporais</a><ul>
+<li class="chapter" data-level="5.17.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-série-temporal-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.17.1</b> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.18" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-propostos-3"><i class="fa fa-check"></i><b>5.18</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="5.19" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.19</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a><ul>
+<li class="chapter" data-level="6.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#o-que-é-análise-estatística-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial ?</a></li>
+<li class="chapter" data-level="6.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#origem-da-estatística-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#quando-usar-métodos-de-análise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial ?</a></li>
+<li class="chapter" data-level="6.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dependência-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações-em-saúde"><i class="fa fa-check"></i><b>6.5</b> Aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoestatıstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-área"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#sistema-de-informações-geográficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a><ul>
+<li class="chapter" data-level="6.12.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#alguns-conceitos-1"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a><ul>
+<li class="chapter" data-level="6.14.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#autocorrelação-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a><ul>
+<li class="chapter" data-level="6.15.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dengue-em-dourados"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#vigilância-dos-vetores-da-dengue-usando-modelagem-espaço-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelo-espaço-temporal-para-a-análise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-da-temperatura-na-costa-central-da-califórnia"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#a-relação-entre-a-malária-e-a-chuva-no-estado-do-pará-uma-análise-espaço-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.6</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#material-on-line-sobre-estatística-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.18</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a><ul>
+<li class="chapter" data-level="7.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#o-que-são-padrões-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="7.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#tipos-de-distribuições"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel-com-correção-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#kernel-com-variação-da-população"><i class="fa fa-check"></i><b>7.6</b> Kernel com Variação da população</a></li>
+<li class="chapter" data-level="7.7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#razão-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-f-e-g---distância-do-vizinho-mais-próximo"><i class="fa fa-check"></i><b>7.8</b> Função F e G - Distância do vizinho mais próximo</a></li>
+<li class="chapter" data-level="7.9" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-k-de-ripley-ou-apenas-função-k."><i class="fa fa-check"></i><b>7.9</b> Função K de Ripley (ou apenas função K).</a></li>
+<li class="chapter" data-level="7.10" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-l"><i class="fa fa-check"></i><b>7.10</b> Função <em>L</em></a></li>
+<li class="chapter" data-level="7.11" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#detecção-de-cluster"><i class="fa fa-check"></i><b>7.11</b> Detecção de cluster</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#testes-genéricos-de-cluster"><i class="fa fa-check"></i><b>7.11.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.11.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#fonte-específica"><i class="fa fa-check"></i><b>7.11.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-propostos-4"><i class="fa fa-check"></i><b>7.12</b> Exercícios Propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a><ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>9</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="9.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>9.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="9.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>9.3</b> Visualização: Mapa Temático usando a biblioteca <strong>tmap</strong></a></li>
+<li class="chapter" data-level="9.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória"><i class="fa fa-check"></i><b>9.4</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.4.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="9.4.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>9.4.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>9.5</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="9.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>9.6</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="9.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>9.7</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="9.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>9.8</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="9.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>9.9</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="9.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>9.10</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="9.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>9.11</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="9.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>9.12</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="9.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>9.13</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="9.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>9.14</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>10</b> Dados de Área II</a><ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-de-regressão-espacial"><i class="fa fa-check"></i><b>10.1</b> Modelos de Regressão Espacial</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-globais"><i class="fa fa-check"></i><b>10.2</b> Modelos com Efeitos Espaciais Globais</a></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#spatial-lag-models-sar"><i class="fa fa-check"></i><b>10.3</b> Spatial Lag Models (SAR)</a></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#spatial-error-models-car"><i class="fa fa-check"></i><b>10.4</b> Spatial Error Models (CAR)</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-sar-vs-car"><i class="fa fa-check"></i><b>10.5</b> Modelos SAR vs CAR</a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>10.6</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais-1"><i class="fa fa-check"></i><b>10.7</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#errata"><i class="fa fa-check"></i><b>10.8</b> ERRATA</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>10.9</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área III</a><ul>
+<li class="chapter" data-level="11.1" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#exemplo-com-os-dados-de-dengue-em-douradosms-1"><i class="fa fa-check"></i><b>11.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="11.2" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#kernel-por-atributos"><i class="fa fa-check"></i><b>11.2</b> Kernel por atributos</a></li>
+<li class="chapter" data-level="11.3" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#matriz-de-vizinhança-1"><i class="fa fa-check"></i><b>11.3</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="11.4" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#matriz-de-vizinhança-2"><i class="fa fa-check"></i><b>11.4</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="11.5" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#autocorrelação-espacial-1"><i class="fa fa-check"></i><b>11.5</b> Autocorrelação Espacial</a></li>
+<li class="chapter" data-level="11.6" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#modelos-linear-car-e-gwr"><i class="fa fa-check"></i><b>11.6</b> Modelos Linear, CAR e GWR</a></li>
+<li class="chapter" data-level="11.7" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>11.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="geoestatística.html"><a href="geoestatística.html"><i class="fa fa-check"></i><b>12</b> Geoestatística</a><ul>
+<li class="chapter" data-level="12.1" data-path="geoestatística.html"><a href="geoestatística.html#conceito"><i class="fa fa-check"></i><b>12.1</b> Conceito</a></li>
+<li class="chapter" data-level="12.2" data-path="geoestatística.html"><a href="geoestatística.html#objetivos"><i class="fa fa-check"></i><b>12.2</b> Objetivos</a></li>
+<li class="chapter" data-level="12.3" data-path="geoestatística.html"><a href="geoestatística.html#principais-aplicações"><i class="fa fa-check"></i><b>12.3</b> Principais aplicações</a></li>
+<li class="chapter" data-level="12.4" data-path="geoestatística.html"><a href="geoestatística.html#exemplo"><i class="fa fa-check"></i><b>12.4</b> Exemplo</a></li>
+<li class="chapter" data-level="12.5" data-path="geoestatística.html"><a href="geoestatística.html#efeitos"><i class="fa fa-check"></i><b>12.5</b> Efeitos</a></li>
+<li class="chapter" data-level="12.6" data-path="geoestatística.html"><a href="geoestatística.html#formalizando"><i class="fa fa-check"></i><b>12.6</b> Formalizando</a></li>
+<li class="chapter" data-level="12.7" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-primeira-ordem-regressão-linear"><i class="fa fa-check"></i><b>12.7</b> Efeito de primeira ordem: regressão linear</a></li>
+<li class="chapter" data-level="12.8" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-segunda-ordem-regressão-espacial"><i class="fa fa-check"></i><b>12.8</b> Efeito de segunda ordem: regressão espacial</a></li>
+<li class="chapter" data-level="12.9" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-1"><i class="fa fa-check"></i><b>12.9</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="12.9.1" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>12.9.1</b> Análise exploratória: efeitos de primeira ordem</a></li>
+</ul></li>
+<li class="chapter" data-level="12.10" data-path="geoestatística.html"><a href="geoestatística.html#simplificações-estacionariedade-e-isotropia"><i class="fa fa-check"></i><b>12.10</b> Simplificações: Estacionariedade e Isotropia</a></li>
+<li class="chapter" data-level="12.11" data-path="geoestatística.html"><a href="geoestatística.html#variograma-empırico"><i class="fa fa-check"></i><b>12.11</b> Variograma empı́rico</a><ul>
+<li class="chapter" data-level="12.11.1" data-path="geoestatística.html"><a href="geoestatística.html#relação-entre-variograma-covariograma-e-correlograma"><i class="fa fa-check"></i><b>12.11.1</b> Relação entre variograma, covariograma e correlograma</a></li>
+<li class="chapter" data-level="12.11.2" data-path="geoestatística.html"><a href="geoestatística.html#estrutura-do-variograma"><i class="fa fa-check"></i><b>12.11.2</b> Estrutura do variograma</a></li>
+<li class="chapter" data-level="12.11.3" data-path="geoestatística.html"><a href="geoestatística.html#variogramas-para-modelos-isotrópicos"><i class="fa fa-check"></i><b>12.11.3</b> Variogramas para modelos isotrópicos</a></li>
+<li class="chapter" data-level="12.11.4" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1"><i class="fa fa-check"></i><b>12.11.4</b> Aplicação 1</a></li>
+<li class="chapter" data-level="12.11.5" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-2"><i class="fa fa-check"></i><b>12.11.5</b> Aplicação 2</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="geoestatística.html"><a href="geoestatística.html#modelagem-em-geoestatística"><i class="fa fa-check"></i><b>12.12</b> Modelagem em Geoestatística</a><ul>
+<li class="chapter" data-level="12.12.1" data-path="geoestatística.html"><a href="geoestatística.html#modelando-dados-de-geoestatística---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>12.12.1</b> Modelando dados de Geoestatística - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="12.13" data-path="geoestatística.html"><a href="geoestatística.html#krigagem"><i class="fa fa-check"></i><b>12.13</b> Krigagem</a><ul>
+<li class="chapter" data-level="12.13.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-universal"><i class="fa fa-check"></i><b>12.13.1</b> Krigagem Universal</a></li>
+<li class="chapter" data-level="12.13.2" data-path="geoestatística.html"><a href="geoestatística.html#algumas-considerações-da-krigagem-em-geral"><i class="fa fa-check"></i><b>12.13.2</b> Algumas considerações da krigagem em geral:</a></li>
+<li class="chapter" data-level="12.13.3" data-path="geoestatística.html"><a href="geoestatística.html#krigagem---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>12.13.3</b> Krigagem - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="12.14" data-path="geoestatística.html"><a href="geoestatística.html#prática-no-r-1"><i class="fa fa-check"></i><b>12.14</b> Prática no R</a></li>
+<li class="chapter" data-level="12.15" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1---dados-de-temperatura"><i class="fa fa-check"></i><b>12.15</b> Aplicação 1 - Dados de temperatura</a><ul>
+<li class="chapter" data-level="12.15.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-1"><i class="fa fa-check"></i><b>12.15.1</b> Krigagem</a></li>
+</ul></li>
+<li class="chapter" data-level="12.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>12.16</b> Repita a análise para o banco de ovos em Higienópolis</a></li>
+<li class="chapter" data-level="12.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-9"><i class="fa fa-check"></i><b>12.17</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html"><i class="fa fa-check"></i><b>13</b> Análise Espaço-Temporal</a><ul>
+<li class="chapter" data-level="13.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-conceitos-2"><i class="fa fa-check"></i><b>13.1</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="13.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#processo-de-difusão-das-doenças"><i class="fa fa-check"></i><b>13.2</b> Processo de difusão das doenças</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#difusão-espacial"><i class="fa fa-check"></i><b>13.2.1</b> Difusão Espacial</a></li>
+<li class="chapter" data-level="13.2.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#espacializando-a-difusão-das-doenças"><i class="fa fa-check"></i><b>13.2.2</b> Espacializando a difusão das doenças</a></li>
+<li class="chapter" data-level="13.2.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#processo-de-difusão-das-doenças-1"><i class="fa fa-check"></i><b>13.2.3</b> Processo de difusão das doenças</a></li>
+<li class="chapter" data-level="13.2.4" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelos-de-difusão-de-doenças"><i class="fa fa-check"></i><b>13.2.4</b> Modelos de difusão de doenças</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#analise-exploratória-espaço-temporal"><i class="fa fa-check"></i><b>13.3</b> Analise Exploratória Espaço-temporal</a></li>
+<li class="chapter" data-level="13.4" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#cluster-espaço-temporal"><i class="fa fa-check"></i><b>13.4</b> Cluster Espaço-Temporal</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#a-estatıstica-scan"><i class="fa fa-check"></i><b>13.4.1</b> A estatı́stica Scan</a></li>
+<li class="chapter" data-level="13.4.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-1---leptospirose-no-rio-de-janeiro"><i class="fa fa-check"></i><b>13.4.2</b> Aplicação 1 - Leptospirose no Rio de Janeiro</a></li>
+<li class="chapter" data-level="13.4.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-2---arboviroses-no-rio-de-janeiro"><i class="fa fa-check"></i><b>13.4.3</b> Aplicação 2 - Arboviroses no Rio de Janeiro</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelagem-estatística-espaço-temporal"><i class="fa fa-check"></i><b>13.5</b> Modelagem Estatística Espaço-temporal</a><ul>
+<li class="chapter" data-level="13.5.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-resultados-preliminares"><i class="fa fa-check"></i><b>13.5.1</b> Alguns resultados preliminares</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#bibliografia-sugerida-10"><i class="fa fa-check"></i><b>13.6</b> Bibliografia sugerida</a></li>
+<li class="chapter" data-level="13.7" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#roteiro-para-a-execução-do-trabalho-final"><i class="fa fa-check"></i><b>13.7</b> Roteiro para a execução do trabalho final</a><ul>
+<li class="chapter" data-level="13.7.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>13.7.1</b> Sugestões de locais para baixar os dados e os mapas</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#section"><i class="fa fa-check"></i><b>13.8</b> </a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="modelagem-em-séries-temporais" class="section level1">
+<h1><span class="header-section-number"> 5</span> Modelagem em Séries Temporais</h1>
+<div id="o-que-são-os-modelos-box-jenkins" class="section level2">
+<h2><span class="header-section-number">5.1</span> O que são os Modelos Box &amp; Jenkins</h2>
+<p>A abordagem de Box-Jenkins à modelagem dos processos ARIMA foi descrita num livro publicado por George Box e Gwilym Jenkins em 1970.</p>
+<pre><code>BOX, G.E.P. and G.M. JENKINS (1970) 
+Time series analysis: Forecasting and control, San Francisco: Holden-Day.</code></pre>
+<p>A abordagem Box-Jenkins envolve a identificação de um processo ARIMA (Modelos autorregressivos, integrados e de médias móveis) adequado, ajustando-o aos dados e, uma vez ajustados permite também utilizar esses modelos para a descição e/ou previsão (<em>forecast</em>).</p>
+<p>Uma das características atraentes da abordagem Box-Jenkins é que os processos ARIMA são uma classe muito rica de modelos e geralmente é possível encontrar um modelo que forneça uma descrição adequada dos dados. Ajustam simultaneamente tendência, sazonalidade, ciclicidade e estrutura de dependência serial.</p>
+<ul>
+<li><p>A dependência serial é a influência que um dado evento no tempo recebe de pontos anteriores.</p></li>
+<li><p>O processo de modelagem <strong>B&amp;J</strong> é feito em um ciclo iterativo de 3 estágios (repetido até o ajuste do modelo mais adequado):</p>
+<ol style="list-style-type: lower-roman">
+<li><p><strong>Identificação</strong> - análise exploratória, baseada em gráficos dos dados brutos, autocorrelação, autocorrelação parcial, buscando identificar o tipo de modelo + adequado;</p></li>
+<li><p><strong>Estimação</strong> - estimativa de termos e parâmetros e seleção do “<em>melhor modelo</em>”;</p></li>
+<li><p><strong>Diagnóstico</strong> - critérios de ajuste, parcimônia.</p></li>
+</ol></li>
+</ul>
+</div>
+<div id="alguns-processos-estocásticos" class="section level2">
+<h2><span class="header-section-number">5.2</span> Alguns processos estocásticos</h2>
+<ul>
+<li><strong>Processo aleatório (ruido branco)</strong>: seqüência de variáveis aleatórias (<span class="math inline">\(a_t\)</span>) que são mutuamente independentes e identicamente distribuídas. Possui média e variância constantes e os coeficientes de autocorrelação são iguais a:</li>
+</ul>
+<p><span class="math display">\[ \rho_{h} = \left\{ \begin{array}{rc} 1, &amp;\mbox{se} \quad h = 0, \\  0 , &amp;\mbox{se} \quad h = \pm 1, \pm 2, ... \end{array}\right.\]</span></p>
+<ul>
+<li><p><strong>Passeio aleatório (random walk)</strong>: Denomina-se passeio aleatório quando a variável aleatória <span class="math inline">\(Z_t\)</span> é igual à <span class="math inline">\(Z_{t-1}\)</span> mais um erro aleatório <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(Z_t = Z_{t-1} + a_t\)</span>.</p>
+<ul>
+<li>Quando <span class="math inline">\(t = 0 \rightarrow Z_1 = a_1\)</span>, logo <span class="math display">\[Z_t = \sum_{t}^{i=1} a_i\]</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="modelo-arima" class="section level2">
+<h2><span class="header-section-number">5.3</span> Modelo ARIMA</h2>
+<p>Na análise de séries temporais, um Modelo Autoregressivo Integrado de Médias Móveis (Autoregressive Integrated Moving Average ou <strong>ARIMA</strong>, na sigla em inglês) é uma generalização de um modelo Autoregressivo de Médias Móveis (<strong>ARMA</strong>). Ambos os modelos são ajustados aos dados da série temporal para entender melhor os dados ou para prever pontos futuros na série. Modelos ARIMA são aplicados em alguns casos em que os dados mostram evidências de não estacionariedade, em que um passo inicial de diferenciação (correspondente à parte “integrada” do modelo) pode ser aplicado uma ou mais vezes para eliminar a não estacionariedade.</p>
+<p>Temos então:</p>
+<ul>
+<li><p><strong>AR (Autoregressivo)</strong>: avalia a relação entre os períodos (lags) através da autocorrelação, ou seja, indica que a variável de interesse é “regressada” em seus próprios valores defasados, isto é, anteriores. O objetivo de desse modelo e extrair essa influência.</p></li>
+<li><p><strong>I (Integrated)</strong>: Aplica a diferenciação, se necessária, ou seja, indica que os valores de dados foram substituídos com a diferença entre seus valores. E os valores anteriores e este processo diferenciador pode ter sido realizado mais de uma vez.</p></li>
+<li><p><strong>MA – Moving Average</strong>: Indica que o erro de regressão é na verdade uma combinação linear dos termos de erro, cujos valores ocorreram contemporaneamente e em vários momentos no passado, ou seja, avalia os erros entre períodos e extrai estes erros (não tem relação com MA usados para suavização da ST).</p></li>
+</ul>
+<p><img src="figuras/ARIMA.png" width="400" /></p>
+<ul>
+<li><p><strong>p</strong> é a ordem (número de defasagens) do modelo autorregressivo;</p></li>
+<li><p><strong>d</strong> é o grau de diferenciação (o número de vezes em que os dados tiveram valores passados subtraídos);</p></li>
+<li><p><strong>q</strong> é a ordem do modelo de média móvel.</p></li>
+</ul>
+<p>Exemplos:</p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(p = 1\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pela observação prévia + erro</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p = 2\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada por duas observações prévias + erro</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d = 0\)</span></td>
+<td>Significa que não é aplicada a diferenciação</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d = 1\)</span></td>
+<td>Significa que será aplicada diferenciação de primeira ordem</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d = 2\)</span></td>
+<td>Significa que será aplicada diferenciação de segunda ordem</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q = 1\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pelo erro da observação prévia</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(q = 2\)</span></td>
+<td>Significa que uma determinada observação pode ser explicada pelo erro de duas observações prévias</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">ARIMA</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">AR(1) ou ARIMA(1,0,0)</td>
+<td align="center">Apenas elemento autoregressivo , de <span class="math inline">\(1^{a}\)</span> ordem</td>
+</tr>
+<tr class="even">
+<td align="center">AR(2) ou ARIMA(2,0,0)</td>
+<td align="center">Apenas elemento autoregressivo , de <span class="math inline">\(2^{a}\)</span> ordem</td>
+</tr>
+<tr class="odd">
+<td align="center">MA(1) ou ARIMA(0,0,1)</td>
+<td align="center">Apenas Média Móvel</td>
+</tr>
+<tr class="even">
+<td align="center">ARMA(1,1)</td>
+<td align="center">Autorregressão e média móvel de <span class="math inline">\(1^{a}\)</span> ordem</td>
+</tr>
+</tbody>
+</table>
+<div id="modelo-autoregressivo-de-ordem-p---arp-ou-arimap00" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</h3>
+<p>Supondo que a variável aleatória <span class="math inline">\(z_t\)</span> é linearmente correlacionada com seus próprios valores defasados, este é um modelo autoregressivo geral de ordem <em>p</em>.</p>
+<p><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t\]</span> , sendo <span class="math inline">\(t=1,2,...,p\)</span></p>
+<ul>
+<li><p>O objetivo é estimar:</p>
+<ul>
+<li><p>a constante <em>c</em> - média do processo ou intercepto</p></li>
+<li><p>a ordem <em>p</em> do modelo - até onde vai a dependência</p></li>
+<li><p>os parâmetros <span class="math inline">\(\phi\)</span> de cada termo - peso de cada ponto passado na determinação do ponto <em>t</em></p></li>
+</ul></li>
+<li><p>Para estimar os parâmetros <span class="math inline">\(\phi\)</span> de um AR, a estacionariedade de <span class="math inline">\(1^a\)</span> e <span class="math inline">\(2^a\)</span> ordens são fundamentais !!!</p></li>
+</ul>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Processo</th>
+<th align="center">Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">AR(1)</td>
+<td align="center"><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + a_t\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">AR(2)</td>
+<td align="center"><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + a_t\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">AR(p)</td>
+<td align="center"><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t\]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="condições-de-estacionariedade" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Condições de estacionariedade</h3>
+<p>Uma série é estacionária quando suas propriedades não variam ao longo do tempo. Em um processo AR, a estacionariedade se reflete na estimação dos parâmetros:</p>
+<ul>
+<li><p>No caso AR(1) basta que <span class="math inline">\(|\phi_1| &lt; 1\)</span> para que o processo seja estacionário.</p></li>
+<li><p>No caso AR(2):</p>
+<ul>
+<li><p><span class="math inline">\(|\phi_2|&lt; 1\)</span></p></li>
+<li><p><span class="math inline">\(\phi_2 + \phi_1 &lt; 1\)</span></p></li>
+<li><p><span class="math inline">\(\phi_2 - \phi_1 &lt; 1\)</span></p></li>
+</ul></li>
+</ul>
+</div>
+<div id="modelo-de-médias-móveis-de-ordem-q---maq-ou-arima00q" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</h3>
+<p>Independente do processo autoregressivo, cada elemento da série pode também ser afetado pelo erro passado - processo “Médias Móveis”. Neste caso, o valor de <span class="math inline">\(Z\)</span> depende de valores do componente aleatório em pontos anteriores (usa-se a denominação choque aleatório).</p>
+<p><span class="math display">\[Z_t = C + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}\]</span></p>
+<ul>
+<li><p>Por convenção os termos em a são escritos com sinais negativos</p></li>
+<li><p>Cada observação é a soma de um componente aleatório <span class="math inline">\(a_t\)</span> e uma combinação dos componentes aleatórios anteriores.</p></li>
+<li><p>O modelo pode ser escrito baseado nas defasagens (informações passadas) do ruído branco</p></li>
+</ul>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Processo</th>
+<th align="center">Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">MA(1)</td>
+<td align="center"><span class="math display">\[Z_t = c + a_t - \theta_1 a_{t-1}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">MA(2)</td>
+<td align="center"><span class="math display">\[Z_t = c + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">MA(q)</td>
+<td align="center"><span class="math display">\[Z_t = c + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q} + a_t\]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="condições-de-invertibilidade" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Condições de invertibilidade</h3>
+<ul>
+<li><p>No modelo MA não há restrição sobre os <span class="math inline">\(\theta\)</span>’s para que o processo seja estacionário, mas é necessário garantir a invertibilidade.</p></li>
+<li><p>Existe uma dualidade entre processos médias móveis e autoregressivo, onde a equação de MA pode ser reescrita na forma AR (de ordem infinita). Se isso for possível, podemos dizer que o processo é invertível, ou seja, se puder utilizar um AR(p) para explicar um MA(q).</p></li>
+<li><p>Mas, para isso algumas condições devem ser satisfeitas:</p>
+<ul>
+<li><p>No caso MA(1) basta que <span class="math inline">\(|\theta| &lt; 1\)</span> para que o processo é invertível.</p></li>
+<li><p>No caso MA(2):</p>
+<ul>
+<li><p><span class="math inline">\(|\theta_2|&lt; 1\)</span></p></li>
+<li><p><span class="math inline">\(\theta_2 + \theta_1 &lt; 1\)</span></p></li>
+<li><p><span class="math inline">\(\theta_2 - \theta_1 &lt; 1\)</span></p></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="modelo-autorregressivo-de-médias-móveis-de-ordem-p-e-q---armapq-ou-arimap0q" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</h3>
+<p>A importância de um modelo ARMA está no fato de poder descrever uma série estacionária por um modelo que envolve menos parâmetros que um MA puro ou um AR puro.</p>
+<p><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}\]</span></p>
+<ul>
+<li><p>Cada observação é definida por combinação linear de observações anteriores e combinação de componentes aleatórios anteriores.</p></li>
+<li><p>Neste modelo misto, as duas condições - <strong>estacionariedade</strong> e <strong>invertibilidade</strong> - são necessárias</p></li>
+</ul>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Processo</th>
+<th align="center">Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">ARMA(1,1)</td>
+<td align="center"><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + a_t - \theta_1 a_{t-1}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">ARMA(2,2)</td>
+<td align="center"><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+<td align="center"><span class="math inline">\(\dots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">ARMA(p,q)</td>
+<td align="center"><span class="math display">\[Z_t = c + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ... + \phi_p Z_{t-p} + a_t - \theta_1 a_{t-1} - \theta_2 a_{t-2} - ... - \theta_p a_{t-q}\]</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>No caso ARMA(1,1), o processo será estacionário se <span class="math inline">\(|\phi_1| &lt; 1\)</span> e <span class="math inline">\(|\theta_1| &lt; 1\)</span>, respectivamente.</li>
+</ul>
+</div>
+<div id="modelo-autorregressivo-integrado-de-médias-móveis-de-ordem-p-d-e-q---arimapdq" class="section level3">
+<h3><span class="header-section-number">5.3.6</span> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</h3>
+<p>Neste modelo se utiliza o método de diferenças para obter a estacionariedade da série. Também chamado de <strong>operador de deslocamento (backshift)</strong></p>
+<p><span class="math display">\[W_t = \bigtriangledown Z_t = (1-B)Z_t = Z_t - Z_{t-1}\]</span></p>
+<p>O modelo então passa a ser:</p>
+<p><span class="math display">\[W_t = \phi_1 W_{t-1} + ... + \phi_p W_{t-p} + a_t - \theta_1 a_{t-1} - ... - \theta_q a_{t-q}\]</span></p>
+<p><span class="math display">\[\phi(B)W_t = \theta(B)a_t\]</span></p>
+<p><span class="math display">\[\phi(B)(1-B)^d Z_t = \theta(B)a_t\]</span></p>
+<p>Assim, se a série for estacionária, podemos representá-la por um modelo ARMA(p,q).</p>
+<p>A figura abaixo mostra a série não estacionária antes e após diferenciação - <span class="math inline">\(d(1)\)</span></p>
+<p><img src="figuras/grafico_estacionariedade.png" style="width:80.0%" /></p>
+<p>A figura abaixo mostra ACF antes e após diferenciação</p>
+<p><img src="figuras/ACF_PACF2.png" style="width:80.0%" /></p>
+</div>
+<div id="modelos-arima-não-sazonais" class="section level3">
+<h3><span class="header-section-number">5.3.7</span> <strong>Modelos ARIMA não sazonais</strong></h3>
+<p>Resumindo, os modelos ARIMA não sazonais são geralmente denotados como ARIMA(p,d,q), em que os parâmetros <strong>p,d,q</strong> são números inteiros não negativos.</p>
+<ul>
+<li><p>Robusto: Pode ser usado em praticamente qualquer tipo de ST</p></li>
+<li><p>Dados estáveis, com poucos outliers</p></li>
+<li><p>Requer dados estacionários: pode ser transformada usando diferenciação: remove tendências</p></li>
+<li><p>Subtrai a observação do período atual do período anterior</p></li>
+<li><p>A diferenciação pode ser feita 1x: diferenciação de primeira ordem</p></li>
+<li><p>Ou pode ser necessário uma segunda vez: diferenciação de segunda ordem (mais raro)</p></li>
+</ul>
+</div>
+</div>
+<div id="modelos-arima-sazonais-sarima---arimapdqpdq_m" class="section level2">
+<h2><span class="header-section-number">5.4</span> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</h2>
+<ul>
+<li>Em epidemiologia é comum haver sazonalidade. Ou seja, considerando medidas mensais, pode-se esperar que a série dependa também dos termos <span class="math inline">\(Z_{t-12}\)</span> e talvez <span class="math inline">\(Z_{t-24}\)</span>.</li>
+</ul>
+<p><span class="math display">\[\phi(B) \Phi(B^s)\bigtriangledown_{s}^{D} \bigtriangledown^{d}Z_t = C + \theta(B) \Theta(B^s) a_t\]</span></p>
+<p>\</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\phi(B) \Phi(B^s)\bigtriangledown_{s}^{D} \bigtriangledown^{d}Z_t\)</span></th>
+<th><span class="math inline">\(C + \theta(B) \Theta(B^s) a_t\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AR(p) backshift x AR(P) sazonal <em>backshift</em> sazonal x diferenciação sazonal x diferenciação x tendência <span class="math inline">\(Z_t\)</span></td>
+<td>Média do processo + MA(q) <em>backshift</em> x MA(Q) sazonal backshift sazonal x erro aleatório</td>
+</tr>
+</tbody>
+</table>
+<p>São geralmente denotados como <span class="math inline">\(ARIMA(p,d,q)(P,D,Q)_{m}\)</span>, em que:</p>
+<ul>
+<li><p><strong>m</strong> se refere ao número de períodos em cada temporada;</p></li>
+<li><p><strong>P, D e Q</strong> se referem aos termos de auto-regressão, diferenciação e média móvel para a parte sazonal do modelo ARIMA.</p></li>
+</ul>
+</div>
+<div id="função-de-autocorrelação-parcial-facp---partial-autocorrelation-function---pacf" class="section level2">
+<h2><span class="header-section-number">5.5</span> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</h2>
+<ul>
+<li>A correlação medida diretamente em <span class="math inline">\(t-1\)</span>, <span class="math inline">\(t-2\)</span> até <span class="math inline">\(t-p\)</span> é a função de autocorrelação.</li>
+</ul>
+<p>Uma outra ferramenta utilizada no processo de identificação do modelo é a <strong>Função de Autocorrelação Parcial(FACP)</strong>. Esta medida corresponde a correlação de $Z_t $ e $ Z_{t-h} $ removendo o efeito dos pontos intermediários <span class="math inline">\(Z_{t-1}, Z_{t-2}, \dots , Z_{t-h+1}\)</span> e é denotada por <span class="math inline">\(\rho_{h}\)</span>, ou seja, é a correlação da série temporal com um atraso de si mesmo, com a dependência linear de todos os desfasamentos entre eles removidos.</p>
+<p><span class="math display">\[\rho_{kk} = Corr(X_t, X_{t-l}|X_{t-1}, X_{t-2},\dots,X_{t-h+1})\]</span></p>
+<p>Segue abaixo um exemplo um exemplo de ACF, com já vimos anteriormente, e do PACF. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes.</p>
+<div id="htmlwidget-0e7b784aff951965c726" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0e7b784aff951965c726">{"x":{"filter":"none","data":[[28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89,28.24],[null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95,30.89],[null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76,31.95],[null,null,null,28.61,27.8,28.19,28.26,30.36,30.42,32.76],[null,null,null,null,28.61,27.8,28.19,28.26,30.36,30.42],[null,null,null,null,null,28.61,27.8,28.19,28.26,30.36],[null,null,null,null,null,null,28.61,27.8,28.19,28.26],[null,null,null,null,null,null,null,28.61,27.8,28.19],[null,null,null,null,null,null,null,null,28.61,27.8],[null,null,null,null,null,null,null,null,null,28.61],[null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>atual<\/th>\n      <th>lag1<\/th>\n      <th>lag2<\/th>\n      <th>lag3<\/th>\n      <th>lag4<\/th>\n      <th>lag5<\/th>\n      <th>lag6<\/th>\n      <th>lag7<\/th>\n      <th>lag8<\/th>\n      <th>lag9<\/th>\n      <th>lag10<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":"_all"}],"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>No <span class="math inline">\(lag = 1\)</span>, a ACF e a PACF são iguais.</p></li>
+<li><p>Na PACF somente existe correlação até o lag igual a ordem do modelo AR - ex: modelo de ordem 3 somente
+apresenta valores de PACF até o <span class="math inline">\(3^a\)</span> lag.</p></li>
+<li><p>A forma gráfica do ACF e PACF servem para definir valores de p e q. Olhando para os correlogramas, podemos determinar que tipo de modelo selecionar e quais serão os valores de p, d e q.</p></li>
+</ul>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="49%" />
+<col width="43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modelo</th>
+<th>Padrão do ACF</th>
+<th>Padrão do PACF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AR(p)</td>
+<td>Decaimento exponencial ou padrão de onda senoidal amortecida ou ambos</td>
+<td>Picos significantes através de primeiros lags</td>
+</tr>
+<tr class="even">
+<td>MA(q)</td>
+<td>Picos significantes através de primeiros lags</td>
+<td>Decaimento exponencial ou padrão em forma de senoides</td>
+</tr>
+<tr class="odd">
+<td>ARMA(1,1)</td>
+<td>Decaimento exponencial a partir do lag 1</td>
+<td>Decaimento exponencial a partir do lag 1</td>
+</tr>
+<tr class="even">
+<td>ARMA(p,q)</td>
+<td>Decaimento exponencial</td>
+<td>Decaimento exonencial</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="processo-de-modelagem" class="section level2">
+<h2><span class="header-section-number">5.6</span> Processo de Modelagem</h2>
+<p>Para a construção do modelo podemos seguir o seguinte roteiro no qual a escolha da estrutura do modelo é baseado nos próprios dados:</p>
+<ol style="list-style-type: decimal">
+<li><p>Identifica-se um modelo com base na análise de autocorrelações, autocorrelações parciais e outros critérios;</p></li>
+<li><p>Estima-se os parâmetros do modelo identificado;</p></li>
+<li><p>Verificar se o modelo ajustado é adequado aos dados através de uma análise de resíduos.</p></li>
+<li><p>Caso o modelo não seja adequado o roteiro é repetido, voltando à fase de identificação do modelo.</p></li>
+</ol>
+<ul>
+<li><p>Como definir valores de p,d e q ?</p></li>
+<li><p><strong>p</strong>: ordem da parte autoregressiva - PACF</p></li>
+<li><p><strong>d</strong>: grau de diferenciação – Teste de Estacionariedade</p></li>
+<li><p><strong>q</strong>: ordem da média móvel - ACF</p></li>
+</ul>
+<p><img src="figuras/processo_modelagem.png" width="1270" /></p>
+</div>
+<div id="processo-de-identificação" class="section level2">
+<h2><span class="header-section-number">5.7</span> Processo de Identificação</h2>
+<p><img src="figuras/processo_identificacao.png" width="1270" /></p>
+<ul>
+<li><p>Esse processo pode ser extremamente difícil, mesmo para experientes. E Nem sempre o modelo mais sugestivo é o melhor.</p></li>
+<li><p>Existem vários critérios para identificação de um modelo, por isso, é possível identificar modelos diferentes dependendo do critério que foi escolhido para identificação.</p></li>
+<li><p>Testar todas as combinações possíveis dos parâmetros <span class="math inline">\(p,d,q\)</span> do modelo ARIMA, seria uma boa ideia, mas isso pode ser um pouco demorado se for feito de forma manual.</p></li>
+</ul>
+<div id="simulando-os-dados-das-st-com-estruturas-arima" class="section level3">
+<h3><span class="header-section-number">5.7.1</span> Simulando os dados das ST com estruturas ARIMA</h3>
+<p>Simulando um processo AR(1)</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># Simulando 100 observações através de um processo AR(1) com média 30</span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2">ar.sim&lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span>.<span class="dv">9</span>),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb66-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb66-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
+<a class="sourceLine" id="cb66-5" data-line-number="5"><span class="kw">ts.plot</span>(ar.sim) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
+<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb67-3" data-line-number="3">ar.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb67-4" data-line-number="4">ar.pacf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb67-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb67-6" data-line-number="6"><span class="kw">plot</span>(ar.acf)</a>
+<a class="sourceLine" id="cb67-7" data-line-number="7"><span class="kw">plot</span>(ar.pacf)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Simulando um processo AR(2)</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="co"># Simulando 100 observações através de um processo AR(2) com média 30</span></a>
+<a class="sourceLine" id="cb68-2" data-line-number="2">ar.sim &lt;-<span class="st"> </span><span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span><span class="kw">c</span>(.<span class="dv">9</span>,<span class="op">-</span>.<span class="dv">2</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb68-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb68-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
+<a class="sourceLine" id="cb68-5" data-line-number="5"><span class="kw">ts.plot</span>(ar.sim) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-76-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb69-3" data-line-number="3">ar.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb69-4" data-line-number="4">ar.pacf &lt;-<span class="st"> </span><span class="kw">acf</span>(ar.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb69-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb69-6" data-line-number="6"><span class="kw">plot</span>(ar.acf)</a>
+<a class="sourceLine" id="cb69-7" data-line-number="7"><span class="kw">plot</span>(ar.pacf)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-76-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Simulando um processo MA(2)</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="co"># Simulando 200 observações através de um processo MA(2) com média 30</span></a>
+<a class="sourceLine" id="cb70-2" data-line-number="2">ma.sim &lt;-<span class="st"> </span><span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ma=</span><span class="kw">c</span>(<span class="op">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb70-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb70-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
+<a class="sourceLine" id="cb70-5" data-line-number="5"><span class="kw">ts.plot</span>(ma.sim) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-77-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb71-3" data-line-number="3">ma.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(ma.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb71-4" data-line-number="4">ma.pacf &lt;-<span class="st"> </span><span class="kw">acf</span>(ma.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb71-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb71-6" data-line-number="6"><span class="kw">plot</span>(ma.acf)</a>
+<a class="sourceLine" id="cb71-7" data-line-number="7"><span class="kw">plot</span>(ma.pacf)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-77-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Simulando um processo ARMA(2,2)</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="co"># Simulando 200 observações através de um processo ARMA(2,2) com média 30</span></a>
+<a class="sourceLine" id="cb72-2" data-line-number="2">arma.sim &lt;-<span class="kw">arima.sim</span>(<span class="dt">model=</span><span class="kw">list</span>(<span class="dt">ar=</span><span class="kw">c</span>(.<span class="dv">9</span>,<span class="op">-</span>.<span class="dv">2</span>),<span class="dt">ma=</span><span class="kw">c</span>(<span class="op">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb72-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb72-4" data-line-number="4"><span class="co"># Construindo o gráfico de ST</span></a>
+<a class="sourceLine" id="cb72-5" data-line-number="5"><span class="kw">ts.plot</span>(arma.sim) </a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-78-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="co"># ACF e PACF</span></a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb73-3" data-line-number="3">arma.acf &lt;-<span class="st"> </span><span class="kw">acf</span>(arma.sim,<span class="dt">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb73-4" data-line-number="4">arma.pacf &lt;-<span class="st"> </span><span class="kw">acf</span>(arma.sim,<span class="dt">type=</span><span class="st">&quot;partial&quot;</span>,<span class="dt">plot=</span>T)</a>
+<a class="sourceLine" id="cb73-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb73-6" data-line-number="6"><span class="kw">plot</span>(arma.acf)</a>
+<a class="sourceLine" id="cb73-7" data-line-number="7"><span class="kw">plot</span>(arma.pacf)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-78-2.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="métricas-para-avaliar-a-qualidade-do-ajuste" class="section level2">
+<h2><span class="header-section-number">5.8</span> Métricas para avaliar a qualidade do ajuste</h2>
+<ul>
+<li>Para determinar a ordem de um modelo ARIMA não sazonal, um critério útil é o <strong>critério de informação de Akaike (AIC)</strong>.</li>
+</ul>
+<p><span class="math display">\[AIC = - 2log(L) + 2(p+q+k+1)\]</span></p>
+<p>em que <em>L</em> é verossimilhança dos dados, <em>p</em> é a ordem da parte autoregressiva e <em>q</em> é a ordem da parte de média móvel. O parâmetro <em>k</em> neste critério é definido como o número de parâmetros no modelo sendo ajustado aos dados.</p>
+<ul>
+<li>O <strong>AIC corrigido para modelos ARIMA (AICc)</strong> pode ser escrito como:</li>
+</ul>
+<p><span class="math display">\[AICc = AIC + \dfrac{2(p+q+k+1)(p+q+k+2)}{T-p-q-k-2}\]</span></p>
+<ul>
+<li><p>O <strong>critério de informação bayesiano (BIC)</strong> pode ser escrito como:</p>
+<p><span class="math display">\[BIC = AIC + (log(n) - 2) (p+q+k+1)\]</span></p></li>
+<li><p>O objetivo é o minimizar os valores de AIC, AICc e BIC para um bom modelo. Quanto menor o valor de um destes critérios para uma gama de modelos investigados, melhor o modelo se adequará aos dados.</p></li>
+<li><p>O AICc pode ser usado apenas para comparar modelos ARIMA com as mesmas ordens de diferenciação. Para modelos ARIMA como ordens distintas de diferenciação, a raiz do erro quadrático médio pode ser usada para comparação de modelos.</p></li>
+<li><p>A abordagem do BIC penaliza mais intensamente os modelos por levar em consideração o <span class="math inline">\(n\)</span>.</p></li>
+</ul>
+</div>
+<div id="análise-de-resíduos" class="section level2">
+<h2><span class="header-section-number">5.9</span> Análise de Resíduos</h2>
+<p>Se o modelo está correto, as nossas suposições iniciais feitas para os resíduos devem ser satisfeitas, isto é, <span class="math inline">\(a_t \sim N(0, \sigma^{2}_{a})\)</span> e independentes.</p>
+<p>Assim, a análise de resíduos é feita da seguinte forma:</p>
+<ol style="list-style-type: decimal">
+<li><p>Faz-se um gráfico da série <span class="math inline">\(a_t\)</span> e observa-se a sua estacionariedade e se sua média é igual a zero (aproximadamente).</p></li>
+<li><p>Se a série <span class="math inline">\(a_t\)</span> for estacionária, calcula-se suas funções de autocorrelação e autocorrelação parcial amostral;</p></li>
+<li><p>Se as funções em (2) indicarem que o processo gerador de <span class="math inline">\(a_t\)</span> é um ruído branco, o modelo escolhido para <span class="math inline">\(Y_t\)</span> poderá ser ser considerado adequado. Senão, podemos utilizar a análise dos resíduos para identificar outro modelo para a série.</p></li>
+</ol>
+<p>Lembrando que o processo <span class="math inline">\(a_t\)</span> é um ruído branco se:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(E(a_t) = 0\)</span>,</p></li>
+<li><p><span class="math inline">\(a_t \sim N(0, \sigma^2_a)\)</span>,</p></li>
+<li><p><span class="math inline">\(Cov(a_t, a_{t-h}) = 0\)</span>, <span class="math inline">\(\forall h \neq 0\)</span> (Não correlacionados)</p></li>
+</ol>
+</div>
+<div id="ajuste-manual-de-modelo-arima" class="section level2">
+<h2><span class="header-section-number">5.10</span> Ajuste manual de modelo ARIMA</h2>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">library</span>(forecast)</a>
+<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="kw">ggtsdisplay</span>(ldeaths)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-79-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">modelo0 &lt;-<span class="st"> </span><span class="kw">Arima</span>(ldeaths,<span class="dt">order =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">seasonal =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">checkresiduals</span>(modelo0)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-79-2.png" width="100%" style="display: block; margin: auto;" />
+Ljung-Box test</p>
+<p>data: Residuals from ARIMA(1,0,0)(1,1,1)[12]
+Q* = 11, df = 11, p-value = 0.5</p>
+<p>Model df: 3. Total lags used: 14</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">tsdiag</span>(modelo0)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-79-3.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">plot</span>(ldeaths)</a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo0),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-80-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ajuste-automático-de-modelos-arima" class="section level2">
+<h2><span class="header-section-number">5.11</span> Ajuste automático de modelos ARIMA</h2>
+<p>O pacote <a href="http://pkg.robjhyndman.com/forecast"><em>forecast</em></a> de autoria Rob Hyndman e colaboradores possui diversas funções para
+visualização, analise e predições de séries temporais, entre elas existe uma função que faz ajustes automáticos para modelos ARIMA.
+Essa função se chama <strong>auto.arima()</strong></p>
+<ul>
+<li><p>Testa diferentes combinações de <span class="math inline">\(p\)</span>, <span class="math inline">\(d\)</span> e <span class="math inline">\(q\)</span> buscando o melhor ajuste</p></li>
+<li><p>Extremamente flexível</p></li>
+<li><p>Mesmo intuindo um modelo, você pode usa-la para confirmar sua parametrização</p></li>
+</ul>
+<p>Alguns parâmetros importantes da função <em>auto.arima()</em></p>
+<ul>
+<li><p>stationary - Se TRUE, restringe sua busca por modelos estacionários.</p></li>
+<li><p>seasonal - Se FALSE, restringe sua busca por modelos não sazonais.</p></li>
+<li><p>stepwise - Se TRUE, utilizará o métodos de <em>stepwise</em> de seleção (mais rápido). Caso contrário, irá buscar todas as combinações. O método de seleção <em>non-stepwise</em> pode ser muito lento, especialmente para os modelos sazonais.</p></li>
+<li><p>trace - Se TRUE, a lista de modelos ARIMA considerados será reportada.</p></li>
+<li><p>approximation - Se TRUE, o processo de estimação é feito através das somas dos quadrados condicionais e os critérios de informação utilizados para a seleção de modelos são aproximados. O modelo final ainda é calculado usando estimativa de máxima verossimilhança. A aproximação deve ser usada para séries temporais longas ou um período sazonal elevado para evitar tempos de computação excessivos.</p></li>
+</ul>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="co"># tilizando trace = T, será possível verificar todo o processo de criação e teste dos modelos</span></a>
+<a class="sourceLine" id="cb78-2" data-line-number="2">modelo1 &lt;-<span class="st">  </span><span class="kw">auto.arima</span>(ldeaths, <span class="dt">trace =</span> F, <span class="dt">allowdrift=</span>F)</a>
+<a class="sourceLine" id="cb78-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb78-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb78-5" data-line-number="5"><span class="co"># Neste modelo, será feito uma busca maior para uma solução &quot;mais ótimizada&quot;</span></a>
+<a class="sourceLine" id="cb78-6" data-line-number="6">modelo2 &lt;-<span class="st">  </span><span class="kw">auto.arima</span>(ldeaths, <span class="dt">trace =</span> F, <span class="dt">stepwise =</span> F, <span class="dt">approximation =</span> F,<span class="dt">parallel =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p>Vamos verificar cada um dos modelos obtidos</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">modelo1</a></code></pre></div>
+<p>Call:
+auto.arima(y = ldeaths, trace = F, allowdrift = F, x = structure(list(x = structure(c(3035, 2552, 2704, 2554, 2014, 1655, 1721, 1524, 1596, 2074, 2199, 2512, 2933, 2889, 2938, 2497, 1870, 1726, 1607, 1545, 1396, 1787, 2076, 2837, 2787, 3891, 3179, 2011, 1636, 1580, 1489, 1300, 1356, 1653, 2013, 2823, 3102, 2294, 2385, 2444, 1748, 1554, 1498, 1361, 1346, 1564, 1640, 2293, 2815, 3137, 2679, 1969, 1870, 1633, 1529, 1366, 1357, 1570, 1535, 2491, 3084, 2605, 2573, 2143, 1693, 1504, 1461, 1354, 1333, 1492, 1781, 1915), .Tsp = c(1974, 1979.91666666667, 12), class = “ts”)), class = “data.frame”, row.names = c(NA, -72L)))</p>
+<table style="width:56%;">
+<caption>Coefficients</caption>
+<colgroup>
+<col width="15%" />
+<col width="12%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"> </th>
+<th align="center">ma1</th>
+<th align="center">sar1</th>
+<th align="center">sar2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">0.4269</td>
+<td align="center">-0.8595</td>
+<td align="center">-0.3613</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>s.e.</strong></td>
+<td align="center">0.1385</td>
+<td align="center">0.1426</td>
+<td align="center">0.1452</td>
+</tr>
+</tbody>
+</table>
+<p>sigma^2 estimated as 70422: log likelihood = -423.3, aic = 854.6</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">tsdiag</span>(modelo1)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-84-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">pander</span>(modelo2)</a></code></pre></div>
+<p>Series: ldeaths
+ARIMA(2,0,0)(0,1,2)[12] with drift</p>
+<p>Coefficients:
+ar1 ar2 sma1 sma2 drift
+0.255 -0.339 -1.163 0.357 -5.334
+s.e. 0.134 0.140 0.362 0.205 0.905</p>
+<p>sigma^2 estimated as 49449: log likelihood=-416.4
+AIC=844.8 AICc=846.4 BIC=857.4</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">tsdiag</span>(modelo2)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-87-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Comparando os ajustes dos modelos</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">plot</span>(ldeaths)</a>
+<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo0),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb83-3" data-line-number="3"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo1),<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb83-4" data-line-number="4"><span class="kw">lines</span>(<span class="kw">fitted</span>(modelo2),<span class="dt">col=</span><span class="st">&quot;darkgreen&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-88-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelos-de-previsão" class="section level2">
+<h2><span class="header-section-number">5.12</span> Modelos de Previsão</h2>
+<p>Uma vez ajustado um modelo ARIMA a uma série de tempo é possível fazer uma predição de <span class="math inline">\(K\)</span> passos a frente o que nos permite<br />
+obter a previsão da série no instante <span class="math inline">\(t + k\)</span> será denotada por $_{t+k} $ assim podemos obter alem das previsões futuras os limites de confiança.</p>
+<p>Os Modelos de Previsão são uma área importante e um campo muito ativo de desenvolvimento de métodos estatísticos e computacionais,
+aqui vamos somente apresentar um exemplo utilizando um dos modelos já ajustados para a serie <strong>ldeaths</strong>.</p>
+<p>Uma maneira simples de obter o valor predito é usando a função <em>predict()</em></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">predict</span>(modelo1,<span class="dt">n.ahead =</span> <span class="dv">12</span>)</a></code></pre></div>
+<p><div id="htmlwidget-8596a5a2508162b7dd60" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8596a5a2508162b7dd60">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[265.371941651055,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+o pacote <em>forecast</em> possui funções para facilitar a predição e visualização. Veja na função abaixo que o modelo já retorna não só o valor predito mas os limites superior e inferior para os níveis de confiança 80 e 95.</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1">pred &lt;-<span class="st"> </span><span class="kw">forecast</span>(modelo1,<span class="dt">h=</span><span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb85-2" data-line-number="2">pred</a></code></pre></div>
+<div id="htmlwidget-a384e414eb2ed3af7512" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a384e414eb2ed3af7512">{"x":{"filter":"none","data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[2350.27367537808,2387.90122927368,2188.10477876713,1795.2923339201,1431.27981190077,1216.55889827885,1138.47060268116,992.730865747083,979.877384667682,1187.09909801749,1237.71554689374,1968.77511940376],[3030.44932992712,3127.45518425865,2927.65873375211,2534.84628890508,2170.83376688574,1956.11285326382,1878.02455766613,1732.28482073206,1719.43133965266,1926.65305300247,1977.26950187871,2708.32907438874],[2170.24205450907,2192.15312164065,1992.3566711341,1599.54422628707,1235.53170426774,1020.81079064582,942.722495048123,796.982758114051,784.12927703465,991.350990384459,1041.9674392607,1773.02701177073],[3210.48095079613,3323.20329189169,3123.40684138514,2730.59439653811,2366.58187451878,2151.86096089686,2073.77266529916,1928.03292836509,1915.17944728569,2122.4011606355,2173.01760951174,2904.07718202177]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Ele também facilita a confecção de gráficos</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">plot</span>(pred)  <span class="co"># a função autoplot produz no formato ggplot</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-93-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Para saber mais sobre séries temporais e previsões recomendamos o exelente livro online
+<a href="https://otexts.com/fpp2/">Forecasting: Principles and Practice Rob J Hyndman and George Athanasopoulos</a></p>
+</div>
+<div id="correlação-cruzada-cross-corralation" class="section level2">
+<h2><span class="header-section-number">5.13</span> Correlação Cruzada (<em>Cross-Corralation</em>)</h2>
+<ul>
+<li><p>Vamos considerar a situação em que temos duas ou mais séries temporais e queremos explorar as relações entre elas. A ideia seria modelar a série <span class="math inline">\(Z_{t}^{1}\)</span> usando os pontos anteriores de <span class="math inline">\(Z_{t}^{2}\)</span>.</p></li>
+<li><p>A correlação cruzada descreve o grau de correlação entre duas séries.</p></li>
+<li><p>A correlação cruzada, mais especificamente, é usado para determinar quando uma mudança em um série pode potencializar a <em>causa</em> da mudança na outra série.</p></li>
+</ul>
+<p><span class="math display">\[Z_{t} =  v(B) X_t + N_t\]</span>
+onde:</p>
+<ul>
+<li><span class="math inline">\(v(B)\)</span> é a função de transferência (filtro)</li>
+<li><span class="math inline">\(Z_t,X_t\)</span> são séries estacionarias</li>
+<li><p><span class="math inline">\(N_t\)</span> é um ruído independente de <span class="math inline">\(X_t\)</span></p></li>
+<li><p>Vamos analisar:</p>
+<ul>
+<li><p>O atraso de uma série em relação a outra</p></li>
+<li><p>O feedback</p></li>
+<li><p>Correlação dos resíduos, removida a estrutura temporal</p></li>
+</ul></li>
+</ul>
+<p>A titulo de demostração da função de correlação cruzada (Cross-correlation Function), vamos usar como exemplo dados de temperatura da área central Reino Unido obtidos do <a href="http://hadobs.metoffice.gov.uk/hadcet/data/download.html">UK Met Office</a> e vamos correlacionar com a serie <strong>ldeaths</strong> .</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">uktemp &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/UKtemp.tsv&#39;</span>)</a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">uktemp &lt;-<span class="st"> </span><span class="kw">ts</span>(<span class="kw">as.vector</span>(<span class="kw">t</span>(uktemp[,<span class="dv">2</span><span class="op">:</span><span class="dv">13</span>])),<span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1970</span>,<span class="dv">1</span>),<span class="dt">frequency =</span> <span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb87-3" data-line-number="3">uktemp.ts &lt;-<span class="st"> </span><span class="kw">window</span>(uktemp,<span class="dt">start=</span><span class="kw">c</span>(<span class="dv">1974</span>,<span class="dv">1</span>),<span class="dt">end=</span><span class="kw">c</span>(<span class="dv">1979</span>,<span class="dv">12</span>))</a>
+<a class="sourceLine" id="cb87-4" data-line-number="4">fcc &lt;-<span class="st"> </span><span class="kw">ccf</span>(uktemp.ts,ldeaths)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-94-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="co">#plot(fcc)</span></a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="kw">cbind</span>(fcc<span class="op">$</span>lag,fcc<span class="op">$</span>acf)</a></code></pre></div>
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">-1.2500</td>
+<td align="right">-0.1859</td>
+</tr>
+<tr class="even">
+<td align="right">-1.1667</td>
+<td align="right">-0.4816</td>
+</tr>
+<tr class="odd">
+<td align="right">-1.0833</td>
+<td align="right">-0.6586</td>
+</tr>
+<tr class="even">
+<td align="right">-1.0000</td>
+<td align="right">-0.6518</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.9167</td>
+<td align="right">-0.4912</td>
+</tr>
+<tr class="even">
+<td align="right">-0.8333</td>
+<td align="right">-0.1953</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.7500</td>
+<td align="right">0.1562</td>
+</tr>
+<tr class="even">
+<td align="right">-0.6667</td>
+<td align="right">0.5214</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.5833</td>
+<td align="right">0.7748</td>
+</tr>
+<tr class="even">
+<td align="right">-0.5000</td>
+<td align="right">0.8002</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.4167</td>
+<td align="right">0.5991</td>
+</tr>
+<tr class="even">
+<td align="right">-0.3333</td>
+<td align="right">0.2354</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.2500</td>
+<td align="right">-0.1907</td>
+</tr>
+<tr class="even">
+<td align="right">-0.1667</td>
+<td align="right">-0.5479</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.0833</td>
+<td align="right">-0.7891</td>
+</tr>
+<tr class="even">
+<td align="right">0.0000</td>
+<td align="right">-0.8320</td>
+</tr>
+<tr class="odd">
+<td align="right">0.0833</td>
+<td align="right">-0.6264</td>
+</tr>
+<tr class="even">
+<td align="right">0.1667</td>
+<td align="right">-0.2453</td>
+</tr>
+<tr class="odd">
+<td align="right">0.2500</td>
+<td align="right">0.1974</td>
+</tr>
+<tr class="even">
+<td align="right">0.3333</td>
+<td align="right">0.5818</td>
+</tr>
+<tr class="odd">
+<td align="right">0.4167</td>
+<td align="right">0.8115</td>
+</tr>
+<tr class="even">
+<td align="right">0.5000</td>
+<td align="right">0.8207</td>
+</tr>
+<tr class="odd">
+<td align="right">0.5833</td>
+<td align="right">0.6039</td>
+</tr>
+<tr class="even">
+<td align="right">0.6667</td>
+<td align="right">0.2426</td>
+</tr>
+<tr class="odd">
+<td align="right">0.7500</td>
+<td align="right">-0.1756</td>
+</tr>
+<tr class="even">
+<td align="right">0.8333</td>
+<td align="right">-0.5441</td>
+</tr>
+<tr class="odd">
+<td align="right">0.9167</td>
+<td align="right">-0.7285</td>
+</tr>
+<tr class="even">
+<td align="right">1.0000</td>
+<td align="right">-0.7110</td>
+</tr>
+<tr class="odd">
+<td align="right">1.0833</td>
+<td align="right">-0.5332</td>
+</tr>
+<tr class="even">
+<td align="right">1.1667</td>
+<td align="right">-0.2181</td>
+</tr>
+<tr class="odd">
+<td align="right">1.2500</td>
+<td align="right">0.1562</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="kw">max</span>(<span class="kw">abs</span>(fcc<span class="op">$</span>acf))</a></code></pre></div>
+<p>[1] 0.832</p>
+</div>
+<div id="gam-generalized-additive-models" class="section level2">
+<h2><span class="header-section-number">5.14</span> GAM (generalized Additive Models)</h2>
+<ul>
+<li>Um modelo aditivo generalizado (Hastie and Tibishirani, 1990) é um modelo linear generalizado com um preditor linear envolvendo a soma de funções suavizadas das covariáveis + os efeitos fixos das mesmas.</li>
+</ul>
+<p><span class="math display">\[\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + \ldots\]</span></p>
+<ul>
+<li><p>Pode ser considerado uma extensão do GLM, onde o preditor linear <span class="math inline">\(\eta = E(Y_i)\)</span> não é limitado para a regressão linear, sendo <span class="math inline">\(Y_i \sim\)</span> alguma distribuição da família exponencial.</p></li>
+<li><p><span class="math inline">\(Y_i\)</span> é a variável resposta (desfecho)</p></li>
+<li><p><span class="math inline">\(X\)</span> é o vetor das variáveis explicativas (exposição)</p></li>
+<li><p><span class="math inline">\(\beta\)</span> representa o vetor de parâmetros a serem estimados pelo modelo.</p></li>
+<li><p>O modelo inclui qualquer função das covariáveis independentes (<span class="math inline">\(x_i\)</span>)</p></li>
+<li><p><span class="math inline">\(f(x) \rightarrow\)</span> pode ser uma função não-paramétrica, cuja forma não é especificada <em>a priori</em>. Mas pode ser estimada através de curvas de alisamento (ex: <em>kernel</em>, <em>loess</em>, <em>splines</em>, etc.)</p></li>
+<li><p>A curva alisada permite descrever a forma e revelar possíveis não linearidades nas
+relações estudadas, uma vez que não apresenta a estrutura rígida de uma função
+paramétrica, como nos GLM’s.</p></li>
+<li><p>Quando usar ? Quando o efeito da covariável muda dependendo do seu valor</p></li>
+</ul>
+<div id="tipos-de-splines" class="section level3">
+<h3><span class="header-section-number">5.14.1</span> Tipos de splines</h3>
+<ul>
+<li><p>Cubic regression spline – polinômios de grau 3 ajustados aos
+intervalos dos dados definidos pelos nós distribuı́dos regularmente em
+todo o escopo dos dados. A base é a soma de nós mais 2, que
+correspondem ao inı́cio e fim da curva. Os polinômios são unidos de
+forma que a existir as 1 e 2 derivadas.</p></li>
+<li><p>Cyclic cubic regression spline – força a função a ter o mesmo valor e
+mesmas derivadas no inı́cio e final. Interessante para séries de tempo
+com sazonalidade.</p></li>
+<li><p>P-splines – Baseia-se na B-spline, na qual a função vai
+obrigatoriamente a zero em m+3 nós adjacentes. A p-spline se baseia
+nessa, porém aplica uma penalidade diferencial entre β’s adjacentes
+para controlar a “wiggliness”.</p></li>
+<li><p>Thin plate – menor erro quadrático, menor número de parâmetros
+considerado o estimador ótimo. Facilmente adaptável para duas/três
+dimensões.
+Tensor Product – Semelhante ao Thin Plate, mas permite escalas</p></li>
+</ul>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="11%" />
+<col width="42%" />
+<col width="42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">bs=</th>
+<th align="center">Descrição</th>
+<th>Vantagens</th>
+<th>Desvantagens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">“tp”</td>
+<td align="center">Thin Plate</td>
+<td>Suaviza múltiplas covariáveis. Não se altera com a rotação. Estimador ótimo.</td>
+<td>Computacionalmente custoso. Não é invariante quanto à escala.</td>
+</tr>
+<tr class="even">
+<td align="center">“cr”</td>
+<td align="center">Cubic Regression</td>
+<td>Computacionalmente barato. Parâmetros interpretáveis diretamente.</td>
+<td>Só uma covariável. Baseado na escolha dos nós. Estimador não ótimo.</td>
+</tr>
+<tr class="odd">
+<td align="center">“cc”</td>
+<td align="center">Cyclic CRS</td>
+<td>Começo e fim = ’s</td>
+<td>Idem.</td>
+</tr>
+<tr class="even">
+<td align="center">“ps”</td>
+<td align="center">P-splines</td>
+<td>Qualquer combinação de base e ordem.</td>
+<td>Nós em intervalos iguais. Penalidades difíceis de interpretar. Estimador não ótimo.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="por-que-não-usar" class="section level2">
+<h2><span class="header-section-number">5.15</span> Por que não usar ?</h2>
+<ul>
+<li><p>Os modelos estatísticos visam explicar os dados observados, não simplesmente reproduzi-lo <span class="math inline">\(\rightarrow\)</span> <strong>overfitting</strong></p></li>
+<li><p>Modelos paramétricos em geral são melhores para estimar erros padrão ou intervalos de confiança</p></li>
+<li><p>Modelos paramétricos são mais eficientes, se corretamente especificados (menor número de observações)</p></li>
+</ul>
+</div>
+<div id="gam-em-séries-temporais" class="section level2">
+<h2><span class="header-section-number">5.16</span> GAM em Séries Temporais</h2>
+<ul>
+<li><p>A idéia principal é modelar o efeito de covariáveis em alguns
+eventos de saúde ao longo do tempo</p></li>
+<li><p>Razões:</p>
+<ul>
+<li><p>Permitir a inclusão da dependência do tempo</p></li>
+<li><p>Relação não-linear</p></li>
+<li><p>Tendência e sazonalidade podem ser facilmente incorporadas</p></li>
+</ul></li>
+<li><p>Considerando a variável resposta uma contagem, as escolhas para as distribuições são:</p>
+<ul>
+<li><p>Poisson: <span class="math inline">\(\lambda\)</span> <span class="math inline">\(=\)</span> valores esperados e <span class="math inline">\(=\)</span> variância <span class="math inline">\(\rightarrow\)</span> superdispersão</p></li>
+<li><p>Quasipoisson: não é uma distribuição, mas uma maneira de relaxar suposição do modelo anterior e levar em consideração a superdispersão. (Não estima o AIC automaticamente).</p></li>
+<li><p>Negative Binomial: tem uma média <span class="math inline">\(\mu\)</span>, um parâmetro de escala <span class="math inline">\(\theta\)</span> e a variância como a função <span class="math inline">\(V(\mu)=\mu+\mu^2/\theta\)</span></p></li>
+<li><p>Modelos com inflação zero: modelos de mistura que combinam uma massa pontual a zero com uma distribuição de contagem como Poisson, geométrica ou binomial negativa</p></li>
+</ul></li>
+</ul>
+<div id="exemplo-de-um-modelo-gam" class="section level3">
+<h3><span class="header-section-number">5.16.1</span> Exemplo de um modelo GAM</h3>
+</div>
+</div>
+<div id="exemplo-de-modelo-gam-aplicado-a-séries-temporais" class="section level2">
+<h2><span class="header-section-number">5.17</span> Exemplo de modelo GAM aplicado a Séries Temporais</h2>
+<ol style="list-style-type: decimal">
+<li>ldeaths</li>
+</ol>
+<p>Transforma o exemplo <strong>ldeaths</strong> de <em>ts</em> em <em>data.frame</em> preservando as estruturas temporais (tempo e mes)</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">ldeaths.df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">tempo=</span><span class="kw">time</span>(ldeaths),<span class="dt">obitos=</span>ldeaths,<span class="dt">mes=</span><span class="kw">cycle</span>(ldeaths))</a></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+tempo
+</th>
+<th style="text-align:right;">
+obitos
+</th>
+<th style="text-align:right;">
+mes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+3035
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+2552
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+2704
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+2554
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+1655
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+<p>modelando como <strong>GAM</strong></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">mod0 &lt;-<span class="st"> </span><span class="kw">gam</span> ( obitos <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(tempo) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(mes),<span class="dt">data=</span>ldeaths.df)</a>
+<a class="sourceLine" id="cb92-2" data-line-number="2">mod0</a></code></pre></div>
+<p>Sumário do modelo</p>
+<!-- html table generated in R 3.6.1 by xtable 1.8-4 package -->
+<!-- Tue Nov  5 15:20:54 2019 -->
+<table border="1">
+<caption align="bottom">
+</caption>
+<tr>
+<td>
+A. parametric coefficients
+</td>
+<td align="right">
+Estimate
+</td>
+<td align="right">
+Std. Error
+</td>
+<td align="right">
+t-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+(Intercept)
+</td>
+<td align="right">
+2056.6250
+</td>
+<td align="right">
+26.7125
+</td>
+<td align="right">
+76.9911
+</td>
+<td align="right">
+&lt; 0.0001
+</td>
+</tr>
+<tr>
+<td>
+B. smooth terms
+</td>
+<td align="right">
+edf
+</td>
+<td align="right">
+Ref.df
+</td>
+<td align="right">
+F-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+s(tempo)
+</td>
+<td align="right">
+1.0003
+</td>
+<td align="right">
+1.0007
+</td>
+<td align="right">
+14.4150
+</td>
+<td align="right">
+0.0003
+</td>
+</tr>
+<tr>
+<td>
+s(mes)
+</td>
+<td align="right">
+5.7942
+</td>
+<td align="right">
+6.9532
+</td>
+<td align="right">
+59.0681
+</td>
+<td align="right">
+&lt; 0.0001
+</td>
+</tr>
+<a name=tab.gam></a>
+</table>
+<p>R-quadrado(ajustado) = 0.86 Deviance Explicada = 0.88 AIC = 995.27</p>
+<p>Gráfico do termos suaves</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<p>Vamos verificar se sobraram estruturas nos residuos usando a ACF dos residuos e o teste de Ljung-Box</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<table style="width:44%;">
+<caption>Box-Ljung test: <code>residuals(mod0)</code></caption>
+<colgroup>
+<col width="23%" />
+<col width="6%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Test statistic</th>
+<th align="center">df</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.7716</td>
+<td align="center">1</td>
+<td align="center">0.3797</td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos observar a variavel <em>tempo</em> que captura a tendencia ficou completamente linear
+vamos agora usar a variavel <em>tempo</em> de forma linear no modelo</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">mod1 &lt;-<span class="st"> </span><span class="kw">gam</span> ( obitos <span class="op">~</span><span class="st"> </span>tempo <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(mes),<span class="dt">data=</span>ldeaths.df)</a>
+<a class="sourceLine" id="cb93-2" data-line-number="2">mod1</a></code></pre></div>
+<!-- html table generated in R 3.6.1 by xtable 1.8-4 package -->
+<!-- Tue Nov  5 15:20:54 2019 -->
+<table border="1">
+<caption align="bottom">
+</caption>
+<tr>
+<td>
+A. parametric coefficients
+</td>
+<td align="right">
+Estimate
+</td>
+<td align="right">
+Std. Error
+</td>
+<td align="right">
+t-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+(Intercept)
+</td>
+<td align="right">
+119492.6570
+</td>
+<td align="right">
+30969.4892
+</td>
+<td align="right">
+3.8584
+</td>
+<td align="right">
+0.0003
+</td>
+</tr>
+<tr>
+<td>
+tempo
+</td>
+<td align="right">
+-59.4024
+</td>
+<td align="right">
+15.6652
+</td>
+<td align="right">
+-3.7920
+</td>
+<td align="right">
+0.0003
+</td>
+</tr>
+<tr>
+<td>
+B. smooth terms
+</td>
+<td align="right">
+edf
+</td>
+<td align="right">
+Ref.df
+</td>
+<td align="right">
+F-value
+</td>
+<td align="right">
+p-value
+</td>
+</tr>
+<tr>
+<td>
+s(mes)
+</td>
+<td align="right">
+5.5691
+</td>
+<td align="right">
+6.7170
+</td>
+<td align="right">
+60.8243
+</td>
+<td align="right">
+&lt; 0.0001
+</td>
+</tr>
+<a name=tab.gam></a>
+</table>
+<p>R-quadrado(ajustado) = 0.86 Deviance Explicada =0.87 AIC = 994.67</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<table style="width:44%;">
+<caption>Box-Ljung test: <code>residuals(mod1)</code></caption>
+<colgroup>
+<col width="23%" />
+<col width="6%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Test statistic</th>
+<th align="center">df</th>
+<th align="center">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.7346</td>
+<td align="center">1</td>
+<td align="center">0.3914</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li>lepto</li>
+</ol>
+<ul>
+<li>Vamos utilizar uma a série temporal dos casos de leptospirose com as variáveis de esposição total de chuva e temperatura.</li>
+</ul>
+<p><span class="math display">\[\text{Lepto}(t) = \text{rain}(t-?) + \text{humidity}(t-?) + AR(t,t-1) + trend + seasonality + \varepsilon\]</span></p>
+<ul>
+<li><p>Tendência e Sazonalidade <span class="math inline">\(\to\)</span> função suavizadora</p></li>
+<li><p>Covariáveis <span class="math inline">\(\to\)</span> lag no tempo</p></li>
+<li><p>É possível incluir a variabilidade populacional em risco (<em>offset</em>)</p></li>
+</ul>
+<div id="exemplo-série-temporal-casos-de-leptospirose-vs-clima" class="section level3">
+<h3><span class="header-section-number">5.17.1</span> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</h3>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">lepto &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="st">&quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/leptoruido.csv&quot;</span>, <span class="dt">header=</span>T)</a>
+<a class="sourceLine" id="cb94-2" data-line-number="2">dia &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/climadia.dat&quot;</span>, <span class="dt">header=</span>T)</a>
+<a class="sourceLine" id="cb94-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="kw">library</span>(lattice)</a>
+<a class="sourceLine" id="cb94-5" data-line-number="5"><span class="kw">library</span>(car)</a>
+<a class="sourceLine" id="cb94-6" data-line-number="6"><span class="kw">library</span>(sm)</a>
+<a class="sourceLine" id="cb94-7" data-line-number="7"><span class="kw">library</span>(survival)</a>
+<a class="sourceLine" id="cb94-8" data-line-number="8"><span class="kw">library</span>(mgcv)</a>
+<a class="sourceLine" id="cb94-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb94-10" data-line-number="10"><span class="co">#XY condicionado</span></a>
+<a class="sourceLine" id="cb94-11" data-line-number="11"><span class="kw">xyplot</span>(cases <span class="op">+</span><span class="st"> </span>totrain <span class="op">+</span><span class="st"> </span>tempmed <span class="op">~</span><span class="st"> </span>week,</a>
+<a class="sourceLine" id="cb94-12" data-line-number="12"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,</a>
+<a class="sourceLine" id="cb94-13" data-line-number="13">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
+<a class="sourceLine" id="cb94-14" data-line-number="14"> <span class="dt">data=</span>lepto)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-109-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Modelando a Chuva como resposta e colocando o a função suavizadoras para capturar o efeito nas semanas epidemológicas</li>
+</ul>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">xyplot</span>(totrain <span class="op">~</span><span class="st"> </span>week,</a>
+<a class="sourceLine" id="cb95-2" data-line-number="2"> <span class="dt">outer=</span><span class="ot">TRUE</span>, <span class="dt">layout=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">pch=</span><span class="dv">1</span>, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Chuva&quot;</span>,</a>
+<a class="sourceLine" id="cb95-3" data-line-number="3">  <span class="dt">scales=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;same&#39;</span>), <span class="dt">y=</span><span class="kw">list</span>(<span class="dt">relation=</span><span class="st">&#39;free&#39;</span>)),</a>
+<a class="sourceLine" id="cb95-4" data-line-number="4"> <span class="dt">data=</span>lepto)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-110-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="co"># Ajustando a chuva como resposta</span></a>
+<a class="sourceLine" id="cb96-2" data-line-number="2"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb96-3" data-line-number="3">rain.tp.auto &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>), <span class="dt">data=</span>lepto )</a>
+<a class="sourceLine" id="cb96-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb96-5" data-line-number="5"><span class="kw">plot</span>(rain.tp.auto,<span class="dt">main=</span><span class="kw">paste</span>(<span class="st">&#39;K = &#39;</span>,rain.tp.auto<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim))</a>
+<a class="sourceLine" id="cb96-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb96-7" data-line-number="7">rain.tp.k1 &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>,<span class="dt">k=</span><span class="dv">1</span>), <span class="dt">data=</span>lepto )</a>
+<a class="sourceLine" id="cb96-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb96-9" data-line-number="9"><span class="kw">plot</span>(rain.tp.k1,<span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&#39;K =&#39;</span>,rain.tp.k1<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim))</a>
+<a class="sourceLine" id="cb96-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb96-11" data-line-number="11">rain.tp.k30 &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;tp&quot;</span>,<span class="dt">k=</span><span class="dv">30</span>), <span class="dt">data=</span>lepto )</a>
+<a class="sourceLine" id="cb96-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb96-13" data-line-number="13"><span class="kw">plot</span>(rain.tp.k30,<span class="dt">main=</span><span class="kw">paste</span>(<span class="st">&#39;K =&#39;</span>,rain.tp.k30<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim))</a>
+<a class="sourceLine" id="cb96-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb96-15" data-line-number="15">rain.ad &lt;-<span class="st"> </span><span class="kw">gam</span>(totrain <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(week,<span class="dt">bs=</span><span class="st">&quot;ad&quot;</span>), <span class="dt">data=</span>lepto ) </a>
+<a class="sourceLine" id="cb96-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb96-17" data-line-number="17"><span class="kw">plot</span>(rain.ad,<span class="dt">main=</span><span class="kw">paste</span>(<span class="st">&#39;K(adaptável) =&#39;</span>, rain.ad<span class="op">$</span>smooth[[<span class="dv">1</span>]]<span class="op">$</span>bs.dim))</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-110-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="co"># ThinPlate  &lt;- predict(rain.tp)  </span></a>
+<a class="sourceLine" id="cb97-2" data-line-number="2"><span class="co"># P.spline &lt;- predict(rain.ps)  </span></a>
+<a class="sourceLine" id="cb97-3" data-line-number="3"><span class="co"># CubicRegression &lt;- predict(rain.cr)  </span></a>
+<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="co"># CyclicCR &lt;- predict(rain.cc)  </span></a>
+<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="co"># Adaptative &lt;- predict(rain.ad) </span></a></code></pre></div>
+<!-- - Uma outra forma de representar o efeito da chuva -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- #  -->
+<!-- # par(mfrow=c(3,2),mai=c(0.2,0.5412 ,0.5412,0.05),mgp=c(2,.5,0)) -->
+<!-- # plot(rain.tp,shade=TRUE,ylab="TP",xlab="",residuals=F,xaxp=c(0,416,8),main="Chuva", pch=19, cex=.2, xaxt="n") -->
+<!-- # plot(rain.ps,shade=TRUE,main="",ylab="PS",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- # plot(rain.cr,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- # plot(rain.cc,shade=TRUE,main="",ylab="CC",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2,  xaxt="n") -->
+<!-- # plot(rain.ad,shade=TRUE,main="",ylab="Adaptative",xlab="",residuals=F,xaxp=c(0,416,8),  pch=19, cex=.2) -->
+<!-- #  -->
+<!-- ``` -->
+<!-- - Série da temperatura (ThinPlate - tp, P.spline - ps, CubicRegression - cc) -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- temp.tp <- gam(tempmed ~ s(week,bs="tp",k=52), data=lepto)  -->
+<!-- temp.ps <- gam(tempmed ~ s(week,bs="ps",k=52), data=lepto )  -->
+<!-- temp.cc <- gam(tempmed ~ s(week,bs="cc",k=52), data=lepto ) -->
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(temp.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8) , main="Temperatura", cex=2) -->
+<!-- plot(temp.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(temp.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- ``` -->
+<!-- - Série dos casos de leptospirose (ThinPlate - tp, P.spline - ps, CubicRegression - cc) -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- cases.tp <- gam(cases ~ s(week,bs="tp",k=52), data=lepto ) #ciclica -->
+<!-- cases.ps <- gam(cases ~ s(week,bs="ps",k=52), data=lepto ) # -->
+<!-- cases.cc <- gam(cases ~ s(week,bs="cc",k=52), data=lepto) -->
+<!-- par(mfrow=c(3,1),mai=c(0.05,0.5412 ,0.5412,0.05),mgp=c(2,1,0)) -->
+<!-- plot(cases.tp,shade=TRUE,ylab="TP",xlab="",xaxp=c(0,416,8), main="Casos", cex=2) -->
+<!-- plot(cases.ps,shade=TRUE,main="",ylab="PS",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- plot(cases.cc,shade=TRUE,main="",ylab="CC",xlab="",xaxp=c(0,416,8), cex=2) -->
+<!-- ``` -->
+<ul>
+<li>Ajustando a série dos casos de leptospirose via distribuição Poisson</li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="kw">library</span>(quantmod) <span class="co"># para utilizar a funcao Lag </span></a>
+<a class="sourceLine" id="cb98-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb98-3" data-line-number="3">chuvl0 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(totrain)        ,<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb98-4" data-line-number="4">chuvl1 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">1</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb98-5" data-line-number="5">chuvl2 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">2</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb98-6" data-line-number="6">chuvl3 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">3</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb98-7" data-line-number="7">chuvl4 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">4</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb98-8" data-line-number="8">chuvl5 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">5</span>)),<span class="dt">family=</span>poisson,<span class="dt">data=</span><span class="kw">subset</span>(lepto, week<span class="op">&gt;</span><span class="dv">5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)</a></code></pre></div>
+<div id="htmlwidget-18598195c0f91cb3e6dc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18598195c0f91cb3e6dc">{"x":{"filter":"none","data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.72,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li>Ajustando a série dos casos de leptospirose via distribuição Binomial Negativa</li>
+</ul>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">chuvnb0 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">0</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb100-2" data-line-number="2">chuvnb1 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">1</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb100-3" data-line-number="3">chuvnb2 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">2</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb100-4" data-line-number="4">chuvnb3 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">3</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb100-5" data-line-number="5">chuvnb4 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">4</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb100-6" data-line-number="6">chuvnb5 &lt;-<span class="st"> </span><span class="kw">gam</span>(cases <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(<span class="kw">Lag</span>(totrain,<span class="dv">5</span>)),<span class="dt">data=</span>lepto, <span class="dt">family=</span><span class="kw">nb</span>(), <span class="dt">subset=</span>week<span class="op">&gt;</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb100-7" data-line-number="7">chuvnb5<span class="op">$</span>family<span class="op">$</span><span class="kw">getTheta</span>()</a></code></pre></div>
+<p>[1] 0.4864</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="kw">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)</a></code></pre></div>
+<div id="htmlwidget-2e1c9002f91ef2b3b7dc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2e1c9002f91ef2b3b7dc">{"x":{"filter":"none","data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li>Comparando os AIC’s de ambos os modelos entre os lags</li>
+</ul>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">plot</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="kw">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)[,<span class="dv">2</span>], <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">2090</span>,<span class="dv">2850</span>), <span class="dt">ylab=</span><span class="st">&quot;AIC&#39;s&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Lags&quot;</span>)</a>
+<a class="sourceLine" id="cb102-2" data-line-number="2"><span class="kw">lines</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="kw">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)[,<span class="dv">2</span>], <span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb102-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb102-4" data-line-number="4"><span class="kw">legend</span>(<span class="st">&quot;right&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;Poisson&quot;</span>,<span class="st">&quot;Bin. Neg.&quot;</span>),<span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="dt">fill=</span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-117-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Verificando a distribuição da chuva entre todos os lags</li>
+</ul>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1"><span class="kw">boxplot</span>(lepto<span class="op">$</span>totrain)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-118-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>),<span class="dt">mai=</span><span class="kw">c</span>(<span class="fl">0.05</span>,<span class="fl">0.5412</span> ,<span class="fl">0.5412</span>,<span class="fl">0.05</span>),<span class="dt">mgp=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb104-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb104-3" data-line-number="3"><span class="kw">plot</span>(chuvnb0,<span class="dt">ylab=</span><span class="st">&quot;Lag=0&quot;</span>)</a>
+<a class="sourceLine" id="cb104-4" data-line-number="4"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb104-5" data-line-number="5"><span class="kw">plot</span>(chuvnb1,<span class="dt">ylab=</span><span class="st">&quot;Lag=1&quot;</span>)</a>
+<a class="sourceLine" id="cb104-6" data-line-number="6"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb104-7" data-line-number="7"><span class="kw">plot</span>(chuvnb2,<span class="dt">ylab=</span><span class="st">&quot;Lag=2&quot;</span>)</a>
+<a class="sourceLine" id="cb104-8" data-line-number="8"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb104-9" data-line-number="9"><span class="kw">plot</span>(chuvnb3,<span class="dt">ylab=</span><span class="st">&quot;Lag=3&quot;</span>)</a>
+<a class="sourceLine" id="cb104-10" data-line-number="10"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb104-11" data-line-number="11"><span class="kw">plot</span>(chuvnb4,<span class="dt">ylab=</span><span class="st">&quot;Lag=4&quot;</span>)</a>
+<a class="sourceLine" id="cb104-12" data-line-number="12"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb104-13" data-line-number="13"><span class="kw">plot</span>(chuvnb5,<span class="dt">ylab=</span><span class="st">&quot;Lag=5&quot;</span>)</a>
+<a class="sourceLine" id="cb104-14" data-line-number="14"><span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>,<span class="dt">lty=</span><span class="dv">2</span>,<span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-118-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<!-- Analisando os resíduos do modelo casos.chuva.gam.4 -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- par(mfrow=c(2,2)) -->
+<!-- gam.check(casos.chuva.gam.4, pch=19,cex=.3) -->
+<!-- ``` -->
+<!-- Plotano o ACF e PACF -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- # ACF e PACF -->
+<!-- par(mfrow=c(1,2)) -->
+<!-- ar.acf <- acf(casos.chuva.gam.4$residuals,type="correlation",plot=T) -->
+<!-- ar.pacf <- acf(casos.chuva.gam.4$residuals,type="partial",plot=T) -->
+<!-- plot(ar.acf) -->
+<!-- plot(ar.pacf) -->
+<!-- ``` -->
+<!-- Teste de Ljung-Box  -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!--  Box.test(casos.chuva.gam.4$residuals, type = "Ljung") -->
+<!-- ``` -->
+<ul>
+<li>E agora? incluir humidade, temperatura, etc etc…</li>
+</ul>
+</div>
+</div>
+<div id="exercícios-propostos-3" class="section level2">
+<h2><span class="header-section-number">5.18</span> Exercícios Propostos</h2>
+<ol style="list-style-type: decimal">
+<li>Utilzando o baco de dados do R chamado <em>Seatbelts</em>, que é baseado em uma série histórica que mostra os totais mensais dos condutores de automóveis na Grã-Bretanha mortos ou gravemente feridos, de 1969 a dezembro de 1984. O uso obrigatório dos cintos de segurança foi introduzido em 31 de janeiro de 1983.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Variáveis</th>
+<th align="center">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">DriversKilled</td>
+<td align="center">Motoristas de carro mortos</td>
+</tr>
+<tr class="even">
+<td align="center">drivers</td>
+<td align="center">Mesmo que UKDriverDeaths</td>
+</tr>
+<tr class="odd">
+<td align="center">front</td>
+<td align="center">Passageiros do banco da frente mortos ou gravemente feridos</td>
+</tr>
+<tr class="even">
+<td align="center">rear</td>
+<td align="center">Passageiros do banco traseiro mortos ou gravemente feridos</td>
+</tr>
+<tr class="odd">
+<td align="center">kms</td>
+<td align="center">Distância percorrida</td>
+</tr>
+<tr class="even">
+<td align="center">PetroPrice</td>
+<td align="center">Preço da gasolina</td>
+</tr>
+<tr class="odd">
+<td align="center">VanKilled</td>
+<td align="center">Número de condutores de van (veículo leve de mercadorias)</td>
+</tr>
+<tr class="even">
+<td align="center">law</td>
+<td align="center">A lei estava em vigor naquele mês (1/0)</td>
+</tr>
+</tbody>
+</table>
+<p>Pede-se:</p>
+<ul>
+<li>Ajuste um modelo ARIMA com a variável de desfecho DriversKilled;</li>
+<li>Ajuste um modelo GAM utilizando a variável de desfecho DriversKilled e verifique quais variáveis estão mais associadas ao modelo.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Dados climatológicos de temperaturas máxima, mínima e pluviosidade para as 10 áreas de planejamento (AP) da cidade do Rio de Janeiro de 2001 a 2016 estão disponíveis nos arquivos abaixo. Use a função <em>read.csv2</em> para ler o dado.</li>
+</ol>
+<ul>
+<li><p><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/max_ALL.csv">temperatura máxima</a></p></li>
+<li><p><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/max_ALL.csv">temperatura mínima</a></p></li>
+<li><p><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/exemplos/rain_ALL.csv">pluviosidade</a></p></li>
+</ul>
+<p>Escolha uma delas, descreva a série e tente modelar usando os modelos B&amp;J ou GAM.</p>
+<div id="exercícios-resolvidos" class="section level4">
+<h4><span class="header-section-number">5.18.0.1</span> Exercícios Resolvidos</h4>
+<ul>
+<li><p><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex1_cap4_seatbealt.r">Acidentes de transito UK</a></p></li>
+<li><p><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex2_cap4_pluviosidade.r">Dados Climaticos</a></p></li>
+</ul>
+</div>
+</div>
+<div id="bibliografia-sugerida-3" class="section level2">
+<h2><span class="header-section-number">5.19</span> Bibliografia sugerida</h2>
+<p>Asteriou, D.; Hall, S.G. Applied econometrics. Macmillan International Higher Education, 2015.</p>
+<p>Brockwell, Peter J.; DAVIS, Richard A.; CALDER, Matthew V. Introduction to time series and forecasting. New York: springer, 2002.</p>
+<p>Harvey, A. C. and Durbin, J. The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. 1986.</p>
+<p>Hastie, T.; Tibshirani, R. Generalised Additive Models. Chapman &amp; Hall, 1990.</p>
+<p>Hyndman, R.J and Khandakar, Y. Automatic time series forecasting: The forecast package for R, Journal of Statistical Software, 26(3). 2008.</p>
+<p>Webster, C.E.J. Time series properties of econometric models and their implied ARIMA representation. 1983.</p>
+<p>Wood, S.N. Generalized Additive Models: An Introduction with R. Chapman &amp; Hall/CRC Texts in Statistical Science Series, 2006.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="transformações-e-suavizações.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introdução-à-análise-estatística-espacial.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

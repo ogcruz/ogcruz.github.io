@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS</title>
+  <meta name="description" content=" 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Estudos Ecológicos | ESTUDOS ECOLÓGICOS" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
+
+
+<meta name="date" content="2019-11-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="apresentação.html"/>
+<link rel="next" href="introdução-às-séries-temporais.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.9/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentação.html"><a href="apresentação.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a><ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#o-que-são-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.1</b> O que são de Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#objetivos-dos-estudos-ecológicos"><i class="fa fa-check"></i><b>2.2</b> Objetivos dos Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas-1"><i class="fa fa-check"></i><b>2.4</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-desenhos-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.5</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#alguns-conceitos"><i class="fa fa-check"></i><b>2.6</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.7</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#árvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.8</b> Árvores, Bosques ou as Florestas ?</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-árvores"><i class="fa fa-check"></i><b>2.8.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.8.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#os-bosques"><i class="fa fa-check"></i><b>2.8.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.8.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-florestas"><i class="fa fa-check"></i><b>2.8.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#falácia-ecológica-ou-viés-de-agregação"><i class="fa fa-check"></i><b>2.9</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#problemas-práticos"><i class="fa fa-check"></i><b>2.10</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#vantagens"><i class="fa fa-check"></i><b>2.11</b> Vantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#desvantagens"><i class="fa fa-check"></i><b>2.12</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#resumindo"><i class="fa fa-check"></i><b>2.13</b> Resumindo</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#exercícios-propostos"><i class="fa fa-check"></i><b>2.14</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.15" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.15</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a><ul>
+<li class="chapter" data-level="3.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#o-que-são-séries-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#hipóteses-básicas-do-estudo-das-séries-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#classificação-dos-tipos-de-séries-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#processo-estocástico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#notação-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#objetivos-análise-de-séries-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocovariância-de-um-processo-estacionário"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#porque-a-estacionariedade-é-importante"><i class="fa fa-check"></i><b>3.7.2</b> Porque a Estacionariedade é Importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal"><i class="fa fa-check"></i><b>3.8</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.9" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#independência"><i class="fa fa-check"></i><b>3.9</b> Independência</a></li>
+<li class="chapter" data-level="3.10" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#dependência"><i class="fa fa-check"></i><b>3.10</b> Dependência</a></li>
+<li class="chapter" data-level="3.11" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocorrelação---fac-em-inglês-autocorrelation-function-acf"><i class="fa fa-check"></i><b>3.11</b> Função de Autocorrelação - FAC (em Inglês Autocorrelation function ACF )</a></li>
+<li class="chapter" data-level="3.12" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal-1"><i class="fa fa-check"></i><b>3.12</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.13" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#tendência"><i class="fa fa-check"></i><b>3.13</b> Tendência</a></li>
+<li class="chapter" data-level="3.14" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.14</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.15" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.15</b> Ciclo</a><ul>
+<li class="chapter" data-level="3.15.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.15.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.16" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#termo-aleatório-ou-ruído-branco"><i class="fa fa-check"></i><b>3.16</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.17" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#composição-dos-modelos-de-uma-séries-temporais"><i class="fa fa-check"></i><b>3.17</b> Composição dos Modelos de uma séries temporais</a><ul>
+<li class="chapter" data-level="3.17.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.17.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.17.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.17.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.18" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#decomposição-de-um-séries-temporais"><i class="fa fa-check"></i><b>3.18</b> Decomposição de um séries temporais</a></li>
+<li class="chapter" data-level="3.19" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#prática-no-r"><i class="fa fa-check"></i><b>3.19</b> Prática no R</a><ul>
+<li class="chapter" data-level="3.19.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#a-biblioteca-ts-é-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.19.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.19.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#simulando-uma-série-temporal"><i class="fa fa-check"></i><b>3.19.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.19.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#importando-uma-vetor-e-transformando-em-série-temporal"><i class="fa fa-check"></i><b>3.19.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.19.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#utilizando-dados-da-incidência-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.19.4</b> Utilizando dados da Incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+<li class="chapter" data-level="3.19.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#avaliando-a-estacionariedade-da-séries-temporais"><i class="fa fa-check"></i><b>3.19.5</b> Avaliando a Estacionariedade da séries temporais</a></li>
+<li class="chapter" data-level="3.19.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#avaliando-a-tendência-em-uma-séries-temporais"><i class="fa fa-check"></i><b>3.19.6</b> Avaliando a tendência em uma séries temporais</a></li>
+<li class="chapter" data-level="3.19.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#avaliando-a-sazonalidade-da-séries-temporais"><i class="fa fa-check"></i><b>3.19.7</b> Avaliando a Sazonalidade da séries temporais</a></li>
+</ul></li>
+<li class="chapter" data-level="3.20" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>3.20</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.21" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#material-on-line-sobre-séries-temporais"><i class="fa fa-check"></i><b>3.21</b> Material on line sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.22" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.22</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a><ul>
+<li class="chapter" data-level="4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#alguns-exemplos-de-transfomação-dos-dados-em-st"><i class="fa fa-check"></i><b>4.1.1</b> Alguns exemplos de transfomação dos dados em ST:</a></li>
+<li class="chapter" data-level="4.1.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transformações-box-cox-digferenciação-e-logarítmica"><i class="fa fa-check"></i><b>4.1.2</b> Transformações Box-Cox, Digferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#métodos-de-alisamento-ou-suavização"><i class="fa fa-check"></i><b>4.2</b> Métodos de Alisamento ou Suavização</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#algumas-funções-de-suavização"><i class="fa fa-check"></i><b>4.2.1</b> Algumas funções de suavização</a></li>
+<li class="chapter" data-level="4.2.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#médias-móveis"><i class="fa fa-check"></i><b>4.2.2</b> Médias móveis</a></li>
+<li class="chapter" data-level="4.2.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-das-médias-móveis"><i class="fa fa-check"></i><b>4.2.3</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#kernel"><i class="fa fa-check"></i><b>4.3</b> Kernel</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#diferentes-funções-kernel"><i class="fa fa-check"></i><b>4.3.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.3.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#largura-de-banda"><i class="fa fa-check"></i><b>4.3.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.3.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-kernel"><i class="fa fa-check"></i><b>4.3.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#lowess-locally-weighted-sum-of-square"><i class="fa fa-check"></i><b>4.4</b> Lowess (Locally Weighted Sum of Square)</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-lowess"><i class="fa fa-check"></i><b>4.4.1</b> Utilização do Lowess</a></li>
+<li class="chapter" data-level="4.4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#comparando"><i class="fa fa-check"></i><b>4.4.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines"><i class="fa fa-check"></i><b>4.5</b> Splines</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines-vs-loess"><i class="fa fa-check"></i><b>4.5.1</b> Splines <em>vs</em> Loess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#exercícios-propostos-2"><i class="fa fa-check"></i><b>4.6</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.7" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#o-que-são-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#alguns-processos-estocásticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autoregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autoregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-de-médias-móveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-médias-móveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-integrado-de-médias-móveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-não-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> <strong>Modelos ARIMA não sazonais</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - ARIMA(p,d,q)(P,D,Q)_{m}</a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#função-de-autocorrelação-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-identificação"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#métricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#análise-de-resíduos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-automático-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-de-previsão"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#correlação-cruzada-cross-corralation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Corralation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (generalized Additive Models)</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#por-que-não-usar"><i class="fa fa-check"></i><b>5.15</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-em-séries-temporais"><i class="fa fa-check"></i><b>5.16</b> GAM em Séries Temporais</a><ul>
+<li class="chapter" data-level="5.16.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-um-modelo-gam"><i class="fa fa-check"></i><b>5.16.1</b> Exemplo de um modelo GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="5.17" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-modelo-gam-aplicado-a-séries-temporais"><i class="fa fa-check"></i><b>5.17</b> Exemplo de modelo GAM aplicado a Séries Temporais</a><ul>
+<li class="chapter" data-level="5.17.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-série-temporal-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.17.1</b> Exemplo: Série Temporal: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.18" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-propostos-3"><i class="fa fa-check"></i><b>5.18</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="5.19" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.19</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a><ul>
+<li class="chapter" data-level="6.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#o-que-é-análise-estatística-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial ?</a></li>
+<li class="chapter" data-level="6.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#origem-da-estatística-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#quando-usar-métodos-de-análise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial ?</a></li>
+<li class="chapter" data-level="6.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dependência-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações-em-saúde"><i class="fa fa-check"></i><b>6.5</b> Aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoestatıstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-área"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#sistema-de-informações-geográficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a><ul>
+<li class="chapter" data-level="6.12.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#alguns-conceitos-1"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a><ul>
+<li class="chapter" data-level="6.14.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#autocorrelação-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a><ul>
+<li class="chapter" data-level="6.15.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dengue-em-dourados"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#vigilância-dos-vetores-da-dengue-usando-modelagem-espaço-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelo-espaço-temporal-para-a-análise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-da-temperatura-na-costa-central-da-califórnia"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#a-relação-entre-a-malária-e-a-chuva-no-estado-do-pará-uma-análise-espaço-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.6</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#material-on-line-sobre-estatística-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.18</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a><ul>
+<li class="chapter" data-level="7.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#o-que-são-padrões-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais ?</a></li>
+<li class="chapter" data-level="7.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#tipos-de-distribuições"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel-com-correção-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#kernel-com-variação-da-população"><i class="fa fa-check"></i><b>7.6</b> Kernel com Variação da população</a></li>
+<li class="chapter" data-level="7.7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#razão-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-f-e-g---distância-do-vizinho-mais-próximo"><i class="fa fa-check"></i><b>7.8</b> Função F e G - Distância do vizinho mais próximo</a></li>
+<li class="chapter" data-level="7.9" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-k-de-ripley-ou-apenas-função-k."><i class="fa fa-check"></i><b>7.9</b> Função K de Ripley (ou apenas função K).</a></li>
+<li class="chapter" data-level="7.10" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-l"><i class="fa fa-check"></i><b>7.10</b> Função <em>L</em></a></li>
+<li class="chapter" data-level="7.11" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#detecção-de-cluster"><i class="fa fa-check"></i><b>7.11</b> Detecção de cluster</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#testes-genéricos-de-cluster"><i class="fa fa-check"></i><b>7.11.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.11.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#fonte-específica"><i class="fa fa-check"></i><b>7.11.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-propostos-4"><i class="fa fa-check"></i><b>7.12</b> Exercícios Propostos</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a><ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>8.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>8.4</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>9</b> Dados de Área I</a><ul>
+<li class="chapter" data-level="9.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>9.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="9.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>9.3</b> Visualização: Mapa Temático usando a biblioteca <strong>tmap</strong></a></li>
+<li class="chapter" data-level="9.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória"><i class="fa fa-check"></i><b>9.4</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.4.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="9.4.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>9.4.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>9.5</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="9.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>9.6</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="9.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>9.7</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="9.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>9.8</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="9.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>9.9</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="9.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>9.10</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="9.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>9.11</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="9.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>9.12</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="9.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>9.13</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="9.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>9.14</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>10</b> Dados de Área II</a><ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-de-regressão-espacial"><i class="fa fa-check"></i><b>10.1</b> Modelos de Regressão Espacial</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-globais"><i class="fa fa-check"></i><b>10.2</b> Modelos com Efeitos Espaciais Globais</a></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#spatial-lag-models-sar"><i class="fa fa-check"></i><b>10.3</b> Spatial Lag Models (SAR)</a></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#spatial-error-models-car"><i class="fa fa-check"></i><b>10.4</b> Spatial Error Models (CAR)</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-sar-vs-car"><i class="fa fa-check"></i><b>10.5</b> Modelos SAR vs CAR</a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>10.6</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais-1"><i class="fa fa-check"></i><b>10.7</b> Modelos com Efeitos Espaciais Locais</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#errata"><i class="fa fa-check"></i><b>10.8</b> ERRATA</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>10.9</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área III</a><ul>
+<li class="chapter" data-level="11.1" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#exemplo-com-os-dados-de-dengue-em-douradosms-1"><i class="fa fa-check"></i><b>11.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="11.2" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#kernel-por-atributos"><i class="fa fa-check"></i><b>11.2</b> Kernel por atributos</a></li>
+<li class="chapter" data-level="11.3" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#matriz-de-vizinhança-1"><i class="fa fa-check"></i><b>11.3</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="11.4" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#matriz-de-vizinhança-2"><i class="fa fa-check"></i><b>11.4</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="11.5" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#autocorrelação-espacial-1"><i class="fa fa-check"></i><b>11.5</b> Autocorrelação Espacial</a></li>
+<li class="chapter" data-level="11.6" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#modelos-linear-car-e-gwr"><i class="fa fa-check"></i><b>11.6</b> Modelos Linear, CAR e GWR</a></li>
+<li class="chapter" data-level="11.7" data-path="dados-de-área-iii.html"><a href="dados-de-área-iii.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>11.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="geoestatística.html"><a href="geoestatística.html"><i class="fa fa-check"></i><b>12</b> Geoestatística</a><ul>
+<li class="chapter" data-level="12.1" data-path="geoestatística.html"><a href="geoestatística.html#conceito"><i class="fa fa-check"></i><b>12.1</b> Conceito</a></li>
+<li class="chapter" data-level="12.2" data-path="geoestatística.html"><a href="geoestatística.html#objetivos"><i class="fa fa-check"></i><b>12.2</b> Objetivos</a></li>
+<li class="chapter" data-level="12.3" data-path="geoestatística.html"><a href="geoestatística.html#principais-aplicações"><i class="fa fa-check"></i><b>12.3</b> Principais aplicações</a></li>
+<li class="chapter" data-level="12.4" data-path="geoestatística.html"><a href="geoestatística.html#exemplo"><i class="fa fa-check"></i><b>12.4</b> Exemplo</a></li>
+<li class="chapter" data-level="12.5" data-path="geoestatística.html"><a href="geoestatística.html#efeitos"><i class="fa fa-check"></i><b>12.5</b> Efeitos</a></li>
+<li class="chapter" data-level="12.6" data-path="geoestatística.html"><a href="geoestatística.html#formalizando"><i class="fa fa-check"></i><b>12.6</b> Formalizando</a></li>
+<li class="chapter" data-level="12.7" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-primeira-ordem-regressão-linear"><i class="fa fa-check"></i><b>12.7</b> Efeito de primeira ordem: regressão linear</a></li>
+<li class="chapter" data-level="12.8" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-segunda-ordem-regressão-espacial"><i class="fa fa-check"></i><b>12.8</b> Efeito de segunda ordem: regressão espacial</a></li>
+<li class="chapter" data-level="12.9" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-1"><i class="fa fa-check"></i><b>12.9</b> Análise exploratória</a><ul>
+<li class="chapter" data-level="12.9.1" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>12.9.1</b> Análise exploratória: efeitos de primeira ordem</a></li>
+</ul></li>
+<li class="chapter" data-level="12.10" data-path="geoestatística.html"><a href="geoestatística.html#simplificações-estacionariedade-e-isotropia"><i class="fa fa-check"></i><b>12.10</b> Simplificações: Estacionariedade e Isotropia</a></li>
+<li class="chapter" data-level="12.11" data-path="geoestatística.html"><a href="geoestatística.html#variograma-empırico"><i class="fa fa-check"></i><b>12.11</b> Variograma empı́rico</a><ul>
+<li class="chapter" data-level="12.11.1" data-path="geoestatística.html"><a href="geoestatística.html#relação-entre-variograma-covariograma-e-correlograma"><i class="fa fa-check"></i><b>12.11.1</b> Relação entre variograma, covariograma e correlograma</a></li>
+<li class="chapter" data-level="12.11.2" data-path="geoestatística.html"><a href="geoestatística.html#estrutura-do-variograma"><i class="fa fa-check"></i><b>12.11.2</b> Estrutura do variograma</a></li>
+<li class="chapter" data-level="12.11.3" data-path="geoestatística.html"><a href="geoestatística.html#variogramas-para-modelos-isotrópicos"><i class="fa fa-check"></i><b>12.11.3</b> Variogramas para modelos isotrópicos</a></li>
+<li class="chapter" data-level="12.11.4" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1"><i class="fa fa-check"></i><b>12.11.4</b> Aplicação 1</a></li>
+<li class="chapter" data-level="12.11.5" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-2"><i class="fa fa-check"></i><b>12.11.5</b> Aplicação 2</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="geoestatística.html"><a href="geoestatística.html#modelagem-em-geoestatística"><i class="fa fa-check"></i><b>12.12</b> Modelagem em Geoestatística</a><ul>
+<li class="chapter" data-level="12.12.1" data-path="geoestatística.html"><a href="geoestatística.html#modelando-dados-de-geoestatística---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>12.12.1</b> Modelando dados de Geoestatística - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="12.13" data-path="geoestatística.html"><a href="geoestatística.html#krigagem"><i class="fa fa-check"></i><b>12.13</b> Krigagem</a><ul>
+<li class="chapter" data-level="12.13.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-universal"><i class="fa fa-check"></i><b>12.13.1</b> Krigagem Universal</a></li>
+<li class="chapter" data-level="12.13.2" data-path="geoestatística.html"><a href="geoestatística.html#algumas-considerações-da-krigagem-em-geral"><i class="fa fa-check"></i><b>12.13.2</b> Algumas considerações da krigagem em geral:</a></li>
+<li class="chapter" data-level="12.13.3" data-path="geoestatística.html"><a href="geoestatística.html#krigagem---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>12.13.3</b> Krigagem - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="12.14" data-path="geoestatística.html"><a href="geoestatística.html#prática-no-r-1"><i class="fa fa-check"></i><b>12.14</b> Prática no R</a></li>
+<li class="chapter" data-level="12.15" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1---dados-de-temperatura"><i class="fa fa-check"></i><b>12.15</b> Aplicação 1 - Dados de temperatura</a><ul>
+<li class="chapter" data-level="12.15.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-1"><i class="fa fa-check"></i><b>12.15.1</b> Krigagem</a></li>
+</ul></li>
+<li class="chapter" data-level="12.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>12.16</b> Repita a análise para o banco de ovos em Higienópolis</a></li>
+<li class="chapter" data-level="12.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-9"><i class="fa fa-check"></i><b>12.17</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html"><i class="fa fa-check"></i><b>13</b> Análise Espaço-Temporal</a><ul>
+<li class="chapter" data-level="13.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-conceitos-2"><i class="fa fa-check"></i><b>13.1</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="13.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#processo-de-difusão-das-doenças"><i class="fa fa-check"></i><b>13.2</b> Processo de difusão das doenças</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#difusão-espacial"><i class="fa fa-check"></i><b>13.2.1</b> Difusão Espacial</a></li>
+<li class="chapter" data-level="13.2.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#espacializando-a-difusão-das-doenças"><i class="fa fa-check"></i><b>13.2.2</b> Espacializando a difusão das doenças</a></li>
+<li class="chapter" data-level="13.2.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#processo-de-difusão-das-doenças-1"><i class="fa fa-check"></i><b>13.2.3</b> Processo de difusão das doenças</a></li>
+<li class="chapter" data-level="13.2.4" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelos-de-difusão-de-doenças"><i class="fa fa-check"></i><b>13.2.4</b> Modelos de difusão de doenças</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#analise-exploratória-espaço-temporal"><i class="fa fa-check"></i><b>13.3</b> Analise Exploratória Espaço-temporal</a></li>
+<li class="chapter" data-level="13.4" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#cluster-espaço-temporal"><i class="fa fa-check"></i><b>13.4</b> Cluster Espaço-Temporal</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#a-estatıstica-scan"><i class="fa fa-check"></i><b>13.4.1</b> A estatı́stica Scan</a></li>
+<li class="chapter" data-level="13.4.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-1---leptospirose-no-rio-de-janeiro"><i class="fa fa-check"></i><b>13.4.2</b> Aplicação 1 - Leptospirose no Rio de Janeiro</a></li>
+<li class="chapter" data-level="13.4.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-2---arboviroses-no-rio-de-janeiro"><i class="fa fa-check"></i><b>13.4.3</b> Aplicação 2 - Arboviroses no Rio de Janeiro</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelagem-estatística-espaço-temporal"><i class="fa fa-check"></i><b>13.5</b> Modelagem Estatística Espaço-temporal</a><ul>
+<li class="chapter" data-level="13.5.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-resultados-preliminares"><i class="fa fa-check"></i><b>13.5.1</b> Alguns resultados preliminares</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#bibliografia-sugerida-10"><i class="fa fa-check"></i><b>13.6</b> Bibliografia sugerida</a></li>
+<li class="chapter" data-level="13.7" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#roteiro-para-a-execução-do-trabalho-final"><i class="fa fa-check"></i><b>13.7</b> Roteiro para a execução do trabalho final</a><ul>
+<li class="chapter" data-level="13.7.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>13.7.1</b> Sugestões de locais para baixar os dados e os mapas</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#section"><i class="fa fa-check"></i><b>13.8</b> </a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="estudos-ecológicos" class="section level1">
+<h1><span class="header-section-number"> 2</span> Estudos Ecológicos</h1>
+<div id="o-que-são-de-estudos-ecológicos" class="section level2">
+<h2><span class="header-section-number">2.1</span> O que são de Estudos Ecológicos ?</h2>
+<ul>
+<li><p>São estudos na qual a unidade de análise é uma população ou um grupo de pessoas (<em>unidade de análise ou agregação</em>), que geralmente pertence a uma área geográfica definida (ex: um país, um estado, uma cidade, etc.) e tempo definidos;</p></li>
+<li><p><strong>Definição Clássica</strong>: é um estudo observacional com a informação obtida e analisada no nível <strong>agregado</strong>.</p></li>
+<li><p>Geralmente são mais <strong>baratos</strong> e mais <strong>rápidos</strong> do que estudos envolvendo o indivíduo como unidade de análise;</p></li>
+<li><p>Esses delineamentos procuram avaliar como os contextos social e ambiental podem afetar a saúde de grupos populacionais.</p></li>
+</ul>
+</div>
+<div id="objetivos-dos-estudos-ecológicos" class="section level2">
+<h2><span class="header-section-number">2.2</span> Objetivos dos Estudos Ecológicos ?</h2>
+<ul>
+<li><p>Gerar hipóteses etiológicas a respeito da ocorrência de uma determinada doença;</p></li>
+<li><p>Testar hipóteses etiológica;</p></li>
+<li><p>Avaliar a efetividade de intervenções na população.</p></li>
+</ul>
+<p><strong>Exemplo 1</strong>: Em 1960, Friedman mostrou uma correlação positiva entre as taxas de mortalidade por doença coronariana (DC) e as vendas de cigarros per capita, em 44 estados americanos.</p>
+<ul>
+<li>Esta observação inicial contribuiu para a formulação de hipótese de que o tabagismo poderia causar doença coronariana</li>
+</ul>
+<p><img src="figuras/ecologico1.png" /></p>
+<p><small> Figura: Coronary heart disease mortality rates in the United States per capita cigarette sales in 1960, by state. (From FRIEDMAN GD, Cigarette smoking and geographic variation in coronary heart disease mortality in the United States. J. Chronic Dis. 20: 769, 1967)
+</small></p>
+<hr />
+<ul>
+<li><strong>Exemplo 2</strong>: Correlação entre consumo de carne em vários países e taxa de mortalidade por câncer de colon.</li>
+</ul>
+<p><img src="figuras/ecologico2.png" /></p>
+<p><small> Figura: Correlation between per capita meat consumption and colon cancer among women in various countries (From ARMSTRONG BK &amp; DOLL R, Environmental factors and cancer incidence and mortality in different countries, with special reference to dietary practices. Int. J. Cancer, 15: 617, 1975)
+</small></p>
+</div>
+<div id="tipos-de-variáveis-utilizadas" class="section level2">
+<h2><span class="header-section-number">2.3</span> Tipos de Variáveis Utilizadas</h2>
+<ul>
+<li>Em uma análise ecológica, todas as variáveis são medidas agrupadas. Apenas se conhece a distribuição marginal de cada variável.</li>
+</ul>
+<p><br />
+</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Desfecho (<em>Y</em>)</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fator em Estudo (<em>X</em>)</strong></td>
+<td align="center">Ocorreu</td>
+<td align="center">Não ocorreu</td>
+<td align="center"><strong>Total </strong></td>
+</tr>
+<tr class="even">
+<td>Exposto</td>
+<td align="center">?</td>
+<td align="center">?</td>
+<td align="center"><span class="math inline">\(E_1\)</span></td>
+</tr>
+<tr class="odd">
+<td>Não Exposto</td>
+<td align="center">?</td>
+<td align="center">?</td>
+<td align="center"><span class="math inline">\(E_0\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td align="center"><span class="math inline">\(D_1\)</span></td>
+<td align="center"><span class="math inline">\(D_0\)</span></td>
+<td align="center"><em>n</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tipos-de-variáveis-utilizadas-1" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tipos de Variáveis Utilizadas</h2>
+<ul>
+<li><p><strong>Medidas Agregadas</strong>: Medidas individuais dentro de cada grupo. ex: taxa de prevalência, proporção de fumantes;</p></li>
+<li><p><strong>Medidas Ambientais</strong>: Características físicas do contexto onde o grupo convive. ex: nível de poluição, precipitação;</p></li>
+<li><p><strong>Medidas Globais</strong>: Atributos de grupos, organizações ou lugares, que não podem ser mensurados a nível individual. ex: IDH, densidade demográfica, existência de um tipo de sistema de saúde.</p></li>
+</ul>
+</div>
+<div id="tipos-de-desenhos-de-estudos-ecológicos" class="section level2">
+<h2><span class="header-section-number">2.5</span> Tipos de Desenhos de Estudos Ecológicos</h2>
+<ul>
+<li><p><strong>Múltiplos Grupos</strong>: O objetivo desse tipo de estudo é a comparação entre todos os grupos ou conjuntos populacionais envolvidos no estudo. Ex: Análise Espacial.</p></li>
+<li><p><strong>Desenhos de Séries Temporais</strong>: Avalia um determinado desfecho ao longo do tempo em uma determinada população geograficamente definida. Ex: Análise de Séries Temporais.</p></li>
+<li><p><strong>Desenhos Mistos</strong>: É a combinação entre os dois desenhos citados, pois avalia a evolução de um determinado desfecho em diferentes grupos populacionais ao longo do tempo. Ex: Análise Espaço-Temporais, Estudos Multiníveis.</p></li>
+</ul>
+</div>
+<div id="alguns-conceitos" class="section level2">
+<h2><span class="header-section-number">2.6</span> Alguns Conceitos</h2>
+<ul>
+<li>“Um estudo ecológico ou agregado focaliza a comparação de grupos, ao invés de indivíduos. A razão subjacente para este foco é que dados a nível individual da distribuição conjunta de duas (ou talvez todas) variáveis estão faltando internamente nos grupos; neste sentido um estudo ecológico é um desenho incompleto”.</li>
+</ul>
+<p><small> (Rothman, Kenneth J. et al. Modern epidemiology. Philadelphia: Wolters Kluwer Health/Lippincott Williams &amp; Wilkins, 2008.) </small></p>
+<hr />
+<ul>
+<li>“… estudar saúde no contexto ambiental. O objetivo é ambicioso: entender como o contexto afeta a saúde de pessoas e grupo através de seleção, distribuição, interação, adaptação, e outras respostas. Medidas de atributos do indivíduo não podem dar conta destes processos […] Sem medir estes contextos, nem padrão de mortalidade e morbidade, nem o espalhamento epidêmico, nem a transmissão sexual podem ser explicados”</li>
+</ul>
+<p><small> (Susser, Am.J.Public Health, 1994;84:825-835) </small></p>
+<hr />
+<ul>
+<li><p>A Epidemiologia é frequentemente definida em termos do estudo da determinação da distribuição da doença. Mas não se deve esquecer que quanto mais espalhada é uma causa particular, menos ela contribui para explicar a distribuição da doença.”</p></li>
+<li><p>“…dois tipos de perguntas etiológicas. A primeira busca as causas dos casos, e a segunda as causas da incidência.”</p></li>
+</ul>
+<p><small> (Rose G. Sick individuals and sick populations. Int J Epidemiol. 2001 Jun;30(3):427-32; discussion 433-4.) </small></p>
+<hr />
+<ul>
+<li>“Aplicada à etiologia, a visão centralizada no indivíduo leva ao uso do risco-relativo como a representação básica da força etiológica: ou seja, o risco em indivíduos expostos relativo aos não-expostos. […] Esta pode ser geralmente a melhor medida de força etiológica, mas não é medida de […] importância em saúde pública.” (idem)</li>
+</ul>
+<hr />
+<ul>
+<li>“É rara a doença cuja taxa de incidência não tenha variado largamente, seja ao longo do tempo ou entre populações
+[…] Isto significa que as causas da incidência, desconhecidas que sejam, não são inevitáveis. […] Mas identificar o agente causal pelos métodos tradicionais de caso-controle e coorte não terá sucesso se não houver suficientes diferenças na exposição dentro da população […] Nestas circunstâncias tudo os que os métodos tradicionais fazem é encontrar marcadores de susceptibilidade individual. A chave deve ser buscada nas diferenças entre populações ou em mudanças nas
+populações ao longo do tempo.” (idem)</li>
+</ul>
+<hr />
+<ul>
+<li>“ … torna-se aparente que muitas das explicações convencionais dos determinantes da saúde - porque
+algumas pessoas são saudáveis e outras não - são, na melhor das hipóteses seriamente incompletas, se não
+simplesmente erradas. É assim, infelizmente, porque as sociedades modernas dedicam uma parte muito grande
+de sua riqueza, esforço e atenção tentando manter ou melhorar a saúde dos indivíduos que compõem suas
+populações. Estes esforços maciços são primeiramente canalizados para os sistemas de assistência à saúde,
+presumivelmente refletindo uma crença que receber uma boa assistência é o mais importante determinante de
+saúde.”</li>
+</ul>
+<p><small> (Evans,R.G.”Why are some people healthy and others not”) </small></p>
+<hr />
+<ul>
+<li>“Grande parte da pesquisa atual em epidemiologia está baseada no individualismo metodológico: a noção que a distribuição da saúde e doença em populações pode ser explicada exclusivamente em termos das características dos indivíduos.”</li>
+</ul>
+<p><small> (DIEZ-ROUX AV. Bringing context back into epidemiology: variables and fallacies in multilevel analysis. AJPH,1998;88(2):216-22) </small></p>
+<hr />
+<ul>
+<li>“A evidência de modestos efeitos de vizinhança na saúde é razoavelmente consistente, apesar da
+heterogeneidade dos desenhos dos estudos […] e prováveis erros de medida. Ao chamar a atenção da
+saúde pública para os riscos associados com a estrutura social e ecológica de vizinhança, enseja-se possíveis intervenções inovadoras no nível da comunidade.”</li>
+</ul>
+<p><small> (PICKETT KE, PEARL M. Multilevel analyses of neighbourhood socioeconomic context and health outcomes: a critical review. J Epidemiol Community Health 2001;55(2):111-22) </small></p>
+<hr />
+</div>
+<div id="epidemiologia-social" class="section level2">
+<h2><span class="header-section-number">2.7</span> Epidemiologia social</h2>
+<ul>
+<li>“…o ramo da epidemiologia que estuda a distribuição social e os determinantes sociais da saúde. A epidemiologia social incorpora um novo foco na comunidade como uma entidade em si, uma entidade mais complexa do que a soma das pessoas individuais que compõem a sociedade.”</li>
+</ul>
+<p><small> (Berkman L. F. &amp;
+Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </small></p>
+<ul>
+<li>“Os médicos estão acostumados a pensar nos determinantes socioeconômicos da doença em termos dos fatores de risco de uma pessoa. […] Agora parece claro que a riqueza absoluta ou a renda é um determinante menos importante da saúde do que a relativa disparidade na renda ou a diferença de renda entre os ricos e os pobres.”</li>
+</ul>
+<p><small> (Kawachi I.; Kennedy B.P.; Wilkinson R.G. The Society and Population Health Reader: Income Inequality and Health. New Press, 1999). </small></p>
+</div>
+<div id="árvores-bosques-ou-as-florestas" class="section level2">
+<h2><span class="header-section-number">2.8</span> Árvores, Bosques ou as Florestas ?</h2>
+<div id="as-árvores" class="section level3">
+<h3><span class="header-section-number">2.8.1</span> As Árvores</h3>
+<ul>
+<li>Suponha os dados abaixo, onde a variável <em>“X”</em> representa um efeito de exposição e a variável <em>“Y”</em> um taxa. Ao fazermos uma regressão obtemos uma correlação de apenas <strong>0,1469</strong> entre as duas variáveis.</li>
+</ul>
+<p><img src="figuras/arvores1.png" width="400" /></p>
+</div>
+<div id="os-bosques" class="section level3">
+<h3><span class="header-section-number">2.8.2</span> Os Bosques</h3>
+<ul>
+<li>Ao estratificarmos os dados evidencia-se uma estrutura, e ajustarmos uma regressão em cada grupo obtém-se:</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="figuras/bosques1.png" style="width:100.0%" /></td>
+<td align="center"><img src="figuras/bosques2.png" style="width:60.0%" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="as-florestas" class="section level3">
+<h3><span class="header-section-number">2.8.3</span> As Florestas</h3>
+<ul>
+<li><p>Tirando-se a média para cada grupo iremos obter quatro pontos sob os quais faremos uma regressão. O coeficiente de correlação obtido é <strong>rho = 0,9938</strong></p>
+<p><img src="figuras/florestas1.png" style="width:50.0%" /></p></li>
+</ul>
+</div>
+</div>
+<div id="falácia-ecológica-ou-viés-de-agregação" class="section level2">
+<h2><span class="header-section-number">2.9</span> Falácia Ecológica ou viés de agregação</h2>
+<ul>
+<li><p><em>“Viés que pode ocorrer porque uma associação entre duas variáveis no nível agregado não necessariamente representa uma associação no nível individual”</em></p></li>
+<li><p>O problema é que não podemos fazer inferências para níveis distintos:</p>
+<ol style="list-style-type: lower-roman">
+<li>Inferir para o indivíduos a partir de dados agregados (<strong><em>falácia ecológica</em></strong>)</li>
+</ol>
+<p><br />
+</p>
+<ol start="2" style="list-style-type: lower-roman">
+<li>Inferir para agregados populacionais a partir de dados individuais (<strong><em>falácia atomística ou individualista</em></strong>)</li>
+</ol></li>
+<li><p>“Textos de Epidemiologia fazem uma avaliação consistente sobre estudos ecológicos: eles são tentativas cruas de estimar correlações em nível individual. […] Examinar esta questão de uma perspectiva diferente - como um problema geral de validade - mostrará que a falácia ecológica, conforme frequentemente usada, encoraja três noções interrelacionadas e falaciosas:</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>que modelos em nível individual são mais perfeitamente especificados que os de nível ecológico,</p></li>
+<li><p>que correlações ecológicas são sempre substitutos para correlações de nível individual, e</p></li>
+<li><p>que variáveis de nível de grupo não causam doença.”</p></li>
+</ol>
+<p><small> (Schwartz, Am.J.Public Health, 1994;84:819-824) </small></p>
+<hr />
+<ul>
+<li><p>Um exemplo clássico de estudo ecológico :</p>
+<ul>
+<li><p>Emile Durkheim (sec XIX) associação ecológica positiva entre a proporção de indivíduos de religião Protestante e as taxas de suicídio (províncias da Prússia);</p></li>
+<li><p>Durkheim concluiu que Protestantes tinham maior probabilidade de se suicidarem do que os Católicos;</p></li>
+<li><p>Conclusão factível mas a inferência causal não é correta: poderiam ter sido os Católicos em províncias predominantemente Protestantes a cometer os suicídios, e a metodologia ecológica não permite discernir qual das duas hipóteses está certa.</p></li>
+</ul></li>
+</ul>
+<hr />
+<p><strong>Um outro exemplo</strong>: Um pesquisador deseja estudar a relação entre acidentes de trânsito e a renda em três cidade distintas (A, B e C).</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">pop</th>
+<th align="right">renda_media</th>
+<th align="right">tx_acidente</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="right">24.08571</td>
+<td align="right">57.14</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="right">22.57143</td>
+<td align="right">42.86</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">21.41429</td>
+<td align="right">28.57</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<ul>
+<li>Observando o gráfico abaixo, o pesquisador observa um possível associaçãom entre a renda e a taxa de acidentes de trânsito;</li>
+</ul>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Quanto maior a renda, maior será a taxa de acidentes de trânsito.</li>
+</ul>
+<hr />
+<ul>
+<li>Observando os microdados, ou seja, os dados no nível individual, temos o seguinte:</li>
+</ul>
+<div id="htmlwidget-0233d0e40ad19fed1725" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0233d0e40ad19fed1725">{"x":{"filter":"top","filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10\" data-max=\"45.6\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[10.5,34.5,28.5,12.2,45.6,17.5,19.8,12.5,32.5,24.3,10,14.3,38,26.4,28.7,30.2,13.5,23.5,10.8,22.7,20.5],["A","A","A","A","A","A","A","B","B","B","B","B","B","B","C","C","C","C","C","C","C"],["Caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Caso","Caso","Nao_caso","Nao_caso","Caso","Caso","Nao_caso","Nao_caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Nao_caso","Nao_caso"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>renda<\/th>\n      <th>pop<\/th>\n      <th>casos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<hr />
+<ul>
+<li>De posse desses dados no nível individual, é possível fazer a seguinte análise:</li>
+</ul>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+<ul>
+<li><p>Dessa forma observamos que os indivíduos que sofreram algum tipo de acidente de trânsito, apresentam a menor renda;</p></li>
+<li><p>Qual dos dois níveis de inferência está errado ?</p></li>
+<li><p>Qual é, então, o problema ? ? ?</p></li>
+</ul>
+<hr />
+</div>
+<div id="problemas-práticos" class="section level2">
+<h2><span class="header-section-number">2.10</span> Problemas práticos</h2>
+<p><strong>1. Numerador:</strong></p>
+<ul>
+<li>subregistro</li>
+<li>duplicidade de registros</li>
+<li>georreferenciamento:
+<ul>
+<li>não localização</li>
+</ul></li>
+<li>informação incorreta</li>
+<li>preenchimento inadequado</li>
+<li>mudança na classificação ao longo do tempo</li>
+</ul>
+<p><strong>2. Denominador:</strong></p>
+<ul>
+<li>espaçamento do censo</li>
+<li>migração</li>
+<li>mudança de fronteiras (!!!!)</li>
+</ul>
+<p><strong>3.Exposição:</strong></p>
+<ul>
+<li>pode ocorrer em diversos lugares</li>
+<li>dificilmente mensurável com precisão</li>
+<li>uso de “proxy”</li>
+<li>diferentes áreas para medida de exposição e de efeito, e áreas não compatíveis</li>
+<li>Informações mais detalhadas (PNAD, amostra do censo) não extrapoláveis para populações pequenas</li>
+</ul>
+<p><strong>4. Análise:</strong></p>
+<ul>
+<li>migração</li>
+<li>multicolinearidade</li>
+</ul>
+</div>
+<div id="vantagens" class="section level2">
+<h2><span class="header-section-number">2.11</span> Vantagens</h2>
+<ul>
+<li><p>Baixo custo e execução rápida, devido às fontes de dados secundários disponíveis;</p></li>
+<li><p>Conseguem estimar bem os efeitos de uma exposição quando ela varia pouco na área de estudo, pela comparação entre áreas (os estudos individuais não conseguem);</p></li>
+<li><p>Existem efeitos que somente podem ser medidos no nível ecológico, por ex. implantação de um novo sistema de saúde.</p></li>
+</ul>
+</div>
+<div id="desvantagens" class="section level2">
+<h2><span class="header-section-number">2.12</span> Desvantagens</h2>
+<ul>
+<li><p>Informações sobre comportamento, atitudes e história clínica não estão disponíveis (dados pessoais não disponíveis);</p></li>
+<li><p>Depende da qualidade das informações disponíveis (fontes diversas);</p></li>
+<li><p>Não se leva em conta a variabilidade da característica estudada dentro do grupo;</p></li>
+<li><p>Difícil estabelecer temporalidade entre causa e efeito.</p></li>
+<li><p>Migração entre grupos (por exemplo, mora em uma área e trabalha em outra).</p></li>
+</ul>
+</div>
+<div id="resumindo" class="section level2">
+<h2><span class="header-section-number">2.13</span> Resumindo</h2>
+<ul>
+<li><p>Resgatando a ecologia: estudo das complexas inter-relações entre organismos vivos e o seu meio físico.</p></li>
+<li><p>Dados agregados – estudo ecológico clássico</p></li>
+<li><p>Mistura de dados individuais e agregados – modelos multinível</p></li>
+<li><p>Quando se estuda o tempo – séries temporais e modelos dinâmicos</p></li>
+<li><p>Quando é espacial – modelos clássicos de regressão ou espaciais</p></li>
+<li><p>Mistura espaço e tempo - modelos espaço-temporais</p></li>
+<li><p>Envolvendo relações entre indivíduos – redes</p></li>
+</ul>
+</div>
+<div id="exercícios-propostos" class="section level2">
+<h2><span class="header-section-number">2.14</span> Exercícios Propostos</h2>
+<ol style="list-style-type: decimal">
+<li><p>As estatísticas internacionais indicam que o Chile tem uma das mais altas taxas de mortalidade por câncer de estômago. O país caracteriza-se por conter altos níveis de nitrato em seu solo, situação rara no mundo, neste particular. Estabeleceu-se a suspeita de ser o nitrato, em altas concentrações, um agente causal da neoplasia. Comparações regionais dentro do país, contrastando áreas com altas e baixas concentrações de nitrato, mostraram a
+mesma relação: alto teor da substância no solo, (alta mortalidade por este tipo de neoplasia). Um estudo caso-controle subseqüente foi realizado, mas a nível individual, não foi possível encontrar tal associação. A hipótese, entretanto, não foi totalmente descartada. Qual a importância desse estudo ecológico no estudo sobre causalidade: concentração de
+nitrato no solo vs câncer de estômago ?</p></li>
+<li><p>Os casos notificados de Influenza são maiores na cidade A do que na cidade
+B. As taxas de vacinação para a influenza são mais baixas na cidade A do que na cidade
+B. Quais das seguintes razões são razões pelas quais seria
+é incorreto presumir que uma maior vacinação na cidade B
+é o que está fazendo com que a cidade B tenha menos casos relatados de
+Influenza ? Escolha as opções corretas.</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>A cidade A e a cidade B podem ter diferentes cepas de Influenza</p></li>
+<li><p>A cidade A e a cidade B podem ter proporções diferentes de
+pessoas nas suas populações que são especialmente vulneráveis
+à influenza (por exemplo, idosos, crianças e mulheres grávidas)</p></li>
+<li><p>A cidade A e a cidade B podem ter diferenças nos cuidados de saúde ,
+acessibilidade aos serviços e acesso a diagnóstico da influenza</p></li>
+<li><p>A cidade A e a cidade B podem ter climas diferentes, levando a
+diferenças em como/onde as pessoas entram em contato com
+um ao outro. Isto pode afetar as taxas de transmissão de Influenza</p></li>
+</ol>
+</div>
+<div id="bibliografia-sugerida" class="section level2">
+<h2><span class="header-section-number">2.15</span> Bibliografia sugerida</h2>
+<p>ARMSTRONG, Bruce; DOLL, Richard. Environmental factors and cancer incidence and mortality in different countries, with special reference to dietary practices. International journal of cancer, v. 15, n. 4, p. 617-631, 1975.</p>
+<p>BERKMAN, Lisa F.; KAWACHI, Ichirō; GLYMOUR, M. Maria (Ed.). Social epidemiology. Oxford University Press, 2014.</p>
+<p>DIEZ-ROUX, Ana V. Bringing context back into epidemiology: variables and fallacies in multilevel analysis. American journal of public health, v. 88, n. 2, p. 216-222, 1998.</p>
+<p>EVANS, Robert G.; BARER, Morris L.; MARMOR, Theodore R. (Ed.). Why are some people healthy and others not?: The determinants of the health of populations. Transaction Publishers, 1994.</p>
+<p>FRIEDMAN, Gary D. Cigarette smoking and geographic variation in coronary heart disease mortality in the United States. Journal of chronic diseases, v. 20, n. 10, p. 769-779, 1967.</p>
+<p>MEDRONHO, Roberto A. et al. Epidemiologia. 2ª edição. Rio de Janeiro: Atheneu, 2009.</p>
+<p>MORGENSTERN, Hal. Ecologic studies in epidemiology: concepts, principles, and methods. Annual review of public health, v. 16, n. 1, p. 61-81, 1995.</p>
+<p>PICKETT, Kate E.; PEARL, Michelle. Multilevel analyses of neighbourhood socioeconomic context and health outcomes: a critical review. Journal of Epidemiology &amp; Community Health, v. 55, n. 2, p. 111-122, 2001.</p>
+<p>ROSE, Geoffrey. Sick individuals and sick populations. International journal of epidemiology, v. 30, n. 3, p. 427-432, 2001.</p>
+<p>ROTHMAN, Kenneth J. et al. Modern epidemiology. Philadelphia: Wolters Kluwer Health/Lippincott Williams &amp; Wilkins, 2008.</p>
+<pre><code>## 
+## Attaching package: &#39;zoo&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     as.Date, as.Date.numeric</code></pre>
+<pre><code>## Loading required package: xts</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;xts&#39;:
+##   method     from
+##   as.zoo.xts zoo</code></pre>
+<pre><code>## 
+## Attaching package: &#39;xts&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     first, last</code></pre>
+<pre><code>## Loading required package: TTR</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
+##   method            from
+##   as.zoo.data.frame zoo</code></pre>
+<pre><code>## Version 0.4-0 included new data defaults. See ?getSymbols.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;PerformanceAnalytics&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     legend</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="apresentação.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introdução-às-séries-temporais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

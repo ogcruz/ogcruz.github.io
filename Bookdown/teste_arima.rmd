@@ -1,0 +1,126 @@
+---
+output: 
+  html_document
+---
+
+```{r, echo=F, warning=FALSE, message = FALSE}
+library(rmarkdown)
+library(knitr)
+library(pander)
+library(forecast)
+library(zoo)
+library(quantmod)
+library(DT)
+# library(dplyr)
+# library(magrittr)
+# library(highcharter)
+library(PerformanceAnalytics)
+library(htmltools)
+library(mgcv,quietly = TRUE,warn.conflicts = FALSE,verbose = FALSE)
+library(itsadug,quietly = TRUE,warn.conflicts = FALSE,verbose = FALSE)
+options(width = 800)
+
+```
+
+
+# Exemplo de um modelo GAM
+
+
+
+Transforma o exemplo **ldeaths** de *ts* em *data.frame* preservando as estruturas temporais (tempo e mes)
+
+
+```R
+ldeaths.df <- data.frame(tempo=time(ldeaths),obitos=ldeaths,mes=cycle(ldeaths))
+```
+
+```{r paged.print=TRUE,echo=FALSE}
+ldeaths.df <- data.frame(tempo=time(ldeaths),obitos=ldeaths,mes=cycle(ldeaths))
+kable(head(ldeaths.df))
+```
+
+modelando como **GAM**
+
+```R
+mod0 <- gam ( obitos ~ s(tempo) + s(mes),data=ldeaths.df)
+mod0
+```
+
+Sumário do modelo
+
+```{r results='asis' ,echo=FALSE}
+
+mod0 <- bam ( obitos ~ s(tempo) + s(mes),data=ldeaths.df)
+gamtabs(mod0, caption='',type='html')
+
+#stargazer::stargazer(mod0,summary=FALSE,type='html')
+#require(utils)
+#toLatex(summary(mod0)$s.table) 
+
+```
+
+```{r echo=FALSE}
+lixo <- summary(mod0)
+pander(paste0('R-quadrado(ajustado) = ', round(lixo$r.sq,2), '   Deviance Explicada = ', round(lixo$dev.expl,2) , '  AIC = ',round(AIC(mod0),2) ))
+
+```
+
+Gráfico do termos suaves
+
+```{r echo=FALSE}
+par(mfrow=c(1,2))
+plot(mod0,select = 1)
+abline(h=0,lty=2,col=2)
+plot(mod0,select = 2)
+abline(h=0,lty=2,col=2)
+```
+
+
+Vamos verificar se sobraram estruturas nos residuos usando a ACF dos residuos e o teste de Ljung-Box
+
+```{r echo=FALSE,results='asis'}
+acf(residuals(mod0))
+``` 
+
+
+```{r echo=FALSE,results='asis'}
+
+pander(Box.test(residuals(mod0),type='Ljung-Box')) 
+``` 
+
+Como podemos observar a variavel *tempo* que captura a tendencia ficou completamente linear 
+vamos agora usar a variavel *tempo* de forma linear no modelo
+
+```R
+mod1 <- gam ( obitos ~ tempo + s(mes),data=ldeaths.df)
+mod1
+```
+
+
+```{r results='asis',echo=FALSE}
+mod1 <- gam( obitos ~ tempo + s(mes),data=ldeaths.df)
+#summary(mod1)
+gamtabs(mod1, caption='',type='html')
+
+#stargazer::stargazer(mod1,summary=TRUE,type = 'text')
+#print(xtable(summary(mod1)),type='html')
+```
+
+
+```{r echo=FALSE}
+lixo <- summary(mod1)
+pander(paste0('R-quadrado(ajustado) = ', round(lixo$r.sq,2), '  Deviance Explicada =', round(lixo$dev.expl,2) , '  AIC = ',round(AIC(mod1),2) ))
+```
+
+
+```{r echo=FALSE}
+acf(residuals(mod1))
+
+```
+
+
+```{r echo=FALSE}
+
+pander(Box.test(residuals(mod1),type='Ljung-Box')) 
+
+```
