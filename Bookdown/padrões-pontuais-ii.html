@@ -24,7 +24,7 @@
 <meta name="author" content="Oswaldo Cruz &amp; Wagner Tassinari" />
 
 
-<meta name="date" content="2019-11-05" />
+<meta name="date" content="2019-11-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -423,13 +423,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.4.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-2---arboviroses-no-rio-de-janeiro"><i class="fa fa-check"></i><b>13.4.3</b> Aplicação 2 - Arboviroses no Rio de Janeiro</a></li>
 </ul></li>
 <li class="chapter" data-level="13.5" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelagem-estatística-espaço-temporal"><i class="fa fa-check"></i><b>13.5</b> Modelagem Estatística Espaço-temporal</a><ul>
-<li class="chapter" data-level="13.5.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-resultados-preliminares"><i class="fa fa-check"></i><b>13.5.1</b> Alguns resultados preliminares</a></li>
+<li class="chapter" data-level="13.5.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-resultados"><i class="fa fa-check"></i><b>13.5.1</b> Alguns resultados</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#bibliografia-sugerida-10"><i class="fa fa-check"></i><b>13.6</b> Bibliografia sugerida</a></li>
-<li class="chapter" data-level="13.7" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#roteiro-para-a-execução-do-trabalho-final"><i class="fa fa-check"></i><b>13.7</b> Roteiro para a execução do trabalho final</a><ul>
-<li class="chapter" data-level="13.7.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>13.7.1</b> Sugestões de locais para baixar os dados e os mapas</a></li>
 </ul></li>
-<li class="chapter" data-level="13.8" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#section"><i class="fa fa-check"></i><b>13.8</b> </a></li>
+<li class="chapter" data-level="14" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html"><i class="fa fa-check"></i><b>14</b> Roteiro para a execução do trabalho final</a><ul>
+<li class="chapter" data-level="14.0.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>14.0.1</b> Sugestões de locais para baixar os dados e os mapas</a></li>
+<li class="chapter" data-level="14.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#ficha-de-avaliação"><i class="fa fa-check"></i><b>14.1</b> Ficha de Avaliação</a></li>
+<li class="chapter" data-level="14.2" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#fim"><i class="fa fa-check"></i><b>14.2</b> FIM</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -466,22 +467,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb141-4" data-line-number="4"><span class="kw">library</span>(maptools)</a>
 <a class="sourceLine" id="cb141-5" data-line-number="5"><span class="kw">library</span>(spatstat)</a></code></pre></div>
 <p>Lendo a tabela da população por setor censitário e baixando os shapes files do contorno e por setor censitário de Dourados/MS</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1">local &lt;-<span class="st"> &quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&quot;</span></a>
-<a class="sourceLine" id="cb142-2" data-line-number="2">pop2010 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="kw">paste0</span>(local, <span class="st">&quot;pop2010.csv&quot;</span>))</a>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1">local &lt;-<span class="st"> &#39;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&#39;</span></a>
+<a class="sourceLine" id="cb142-2" data-line-number="2">pop2010 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="kw">paste0</span>(local,<span class="st">&#39;pop2010.csv&#39;</span>))</a>
 <a class="sourceLine" id="cb142-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb142-4" data-line-number="4">tmpdir &lt;-<span class="st"> </span><span class="kw">tempdir</span>()</a>
-<a class="sourceLine" id="cb142-5" data-line-number="5"><span class="kw">download.file</span>(<span class="kw">paste0</span>(local, <span class="st">&quot;setores_dourados.zip&quot;</span>), </a>
-<a class="sourceLine" id="cb142-6" data-line-number="6">    <span class="dt">destfile =</span> <span class="kw">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>))</a>
+<a class="sourceLine" id="cb142-5" data-line-number="5"><span class="kw">download.file</span>(<span class="kw">paste0</span>(local,<span class="st">&#39;setores_dourados.zip&#39;</span>),</a>
+<a class="sourceLine" id="cb142-6" data-line-number="6">              <span class="dt">destfile =</span> <span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/dourados.zip&#39;</span>))</a>
 <a class="sourceLine" id="cb142-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb142-8" data-line-number="8"><span class="kw">unzip</span>(<span class="dt">zipfile =</span> <span class="kw">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>), <span class="dt">exdir =</span> tmpdir)</a>
+<a class="sourceLine" id="cb142-8" data-line-number="8"><span class="kw">unzip</span>(<span class="dt">zipfile =</span> <span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/dourados.zip&#39;</span>),<span class="dt">exdir =</span> tmpdir)</a>
 <a class="sourceLine" id="cb142-9" data-line-number="9"><span class="kw">dir</span>(tmpdir)</a>
 <a class="sourceLine" id="cb142-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb142-11" data-line-number="11">setor &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">paste0</span>(tmpdir, <span class="st">&quot;/Setor_UTM_SIRGAS.shp&quot;</span>), </a>
-<a class="sourceLine" id="cb142-12" data-line-number="12">    <span class="dt">crs =</span> <span class="dv">31981</span>)</a>
-<a class="sourceLine" id="cb142-13" data-line-number="13">contorno &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">paste0</span>(tmpdir, <span class="st">&quot;/contorno.shp&quot;</span>), </a>
-<a class="sourceLine" id="cb142-14" data-line-number="14">    <span class="dt">crs =</span> <span class="dv">31981</span>)</a>
-<a class="sourceLine" id="cb142-15" data-line-number="15">popsetor &lt;-<span class="st"> </span>setor <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">idsetor =</span> <span class="kw">as.numeric</span>(CD_GEOCODI)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb142-16" data-line-number="16"><span class="st">    </span><span class="kw">inner_join</span>(pop2010, <span class="dt">by =</span> <span class="st">&quot;idsetor&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb142-11" data-line-number="11">setor &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/Setor_UTM_SIRGAS.shp&#39;</span>), <span class="dt">crs =</span> <span class="dv">31981</span>)</a>
+<a class="sourceLine" id="cb142-12" data-line-number="12">contorno &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">paste0</span>(tmpdir,<span class="st">&#39;/contorno.shp&#39;</span>), <span class="dt">crs =</span> <span class="dv">31981</span>)</a>
+<a class="sourceLine" id="cb142-13" data-line-number="13">popsetor &lt;-<span class="st"> </span>setor <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span> (<span class="dt">idsetor =</span> <span class="kw">as.numeric</span>(CD_GEOCODI)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">inner_join</span>(pop2010,<span class="dt">by=</span><span class="st">&#39;idsetor&#39;</span>)</a></code></pre></div>
 <pre><code> [1] &quot;contorno.dbf&quot;                                     &quot;contorno.sbn&quot;                                    
  [3] &quot;contorno.sbx&quot;                                     &quot;contorno.shp&quot;                                    
  [5] &quot;contorno.shx&quot;                                     &quot;dourados.zip&quot;                                    
@@ -491,25 +489,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Lendo e plotando os casos de dengue georreferenciados em Dourados/MS</li>
 </ul>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1">casos &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="kw">paste0</span>(local, <span class="st">&quot;dengue_dourados.csv&quot;</span>))</a>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1">casos &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="kw">paste0</span>(local,<span class="st">&#39;dengue_dourados.csv&#39;</span>))</a>
 <a class="sourceLine" id="cb144-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb144-3" data-line-number="3">casos.pt &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(casos, <span class="dt">coords =</span> <span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="dt">crs =</span> <span class="dv">31981</span>)</a>
-<a class="sourceLine" id="cb144-4" data-line-number="4"><span class="kw">plot</span>(casos.pt[<span class="op">-</span><span class="dv">3</span>], <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)  <span class="co">## remove data</span></a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-152-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb144-4" data-line-number="4"><span class="kw">plot</span>(casos.pt[<span class="op">-</span><span class="dv">3</span>],<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)  <span class="co">## remove data</span></a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-151-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Plotando os casos de dengue segundo o sexo.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">plot</span>(casos.pt[<span class="st">&quot;CS_SEXO&quot;</span>], <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-153-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">plot</span>(casos.pt[<span class="st">&#39;CS_SEXO&#39;</span>],<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-152-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Plotando apenas o contorno de Dourados/MS.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="kw">plot</span>(contorno[<span class="st">&quot;ID&quot;</span>])</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-154-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="kw">plot</span>(contorno[<span class="st">&#39;ID&#39;</span>])</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-153-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Usando a <strong>ggplot()</strong> para fazer um gráfico do contorno e dos casos.</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-155-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-154-1.png" width="672" /></p>
 <p>Formatando os pontos que representam os casos de dengue na classe <strong>ppp</strong> (point pattern)</p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1">cont.w &lt;-<span class="st"> </span><span class="kw">as.owin</span>(<span class="kw">as_Spatial</span>(contorno))</a>
-<a class="sourceLine" id="cb147-2" data-line-number="2">dengue.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(casos<span class="op">$</span>X, casos<span class="op">$</span>Y, cont.w)</a>
+<a class="sourceLine" id="cb147-2" data-line-number="2">dengue.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(casos<span class="op">$</span>X,casos<span class="op">$</span>Y,cont.w)</a>
 <a class="sourceLine" id="cb147-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb147-4" data-line-number="4"><span class="kw">plot</span>(dengue.ppp, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-156-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb147-4" data-line-number="4"><span class="kw">plot</span>(dengue.ppp,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-155-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Uma vez que temos o objeto em formato <strong>ppp</strong>, podemos verificar a melhor largura de banda sugerida por vários métodos disponíveis pela biblioteca <em>spatstat</em> para os casos de Dengue em Dourados/MS.</p>
 <table>
 <thead>
@@ -544,57 +542,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Existem ainda outros métodos para determinar automaticamente a largura de banda. É possível usa-los para ajudar a escolher o melhor valor, mas é preciso verificar se essa largura de banda apresenta plausibilidade dentro do contexto do estudo.</p>
 <p>Fazendo o mapa de kernel dos casos de dengue segundo várias larguras de banda.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb148-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp, <span class="dv">250</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>), <span class="dt">main =</span> <span class="st">&quot;kernel 250 m&quot;</span>, </a>
-<a class="sourceLine" id="cb148-3" data-line-number="3">    <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a>
-<a class="sourceLine" id="cb148-4" data-line-number="4"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp, <span class="dv">500</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>), <span class="dt">main =</span> <span class="st">&quot;kernel 500 m&quot;</span>, </a>
-<a class="sourceLine" id="cb148-5" data-line-number="5">    <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a>
-<a class="sourceLine" id="cb148-6" data-line-number="6"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp, <span class="dv">750</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>), <span class="dt">main =</span> <span class="st">&quot;kernel 750 m&quot;</span>, </a>
-<a class="sourceLine" id="cb148-7" data-line-number="7">    <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a>
-<a class="sourceLine" id="cb148-8" data-line-number="8"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp, <span class="dv">1000</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>), <span class="dt">main =</span> <span class="st">&quot;kernel 1000 m&quot;</span>, </a>
-<a class="sourceLine" id="cb148-9" data-line-number="9">    <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-157-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb148-2" data-line-number="2"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp,<span class="dv">250</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>),<span class="dt">main=</span><span class="st">&#39;kernel 250 m&#39;</span>,<span class="dt">col=</span><span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a>
+<a class="sourceLine" id="cb148-3" data-line-number="3"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp,<span class="dv">500</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>),<span class="dt">main=</span><span class="st">&#39;kernel 500 m&#39;</span>,<span class="dt">col=</span><span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a>
+<a class="sourceLine" id="cb148-4" data-line-number="4"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp,<span class="dv">750</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>),<span class="dt">main=</span><span class="st">&#39;kernel 750 m&#39;</span>,<span class="dt">col=</span><span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a>
+<a class="sourceLine" id="cb148-5" data-line-number="5"><span class="kw">plot</span>(<span class="kw">density</span>(dengue.ppp,<span class="dv">1000</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>),<span class="dt">main=</span><span class="st">&#39;kernel 1000 m&#39;</span>,<span class="dt">col=</span><span class="kw">terrain.colors</span>(<span class="dv">64</span>))</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-156-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Fazendo o kernel segundo sexo, criando padrões para cada sexo e em seguida gerando um kernel para cada categoria.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1">masc &lt;-<span class="st"> </span>casos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(CS_SEXO <span class="op">==</span><span class="st"> &quot;M&quot;</span>)</a>
-<a class="sourceLine" id="cb149-2" data-line-number="2">masc.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(masc<span class="op">$</span>X, masc<span class="op">$</span>Y, cont.w)</a>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1">masc &lt;-<span class="st"> </span>casos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(CS_SEXO<span class="op">==</span><span class="st">&#39;M&#39;</span>)</a>
+<a class="sourceLine" id="cb149-2" data-line-number="2">masc.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(masc<span class="op">$</span>X,masc<span class="op">$</span>Y,cont.w)</a>
 <a class="sourceLine" id="cb149-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb149-4" data-line-number="4">fem &lt;-<span class="st"> </span>casos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(CS_SEXO <span class="op">==</span><span class="st"> &quot;F&quot;</span>)</a>
-<a class="sourceLine" id="cb149-5" data-line-number="5">fem.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(fem<span class="op">$</span>X, fem<span class="op">$</span>Y, cont.w)</a>
+<a class="sourceLine" id="cb149-4" data-line-number="4">fem &lt;-<span class="st"> </span>casos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(CS_SEXO<span class="op">==</span><span class="st">&#39;F&#39;</span>)</a>
+<a class="sourceLine" id="cb149-5" data-line-number="5">fem.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(fem<span class="op">$</span>X,fem<span class="op">$</span>Y,cont.w)</a>
 <a class="sourceLine" id="cb149-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb149-7" data-line-number="7">D.masc &lt;-<span class="st"> </span><span class="kw">density</span>(masc.ppp, <span class="dv">750</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb149-8" data-line-number="8">D.fem &lt;-<span class="st"> </span><span class="kw">density</span>(fem.ppp, <span class="dv">750</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb149-7" data-line-number="7">D.masc &lt;-<span class="st"> </span><span class="kw">density</span>(masc.ppp,<span class="dv">750</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb149-8" data-line-number="8">D.fem  &lt;-<span class="st"> </span><span class="kw">density</span>(fem.ppp,<span class="dv">750</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb149-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb149-10" data-line-number="10"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb149-11" data-line-number="11"><span class="kw">plot</span>(D.masc, <span class="dt">main =</span> <span class="st">&quot;kernel Homens 750 m&quot;</span>)</a>
-<a class="sourceLine" id="cb149-12" data-line-number="12"><span class="kw">plot</span>(D.fem, <span class="dt">main =</span> <span class="st">&quot;kernel Mulheres 750 m&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-158-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb149-10" data-line-number="10"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb149-11" data-line-number="11"><span class="kw">plot</span>(D.masc, <span class="dt">main=</span><span class="st">&#39;kernel Homens 750 m&#39;</span>)</a>
+<a class="sourceLine" id="cb149-12" data-line-number="12"><span class="kw">plot</span>(D.fem, <span class="dt">main=</span><span class="st">&#39;kernel Mulheres 750 m&#39;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-157-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Fazendo a razão de kernel entre os sexos.</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1">D.res &lt;-<span class="st"> </span>D.masc</a>
-<a class="sourceLine" id="cb150-2" data-line-number="2">D.res<span class="op">$</span>v &lt;-<span class="st"> </span>(D.masc<span class="op">$</span>v<span class="op">/</span>D.fem<span class="op">$</span>v)</a>
-<a class="sourceLine" id="cb150-3" data-line-number="3"><span class="kw">plot</span>(D.res, <span class="dt">main =</span> <span class="st">&quot;Razão de Kernel H/M&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-159-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb150-2" data-line-number="2">D.res<span class="op">$</span>v &lt;-<span class="st"> </span>(D.masc<span class="op">$</span>v <span class="op">/</span><span class="st"> </span>D.fem<span class="op">$</span>v)</a>
+<a class="sourceLine" id="cb150-3" data-line-number="3"><span class="kw">plot</span>(D.res,<span class="dt">main=</span><span class="st">&#39;Razão de Kernel H/M&#39;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-158-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Como podemos observar no kernel acima, não foi detectada variabilidade espacial na razão entre os sexos. Observe o efeito de borda que ocorre no Norte, onde um único indivíduo do sexo masculido é responsável pelo efeito de borda.</p>
 <p>Extraindo os centróides dos setores censitários de Dourados/MS.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1">centros &lt;-<span class="st"> </span><span class="kw">st_centroid</span>(<span class="kw">st_geometry</span>(popsetor))</a>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1">centros &lt;-<span class="st"> </span><span class="kw">st_centroid</span>(<span class="kw">st_geometry</span>(popsetor) )</a>
 <a class="sourceLine" id="cb151-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb151-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb151-3" data-line-number="3"> </a>
 <a class="sourceLine" id="cb151-4" data-line-number="4">centros.tmp &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">as_Spatial</span>(centros))</a>
-<a class="sourceLine" id="cb151-5" data-line-number="5"><span class="kw">names</span>(centros.tmp) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)</a>
+<a class="sourceLine" id="cb151-5" data-line-number="5"><span class="kw">names</span>(centros.tmp) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;X&#39;</span>,<span class="st">&#39;Y&#39;</span>)</a>
 <a class="sourceLine" id="cb151-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb151-7" data-line-number="7">centros.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(centros.tmp<span class="op">$</span>X, centros.tmp<span class="op">$</span>Y, cont.w)</a>
+<a class="sourceLine" id="cb151-7" data-line-number="7">centros.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(centros.tmp<span class="op">$</span>X,centros.tmp<span class="op">$</span>Y,cont.w)</a>
 <a class="sourceLine" id="cb151-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb151-9" data-line-number="9"><span class="kw">plot</span>(centros.ppp, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-160-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb151-9" data-line-number="9"><span class="kw">plot</span>(centros.ppp,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-159-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Fazendo o kernel dos pontos dos centróides dos setores censitários de Dourados/MS. Tal distribuição, pode se sugerida como uma <em>proxy</em> da verdadeira distribuição populacional de Dourados/MS</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1">D.pop &lt;-<span class="st"> </span><span class="kw">density</span>(centros.ppp, <span class="dv">500</span>, <span class="dt">weights =</span> popsetor<span class="op">$</span>pop, </a>
-<a class="sourceLine" id="cb152-2" data-line-number="2">    <span class="dt">scalekernel =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb152-3" data-line-number="3"><span class="kw">plot</span>(D.pop)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-161-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1">D.pop &lt;-<span class="st"> </span><span class="kw">density</span>(centros.ppp, <span class="dv">500</span>, <span class="dt">weights =</span> popsetor<span class="op">$</span>pop, <span class="dt">scalekernel =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb152-2" data-line-number="2"><span class="kw">plot</span>(D.pop)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-160-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Gerando um kernel de atributo com a população de cada setor censitário. O parâmetro <em>weights</em> nos permite entrar o valor do atributo a ser ponderado. Desta forma é possível gerar um kernel de um valor especificado (atributo).</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1">kpop &lt;-<span class="st"> </span><span class="kw">density</span>(centros.ppp, <span class="dv">750</span>, <span class="dt">weights =</span> popsetor<span class="op">$</span>pop, </a>
-<a class="sourceLine" id="cb153-2" data-line-number="2">    <span class="dt">scalekernel =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb153-3" data-line-number="3"><span class="kw">plot</span>(kpop)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-162-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1">kpop &lt;-<span class="st"> </span><span class="kw">density</span>(centros.ppp, <span class="dv">750</span>, <span class="dt">weights =</span> popsetor<span class="op">$</span>pop, <span class="dt">scalekernel =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb153-2" data-line-number="2"><span class="kw">plot</span>(kpop)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-161-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Calculando a taxa média de casos (por 1.000 hab) de dengue do município de Dourados/MS</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">nrow</span>(casos.pt)<span class="op">/</span><span class="kw">sum</span>(popsetor<span class="op">$</span>pop) <span class="op">*</span><span class="st"> </span><span class="dv">1000</span></a></code></pre></div>
 <p>[1] 5.853</p>
@@ -603,16 +595,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb155-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb155-3" data-line-number="3">razao &lt;-<span class="st"> </span>kcasos.b750</a>
 <a class="sourceLine" id="cb155-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb155-5" data-line-number="5">razao<span class="op">$</span>v &lt;-<span class="st"> </span>(kcasos.b750<span class="op">$</span>v<span class="op">/</span>kpop<span class="op">$</span>v) <span class="op">*</span><span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb155-5" data-line-number="5">razao<span class="op">$</span>v &lt;-<span class="st"> </span>(kcasos.b750<span class="op">$</span>v <span class="op">/</span><span class="st"> </span>kpop<span class="op">$</span>v)<span class="op">*</span><span class="dv">1000</span></a>
 <a class="sourceLine" id="cb155-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb155-7" data-line-number="7"><span class="kw">plot</span>(razao, <span class="dt">main =</span> <span class="st">&quot;Razão de kernel casos/população&quot;</span>)</a>
-<a class="sourceLine" id="cb155-8" data-line-number="8"><span class="kw">contour</span>(razao, <span class="dt">add =</span> T, <span class="dt">levels =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="dt">by =</span> <span class="dv">5</span>))</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-164-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb155-7" data-line-number="7"><span class="kw">plot</span>(razao, <span class="dt">main=</span><span class="st">&#39;Razão de kernel casos/população&#39;</span>)</a>
+<a class="sourceLine" id="cb155-8" data-line-number="8"><span class="kw">contour</span>(razao, <span class="dt">add=</span>T, <span class="dt">levels=</span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="dt">by=</span><span class="dv">5</span>))</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-163-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Plotando a distribuição das taxas por dengue estimadas via razão de kernel. É possível verificar que a mediana das razões de kernel é bem próxima a taxa média de casos (por 1.000 hab) em Dourados/MS.</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">boxplot</span>(<span class="kw">as.numeric</span>(razao<span class="op">$</span>v), <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Boxplot da razão de kernel&quot;</span>)</a>
-<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(<span class="kw">as.numeric</span>(razao<span class="op">$</span>v), <span class="dt">na.rm =</span> T), <span class="dt">lty =</span> <span class="dv">3</span>, </a>
-<a class="sourceLine" id="cb156-3" data-line-number="3">    <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-165-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">boxplot</span>(<span class="kw">as.numeric</span>(razao<span class="op">$</span>v), <span class="dt">col=</span><span class="st">&#39;green&#39;</span>, <span class="dt">main=</span><span class="st">&#39;Boxplot da razão de kernel&#39;</span>) </a>
+<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">mean</span>(<span class="kw">as.numeric</span>(razao<span class="op">$</span>v), <span class="dt">na.rm=</span>T), <span class="dt">lty =</span> <span class="dv">3</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-164-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Sobrepondo a malha da população por setores censitários (dados de área) com os pontos de casos de dengue (padrões pontuais)</p>
 <!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
 <!-- plot(popsetor['pop'],pal=terrain.colors(13)) -->
@@ -620,47 +611,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- #points.lpp(dengue.ppp,pch=19,col='black') -->
 <!-- ``` -->
 <!-- Também pode ser feito dessa forma. -->
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(popsetor) <span class="op">+</span><span class="st"> </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pop)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="st">    </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> casos.pt, <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">size =</span> <span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb157-3" data-line-number="3"><span class="st">    </span><span class="kw">theme_void</span>()</a>
-<a class="sourceLine" id="cb157-4" data-line-number="4"><span class="kw">print</span>(p1)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-166-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(popsetor) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>pop)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb157-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data=</span>casos.pt,<span class="dt">color=</span><span class="st">&#39;white&#39;</span>,<span class="dt">size=</span><span class="fl">0.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb157-4" data-line-number="4"><span class="st">  </span><span class="kw">theme_void</span>()</a>
+<a class="sourceLine" id="cb157-5" data-line-number="5"><span class="kw">print</span>(p1)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-165-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Razão de casos confirmados vs não confirmados</p>
 <p>Como verificamos abaixo temos 713 casos <em>confirmados</em> de Dengue e 304 <em>não confirmados</em> ,
 será que existe algum padrão espacial para os casos <em>não confirmados</em> ?</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">table</span>(casos<span class="op">$</span>CLASSI_FIN <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">table</span>(casos<span class="op">$</span>CLASSI_FIN<span class="op">==</span><span class="dv">1</span>)</a></code></pre></div>
 <p>FALSE TRUE
 304 713</p>
 <p>Para visualizarmos vamos inicialmente criar dois objetos do tipo <strong>ppp</strong> uma para <em>confirmados</em> e outro para <em>não confirmados</em>.</p>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1">Confirm &lt;-<span class="st"> </span>casos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(CLASSI_FIN <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb159-2" data-line-number="2">NaoConfirm &lt;-<span class="st"> </span>casos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(CLASSI_FIN <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb159-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb159-4" data-line-number="4">Confirm.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(Confirm<span class="op">$</span>X, Confirm<span class="op">$</span>Y, cont.w)</a>
-<a class="sourceLine" id="cb159-5" data-line-number="5">NaoConfirm.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(NaoConfirm<span class="op">$</span>X, NaoConfirm<span class="op">$</span>Y, cont.w)</a></code></pre></div>
+<a class="sourceLine" id="cb159-4" data-line-number="4">Confirm.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(Confirm<span class="op">$</span>X,Confirm<span class="op">$</span>Y,cont.w)</a>
+<a class="sourceLine" id="cb159-5" data-line-number="5">NaoConfirm.ppp &lt;-<span class="st"> </span><span class="kw">ppp</span>(NaoConfirm<span class="op">$</span>X,NaoConfirm<span class="op">$</span>Y,cont.w)</a></code></pre></div>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">st_geometry</span>(contorno))</a>
-<a class="sourceLine" id="cb160-2" data-line-number="2"><span class="kw">points</span>(Confirm.ppp, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a>
-<a class="sourceLine" id="cb160-3" data-line-number="3"><span class="kw">points</span>(NaoConfirm, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.5</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb160-2" data-line-number="2"><span class="kw">points</span>(Confirm.ppp,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb160-3" data-line-number="3"><span class="kw">points</span>(NaoConfirm,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.5</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
 <a class="sourceLine" id="cb160-4" data-line-number="4"><span class="kw">title</span>(<span class="st">&quot;Distribuição dos casos Confirmados e Não Confirmados&quot;</span>)</a>
-<a class="sourceLine" id="cb160-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Confirmados&quot;</span>, <span class="st">&quot;Não Confirmados&quot;</span>), </a>
-<a class="sourceLine" id="cb160-6" data-line-number="6">    <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="dv">1</span>, <span class="dt">title =</span> <span class="st">&quot;Legenda&quot;</span>, </a>
-<a class="sourceLine" id="cb160-7" data-line-number="7">    <span class="dt">bg =</span> <span class="st">&quot;lightblue&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-169-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb160-5" data-line-number="5"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Confirmados&quot;</span>, <span class="st">&quot;Não Confirmados&quot;</span>),</a>
+<a class="sourceLine" id="cb160-6" data-line-number="6">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>),  <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex=</span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb160-7" data-line-number="7">       <span class="dt">title=</span><span class="st">&quot;Legenda&quot;</span>,  <span class="dt">bg=</span><span class="st">&#39;lightblue&#39;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-168-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Em seguida vamos fazer um kernel para cada um deles.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">D.confirm &lt;-<span class="st"> </span><span class="kw">density</span>(Confirm.ppp, <span class="dv">750</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb161-2" data-line-number="2">D.naoconfirm &lt;-<span class="st"> </span><span class="kw">density</span>(NaoConfirm.ppp, <span class="dv">750</span>, <span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">D.confirm &lt;-<span class="st"> </span><span class="kw">density</span>(Confirm.ppp,<span class="dv">750</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb161-2" data-line-number="2">D.naoconfirm  &lt;-<span class="st"> </span><span class="kw">density</span>(NaoConfirm.ppp,<span class="dv">750</span>,<span class="dt">diggle =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb161-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb161-4" data-line-number="4"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))  <span class="co">#,mar=c(0.5,2,1,1.5))</span></a>
-<a class="sourceLine" id="cb161-5" data-line-number="5"><span class="kw">plot</span>(D.confirm, <span class="dt">main =</span> <span class="st">&quot;kernel casos Dengue 750 m&quot;</span>, </a>
-<a class="sourceLine" id="cb161-6" data-line-number="6">    <span class="dt">box =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb161-7" data-line-number="7"><span class="kw">plot</span>(D.naoconfirm, <span class="dt">main =</span> <span class="st">&quot;kernel casos  Descartados 750 m&quot;</span>, </a>
-<a class="sourceLine" id="cb161-8" data-line-number="8">    <span class="dt">box =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-170-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb161-4" data-line-number="4"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="co">#,mar=c(0.5,2,1,1.5))</span></a>
+<a class="sourceLine" id="cb161-5" data-line-number="5"><span class="kw">plot</span>(D.confirm, <span class="dt">main=</span><span class="st">&#39;kernel casos Dengue 750 m&#39;</span>,<span class="dt">box=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb161-6" data-line-number="6"><span class="kw">plot</span>(D.naoconfirm, <span class="dt">main=</span><span class="st">&#39;kernel casos  Descartados 750 m&#39;</span>,<span class="dt">box=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-169-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Aparentemente existem diferenças nos padrões dos casos confirmados e descartados de dengue. O próximo passo é fazer uma razão de kernel para averiguar essa diferença de padrões.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">raz &lt;-<span class="st"> </span>D.confirm</a>
-<a class="sourceLine" id="cb162-2" data-line-number="2">raz<span class="op">$</span>v &lt;-<span class="st"> </span>D.confirm<span class="op">$</span>v<span class="op">/</span>D.naoconfirm<span class="op">$</span>v</a>
-<a class="sourceLine" id="cb162-3" data-line-number="3"><span class="kw">plot</span>(raz, <span class="dt">main =</span> <span class="st">&quot;Razão Dengue Confirmado Vs Não Confirmado&quot;</span>, </a>
-<a class="sourceLine" id="cb162-4" data-line-number="4">    <span class="dt">box =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-171-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">raz &lt;-<span class="st"> </span>D.confirm </a>
+<a class="sourceLine" id="cb162-2" data-line-number="2">raz<span class="op">$</span>v &lt;-<span class="st"> </span>D.confirm<span class="op">$</span>v <span class="op">/</span><span class="st"> </span>D.naoconfirm<span class="op">$</span>v</a>
+<a class="sourceLine" id="cb162-3" data-line-number="3"><span class="kw">plot</span>(raz,<span class="dt">main=</span><span class="st">&#39;Razão Dengue Confirmado Vs Não Confirmado&#39;</span>,<span class="dt">box=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-170-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>A razão não evidencia grande diferença, por que ?</p></li>
 <li><p>Qual seria a melhor maneira de evidenciar essa diferença ?</p></li>
@@ -684,13 +673,12 @@ será que existe algum padrão espacial para os casos <em>não confirmados</em> 
 <div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1">casos.pt<span class="op">$</span>X &lt;-<span class="st"> </span>casos<span class="op">$</span>X</a>
 <a class="sourceLine" id="cb163-2" data-line-number="2">casos.pt<span class="op">$</span>Y &lt;-<span class="st"> </span>casos<span class="op">$</span>Y</a>
 <a class="sourceLine" id="cb163-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb163-4" data-line-number="4">grade &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">X =</span> <span class="kw">seq</span>(<span class="fl">720900.6</span>, <span class="fl">734155.5</span>, <span class="dt">length.out =</span> <span class="dv">150</span>), </a>
-<a class="sourceLine" id="cb163-5" data-line-number="5">    <span class="dt">Y =</span> <span class="kw">seq</span>(<span class="fl">7535267.6</span>, <span class="fl">7544897.2</span>, <span class="dt">length.out =</span> <span class="dv">100</span>))</a>
+<a class="sourceLine" id="cb163-4" data-line-number="4">grade &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">X =</span> <span class="kw">seq</span>(<span class="fl">720900.6</span>,<span class="fl">734155.5</span>,<span class="dt">length.out =</span> <span class="dv">150</span>),</a>
+<a class="sourceLine" id="cb163-5" data-line-number="5">                     <span class="dt">Y =</span> <span class="kw">seq</span>(<span class="fl">7535267.6</span>,<span class="fl">7544897.2</span> ,<span class="dt">length.out =</span> <span class="dv">100</span>))</a>
 <a class="sourceLine" id="cb163-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(mgcv, <span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(mgcv,<span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb163-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb163-9" data-line-number="9">mod0 &lt;-<span class="st"> </span><span class="kw">gam</span>(CLASSI_FIN <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(X, Y), <span class="dt">data =</span> casos.pt, </a>
-<a class="sourceLine" id="cb163-10" data-line-number="10">    <span class="dt">family =</span> binomial)</a></code></pre></div>
+<a class="sourceLine" id="cb163-9" data-line-number="9">mod0 &lt;-<span class="st"> </span><span class="kw">gam</span>(CLASSI_FIN<span class="op">==</span><span class="dv">1</span> <span class="op">~</span><span class="st"> </span><span class="kw">s</span>(X,Y),<span class="dt">data=</span>casos.pt,<span class="dt">family =</span> binomial)</a></code></pre></div>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="kw">summary</span>(mod0)</a></code></pre></div>
 <p>Family: binomial
 Link function: logit</p>
@@ -712,109 +700,90 @@ UBRE = 0.085615 Scale est. = 1 n = 1017</p>
 <li>Podemos observar que o modelo espacial vazio parace evidenciar que o componente espacial *s(X,Y) é significativo, ou seja, existe indícios que o espaço geográfico está influenciando a variável de desfecho.</li>
 </ul>
 <p>Agora vamos verificar a saída gráfica original do modelo.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="kw">vis.gam</span>(mod0, <span class="dt">main =</span> <span class="st">&quot;Modelo Vazio&quot;</span>, <span class="dt">plot.type =</span> <span class="st">&quot;contour&quot;</span>, </a>
-<a class="sourceLine" id="cb165-2" data-line-number="2">    <span class="dt">color =</span> <span class="st">&quot;terrain&quot;</span>, <span class="dt">contour.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-175-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="kw">vis.gam</span>(mod0, <span class="dt">main =</span> <span class="st">&quot;Modelo Vazio&quot;</span>, <span class="dt">plot.type =</span> <span class="st">&quot;contour&quot;</span>,</a>
+<a class="sourceLine" id="cb165-2" data-line-number="2">        <span class="dt">color =</span> <span class="st">&quot;terrain&quot;</span>, <span class="dt">contour.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-174-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Essa saída não parece ser muito intuitiva, apesar ser possível observarmos as áreas onte apresentão ‘pistas’ de haver um risco maior e as áreas onde estão mais isentas de casos de dengue.</li>
 </ul>
 <p>Vamos agora tentar melhorar tal saída gráfica.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(splancs, <span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(fields, <span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(splancs,<span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(fields,<span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
 <a class="sourceLine" id="cb166-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb166-4" data-line-number="4">TAM &lt;-<span class="st"> </span><span class="dv">400</span></a>
 <a class="sourceLine" id="cb166-5" data-line-number="5">caixa &lt;-<span class="st"> </span><span class="kw">st_bbox</span>(contorno)</a>
 <a class="sourceLine" id="cb166-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb166-7" data-line-number="7">grade &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">x =</span> <span class="kw">seq</span>(caixa[<span class="dv">1</span>], caixa[<span class="dv">3</span>], <span class="dt">length.out =</span> TAM), </a>
-<a class="sourceLine" id="cb166-8" data-line-number="8">    <span class="dt">y =</span> <span class="kw">seq</span>(caixa[<span class="dv">2</span>], caixa[<span class="dv">4</span>], <span class="dt">length.out =</span> TAM))</a>
-<a class="sourceLine" id="cb166-9" data-line-number="9">contorno.xy &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">slot</span>(<span class="kw">slot</span>(<span class="kw">slot</span>(<span class="kw">as_Spatial</span>(contorno), </a>
-<a class="sourceLine" id="cb166-10" data-line-number="10">    <span class="st">&quot;polygons&quot;</span>)[[<span class="dv">1</span>]], <span class="st">&quot;Polygons&quot;</span>)[[<span class="dv">1</span>]], <span class="st">&quot;coords&quot;</span>))</a>
+<a class="sourceLine" id="cb166-7" data-line-number="7">grade &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">x=</span><span class="kw">seq</span>(caixa[<span class="dv">1</span>],caixa[<span class="dv">3</span>],<span class="dt">length.out =</span> TAM),<span class="dt">y=</span><span class="kw">seq</span>(caixa[<span class="dv">2</span>],caixa[<span class="dv">4</span>],<span class="dt">length.out =</span> TAM))</a>
+<a class="sourceLine" id="cb166-8" data-line-number="8">contorno.xy &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">slot</span>(<span class="kw">slot</span>(<span class="kw">slot</span>(<span class="kw">as_Spatial</span>(contorno),<span class="st">&quot;polygons&quot;</span>)[[<span class="dv">1</span>]],<span class="st">&quot;Polygons&quot;</span>)[[<span class="dv">1</span>]],<span class="st">&quot;coords&quot;</span>))</a>
+<a class="sourceLine" id="cb166-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb166-10" data-line-number="10">inside &lt;-<span class="st"> </span><span class="kw">in.out</span>(<span class="kw">as.matrix</span>(contorno.xy),<span class="kw">as.matrix</span>(grade))</a>
 <a class="sourceLine" id="cb166-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb166-12" data-line-number="12">inside &lt;-<span class="st"> </span><span class="kw">in.out</span>(<span class="kw">as.matrix</span>(contorno.xy), <span class="kw">as.matrix</span>(grade))</a>
-<a class="sourceLine" id="cb166-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb166-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb166-15" data-line-number="15">outside &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="kw">seq</span>(caixa[<span class="dv">1</span>], caixa[<span class="dv">3</span>], <span class="dt">length.out =</span> TAM), </a>
-<a class="sourceLine" id="cb166-16" data-line-number="16">    <span class="dt">y =</span> <span class="kw">seq</span>(caixa[<span class="dv">2</span>], caixa[<span class="dv">4</span>], <span class="dt">length.out =</span> TAM), </a>
-<a class="sourceLine" id="cb166-17" data-line-number="17">    <span class="dt">z =</span> <span class="kw">matrix</span>(<span class="kw">rep</span>(<span class="dv">0</span>, TAM<span class="op">^</span><span class="dv">2</span>), <span class="dt">ncol =</span> TAM))</a>
-<a class="sourceLine" id="cb166-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb166-19" data-line-number="19">outside<span class="op">$</span>z[inside] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb166-20" data-line-number="20">x &lt;-<span class="st"> </span>outside<span class="op">$</span>x</a>
-<a class="sourceLine" id="cb166-21" data-line-number="21">y &lt;-<span class="st"> </span>outside<span class="op">$</span>y</a>
+<a class="sourceLine" id="cb166-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb166-13" data-line-number="13">outside &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x=</span><span class="kw">seq</span>(caixa[<span class="dv">1</span>],caixa[<span class="dv">3</span>],<span class="dt">length.out =</span> TAM), </a>
+<a class="sourceLine" id="cb166-14" data-line-number="14">                <span class="dt">y=</span><span class="kw">seq</span>(caixa[<span class="dv">2</span>],caixa[<span class="dv">4</span>],<span class="dt">length.out =</span> TAM), <span class="dt">z=</span><span class="kw">matrix</span>(<span class="kw">rep</span>(<span class="dv">0</span>,TAM<span class="op">^</span><span class="dv">2</span>),<span class="dt">ncol=</span>TAM) )</a>
+<a class="sourceLine" id="cb166-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb166-16" data-line-number="16">outside<span class="op">$</span>z[inside] &lt;-<span class="st"> </span><span class="ot">NA</span> </a>
+<a class="sourceLine" id="cb166-17" data-line-number="17">x &lt;-<span class="st">  </span>outside<span class="op">$</span>x</a>
+<a class="sourceLine" id="cb166-18" data-line-number="18">y &lt;-<span class="st">  </span>outside<span class="op">$</span>y</a>
+<a class="sourceLine" id="cb166-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb166-20" data-line-number="20">newgam &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">X=</span>grade[,<span class="dv">1</span>],<span class="dt">Y=</span>grade[,<span class="dv">2</span>])</a>
+<a class="sourceLine" id="cb166-21" data-line-number="21">gg.pred &lt;-<span class="st"> </span><span class="kw">predict</span>(mod0,<span class="dt">newdata=</span>newgam, <span class="dt">type=</span><span class="st">&quot;terms&quot;</span>, <span class="dt">terms=</span><span class="st">&quot;s(X,Y)&quot;</span>,<span class="dt">se.fit=</span>T)</a>
 <a class="sourceLine" id="cb166-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb166-23" data-line-number="23">newgam &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">X =</span> grade[, <span class="dv">1</span>], <span class="dt">Y =</span> grade[, <span class="dv">2</span>])</a>
-<a class="sourceLine" id="cb166-24" data-line-number="24">gg.pred &lt;-<span class="st"> </span><span class="kw">predict</span>(mod0, <span class="dt">newdata =</span> newgam, <span class="dt">type =</span> <span class="st">&quot;terms&quot;</span>, </a>
-<a class="sourceLine" id="cb166-25" data-line-number="25">    <span class="dt">terms =</span> <span class="st">&quot;s(X,Y)&quot;</span>, <span class="dt">se.fit =</span> T)</a>
+<a class="sourceLine" id="cb166-23" data-line-number="23">gg.pred<span class="op">$</span>fit[inside<span class="op">==</span>F]&lt;-<span class="ot">NA</span></a>
+<a class="sourceLine" id="cb166-24" data-line-number="24">gg.pred<span class="op">$</span>se.fit[inside<span class="op">==</span>F]&lt;-<span class="ot">NA</span></a>
+<a class="sourceLine" id="cb166-25" data-line-number="25">z &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">matrix</span>(gg.pred<span class="op">$</span>fit,TAM,TAM))</a>
 <a class="sourceLine" id="cb166-26" data-line-number="26"></a>
-<a class="sourceLine" id="cb166-27" data-line-number="27">gg.pred<span class="op">$</span>fit[inside <span class="op">==</span><span class="st"> </span>F] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb166-28" data-line-number="28">gg.pred<span class="op">$</span>se.fit[inside <span class="op">==</span><span class="st"> </span>F] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb166-29" data-line-number="29">z &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">matrix</span>(gg.pred<span class="op">$</span>fit, TAM, TAM))</a>
-<a class="sourceLine" id="cb166-30" data-line-number="30"></a>
-<a class="sourceLine" id="cb166-31" data-line-number="31"><span class="co">## a very rough estimate of confidence intervals</span></a>
-<a class="sourceLine" id="cb166-32" data-line-number="32">z.inf &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
-<a class="sourceLine" id="cb166-33" data-line-number="33">z.sup &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
-<a class="sourceLine" id="cb166-34" data-line-number="34">z.inf &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.inf, TAM, TAM)</a>
-<a class="sourceLine" id="cb166-35" data-line-number="35">z.sup &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.sup, TAM, TAM)</a>
-<a class="sourceLine" id="cb166-36" data-line-number="36"></a>
-<a class="sourceLine" id="cb166-37" data-line-number="37">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#053061&quot;</span>, <span class="st">&quot;#2166ac&quot;</span>, <span class="st">&quot;#4393c3&quot;</span>, <span class="st">&quot;#92c5de&quot;</span>, </a>
-<a class="sourceLine" id="cb166-38" data-line-number="38">    <span class="st">&quot;#d1e5f0&quot;</span>, <span class="st">&quot;#f7f7f7&quot;</span>, <span class="st">&quot;#fddbc7&quot;</span>, <span class="st">&quot;#f4a582&quot;</span>, <span class="st">&quot;#d6604d&quot;</span>, </a>
-<a class="sourceLine" id="cb166-39" data-line-number="39">    <span class="st">&quot;#b2182b&quot;</span>, <span class="st">&quot;#67001f&quot;</span>)</a>
-<a class="sourceLine" id="cb166-40" data-line-number="40"></a>
-<a class="sourceLine" id="cb166-41" data-line-number="41"><span class="kw">split.screen</span>(<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</a></code></pre></div>
+<a class="sourceLine" id="cb166-27" data-line-number="27"><span class="co">## a very rough estimate of confidence intervals </span></a>
+<a class="sourceLine" id="cb166-28" data-line-number="28">z.inf &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
+<a class="sourceLine" id="cb166-29" data-line-number="29">z.sup &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
+<a class="sourceLine" id="cb166-30" data-line-number="30">z.inf &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.inf,TAM,TAM)</a>
+<a class="sourceLine" id="cb166-31" data-line-number="31">z.sup &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.sup,TAM,TAM)</a>
+<a class="sourceLine" id="cb166-32" data-line-number="32"></a>
+<a class="sourceLine" id="cb166-33" data-line-number="33">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#053061&quot;</span>,<span class="st">&quot;#2166ac&quot;</span>,<span class="st">&quot;#4393c3&quot;</span>,<span class="st">&quot;#92c5de&quot;</span>,<span class="st">&quot;#d1e5f0&quot;</span>,<span class="st">&quot;#f7f7f7&quot;</span>,<span class="st">&quot;#fddbc7&quot;</span>,<span class="st">&quot;#f4a582&quot;</span>,<span class="st">&quot;#d6604d&quot;</span>,</a>
+<a class="sourceLine" id="cb166-34" data-line-number="34">           <span class="st">&quot;#b2182b&quot;</span>,<span class="st">&quot;#67001f&quot;</span>)</a>
+<a class="sourceLine" id="cb166-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb166-36" data-line-number="36"><span class="kw">split.screen</span>(<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="kw">c</span>(.<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)))</a></code></pre></div>
 <p>[1] 1 2</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="kw">screen</span>(<span class="dv">1</span>)</a>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="kw">screen</span>(<span class="dv">1</span>) </a>
 <a class="sourceLine" id="cb167-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb167-3" data-line-number="3"><span class="kw">image</span>(x, y, z, <span class="dt">zlim =</span> <span class="kw">range</span>(z, <span class="dt">na.rm =</span> T), <span class="dt">col =</span> cores, </a>
-<a class="sourceLine" id="cb167-4" data-line-number="4">    <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">axes =</span> F)</a>
-<a class="sourceLine" id="cb167-5" data-line-number="5"><span class="co"># points(den$x_coord, den$y_coord, pch=19,</span></a>
-<a class="sourceLine" id="cb167-6" data-line-number="6"><span class="co"># col=&#39;blue&#39;, cex=0.1)</span></a>
-<a class="sourceLine" id="cb167-7" data-line-number="7"><span class="kw">contour</span>(x, y, z.inf, <span class="dt">nlevels =</span> <span class="dv">1</span>, <span class="dt">add =</span> T, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, </a>
-<a class="sourceLine" id="cb167-8" data-line-number="8">    <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">levels =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="fl">0.1</span>, <span class="dt">labels =</span> <span class="st">&quot;&lt;1&quot;</span>)</a>
-<a class="sourceLine" id="cb167-9" data-line-number="9"><span class="kw">contour</span>(x, y, z.sup, <span class="dt">nlevels =</span> <span class="dv">1</span>, <span class="dt">add =</span> T, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, </a>
-<a class="sourceLine" id="cb167-10" data-line-number="10">    <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">levels =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="fl">0.1</span>, <span class="dt">labels =</span> <span class="st">&quot;&gt;1&quot;</span>)</a>
-<a class="sourceLine" id="cb167-11" data-line-number="11">splancs<span class="op">::</span><span class="kw">polymap</span>(contorno.xy, <span class="dt">add =</span> T, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb167-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb167-13" data-line-number="13"><span class="kw">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></a>
-<a class="sourceLine" id="cb167-14" data-line-number="14"><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></a>
+<a class="sourceLine" id="cb167-3" data-line-number="3"><span class="kw">image</span>(x,y,z,<span class="dt">zlim=</span><span class="kw">range</span>(z, <span class="dt">na.rm=</span>T), <span class="dt">col=</span>cores, <span class="dt">asp=</span><span class="dv">1</span>, <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">axes=</span>F)   </a>
+<a class="sourceLine" id="cb167-4" data-line-number="4"><span class="co">#points(den$x_coord, den$y_coord, pch=19, col=&quot;blue&quot;, cex=0.1)</span></a>
+<a class="sourceLine" id="cb167-5" data-line-number="5"><span class="kw">contour</span>(x, y, z.inf, <span class="dt">nlevels=</span><span class="dv">1</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">levels=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.1</span>,<span class="dt">labels =</span> <span class="st">&#39;&lt;1&#39;</span>)</a>
+<a class="sourceLine" id="cb167-6" data-line-number="6"><span class="kw">contour</span>(x, y, z.sup, <span class="dt">nlevels=</span><span class="dv">1</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">levels=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.1</span>,<span class="dt">labels =</span> <span class="st">&#39;&gt;1&#39;</span>)</a>
+<a class="sourceLine" id="cb167-7" data-line-number="7">splancs<span class="op">::</span><span class="kw">polymap</span>(contorno.xy,<span class="dt">add=</span>T,<span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb167-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb167-9" data-line-number="9"><span class="kw">screen</span>(<span class="dv">2</span>) <span class="co"># The legend</span></a>
+<a class="sourceLine" id="cb167-10" data-line-number="10"><span class="co">#range(z, na.rm=T) # to make a pretty legend</span></a>
+<a class="sourceLine" id="cb167-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb167-12" data-line-number="12"><span class="co">#ticks &lt;- seq(0,0.5,by=0.2)</span></a>
+<a class="sourceLine" id="cb167-13" data-line-number="13">ticks &lt;-<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">na.omit</span>(<span class="kw">as.vector</span>(z)),<span class="dt">prob=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">by=</span><span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb167-14" data-line-number="14">ticks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.5</span>)</a>
 <a class="sourceLine" id="cb167-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb167-16" data-line-number="16"><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></a>
-<a class="sourceLine" id="cb167-17" data-line-number="17">ticks &lt;-<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">na.omit</span>(<span class="kw">as.vector</span>(z)), <span class="dt">prob =</span> <span class="kw">seq</span>(<span class="dv">0</span>, </a>
-<a class="sourceLine" id="cb167-18" data-line-number="18">    <span class="dv">1</span>, <span class="dt">by =</span> <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb167-19" data-line-number="19">ticks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb167-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb167-21" data-line-number="21"><span class="kw">image.plot</span>(<span class="dt">zlim =</span> <span class="kw">range</span>(z, <span class="dt">na.rm =</span> T), <span class="dt">col =</span> cores, </a>
-<a class="sourceLine" id="cb167-22" data-line-number="22">    <span class="dt">axis.args =</span> <span class="kw">list</span>(<span class="dt">at =</span> ticks, <span class="dt">labels =</span> ticks), <span class="dt">legend.only =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb167-23" data-line-number="23">    <span class="dt">smallplot =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="dt">legend.width =</span> <span class="dv">3</span>, </a>
-<a class="sourceLine" id="cb167-24" data-line-number="24">    <span class="dt">legend.shrink =</span> <span class="fl">0.8</span>, <span class="dt">horizontal =</span> F)</a>
-<a class="sourceLine" id="cb167-25" data-line-number="25"><span class="kw">title</span>(<span class="st">&quot;Modelo Vazio&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-176-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb167-16" data-line-number="16"><span class="kw">image.plot</span>(<span class="dt">zlim=</span><span class="kw">range</span>(z, <span class="dt">na.rm=</span>T), <span class="dt">col=</span>cores, <span class="dt">axis.args=</span><span class="kw">list</span>(<span class="dt">at=</span>ticks, <span class="dt">labels=</span>ticks),<span class="dt">legend.only=</span><span class="ot">TRUE</span>, <span class="dt">smallplot=</span><span class="kw">c</span>(.<span class="dv">1</span>,.<span class="dv">25</span>, <span class="fl">.15</span>,.<span class="dv">85</span>), <span class="dt">legend.width=</span><span class="dv">3</span>, <span class="dt">legend.shrink=</span>.<span class="dv">8</span>, <span class="dt">horizontal=</span>F)</a>
+<a class="sourceLine" id="cb167-17" data-line-number="17"><span class="kw">title</span>(<span class="st">&quot;Modelo Vazio&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-175-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Podemos também inspecionar a superfície do erro padrão do modelo.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">matrix</span>(gg.pred<span class="op">$</span>se.fit, TAM, TAM)</a>
-<a class="sourceLine" id="cb168-2" data-line-number="2"><span class="kw">split.screen</span>(<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">matrix</span>(gg.pred<span class="op">$</span>se.fit,TAM,TAM) </a>
+<a class="sourceLine" id="cb168-2" data-line-number="2"><span class="kw">split.screen</span>(<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="kw">c</span>(.<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)))</a></code></pre></div>
 <p>[1] 3 4</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="kw">screen</span>(<span class="dv">1</span>)</a>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="kw">screen</span>(<span class="dv">1</span>) </a>
 <a class="sourceLine" id="cb169-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb169-3" data-line-number="3"><span class="kw">image</span>(x, y, z, <span class="dt">zlim =</span> <span class="kw">range</span>(z, <span class="dt">na.rm =</span> T), <span class="dt">col =</span> cores, </a>
-<a class="sourceLine" id="cb169-4" data-line-number="4">    <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">axes =</span> F)</a>
-<a class="sourceLine" id="cb169-5" data-line-number="5">splancs<span class="op">::</span><span class="kw">polymap</span>(contorno.xy, <span class="dt">add =</span> T, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb169-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb169-7" data-line-number="7"><span class="kw">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></a>
-<a class="sourceLine" id="cb169-8" data-line-number="8"><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></a>
-<a class="sourceLine" id="cb169-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb169-10" data-line-number="10"><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></a>
-<a class="sourceLine" id="cb169-11" data-line-number="11">ticks &lt;-<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">na.omit</span>(<span class="kw">as.vector</span>(z)), <span class="dt">prob =</span> <span class="kw">seq</span>(<span class="dv">0</span>, </a>
-<a class="sourceLine" id="cb169-12" data-line-number="12">    <span class="dv">1</span>, <span class="dt">by =</span> <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb169-13" data-line-number="13">ticks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb169-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb169-15" data-line-number="15"><span class="kw">image.plot</span>(<span class="dt">zlim =</span> <span class="kw">range</span>(z, <span class="dt">na.rm =</span> T), <span class="dt">col =</span> cores, </a>
-<a class="sourceLine" id="cb169-16" data-line-number="16">    <span class="dt">axis.args =</span> <span class="kw">list</span>(<span class="dt">at =</span> ticks, <span class="dt">labels =</span> ticks), <span class="dt">legend.only =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb169-17" data-line-number="17">    <span class="dt">smallplot =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="dt">legend.width =</span> <span class="dv">3</span>, </a>
-<a class="sourceLine" id="cb169-18" data-line-number="18">    <span class="dt">legend.shrink =</span> <span class="fl">0.8</span>, <span class="dt">horizontal =</span> F)</a>
-<a class="sourceLine" id="cb169-19" data-line-number="19"><span class="kw">title</span>(<span class="st">&quot;Erro Padrão - Modelo Vazio&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-177-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb169-3" data-line-number="3"><span class="kw">image</span>(x,y,z,<span class="dt">zlim=</span><span class="kw">range</span>(z, <span class="dt">na.rm=</span>T), <span class="dt">col=</span>cores, <span class="dt">asp=</span><span class="dv">1</span>, <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">axes=</span>F)   </a>
+<a class="sourceLine" id="cb169-4" data-line-number="4">splancs<span class="op">::</span><span class="kw">polymap</span>(contorno.xy,<span class="dt">add=</span>T,<span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb169-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb169-6" data-line-number="6"><span class="kw">screen</span>(<span class="dv">2</span>) <span class="co"># The legend</span></a>
+<a class="sourceLine" id="cb169-7" data-line-number="7"><span class="co">#range(z, na.rm=T) # to make a pretty legend</span></a>
+<a class="sourceLine" id="cb169-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb169-9" data-line-number="9"><span class="co">#ticks &lt;- seq(0,0.5,by=0.2)</span></a>
+<a class="sourceLine" id="cb169-10" data-line-number="10">ticks &lt;-<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">na.omit</span>(<span class="kw">as.vector</span>(z)),<span class="dt">prob=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">by=</span><span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb169-11" data-line-number="11">ticks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dt">by=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb169-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb169-13" data-line-number="13"><span class="kw">image.plot</span>(<span class="dt">zlim=</span><span class="kw">range</span>(z, <span class="dt">na.rm=</span>T), <span class="dt">col=</span>cores, <span class="dt">axis.args=</span><span class="kw">list</span>(<span class="dt">at=</span>ticks, <span class="dt">labels=</span>ticks),<span class="dt">legend.only=</span><span class="ot">TRUE</span>, <span class="dt">smallplot=</span><span class="kw">c</span>(.<span class="dv">1</span>,.<span class="dv">25</span>, <span class="fl">.15</span>,.<span class="dv">85</span>), <span class="dt">legend.width=</span><span class="dv">3</span>, <span class="dt">legend.shrink=</span>.<span class="dv">8</span>, <span class="dt">horizontal=</span>F)</a>
+<a class="sourceLine" id="cb169-14" data-line-number="14"><span class="kw">title</span>(<span class="st">&quot;Erro Padrão - Modelo Vazio&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-176-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Note que no centro, onde existe a maior qunatidade de pontos, o erro e bem menor que nas áreas onde existem menos pontos e nas bordas !</p>
 <p>Incluindo no modelo a variável sexo.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">mod1 &lt;-<span class="st"> </span><span class="kw">gam</span>(CLASSI_FIN <span class="op">==</span><span class="st"> </span><span class="dv">1</span> <span class="op">~</span><span class="st"> </span>CS_SEXO <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(CS_RACA) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb170-2" data-line-number="2"><span class="st">    </span><span class="kw">s</span>(X, Y), <span class="dt">data =</span> casos.pt, <span class="dt">family =</span> binomial)</a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">mod1 &lt;-<span class="st"> </span><span class="kw">gam</span>(CLASSI_FIN<span class="op">==</span><span class="dv">1</span> <span class="op">~</span><span class="st"> </span>CS_SEXO <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(CS_RACA) <span class="op">+</span><span class="st"> </span><span class="kw">s</span>(X,Y),<span class="dt">data=</span>casos.pt,<span class="dt">family =</span> binomial)</a></code></pre></div>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1"><span class="kw">summary</span>(mod1)</a></code></pre></div>
 <p>Family: binomial
 Link function: logit</p>
@@ -839,53 +808,42 @@ Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 
 <p>R-sq.(adj) = 0.162 Deviance explained = 15.2%
 UBRE = 0.094684 Scale est. = 1 n = 1011</p>
 <p>Como já visto anteriormente na análise exploratória espacial de pontos, a variável sexo não é significativa significativa.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">newgam &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">X =</span> grade[, <span class="dv">1</span>], <span class="dt">Y =</span> grade[, <span class="dv">2</span>], </a>
-<a class="sourceLine" id="cb172-2" data-line-number="2">    <span class="dt">CS_SEXO =</span> <span class="st">&quot;F&quot;</span>, <span class="dt">CS_RACA =</span> <span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb172-3" data-line-number="3">gg.pred &lt;-<span class="st"> </span><span class="kw">predict</span>(mod1, <span class="dt">newdata =</span> newgam, <span class="dt">type =</span> <span class="st">&quot;terms&quot;</span>, </a>
-<a class="sourceLine" id="cb172-4" data-line-number="4">    <span class="dt">terms =</span> <span class="st">&quot;s(X,Y)&quot;</span>, <span class="dt">se.fit =</span> T)</a>
-<a class="sourceLine" id="cb172-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb172-6" data-line-number="6">gg.pred<span class="op">$</span>fit[inside <span class="op">==</span><span class="st"> </span>F] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb172-7" data-line-number="7">gg.pred<span class="op">$</span>se.fit[inside <span class="op">==</span><span class="st"> </span>F] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb172-8" data-line-number="8">z &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">matrix</span>(gg.pred<span class="op">$</span>fit, TAM, TAM))</a>
-<a class="sourceLine" id="cb172-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb172-10" data-line-number="10"><span class="co">## a very rough estimate of confidence intervals</span></a>
-<a class="sourceLine" id="cb172-11" data-line-number="11">z.inf &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
-<a class="sourceLine" id="cb172-12" data-line-number="12">z.sup &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
-<a class="sourceLine" id="cb172-13" data-line-number="13">z.inf &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.inf, TAM, TAM)</a>
-<a class="sourceLine" id="cb172-14" data-line-number="14">z.sup &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.sup, TAM, TAM)</a>
-<a class="sourceLine" id="cb172-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb172-16" data-line-number="16">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#053061&quot;</span>, <span class="st">&quot;#2166ac&quot;</span>, <span class="st">&quot;#4393c3&quot;</span>, <span class="st">&quot;#92c5de&quot;</span>, </a>
-<a class="sourceLine" id="cb172-17" data-line-number="17">    <span class="st">&quot;#d1e5f0&quot;</span>, <span class="st">&quot;#f7f7f7&quot;</span>, <span class="st">&quot;#fddbc7&quot;</span>, <span class="st">&quot;#f4a582&quot;</span>, <span class="st">&quot;#d6604d&quot;</span>, </a>
-<a class="sourceLine" id="cb172-18" data-line-number="18">    <span class="st">&quot;#b2182b&quot;</span>, <span class="st">&quot;#67001f&quot;</span>)</a>
-<a class="sourceLine" id="cb172-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb172-20" data-line-number="20"><span class="kw">split.screen</span>(<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">newgam &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">X=</span>grade[,<span class="dv">1</span>],<span class="dt">Y=</span>grade[,<span class="dv">2</span>], <span class="dt">CS_SEXO=</span><span class="st">&quot;F&quot;</span>,  <span class="dt">CS_RACA=</span><span class="st">&quot;1&quot;</span>)</a>
+<a class="sourceLine" id="cb172-2" data-line-number="2">gg.pred &lt;-<span class="st"> </span><span class="kw">predict</span>(mod1,<span class="dt">newdata=</span>newgam, <span class="dt">type=</span><span class="st">&quot;terms&quot;</span>, <span class="dt">terms=</span><span class="st">&quot;s(X,Y)&quot;</span>,<span class="dt">se.fit=</span>T)</a>
+<a class="sourceLine" id="cb172-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb172-4" data-line-number="4">gg.pred<span class="op">$</span>fit[inside<span class="op">==</span>F]&lt;-<span class="ot">NA</span></a>
+<a class="sourceLine" id="cb172-5" data-line-number="5">gg.pred<span class="op">$</span>se.fit[inside<span class="op">==</span>F]&lt;-<span class="ot">NA</span></a>
+<a class="sourceLine" id="cb172-6" data-line-number="6">z &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">matrix</span>(gg.pred<span class="op">$</span>fit,TAM,TAM))</a>
+<a class="sourceLine" id="cb172-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb172-8" data-line-number="8"><span class="co">## a very rough estimate of confidence intervals </span></a>
+<a class="sourceLine" id="cb172-9" data-line-number="9">z.inf &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">+</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
+<a class="sourceLine" id="cb172-10" data-line-number="10">z.sup &lt;-<span class="st"> </span><span class="kw">exp</span>(gg.pred<span class="op">$</span>fit <span class="op">-</span><span class="st"> </span>(<span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>gg.pred<span class="op">$</span>se.fit))</a>
+<a class="sourceLine" id="cb172-11" data-line-number="11">z.inf &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.inf,TAM,TAM)</a>
+<a class="sourceLine" id="cb172-12" data-line-number="12">z.sup &lt;-<span class="st"> </span><span class="kw">matrix</span>(z.sup,TAM,TAM)</a>
+<a class="sourceLine" id="cb172-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb172-14" data-line-number="14">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#053061&quot;</span>,<span class="st">&quot;#2166ac&quot;</span>,<span class="st">&quot;#4393c3&quot;</span>,<span class="st">&quot;#92c5de&quot;</span>,<span class="st">&quot;#d1e5f0&quot;</span>,<span class="st">&quot;#f7f7f7&quot;</span>,<span class="st">&quot;#fddbc7&quot;</span>,<span class="st">&quot;#f4a582&quot;</span>,<span class="st">&quot;#d6604d&quot;</span>,</a>
+<a class="sourceLine" id="cb172-15" data-line-number="15">           <span class="st">&quot;#b2182b&quot;</span>,<span class="st">&quot;#67001f&quot;</span>)</a>
+<a class="sourceLine" id="cb172-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb172-17" data-line-number="17"><span class="kw">split.screen</span>(<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">0</span>,.<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="kw">c</span>(.<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)))</a></code></pre></div>
 <p>[1] 5 6</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="kw">screen</span>(<span class="dv">1</span>)</a>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="kw">screen</span>(<span class="dv">1</span>) </a>
 <a class="sourceLine" id="cb173-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb173-3" data-line-number="3"><span class="kw">image</span>(x, y, z, <span class="dt">zlim =</span> <span class="kw">range</span>(z, <span class="dt">na.rm =</span> T), <span class="dt">col =</span> cores, </a>
-<a class="sourceLine" id="cb173-4" data-line-number="4">    <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">axes =</span> F)</a>
-<a class="sourceLine" id="cb173-5" data-line-number="5"><span class="co"># points(den$x_coord, den$y_coord, pch=19,</span></a>
-<a class="sourceLine" id="cb173-6" data-line-number="6"><span class="co"># col=&#39;blue&#39;, cex=0.1)</span></a>
-<a class="sourceLine" id="cb173-7" data-line-number="7"><span class="kw">contour</span>(x, y, z.inf, <span class="dt">nlevels =</span> <span class="dv">1</span>, <span class="dt">add =</span> T, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, </a>
-<a class="sourceLine" id="cb173-8" data-line-number="8">    <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">levels =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="fl">0.1</span>, <span class="dt">labels =</span> <span class="st">&quot;&lt;1&quot;</span>)</a>
-<a class="sourceLine" id="cb173-9" data-line-number="9"><span class="kw">contour</span>(x, y, z.sup, <span class="dt">nlevels =</span> <span class="dv">1</span>, <span class="dt">add =</span> T, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, </a>
-<a class="sourceLine" id="cb173-10" data-line-number="10">    <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">levels =</span> <span class="dv">1</span>, <span class="dt">cex =</span> <span class="fl">0.1</span>, <span class="dt">labels =</span> <span class="st">&quot;&gt;1&quot;</span>)</a>
-<a class="sourceLine" id="cb173-11" data-line-number="11">splancs<span class="op">::</span><span class="kw">polymap</span>(contorno.xy, <span class="dt">add =</span> T, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb173-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb173-13" data-line-number="13"><span class="kw">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></a>
-<a class="sourceLine" id="cb173-14" data-line-number="14"><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></a>
+<a class="sourceLine" id="cb173-3" data-line-number="3"><span class="kw">image</span>(x,y,z,<span class="dt">zlim=</span><span class="kw">range</span>(z, <span class="dt">na.rm=</span>T), <span class="dt">col=</span>cores, <span class="dt">asp=</span><span class="dv">1</span>, <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>,<span class="dt">axes=</span>F)   </a>
+<a class="sourceLine" id="cb173-4" data-line-number="4"><span class="co">#points(den$x_coord, den$y_coord, pch=19, col=&quot;blue&quot;, cex=0.1)</span></a>
+<a class="sourceLine" id="cb173-5" data-line-number="5"><span class="kw">contour</span>(x, y, z.inf, <span class="dt">nlevels=</span><span class="dv">1</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">levels=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.1</span>,<span class="dt">labels =</span> <span class="st">&#39;&lt;1&#39;</span>)</a>
+<a class="sourceLine" id="cb173-6" data-line-number="6"><span class="kw">contour</span>(x, y, z.sup, <span class="dt">nlevels=</span><span class="dv">1</span>, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">levels=</span><span class="dv">1</span>,<span class="dt">cex=</span><span class="fl">0.1</span>,<span class="dt">labels =</span> <span class="st">&#39;&gt;1&#39;</span>)</a>
+<a class="sourceLine" id="cb173-7" data-line-number="7">splancs<span class="op">::</span><span class="kw">polymap</span>(contorno.xy,<span class="dt">add=</span>T,<span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb173-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb173-9" data-line-number="9"><span class="kw">screen</span>(<span class="dv">2</span>) <span class="co"># The legend</span></a>
+<a class="sourceLine" id="cb173-10" data-line-number="10"><span class="co">#range(z, na.rm=T) # to make a pretty legend</span></a>
+<a class="sourceLine" id="cb173-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb173-12" data-line-number="12"><span class="co">#ticks &lt;- seq(0,0.5,by=0.2)</span></a>
+<a class="sourceLine" id="cb173-13" data-line-number="13">ticks &lt;-<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">na.omit</span>(<span class="kw">as.vector</span>(z)),<span class="dt">prob=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dt">by=</span><span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb173-14" data-line-number="14">ticks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.5</span>)</a>
 <a class="sourceLine" id="cb173-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb173-16" data-line-number="16"><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></a>
-<a class="sourceLine" id="cb173-17" data-line-number="17">ticks &lt;-<span class="st"> </span><span class="kw">quantile</span>(<span class="kw">na.omit</span>(<span class="kw">as.vector</span>(z)), <span class="dt">prob =</span> <span class="kw">seq</span>(<span class="dv">0</span>, </a>
-<a class="sourceLine" id="cb173-18" data-line-number="18">    <span class="dv">1</span>, <span class="dt">by =</span> <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb173-19" data-line-number="19">ticks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dt">by =</span> <span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb173-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb173-21" data-line-number="21"><span class="kw">image.plot</span>(<span class="dt">zlim =</span> <span class="kw">range</span>(z, <span class="dt">na.rm =</span> T), <span class="dt">col =</span> cores, </a>
-<a class="sourceLine" id="cb173-22" data-line-number="22">    <span class="dt">axis.args =</span> <span class="kw">list</span>(<span class="dt">at =</span> ticks, <span class="dt">labels =</span> ticks), <span class="dt">legend.only =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb173-23" data-line-number="23">    <span class="dt">smallplot =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="dt">legend.width =</span> <span class="dv">3</span>, </a>
-<a class="sourceLine" id="cb173-24" data-line-number="24">    <span class="dt">legend.shrink =</span> <span class="fl">0.8</span>, <span class="dt">horizontal =</span> F)</a>
-<a class="sourceLine" id="cb173-25" data-line-number="25"><span class="kw">title</span>(<span class="st">&quot;Modelo ajustado por Sexo e Raça&quot;</span>)</a></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-181-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<a class="sourceLine" id="cb173-16" data-line-number="16"><span class="kw">image.plot</span>(<span class="dt">zlim=</span><span class="kw">range</span>(z, <span class="dt">na.rm=</span>T), <span class="dt">col=</span>cores, <span class="dt">axis.args=</span><span class="kw">list</span>(<span class="dt">at=</span>ticks, <span class="dt">labels=</span>ticks),<span class="dt">legend.only=</span><span class="ot">TRUE</span>, <span class="dt">smallplot=</span><span class="kw">c</span>(.<span class="dv">1</span>,.<span class="dv">25</span>, <span class="fl">.15</span>,.<span class="dv">85</span>), <span class="dt">legend.width=</span><span class="dv">3</span>, <span class="dt">legend.shrink=</span>.<span class="dv">8</span>, <span class="dt">horizontal=</span>F)</a>
+<a class="sourceLine" id="cb173-17" data-line-number="17"><span class="kw">title</span>(<span class="st">&quot;Modelo ajustado por Sexo e Raça&quot;</span>)</a></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-180-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bibliografia-sugerida-5" class="section level2">
 <h2><span class="header-section-number">8.4</span> Bibliografia sugerida</h2>
