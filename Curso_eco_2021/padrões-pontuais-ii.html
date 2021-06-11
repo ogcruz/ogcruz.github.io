@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 1 Padrões Pontuais II | capitulo7.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 1 Padrões Pontuais II | capitulo7.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 1 Padrões Pontuais II | capitulo7.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos 2021</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#padrões-pontuais-ii"><i class="fa fa-check"></i><b>1</b> Padrões Pontuais II</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>1.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#modelos-generalizados-aditivos-gam"><i class="fa fa-check"></i><b>1.2</b> Modelos Generalizados Aditivos (GAM)</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>1.3</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#bibliografia-sugerida"><i class="fa fa-check"></i><b>1.4</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="padrões-pontuais-ii" class="section level1" number="1">
+<h1><span class="header-section-number"> 1</span> Padrões Pontuais II</h1>
+<div id="exemplo-com-os-dados-de-dengue-em-douradosms" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Exemplo com os dados de dengue em Dourados/MS</h2>
+<p>Nesta aula serão utilizados os dados da monografia de Isis Rodrigues Reitman, apresentada ao Curso de Geografia da Faculdade de Ciências Humanas da Universidade Federal da Grande Douradosos/MS, em março de 2013. O título da monografia é “DISTRIBUIÇÃO ESPACIAL DOS CASOS DE DENGUE NO PERÍMETRO URBANO DE DOURADOS-MS E SUA RELAÇÃO COM OS FATORES SOCIOAMBIENTAIS E POLÍTICOS”</p>
+<p><strong>ATENÇÃO ATENÇÃO ATENÇÃO</strong></p>
+<p>Devido a maneira que o Windows acessa as <strong>url</strong> usando a internet é necessario mudar a opção <em>default</em> dele para que possa usar apropiadamenet os recursos https, ftps, etc… A linha abaixo deve ser utilizanda antes de usar as funções que acessam esse tipo de recurso.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">download.file.method=</span><span class="st">&#39;libcurl&#39;</span>,<span class="at">url.method=</span><span class="st">&#39;libcurl&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maptools)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span></code></pre></div>
+<p>Lendo a tabela da população por setor censitário e baixando os shapes files do contorno e por setor censitário de Dourados/MS</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>local <span class="ot">&lt;-</span> <span class="st">&quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pop2010 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;pop2010.csv&quot;</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tmpdir <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;setores_dourados.zip&quot;</span>), </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> <span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>), <span class="at">exdir =</span> tmpdir)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(tmpdir)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>setor <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/Setor_UTM_SIRGAS.shp&quot;</span>), </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>contorno <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/contorno.shp&quot;</span>), </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>popsetor <span class="ot">&lt;-</span> setor <span class="sc">%&gt;%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">idsetor =</span> <span class="fu">as.numeric</span>(CD_GEOCODI)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">inner_join</span>(pop2010, <span class="at">by =</span> <span class="st">&quot;idsetor&quot;</span>)</span></code></pre></div>
+<pre><code> [1] &quot;contorno.dbf&quot;                                     &quot;contorno.sbn&quot;                                    
+ [3] &quot;contorno.sbx&quot;                                     &quot;contorno.shp&quot;                                    
+ [5] &quot;contorno.shx&quot;                                     &quot;dourados.zip&quot;                                    
+ [7] &quot;Setor_UTM_SIRGAS.dbf&quot;                             &quot;Setor_UTM_SIRGAS.prj&quot;                            
+ [9] &quot;Setor_UTM_SIRGAS.sbn&quot;                             &quot;Setor_UTM_SIRGAS.sbx&quot;                            
+[11] &quot;Setor_UTM_SIRGAS.shp&quot;                             &quot;Setor_UTM_SIRGAS.shx&quot;                            </code></pre>
+<ul>
+<li>Lendo e plotando os casos de dengue georreferenciados em Dourados/MS</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>casos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;dengue_dourados.csv&quot;</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>casos.pt <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(casos, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(casos.pt[<span class="sc">-</span><span class="dv">3</span>], <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)  <span class="do">## remove data</span></span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Plotando os casos de dengue segundo o sexo.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(casos.pt[<span class="st">&quot;CS_SEXO&quot;</span>], <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-5-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Plotando apenas o contorno de Dourados/MS.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(contorno[<span class="st">&quot;ID&quot;</span>])</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-6-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Usando a <strong>ggplot()</strong> para fazer um gráfico do contorno e dos casos.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(casos.pt) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> CS_SEXO, <span class="at">fill =</span> CS_SEXO), </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> contorno, <span class="at">alpha =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Formatando os pontos que representam os casos de dengue na classe <strong>ppp</strong> (point pattern)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cont.w <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(<span class="fu">as_Spatial</span>(contorno))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dengue.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(casos<span class="sc">$</span>X, casos<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dengue.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-8-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Uma vez que temos o objeto em formato <strong>ppp</strong>, podemos verificar a melhor largura de banda sugerida por vários métodos disponíveis pela biblioteca <em>spatstat</em> para os casos de Dengue em Dourados/MS.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Comando R</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diggle</td>
+<td>bw.diggle(dengue.ppp)</td>
+<td>14.1334566</td>
+</tr>
+<tr class="even">
+<td>Cronie and van Lieshout’s (CvL)</td>
+<td>bw.CvL(dengue.ppp)</td>
+<td>1630.7311348</td>
+</tr>
+<tr class="odd">
+<td>Scoot</td>
+<td>bw.scott(dengue.ppp)</td>
+<td>771.6202375, 467.9059559</td>
+</tr>
+<tr class="even">
+<td>likelihood cross-validation</td>
+<td>bw.ppl(dengue.ppp)</td>
+<td>178.0476697</td>
+</tr>
+</tbody>
+</table>
+<p>Existem ainda outros métodos para determinar automaticamente a largura de banda. É possível usa-los para ajudar a escolher o melhor valor, mas é preciso verificar se essa largura de banda apresenta plausibilidade dentro do contexto do estudo.</p>
+<p>Fazendo o mapa de kernel dos casos de dengue segundo várias larguras de banda.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">250</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 250 m&quot;</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">500</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 500 m&quot;</span>, </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 750 m&quot;</span>, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">1000</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 1000 m&quot;</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Fazendo o kernel segundo sexo, criando padrões para cada sexo e em seguida gerando um kernel para cada categoria.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>masc <span class="ot">&lt;-</span> casos <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(CS_SEXO <span class="sc">==</span> <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>masc.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(masc<span class="sc">$</span>X, masc<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fem <span class="ot">&lt;-</span> casos <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(CS_SEXO <span class="sc">==</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>fem.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(fem<span class="sc">$</span>X, fem<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>D.masc <span class="ot">&lt;-</span> <span class="fu">density</span>(masc.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>D.fem <span class="ot">&lt;-</span> <span class="fu">density</span>(fem.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.masc, <span class="at">main =</span> <span class="st">&quot;kernel Homens 750 m&quot;</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.fem, <span class="at">main =</span> <span class="st">&quot;kernel Mulheres 750 m&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Fazendo a razão de kernel entre os sexos.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>D.res <span class="ot">&lt;-</span> D.masc</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>D.res<span class="sc">$</span>v <span class="ot">&lt;-</span> (D.masc<span class="sc">$</span>v<span class="sc">/</span>D.fem<span class="sc">$</span>v)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.res, <span class="at">main =</span> <span class="st">&quot;Razão de Kernel H/M&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Como podemos observar no kernel acima, não foi detectada variabilidade espacial na razão entre os sexos. Observe o efeito de borda que ocorre no Norte, onde um único indivíduo do sexo masculido é responsável pelo efeito de borda.</p>
+<p>Extraindo os centróides dos setores censitários de Dourados/MS.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>centros <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(<span class="fu">st_geometry</span>(popsetor))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>centros.tmp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as_Spatial</span>(centros))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(centros.tmp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>centros.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(centros.tmp<span class="sc">$</span>X, centros.tmp<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(centros.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-12-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Fazendo o kernel dos pontos dos centróides dos setores censitários de Dourados/MS. Tal distribuição, pode se sugerida como uma <em>proxy</em> da verdadeira distribuição populacional de Dourados/MS</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>D.pop <span class="ot">&lt;-</span> <span class="fu">density</span>(centros.ppp, <span class="dv">500</span>, <span class="at">weights =</span> popsetor<span class="sc">$</span>pop, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">scalekernel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.pop)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Gerando um kernel de atributo com a população de cada setor censitário. O parâmetro <em>weights</em> nos permite entrar o valor do atributo a ser ponderado. Desta forma é possível gerar um kernel de um valor especificado (atributo).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>kpop <span class="ot">&lt;-</span> <span class="fu">density</span>(centros.ppp, <span class="dv">750</span>, <span class="at">weights =</span> popsetor<span class="sc">$</span>pop, </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">scalekernel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(kpop)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Calculando a taxa média de casos (por 1.000 hab) de dengue do município de Dourados/MS</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(casos.pt)<span class="sc">/</span><span class="fu">sum</span>(popsetor<span class="sc">$</span>pop) <span class="sc">*</span> <span class="dv">1000</span></span></code></pre></div>
+<p>[1] 5.853305</p>
+<p>Gerando a razão de kernel (casos/população) x 1000</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>kcasos.b750 <span class="ot">&lt;-</span> <span class="fu">density</span>(dengue.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>razao <span class="ot">&lt;-</span> kcasos.b750</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>razao<span class="sc">$</span>v <span class="ot">&lt;-</span> (kcasos.b750<span class="sc">$</span>v<span class="sc">/</span>kpop<span class="sc">$</span>v) <span class="sc">*</span> <span class="dv">1000</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(razao, <span class="at">main =</span> <span class="st">&quot;Razão de kernel casos/população&quot;</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(razao, <span class="at">add =</span> T, <span class="at">levels =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Plotando a distribuição das taxas por dengue estimadas via razão de kernel. É possível verificar que a mediana das razões de kernel é bem próxima a taxa média de casos (por 1.000 hab) em Dourados/MS.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">as.numeric</span>(razao<span class="sc">$</span>v), <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Boxplot da razão de kernel&quot;</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(razao<span class="sc">$</span>v), <span class="at">na.rm =</span> T), <span class="at">lty =</span> <span class="dv">3</span>, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Sobrepondo a malha da população por setores censitários (dados de área) com os pontos de casos de dengue (padrões pontuais)</p>
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- plot(popsetor['pop'],pal=terrain.colors(13)) -->
+<!-- plot(casos.pt['CS_SEXO'],pch=19,add=TRUE) -->
+<!-- #points.lpp(dengue.ppp,pch=19,col='black') -->
+<!-- ``` -->
+<!-- Também pode ser feito dessa forma. -->
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(popsetor) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pop)) <span class="sc">+</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> casos.pt, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">size =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Razão de casos confirmados vs não confirmados</p>
+<p>Como verificamos abaixo temos 713 casos <em>confirmados</em> de Dengue e 304 <em>não confirmados</em> ,
+será que existe algum padrão espacial para os casos <em>não confirmados</em> ?</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(casos<span class="sc">$</span>CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>FALSE TRUE
+304 713</p>
+<p>Para visualizarmos vamos inicialmente criar dois objetos do tipo <strong>ppp</strong> uma para <em>confirmados</em> e outro para <em>não confirmados</em>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Confirm <span class="ot">&lt;-</span> casos <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>NaoConfirm <span class="ot">&lt;-</span> casos <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(CLASSI_FIN <span class="sc">!=</span> <span class="dv">1</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>Confirm.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(Confirm<span class="sc">$</span>X, Confirm<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>NaoConfirm.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(NaoConfirm<span class="sc">$</span>X, NaoConfirm<span class="sc">$</span>Y, cont.w)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(contorno))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(Confirm.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(NaoConfirm, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Distribuição dos casos Confirmados e Não Confirmados&quot;</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Confirmados&quot;</span>, <span class="st">&quot;Não Confirmados&quot;</span>), </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="dv">1</span>, <span class="at">title =</span> <span class="st">&quot;Legenda&quot;</span>, </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bg =</span> <span class="st">&quot;lightblue&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Em seguida vamos fazer um kernel para cada um deles.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>D.confirm <span class="ot">&lt;-</span> <span class="fu">density</span>(Confirm.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>D.naoconfirm <span class="ot">&lt;-</span> <span class="fu">density</span>(NaoConfirm.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))  <span class="co">#,mar=c(0.5,2,1,1.5))</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.confirm, <span class="at">main =</span> <span class="st">&quot;kernel casos Dengue 750 m&quot;</span>, </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">box =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.naoconfirm, <span class="at">main =</span> <span class="st">&quot;kernel casos  Descartados 750 m&quot;</span>, </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">box =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Aparentemente existem diferenças nos padrões dos casos confirmados e descartados de dengue. O próximo passo é fazer uma razão de kernel para averiguar essa diferença de padrões.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>raz <span class="ot">&lt;-</span> D.confirm</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>raz<span class="sc">$</span>v <span class="ot">&lt;-</span> D.confirm<span class="sc">$</span>v<span class="sc">/</span>D.naoconfirm<span class="sc">$</span>v</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(raz, <span class="at">main =</span> <span class="st">&quot;Razão Dengue Confirmado Vs Não Confirmado&quot;</span>, </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">box =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>A razão não evidencia grande diferença, por que ?</p></li>
+<li><p>Qual seria a melhor maneira de evidenciar essa diferença ?</p></li>
+</ul>
+</div>
+<div id="modelos-generalizados-aditivos-gam" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Modelos Generalizados Aditivos (GAM)</h2>
+<ul>
+<li>Um modelo aditivo generalizado (Hastie and Tibishirani, 1990) é um modelo linear generalizado com um preditor linear envolvendo a soma de funções suavizadas das covariáveis + os efeitos fixos das mesmas.</li>
+</ul>
+<p><span class="math display">\[\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + \ldots\]</span></p>
+</div>
+<div id="modelos-espaciais-generalizados-aditivos" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Modelos Espaciais Generalizados Aditivos</h2>
+<ul>
+<li>São modelos aditivos generalizados tendo como um dos preditores o efeito suavizado das componentes espaciais.</li>
+</ul>
+<p><span class="math display">\[\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + f_3(latitude_{i}, longitude_{i}) + \ldots\]</span></p>
+<p>Exemplo GAM Dourados - Tipo Caso/Controle</p>
+<p>Vamos ajustar um modelo <strong>GAM</strong> do tipo “caso/controle”, onde casos serão representados pelos casos de dengue confirmados e controles os casos não confirmados.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>casos.pt<span class="sc">$</span>X <span class="ot">&lt;-</span> casos<span class="sc">$</span>X</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>casos.pt<span class="sc">$</span>Y <span class="ot">&lt;-</span> casos<span class="sc">$</span>Y</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="fl">720900.6</span>, <span class="fl">734155.5</span>, <span class="at">length.out =</span> <span class="dv">150</span>), </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">seq</span>(<span class="fl">7535267.6</span>, <span class="fl">7544897.2</span>, <span class="at">length.out =</span> <span class="dv">100</span>))</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(mgcv, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>mod0 <span class="ot">&lt;-</span> <span class="fu">gam</span>(CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fu">s</span>(X, Y), <span class="at">data =</span> casos.pt, </span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod0)</span></code></pre></div>
+<p>Family: binomial
+Link function: logit</p>
+<p>Formula:
+CLASSI_FIN == 1 ~ s(X, Y)</p>
+<p>Parametric coefficients:
+Estimate Std. Error z value Pr(&gt;|z|)<br />
+(Intercept) 1.00692 0.07945 12.67 &lt;2e-16 ***
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Approximate significance of smooth terms:
+edf Ref.df Chi.sq p-value<br />
+s(X,Y) 21.9 26.24 143.9 &lt;2e-16 ***
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>R-sq.(adj) = 0.161 Deviance explained = 14.7%
+UBRE = 0.085615 Scale est. = 1 n = 1017</p>
+<ul>
+<li>Podemos observar que o modelo espacial vazio parace evidenciar que o componente espacial *s(X,Y) é significativo, ou seja, existe indícios que o espaço geográfico está influenciando a variável de desfecho.</li>
+</ul>
+<p>Agora vamos verificar a saída gráfica original do modelo.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vis.gam</span>(mod0, <span class="at">main =</span> <span class="st">&quot;Modelo Vazio&quot;</span>, <span class="at">plot.type =</span> <span class="st">&quot;contour&quot;</span>, </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;terrain&quot;</span>, <span class="at">contour.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Essa saída não parece ser muito intuitiva, apesar ser possível observarmos as áreas onte apresentão ‘pistas’ de haver um risco maior e as áreas onde estão mais isentas de casos de dengue.</li>
+</ul>
+<p>Vamos agora tentar melhorar tal saída gráfica.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(splancs, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(fields, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>TAM <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>caixa <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(contorno)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x =</span> <span class="fu">seq</span>(caixa[<span class="dv">1</span>], caixa[<span class="dv">3</span>], <span class="at">length.out =</span> TAM), </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">seq</span>(caixa[<span class="dv">2</span>], caixa[<span class="dv">4</span>], <span class="at">length.out =</span> TAM))</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>contorno.xy <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">slot</span>(<span class="fu">slot</span>(<span class="fu">slot</span>(<span class="fu">as_Spatial</span>(contorno), </span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;polygons&quot;</span>)[[<span class="dv">1</span>]], <span class="st">&quot;Polygons&quot;</span>)[[<span class="dv">1</span>]], <span class="st">&quot;coords&quot;</span>))</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>inside <span class="ot">&lt;-</span> <span class="fu">in.out</span>(<span class="fu">as.matrix</span>(contorno.xy), <span class="fu">as.matrix</span>(grade))</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>outside <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">seq</span>(caixa[<span class="dv">1</span>], caixa[<span class="dv">3</span>], <span class="at">length.out =</span> TAM), </span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">seq</span>(caixa[<span class="dv">2</span>], caixa[<span class="dv">4</span>], <span class="at">length.out =</span> TAM), </span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">z =</span> <span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="dv">0</span>, TAM<span class="sc">^</span><span class="dv">2</span>), <span class="at">ncol =</span> TAM))</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>outside<span class="sc">$</span>z[inside] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> outside<span class="sc">$</span>x</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> outside<span class="sc">$</span>y</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>newgam <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> grade[, <span class="dv">1</span>], <span class="at">Y =</span> grade[, <span class="dv">2</span>])</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>gg.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod0, <span class="at">newdata =</span> newgam, <span class="at">type =</span> <span class="st">&quot;terms&quot;</span>, </span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">terms =</span> <span class="st">&quot;s(X,Y)&quot;</span>, <span class="at">se.fit =</span> T)</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>se.fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">matrix</span>(gg.pred<span class="sc">$</span>fit, TAM, TAM))</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="do">## a very rough estimate of confidence intervals</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">+</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">-</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.inf, TAM, TAM)</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.sup, TAM, TAM)</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>cores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#053061&quot;</span>, <span class="st">&quot;#2166ac&quot;</span>, <span class="st">&quot;#4393c3&quot;</span>, <span class="st">&quot;#92c5de&quot;</span>, </span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#d1e5f0&quot;</span>, <span class="st">&quot;#f7f7f7&quot;</span>, <span class="st">&quot;#fddbc7&quot;</span>, <span class="st">&quot;#f4a582&quot;</span>, <span class="st">&quot;#d6604d&quot;</span>, </span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#b2182b&quot;</span>, <span class="st">&quot;#67001f&quot;</span>)</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="fu">split.screen</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code></pre></div>
+<p>[1] 1 2</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z, <span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores, </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> F)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># points(den$x_coord, den$y_coord, pch=19,</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># col=&#39;blue&#39;, cex=0.1)</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.inf, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&lt;1&quot;</span>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.sup, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&gt;1&quot;</span>)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>splancs<span class="sc">::</span><span class="fu">polymap</span>(contorno.xy, <span class="at">add =</span> T, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">na.omit</span>(<span class="fu">as.vector</span>(z)), <span class="at">prob =</span> <span class="fu">seq</span>(<span class="dv">0</span>, </span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="fu">image.plot</span>(<span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores, </span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.args =</span> <span class="fu">list</span>(<span class="at">at =</span> ticks, <span class="at">labels =</span> ticks), <span class="at">legend.only =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">smallplot =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="at">legend.width =</span> <span class="dv">3</span>, </span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.shrink =</span> <span class="fl">0.8</span>, <span class="at">horizontal =</span> F)</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Modelo Vazio&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-28-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Podemos também inspecionar a superfície do erro padrão do modelo.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">matrix</span>(gg.pred<span class="sc">$</span>se.fit, TAM, TAM)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">split.screen</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code></pre></div>
+<p>[1] 3 4</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z, <span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores, </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> F)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>splancs<span class="sc">::</span><span class="fu">polymap</span>(contorno.xy, <span class="at">add =</span> T, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">na.omit</span>(<span class="fu">as.vector</span>(z)), <span class="at">prob =</span> <span class="fu">seq</span>(<span class="dv">0</span>, </span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="fu">image.plot</span>(<span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores, </span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.args =</span> <span class="fu">list</span>(<span class="at">at =</span> ticks, <span class="at">labels =</span> ticks), <span class="at">legend.only =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">smallplot =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="at">legend.width =</span> <span class="dv">3</span>, </span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.shrink =</span> <span class="fl">0.8</span>, <span class="at">horizontal =</span> F)</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Erro Padrão - Modelo Vazio&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Note que no centro, onde existe a maior qunatidade de pontos, o erro e bem menor que nas áreas onde existem menos pontos e nas bordas !</p>
+<p>Incluindo no modelo a variável sexo.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">gam</span>(CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> CS_SEXO <span class="sc">+</span> <span class="fu">factor</span>(CS_RACA) <span class="sc">+</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">s</span>(X, Y), <span class="at">data =</span> casos.pt, <span class="at">family =</span> binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code></pre></div>
+<p>Family: binomial
+Link function: logit</p>
+<p>Formula:
+CLASSI_FIN == 1 ~ CS_SEXO + factor(CS_RACA) + s(X, Y)</p>
+<p>Parametric coefficients:
+Estimate Std. Error z value Pr(&gt;|z|)<br />
+(Intercept) 0.98304 0.10972 8.960 &lt;2e-16 ***
+CS_SEXOM -0.02153 0.15296 -0.141 0.8881<br />
+factor(CS_RACA)2 -0.61879 0.37459 -1.652 0.0986 .<br />
+factor(CS_RACA)3 -0.20412 0.98332 -0.208 0.8356<br />
+factor(CS_RACA)4 0.29495 0.20991 1.405 0.1600<br />
+factor(CS_RACA)5 -0.56678 1.13614 -0.499 0.6179<br />
+factor(CS_RACA)9 0.84691 0.85175 0.994 0.3201<br />
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>Approximate significance of smooth terms:
+edf Ref.df Chi.sq p-value<br />
+s(X,Y) 21.85 26.21 143.3 &lt;2e-16 ***
+—
+Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>R-sq.(adj) = 0.162 Deviance explained = 15.2%
+UBRE = 0.094684 Scale est. = 1 n = 1011</p>
+<p>Como já visto anteriormente na análise exploratória espacial de pontos, a variável sexo não é significativa significativa.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>newgam <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> grade[, <span class="dv">1</span>], <span class="at">Y =</span> grade[, <span class="dv">2</span>], </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">CS_SEXO =</span> <span class="st">&quot;F&quot;</span>, <span class="at">CS_RACA =</span> <span class="st">&quot;1&quot;</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>gg.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod1, <span class="at">newdata =</span> newgam, <span class="at">type =</span> <span class="st">&quot;terms&quot;</span>, </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">terms =</span> <span class="st">&quot;s(X,Y)&quot;</span>, <span class="at">se.fit =</span> T)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>se.fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">matrix</span>(gg.pred<span class="sc">$</span>fit, TAM, TAM))</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="do">## a very rough estimate of confidence intervals</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">+</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">-</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.inf, TAM, TAM)</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.sup, TAM, TAM)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>cores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#053061&quot;</span>, <span class="st">&quot;#2166ac&quot;</span>, <span class="st">&quot;#4393c3&quot;</span>, <span class="st">&quot;#92c5de&quot;</span>, </span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#d1e5f0&quot;</span>, <span class="st">&quot;#f7f7f7&quot;</span>, <span class="st">&quot;#fddbc7&quot;</span>, <span class="st">&quot;#f4a582&quot;</span>, <span class="st">&quot;#d6604d&quot;</span>, </span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#b2182b&quot;</span>, <span class="st">&quot;#67001f&quot;</span>)</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="fu">split.screen</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code></pre></div>
+<p>[1] 5 6</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z, <span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores, </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> F)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># points(den$x_coord, den$y_coord, pch=19,</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="co"># col=&#39;blue&#39;, cex=0.1)</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.inf, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, </span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&lt;1&quot;</span>)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.sup, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&gt;1&quot;</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>splancs<span class="sc">::</span><span class="fu">polymap</span>(contorno.xy, <span class="at">add =</span> T, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">na.omit</span>(<span class="fu">as.vector</span>(z)), <span class="at">prob =</span> <span class="fu">seq</span>(<span class="dv">0</span>, </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="fu">image.plot</span>(<span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores, </span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.args =</span> <span class="fu">list</span>(<span class="at">at =</span> ticks, <span class="at">labels =</span> ticks), <span class="at">legend.only =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">smallplot =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="at">legend.width =</span> <span class="dv">3</span>, </span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.shrink =</span> <span class="fl">0.8</span>, <span class="at">horizontal =</span> F)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Modelo ajustado por Sexo e Raça&quot;</span>)</span></code></pre></div>
+<p><img src="capitulo7_files/figure-html/unnamed-chunk-33-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bibliografia-sugerida" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Bibliografia sugerida</h2>
+<p>Wood, S.N. (2017) Generalized Additive Models: an introduction with R (2nd edition), CRC.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"scroll_highlight": true,
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
