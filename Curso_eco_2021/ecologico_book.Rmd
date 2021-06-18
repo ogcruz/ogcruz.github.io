@@ -1,0 +1,102 @@
+--- 
+title: "ESTUDOS ECOLÓGICOS 2021"
+author: "Oswaldo G Cruz &  Laís P Freitas"
+date: "Atualizado em: `r format(Sys.Date(),'%d de %B de %Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+#bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+theme: cerulean
+---
+
+
+
+```{r child="apresentacao.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo1.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo2.Rmd", echo=FALSE}
+
+
+```
+
+
+
+
+```{r child="capitulo3.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo4.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo5.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo6.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo7.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="capitulo11.Rmd", echo=FALSE}
+
+
+```
+
+
+<!-- ```{r child="capitulo9.Rmd", echo=FALSE} -->
+
+
+<!-- ``` -->
+
+
+
+<!-- ```{r child="capitulo10.Rmd", echo=FALSE} -->
+
+
+<!-- ``` -->
+
+
+<!-- ```{r child="capitulo11.Rmd", echo=FALSE} -->
+
+
+<!-- ``` -->
+
+
+<!-- ```{r child="capitulo12.Rmd", echo=FALSE} -->
+
+
+<!-- ``` -->
+
+```{r child="topicos.Rmd", echo=FALSE}
+library(bookdown)
+
+
+```
+
+```{r child="roteiro.Rmd", echo=FALSE}
+
+
+```
+
+```{r child="anexos.Rmd", echo=FALSE}
+
+
+```
