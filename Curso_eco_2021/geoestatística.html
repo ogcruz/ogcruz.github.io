@@ -31,8 +31,8 @@
   
   
 <link rel="prev" href="padrões-pontuais-ii.html"/>
-<link rel="next" href="análise-espacial-dados-de-área-i.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<link rel="next" href="dados-de-área-i.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -66,6 +66,15 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -407,7 +416,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>9.16</b> Repita a análise para o banco de ovos em Higienópolis</a></li>
 <li class="chapter" data-level="9.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>9.17</b> Bibliografia sugerida</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="análise-espacial-dados-de-área-i.html"><a href="análise-espacial-dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Análise Espacial - Dados de Área I</a></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Dados de Área I</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>10.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-importantes"><i class="fa fa-check"></i><b>10.3</b> Pontos importantes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-de-corte-em-mapas"><i class="fa fa-check"></i><b>10.3.1</b> Pontos de Corte em mapas</a></li>
+<li class="chapter" data-level="10.3.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#escala-fixa-ao-longo-do-tempo"><i class="fa fa-check"></i><b>10.3.2</b> Escala fixa ao longo do tempo</a></li>
+<li class="chapter" data-level="10.3.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#tamanho-heterogêneo-das-áreas"><i class="fa fa-check"></i><b>10.3.3</b> Tamanho heterogêneo das áreas</a></li>
+<li class="chapter" data-level="10.3.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#o-problema-da-área-modificável-maup"><i class="fa fa-check"></i><b>10.3.4</b> O problema da área modificável (MAUP)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#exemplo-em-r"><i class="fa fa-check"></i><b>10.4</b> Exemplo em R</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>10.5</b> Visualização: Mapa Temático usando a biblioteca <code>tmap</code></a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória-1"><i class="fa fa-check"></i><b>10.6</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>10.6.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="10.6.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>10.6.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>10.7</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>10.8</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>10.9</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="10.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>10.10</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="10.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>10.11</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="10.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>10.12</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="10.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>10.13</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="10.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>10.14</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="10.15" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>10.15</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="10.16" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>10.16</b> Bibliografia sugerida</a></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área II</a></li>
 <li class="chapter" data-level="12" data-path="análise-espaço-temporal-instruções-e-dúvidas-para-o-trabalho-final.html"><a href="análise-espaço-temporal-instruções-e-dúvidas-para-o-trabalho-final.html"><i class="fa fa-check"></i><b>12</b> Análise Espaço-Temporal &amp; Instruções e Dúvidas para o Trabalho Final</a></li>
 <li class="chapter" data-level="13" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html"><i class="fa fa-check"></i><b>13</b> Roteiro para a execução do trabalho final</a>
@@ -703,7 +740,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Carregando o pacote geoR:</p>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="geoestatística.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geoR)</span></code></pre></div>
 <p>Transformando em objeto geodata:</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="geoestatística.html#cb176-1" aria-hidden="true" tabindex="-1"></a>temp.geo <span class="ot">&lt;-</span> <span class="fu">as.geodata</span>(temperatura, <span class="at">coords.col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, </span>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="geoestatística.html#cb176-1" aria-hidden="true" tabindex="-1"></a>temp.geo <span class="ot">&lt;-</span> <span class="fu">as.geodata</span>(temperatura, <span class="at">coords.col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
 <span id="cb176-2"><a href="geoestatística.html#cb176-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data.col =</span> <span class="dv">3</span>)</span>
 <span id="cb176-3"><a href="geoestatística.html#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(temp.geo)</span></code></pre></div>
 <pre><code>Number of data points: 40 
@@ -722,55 +759,55 @@ Data summary
   16.43   17.13   17.94   17.83   18.38   19.07 </code></pre>
 <p>Análise exploratória:</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="geoestatística.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-180-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-181-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Controlando o tamanho dos pontos:</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="geoestatística.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">pt.div =</span> <span class="st">&quot;equal&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-181-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="geoestatística.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">cex.min =</span> <span class="fl">0.6</span>, <span class="at">cex.max =</span> <span class="fl">0.6</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-181-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-2.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="geoestatística.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">cex.min =</span> <span class="fl">0.3</span>, <span class="at">cex.max =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-181-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-3.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Dividindo os dados em quantis:</p>
 <div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="geoestatística.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">cex.min =</span> <span class="dv">1</span>, <span class="at">cex.max =</span> <span class="dv">1</span>, <span class="at">pt.div =</span> <span class="st">&quot;quart&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-183-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="geoestatística.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">pt.div =</span> <span class="st">&quot;quart&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-183-2.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="geoestatística.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">pt.div =</span> <span class="st">&quot;dec&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-183-3.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="geoestatística.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">cex.min =</span> <span class="dv">1</span>, <span class="at">cex.max =</span> <span class="dv">1</span>, <span class="at">pt.div =</span> <span class="st">&quot;quint&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-182-4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-183-4.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Modificando o formato dos pontos:</p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="geoestatística.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">pt.div =</span> <span class="st">&quot;equal&quot;</span>, <span class="at">pch.seq =</span> <span class="st">&quot;+&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-183-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-184-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="geoestatística.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">pt.div =</span> <span class="st">&quot;data.proportional&quot;</span>, <span class="at">pch.seq =</span> <span class="st">&quot;+&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-183-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-184-2.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Removendo a tendência, isto é, fazendo o gráfico dos resíduos de uma regressão linear nas coordenadas:</p>
 <div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="geoestatística.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">trend =</span> <span class="st">&quot;cte&quot;</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-184-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-185-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="geoestatística.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(temp.geo, <span class="at">trend =</span> <span class="st">&quot;1st&quot;</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-184-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-185-2.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Outros gráficos:</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="geoestatística.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.geodata</span>(temp.geo)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-185-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-186-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="geoestatística.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.geodata</span>(temp.geo, <span class="at">low =</span> T)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-185-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-186-2.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="geoestatística.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.geodata</span>(temp.geo, <span class="at">trend =</span> <span class="st">&quot;1st&quot;</span>, <span class="at">low =</span> T)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-185-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-186-3.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Calculando o variograma:</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="geoestatística.html#cb193-1" aria-hidden="true" tabindex="-1"></a>variog.temp <span class="ot">&lt;-</span> <span class="fu">variog</span>(temp.geo, <span class="at">max.dist =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>variog: computing omnidirectional variogram</code></pre>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="geoestatística.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(variog.temp, <span class="at">main =</span> <span class="st">&quot;variograma&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-186-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-187-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="geoestatística.html#cb196-1" aria-hidden="true" tabindex="-1"></a>variog.temp2 <span class="ot">&lt;-</span> <span class="fu">variog</span>(temp.geo, <span class="at">max.dist =</span> <span class="dv">4</span>, <span class="at">trend =</span> <span class="st">&quot;1st&quot;</span>)</span></code></pre></div>
 <pre><code>variog: computing omnidirectional variogram</code></pre>
 <div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="geoestatística.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(variog.temp2, <span class="at">main =</span> <span class="st">&quot;variograma&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-186-2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-187-2.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Ajustando os parâmetros do variograma de maneira interativa</p>
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="geoestatística.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.new</span>()</span>
 <span id="cb199-2"><a href="geoestatística.html#cb199-2" aria-hidden="true" tabindex="-1"></a>variog.temp <span class="ot">&lt;-</span> <span class="fu">eyefit</span>(variog.temp)</span></code></pre></div>
 <p><img src="figuras/geoestatistica21_2019.png" style="width:50.0%" /></p>
 <p>Utilizando a função variofit para estimar os parâmetros da função de covariância:</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="geoestatística.html#cb200-1" aria-hidden="true" tabindex="-1"></a>wls1 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;matern&quot;</span>, </span>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="geoestatística.html#cb200-1" aria-hidden="true" tabindex="-1"></a>wls1 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;matern&quot;</span>,</span>
 <span id="cb200-2"><a href="geoestatística.html#cb200-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">fix.nugget =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>variofit: covariance model used is matern 
 variofit: weights used: npairs 
@@ -781,7 +818,7 @@ initial.value &quot;0.13&quot;  &quot;0.59&quot; &quot;0&quot;   &quot;0.5&quot;
 status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
 loss value: 0.967481567978337 </code></pre>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="geoestatística.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(wls1)</span></span>
-<span id="cb202-2"><a href="geoestatística.html#cb202-2" aria-hidden="true" tabindex="-1"></a>wls2 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;exponential&quot;</span>, </span>
+<span id="cb202-2"><a href="geoestatística.html#cb202-2" aria-hidden="true" tabindex="-1"></a>wls2 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;exponential&quot;</span>,</span>
 <span id="cb202-3"><a href="geoestatística.html#cb202-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fix.nugget =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>variofit: covariance model used is exponential 
 variofit: weights used: npairs 
@@ -792,7 +829,7 @@ initial.value &quot;0.13&quot;  &quot;0.59&quot; &quot;0&quot;   &quot;0.5&quot;
 status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
 loss value: 0.967481567978337 </code></pre>
 <div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="geoestatística.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(wls2)</span></span>
-<span id="cb204-2"><a href="geoestatística.html#cb204-2" aria-hidden="true" tabindex="-1"></a>wls3 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;gaussian&quot;</span>, </span>
+<span id="cb204-2"><a href="geoestatística.html#cb204-2" aria-hidden="true" tabindex="-1"></a>wls3 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;gaussian&quot;</span>,</span>
 <span id="cb204-3"><a href="geoestatística.html#cb204-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fix.nugget =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>variofit: covariance model used is gaussian 
 variofit: weights used: npairs 
@@ -803,7 +840,7 @@ initial.value &quot;0.13&quot;  &quot;0.59&quot; &quot;0&quot;   &quot;0.5&quot;
 status        &quot;est&quot;   &quot;est&quot;  &quot;est&quot; &quot;fix&quot;
 loss value: 0.815547531351041 </code></pre>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="geoestatística.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(wls3)</span></span>
-<span id="cb206-2"><a href="geoestatística.html#cb206-2" aria-hidden="true" tabindex="-1"></a>wls4 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;spherical&quot;</span>, </span>
+<span id="cb206-2"><a href="geoestatística.html#cb206-2" aria-hidden="true" tabindex="-1"></a>wls4 <span class="ot">&lt;-</span> <span class="fu">variofit</span>(variog.temp2, <span class="at">cov.model =</span> <span class="st">&quot;spherical&quot;</span>,</span>
 <span id="cb206-3"><a href="geoestatística.html#cb206-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">fix.nugget =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>variofit: covariance model used is spherical 
 variofit: weights used: npairs 
@@ -823,36 +860,36 @@ loss value: 0.835325143183182 </code></pre>
 <span id="cb209-7"><a href="geoestatística.html#cb209-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(wls3)</span>
 <span id="cb209-8"><a href="geoestatística.html#cb209-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(variog.temp2, <span class="at">main =</span> <span class="st">&quot;esférico&quot;</span>)</span>
 <span id="cb209-9"><a href="geoestatística.html#cb209-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(wls4)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-188-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-189-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="geoestatística.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
 <span id="cb210-2"><a href="geoestatística.html#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(variog.temp2)</span>
 <span id="cb210-3"><a href="geoestatística.html#cb210-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(wls1)</span>
 <span id="cb210-4"><a href="geoestatística.html#cb210-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(wls2, <span class="at">col =</span> <span class="dv">2</span>)</span>
 <span id="cb210-5"><a href="geoestatística.html#cb210-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(wls3, <span class="at">col =</span> <span class="dv">3</span>)</span>
 <span id="cb210-6"><a href="geoestatística.html#cb210-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(wls4, <span class="at">col =</span> <span class="dv">4</span>)</span>
-<span id="cb210-7"><a href="geoestatística.html#cb210-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;matern&quot;</span>, <span class="st">&quot;exponencial&quot;</span>, </span>
+<span id="cb210-7"><a href="geoestatística.html#cb210-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;matern&quot;</span>, <span class="st">&quot;exponencial&quot;</span>,</span>
 <span id="cb210-8"><a href="geoestatística.html#cb210-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;gaussiano&quot;</span>, <span class="st">&quot;esférico&quot;</span>), <span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">lty =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-189-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-190-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <div id="krigagem-1" class="section level3" number="9.15.1">
 <h3><span class="header-section-number">9.15.1</span> Krigagem</h3>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="geoestatística.html#cb211-1" aria-hidden="true" tabindex="-1"></a>resp.kg <span class="ot">&lt;-</span> <span class="fu">krige.conv</span>(temp.geo, <span class="at">loc =</span> temp.geo<span class="sc">$</span>coords, </span>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="geoestatística.html#cb211-1" aria-hidden="true" tabindex="-1"></a>resp.kg <span class="ot">&lt;-</span> <span class="fu">krige.conv</span>(temp.geo, <span class="at">loc =</span> temp.geo<span class="sc">$</span>coords,</span>
 <span id="cb211-2"><a href="geoestatística.html#cb211-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">krige =</span> <span class="fu">krige.control</span>(<span class="at">cov.pars =</span> <span class="fu">c</span>(<span class="fl">0.14</span>, <span class="fl">1.6</span>)))</span></code></pre></div>
 <pre><code>## krige.conv: model with constant mean
 ## krige.conv: Kriging performed using global neighbourhood</code></pre>
 <div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="geoestatística.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(resp.kg)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-190-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
 <p>Interpolando para a grade</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="geoestatística.html#cb214-1" aria-hidden="true" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="fu">seq</span>(<span class="dv">230</span>, <span class="fl">234.5</span>, <span class="at">length.out =</span> <span class="dv">200</span>), </span>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="geoestatística.html#cb214-1" aria-hidden="true" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="fu">seq</span>(<span class="dv">230</span>, <span class="fl">234.5</span>, <span class="at">length.out =</span> <span class="dv">200</span>),</span>
 <span id="cb214-2"><a href="geoestatística.html#cb214-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">seq</span>(<span class="fl">32.5</span>, <span class="dv">34</span>, <span class="at">length.out =</span> <span class="dv">200</span>))</span>
 <span id="cb214-3"><a href="geoestatística.html#cb214-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb214-4"><a href="geoestatística.html#cb214-4" aria-hidden="true" tabindex="-1"></a>resp.kg2 <span class="ot">&lt;-</span> <span class="fu">krige.conv</span>(temp.geo, <span class="at">loc =</span> grade, <span class="at">krige =</span> <span class="fu">krige.control</span>(<span class="at">cov.pars =</span> <span class="fu">c</span>(<span class="fl">1.52</span>, </span>
+<span id="cb214-4"><a href="geoestatística.html#cb214-4" aria-hidden="true" tabindex="-1"></a>resp.kg2 <span class="ot">&lt;-</span> <span class="fu">krige.conv</span>(temp.geo, <span class="at">loc =</span> grade, <span class="at">krige =</span> <span class="fu">krige.control</span>(<span class="at">cov.pars =</span> <span class="fu">c</span>(<span class="fl">1.52</span>,</span>
 <span id="cb214-5"><a href="geoestatística.html#cb214-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.6</span>)))</span></code></pre></div>
 <pre><code>## krige.conv: model with constant mean
 ## krige.conv: Kriging performed using global neighbourhood</code></pre>
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="geoestatística.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(resp.kg2)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
 <div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="geoestatística.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(resp.kg2, <span class="at">val =</span> <span class="fu">sqrt</span>(resp.kg2<span class="sc">$</span>krige.var), <span class="at">main =</span> <span class="st">&quot;Erro padrão kriging&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-191-2.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-192-2.png" width="672" /></p>
 </div>
 </div>
 <div id="repita-a-análise-para-o-banco-de-ovos-em-higienópolis" class="section level2" number="9.16">
@@ -878,21 +915,13 @@ Data summary
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     909    3944    6663    6025    7992   12655 </code></pre>
 <div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="geoestatística.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(ovo.geo, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">bor =</span> higi.borda)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-193-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-194-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bibliografia-sugerida-7" class="section level2" number="9.17">
 <h2><span class="header-section-number">9.17</span> Bibliografia sugerida</h2>
 <p>Diggle, Peter J. &amp; Ribeiro Jr, Paulo Justiniano; Model-based Geostatistics Series: Springer Series in Statistics, 2007.</p>
 <p>Isaaks and Srivastava; An Introduction to Applied Geostatistics 1st Edition, 1989.</p>
 <p>Cressie, N. A. Statistics For Spatial Data. Revised edition. Iowa State Univesity, New York: A Wiley Interscience Publication, 1993.</p>
-<!-- ```{r child="capitulo9.Rmd", echo=FALSE} -->
-<!-- ``` -->
-<!-- ```{r child="capitulo10.Rmd", echo=FALSE} -->
-<!-- ``` -->
-<!-- ```{r child="capitulo11.Rmd", echo=FALSE} -->
-<!-- ``` -->
-<!-- ```{r child="capitulo12.Rmd", echo=FALSE} -->
-<!-- ``` -->
 </div>
 </div>
             </section>
@@ -901,7 +930,7 @@ Data summary
         </div>
       </div>
 <a href="padrões-pontuais-ii.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="análise-espacial-dados-de-área-i.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dados-de-área-i.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

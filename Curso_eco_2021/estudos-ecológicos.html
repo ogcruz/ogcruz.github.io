@@ -32,7 +32,7 @@
   
 <link rel="prev" href="apresentação.html"/>
 <link rel="next" href="introdução-às-séries-temporais.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -66,6 +66,15 @@
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
 
 
 <style type="text/css">
@@ -407,7 +416,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>9.16</b> Repita a análise para o banco de ovos em Higienópolis</a></li>
 <li class="chapter" data-level="9.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>9.17</b> Bibliografia sugerida</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="análise-espacial-dados-de-área-i.html"><a href="análise-espacial-dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Análise Espacial - Dados de Área I</a></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Dados de Área I</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>10.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-importantes"><i class="fa fa-check"></i><b>10.3</b> Pontos importantes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-de-corte-em-mapas"><i class="fa fa-check"></i><b>10.3.1</b> Pontos de Corte em mapas</a></li>
+<li class="chapter" data-level="10.3.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#escala-fixa-ao-longo-do-tempo"><i class="fa fa-check"></i><b>10.3.2</b> Escala fixa ao longo do tempo</a></li>
+<li class="chapter" data-level="10.3.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#tamanho-heterogêneo-das-áreas"><i class="fa fa-check"></i><b>10.3.3</b> Tamanho heterogêneo das áreas</a></li>
+<li class="chapter" data-level="10.3.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#o-problema-da-área-modificável-maup"><i class="fa fa-check"></i><b>10.3.4</b> O problema da área modificável (MAUP)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#exemplo-em-r"><i class="fa fa-check"></i><b>10.4</b> Exemplo em R</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>10.5</b> Visualização: Mapa Temático usando a biblioteca <code>tmap</code></a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória-1"><i class="fa fa-check"></i><b>10.6</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>10.6.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="10.6.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>10.6.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>10.7</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>10.8</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>10.9</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="10.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>10.10</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="10.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>10.11</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="10.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>10.12</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="10.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>10.13</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="10.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>10.14</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="10.15" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>10.15</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="10.16" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>10.16</b> Bibliografia sugerida</a></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área II</a></li>
 <li class="chapter" data-level="12" data-path="análise-espaço-temporal-instruções-e-dúvidas-para-o-trabalho-final.html"><a href="análise-espaço-temporal-instruções-e-dúvidas-para-o-trabalho-final.html"><i class="fa fa-check"></i><b>12</b> Análise Espaço-Temporal &amp; Instruções e Dúvidas para o Trabalho Final</a></li>
 <li class="chapter" data-level="13" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html"><i class="fa fa-check"></i><b>13</b> Roteiro para a execução do trabalho final</a>
@@ -668,7 +705,7 @@ Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </smal
 </p>
 <hr />
 <p><strong>Um outro exemplo</strong>: Um pesquisador deseja estudar a relação entre acidentes de trânsito e a renda em três cidade distintas (A, B e C).</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <table>
 <thead>
 <tr class="header">
@@ -699,7 +736,7 @@ Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </smal
 <ul>
 <li>Observando o gráfico abaixo, o pesquisador observa um possível associaçãom entre a renda e a taxa de acidentes de trânsito;</li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Quanto maior a renda, maior será a taxa de acidentes de trânsito.</li>
 </ul>
@@ -707,13 +744,13 @@ Kawachi I. (Editors). Social Epidemiology. Oxford University Press, 2000) </smal
 <ul>
 <li>Observando os microdados, ou seja, os dados no nível individual, temos o seguinte:</li>
 </ul>
-<div id="htmlwidget-d48ee98c6695006e5b5d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d48ee98c6695006e5b5d">{"x":{"filter":"top","filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10\" data-max=\"45.6\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[10.5,34.5,28.5,12.2,45.6,17.5,19.8,12.5,32.5,24.3,10,14.3,38,26.4,28.7,30.2,13.5,23.5,10.8,22.7,20.5],["A","A","A","A","A","A","A","B","B","B","B","B","B","B","C","C","C","C","C","C","C"],["Caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Caso","Caso","Nao_caso","Nao_caso","Caso","Caso","Nao_caso","Nao_caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Nao_caso","Nao_caso"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>renda<\/th>\n      <th>pop<\/th>\n      <th>casos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c4229c3b481fe68a63f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c4229c3b481fe68a63f0">{"x":{"filter":"top","filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10\" data-max=\"45.6\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"],[10.5,34.5,28.5,12.2,45.6,17.5,19.8,12.5,32.5,24.3,10,14.3,38,26.4,28.7,30.2,13.5,23.5,10.8,22.7,20.5],["A","A","A","A","A","A","A","B","B","B","B","B","B","B","C","C","C","C","C","C","C"],["Caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Caso","Caso","Nao_caso","Nao_caso","Caso","Caso","Nao_caso","Nao_caso","Nao_caso","Nao_caso","Caso","Nao_caso","Caso","Nao_caso","Nao_caso"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>renda<\/th>\n      <th>pop<\/th>\n      <th>casos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <hr />
 <ul>
 <li>De posse desses dados no nível individual, é possível fazer a seguinte análise:</li>
 </ul>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <ul>
 <li><p>Dessa forma observamos que os indivíduos que sofreram algum tipo de acidente de trânsito, apresentam a menor renda;</p></li>
