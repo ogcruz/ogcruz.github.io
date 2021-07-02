@@ -1,4 +1,0 @@
-
-# Anexo I - Roteiro séries temporais {-}
-
-# Anexo II - Fazendo mapas com ggplot {-}
