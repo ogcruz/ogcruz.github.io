@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 8 Padrões Pontuais II | ESTUDOS ECOLÓGICOS 2021</title>
+  <meta name="description" content=" 8 Padrões Pontuais II | ESTUDOS ECOLÓGICOS 2021" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 8 Padrões Pontuais II | ESTUDOS ECOLÓGICOS 2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 8 Padrões Pontuais II | ESTUDOS ECOLÓGICOS 2021" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo G Cruz &amp; Laís P Freitas" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="padrões-pontuais-i.html"/>
+<link rel="next" href="geoestatística.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos 2021</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentação.html"><a href="apresentação.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#o-que-são-estudos-ecológicos"><i class="fa fa-check"></i><b>2.1</b> O que são Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#principais-objetivos"><i class="fa fa-check"></i><b>2.2</b> Principais objetivos</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-desenhos-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.4</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#aspectos-históricos"><i class="fa fa-check"></i><b>2.5</b> Aspectos históricos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.6</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#árvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.7</b> Árvores, Bosques ou as Florestas?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-árvores"><i class="fa fa-check"></i><b>2.7.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.7.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#os-bosques"><i class="fa fa-check"></i><b>2.7.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.7.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-florestas"><i class="fa fa-check"></i><b>2.7.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#falácia-ecológica-ou-viés-de-agregação"><i class="fa fa-check"></i><b>2.8</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#problemas-práticos"><i class="fa fa-check"></i><b>2.9</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#vantagens"><i class="fa fa-check"></i><b>2.10</b> Vantagens</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#desvantagens"><i class="fa fa-check"></i><b>2.11</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#resumindo"><i class="fa fa-check"></i><b>2.12</b> Resumindo</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#exercícios-propostos"><i class="fa fa-check"></i><b>2.13</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.14</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#o-que-são-séries-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#hipóteses-básicas-do-estudo-das-séries-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#classificação-dos-tipos-de-séries-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#processo-estocástico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#notação-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#objetivos-análise-de-séries-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocovariância-de-um-processo-estacionário"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#por-que-a-estacionariedade-é-importante"><i class="fa fa-check"></i><b>3.7.2</b> Por que a estacionariedade é importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#pressuposto-da-independência"><i class="fa fa-check"></i><b>3.8</b> Pressuposto da Independência</a></li>
+<li class="chapter" data-level="3.9" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#dependência-serial"><i class="fa fa-check"></i><b>3.9</b> Dependência serial</a></li>
+<li class="chapter" data-level="3.10" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocorrelação---fac-autocorrelation-function---acf"><i class="fa fa-check"></i><b>3.10</b> Função de Autocorrelação - FAC (<em>Autocorrelation function - ACF</em>)</a></li>
+<li class="chapter" data-level="3.11" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal"><i class="fa fa-check"></i><b>3.11</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.12" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#tendência"><i class="fa fa-check"></i><b>3.12</b> Tendência</a></li>
+<li class="chapter" data-level="3.13" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.13</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.14" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.14</b> Ciclo</a>
+<ul>
+<li class="chapter" data-level="3.14.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.14.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.15" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#termo-aleatório-ou-ruído-branco"><i class="fa fa-check"></i><b>3.15</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.16" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#composição-dos-modelos-de-séries-temporais"><i class="fa fa-check"></i><b>3.16</b> Composição dos Modelos de séries temporais</a>
+<ul>
+<li class="chapter" data-level="3.16.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.16.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.16.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.16.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.17" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#decomposição-de-séries-temporais"><i class="fa fa-check"></i><b>3.17</b> Decomposição de séries temporais</a></li>
+<li class="chapter" data-level="3.18" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#prática-no-r"><i class="fa fa-check"></i><b>3.18</b> Prática no R</a>
+<ul>
+<li class="chapter" data-level="3.18.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#a-biblioteca-ts-é-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.18.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.18.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#simulando-uma-série-temporal"><i class="fa fa-check"></i><b>3.18.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.18.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#importando-uma-vetor-e-transformando-em-série-temporal"><i class="fa fa-check"></i><b>3.18.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.18.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#utilizando-dados-da-incidência-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.18.4</b> Utilizando dados da incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+</ul></li>
+<li class="chapter" data-level="3.19" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>3.19</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.20" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#outros-materiais-sobre-séries-temporais"><i class="fa fa-check"></i><b>3.20</b> Outros materiais sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.21" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.21</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transfomação-dos-dados-em-st"><i class="fa fa-check"></i><b>4.2</b> Transfomação dos dados em ST</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transformações-box-cox-diferenciação-e-logarítmica"><i class="fa fa-check"></i><b>4.2.1</b> Transformações Box-Cox, Diferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#métodos-de-alisamento-ou-suavização"><i class="fa fa-check"></i><b>4.3</b> Métodos de Alisamento ou Suavização</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#algumas-funções-de-suavização"><i class="fa fa-check"></i><b>4.3.1</b> Algumas funções de suavização</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#médias-móveis"><i class="fa fa-check"></i><b>4.4</b> Médias móveis</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-das-médias-móveis"><i class="fa fa-check"></i><b>4.4.1</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#kernel"><i class="fa fa-check"></i><b>4.5</b> Kernel</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#diferentes-funções-kernel"><i class="fa fa-check"></i><b>4.5.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.5.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#largura-de-banda"><i class="fa fa-check"></i><b>4.5.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.5.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-kernel"><i class="fa fa-check"></i><b>4.5.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#loess-lowess"><i class="fa fa-check"></i><b>4.6</b> Loess / Lowess</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-loesslowess"><i class="fa fa-check"></i><b>4.6.1</b> Utilização do loess/lowess</a></li>
+<li class="chapter" data-level="4.6.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#comparando"><i class="fa fa-check"></i><b>4.6.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines"><i class="fa fa-check"></i><b>4.7</b> Splines</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines-vs-loesslowess"><i class="fa fa-check"></i><b>4.7.1</b> Splines <em>vs</em> Loess/Lowess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#exercícios-propostos-2"><i class="fa fa-check"></i><b>4.8</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.9" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.9</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#o-que-são-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#alguns-processos-estocásticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autorregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-de-médias-móveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-médias-móveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-integrado-de-médias-móveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#resumo---modelos-arima-não-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> Resumo - Modelos ARIMA não sazonais</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - <span class="math inline">\(ARIMA(p,d,q)(P,D,Q)_m\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#função-de-autocorrelação-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-identificação"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#métricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#análise-de-resíduos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-automático-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-de-previsão"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#correlação-cruzada-cross-correlation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Correlation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (Generalized Additive Models)</a>
+<ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+<li class="chapter" data-level="5.14.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#por-que-não-usar"><i class="fa fa-check"></i><b>5.14.2</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.14.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-em-séries-temporais"><i class="fa fa-check"></i><b>5.14.3</b> GAM em Séries Temporais</a></li>
+<li class="chapter" data-level="5.14.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-modelo-gam-aplicado-a-st-ldeaths"><i class="fa fa-check"></i><b>5.14.4</b> Exemplo de modelo GAM aplicado a ST ldeaths</a></li>
+<li class="chapter" data-level="5.14.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-gam-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.14.5</b> Exemplo GAM: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-propostos-3"><i class="fa fa-check"></i><b>5.15</b> Exercícios Propostos</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-resolvidos"><i class="fa fa-check"></i><b>5.15.1</b> Exercícios Resolvidos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.16</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#o-que-é-análise-estatística-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial?</a></li>
+<li class="chapter" data-level="6.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#origem-da-estatística-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#quando-usar-métodos-de-análise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial?</a></li>
+<li class="chapter" data-level="6.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dependência-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#principais-aplicações-em-saúde"><i class="fa fa-check"></i><b>6.5</b> Principais aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoestatıstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-área"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#sistema-de-informações-geográficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#alguns-conceitos"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#autocorrelação-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a>
+<ul>
+<li class="chapter" data-level="6.15.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dengue-em-dourados"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#vigilância-dos-vetores-da-dengue-usando-modelagem-espaço-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelo-espaço-temporal-para-a-análise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-da-temperatura-na-costa-central-da-califórnia"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#a-relação-entre-a-malária-e-a-chuva-no-estado-do-pará-uma-análise-espaço-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelagem-espaço-temporal-da-chikungunya-no-município-do-rio-de-janeiro"><i class="fa fa-check"></i><b>6.15.6</b> Modelagem espaço temporal da Chikungunya no município do Rio de Janeiro</a></li>
+<li class="chapter" data-level="6.15.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.7</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#material-on-line-sobre-estatística-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.18</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#o-que-são-padrões-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais?</a></li>
+<li class="chapter" data-level="7.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#tipos-de-distribuições"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel-com-correção-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#kernel-por-atributo"><i class="fa fa-check"></i><b>7.6</b> Kernel por atributo</a></li>
+<li class="chapter" data-level="7.7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#razão-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#análise-preliminar-de-um-processo-pontual"><i class="fa fa-check"></i><b>7.8</b> Análise preliminar de um processo pontual</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-f-e-g---distância-do-vizinho-mais-próximo"><i class="fa fa-check"></i><b>7.8.1</b> Função F e G - Distância do vizinho mais próximo</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#propriedade-de-segunda-ordem"><i class="fa fa-check"></i><b>7.9</b> Propriedade de segunda ordem</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-k-de-ripley-ou-apenas-função-k"><i class="fa fa-check"></i><b>7.9.1</b> Função K de Ripley (ou apenas função K)</a></li>
+<li class="chapter" data-level="7.9.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-l"><i class="fa fa-check"></i><b>7.9.2</b> Função <em>L</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#detecção-de-cluster"><i class="fa fa-check"></i><b>7.10</b> Detecção de cluster</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#testes-genéricos-de-cluster"><i class="fa fa-check"></i><b>7.10.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.10.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#fonte-específica"><i class="fa fa-check"></i><b>7.10.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-propostos-4"><i class="fa fa-check"></i><b>7.11</b> Exercícios Propostos</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>7.11.1</b> Exercícios Resolvidos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>7.12</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#alguns-usos-em-epidemiologia-espacial"><i class="fa fa-check"></i><b>8.1</b> Alguns usos em Epidemiologia Espacial</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.2</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-aditivos-generalizados-gam"><i class="fa fa-check"></i><b>8.3</b> Modelos Aditivos Generalizados (GAM)</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.4</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.5" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="geoestatística.html"><a href="geoestatística.html"><i class="fa fa-check"></i><b>9</b> Geoestatística</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="geoestatística.html"><a href="geoestatística.html#conceito"><i class="fa fa-check"></i><b>9.1</b> Conceito</a></li>
+<li class="chapter" data-level="9.2" data-path="geoestatística.html"><a href="geoestatística.html#objetivos"><i class="fa fa-check"></i><b>9.2</b> Objetivos</a></li>
+<li class="chapter" data-level="9.3" data-path="geoestatística.html"><a href="geoestatística.html#principais-aplicações"><i class="fa fa-check"></i><b>9.3</b> Principais aplicações</a></li>
+<li class="chapter" data-level="9.4" data-path="geoestatística.html"><a href="geoestatística.html#exemplo"><i class="fa fa-check"></i><b>9.4</b> Exemplo</a></li>
+<li class="chapter" data-level="9.5" data-path="geoestatística.html"><a href="geoestatística.html#efeitos"><i class="fa fa-check"></i><b>9.5</b> Efeitos</a></li>
+<li class="chapter" data-level="9.6" data-path="geoestatística.html"><a href="geoestatística.html#formalizando"><i class="fa fa-check"></i><b>9.6</b> Formalizando</a></li>
+<li class="chapter" data-level="9.7" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-primeira-ordem-regressão-linear"><i class="fa fa-check"></i><b>9.7</b> Efeito de primeira ordem: regressão linear</a></li>
+<li class="chapter" data-level="9.8" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-segunda-ordem-regressão-espacial"><i class="fa fa-check"></i><b>9.8</b> Efeito de segunda ordem: regressão espacial</a></li>
+<li class="chapter" data-level="9.9" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória"><i class="fa fa-check"></i><b>9.9</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.9.1</b> Análise exploratória: efeitos de primeira ordem</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="geoestatística.html"><a href="geoestatística.html#simplificações-estacionariedade-e-isotropia"><i class="fa fa-check"></i><b>9.10</b> Simplificações: Estacionariedade e Isotropia</a></li>
+<li class="chapter" data-level="9.11" data-path="geoestatística.html"><a href="geoestatística.html#variograma-empírico"><i class="fa fa-check"></i><b>9.11</b> Variograma empírico</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="geoestatística.html"><a href="geoestatística.html#relação-entre-variograma-covariograma-e-correlograma"><i class="fa fa-check"></i><b>9.11.1</b> Relação entre variograma, covariograma e correlograma</a></li>
+<li class="chapter" data-level="9.11.2" data-path="geoestatística.html"><a href="geoestatística.html#estrutura-do-variograma"><i class="fa fa-check"></i><b>9.11.2</b> Estrutura do variograma</a></li>
+<li class="chapter" data-level="9.11.3" data-path="geoestatística.html"><a href="geoestatística.html#variogramas-para-modelos-isotrópicos"><i class="fa fa-check"></i><b>9.11.3</b> Variogramas para modelos isotrópicos</a></li>
+<li class="chapter" data-level="9.11.4" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1"><i class="fa fa-check"></i><b>9.11.4</b> Aplicação 1</a></li>
+<li class="chapter" data-level="9.11.5" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-2"><i class="fa fa-check"></i><b>9.11.5</b> Aplicação 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9.12" data-path="geoestatística.html"><a href="geoestatística.html#modelagem-em-geoestatística"><i class="fa fa-check"></i><b>9.12</b> Modelagem em Geoestatística</a>
+<ul>
+<li class="chapter" data-level="9.12.1" data-path="geoestatística.html"><a href="geoestatística.html#modelando-dados-de-geoestatística---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>9.12.1</b> Modelando dados de Geoestatística - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="9.13" data-path="geoestatística.html"><a href="geoestatística.html#krigagem"><i class="fa fa-check"></i><b>9.13</b> Krigagem</a>
+<ul>
+<li class="chapter" data-level="9.13.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-universal"><i class="fa fa-check"></i><b>9.13.1</b> Krigagem Universal</a></li>
+<li class="chapter" data-level="9.13.2" data-path="geoestatística.html"><a href="geoestatística.html#algumas-considerações-da-krigagem-em-geral"><i class="fa fa-check"></i><b>9.13.2</b> Algumas considerações da krigagem em geral:</a></li>
+<li class="chapter" data-level="9.13.3" data-path="geoestatística.html"><a href="geoestatística.html#krigagem---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>9.13.3</b> Krigagem - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="9.14" data-path="geoestatística.html"><a href="geoestatística.html#prática-no-r-1"><i class="fa fa-check"></i><b>9.14</b> Prática no R</a></li>
+<li class="chapter" data-level="9.15" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1---dados-de-temperatura"><i class="fa fa-check"></i><b>9.15</b> Aplicação 1 - Dados de temperatura</a>
+<ul>
+<li class="chapter" data-level="9.15.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-1"><i class="fa fa-check"></i><b>9.15.1</b> Krigagem</a></li>
+</ul></li>
+<li class="chapter" data-level="9.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>9.16</b> Repita a análise para o banco de ovos em Higienópolis</a></li>
+<li class="chapter" data-level="9.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>9.17</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Dados de Área I</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>10.2</b> Principais bibliotecas do R</a></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-importantes"><i class="fa fa-check"></i><b>10.3</b> Pontos importantes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-de-corte-em-mapas"><i class="fa fa-check"></i><b>10.3.1</b> Pontos de Corte em mapas</a></li>
+<li class="chapter" data-level="10.3.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#escala-fixa-ao-longo-do-tempo"><i class="fa fa-check"></i><b>10.3.2</b> Escala fixa ao longo do tempo</a></li>
+<li class="chapter" data-level="10.3.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#tamanho-heterogêneo-das-áreas"><i class="fa fa-check"></i><b>10.3.3</b> Tamanho heterogêneo das áreas</a></li>
+<li class="chapter" data-level="10.3.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#o-problema-da-área-modificável-maup"><i class="fa fa-check"></i><b>10.3.4</b> O problema da área modificável (MAUP)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#exemplo-em-r"><i class="fa fa-check"></i><b>10.4</b> Exemplo em R</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>10.5</b> Visualização: Mapa Temático usando a biblioteca <code>tmap</code></a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória-1"><i class="fa fa-check"></i><b>10.6</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>10.6.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="10.6.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>10.6.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>10.7</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>10.8</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>10.9</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="10.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>10.10</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="10.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>10.11</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="10.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>10.12</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="10.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>10.13</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="10.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>10.14</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="10.15" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-smr"><i class="fa fa-check"></i><b>10.15</b> Uso de taxas padronizadas (SMR)</a></li>
+<li class="chapter" data-level="10.16" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>10.16</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área II</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#introdução-2"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
+<li class="chapter" data-level="11.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-estatísticos-espaciais"><i class="fa fa-check"></i><b>11.2</b> Modelos Estatísticos Espaciais</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#simultaneous-autoregressive-models-sar"><i class="fa fa-check"></i><b>11.2.1</b> Simultaneous Autoregressive Models (SAR)</a></li>
+<li class="chapter" data-level="11.2.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#conditional-autoregressive-models-car"><i class="fa fa-check"></i><b>11.2.2</b> Conditional Autoregressive Models (CAR)</a></li>
+<li class="chapter" data-level="11.2.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#exemplo-prático"><i class="fa fa-check"></i><b>11.2.3</b> Exemplo prático</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>11.3</b> Modelos com Efeitos Espaciais Locais</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#regressão-geograficamente-ponderada-gwr"><i class="fa fa-check"></i><b>11.3.1</b> Regressão Geograficamente Ponderada (GWR)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#bibliografia-sugerida-9"><i class="fa fa-check"></i><b>11.4</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html"><i class="fa fa-check"></i><b>12</b> Análise Espaço-Temporal</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-conceitos-1"><i class="fa fa-check"></i><b>12.1</b> Alguns Conceitos</a></li>
+<li class="chapter" data-level="12.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#processo-de-difusão-das-doenças"><i class="fa fa-check"></i><b>12.2</b> Processo de difusão das doenças</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#difusão-espacial"><i class="fa fa-check"></i><b>12.2.1</b> Difusão Espacial</a></li>
+<li class="chapter" data-level="12.2.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#espacializando-a-difusão-das-doenças"><i class="fa fa-check"></i><b>12.2.2</b> Espacializando a difusão das doenças</a></li>
+<li class="chapter" data-level="12.2.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#processo-de-difusão-das-doenças-1"><i class="fa fa-check"></i><b>12.2.3</b> Processo de difusão das doenças</a></li>
+<li class="chapter" data-level="12.2.4" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelos-de-difusão-de-doenças"><i class="fa fa-check"></i><b>12.2.4</b> Modelos de difusão de doenças</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#analise-exploratória-espaço-temporal"><i class="fa fa-check"></i><b>12.3</b> Analise Exploratória Espaço-temporal</a></li>
+<li class="chapter" data-level="12.4" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#cluster-espaço-temporal"><i class="fa fa-check"></i><b>12.4</b> Cluster Espaço-Temporal</a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#a-estatística-scan"><i class="fa fa-check"></i><b>12.4.1</b> A estatística scan</a></li>
+<li class="chapter" data-level="12.4.2" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-1---leptospirose-no-rio-de-janeiro"><i class="fa fa-check"></i><b>12.4.2</b> Aplicação 1 - Leptospirose no Rio de Janeiro</a></li>
+<li class="chapter" data-level="12.4.3" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#aplicação-2---arboviroses-no-rio-de-janeiro"><i class="fa fa-check"></i><b>12.4.3</b> Aplicação 2 - Arboviroses no Rio de Janeiro</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#modelagem-estatística-espaço-temporal"><i class="fa fa-check"></i><b>12.5</b> Modelagem Estatística Espaço-temporal</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#alguns-resultados"><i class="fa fa-check"></i><b>12.5.1</b> Alguns resultados</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="análise-espaço-temporal.html"><a href="análise-espaço-temporal.html#bibliografia-sugerida-10"><i class="fa fa-check"></i><b>12.6</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html"><i class="fa fa-check"></i><b>13</b> Roteiro para a execução do trabalho final</a>
+<ul>
+<li class="chapter" data-level="13.0.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>13.0.1</b> Sugestões de locais para baixar os dados e os mapas</a></li>
+<li class="chapter" data-level="13.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#ficha-de-avaliação"><i class="fa fa-check"></i><b>13.1</b> Ficha de Avaliação</a></li>
+<li class="chapter" data-level="13.2" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#fim"><i class="fa fa-check"></i><b>13.2</b> FIM</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="anexo-i-exemplo-séries-temporais.html"><a href="anexo-i-exemplo-séries-temporais.html"><i class="fa fa-check"></i><b>14</b> Anexo I - Exemplo séries temporais</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="anexo-i-exemplo-séries-temporais.html"><a href="anexo-i-exemplo-séries-temporais.html#exemplo-1"><i class="fa fa-check"></i><b>14.1</b> Exemplo 1</a></li>
+<li class="chapter" data-level="14.2" data-path="anexo-i-exemplo-séries-temporais.html"><a href="anexo-i-exemplo-séries-temporais.html#exemplo-2"><i class="fa fa-check"></i><b>14.2</b> Exemplo 2</a></li>
+<li class="chapter" data-level="14.3" data-path="anexo-i-exemplo-séries-temporais.html"><a href="anexo-i-exemplo-séries-temporais.html#exemplo-3"><i class="fa fa-check"></i><b>14.3</b> Exemplo 3</a></li>
+<li class="chapter" data-level="14.4" data-path="anexo-i-exemplo-séries-temporais.html"><a href="anexo-i-exemplo-séries-temporais.html#referências"><i class="fa fa-check"></i><b>14.4</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html"><i class="fa fa-check"></i><b>15</b> Anexo II - Exemplos de Analise Espacial</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#exemplo-com-os-dados-de-dengue-em-douradosms-1"><i class="fa fa-check"></i><b>15.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="15.2" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#kernel-por-atributos"><i class="fa fa-check"></i><b>15.2</b> Kernel por atributos</a></li>
+<li class="chapter" data-level="15.3" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#exemplo-com-os-dados-de-dengue-em-pernambuco"><i class="fa fa-check"></i><b>15.3</b> Exemplo com os dados de dengue em Pernambuco</a></li>
+<li class="chapter" data-level="15.4" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#matriz-de-vizinhança-1"><i class="fa fa-check"></i><b>15.4</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="15.5" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#autocorrelação-espacial-1"><i class="fa fa-check"></i><b>15.5</b> Autocorrelação Espacial</a></li>
+<li class="chapter" data-level="15.6" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#modelos-linear-car-e-gwr"><i class="fa fa-check"></i><b>15.6</b> Modelos Linear, CAR e GWR</a></li>
+<li class="chapter" data-level="15.7" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#obtendo-centroides"><i class="fa fa-check"></i><b>15.7</b> Obtendo centroides</a></li>
+<li class="chapter" data-level="15.8" data-path="anexo-ii-exemplos-de-analise-espacial.html"><a href="anexo-ii-exemplos-de-analise-espacial.html#bibliografia-sugerida-11"><i class="fa fa-check"></i><b>15.8</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS 2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="padrões-pontuais-ii" class="section level1" number="8">
+<h1><span class="header-section-number"> 8</span> Padrões Pontuais II</h1>
+<div id="alguns-usos-em-epidemiologia-espacial" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Alguns usos em Epidemiologia Espacial</h2>
+<p>A partir de processos pontuais é possível se realizar análises tais quais:</p>
+<ul>
+<li>Estimar a variação do risco relativo no espaço</li>
+<li>Estudos Caso-Controle espaciais</li>
+<li>Regressões logísticas lineares e não lineares (GAM) no espaço</li>
+<li>Análises de processos pontuais marcados (marked point processes)</li>
+</ul>
+</div>
+<div id="exemplo-com-os-dados-de-dengue-em-douradosms" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Exemplo com os dados de dengue em Dourados/MS</h2>
+<p>Nesta aula serão utilizados os dados da monografia de Isis Rodrigues Reitman, apresentada ao Curso de Geografia da Faculdade de Ciências Humanas da Universidade Federal da Grande Douradosos/MS, em março de 2013. O título da monografia é “DISTRIBUIÇÃO ESPACIAL DOS CASOS DE DENGUE NO PERÍMETRO URBANO DE DOURADOS-MS E SUA RELAÇÃO COM OS FATORES SOCIOAMBIENTAIS E POLÍTICOS”</p>
+<!-- **ATENÇÃO               ATENÇÃO                    ATENÇÃO** -->
+<!-- Devido a maneira que o Windows acessa as **url** usando a internet é necessario mudar a opção *default* dele para que possa usar apropiadamenet os recursos https, ftps, etc... A linha abaixo deve ser utilizanda antes de usar as funções que acessam esse tipo de recurso. -->
+<!-- ```R -->
+<!-- options(download.file.method='libcurl',url.method='libcurl') -->
+<!-- ``` -->
+<p>Carregando pacotes:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="padrões-pontuais-ii.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb146-2"><a href="padrões-pontuais-ii.html#cb146-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb146-3"><a href="padrões-pontuais-ii.html#cb146-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb146-4"><a href="padrões-pontuais-ii.html#cb146-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maptools)</span>
+<span id="cb146-5"><a href="padrões-pontuais-ii.html#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span></code></pre></div>
+<p>Lendo a tabela da população por setor censitário e baixando os shapefiles do contorno e dos setores censitários de Dourados/MS:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="padrões-pontuais-ii.html#cb147-1" aria-hidden="true" tabindex="-1"></a>local <span class="ot">&lt;-</span> <span class="st">&quot;https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/dados/&quot;</span></span>
+<span id="cb147-2"><a href="padrões-pontuais-ii.html#cb147-2" aria-hidden="true" tabindex="-1"></a>pop2010 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;pop2010.csv&quot;</span>))</span>
+<span id="cb147-3"><a href="padrões-pontuais-ii.html#cb147-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-4"><a href="padrões-pontuais-ii.html#cb147-4" aria-hidden="true" tabindex="-1"></a>tmpdir <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb147-5"><a href="padrões-pontuais-ii.html#cb147-5" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;setores_dourados.zip&quot;</span>),</span>
+<span id="cb147-6"><a href="padrões-pontuais-ii.html#cb147-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">destfile =</span> <span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>))</span>
+<span id="cb147-7"><a href="padrões-pontuais-ii.html#cb147-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-8"><a href="padrões-pontuais-ii.html#cb147-8" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>), <span class="at">exdir =</span> tmpdir)</span>
+<span id="cb147-9"><a href="padrões-pontuais-ii.html#cb147-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(tmpdir)</span>
+<span id="cb147-10"><a href="padrões-pontuais-ii.html#cb147-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-11"><a href="padrões-pontuais-ii.html#cb147-11" aria-hidden="true" tabindex="-1"></a>setor <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/Setor_UTM_SIRGAS.shp&quot;</span>),</span>
+<span id="cb147-12"><a href="padrões-pontuais-ii.html#cb147-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb147-13"><a href="padrões-pontuais-ii.html#cb147-13" aria-hidden="true" tabindex="-1"></a>contorno <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/contorno.shp&quot;</span>),</span>
+<span id="cb147-14"><a href="padrões-pontuais-ii.html#cb147-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb147-15"><a href="padrões-pontuais-ii.html#cb147-15" aria-hidden="true" tabindex="-1"></a>popsetor <span class="ot">&lt;-</span> setor <span class="sc">%&gt;%</span></span>
+<span id="cb147-16"><a href="padrões-pontuais-ii.html#cb147-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">idsetor =</span> <span class="fu">as.numeric</span>(CD_GEOCODI)) <span class="sc">%&gt;%</span></span>
+<span id="cb147-17"><a href="padrões-pontuais-ii.html#cb147-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(pop2010, <span class="at">by =</span> <span class="st">&quot;idsetor&quot;</span>)</span></code></pre></div>
+<!-- ``` -->
+<!--  [1] "contorno.dbf"                                     "contorno.sbn"                                     -->
+<!--  [3] "contorno.sbx"                                     "contorno.shp"                                     -->
+<!--  [5] "contorno.shx"                                     "dourados.zip"                                     -->
+<!--  [7] "Setor_UTM_SIRGAS.dbf"                             "Setor_UTM_SIRGAS.prj"                             -->
+<!--  [9] "Setor_UTM_SIRGAS.sbn"                             "Setor_UTM_SIRGAS.sbx"                             -->
+<!-- [11] "Setor_UTM_SIRGAS.shp"                             "Setor_UTM_SIRGAS.shx"                             -->
+<!-- ``` -->
+<p>Lendo os casos de dengue georreferenciados em Dourados/MS:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="padrões-pontuais-ii.html#cb148-1" aria-hidden="true" tabindex="-1"></a>casos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;dengue_dourados.csv&quot;</span>))</span>
+<span id="cb148-2"><a href="padrões-pontuais-ii.html#cb148-2" aria-hidden="true" tabindex="-1"></a>casos.pt <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(casos, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> <span class="dv">31981</span>)</span></code></pre></div>
+<p>Plotando os casos de dengue segundo o sexo:</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="padrões-pontuais-ii.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(casos.pt[<span class="st">&quot;CS_SEXO&quot;</span>], <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-158-1.png" width="576" style="display: block; margin: auto;" /></p>
+<!-- Plotando apenas o contorno de Dourados/MS. -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- plot(contorno['ID']) -->
+<!-- ``` -->
+<p>Usando a <code>ggplot()</code> para fazer um gráfico do contorno e dos casos:</p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-159-1.png" width="576" /></p>
+<p>Formatando os pontos que representam os casos de dengue na classe <strong>ppp</strong> (point pattern):</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="padrões-pontuais-ii.html#cb150-1" aria-hidden="true" tabindex="-1"></a>cont.w <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(<span class="fu">as_Spatial</span>(contorno))</span>
+<span id="cb150-2"><a href="padrões-pontuais-ii.html#cb150-2" aria-hidden="true" tabindex="-1"></a>dengue.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(casos<span class="sc">$</span>X, casos<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb150-3"><a href="padrões-pontuais-ii.html#cb150-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-4"><a href="padrões-pontuais-ii.html#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dengue.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-160-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Uma vez que temos o objeto em formato <strong>ppp</strong>, podemos verificar a melhor largura de banda sugerida por vários métodos disponíveis pela biblioteca <em>spatstat</em> para os casos de Dengue em Dourados/MS.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Comando R</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diggle</td>
+<td>bw.diggle(dengue.ppp)</td>
+<td>14.1335</td>
+</tr>
+<tr class="even">
+<td>Cronie and van Lieshout’s (CvL)</td>
+<td>bw.CvL(dengue.ppp)</td>
+<td>1630.7311</td>
+</tr>
+<tr class="odd">
+<td>Scoot</td>
+<td>bw.scott(dengue.ppp)</td>
+<td>771.6202, 467.906</td>
+</tr>
+<tr class="even">
+<td>likelihood cross-validation</td>
+<td>bw.ppl(dengue.ppp)</td>
+<td>178.0477</td>
+</tr>
+</tbody>
+</table>
+<p>Existem ainda outros métodos para determinar automaticamente a largura de banda. É possível usá-los para ajudar a escolher o melhor valor, mas é preciso verificar se essa largura de banda apresenta plausibilidade dentro do contexto do estudo.</p>
+<p>Fazendo o mapa de kernel dos casos de dengue segundo várias larguras de banda.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="padrões-pontuais-ii.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb151-2"><a href="padrões-pontuais-ii.html#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">250</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 250 m&quot;</span>,</span>
+<span id="cb151-3"><a href="padrões-pontuais-ii.html#cb151-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span>
+<span id="cb151-4"><a href="padrões-pontuais-ii.html#cb151-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">500</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 500 m&quot;</span>,</span>
+<span id="cb151-5"><a href="padrões-pontuais-ii.html#cb151-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span>
+<span id="cb151-6"><a href="padrões-pontuais-ii.html#cb151-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 750 m&quot;</span>,</span>
+<span id="cb151-7"><a href="padrões-pontuais-ii.html#cb151-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span>
+<span id="cb151-8"><a href="padrões-pontuais-ii.html#cb151-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(dengue.ppp, <span class="dv">1000</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>), <span class="at">main =</span> <span class="st">&quot;kernel 1000 m&quot;</span>,</span>
+<span id="cb151-9"><a href="padrões-pontuais-ii.html#cb151-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">64</span>))</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-161-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Fazendo o kernel segundo sexo, criando padrões para cada sexo e em seguida gerando um kernel para cada categoria.</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="padrões-pontuais-ii.html#cb152-1" aria-hidden="true" tabindex="-1"></a>masc <span class="ot">&lt;-</span> casos <span class="sc">%&gt;%</span></span>
+<span id="cb152-2"><a href="padrões-pontuais-ii.html#cb152-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(CS_SEXO <span class="sc">==</span> <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb152-3"><a href="padrões-pontuais-ii.html#cb152-3" aria-hidden="true" tabindex="-1"></a>masc.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(masc<span class="sc">$</span>X, masc<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb152-4"><a href="padrões-pontuais-ii.html#cb152-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-5"><a href="padrões-pontuais-ii.html#cb152-5" aria-hidden="true" tabindex="-1"></a>fem <span class="ot">&lt;-</span> casos <span class="sc">%&gt;%</span></span>
+<span id="cb152-6"><a href="padrões-pontuais-ii.html#cb152-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(CS_SEXO <span class="sc">==</span> <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb152-7"><a href="padrões-pontuais-ii.html#cb152-7" aria-hidden="true" tabindex="-1"></a>fem.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(fem<span class="sc">$</span>X, fem<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb152-8"><a href="padrões-pontuais-ii.html#cb152-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-9"><a href="padrões-pontuais-ii.html#cb152-9" aria-hidden="true" tabindex="-1"></a>D.masc <span class="ot">&lt;-</span> <span class="fu">density</span>(masc.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb152-10"><a href="padrões-pontuais-ii.html#cb152-10" aria-hidden="true" tabindex="-1"></a>D.fem <span class="ot">&lt;-</span> <span class="fu">density</span>(fem.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb152-11"><a href="padrões-pontuais-ii.html#cb152-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-12"><a href="padrões-pontuais-ii.html#cb152-12" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb152-13"><a href="padrões-pontuais-ii.html#cb152-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.masc, <span class="at">main =</span> <span class="st">&quot;kernel Homens 750 m&quot;</span>)</span>
+<span id="cb152-14"><a href="padrões-pontuais-ii.html#cb152-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.fem, <span class="at">main =</span> <span class="st">&quot;kernel Mulheres 750 m&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-162-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Fazendo a razão de kernel entre os sexos:</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="padrões-pontuais-ii.html#cb153-1" aria-hidden="true" tabindex="-1"></a>D.res <span class="ot">&lt;-</span> D.masc</span>
+<span id="cb153-2"><a href="padrões-pontuais-ii.html#cb153-2" aria-hidden="true" tabindex="-1"></a>D.res<span class="sc">$</span>v <span class="ot">&lt;-</span> (D.masc<span class="sc">$</span>v<span class="sc">/</span>D.fem<span class="sc">$</span>v)</span>
+<span id="cb153-3"><a href="padrões-pontuais-ii.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.res, <span class="at">main =</span> <span class="st">&quot;Razão de Kernel H/M&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-163-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Como podemos observar no kernel acima, não foi detectada variabilidade espacial na razão entre os sexos. Observe o efeito de borda que ocorre no Norte, onde um único indivíduo do sexo masculido é responsável pelo efeito de borda.</p>
+<p>Extraindo os centróides dos setores censitários de Dourados/MS.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="padrões-pontuais-ii.html#cb154-1" aria-hidden="true" tabindex="-1"></a>centros <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(<span class="fu">st_geometry</span>(popsetor))</span>
+<span id="cb154-2"><a href="padrões-pontuais-ii.html#cb154-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-3"><a href="padrões-pontuais-ii.html#cb154-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-4"><a href="padrões-pontuais-ii.html#cb154-4" aria-hidden="true" tabindex="-1"></a>centros.tmp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as_Spatial</span>(centros))</span>
+<span id="cb154-5"><a href="padrões-pontuais-ii.html#cb154-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(centros.tmp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb154-6"><a href="padrões-pontuais-ii.html#cb154-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-7"><a href="padrões-pontuais-ii.html#cb154-7" aria-hidden="true" tabindex="-1"></a>centros.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(centros.tmp<span class="sc">$</span>X, centros.tmp<span class="sc">$</span>Y, cont.w)</span>
+<span id="cb154-8"><a href="padrões-pontuais-ii.html#cb154-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-9"><a href="padrões-pontuais-ii.html#cb154-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(centros.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-164-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Fazendo o kernel dos pontos dos centróides dos setores censitários de Dourados/MS. Tal distribuição, pode se sugerida como uma <em>proxy</em> da verdadeira distribuição populacional de Dourados/MS.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="padrões-pontuais-ii.html#cb155-1" aria-hidden="true" tabindex="-1"></a>D.pop <span class="ot">&lt;-</span> <span class="fu">density</span>(centros.ppp, <span class="dv">500</span>, <span class="at">weights =</span> popsetor<span class="sc">$</span>pop,</span>
+<span id="cb155-2"><a href="padrões-pontuais-ii.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">scalekernel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb155-3"><a href="padrões-pontuais-ii.html#cb155-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(D.pop)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-165-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Gerando um kernel de atributo com a população de cada setor censitário. O parâmetro <em>weights</em> nos permite entrar o valor do atributo a ser ponderado. Desta forma é possível gerar um kernel de um valor especificado (atributo).</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="padrões-pontuais-ii.html#cb156-1" aria-hidden="true" tabindex="-1"></a>kpop <span class="ot">&lt;-</span> <span class="fu">density</span>(centros.ppp, <span class="dv">750</span>, <span class="at">weights =</span> popsetor<span class="sc">$</span>pop,</span>
+<span id="cb156-2"><a href="padrões-pontuais-ii.html#cb156-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">scalekernel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-3"><a href="padrões-pontuais-ii.html#cb156-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(kpop)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-166-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Calculando a taxa média de casos (por 1.000 hab) de dengue do município de Dourados/MS</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="padrões-pontuais-ii.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(casos.pt)<span class="sc">/</span><span class="fu">sum</span>(popsetor<span class="sc">$</span>pop) <span class="sc">*</span> <span class="dv">1000</span></span></code></pre></div>
+<p>[1] 5.853</p>
+<p>Gerando a razão de kernel (casos/população) x 1000:</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="padrões-pontuais-ii.html#cb158-1" aria-hidden="true" tabindex="-1"></a>kcasos.b750 <span class="ot">&lt;-</span> <span class="fu">density</span>(dengue.ppp, <span class="dv">750</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb158-2"><a href="padrões-pontuais-ii.html#cb158-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-3"><a href="padrões-pontuais-ii.html#cb158-3" aria-hidden="true" tabindex="-1"></a>razao <span class="ot">&lt;-</span> kcasos.b750</span>
+<span id="cb158-4"><a href="padrões-pontuais-ii.html#cb158-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-5"><a href="padrões-pontuais-ii.html#cb158-5" aria-hidden="true" tabindex="-1"></a>razao<span class="sc">$</span>v <span class="ot">&lt;-</span> (kcasos.b750<span class="sc">$</span>v<span class="sc">/</span>kpop<span class="sc">$</span>v) <span class="sc">*</span> <span class="dv">1000</span></span>
+<span id="cb158-6"><a href="padrões-pontuais-ii.html#cb158-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-7"><a href="padrões-pontuais-ii.html#cb158-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(razao, <span class="at">main =</span> <span class="st">&quot;Razão de kernel casos/população&quot;</span>)</span>
+<span id="cb158-8"><a href="padrões-pontuais-ii.html#cb158-8" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(razao, <span class="at">add =</span> T, <span class="at">levels =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-168-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Plotando a distribuição das taxas por dengue estimadas via razão de kernel. É possível verificar que a mediana das razões de kernel é bem próxima a taxa média de casos (por 1.000 hab) em Dourados/MS.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="padrões-pontuais-ii.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">as.numeric</span>(razao<span class="sc">$</span>v), <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Boxplot da razão de kernel&quot;</span>)</span>
+<span id="cb159-2"><a href="padrões-pontuais-ii.html#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(razao<span class="sc">$</span>v), <span class="at">na.rm =</span> T), <span class="at">lty =</span> <span class="dv">3</span>,</span>
+<span id="cb159-3"><a href="padrões-pontuais-ii.html#cb159-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-169-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Sobrepondo a malha da população por setores censitários (dados de área) com os pontos de casos de dengue (padrões pontuais)</p>
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->
+<!-- plot(popsetor['pop'],pal=terrain.colors(13)) -->
+<!-- plot(casos.pt['CS_SEXO'],pch=19,add=TRUE) -->
+<!-- #points.lpp(dengue.ppp,pch=19,col='black') -->
+<!-- ``` -->
+<!-- Também pode ser feito dessa forma. -->
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="padrões-pontuais-ii.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(popsetor) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pop)) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> casos.pt,</span>
+<span id="cb160-2"><a href="padrões-pontuais-ii.html#cb160-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">size =</span> <span class="fl">0.7</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-170-1.png" width="672" style="display: block; margin: auto;" /></p>
+<!-- Razão de casos confirmados vs não confirmados -->
+<!-- Como verificamos abaixo  temos 713 casos *confirmados* de Dengue e 304 *não confirmados* , -->
+<!-- será que existe algum padrão espacial para os casos  *não confirmados* ? -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", comment=NA, fig.align = "center"} -->
+<!-- table(casos$CLASSI_FIN==1) -->
+<!-- ``` -->
+<!-- Para visualizarmos vamos inicialmente criar dois objetos do tipo **ppp** uma para  *confirmados* e outro para  *não confirmados*. -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", comment=NA, fig.align = "center"} -->
+<!-- Confirm <- casos %>% filter(CLASSI_FIN == 1) -->
+<!-- NaoConfirm <- casos %>% filter(CLASSI_FIN != 1) -->
+<!-- Confirm.ppp <- ppp(Confirm$X,Confirm$Y,cont.w) -->
+<!-- NaoConfirm.ppp <- ppp(NaoConfirm$X,NaoConfirm$Y,cont.w) -->
+<!-- ``` -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", comment=NA, fig.align = "center"} -->
+<!-- plot(st_geometry(contorno)) -->
+<!-- points(Confirm.ppp,pch=19,cex=0.5, col="red") -->
+<!-- points(NaoConfirm,pch=19,cex=0.5, col="blue") -->
+<!-- title("Distribuição dos casos Confirmados e Não Confirmados") -->
+<!-- legend("topright", legend=c("Confirmados", "Não Confirmados"), -->
+<!--        col=c("red", "blue"),  pch = 19, cex=1, -->
+<!--        title="Legenda",  bg='lightblue') -->
+<!-- ``` -->
+<!-- Em seguida vamos fazer um kernel para cada um deles. -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", comment=NA, fig.align = "center"} -->
+<!-- D.confirm <- density(Confirm.ppp,750,diggle = TRUE) -->
+<!-- D.naoconfirm  <- density(NaoConfirm.ppp,750,diggle = TRUE) -->
+<!-- par(mfrow=c(1, 2)) #,mar=c(0.5,2,1,1.5)) -->
+<!-- plot(D.confirm, main='kernel casos Dengue 750 m',box=FALSE) -->
+<!-- plot(D.naoconfirm, main='kernel casos  Descartados 750 m',box=FALSE) -->
+<!-- ``` -->
+<!-- Aparentemente existem diferenças nos padrões dos casos confirmados e descartados de dengue. O próximo passo é fazer uma razão de kernel para averiguar essa diferença de padrões. -->
+<!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", comment=NA, fig.align = "center"} -->
+<!-- raz <- D.confirm  -->
+<!-- raz$v <- D.confirm$v / D.naoconfirm$v -->
+<!-- plot(raz,main='Razão Dengue Confirmado Vs Não Confirmado',box=FALSE) -->
+<!-- ``` -->
+<!-- - A razão não evidencia grande diferença, por que ? -->
+<!-- - Qual seria a melhor maneira de evidenciar essa diferença ? -->
+</div>
+<div id="modelos-aditivos-generalizados-gam" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Modelos Aditivos Generalizados (GAM)</h2>
+<ul>
+<li>Um modelo aditivo generalizado (Hastie and Tibishirani, 1990) é um modelo linear generalizado com um preditor linear envolvendo a soma de funções suavizadas das covariáveis + os efeitos fixos das mesmas.</li>
+</ul>
+<p><span class="math display">\[\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + \ldots\]</span></p>
+</div>
+<div id="modelos-espaciais-generalizados-aditivos" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> Modelos Espaciais Generalizados Aditivos</h2>
+<ul>
+<li>São modelos aditivos generalizados tendo como um dos preditores o efeito suavizado das componentes espaciais.</li>
+</ul>
+<p><span class="math display">\[\eta = \sum X \beta + f_1(x_{1i}) + f_2(x_{2i}) + f_3(latitude_{i}, longitude_{i}) + \ldots\]</span></p>
+<p>Exemplo GAM Dourados - Tipo Caso/Controle</p>
+<p>Vamos ajustar um modelo <strong>GAM</strong> do tipo “caso/controle”, onde casos serão representados pelos casos de dengue confirmados e controles os casos não confirmados.</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="padrões-pontuais-ii.html#cb161-1" aria-hidden="true" tabindex="-1"></a>casos.pt<span class="sc">$</span>X <span class="ot">&lt;-</span> casos<span class="sc">$</span>X</span>
+<span id="cb161-2"><a href="padrões-pontuais-ii.html#cb161-2" aria-hidden="true" tabindex="-1"></a>casos.pt<span class="sc">$</span>Y <span class="ot">&lt;-</span> casos<span class="sc">$</span>Y</span>
+<span id="cb161-3"><a href="padrões-pontuais-ii.html#cb161-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb161-4"><a href="padrões-pontuais-ii.html#cb161-4" aria-hidden="true" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="fl">720900.6</span>, <span class="fl">734155.5</span>, <span class="at">length.out =</span> <span class="dv">150</span>),</span>
+<span id="cb161-5"><a href="padrões-pontuais-ii.html#cb161-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">seq</span>(<span class="fl">7535267.6</span>, <span class="fl">7544897.2</span>, <span class="at">length.out =</span> <span class="dv">100</span>))</span>
+<span id="cb161-6"><a href="padrões-pontuais-ii.html#cb161-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb161-7"><a href="padrões-pontuais-ii.html#cb161-7" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(mgcv, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb161-8"><a href="padrões-pontuais-ii.html#cb161-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb161-9"><a href="padrões-pontuais-ii.html#cb161-9" aria-hidden="true" tabindex="-1"></a>mod0 <span class="ot">&lt;-</span> <span class="fu">gam</span>(CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="fu">s</span>(X, Y), <span class="at">data =</span> casos.pt,</span>
+<span id="cb161-10"><a href="padrões-pontuais-ii.html#cb161-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="padrões-pontuais-ii.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod0)</span></code></pre></div>
+<pre><code>
+Family: binomial 
+Link function: logit 
+
+Formula:
+CLASSI_FIN == 1 ~ s(X, Y)
+
+Parametric coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   1.0069     0.0795    12.7   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Approximate significance of smooth terms:
+        edf Ref.df Chi.sq p-value    
+s(X,Y) 21.9   26.2    144  &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+R-sq.(adj) =  0.161   Deviance explained = 14.7%
+UBRE = 0.085615  Scale est. = 1         n = 1017</code></pre>
+<ul>
+<li>Podemos observar que o modelo espacial vazio parace evidenciar que o componente espacial <strong>s(X,Y)</strong> é significativo, ou seja, existe indícios que o espaço geográfico está influenciando a variável de desfecho.</li>
+</ul>
+<p>Agora vamos verificar a saída gráfica original do modelo.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="padrões-pontuais-ii.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vis.gam</span>(mod0, <span class="at">main =</span> <span class="st">&quot;Modelo Vazio&quot;</span>, <span class="at">plot.type =</span> <span class="st">&quot;contour&quot;</span>,</span>
+<span id="cb164-2"><a href="padrões-pontuais-ii.html#cb164-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;terrain&quot;</span>, <span class="at">contour.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-173-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Essa saída não parece ser muito intuitiva, apesar ser possível observarmos as áreas que apresentam ‘pistas’ de haver um risco maior e as áreas que estão mais isentas de casos de dengue.</p>
+<p>Vamos agora tentar melhorar tal saída gráfica.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="padrões-pontuais-ii.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(splancs)</span>
+<span id="cb165-2"><a href="padrões-pontuais-ii.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fields)</span>
+<span id="cb165-3"><a href="padrões-pontuais-ii.html#cb165-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-4"><a href="padrões-pontuais-ii.html#cb165-4" aria-hidden="true" tabindex="-1"></a>TAM <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb165-5"><a href="padrões-pontuais-ii.html#cb165-5" aria-hidden="true" tabindex="-1"></a>caixa <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(contorno)</span>
+<span id="cb165-6"><a href="padrões-pontuais-ii.html#cb165-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-7"><a href="padrões-pontuais-ii.html#cb165-7" aria-hidden="true" tabindex="-1"></a>grade <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x =</span> <span class="fu">seq</span>(caixa[<span class="dv">1</span>], caixa[<span class="dv">3</span>], <span class="at">length.out =</span> TAM),</span>
+<span id="cb165-8"><a href="padrões-pontuais-ii.html#cb165-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">seq</span>(caixa[<span class="dv">2</span>], caixa[<span class="dv">4</span>], <span class="at">length.out =</span> TAM))</span>
+<span id="cb165-9"><a href="padrões-pontuais-ii.html#cb165-9" aria-hidden="true" tabindex="-1"></a>contorno.xy <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">slot</span>(<span class="fu">slot</span>(<span class="fu">slot</span>(<span class="fu">as_Spatial</span>(contorno),</span>
+<span id="cb165-10"><a href="padrões-pontuais-ii.html#cb165-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;polygons&quot;</span>)[[<span class="dv">1</span>]], <span class="st">&quot;Polygons&quot;</span>)[[<span class="dv">1</span>]], <span class="st">&quot;coords&quot;</span>))</span>
+<span id="cb165-11"><a href="padrões-pontuais-ii.html#cb165-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-12"><a href="padrões-pontuais-ii.html#cb165-12" aria-hidden="true" tabindex="-1"></a>inside <span class="ot">&lt;-</span> <span class="fu">in.out</span>(<span class="fu">as.matrix</span>(contorno.xy), <span class="fu">as.matrix</span>(grade))</span>
+<span id="cb165-13"><a href="padrões-pontuais-ii.html#cb165-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-14"><a href="padrões-pontuais-ii.html#cb165-14" aria-hidden="true" tabindex="-1"></a>outside <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="fu">seq</span>(caixa[<span class="dv">1</span>], caixa[<span class="dv">3</span>], <span class="at">length.out =</span> TAM),</span>
+<span id="cb165-15"><a href="padrões-pontuais-ii.html#cb165-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">seq</span>(caixa[<span class="dv">2</span>], caixa[<span class="dv">4</span>], <span class="at">length.out =</span> TAM),</span>
+<span id="cb165-16"><a href="padrões-pontuais-ii.html#cb165-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">z =</span> <span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="dv">0</span>, TAM<span class="sc">^</span><span class="dv">2</span>), <span class="at">ncol =</span> TAM))</span>
+<span id="cb165-17"><a href="padrões-pontuais-ii.html#cb165-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-18"><a href="padrões-pontuais-ii.html#cb165-18" aria-hidden="true" tabindex="-1"></a>outside<span class="sc">$</span>z[inside] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb165-19"><a href="padrões-pontuais-ii.html#cb165-19" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> outside<span class="sc">$</span>x</span>
+<span id="cb165-20"><a href="padrões-pontuais-ii.html#cb165-20" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> outside<span class="sc">$</span>y</span>
+<span id="cb165-21"><a href="padrões-pontuais-ii.html#cb165-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-22"><a href="padrões-pontuais-ii.html#cb165-22" aria-hidden="true" tabindex="-1"></a>newgam <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> grade[, <span class="dv">1</span>], <span class="at">Y =</span> grade[, <span class="dv">2</span>])</span>
+<span id="cb165-23"><a href="padrões-pontuais-ii.html#cb165-23" aria-hidden="true" tabindex="-1"></a>gg.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod0, <span class="at">newdata =</span> newgam, <span class="at">type =</span> <span class="st">&quot;terms&quot;</span>,</span>
+<span id="cb165-24"><a href="padrões-pontuais-ii.html#cb165-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">terms =</span> <span class="st">&quot;s(X,Y)&quot;</span>, <span class="at">se.fit =</span> T)</span>
+<span id="cb165-25"><a href="padrões-pontuais-ii.html#cb165-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-26"><a href="padrões-pontuais-ii.html#cb165-26" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb165-27"><a href="padrões-pontuais-ii.html#cb165-27" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>se.fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb165-28"><a href="padrões-pontuais-ii.html#cb165-28" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">matrix</span>(gg.pred<span class="sc">$</span>fit, TAM, TAM))</span>
+<span id="cb165-29"><a href="padrões-pontuais-ii.html#cb165-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-30"><a href="padrões-pontuais-ii.html#cb165-30" aria-hidden="true" tabindex="-1"></a><span class="do">## a very rough estimate of confidence intervals</span></span>
+<span id="cb165-31"><a href="padrões-pontuais-ii.html#cb165-31" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">+</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb165-32"><a href="padrões-pontuais-ii.html#cb165-32" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">-</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb165-33"><a href="padrões-pontuais-ii.html#cb165-33" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.inf, TAM, TAM)</span>
+<span id="cb165-34"><a href="padrões-pontuais-ii.html#cb165-34" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.sup, TAM, TAM)</span>
+<span id="cb165-35"><a href="padrões-pontuais-ii.html#cb165-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-36"><a href="padrões-pontuais-ii.html#cb165-36" aria-hidden="true" tabindex="-1"></a>cores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#053061&quot;</span>, <span class="st">&quot;#2166ac&quot;</span>, <span class="st">&quot;#4393c3&quot;</span>, <span class="st">&quot;#92c5de&quot;</span>,</span>
+<span id="cb165-37"><a href="padrões-pontuais-ii.html#cb165-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#d1e5f0&quot;</span>, <span class="st">&quot;#f7f7f7&quot;</span>, <span class="st">&quot;#fddbc7&quot;</span>, <span class="st">&quot;#f4a582&quot;</span>, <span class="st">&quot;#d6604d&quot;</span>,</span>
+<span id="cb165-38"><a href="padrões-pontuais-ii.html#cb165-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;#b2182b&quot;</span>, <span class="st">&quot;#67001f&quot;</span>)</span>
+<span id="cb165-39"><a href="padrões-pontuais-ii.html#cb165-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-40"><a href="padrões-pontuais-ii.html#cb165-40" aria-hidden="true" tabindex="-1"></a><span class="fu">split.screen</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code></pre></div>
+<p>[1] 1 2</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="padrões-pontuais-ii.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb166-2"><a href="padrões-pontuais-ii.html#cb166-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-3"><a href="padrões-pontuais-ii.html#cb166-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z, <span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores,</span>
+<span id="cb166-4"><a href="padrões-pontuais-ii.html#cb166-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> F)</span>
+<span id="cb166-5"><a href="padrões-pontuais-ii.html#cb166-5" aria-hidden="true" tabindex="-1"></a><span class="co"># points(den$x_coord, den$y_coord, pch=19,</span></span>
+<span id="cb166-6"><a href="padrões-pontuais-ii.html#cb166-6" aria-hidden="true" tabindex="-1"></a><span class="co"># col=&#39;blue&#39;, cex=0.1)</span></span>
+<span id="cb166-7"><a href="padrões-pontuais-ii.html#cb166-7" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.inf, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb166-8"><a href="padrões-pontuais-ii.html#cb166-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&lt;1&quot;</span>)</span>
+<span id="cb166-9"><a href="padrões-pontuais-ii.html#cb166-9" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.sup, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb166-10"><a href="padrões-pontuais-ii.html#cb166-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&gt;1&quot;</span>)</span>
+<span id="cb166-11"><a href="padrões-pontuais-ii.html#cb166-11" aria-hidden="true" tabindex="-1"></a>splancs<span class="sc">::</span><span class="fu">polymap</span>(contorno.xy, <span class="at">add =</span> T, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb166-12"><a href="padrões-pontuais-ii.html#cb166-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-13"><a href="padrões-pontuais-ii.html#cb166-13" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></span>
+<span id="cb166-14"><a href="padrões-pontuais-ii.html#cb166-14" aria-hidden="true" tabindex="-1"></a><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></span>
+<span id="cb166-15"><a href="padrões-pontuais-ii.html#cb166-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-16"><a href="padrões-pontuais-ii.html#cb166-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></span>
+<span id="cb166-17"><a href="padrões-pontuais-ii.html#cb166-17" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">na.omit</span>(<span class="fu">as.vector</span>(z)), <span class="at">prob =</span> <span class="fu">seq</span>(<span class="dv">0</span>,</span>
+<span id="cb166-18"><a href="padrões-pontuais-ii.html#cb166-18" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb166-19"><a href="padrões-pontuais-ii.html#cb166-19" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb166-20"><a href="padrões-pontuais-ii.html#cb166-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-21"><a href="padrões-pontuais-ii.html#cb166-21" aria-hidden="true" tabindex="-1"></a><span class="fu">image.plot</span>(<span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores,</span>
+<span id="cb166-22"><a href="padrões-pontuais-ii.html#cb166-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.args =</span> <span class="fu">list</span>(<span class="at">at =</span> ticks, <span class="at">labels =</span> ticks), <span class="at">legend.only =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb166-23"><a href="padrões-pontuais-ii.html#cb166-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">smallplot =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="at">legend.width =</span> <span class="dv">3</span>,</span>
+<span id="cb166-24"><a href="padrões-pontuais-ii.html#cb166-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.shrink =</span> <span class="fl">0.8</span>, <span class="at">horizontal =</span> F)</span>
+<span id="cb166-25"><a href="padrões-pontuais-ii.html#cb166-25" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Modelo Vazio&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-175-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Podemos também inspecionar a superfície do erro padrão do modelo.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="padrões-pontuais-ii.html#cb167-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">matrix</span>(gg.pred<span class="sc">$</span>se.fit, TAM, TAM)</span>
+<span id="cb167-2"><a href="padrões-pontuais-ii.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">split.screen</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code></pre></div>
+<p>[1] 3 4</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="padrões-pontuais-ii.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb168-2"><a href="padrões-pontuais-ii.html#cb168-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-3"><a href="padrões-pontuais-ii.html#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z, <span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores,</span>
+<span id="cb168-4"><a href="padrões-pontuais-ii.html#cb168-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> F)</span>
+<span id="cb168-5"><a href="padrões-pontuais-ii.html#cb168-5" aria-hidden="true" tabindex="-1"></a>splancs<span class="sc">::</span><span class="fu">polymap</span>(contorno.xy, <span class="at">add =</span> T, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb168-6"><a href="padrões-pontuais-ii.html#cb168-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-7"><a href="padrões-pontuais-ii.html#cb168-7" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></span>
+<span id="cb168-8"><a href="padrões-pontuais-ii.html#cb168-8" aria-hidden="true" tabindex="-1"></a><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></span>
+<span id="cb168-9"><a href="padrões-pontuais-ii.html#cb168-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-10"><a href="padrões-pontuais-ii.html#cb168-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></span>
+<span id="cb168-11"><a href="padrões-pontuais-ii.html#cb168-11" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">na.omit</span>(<span class="fu">as.vector</span>(z)), <span class="at">prob =</span> <span class="fu">seq</span>(<span class="dv">0</span>,</span>
+<span id="cb168-12"><a href="padrões-pontuais-ii.html#cb168-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb168-13"><a href="padrões-pontuais-ii.html#cb168-13" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb168-14"><a href="padrões-pontuais-ii.html#cb168-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-15"><a href="padrões-pontuais-ii.html#cb168-15" aria-hidden="true" tabindex="-1"></a><span class="fu">image.plot</span>(<span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores,</span>
+<span id="cb168-16"><a href="padrões-pontuais-ii.html#cb168-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.args =</span> <span class="fu">list</span>(<span class="at">at =</span> ticks, <span class="at">labels =</span> ticks), <span class="at">legend.only =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb168-17"><a href="padrões-pontuais-ii.html#cb168-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">smallplot =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="at">legend.width =</span> <span class="dv">3</span>,</span>
+<span id="cb168-18"><a href="padrões-pontuais-ii.html#cb168-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.shrink =</span> <span class="fl">0.8</span>, <span class="at">horizontal =</span> F)</span>
+<span id="cb168-19"><a href="padrões-pontuais-ii.html#cb168-19" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Erro Padrão - Modelo Vazio&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-176-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Note que no centro, onde existe a maior quantidade de pontos, o erro e bem menor que nas áreas onde existem menos pontos e nas bordas !</p>
+<p>Incluindo no modelo a variável sexo:</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="padrões-pontuais-ii.html#cb169-1" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">gam</span>(CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> CS_SEXO <span class="sc">+</span> <span class="fu">factor</span>(CS_RACA) <span class="sc">+</span></span>
+<span id="cb169-2"><a href="padrões-pontuais-ii.html#cb169-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">s</span>(X, Y), <span class="at">data =</span> casos.pt, <span class="at">family =</span> binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="padrões-pontuais-ii.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code></pre></div>
+<pre><code>
+Family: binomial 
+Link function: logit 
+
+Formula:
+CLASSI_FIN == 1 ~ CS_SEXO + factor(CS_RACA) + s(X, Y)
+
+Parametric coefficients:
+                 Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)        0.9830     0.1097    8.96   &lt;2e-16 ***
+CS_SEXOM          -0.0215     0.1530   -0.14    0.888    
+factor(CS_RACA)2  -0.6188     0.3746   -1.65    0.099 .  
+factor(CS_RACA)3  -0.2041     0.9833   -0.21    0.836    
+factor(CS_RACA)4   0.2949     0.2099    1.41    0.160    
+factor(CS_RACA)5  -0.5668     1.1361   -0.50    0.618    
+factor(CS_RACA)9   0.8469     0.8517    0.99    0.320    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Approximate significance of smooth terms:
+        edf Ref.df Chi.sq p-value    
+s(X,Y) 21.8   26.2    143  &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+R-sq.(adj) =  0.162   Deviance explained = 15.2%
+UBRE = 0.094684  Scale est. = 1         n = 1011</code></pre>
+<p>Como já visto anteriormente na análise exploratória espacial de pontos, a variável sexo não é significativa.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="padrões-pontuais-ii.html#cb172-1" aria-hidden="true" tabindex="-1"></a>newgam <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> grade[, <span class="dv">1</span>], <span class="at">Y =</span> grade[, <span class="dv">2</span>],</span>
+<span id="cb172-2"><a href="padrões-pontuais-ii.html#cb172-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">CS_SEXO =</span> <span class="st">&quot;F&quot;</span>, <span class="at">CS_RACA =</span> <span class="st">&quot;1&quot;</span>)</span>
+<span id="cb172-3"><a href="padrões-pontuais-ii.html#cb172-3" aria-hidden="true" tabindex="-1"></a>gg.pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod1, <span class="at">newdata =</span> newgam, <span class="at">type =</span> <span class="st">&quot;terms&quot;</span>,</span>
+<span id="cb172-4"><a href="padrões-pontuais-ii.html#cb172-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">terms =</span> <span class="st">&quot;s(X,Y)&quot;</span>, <span class="at">se.fit =</span> T)</span>
+<span id="cb172-5"><a href="padrões-pontuais-ii.html#cb172-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-6"><a href="padrões-pontuais-ii.html#cb172-6" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb172-7"><a href="padrões-pontuais-ii.html#cb172-7" aria-hidden="true" tabindex="-1"></a>gg.pred<span class="sc">$</span>se.fit[inside <span class="sc">==</span> F] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb172-8"><a href="padrões-pontuais-ii.html#cb172-8" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">matrix</span>(gg.pred<span class="sc">$</span>fit, TAM, TAM))</span>
+<span id="cb172-9"><a href="padrões-pontuais-ii.html#cb172-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-10"><a href="padrões-pontuais-ii.html#cb172-10" aria-hidden="true" tabindex="-1"></a><span class="do">## a very rough estimate of confidence intervals</span></span>
+<span id="cb172-11"><a href="padrões-pontuais-ii.html#cb172-11" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">+</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb172-12"><a href="padrões-pontuais-ii.html#cb172-12" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">exp</span>(gg.pred<span class="sc">$</span>fit <span class="sc">-</span> (<span class="fl">1.96</span> <span class="sc">*</span> gg.pred<span class="sc">$</span>se.fit))</span>
+<span id="cb172-13"><a href="padrões-pontuais-ii.html#cb172-13" aria-hidden="true" tabindex="-1"></a>z.inf <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.inf, TAM, TAM)</span>
+<span id="cb172-14"><a href="padrões-pontuais-ii.html#cb172-14" aria-hidden="true" tabindex="-1"></a>z.sup <span class="ot">&lt;-</span> <span class="fu">matrix</span>(z.sup, TAM, TAM)</span>
+<span id="cb172-15"><a href="padrões-pontuais-ii.html#cb172-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-16"><a href="padrões-pontuais-ii.html#cb172-16" aria-hidden="true" tabindex="-1"></a><span class="fu">split.screen</span>(<span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code></pre></div>
+<p>[1] 5 6</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="padrões-pontuais-ii.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">1</span>)</span>
+<span id="cb173-2"><a href="padrões-pontuais-ii.html#cb173-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-3"><a href="padrões-pontuais-ii.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z, <span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores,</span>
+<span id="cb173-4"><a href="padrões-pontuais-ii.html#cb173-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">axes =</span> F)</span>
+<span id="cb173-5"><a href="padrões-pontuais-ii.html#cb173-5" aria-hidden="true" tabindex="-1"></a><span class="co"># points(den$x_coord, den$y_coord, pch=19,</span></span>
+<span id="cb173-6"><a href="padrões-pontuais-ii.html#cb173-6" aria-hidden="true" tabindex="-1"></a><span class="co"># col=&#39;blue&#39;, cex=0.1)</span></span>
+<span id="cb173-7"><a href="padrões-pontuais-ii.html#cb173-7" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.inf, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb173-8"><a href="padrões-pontuais-ii.html#cb173-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&lt;1&quot;</span>)</span>
+<span id="cb173-9"><a href="padrões-pontuais-ii.html#cb173-9" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(x, y, z.sup, <span class="at">nlevels =</span> <span class="dv">1</span>, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb173-10"><a href="padrões-pontuais-ii.html#cb173-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">levels =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.1</span>, <span class="at">labels =</span> <span class="st">&quot;&gt;1&quot;</span>)</span>
+<span id="cb173-11"><a href="padrões-pontuais-ii.html#cb173-11" aria-hidden="true" tabindex="-1"></a>splancs<span class="sc">::</span><span class="fu">polymap</span>(contorno.xy, <span class="at">add =</span> T, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb173-12"><a href="padrões-pontuais-ii.html#cb173-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-13"><a href="padrões-pontuais-ii.html#cb173-13" aria-hidden="true" tabindex="-1"></a><span class="fu">screen</span>(<span class="dv">2</span>)  <span class="co"># The legend</span></span>
+<span id="cb173-14"><a href="padrões-pontuais-ii.html#cb173-14" aria-hidden="true" tabindex="-1"></a><span class="co"># range(z, na.rm=T) # to make a pretty legend</span></span>
+<span id="cb173-15"><a href="padrões-pontuais-ii.html#cb173-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-16"><a href="padrões-pontuais-ii.html#cb173-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ticks &lt;- seq(0,0.5,by=0.2)</span></span>
+<span id="cb173-17"><a href="padrões-pontuais-ii.html#cb173-17" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">na.omit</span>(<span class="fu">as.vector</span>(z)), <span class="at">prob =</span> <span class="fu">seq</span>(<span class="dv">0</span>,</span>
+<span id="cb173-18"><a href="padrões-pontuais-ii.html#cb173-18" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">by =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb173-19"><a href="padrões-pontuais-ii.html#cb173-19" aria-hidden="true" tabindex="-1"></a>ticks <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb173-20"><a href="padrões-pontuais-ii.html#cb173-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-21"><a href="padrões-pontuais-ii.html#cb173-21" aria-hidden="true" tabindex="-1"></a><span class="fu">image.plot</span>(<span class="at">zlim =</span> <span class="fu">range</span>(z, <span class="at">na.rm =</span> T), <span class="at">col =</span> cores,</span>
+<span id="cb173-22"><a href="padrões-pontuais-ii.html#cb173-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.args =</span> <span class="fu">list</span>(<span class="at">at =</span> ticks, <span class="at">labels =</span> ticks), <span class="at">legend.only =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb173-23"><a href="padrões-pontuais-ii.html#cb173-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">smallplot =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.15</span>, <span class="fl">0.85</span>), <span class="at">legend.width =</span> <span class="dv">3</span>,</span>
+<span id="cb173-24"><a href="padrões-pontuais-ii.html#cb173-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.shrink =</span> <span class="fl">0.8</span>, <span class="at">horizontal =</span> F)</span>
+<span id="cb173-25"><a href="padrões-pontuais-ii.html#cb173-25" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Modelo ajustado por Sexo e Raça&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-179-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bibliografia-sugerida-6" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> Bibliografia sugerida</h2>
+<p>Wood, S.N. (2017) Generalized Additive Models: an introduction with R (2nd edition), CRC.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="padrões-pontuais-i.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="geoestatística.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"scroll_highlight": true,
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
