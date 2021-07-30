@@ -1,2 +1,0 @@
-Dados absolutos são dados obtidos por meio de contagem.
-Dados relativos são obtidos por meio da combinação de dados absolutos ou relativos.
