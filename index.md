@@ -5,9 +5,10 @@
 
 * [Curso DataScience aplicada - 2017](livro_2017)
 
-* [Curso Estudos Ecologicos - 2019](Bookdown/apresentação.html)
+[comment]: <> (* [Curso Estudos Ecologicos - 2019](Bookdown/apresentação.html))
 
-* [Curso Estudos Ecologicos - 2021](Curso_eco_2021/apresentação.html)
+[comment]: <> (* [Curso Estudos Ecologicos - 2021](Curso_eco_2021/apresentação.html) )
+
 
 
 
