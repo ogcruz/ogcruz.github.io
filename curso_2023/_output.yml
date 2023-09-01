@@ -1,0 +1,39 @@
+bookdown::gitbook:
+  css: style.css
+  split_by: chapter
+  config:
+    scroll_highlight: yes
+    toolbar:
+      position: fixed
+    edit : null
+    download: null
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: no
+      github: no
+      twitter: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      whatsapp: no
+      all: []
+    info: no
+    toc:
+      collapse: subsection
+      before: |
+        <li><a href="./">Estudos Ecológicos 2023</a></li>
+      after: |
+        <li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
+
+bookdown::pdf_book:
+  includes: 
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+bookdown::epub_book:
+  stylesheet: style.css

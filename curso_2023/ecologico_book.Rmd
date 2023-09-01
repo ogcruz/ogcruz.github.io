@@ -1,0 +1,32 @@
+--- 
+title: "ESTUDOS ECOLÓGICOS 2023"
+author: "Oswaldo G Cruz "
+date: "Atualizado em: `r format(Sys.Date(),'%d de %B de %Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+#bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+theme: cerulean
+---
+
+```{r child="apresentacao.Rmd", echo=FALSE}
+
+```
+
+```{r child="capitulo1.Rmd", echo=FALSE}
+
+```
+
+```{r child="capitulo2.Rmd", echo=FALSE}
+
+```
+
+```{r child="capitulo3.Rmd", echo=FALSE}
+
+```
+
+
+```{r child="capitulo4.Rmd", echo=FALSE}
+
+```

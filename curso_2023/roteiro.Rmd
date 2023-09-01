@@ -1,0 +1,79 @@
+# Roteiro para a execução do trabalho final
+
+
+1- Este trabalho poderá ser feito de forma **individual ou em dupla**;
+
+2- Este trabalho será dividido em duas etapas. A primeira etapa deverá ser baseada em uma análise do tipo Série Temporal (ST) e a segunda em uma Análise Espacial (AE). A primeira etapa irá valer **4,0** pontos e a segunda **6,0** pontos;
+
+3- Em cada etapa poderá ser feita análises com tipos de dados diferentes, ou seja, com desfechos ou estudos distintos para cada tipo de análise;
+
+4- Em ambas as etapas, o tema analisado deverá ser descrito sucintamente assim como as variáveis analisadas, sempre especificando a unidade espacial (ex: setor censitário, bairro, município, estado, etc.) e a temporal (ex: dia, semana, mês, ano, etc) que serão levadas em consideração. Caso os dados sejam os mesmos em ambas as etapas, tal descrição poderá ser feita apenas uma vez;
+
+5- A primeira etapa deverá constar os seguintes procedimentos para as análises: Ler o banco de dados pretendido, transformar em formato de ST, decompor a ST e testar a presença dessas componentes. Opcionalmente ajustar os modelos , testar os pressupostos e interpretar o modelo.  
+
+6- A segunda etapa poderá ser  feita utilizando os tipos de dados em padrão pontual ou em área. Nesta etapa deverá constar um dos seguintes procedimentos para as análises: 
+  
+6.1 – Padrão Pontual
+  
+i) Ler o banco de dados pretendido
+ii) Transformar em formato espacial
+iii) Explorar o Processo de primeira ordem (Ex: Testar CSR, Função Kernel)
+iv) Explorar o Processo de segunda ordem (Ex: Função K, F, L)
+v) Opcional: Modelagem (Ex: GAM)
+
+OU 
+
+6.2 – Dados de Área  
+
+i) Ler o arquivo vetorial (.shp) e/ou banco de dados pretendido
+ii) criar Matriz de Vizinhança
+iii) Análise exploratória Espacial (Mapas temáticos, autocorrelação espacial)
+iv) Opcional: Modelagem (ex: SAR, CAR ou GWR) 
+
+
+7- Discutir os resultados em ambas as etapas.
+
+8- Entregar um relatório escrito em PDF no formato de artigo com introdução, objetivos, metodologia, resultados e sua respectiva análise e uma breve discussão.
+
+9- Não esquecer de compactar todos os scripts e dados em um unico arquivo com seu nome ou nome da dupla e data 
+(por exemplo Laís_&_Oswaldo_04Ago2021.ZIP).
+
+
+10- O prazo **FINAL** para envio dos trabalhos é **06 de Agosto de 2021**
+
+11- Envio do trabalho devera ser feito usando o link abaixo!
+
+[Clique aqui para enviar o arquivo final](https://own)
+
+### Sugestões de locais para baixar os dados e os mapas
+
+[SIDRA/IBGE](https://sidra.ibge.gov.br/home/pms/brasil)
+
+[TABNET-MS](http://www2.datasus.gov.br/DATASUS/index.php?area=02)
+
+[openDataSUS](https://opendatasus.saude.gov.br)
+
+[Brasil.IO](https://brasil.io/home/) 
+
+## Ficha de Avaliação
+
+Para que possamos melhorar o curso gostaríamos muito de contar com a colaboração de vocês, para isso pedimos que preencham um formulário de avaliação do curso no google forms. 
+
+O formulário pode ser preenchido de uma maneira anonima e conta com uma sessão de identificação , nome (opcional) se é aluno de mestrado ou doutorado e  qual é sua área de formação básica. Em seguida  pedimos que avaliem o curso em 4 módulos  
+
+* Estudos Ecológico
+* Series temporais 
+* Analise exploratória espacial
+* Modelagem espacial
+
+e ao final existe um campo livre onde você poderá fazer criticas, observações , sugestões etc… 
+
+**por favor preencha com atenção e envie somente uma vez, o formulário é anonimo não temos como identificar duplicidades!**
+
+clique no link abaixo e acesse:
+
+[Google Forms](https://xxxxxxx)
+  
+## FIM 
+
+**Parabéns você chegou ao final do Curso**
