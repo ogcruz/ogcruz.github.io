@@ -1,7 +1,0 @@
-book_filename: "bookdown2023"
-chapter_name: " "
-repo: https://github.com/seankross/bookdown-start
-output_dir: docs
-rmd_files: ["ecologico_book.Rmd"]
-clean: [packages.bib, bookdown.bbl]
-new_session: yes
