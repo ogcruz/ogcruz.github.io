@@ -748,11 +748,19 @@ Fonte: Dissertação “Análisis espacial de factores socioeconómicos, de serv
 <div id="exemplo-i-malhas-no-r-com-geobr" class="section level2 hasAnchor" number="6.18">
 <h2><span class="header-section-number">6.18</span> Exemplo I: Malhas no R com geobr<a href="introdução-à-análise-estatística-espacial.html#exemplo-i-malhas-no-r-com-geobr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O pacote <a href="https://github.com/ipeaGIT/geobr">geobr</a> desenvolvido pelo IPEA facilita a obtenção de malhas de estados, municípios e outras regionalizações diretamente no R. Vamos demonstrar um breve exemplo de suas funcionalidades.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="introdução-à-análise-estatística-espacial.html#cb110-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb110-2"><a href="introdução-à-análise-estatística-espacial.html#cb110-2" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="introdução-à-análise-estatística-espacial.html#cb110-3" tabindex="-1"></a><span class="co"># Caso geobr não esteja instalado, rodar:</span></span>
+<span id="cb110-4"><a href="introdução-à-análise-estatística-espacial.html#cb110-4" tabindex="-1"></a><span class="co"># install.packages(&#39;geobr&#39;)</span></span>
+<span id="cb110-5"><a href="introdução-à-análise-estatística-espacial.html#cb110-5" tabindex="-1"></a></span>
+<span id="cb110-6"><a href="introdução-à-análise-estatística-espacial.html#cb110-6" tabindex="-1"></a><span class="fu">library</span>(geobr)</span></code></pre></div>
 <div id="malha-de-municípios-estado-de-são-paulo" class="section level4 hasAnchor" number="6.18.0.1">
 <h4><span class="header-section-number">6.18.0.1</span> Malha de municípios: Estado de São Paulo<a href="introdução-à-análise-estatística-espacial.html#malha-de-municípios-estado-de-são-paulo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>As principais funções do pacote <code>geobr</code> para obtenção de malhas têm o prefixo “<code>read_</code>”. Em seguida, especificamos o nível de agregação que desejamos, como por exemplo: unidades da federação (<code>read_state()</code>), municípios (<code>read_municipality()</code>), ou bairros (<code>read_neighborhood</code>).</p>
 <p>Neste primeiro exemplo, vamos recuperar a malha dos municípios do estado de São Paulo:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="introdução-à-análise-estatística-espacial.html#cb111-1" tabindex="-1"></a>malha_sp <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="st">&quot;SP&quot;</span>)</span></code></pre></div>
 <p>E assim, obtemos o seguinte objeto:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="introdução-à-análise-estatística-espacial.html#cb112-1" tabindex="-1"></a><span class="fu">head</span>(malha_sp)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 4 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
@@ -767,11 +775,17 @@ Fonte: Dissertação “Análisis espacial de factores socioeconómicos, de serv
 ## 6   3500550 Águas De Santa Bárbara         35           SP MULTIPOLYGON (((-49.29 -22....</code></pre>
 <p>Note a coluna <code>geom</code>; é ela que contém as informações sobre a geometria dos municípios.</p>
 <p>Para visualizar podemos usar a função nativa <code>plot()</code>, mas também podemos usar o <code>ggplot2</code>, com a função <code>geom_sf()</code></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="introdução-à-análise-estatística-espacial.html#cb114-1" tabindex="-1"></a><span class="fu">ggplot</span>(malha_sp) <span class="sc">+</span> </span>
+<span id="cb114-2"><a href="introdução-à-análise-estatística-espacial.html#cb114-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">geometry=</span>geom)) <span class="sc">+</span> <span class="co"># especificamos a coluna referente à geometria</span></span>
+<span id="cb114-3"><a href="introdução-à-análise-estatística-espacial.html#cb114-3" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="co"># para gerar um gráfico limpo, sem os eixos</span></span></code></pre></div>
 <p><img src="ecologico_book_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
 </div>
 <div id="malha-de-bairros-rio-de-janeiro" class="section level4 hasAnchor" number="6.18.0.2">
 <h4><span class="header-section-number">6.18.0.2</span> Malha de bairros: Rio de Janeiro<a href="introdução-à-análise-estatística-espacial.html#malha-de-bairros-rio-de-janeiro" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Agora vamos realizar o mesmo procedimento, mas com um nível de agregação menor: bairros. Podemos obter dados nesse nível utilizando agora a função <code>read_neighborhood</code>. Essa função não permite um filtro de localidade diretamente na chamada da função; assim temos que recuperar a malha de bairros do Brasil inteiro para posteriormente realizar o filtro desejado:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="introdução-à-análise-estatística-espacial.html#cb115-1" tabindex="-1"></a>malha_rio <span class="ot">&lt;-</span> <span class="fu">read_neighborhood</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb115-2"><a href="introdução-à-análise-estatística-espacial.html#cb115-2" tabindex="-1"></a>    <span class="fu">filter</span>(name_muni <span class="sc">==</span> <span class="st">&quot;Rio De Janeiro&quot;</span>)  <span class="co"># filtrando apenas o município do Rio</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="introdução-à-análise-estatística-espacial.html#cb116-1" tabindex="-1"></a><span class="fu">head</span>(malha_rio)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 11 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
@@ -785,6 +799,8 @@ Fonte: Dissertação “Análisis espacial de factores socioeconómicos, de serv
 ## 5   3304557 Rio De Janeiro          Flamengo      330455705009      33045570509         Botafogo     330455705 Rio De Janeiro         33           RJ   neighborhood MULTIPOLYGON (((-43.18 -22....
 ## 6   3304557 Rio De Janeiro            Glória      330455705010      33045570509         Botafogo     330455705 Rio De Janeiro         33           RJ   neighborhood MULTIPOLYGON (((-43.18 -22....</code></pre>
 <p>Repetimos o código usado anteriormente; a coluna <code>geom</code> agora refere-se aos limites dos bairros.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="introdução-à-análise-estatística-espacial.html#cb118-1" tabindex="-1"></a><span class="fu">ggplot</span>(malha_rio) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">geometry =</span> geom)) <span class="sc">+</span></span>
+<span id="cb118-2"><a href="introdução-à-análise-estatística-espacial.html#cb118-2" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
 <p><img src="ecologico_book_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 <p>Nos capítulos referentes à análise de dados de área outras funções serão exploradas.</p>
 </div>
@@ -792,8 +808,21 @@ Fonte: Dissertação “Análisis espacial de factores socioeconómicos, de serv
 <div id="exemplo-ii-geocodificação" class="section level2 hasAnchor" number="6.19">
 <h2><span class="header-section-number">6.19</span> Exemplo II: Geocodificação<a href="introdução-à-análise-estatística-espacial.html#exemplo-ii-geocodificação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Há diversas formas de realizar o processo de geocodificação dentro e fora do R. O pacote <a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a> permite o envio de um <em>data frame</em> de endereços no R e retorna um objeto <em>tibble</em> com os resultados da geocodificação. O pacote permite a escolha do servidor de preferência - <em>OpenStreetMap</em>, <em>ArcGIS</em>, <em>Bing</em>, <em>Google</em> (Requer API) e outros.</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="introdução-à-análise-estatística-espacial.html#cb119-1" tabindex="-1"></a><span class="co"># se não estiver instalado, rodar:</span></span>
+<span id="cb119-2"><a href="introdução-à-análise-estatística-espacial.html#cb119-2" tabindex="-1"></a><span class="co"># install.packages(&#39;tidygeocoder&#39;)</span></span>
+<span id="cb119-3"><a href="introdução-à-análise-estatística-espacial.html#cb119-3" tabindex="-1"></a></span>
+<span id="cb119-4"><a href="introdução-à-análise-estatística-espacial.html#cb119-4" tabindex="-1"></a><span class="fu">library</span>(tidygeocoder)</span></code></pre></div>
 <p>Vamos criar um objeto <em>tibble</em> (equivalente ao <em>data frame</em>, no universo <code>tidyverse</code>) com alguns pontos no Rio de Janeiro:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="introdução-à-análise-estatística-espacial.html#cb120-1" tabindex="-1"></a>enderecos <span class="ot">&lt;-</span> <span class="fu">tribble</span>(<span class="sc">~</span>local, <span class="sc">~</span>endereco, <span class="st">&quot;ENSP&quot;</span>, <span class="st">&quot;R. Leopoldo Bulhões, 1480 - Manguinhos, Rio de Janeiro - RJ&quot;</span>,</span>
+<span id="cb120-2"><a href="introdução-à-análise-estatística-espacial.html#cb120-2" tabindex="-1"></a>    <span class="st">&quot;UPA Engenho Novo&quot;</span>, <span class="st">&quot;Rua Sousa Barros, 70 - Engenho Novo, Rio de Janeiro - RJ&quot;</span>,</span>
+<span id="cb120-3"><a href="introdução-à-análise-estatística-espacial.html#cb120-3" tabindex="-1"></a>    <span class="st">&quot;Endereço sem bairro&quot;</span>, <span class="st">&quot;Av. de Santa Cruz, 7138, Rio de Janeiro - RJ&quot;</span>,</span>
+<span id="cb120-4"><a href="introdução-à-análise-estatística-espacial.html#cb120-4" tabindex="-1"></a>    <span class="st">&quot;Praia de Sepetiba&quot;</span>, <span class="st">&quot;Praia de Sepetiba, Rio de Janeiro - RJ&quot;</span>)</span>
+<span id="cb120-5"><a href="introdução-à-análise-estatística-espacial.html#cb120-5" tabindex="-1"></a></span>
+<span id="cb120-6"><a href="introdução-à-análise-estatística-espacial.html#cb120-6" tabindex="-1"></a>enderecos_cod <span class="ot">&lt;-</span> enderecos <span class="sc">%&gt;%</span></span>
+<span id="cb120-7"><a href="introdução-à-análise-estatística-espacial.html#cb120-7" tabindex="-1"></a>    <span class="fu">geocode</span>(endereco, <span class="at">method =</span> <span class="st">&quot;osm&quot;</span>, <span class="at">lat =</span> latitude,</span>
+<span id="cb120-8"><a href="introdução-à-análise-estatística-espacial.html#cb120-8" tabindex="-1"></a>        <span class="at">long =</span> longitude)</span></code></pre></div>
 <p>Conferindo o resultado da solicitação:</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="introdução-à-análise-estatística-espacial.html#cb121-1" tabindex="-1"></a>enderecos_cod</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 4
 ##   local               endereco                                                    latitude longitude
 ##   &lt;chr&gt;               &lt;chr&gt;                                                          &lt;dbl&gt;     &lt;dbl&gt;
@@ -802,6 +831,10 @@ Fonte: Dissertação “Análisis espacial de factores socioeconómicos, de serv
 ## 3 Endereço sem bairro Av. de Santa Cruz, 7138, Rio de Janeiro - RJ                   -22.9     -43.5
 ## 4 Praia de Sepetiba   Praia de Sepetiba, Rio de Janeiro - RJ                         -23.0     -43.7</code></pre>
 <p>Vê-se que nem todos os endereços foram encontrados utilizando o <em>OpenStreetMap</em>. Vamos visualizar os pontos obtidos junto aos bairros do Rio de Janeiro obtidos anteriormente:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="introdução-à-análise-estatística-espacial.html#cb123-1" tabindex="-1"></a><span class="fu">ggplot</span>(enderecos_cod) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> malha_rio, <span class="fu">aes</span>(<span class="at">geometry =</span> geom)) <span class="sc">+</span></span>
+<span id="cb123-2"><a href="introdução-à-análise-estatística-espacial.html#cb123-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(longitude, latitude), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb123-3"><a href="introdução-à-análise-estatística-espacial.html#cb123-3" tabindex="-1"></a>    <span class="fu">geom_label</span>(<span class="fu">aes</span>(longitude, latitude, <span class="at">label =</span> local),</span>
+<span id="cb123-4"><a href="introdução-à-análise-estatística-espacial.html#cb123-4" tabindex="-1"></a>        <span class="at">nudge_y =</span> <span class="sc">-</span><span class="fl">0.018</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span></code></pre></div>
 <p><img src="ecologico_book_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 </div>
 <div id="bibliografia-sugerida-4" class="section level2 hasAnchor" number="6.20">

@@ -979,16 +979,16 @@ Essa função se chama <code>auto.arima()</code>.</p>
 <p><br />
 </p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="modelagem-em-séries-temporais.html#cb85-1" tabindex="-1"></a><span class="fu">predict</span>(modelo1, <span class="at">n.ahead =</span> <span class="dv">12</span>)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-151ce0b14f50f8c22dd1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-151ce0b14f50f8c22dd1">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.361502652599,2757.678206766166,2557.88175625962,2165.069311412589,1801.056789393257,1586.335875771337,1508.247580173643,1362.507843239571,1349.65436216017,1556.876075509979,1607.492524386224,2338.552096896248],[265.371941651055,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-49f0e47296fe5f41e45c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-49f0e47296fe5f41e45c">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.361502652599,2757.678206766166,2557.88175625962,2165.069311412589,1801.056789393257,1586.335875771337,1508.247580173643,1362.507843239571,1349.65436216017,1556.876075509979,1607.492524386224,2338.552096896248],[265.371941651055,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br />
 </p>
 <p>O pacote <em>forecast</em> possui funções para facilitar a predição e visualização. Veja na função abaixo que o modelo já retorna não só o valor predito mas também os limites superior e inferior para os níveis de confiança 80 e 95.</p>
 <p><br />
 </p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="modelagem-em-séries-temporais.html#cb86-1" tabindex="-1"></a><span class="fu">forecast</span>(modelo1,<span class="at">h=</span><span class="dv">12</span>)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-871fece705813419ede8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-871fece705813419ede8">{"x":{"filter":"none","vertical":false,"data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.36,2757.68,2557.88,2165.07,1801.06,1586.34,1508.25,1362.51,1349.65,1556.88,1607.49,2338.55],[2350.27,2387.9,2188.1,1795.29,1431.28,1216.56,1138.47,992.73,979.88,1187.1,1237.72,1968.78],[3030.45,3127.46,2927.66,2534.85,2170.83,1956.11,1878.02,1732.28,1719.43,1926.65,1977.27,2708.33],[2170.24,2192.15,1992.36,1599.54,1235.53,1020.81,942.72,796.98,784.13,991.35,1041.97,1773.03],[3210.48,3323.2,3123.41,2730.59,2366.58,2151.86,2073.77,1928.03,1915.18,2122.4,2173.02,2904.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-62f14f73fb23fe2d695d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-62f14f73fb23fe2d695d">{"x":{"filter":"none","vertical":false,"data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.36,2757.68,2557.88,2165.07,1801.06,1586.34,1508.25,1362.51,1349.65,1556.88,1607.49,2338.55],[2350.27,2387.9,2188.1,1795.29,1431.28,1216.56,1138.47,992.73,979.88,1187.1,1237.72,1968.78],[3030.45,3127.46,2927.66,2534.85,2170.83,1956.11,1878.02,1732.28,1719.43,1926.65,1977.27,2708.33],[2170.24,2192.15,1992.36,1599.54,1235.53,1020.81,942.72,796.98,784.13,991.35,1041.97,1773.03],[3210.48,3323.2,3123.41,2730.59,2366.58,2151.86,2073.77,1928.03,1915.18,2122.4,2173.02,2904.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br />
 </p>
 <p>Ele também facilita a confecção de gráficos.</p>
@@ -1471,7 +1471,7 @@ mes
 <span id="cb93-2"><a href="modelagem-em-séries-temporais.html#cb93-2" tabindex="-1"></a>mod0</span></code></pre></div>
 <p>Sumário do modelo</p>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Fri Sep 22 12:22:41 2023 -->
+<!-- Fri Sep 22 13:26:18 2023 -->
 <table border="1">
 <caption align="bottom">
 </caption>
@@ -1597,7 +1597,7 @@ s(mes)
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="modelagem-em-séries-temporais.html#cb96-1" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">gam</span> ( obitos <span class="sc">~</span> tempo <span class="sc">+</span> <span class="fu">s</span>(mes),<span class="at">data=</span>ldeaths.df,<span class="at">family=</span>poisson)</span>
 <span id="cb96-2"><a href="modelagem-em-séries-temporais.html#cb96-2" tabindex="-1"></a>mod1</span></code></pre></div>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Fri Sep 22 12:22:41 2023 -->
+<!-- Fri Sep 22 13:26:18 2023 -->
 <table border="1">
 <caption align="bottom">
 </caption>
@@ -1830,8 +1830,8 @@ s(mes)
 <span id="cb103-7"><a href="modelagem-em-séries-temporais.html#cb103-7" tabindex="-1"></a>chuvl4 <span class="ot">&lt;-</span> <span class="fu">gam</span>(cases <span class="sc">~</span> <span class="fu">s</span>(<span class="fu">Lag</span>(totrain,<span class="dv">4</span>)),<span class="at">family=</span>poisson,<span class="at">data=</span><span class="fu">subset</span>(lepto, week<span class="sc">&gt;</span><span class="dv">5</span>))</span>
 <span id="cb103-8"><a href="modelagem-em-séries-temporais.html#cb103-8" tabindex="-1"></a>chuvl5 <span class="ot">&lt;-</span> <span class="fu">gam</span>(cases <span class="sc">~</span> <span class="fu">s</span>(<span class="fu">Lag</span>(totrain,<span class="dv">5</span>)),<span class="at">family=</span>poisson,<span class="at">data=</span><span class="fu">subset</span>(lepto, week<span class="sc">&gt;</span><span class="dv">5</span>))</span></code></pre></div>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="modelagem-em-séries-temporais.html#cb104-1" tabindex="-1"></a><span class="fu">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d2f437e131924490d704" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d2f437e131924490d704">{"x":{"filter":"none","vertical":false,"data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.720000000000001,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-01140f66e8e0af2a3869" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-01140f66e8e0af2a3869">{"x":{"filter":"none","vertical":false,"data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.720000000000001,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>Ajustando a série dos casos de leptospirose via distribuição Binomial Negativa</li>
 </ul>
@@ -1844,8 +1844,8 @@ s(mes)
 <span id="cb105-7"><a href="modelagem-em-séries-temporais.html#cb105-7" tabindex="-1"></a>chuvnb5<span class="sc">$</span>family<span class="sc">$</span><span class="fu">getTheta</span>()</span></code></pre></div>
 <p>[1] 0.4864</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="modelagem-em-séries-temporais.html#cb106-1" tabindex="-1"></a><span class="fu">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6466c529713afd161daf" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6466c529713afd161daf">{"x":{"filter":"none","vertical":false,"data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6144e519192eba9de09c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6144e519192eba9de09c">{"x":{"filter":"none","vertical":false,"data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>Comparando os AIC’s de ambos os modelos entre os lags</li>
 </ul>
