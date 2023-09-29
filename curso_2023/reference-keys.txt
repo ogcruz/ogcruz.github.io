@@ -154,3 +154,9 @@ fonte-específica
 exercícios-propostos-4
 exercícios-resolvidos-1
 bibliografia-sugerida-5
+padrões-pontuais-ii
+alguns-usos-em-epidemiologia-espacial
+exemplo-com-os-dados-de-dengue-em-douradosms
+modelos-aditivos-generalizados-gam
+modelos-espaciais-generalizados-aditivos
+bibliografia-sugerida-6

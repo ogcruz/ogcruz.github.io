@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS 2023</title>
   <meta name="description" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS 2023" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 5 Modelagem em Séries Temporais | ESTUDOS ECOLÓGICOS 2023" />
   <meta property="og:type" content="book" />
@@ -51,12 +51,12 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.29/datatables.js"></script>
-<link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
 <link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
 <script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
 <link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
@@ -132,10 +132,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -362,6 +358,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.11.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>7.11.1</b> Exercícios Resolvidos</a></li>
 </ul></li>
 <li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>7.12</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#alguns-usos-em-epidemiologia-espacial"><i class="fa fa-check"></i><b>8.1</b> Alguns usos em Epidemiologia Espacial</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.2</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-aditivos-generalizados-gam"><i class="fa fa-check"></i><b>8.3</b> Modelos Aditivos Generalizados (GAM)</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.4</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.5" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
@@ -728,7 +732,7 @@ Time series analysis: Forecasting and control, San Francisco: Holden-Day.</code>
 <p><br />
 </p>
 <p>Segue abaixo um exemplo um exemplo de ACF, com já vimos anteriormente, e do PACF. Observe que há duas linhas horizontais que representam os limites do teste de significância sendo que valores acima ou abaixo da linha são estatisticamente significantes.</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-70-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-1.png" width="960" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>No <span class="math inline">\(lag = 1\)</span>, a ACF e a PACF são iguais.</p></li>
 <li><p>Na PACF somente existe correlação até o lag igual a ordem do modelo AR - ex: modelo de ordem 3 somente
@@ -805,7 +809,7 @@ apresenta valores de PACF até o <span class="math inline">\(3^o\)</span> lag.</
 <span id="cb65-3"><a href="modelagem-em-séries-temporais.html#cb65-3" tabindex="-1"></a></span>
 <span id="cb65-4"><a href="modelagem-em-séries-temporais.html#cb65-4" tabindex="-1"></a><span class="co"># Construindo o gráfico de ST</span></span>
 <span id="cb65-5"><a href="modelagem-em-séries-temporais.html#cb65-5" tabindex="-1"></a><span class="fu">ts.plot</span>(ar.sim)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="modelagem-em-séries-temporais.html#cb66-1" tabindex="-1"></a><span class="co"># ACF e PACF</span></span>
 <span id="cb66-2"><a href="modelagem-em-séries-temporais.html#cb66-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb66-3"><a href="modelagem-em-séries-temporais.html#cb66-3" tabindex="-1"></a>ar.acf <span class="ot">&lt;-</span> <span class="fu">acf</span>(ar.sim,<span class="at">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="at">plot=</span>T)</span>
@@ -813,14 +817,14 @@ apresenta valores de PACF até o <span class="math inline">\(3^o\)</span> lag.</
 <span id="cb66-5"><a href="modelagem-em-séries-temporais.html#cb66-5" tabindex="-1"></a></span>
 <span id="cb66-6"><a href="modelagem-em-séries-temporais.html#cb66-6" tabindex="-1"></a><span class="fu">plot</span>(ar.acf)</span>
 <span id="cb66-7"><a href="modelagem-em-séries-temporais.html#cb66-7" tabindex="-1"></a><span class="fu">plot</span>(ar.pacf)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-71-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Simulando um processo AR(2)</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="modelagem-em-séries-temporais.html#cb67-1" tabindex="-1"></a><span class="co"># Simulando 100 observações através de um processo AR(2) com média 30</span></span>
 <span id="cb67-2"><a href="modelagem-em-séries-temporais.html#cb67-2" tabindex="-1"></a>ar.sim <span class="ot">&lt;-</span> <span class="fu">arima.sim</span>(<span class="at">model=</span><span class="fu">list</span>(<span class="at">ar=</span><span class="fu">c</span>(.<span class="dv">9</span>,<span class="sc">-</span>.<span class="dv">2</span>)),<span class="at">n=</span><span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">30</span>)</span>
 <span id="cb67-3"><a href="modelagem-em-séries-temporais.html#cb67-3" tabindex="-1"></a></span>
 <span id="cb67-4"><a href="modelagem-em-séries-temporais.html#cb67-4" tabindex="-1"></a><span class="co"># Construindo o gráfico de ST</span></span>
 <span id="cb67-5"><a href="modelagem-em-séries-temporais.html#cb67-5" tabindex="-1"></a><span class="fu">ts.plot</span>(ar.sim)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="modelagem-em-séries-temporais.html#cb68-1" tabindex="-1"></a><span class="co"># ACF e PACF</span></span>
 <span id="cb68-2"><a href="modelagem-em-séries-temporais.html#cb68-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb68-3"><a href="modelagem-em-séries-temporais.html#cb68-3" tabindex="-1"></a>ar.acf <span class="ot">&lt;-</span> <span class="fu">acf</span>(ar.sim,<span class="at">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="at">plot=</span>T)</span>
@@ -828,14 +832,14 @@ apresenta valores de PACF até o <span class="math inline">\(3^o\)</span> lag.</
 <span id="cb68-5"><a href="modelagem-em-séries-temporais.html#cb68-5" tabindex="-1"></a></span>
 <span id="cb68-6"><a href="modelagem-em-séries-temporais.html#cb68-6" tabindex="-1"></a><span class="fu">plot</span>(ar.acf)</span>
 <span id="cb68-7"><a href="modelagem-em-séries-temporais.html#cb68-7" tabindex="-1"></a><span class="fu">plot</span>(ar.pacf)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-72-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Simulando um processo MA(2)</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="modelagem-em-séries-temporais.html#cb69-1" tabindex="-1"></a><span class="co"># Simulando 200 observações através de um processo MA(2) com média 30</span></span>
 <span id="cb69-2"><a href="modelagem-em-séries-temporais.html#cb69-2" tabindex="-1"></a>ma.sim <span class="ot">&lt;-</span> <span class="fu">arima.sim</span>(<span class="at">model=</span><span class="fu">list</span>(<span class="at">ma=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="at">n=</span><span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">30</span>)</span>
 <span id="cb69-3"><a href="modelagem-em-séries-temporais.html#cb69-3" tabindex="-1"></a></span>
 <span id="cb69-4"><a href="modelagem-em-séries-temporais.html#cb69-4" tabindex="-1"></a><span class="co"># Construindo o gráfico de ST</span></span>
 <span id="cb69-5"><a href="modelagem-em-séries-temporais.html#cb69-5" tabindex="-1"></a><span class="fu">ts.plot</span>(ma.sim)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="modelagem-em-séries-temporais.html#cb70-1" tabindex="-1"></a><span class="co"># ACF e PACF</span></span>
 <span id="cb70-2"><a href="modelagem-em-séries-temporais.html#cb70-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb70-3"><a href="modelagem-em-séries-temporais.html#cb70-3" tabindex="-1"></a>ma.acf <span class="ot">&lt;-</span> <span class="fu">acf</span>(ma.sim,<span class="at">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="at">plot=</span>T)</span>
@@ -843,14 +847,14 @@ apresenta valores de PACF até o <span class="math inline">\(3^o\)</span> lag.</
 <span id="cb70-5"><a href="modelagem-em-séries-temporais.html#cb70-5" tabindex="-1"></a></span>
 <span id="cb70-6"><a href="modelagem-em-séries-temporais.html#cb70-6" tabindex="-1"></a><span class="fu">plot</span>(ma.acf)</span>
 <span id="cb70-7"><a href="modelagem-em-séries-temporais.html#cb70-7" tabindex="-1"></a><span class="fu">plot</span>(ma.pacf)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-73-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Simulando um processo ARMA(2,2)</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="modelagem-em-séries-temporais.html#cb71-1" tabindex="-1"></a><span class="co"># Simulando 200 observações através de um processo ARMA(2,2) com média 30</span></span>
 <span id="cb71-2"><a href="modelagem-em-séries-temporais.html#cb71-2" tabindex="-1"></a>arma.sim <span class="ot">&lt;-</span><span class="fu">arima.sim</span>(<span class="at">model=</span><span class="fu">list</span>(<span class="at">ar=</span><span class="fu">c</span>(.<span class="dv">9</span>,<span class="sc">-</span>.<span class="dv">2</span>),<span class="at">ma=</span><span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">7</span>,.<span class="dv">1</span>)),<span class="at">n=</span><span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">30</span>)</span>
 <span id="cb71-3"><a href="modelagem-em-séries-temporais.html#cb71-3" tabindex="-1"></a></span>
 <span id="cb71-4"><a href="modelagem-em-séries-temporais.html#cb71-4" tabindex="-1"></a><span class="co"># Construindo o gráfico de ST</span></span>
 <span id="cb71-5"><a href="modelagem-em-séries-temporais.html#cb71-5" tabindex="-1"></a><span class="fu">ts.plot</span>(arma.sim)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="modelagem-em-séries-temporais.html#cb72-1" tabindex="-1"></a><span class="co"># ACF e PACF</span></span>
 <span id="cb72-2"><a href="modelagem-em-séries-temporais.html#cb72-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb72-3"><a href="modelagem-em-séries-temporais.html#cb72-3" tabindex="-1"></a>arma.acf <span class="ot">&lt;-</span> <span class="fu">acf</span>(arma.sim,<span class="at">type=</span><span class="st">&quot;correlation&quot;</span>,<span class="at">plot=</span>T)</span>
@@ -858,7 +862,7 @@ apresenta valores de PACF até o <span class="math inline">\(3^o\)</span> lag.</
 <span id="cb72-5"><a href="modelagem-em-séries-temporais.html#cb72-5" tabindex="-1"></a></span>
 <span id="cb72-6"><a href="modelagem-em-séries-temporais.html#cb72-6" tabindex="-1"></a><span class="fu">plot</span>(arma.acf)</span>
 <span id="cb72-7"><a href="modelagem-em-séries-temporais.html#cb72-7" tabindex="-1"></a><span class="fu">plot</span>(arma.pacf)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-74-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-2.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="métricas-para-avaliar-a-qualidade-do-ajuste" class="section level2 hasAnchor" number="5.8">
@@ -900,19 +904,19 @@ apresenta valores de PACF até o <span class="math inline">\(3^o\)</span> lag.</
 <h2><span class="header-section-number">5.10</span> Ajuste manual de modelo ARIMA<a href="modelagem-em-séries-temporais.html#ajuste-manual-de-modelo-arima" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="modelagem-em-séries-temporais.html#cb73-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
 <span id="cb73-2"><a href="modelagem-em-séries-temporais.html#cb73-2" tabindex="-1"></a><span class="fu">ggtsdisplay</span>(ldeaths)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-76-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="modelagem-em-séries-temporais.html#cb74-1" tabindex="-1"></a>modelo0 <span class="ot">&lt;-</span> <span class="fu">Arima</span>(ldeaths,<span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
 <span id="cb74-2"><a href="modelagem-em-séries-temporais.html#cb74-2" tabindex="-1"></a><span class="fu">checkresiduals</span>(modelo0)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-2.png" width="100%" style="display: block; margin: auto;" />
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-76-2.png" width="100%" style="display: block; margin: auto;" />
 Ljung-Box test</p>
 <p>data: Residuals from ARIMA(1,0,0)(1,1,1)[12]
 Q* = 11, df = 11, p-value = 0.5</p>
 <p>Model df: 3. Total lags used: 14</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="modelagem-em-séries-temporais.html#cb75-1" tabindex="-1"></a><span class="fu">tsdiag</span>(modelo0)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-75-3.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-76-3.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="modelagem-em-séries-temporais.html#cb76-1" tabindex="-1"></a><span class="fu">plot</span>(ldeaths)</span>
 <span id="cb76-2"><a href="modelagem-em-séries-temporais.html#cb76-2" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">fitted</span>(modelo0),<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-76-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-77-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ajuste-automático-de-modelos-arima" class="section level2 hasAnchor" number="5.11">
 <h2><span class="header-section-number">5.11</span> Ajuste automático de modelos ARIMA<a href="modelagem-em-séries-temporais.html#ajuste-automático-de-modelos-arima" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -950,7 +954,7 @@ Essa função se chama <code>auto.arima()</code>.</p>
 ## sigma^2 = 70422:  log likelihood = -423.3
 ## AIC=854.6   AICc=855.3   BIC=863</code></pre>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="modelagem-em-séries-temporais.html#cb80-1" tabindex="-1"></a><span class="fu">tsdiag</span>(modelo1)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-80-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-81-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="modelagem-em-séries-temporais.html#cb81-1" tabindex="-1"></a>modelo2</span></code></pre></div>
 <pre><code>## Series: ldeaths 
 ## ARIMA(2,0,0)(0,1,2)[12] with drift 
@@ -963,13 +967,13 @@ Essa função se chama <code>auto.arima()</code>.</p>
 ## sigma^2 = 49449:  log likelihood = -416.4
 ## AIC=844.8   AICc=846.4   BIC=857.4</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="modelagem-em-séries-temporais.html#cb83-1" tabindex="-1"></a><span class="fu">tsdiag</span>(modelo2)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-83-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-84-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Comparando os ajustes dos modelos:</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="modelagem-em-séries-temporais.html#cb84-1" tabindex="-1"></a><span class="fu">plot</span>(ldeaths,<span class="at">lwd=</span><span class="dv">2</span>)</span>
 <span id="cb84-2"><a href="modelagem-em-séries-temporais.html#cb84-2" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">fitted</span>(modelo0),<span class="at">col=</span><span class="st">&quot;red&quot;</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
 <span id="cb84-3"><a href="modelagem-em-séries-temporais.html#cb84-3" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">fitted</span>(modelo1),<span class="at">col=</span><span class="st">&quot;blue&quot;</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
 <span id="cb84-4"><a href="modelagem-em-séries-temporais.html#cb84-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">fitted</span>(modelo2),<span class="at">col=</span><span class="st">&quot;orange&quot;</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-84-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-85-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="modelos-de-previsão" class="section level2 hasAnchor" number="5.12">
 <h2><span class="header-section-number">5.12</span> Modelos de Previsão<a href="modelagem-em-séries-temporais.html#modelos-de-previsão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -979,21 +983,21 @@ Essa função se chama <code>auto.arima()</code>.</p>
 <p><br />
 </p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="modelagem-em-séries-temporais.html#cb85-1" tabindex="-1"></a><span class="fu">predict</span>(modelo1, <span class="at">n.ahead =</span> <span class="dv">12</span>)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-49f0e47296fe5f41e45c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-49f0e47296fe5f41e45c">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.361502652599,2757.678206766166,2557.88175625962,2165.069311412589,1801.056789393257,1586.335875771337,1508.247580173643,1362.507843239571,1349.65436216017,1556.876075509979,1607.492524386224,2338.552096896248],[265.371941651055,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008,288.5385086595008]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7678feb109aec07ddc9f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7678feb109aec07ddc9f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[2690.3615026526,2757.67820676617,2557.88175625962,2165.06931141259,1801.05678939326,1586.33587577134,1508.24758017364,1362.50784323957,1349.65436216017,1556.87607550998,1607.49252438622,2338.55209689625],[265.371941651055,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501,288.538508659501]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pred<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br />
 </p>
 <p>O pacote <em>forecast</em> possui funções para facilitar a predição e visualização. Veja na função abaixo que o modelo já retorna não só o valor predito mas também os limites superior e inferior para os níveis de confiança 80 e 95.</p>
 <p><br />
 </p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="modelagem-em-séries-temporais.html#cb86-1" tabindex="-1"></a><span class="fu">forecast</span>(modelo1,<span class="at">h=</span><span class="dv">12</span>)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-62f14f73fb23fe2d695d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-62f14f73fb23fe2d695d">{"x":{"filter":"none","vertical":false,"data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.36,2757.68,2557.88,2165.07,1801.06,1586.34,1508.25,1362.51,1349.65,1556.88,1607.49,2338.55],[2350.27,2387.9,2188.1,1795.29,1431.28,1216.56,1138.47,992.73,979.88,1187.1,1237.72,1968.78],[3030.45,3127.46,2927.66,2534.85,2170.83,1956.11,1878.02,1732.28,1719.43,1926.65,1977.27,2708.33],[2170.24,2192.15,1992.36,1599.54,1235.53,1020.81,942.72,796.98,784.13,991.35,1041.97,1773.03],[3210.48,3323.2,3123.41,2730.59,2366.58,2151.86,2073.77,1928.03,1915.18,2122.4,2173.02,2904.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6de02ba59361607d3e85" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6de02ba59361607d3e85">{"x":{"filter":"none","vertical":false,"data":[["Jan 1980","Feb 1980","Mar 1980","Apr 1980","May 1980","Jun 1980","Jul 1980","Aug 1980","Sep 1980","Oct 1980","Nov 1980","Dec 1980"],[2690.36,2757.68,2557.88,2165.07,1801.06,1586.34,1508.25,1362.51,1349.65,1556.88,1607.49,2338.55],[2350.27,2387.9,2188.1,1795.29,1431.28,1216.56,1138.47,992.73,979.88,1187.1,1237.72,1968.78],[3030.45,3127.46,2927.66,2534.85,2170.83,1956.11,1878.02,1732.28,1719.43,1926.65,1977.27,2708.33],[2170.24,2192.15,1992.36,1599.54,1235.53,1020.81,942.72,796.98,784.13,991.35,1041.97,1773.03],[3210.48,3323.2,3123.41,2730.59,2366.58,2151.86,2073.77,1928.03,1915.18,2122.4,2173.02,2904.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Point Forecast<\/th>\n      <th>Lo 80<\/th>\n      <th>Hi 80<\/th>\n      <th>Lo 95<\/th>\n      <th>Hi 95<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p><br />
 </p>
 <p>Ele também facilita a confecção de gráficos.</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="modelagem-em-séries-temporais.html#cb87-1" tabindex="-1"></a><span class="fu">plot</span>(pred)  <span class="co"># a função autoplot produz no formato ggplot</span></span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-89-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-90-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Para saber mais sobre séries temporais e previsões recomendamos o excelente livro online
 <a href="https://otexts.com/fpp3/">Forecasting: Principles and Practice Rob J Hyndman and George Athanasopoulos</a></p>
 </div>
@@ -1024,7 +1028,7 @@ para a qual:</p>
 <span id="cb88-2"><a href="modelagem-em-séries-temporais.html#cb88-2" tabindex="-1"></a>uktemp <span class="ot">&lt;-</span> <span class="fu">ts</span>(<span class="fu">as.vector</span>(<span class="fu">t</span>(uktemp[,<span class="dv">2</span><span class="sc">:</span><span class="dv">13</span>])),<span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1970</span>,<span class="dv">1</span>),<span class="at">frequency =</span> <span class="dv">12</span>)</span>
 <span id="cb88-3"><a href="modelagem-em-séries-temporais.html#cb88-3" tabindex="-1"></a>uktemp.ts <span class="ot">&lt;-</span> <span class="fu">window</span>(uktemp,<span class="at">start=</span><span class="fu">c</span>(<span class="dv">1974</span>,<span class="dv">1</span>),<span class="at">end=</span><span class="fu">c</span>(<span class="dv">1979</span>,<span class="dv">12</span>))</span>
 <span id="cb88-4"><a href="modelagem-em-séries-temporais.html#cb88-4" tabindex="-1"></a>fcc <span class="ot">&lt;-</span> <span class="fu">ccf</span>(uktemp.ts,ldeaths)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-90-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-91-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="modelagem-em-séries-temporais.html#cb89-1" tabindex="-1"></a><span class="fu">cbind</span>(fcc<span class="sc">$</span>lag,fcc<span class="sc">$</span>acf)</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <tbody>
@@ -1470,8 +1474,8 @@ mes
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="modelagem-em-séries-temporais.html#cb93-1" tabindex="-1"></a>mod0 <span class="ot">&lt;-</span> <span class="fu">gam</span> ( obitos <span class="sc">~</span> <span class="fu">s</span>(tempo) <span class="sc">+</span> <span class="fu">s</span>(mes),<span class="at">data=</span>ldeaths.df,<span class="at">family =</span> poisson)</span>
 <span id="cb93-2"><a href="modelagem-em-séries-temporais.html#cb93-2" tabindex="-1"></a>mod0</span></code></pre></div>
 <p>Sumário do modelo</p>
-<!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Fri Sep 22 13:26:18 2023 -->
+<!-- html table generated in R 4.2.2 by xtable 1.8-4 package -->
+<!-- Fri Sep 29 12:47:55 2023 -->
 <table border="1">
 <caption align="bottom">
 </caption>
@@ -1503,7 +1507,7 @@ p-value
 0.0027
 </td>
 <td align="right">
-2814.3328
+2814.3329
 </td>
 <td align="right">
 &lt; 0.0001
@@ -1548,13 +1552,13 @@ s(tempo)
 s(mes)
 </td>
 <td align="right">
-8.8912
+8.8911
 </td>
 <td align="right">
 8.9965
 </td>
 <td align="right">
-9819.3624
+9819.3608
 </td>
 <td align="right">
 &lt; 0.0001
@@ -1564,11 +1568,11 @@ s(mes)
 </table>
 <p>R-quadrado(ajustado) = 0.86 Deviance Explicada = 0.91 AIC = 1772.74</p>
 <p><strong>Gráfico dos termos suaves:</strong></p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
 <p><strong>Análise de resíduos</strong></p>
 <p>Vamos verificar se sobraram estruturas nos resíduos usando a ACF dos resíduos e o teste de Ljung-Box:</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="modelagem-em-séries-temporais.html#cb94-1" tabindex="-1"></a><span class="fu">acf</span>(<span class="fu">residuals</span>(mod0))</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="modelagem-em-séries-temporais.html#cb95-1" tabindex="-1"></a><span class="fu">Box.test</span>(<span class="fu">residuals</span>(mod0),<span class="at">type=</span><span class="st">&#39;Ljung-Box&#39;</span>)</span></code></pre></div>
 <table style="width:44%;">
 <caption>Box-Ljung test: <code>residuals(mod0)</code></caption>
@@ -1596,8 +1600,8 @@ s(mes)
 <p>Vamos agora usar a variavel <em>tempo</em> de forma linear no modelo.</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="modelagem-em-séries-temporais.html#cb96-1" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">gam</span> ( obitos <span class="sc">~</span> tempo <span class="sc">+</span> <span class="fu">s</span>(mes),<span class="at">data=</span>ldeaths.df,<span class="at">family=</span>poisson)</span>
 <span id="cb96-2"><a href="modelagem-em-séries-temporais.html#cb96-2" tabindex="-1"></a>mod1</span></code></pre></div>
-<!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Fri Sep 22 13:26:18 2023 -->
+<!-- html table generated in R 4.2.2 by xtable 1.8-4 package -->
+<!-- Fri Sep 29 12:47:56 2023 -->
 <table border="1">
 <caption align="bottom">
 </caption>
@@ -1690,7 +1694,7 @@ s(mes)
 </table>
 <p>R-quadrado(ajustado) = 0.86 Deviance Explicada =0.9 AIC = 1946.68</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="modelagem-em-séries-temporais.html#cb97-1" tabindex="-1"></a><span class="fu">acf</span>(<span class="fu">residuals</span>(mod1))</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="modelagem-em-séries-temporais.html#cb98-1" tabindex="-1"></a><span class="fu">Box.test</span>(<span class="fu">residuals</span>(mod1),<span class="at">type=</span><span class="st">&#39;Ljung-Box&#39;</span>)</span></code></pre></div>
 <table style="width:44%;">
 <caption>Box-Ljung test: <code>residuals(mod1)</code></caption>
@@ -1754,7 +1758,7 @@ s(mes)
 <span id="cb99-12"><a href="modelagem-em-séries-temporais.html#cb99-12" tabindex="-1"></a> <span class="at">outer=</span><span class="cn">TRUE</span>, <span class="at">layout=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="at">pch=</span><span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,</span>
 <span id="cb99-13"><a href="modelagem-em-séries-temporais.html#cb99-13" tabindex="-1"></a>  <span class="at">scales=</span><span class="fu">list</span>(<span class="at">x=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">&#39;same&#39;</span>), <span class="at">y=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">&#39;free&#39;</span>)),</span>
 <span id="cb99-14"><a href="modelagem-em-séries-temporais.html#cb99-14" tabindex="-1"></a> <span class="at">data=</span>lepto)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-105-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-106-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Modelando a Chuva como resposta e colocando a função suavizadora para capturar o efeito nas semanas epidemológicas</li>
 </ul>
@@ -1762,7 +1766,7 @@ s(mes)
 <span id="cb100-2"><a href="modelagem-em-séries-temporais.html#cb100-2" tabindex="-1"></a> <span class="at">outer=</span><span class="cn">TRUE</span>, <span class="at">layout=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="at">pch=</span><span class="dv">1</span>, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Chuva&quot;</span>,</span>
 <span id="cb100-3"><a href="modelagem-em-séries-temporais.html#cb100-3" tabindex="-1"></a>  <span class="at">scales=</span><span class="fu">list</span>(<span class="at">x=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">&#39;same&#39;</span>), <span class="at">y=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">&#39;free&#39;</span>)),</span>
 <span id="cb100-4"><a href="modelagem-em-séries-temporais.html#cb100-4" tabindex="-1"></a> <span class="at">data=</span>lepto)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-106-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-107-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="modelagem-em-séries-temporais.html#cb101-1" tabindex="-1"></a><span class="co"># Ajustando a chuva como resposta</span></span>
 <span id="cb101-2"><a href="modelagem-em-séries-temporais.html#cb101-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb101-3"><a href="modelagem-em-séries-temporais.html#cb101-3" tabindex="-1"></a>rain.tp.auto <span class="ot">&lt;-</span> <span class="fu">gam</span>(totrain <span class="sc">~</span> <span class="fu">s</span>(week,<span class="at">bs=</span><span class="st">&quot;tp&quot;</span>), <span class="at">data=</span>lepto )</span>
@@ -1780,7 +1784,7 @@ s(mes)
 <span id="cb101-15"><a href="modelagem-em-séries-temporais.html#cb101-15" tabindex="-1"></a>rain.ad <span class="ot">&lt;-</span> <span class="fu">gam</span>(totrain <span class="sc">~</span> <span class="fu">s</span>(week,<span class="at">bs=</span><span class="st">&quot;ad&quot;</span>), <span class="at">data=</span>lepto )</span>
 <span id="cb101-16"><a href="modelagem-em-séries-temporais.html#cb101-16" tabindex="-1"></a></span>
 <span id="cb101-17"><a href="modelagem-em-séries-temporais.html#cb101-17" tabindex="-1"></a><span class="fu">plot</span>(rain.ad,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">&#39;K(adaptável) =&#39;</span>, rain.ad<span class="sc">$</span>smooth[[<span class="dv">1</span>]]<span class="sc">$</span>bs.dim))</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-106-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-107-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="modelagem-em-séries-temporais.html#cb102-1" tabindex="-1"></a><span class="co"># ThinPlate  &lt;- predict(rain.tp)</span></span>
 <span id="cb102-2"><a href="modelagem-em-séries-temporais.html#cb102-2" tabindex="-1"></a><span class="co"># P.spline &lt;- predict(rain.ps)</span></span>
 <span id="cb102-3"><a href="modelagem-em-séries-temporais.html#cb102-3" tabindex="-1"></a><span class="co"># CubicRegression &lt;- predict(rain.cr)</span></span>
@@ -1830,8 +1834,8 @@ s(mes)
 <span id="cb103-7"><a href="modelagem-em-séries-temporais.html#cb103-7" tabindex="-1"></a>chuvl4 <span class="ot">&lt;-</span> <span class="fu">gam</span>(cases <span class="sc">~</span> <span class="fu">s</span>(<span class="fu">Lag</span>(totrain,<span class="dv">4</span>)),<span class="at">family=</span>poisson,<span class="at">data=</span><span class="fu">subset</span>(lepto, week<span class="sc">&gt;</span><span class="dv">5</span>))</span>
 <span id="cb103-8"><a href="modelagem-em-séries-temporais.html#cb103-8" tabindex="-1"></a>chuvl5 <span class="ot">&lt;-</span> <span class="fu">gam</span>(cases <span class="sc">~</span> <span class="fu">s</span>(<span class="fu">Lag</span>(totrain,<span class="dv">5</span>)),<span class="at">family=</span>poisson,<span class="at">data=</span><span class="fu">subset</span>(lepto, week<span class="sc">&gt;</span><span class="dv">5</span>))</span></code></pre></div>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="modelagem-em-séries-temporais.html#cb104-1" tabindex="-1"></a><span class="fu">AIC</span>(chuvl0,chuvl1,chuvl2,chuvl3,chuvl4,chuvl5)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-01140f66e8e0af2a3869" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-01140f66e8e0af2a3869">{"x":{"filter":"none","vertical":false,"data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.720000000000001,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-765f9272dc0ad415d7c7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-765f9272dc0ad415d7c7">{"x":{"filter":"none","vertical":false,"data":[["chuvl0","chuvl1","chuvl2","chuvl3","chuvl4","chuvl5"],[8.98,9.68,9.72,8.41,9.67,9.6],[2855.95,2426.26,2379.5,2683.73,2661.15,2716.69]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>Ajustando a série dos casos de leptospirose via distribuição Binomial Negativa</li>
 </ul>
@@ -1844,8 +1848,8 @@ s(mes)
 <span id="cb105-7"><a href="modelagem-em-séries-temporais.html#cb105-7" tabindex="-1"></a>chuvnb5<span class="sc">$</span>family<span class="sc">$</span><span class="fu">getTheta</span>()</span></code></pre></div>
 <p>[1] 0.4864</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="modelagem-em-séries-temporais.html#cb106-1" tabindex="-1"></a><span class="fu">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)</span></code></pre></div>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6144e519192eba9de09c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6144e519192eba9de09c">{"x":{"filter":"none","vertical":false,"data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6f7123bfe063f2620d43" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6f7123bfe063f2620d43">{"x":{"filter":"none","vertical":false,"data":[["chuvnb0","chuvnb1","chuvnb2","chuvnb3","chuvnb4","chuvnb5"],[8,7.98,6.86,7.36,8.09,7.12],[2207.45,2094.93,2107.23,2189.67,2192.28,2212.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>df<\/th>\n      <th>AIC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>Comparando os AIC’s de ambos os modelos entre os lags</li>
 </ul>
@@ -1853,12 +1857,12 @@ s(mes)
 <span id="cb107-2"><a href="modelagem-em-séries-temporais.html#cb107-2" tabindex="-1"></a><span class="fu">lines</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">5</span>,<span class="fu">AIC</span>(chuvnb0,chuvnb1,chuvnb2,chuvnb3,chuvnb4,chuvnb5)[,<span class="dv">2</span>], <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="dv">2</span>)</span>
 <span id="cb107-3"><a href="modelagem-em-séries-temporais.html#cb107-3" tabindex="-1"></a></span>
 <span id="cb107-4"><a href="modelagem-em-séries-temporais.html#cb107-4" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;right&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Poisson&quot;</span>,<span class="st">&quot;Bin. Neg.&quot;</span>),<span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="at">fill=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-113-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-114-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Verificando a distribuição da chuva entre todos os lags</li>
 </ul>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="modelagem-em-séries-temporais.html#cb108-1" tabindex="-1"></a><span class="fu">boxplot</span>(lepto<span class="sc">$</span>totrain)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-114-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-115-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="modelagem-em-séries-temporais.html#cb109-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>),<span class="at">mai=</span><span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.5412</span> ,<span class="fl">0.5412</span>,<span class="fl">0.05</span>),<span class="at">mgp=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
 <span id="cb109-2"><a href="modelagem-em-séries-temporais.html#cb109-2" tabindex="-1"></a></span>
 <span id="cb109-3"><a href="modelagem-em-séries-temporais.html#cb109-3" tabindex="-1"></a><span class="fu">plot</span>(chuvnb0,<span class="at">ylab=</span><span class="st">&quot;Lag=0&quot;</span>)</span>
@@ -1873,7 +1877,7 @@ s(mes)
 <span id="cb109-12"><a href="modelagem-em-séries-temporais.html#cb109-12" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="dv">2</span>)</span>
 <span id="cb109-13"><a href="modelagem-em-séries-temporais.html#cb109-13" tabindex="-1"></a><span class="fu">plot</span>(chuvnb5,<span class="at">ylab=</span><span class="st">&quot;Lag=5&quot;</span>)</span>
 <span id="cb109-14"><a href="modelagem-em-séries-temporais.html#cb109-14" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-114-2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-115-2.png" width="100%" style="display: block; margin: auto;" /></p>
 <!-- 1138 A 1163 JA ESTAVA COMENTADA ANTES -->
 <!-- Analisando os resíduos do modelo casos.chuva.gam.4 -->
 <!-- ```{r, echo=T, warning=FALSE, results='asis', message = FALSE, out.width = "100%", fig.align = "center"} -->

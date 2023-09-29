@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS 2023</title>
   <meta name="description" content=" 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS 2023" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 7 Padrões Pontuais I | ESTUDOS ECOLÓGICOS 2023" />
   <meta property="og:type" content="book" />
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="introdução-à-análise-estatística-espacial.html"/>
-
+<link rel="next" href="padrões-pontuais-ii.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.29/datatables.js"></script>
-<link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="libs/datatables-binding-0.26/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
 <link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
 <script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
 <link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
@@ -132,10 +132,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -363,6 +359,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>7.12</b> Bibliografia sugerida</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#alguns-usos-em-epidemiologia-espacial"><i class="fa fa-check"></i><b>8.1</b> Alguns usos em Epidemiologia Espacial</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.2</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-aditivos-generalizados-gam"><i class="fa fa-check"></i><b>8.3</b> Modelos Aditivos Generalizados (GAM)</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.4</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.5" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
 
@@ -462,7 +466,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb124-20"><a href="padrões-pontuais-i.html#cb124-20" tabindex="-1"></a>    <span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;&quot;</span>)</span>
 <span id="cb124-21"><a href="padrões-pontuais-i.html#cb124-21" tabindex="-1"></a></span>
 <span id="cb124-22"><a href="padrões-pontuais-i.html#cb124-22" tabindex="-1"></a>g</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-128-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-129-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p><br />
 </p>
 <p>Porto Alegre é uma cidade disposta ao longo do eixo norte/sul. O grafico perdeu a estrutura espacial, ajustando para o tamanho e forma da janela. Por isso é necessario informar ao programa que este tipo de objeto é um objeto espacial e tem uma escala, que deve ser preservada. Vamos fazer isso com transformando-o em um objeto espacial do pacote <code>sf</code>.</p>
@@ -482,14 +486,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb125-14"><a href="padrões-pontuais-i.html#cb125-14" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Homicídios&quot;</span>), <span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;&quot;</span>)</span>
 <span id="cb125-15"><a href="padrões-pontuais-i.html#cb125-15" tabindex="-1"></a></span>
 <span id="cb125-16"><a href="padrões-pontuais-i.html#cb125-16" tabindex="-1"></a>g</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
 <p>Agora vamos adicionar os pontos referentes a suicídios e acidentes:</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="padrões-pontuais-i.html#cb126-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> suic_sf, <span class="fu">aes</span>(<span class="at">geometry =</span> geometry,</span>
 <span id="cb126-2"><a href="padrões-pontuais-i.html#cb126-2" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Suícidios&quot;</span>), <span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> acid_sf,</span>
 <span id="cb126-3"><a href="padrões-pontuais-i.html#cb126-3" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">geometry =</span> geometry, <span class="at">color =</span> <span class="st">&quot;Acidentes&quot;</span>),</span>
 <span id="cb126-4"><a href="padrões-pontuais-i.html#cb126-4" tabindex="-1"></a>    <span class="at">shape =</span> <span class="dv">1</span>)</span>
 <span id="cb126-5"><a href="padrões-pontuais-i.html#cb126-5" tabindex="-1"></a>g</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-130-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-131-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Importando o polígono do contorno de Porto Alegre:</p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="padrões-pontuais-i.html#cb127-1" tabindex="-1"></a><span class="co"># contorno de porto alegre</span></span>
 <span id="cb127-2"><a href="padrões-pontuais-i.html#cb127-2" tabindex="-1"></a>contorno.poa <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;/contpoa.dat&quot;</span>),</span>
@@ -498,7 +502,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb127-5"><a href="padrões-pontuais-i.html#cb127-5" tabindex="-1"></a><span class="co"># plotando com a função `geom_polygon`:</span></span>
 <span id="cb127-6"><a href="padrões-pontuais-i.html#cb127-6" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_polygon</span>(<span class="at">data =</span> contorno.poa, <span class="fu">aes</span>(x, y), <span class="at">fill =</span> <span class="st">&quot;transparent&quot;</span>,</span>
 <span id="cb127-7"><a href="padrões-pontuais-i.html#cb127-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-131-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-132-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Os pontos fora do contorno sao das ilhas, não devem ser incorporados a análise. Vamos transformar o contorno também em um objeto espacial (<code>st_polygon</code>) para identificar os pontos fora do contorno:</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="padrões-pontuais-i.html#cb128-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb128-2"><a href="padrões-pontuais-i.html#cb128-2" tabindex="-1"></a></span>
@@ -518,7 +522,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb129-5"><a href="padrões-pontuais-i.html#cb129-5" tabindex="-1"></a><span class="fu">ggplot</span>(homic_sf, <span class="fu">aes</span>(<span class="at">geometry =</span> geometry)) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(dentro))) <span class="sc">+</span></span>
 <span id="cb129-6"><a href="padrões-pontuais-i.html#cb129-6" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> poa_sf, <span class="at">fill =</span> <span class="st">&quot;transparent&quot;</span>) <span class="sc">+</span></span>
 <span id="cb129-7"><a href="padrões-pontuais-i.html#cb129-7" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Dentro do polĩgono&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-133-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-134-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="padrões-pontuais-i.html#cb130-1" tabindex="-1"></a><span class="co"># Filtra somente as observações dentro do</span></span>
 <span id="cb130-2"><a href="padrões-pontuais-i.html#cb130-2" tabindex="-1"></a><span class="co"># polígono</span></span>
 <span id="cb130-3"><a href="padrões-pontuais-i.html#cb130-3" tabindex="-1"></a>homic_sf2 <span class="ot">&lt;-</span> homic_sf <span class="sc">%&gt;%</span></span>
@@ -568,7 +572,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb131-8"><a href="padrões-pontuais-i.html#cb131-8" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição aleatória&quot;</span>)</span>
 <span id="cb131-9"><a href="padrões-pontuais-i.html#cb131-9" tabindex="-1"></a></span>
 <span id="cb131-10"><a href="padrões-pontuais-i.html#cb131-10" tabindex="-1"></a>g_alea</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-136-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-137-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="padrões-pontuais-i.html#cb132-1" tabindex="-1"></a><span class="co"># padrão regular</span></span>
 <span id="cb132-2"><a href="padrões-pontuais-i.html#cb132-2" tabindex="-1"></a></span>
 <span id="cb132-3"><a href="padrões-pontuais-i.html#cb132-3" tabindex="-1"></a>uni_sf <span class="ot">&lt;-</span> <span class="fu">st_sample</span>(poa_sf, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">&quot;regular&quot;</span>) <span class="sc">%&gt;%</span></span>
@@ -584,7 +588,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb132-13"><a href="padrões-pontuais-i.html#cb132-13" tabindex="-1"></a>        <span class="at">fill =</span> <span class="st">&quot;transparent&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição regular&quot;</span>)</span>
 <span id="cb132-14"><a href="padrões-pontuais-i.html#cb132-14" tabindex="-1"></a></span>
 <span id="cb132-15"><a href="padrões-pontuais-i.html#cb132-15" tabindex="-1"></a>g_uni</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-138-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-139-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="padrões-pontuais-i.html#cb133-1" tabindex="-1"></a><span class="co"># padrão clusterizado</span></span></code></pre></div>
 <p>A função <code>st_sample()</code> permite a geração de pontos clusterizados a partir de um processo determinado, como um processo de cluster de Poisson, ou processo Thomas (para mais informações, ver <code>??spatsat.random</code>). Essas funções levam um tempo para gerar as amostras, por isso iremos implementar uma função mais simples:</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="padrões-pontuais-i.html#cb134-1" tabindex="-1"></a><span class="co"># Função para gerar uma distribuição</span></span>
@@ -614,7 +618,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb134-25"><a href="padrões-pontuais-i.html#cb134-25" tabindex="-1"></a>        <span class="at">fill =</span> <span class="st">&quot;transparent&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição aglomerada&quot;</span>)</span>
 <span id="cb134-26"><a href="padrões-pontuais-i.html#cb134-26" tabindex="-1"></a></span>
 <span id="cb134-27"><a href="padrões-pontuais-i.html#cb134-27" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_alea, g_clu, g_uni, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-139-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-140-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p><br />
 </p>
 <p>Através da função <code>quadratcount()</code> do pacote <code>spatstat</code>, podemos analisar a contagem de observações por quadrantes, que nos auxilia na análise da distribuição dos pontos. Para isso, precisamos converter nossos objetos para o formato específico <code>ppp</code> (<em>spatial point pattern</em>):</p>
@@ -747,12 +751,12 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb143-23"><a href="padrões-pontuais-i.html#cb143-23" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
 <span id="cb143-24"><a href="padrões-pontuais-i.html#cb143-24" tabindex="-1"></a></span>
 <span id="cb143-25"><a href="padrões-pontuais-i.html#cb143-25" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_den1, g_den2, g_den3, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-149-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-148-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Alterando o tipo de kernel (padrão: <code>"gaussian"</code>):</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-150-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-149-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Com correção de bordas:</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="padrões-pontuais-i.html#cb144-1" tabindex="-1"></a>clu_den1_dig <span class="ot">&lt;-</span> <span class="fu">density</span>(clu_ppp, <span class="at">sigma =</span> <span class="dv">200</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-152-1.png" width="100%" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-151-1.png" width="100%" /></p>
 <p>O <code>ggplot</code> possui funções próprias que permitem a visualizar de estimativas de densidade, entre elas o kernel espacial. Nesses casos, o kernel é ajustado na própria função de visualização (<code>stat_density2d</code>).</p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="padrões-pontuais-i.html#cb145-1" tabindex="-1"></a><span class="co"># vamos inserir linhas de contorno também</span></span>
 <span id="cb145-2"><a href="padrões-pontuais-i.html#cb145-2" tabindex="-1"></a></span>
@@ -776,7 +780,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb145-20"><a href="padrões-pontuais-i.html#cb145-20" tabindex="-1"></a></span>
 <span id="cb145-21"><a href="padrões-pontuais-i.html#cb145-21" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_contour1, g_contour2, g_contour3,</span>
 <span id="cb145-22"><a href="padrões-pontuais-i.html#cb145-22" tabindex="-1"></a>    <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-154-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-152-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>As linhas de contorno também podem ser visualizadas com a função <code>contour()</code> do R base:</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="padrões-pontuais-i.html#cb146-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
 <span id="cb146-2"><a href="padrões-pontuais-i.html#cb146-2" tabindex="-1"></a><span class="fu">plot</span>(alea_den, <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
@@ -787,7 +791,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb146-7"><a href="padrões-pontuais-i.html#cb146-7" tabindex="-1"></a></span>
 <span id="cb146-8"><a href="padrões-pontuais-i.html#cb146-8" tabindex="-1"></a><span class="fu">plot</span>(uni_den, <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
 <span id="cb146-9"><a href="padrões-pontuais-i.html#cb146-9" tabindex="-1"></a><span class="fu">contour</span>(uni_den, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-153-1.png" width="672" /></p>
 <!-- Visualizando a superfície do Kernel em 3D: -->
 <!-- ![](figuras/anima3d.gif) -->
 <!-- Clique [AQUI para explorar interativamente a perspectiva em 3D](teste3d.html) -->
@@ -806,7 +810,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb148-6"><a href="padrões-pontuais-i.html#cb148-6" tabindex="-1"></a></span>
 <span id="cb148-7"><a href="padrões-pontuais-i.html#cb148-7" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_contour2 <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">&quot;Largura de banda arbitrária (500)&quot;</span>),</span>
 <span id="cb148-8"><a href="padrões-pontuais-i.html#cb148-8" tabindex="-1"></a>    g_contour_opt, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-157-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-154-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <!-- Neste caso a largura de banda sugerida pelo método MSE se mostrou mais interessante para evidenciar mais os locais com possíveis clusters, ao passo que o valor de $\tau$ de 0.20 suaviza mais, mostrando menos locais de elevação da densidade de pontos.  -->
 </div>
 </div>
@@ -849,7 +853,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb149-10"><a href="padrões-pontuais-i.html#cb149-10" tabindex="-1"></a><span class="fu">plot</span>(alea_ppp, <span class="at">add =</span> T, <span class="at">col =</span> <span class="st">&quot;white&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>)</span>
 <span id="cb149-11"><a href="padrões-pontuais-i.html#cb149-11" tabindex="-1"></a></span>
 <span id="cb149-12"><a href="padrões-pontuais-i.html#cb149-12" tabindex="-1"></a><span class="fu">plot</span>(clu_alea_ratio, <span class="at">main =</span> <span class="st">&quot;Razão&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-161-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-157-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p><strong>Exemplo</strong>: Verificando o padrão espacial de segunda ordem dos casos de homicídos em POA/RS:</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="padrões-pontuais-i.html#cb150-1" tabindex="-1"></a><span class="co"># Além de transformar os pontos para ppp, vamos</span></span>
 <span id="cb150-2"><a href="padrões-pontuais-i.html#cb150-2" tabindex="-1"></a><span class="co"># especificar uma janela para delimitar a área de</span></span>
@@ -859,7 +863,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb150-6"><a href="padrões-pontuais-i.html#cb150-6" tabindex="-1"></a>    <span class="fu">as.ppp</span>()</span>
 <span id="cb150-7"><a href="padrões-pontuais-i.html#cb150-7" tabindex="-1"></a><span class="fu">Window</span>(homic_ppp) <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(poa_sf)</span>
 <span id="cb150-8"><a href="padrões-pontuais-i.html#cb150-8" tabindex="-1"></a></span>
-<span id="cb150-9"><a href="padrões-pontuais-i.html#cb150-9" tabindex="-1"></a>homic_den1 <span class="ot">&lt;-</span> <span class="fu">density</span>(homic_ppp, <span class="at">sigma =</span> <span class="dv">200</span>)</span>
+<span id="cb150-9"><a href="padrões-pontuais-i.html#cb150-9" tabindex="-1"></a>homic_den1 <span class="ot">&lt;-</span> <span class="fu">density</span>(homic_ppp, <span class="at">sigma =</span> <span class="dv">200</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb150-10"><a href="padrões-pontuais-i.html#cb150-10" tabindex="-1"></a></span>
 <span id="cb150-11"><a href="padrões-pontuais-i.html#cb150-11" tabindex="-1"></a>g_homic_den1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(homic_den1), <span class="fu">aes</span>(x,</span>
 <span id="cb150-12"><a href="padrões-pontuais-i.html#cb150-12" tabindex="-1"></a>    y)) <span class="sc">+</span> <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">as_tibble</span>(homic_ppp),</span>
@@ -873,7 +877,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb150-20"><a href="padrões-pontuais-i.html#cb150-20" tabindex="-1"></a>    <span class="fu">as.ppp</span>()</span>
 <span id="cb150-21"><a href="padrões-pontuais-i.html#cb150-21" tabindex="-1"></a><span class="fu">Window</span>(suic_ppp) <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(poa_sf)</span>
 <span id="cb150-22"><a href="padrões-pontuais-i.html#cb150-22" tabindex="-1"></a></span>
-<span id="cb150-23"><a href="padrões-pontuais-i.html#cb150-23" tabindex="-1"></a>suic_den1 <span class="ot">&lt;-</span> <span class="fu">density</span>(suic_ppp, <span class="at">sigma =</span> <span class="dv">200</span>)</span>
+<span id="cb150-23"><a href="padrões-pontuais-i.html#cb150-23" tabindex="-1"></a>suic_den1 <span class="ot">&lt;-</span> <span class="fu">density</span>(suic_ppp, <span class="at">sigma =</span> <span class="dv">200</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb150-24"><a href="padrões-pontuais-i.html#cb150-24" tabindex="-1"></a></span>
 <span id="cb150-25"><a href="padrões-pontuais-i.html#cb150-25" tabindex="-1"></a>g_suic_den1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(suic_den1), <span class="fu">aes</span>(x,</span>
 <span id="cb150-26"><a href="padrões-pontuais-i.html#cb150-26" tabindex="-1"></a>    y)) <span class="sc">+</span> <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">as_tibble</span>(suic_ppp),</span>
@@ -887,7 +891,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb150-34"><a href="padrões-pontuais-i.html#cb150-34" tabindex="-1"></a>    <span class="fu">as.ppp</span>()</span>
 <span id="cb150-35"><a href="padrões-pontuais-i.html#cb150-35" tabindex="-1"></a><span class="fu">Window</span>(acid_ppp) <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(poa_sf)</span>
 <span id="cb150-36"><a href="padrões-pontuais-i.html#cb150-36" tabindex="-1"></a></span>
-<span id="cb150-37"><a href="padrões-pontuais-i.html#cb150-37" tabindex="-1"></a>acid_den1 <span class="ot">&lt;-</span> <span class="fu">density</span>(acid_ppp, <span class="at">sigma =</span> <span class="dv">200</span>)</span>
+<span id="cb150-37"><a href="padrões-pontuais-i.html#cb150-37" tabindex="-1"></a>acid_den1 <span class="ot">&lt;-</span> <span class="fu">density</span>(acid_ppp, <span class="at">sigma =</span> <span class="dv">200</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb150-38"><a href="padrões-pontuais-i.html#cb150-38" tabindex="-1"></a></span>
 <span id="cb150-39"><a href="padrões-pontuais-i.html#cb150-39" tabindex="-1"></a>g_acid_den1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(acid_den1), <span class="fu">aes</span>(x,</span>
 <span id="cb150-40"><a href="padrões-pontuais-i.html#cb150-40" tabindex="-1"></a>    y)) <span class="sc">+</span> <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">as_tibble</span>(acid_ppp),</span>
@@ -899,8 +903,8 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb150-46"><a href="padrões-pontuais-i.html#cb150-46" tabindex="-1"></a></span>
 <span id="cb150-47"><a href="padrões-pontuais-i.html#cb150-47" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_homic_den1, g_suic_den1,</span>
 <span id="cb150-48"><a href="padrões-pontuais-i.html#cb150-48" tabindex="-1"></a>    g_acid_den1, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-163-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="padrões-pontuais-i.html#cb151-1" tabindex="-1"></a>homic_den2 <span class="ot">&lt;-</span> <span class="fu">density</span>(homic_ppp, <span class="at">sigma =</span> <span class="dv">100</span>)</span>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-158-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="padrões-pontuais-i.html#cb151-1" tabindex="-1"></a>homic_den2 <span class="ot">&lt;-</span> <span class="fu">density</span>(homic_ppp, <span class="at">sigma =</span> <span class="dv">100</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb151-2"><a href="padrões-pontuais-i.html#cb151-2" tabindex="-1"></a></span>
 <span id="cb151-3"><a href="padrões-pontuais-i.html#cb151-3" tabindex="-1"></a>g_homic_den2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(homic_den2), <span class="fu">aes</span>(x,</span>
 <span id="cb151-4"><a href="padrões-pontuais-i.html#cb151-4" tabindex="-1"></a>    y)) <span class="sc">+</span> <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">as_tibble</span>(homic_ppp),</span>
@@ -910,7 +914,7 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb151-8"><a href="padrões-pontuais-i.html#cb151-8" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Homicídios&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;sigma = 100&quot;</span>) <span class="sc">+</span></span>
 <span id="cb151-9"><a href="padrões-pontuais-i.html#cb151-9" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
 <span id="cb151-10"><a href="padrões-pontuais-i.html#cb151-10" tabindex="-1"></a></span>
-<span id="cb151-11"><a href="padrões-pontuais-i.html#cb151-11" tabindex="-1"></a>homic_den3 <span class="ot">&lt;-</span> <span class="fu">density</span>(homic_ppp, <span class="at">sigma =</span> <span class="dv">500</span>)</span>
+<span id="cb151-11"><a href="padrões-pontuais-i.html#cb151-11" tabindex="-1"></a>homic_den3 <span class="ot">&lt;-</span> <span class="fu">density</span>(homic_ppp, <span class="at">sigma =</span> <span class="dv">500</span>, <span class="at">diggle =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb151-12"><a href="padrões-pontuais-i.html#cb151-12" tabindex="-1"></a></span>
 <span id="cb151-13"><a href="padrões-pontuais-i.html#cb151-13" tabindex="-1"></a>g_homic_den3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(homic_den3), <span class="fu">aes</span>(x,</span>
 <span id="cb151-14"><a href="padrões-pontuais-i.html#cb151-14" tabindex="-1"></a>    y)) <span class="sc">+</span> <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">as_tibble</span>(homic_ppp),</span>
@@ -922,10 +926,20 @@ Quadrats: 5 by 6 grid of tiles</code></pre>
 <span id="cb151-20"><a href="padrões-pontuais-i.html#cb151-20" tabindex="-1"></a></span>
 <span id="cb151-21"><a href="padrões-pontuais-i.html#cb151-21" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_homic_den2, g_homic_den1,</span>
 <span id="cb151-22"><a href="padrões-pontuais-i.html#cb151-22" tabindex="-1"></a>    g_homic_den3, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-163-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-158-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Exemplo:</strong> Fazendo a razão de kernel entre as causas de homicídio e suicídios de Porto alegre/RS:</p>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
-<!-- **Exemplo:** Uma outra forma de fazer o kernel para os dados de homicídio de POA/RS: -->
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="padrões-pontuais-i.html#cb152-1" tabindex="-1"></a>suic_homic_ratio <span class="ot">&lt;-</span> suic_den1<span class="sc">/</span>homic_den1</span>
+<span id="cb152-2"><a href="padrões-pontuais-i.html#cb152-2" tabindex="-1"></a></span>
+<span id="cb152-3"><a href="padrões-pontuais-i.html#cb152-3" tabindex="-1"></a>g_suic_homic <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(suic_homic_ratio),</span>
+<span id="cb152-4"><a href="padrões-pontuais-i.html#cb152-4" tabindex="-1"></a>    <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> poa_sf,</span>
+<span id="cb152-5"><a href="padrões-pontuais-i.html#cb152-5" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">geometry =</span> geometry), <span class="at">fill =</span> <span class="st">&quot;transparent&quot;</span>,</span>
+<span id="cb152-6"><a href="padrões-pontuais-i.html#cb152-6" tabindex="-1"></a>    <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;B&quot;</span>) <span class="sc">+</span></span>
+<span id="cb152-7"><a href="padrões-pontuais-i.html#cb152-7" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Razão&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Suicídios/Homicídios&quot;</span>) <span class="sc">+</span></span>
+<span id="cb152-8"><a href="padrões-pontuais-i.html#cb152-8" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb152-9"><a href="padrões-pontuais-i.html#cb152-9" tabindex="-1"></a></span>
+<span id="cb152-10"><a href="padrões-pontuais-i.html#cb152-10" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(g_homic_den1, g_suic_den1,</span>
+<span id="cb152-11"><a href="padrões-pontuais-i.html#cb152-11" tabindex="-1"></a>    g_suic_homic, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
 </div>
 <div id="análise-preliminar-de-um-processo-pontual" class="section level2 hasAnchor" number="7.8">
 <h2><span class="header-section-number">7.8</span> Análise preliminar de um processo pontual<a href="padrões-pontuais-i.html#análise-preliminar-de-um-processo-pontual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -955,14 +969,14 @@ aquela distância.</p></li>
 </ul>
 <p>A plotagem dos resultados desta função de distribuição cumulativa empírica pode ser usada como um método exploratório para verificar se existe evidência de interação entre os eventos. Se esta plotagem apresentar um crescimento rápido para pequenos valores de distância, esta situação aponta para interação entre os eventos caracterizando agrupamentos nestas escalas. Se esta plotagem apresentar valores pequenos no seu início, e só crescer rapidamente para
 valores maiores de distância, esta situação aponta para uma distribuição mais regular.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="padrões-pontuais-i.html#cb152-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb152-2"><a href="padrões-pontuais-i.html#cb152-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> alea_ppp, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb152-3"><a href="padrões-pontuais-i.html#cb152-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
-<span id="cb152-4"><a href="padrões-pontuais-i.html#cb152-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> uni_ppp, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb152-5"><a href="padrões-pontuais-i.html#cb152-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
-<span id="cb152-6"><a href="padrões-pontuais-i.html#cb152-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> clu_ppp, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb152-7"><a href="padrões-pontuais-i.html#cb152-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Agregado&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-170-1.png" width="672" style="display: block; margin: auto;" />
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="padrões-pontuais-i.html#cb153-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb153-2"><a href="padrões-pontuais-i.html#cb153-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> alea_ppp, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb153-3"><a href="padrões-pontuais-i.html#cb153-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
+<span id="cb153-4"><a href="padrões-pontuais-i.html#cb153-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> uni_ppp, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb153-5"><a href="padrões-pontuais-i.html#cb153-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
+<span id="cb153-6"><a href="padrões-pontuais-i.html#cb153-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> clu_ppp, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb153-7"><a href="padrões-pontuais-i.html#cb153-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Agregado&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-160-1.png" width="672" style="display: block; margin: auto;" />
 Embora o método do vizinho mais próximo forneça uma indicação inicial da distribuição espacial, ele considera apenas escalas pequenas. Para se ter informação mais efetiva para o padrão espacial em escalas maiores, o melhor método a ser utilizado é o da função <span class="math inline">\(K\)</span>.</p>
 </div>
 </div>
@@ -1004,14 +1018,14 @@ Embora o método do vizinho mais próximo forneça uma indicação inicial da di
 <li><p><strong>no caso de um processo agregado</strong>, há em média mais pontos em um raio <span class="math inline">\(r\)</span> ao redor os pontos do que o número esperado sob uma distribuição aleatória: consequentemente, os pontos atraem um ao outro e <span class="math inline">\(\hat{K}(r) &gt; K_{pois}(r)\)</span>. Graficamente, a curva <span class="math inline">\(K\)</span> está neste momento localizada acima da
 valor de referência para todas as áreas de estudo.</p></li>
 </ul>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="padrões-pontuais-i.html#cb153-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb153-2"><a href="padrões-pontuais-i.html#cb153-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> alea_ppp, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb153-3"><a href="padrões-pontuais-i.html#cb153-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
-<span id="cb153-4"><a href="padrões-pontuais-i.html#cb153-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> uni_ppp, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb153-5"><a href="padrões-pontuais-i.html#cb153-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
-<span id="cb153-6"><a href="padrões-pontuais-i.html#cb153-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> clu_ppp, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb153-7"><a href="padrões-pontuais-i.html#cb153-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Agregado&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-171-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="padrões-pontuais-i.html#cb154-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb154-2"><a href="padrões-pontuais-i.html#cb154-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> alea_ppp, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb154-3"><a href="padrões-pontuais-i.html#cb154-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
+<span id="cb154-4"><a href="padrões-pontuais-i.html#cb154-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> uni_ppp, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb154-5"><a href="padrões-pontuais-i.html#cb154-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
+<span id="cb154-6"><a href="padrões-pontuais-i.html#cb154-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> clu_ppp, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb154-7"><a href="padrões-pontuais-i.html#cb154-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Agregado&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-161-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="função-l" class="section level3 hasAnchor" number="7.9.2">
 <h3><span class="header-section-number">7.9.2</span> Função <em>L</em><a href="padrões-pontuais-i.html#função-l" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1027,33 +1041,33 @@ valor de referência para todas as áreas de estudo.</p></li>
 <pre><code>- Picos positivos indicam atração espacial - cluster
 
 - Vales negativos - repulsão espacial ou regularidade</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="padrões-pontuais-i.html#cb155-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb155-2"><a href="padrões-pontuais-i.html#cb155-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> alea_ppp, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb155-3"><a href="padrões-pontuais-i.html#cb155-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
-<span id="cb155-4"><a href="padrões-pontuais-i.html#cb155-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> uni_ppp, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb155-5"><a href="padrões-pontuais-i.html#cb155-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
-<span id="cb155-6"><a href="padrões-pontuais-i.html#cb155-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> clu_ppp, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb155-7"><a href="padrões-pontuais-i.html#cb155-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Agregado&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-172-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="padrões-pontuais-i.html#cb156-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb156-2"><a href="padrões-pontuais-i.html#cb156-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> alea_ppp, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb156-3"><a href="padrões-pontuais-i.html#cb156-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aleatório&quot;</span>)</span>
+<span id="cb156-4"><a href="padrões-pontuais-i.html#cb156-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> uni_ppp, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb156-5"><a href="padrões-pontuais-i.html#cb156-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Regular&quot;</span>)</span>
+<span id="cb156-6"><a href="padrões-pontuais-i.html#cb156-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> clu_ppp, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb156-7"><a href="padrões-pontuais-i.html#cb156-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Agregado&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-162-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Exemplo</strong>: Verificando o padrão espacial de segunda ordem dos casos de homicíodos em POA/RS:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="padrões-pontuais-i.html#cb156-1" tabindex="-1"></a><span class="co"># vamos usar só a geometria para não incluir</span></span>
-<span id="cb156-2"><a href="padrões-pontuais-i.html#cb156-2" tabindex="-1"></a><span class="co"># aquela variável &#39;dentro&#39;</span></span>
-<span id="cb156-3"><a href="padrões-pontuais-i.html#cb156-3" tabindex="-1"></a>homic_ppp2 <span class="ot">&lt;-</span> <span class="fu">as.ppp</span>(homic_sf2<span class="sc">$</span>geometry)</span>
-<span id="cb156-4"><a href="padrões-pontuais-i.html#cb156-4" tabindex="-1"></a></span>
-<span id="cb156-5"><a href="padrões-pontuais-i.html#cb156-5" tabindex="-1"></a></span>
-<span id="cb156-6"><a href="padrões-pontuais-i.html#cb156-6" tabindex="-1"></a><span class="fu">plot</span>(homic_ppp2, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
-<span id="cb156-7"><a href="padrões-pontuais-i.html#cb156-7" tabindex="-1"></a><span class="fu">polymap</span>(contorno.poa, <span class="at">add =</span> T)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-174-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="padrões-pontuais-i.html#cb157-1" tabindex="-1"></a><span class="co"># vamos usar só a geometria para não incluir</span></span>
+<span id="cb157-2"><a href="padrões-pontuais-i.html#cb157-2" tabindex="-1"></a><span class="co"># aquela variável &#39;dentro&#39;</span></span>
+<span id="cb157-3"><a href="padrões-pontuais-i.html#cb157-3" tabindex="-1"></a>homic_ppp2 <span class="ot">&lt;-</span> <span class="fu">as.ppp</span>(homic_sf2<span class="sc">$</span>geometry)</span>
+<span id="cb157-4"><a href="padrões-pontuais-i.html#cb157-4" tabindex="-1"></a></span>
+<span id="cb157-5"><a href="padrões-pontuais-i.html#cb157-5" tabindex="-1"></a></span>
+<span id="cb157-6"><a href="padrões-pontuais-i.html#cb157-6" tabindex="-1"></a><span class="fu">plot</span>(homic_ppp2, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
+<span id="cb157-7"><a href="padrões-pontuais-i.html#cb157-7" tabindex="-1"></a><span class="fu">polymap</span>(contorno.poa, <span class="at">add =</span> T)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-163-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Note que o restangulo envolvente (<strong>bbox</strong>) foi feito com a coordenadas dos dados, não do contorno de POA.</p>
 <p>Grafícos das Funções <em>K</em> , <em>G</em> e <em>L</em> dos homicíodos em POA/RS:</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="padrões-pontuais-i.html#cb157-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb157-2"><a href="padrões-pontuais-i.html#cb157-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> homic_ppp2, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb157-3"><a href="padrões-pontuais-i.html#cb157-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Funcao K&quot;</span>)</span>
-<span id="cb157-4"><a href="padrões-pontuais-i.html#cb157-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> homic_ppp2, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb157-5"><a href="padrões-pontuais-i.html#cb157-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Funcao G&quot;</span>)</span>
-<span id="cb157-6"><a href="padrões-pontuais-i.html#cb157-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> homic_ppp2, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
-<span id="cb157-7"><a href="padrões-pontuais-i.html#cb157-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Funcao L&quot;</span>)</span></code></pre></div>
-<p><img src="ecologico_book_files/figure-html/unnamed-chunk-175-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="padrões-pontuais-i.html#cb158-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb158-2"><a href="padrões-pontuais-i.html#cb158-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> homic_ppp2, <span class="at">fun =</span> Kest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb158-3"><a href="padrões-pontuais-i.html#cb158-3" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Funcao K&quot;</span>)</span>
+<span id="cb158-4"><a href="padrões-pontuais-i.html#cb158-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> homic_ppp2, <span class="at">fun =</span> Gest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb158-5"><a href="padrões-pontuais-i.html#cb158-5" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Funcao G&quot;</span>)</span>
+<span id="cb158-6"><a href="padrões-pontuais-i.html#cb158-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">envelope</span>(<span class="at">Y =</span> homic_ppp2, <span class="at">fun =</span> Lest, <span class="at">nsim =</span> <span class="dv">99</span>),</span>
+<span id="cb158-7"><a href="padrões-pontuais-i.html#cb158-7" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Funcao L&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-164-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Comente esses resultados!</p>
 </div>
 </div>
@@ -1131,7 +1145,7 @@ for 1, equivale ao teste de Knox.</p></li>
 <div id="exercícios-resolvidos-1" class="section level3 hasAnchor" number="7.11.1">
 <h3><span class="header-section-number">7.11.1</span> Exercícios Resolvidos<a href="padrões-pontuais-i.html#exercícios-resolvidos-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><a href="https://gitlab.procc.fiocruz.br/oswaldo/eco2019/raw/master/scripts/ex_cap6_padraoponto.r">Exercícios Padrões Pontuais</a></li>
+<li><a href="https://github.com/ogcruz/dados_eco_2023/blob/main/scripts/ex_cap6_padraoponto.r">Exercícios Padrões Pontuais</a></li>
 </ul>
 </div>
 </div>
@@ -1142,7 +1156,6 @@ for 1, equivale ao teste de Knox.</p></li>
 <p>GATRELL, Anthony C. et al. Spatial point pattern analysis and its application in geographical epidemiology. Transactions of the Institute of British geographers, p. 256-274, 1996.</p>
 <p>BADDELEY, Adrian , RUBAK, Ege, TURNER, Rolf Turner. Spatial Point Patterns: Methodology and Applications with R Chapman and Hall/CRC 810 Pages. 1st Edition 2015.</p>
 <p>BIVAND, Roger. et al. Applied Spatial Data Analysis with R, Springler 2008</p>
-
 </div>
 </div>
             </section>
@@ -1150,8 +1163,8 @@ for 1, equivale ao teste de Knox.</p></li>
           </div>
         </div>
       </div>
-<a href="introdução-à-análise-estatística-espacial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introdução-à-análise-estatística-espacial.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="padrões-pontuais-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
