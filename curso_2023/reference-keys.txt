@@ -154,6 +154,12 @@ fonte-específica
 exercícios-propostos-4
 exercícios-resolvidos-1
 bibliografia-sugerida-5
+padrões-pontuais-ii
+alguns-usos-em-epidemiologia-espacial
+exemplo-com-os-dados-de-dengue-em-douradosms
+modelos-aditivos-generalizados-gam
+modelos-espaciais-generalizados-aditivos
+bibliografia-sugerida-6
 geoestatística
 conceito
 objetivos
@@ -183,7 +189,7 @@ aplicação-1---dados-de-temperatura
 krigagem-1
 repita-a-análise-para-o-banco-de-ovos-em-higienópolis
 resumindo-1
-bibliografia-sugerida-6
+bibliografia-sugerida-7
 roteiro-para-a-execução-do-trabalho-final
 sugestões-de-locais-para-baixar-os-dados-e-os-mapas
 ficha-de-avaliação
