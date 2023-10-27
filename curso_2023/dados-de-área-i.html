@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 10 Dados de Área I | ESTUDOS ECOLÓGICOS 2023</title>
+  <meta name="description" content=" 10 Dados de Área I | ESTUDOS ECOLÓGICOS 2023" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 10 Dados de Área I | ESTUDOS ECOLÓGICOS 2023" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 10 Dados de Área I | ESTUDOS ECOLÓGICOS 2023" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo G Cruz" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="geoestatística.html"/>
+<link rel="next" href="dados-de-área-ii.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.30/datatables.js"></script>
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos 2023</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentação.html"><a href="apresentação.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#o-que-são-estudos-ecológicos"><i class="fa fa-check"></i><b>2.1</b> O que são Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#principais-objetivos"><i class="fa fa-check"></i><b>2.2</b> Principais objetivos</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-desenhos-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.4</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#aspectos-históricos"><i class="fa fa-check"></i><b>2.5</b> Aspectos históricos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.6</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#árvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.7</b> Árvores, Bosques ou as Florestas?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-árvores"><i class="fa fa-check"></i><b>2.7.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.7.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#os-bosques"><i class="fa fa-check"></i><b>2.7.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.7.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-florestas"><i class="fa fa-check"></i><b>2.7.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#falácia-ecológica-ou-viés-de-agregação"><i class="fa fa-check"></i><b>2.8</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#problemas-práticos"><i class="fa fa-check"></i><b>2.9</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#vantagens"><i class="fa fa-check"></i><b>2.10</b> Vantagens</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#desvantagens"><i class="fa fa-check"></i><b>2.11</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#resumindo"><i class="fa fa-check"></i><b>2.12</b> Resumindo</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#exercícios-propostos"><i class="fa fa-check"></i><b>2.13</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.14</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#o-que-são-séries-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#hipóteses-básicas-do-estudo-das-séries-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#classificação-dos-tipos-de-séries-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#processo-estocástico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#notação-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#objetivos-análise-de-séries-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocovariância-de-um-processo-estacionário"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#por-que-a-estacionariedade-é-importante"><i class="fa fa-check"></i><b>3.7.2</b> Por que a estacionariedade é importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#pressuposto-da-independência"><i class="fa fa-check"></i><b>3.8</b> Pressuposto da Independência</a></li>
+<li class="chapter" data-level="3.9" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#dependência-serial"><i class="fa fa-check"></i><b>3.9</b> Dependência serial</a></li>
+<li class="chapter" data-level="3.10" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocorrelação---fac-autocorrelation-function---acf"><i class="fa fa-check"></i><b>3.10</b> Função de Autocorrelação - FAC (<em>Autocorrelation function - ACF</em>)</a></li>
+<li class="chapter" data-level="3.11" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal"><i class="fa fa-check"></i><b>3.11</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.12" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#tendência"><i class="fa fa-check"></i><b>3.12</b> Tendência</a></li>
+<li class="chapter" data-level="3.13" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.13</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.14" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.14</b> Ciclo</a>
+<ul>
+<li class="chapter" data-level="3.14.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.14.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.15" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#termo-aleatório-ou-ruído-branco"><i class="fa fa-check"></i><b>3.15</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.16" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#composição-dos-modelos-de-séries-temporais"><i class="fa fa-check"></i><b>3.16</b> Composição dos Modelos de séries temporais</a>
+<ul>
+<li class="chapter" data-level="3.16.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.16.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.16.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.16.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.17" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#decomposição-de-séries-temporais"><i class="fa fa-check"></i><b>3.17</b> Decomposição de séries temporais</a></li>
+<li class="chapter" data-level="3.18" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#prática-no-r"><i class="fa fa-check"></i><b>3.18</b> Prática no R</a>
+<ul>
+<li class="chapter" data-level="3.18.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#a-biblioteca-ts-é-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.18.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.18.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#simulando-uma-série-temporal"><i class="fa fa-check"></i><b>3.18.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.18.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#importando-uma-vetor-e-transformando-em-série-temporal"><i class="fa fa-check"></i><b>3.18.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.18.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#utilizando-dados-da-incidência-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.18.4</b> Utilizando dados da incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+</ul></li>
+<li class="chapter" data-level="3.19" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>3.19</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.20" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#outros-materiais-sobre-séries-temporais"><i class="fa fa-check"></i><b>3.20</b> Outros materiais sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.21" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.21</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transfomação-dos-dados-em-st"><i class="fa fa-check"></i><b>4.2</b> Transfomação dos dados em ST</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transformações-box-cox-diferenciação-e-logarítmica"><i class="fa fa-check"></i><b>4.2.1</b> Transformações Box-Cox, Diferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#métodos-de-alisamento-ou-suavização"><i class="fa fa-check"></i><b>4.3</b> Métodos de Alisamento ou Suavização</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#algumas-funções-de-suavização"><i class="fa fa-check"></i><b>4.3.1</b> Algumas funções de suavização</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#médias-móveis"><i class="fa fa-check"></i><b>4.4</b> Médias móveis</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-das-médias-móveis"><i class="fa fa-check"></i><b>4.4.1</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#kernel"><i class="fa fa-check"></i><b>4.5</b> Kernel</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#diferentes-funções-kernel"><i class="fa fa-check"></i><b>4.5.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.5.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#largura-de-banda"><i class="fa fa-check"></i><b>4.5.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.5.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-kernel"><i class="fa fa-check"></i><b>4.5.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#loess-lowess"><i class="fa fa-check"></i><b>4.6</b> Loess / Lowess</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-loesslowess"><i class="fa fa-check"></i><b>4.6.1</b> Utilização do loess/lowess</a></li>
+<li class="chapter" data-level="4.6.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#comparando"><i class="fa fa-check"></i><b>4.6.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines"><i class="fa fa-check"></i><b>4.7</b> Splines</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines-vs-loesslowess"><i class="fa fa-check"></i><b>4.7.1</b> Splines <em>vs</em> Loess/Lowess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#exercícios-propostos-2"><i class="fa fa-check"></i><b>4.8</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.9" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.9</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#o-que-são-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#alguns-processos-estocásticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autorregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-de-médias-móveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-médias-móveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-integrado-de-médias-móveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#resumo---modelos-arima-não-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> Resumo - Modelos ARIMA não sazonais</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - <span class="math inline">\(ARIMA(p,d,q)(P,D,Q)_m\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#função-de-autocorrelação-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-identificação"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#métricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#análise-de-resíduos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-automático-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-de-previsão"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#correlação-cruzada-cross-correlation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Correlation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (Generalized Additive Models)</a>
+<ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+<li class="chapter" data-level="5.14.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#por-que-não-usar"><i class="fa fa-check"></i><b>5.14.2</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.14.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-em-séries-temporais"><i class="fa fa-check"></i><b>5.14.3</b> GAM em Séries Temporais</a></li>
+<li class="chapter" data-level="5.14.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-modelo-gam-aplicado-a-st-ldeaths"><i class="fa fa-check"></i><b>5.14.4</b> Exemplo de modelo GAM aplicado a ST ldeaths</a></li>
+<li class="chapter" data-level="5.14.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-gam-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.14.5</b> Exemplo GAM: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-propostos-3"><i class="fa fa-check"></i><b>5.15</b> Exercícios Propostos</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-resolvidos"><i class="fa fa-check"></i><b>5.15.1</b> Exercícios Resolvidos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.16</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#o-que-é-análise-estatística-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial?</a></li>
+<li class="chapter" data-level="6.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#origem-da-estatística-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#quando-usar-métodos-de-análise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial?</a></li>
+<li class="chapter" data-level="6.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dependência-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#principais-aplicações-em-saúde"><i class="fa fa-check"></i><b>6.5</b> Principais aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoestatıstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-área"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#sistema-de-informações-geográficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#alguns-conceitos"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#autocorrelação-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a>
+<ul>
+<li class="chapter" data-level="6.15.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dengue-em-douradosms"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#vigilância-dos-vetores-da-dengue-usando-modelagem-espaço-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelo-espaço-temporal-para-a-análise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-da-temperatura-na-costa-central-da-califórnia"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#a-relação-entre-a-malária-e-a-chuva-no-estado-do-pará-uma-análise-espaço-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelagem-espaço-temporal-da-chikungunya-no-município-do-rio-de-janeiro"><i class="fa fa-check"></i><b>6.15.6</b> Modelagem espaço temporal da Chikungunya no município do Rio de Janeiro</a></li>
+<li class="chapter" data-level="6.15.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.7</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#material-on-line-sobre-estatística-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#exemplo-i-malhas-no-r-com-geobr"><i class="fa fa-check"></i><b>6.18</b> Exemplo I: Malhas no R com geobr</a></li>
+<li class="chapter" data-level="6.19" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#exemplo-ii-geocodificação"><i class="fa fa-check"></i><b>6.19</b> Exemplo II: Geocodificação</a></li>
+<li class="chapter" data-level="6.20" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.20</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#o-que-são-padrões-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais?</a></li>
+<li class="chapter" data-level="7.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#tipos-de-distribuições"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel-com-correção-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#kernel-por-atributo"><i class="fa fa-check"></i><b>7.6</b> Kernel por atributo</a></li>
+<li class="chapter" data-level="7.7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#razão-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#análise-preliminar-de-um-processo-pontual"><i class="fa fa-check"></i><b>7.8</b> Análise preliminar de um processo pontual</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-f-e-g---distância-do-vizinho-mais-próximo"><i class="fa fa-check"></i><b>7.8.1</b> Função F e G - Distância do vizinho mais próximo</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#propriedade-de-segunda-ordem"><i class="fa fa-check"></i><b>7.9</b> Propriedade de segunda ordem</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-k-de-ripley-ou-apenas-função-k"><i class="fa fa-check"></i><b>7.9.1</b> Função K de Ripley (ou apenas função K)</a></li>
+<li class="chapter" data-level="7.9.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-l"><i class="fa fa-check"></i><b>7.9.2</b> Função <em>L</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#detecção-de-cluster"><i class="fa fa-check"></i><b>7.10</b> Detecção de cluster</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#testes-genéricos-de-cluster"><i class="fa fa-check"></i><b>7.10.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.10.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#fonte-específica"><i class="fa fa-check"></i><b>7.10.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-propostos-4"><i class="fa fa-check"></i><b>7.11</b> Exercícios Propostos</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>7.11.1</b> Exercícios Resolvidos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>7.12</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#alguns-usos-em-epidemiologia-espacial"><i class="fa fa-check"></i><b>8.1</b> Alguns usos em Epidemiologia Espacial</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.2</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-aditivos-generalizados-gam"><i class="fa fa-check"></i><b>8.3</b> Modelos Aditivos Generalizados (GAM)</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.4</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.5" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="geoestatística.html"><a href="geoestatística.html"><i class="fa fa-check"></i><b>9</b> Geoestatística</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="geoestatística.html"><a href="geoestatística.html#conceito"><i class="fa fa-check"></i><b>9.1</b> Conceito</a></li>
+<li class="chapter" data-level="9.2" data-path="geoestatística.html"><a href="geoestatística.html#objetivos"><i class="fa fa-check"></i><b>9.2</b> Objetivos</a></li>
+<li class="chapter" data-level="9.3" data-path="geoestatística.html"><a href="geoestatística.html#principais-aplicações"><i class="fa fa-check"></i><b>9.3</b> Principais aplicações</a></li>
+<li class="chapter" data-level="9.4" data-path="geoestatística.html"><a href="geoestatística.html#exemplo"><i class="fa fa-check"></i><b>9.4</b> Exemplo</a></li>
+<li class="chapter" data-level="9.5" data-path="geoestatística.html"><a href="geoestatística.html#efeitos"><i class="fa fa-check"></i><b>9.5</b> Efeitos</a></li>
+<li class="chapter" data-level="9.6" data-path="geoestatística.html"><a href="geoestatística.html#formalizando"><i class="fa fa-check"></i><b>9.6</b> Formalizando</a></li>
+<li class="chapter" data-level="9.7" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-primeira-ordem-regressão-linear"><i class="fa fa-check"></i><b>9.7</b> Efeito de primeira ordem: regressão linear</a></li>
+<li class="chapter" data-level="9.8" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-segunda-ordem-regressão-espacial"><i class="fa fa-check"></i><b>9.8</b> Efeito de segunda ordem: regressão espacial</a></li>
+<li class="chapter" data-level="9.9" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória"><i class="fa fa-check"></i><b>9.9</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.9.1</b> Análise exploratória: efeitos de primeira ordem</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="geoestatística.html"><a href="geoestatística.html#simplificações-estacionariedade-e-isotropia"><i class="fa fa-check"></i><b>9.10</b> Simplificações: Estacionariedade e Isotropia</a></li>
+<li class="chapter" data-level="9.11" data-path="geoestatística.html"><a href="geoestatística.html#variograma-empírico"><i class="fa fa-check"></i><b>9.11</b> Variograma empírico</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="geoestatística.html"><a href="geoestatística.html#relação-entre-variograma-covariograma-e-correlograma"><i class="fa fa-check"></i><b>9.11.1</b> Relação entre variograma, covariograma e correlograma</a></li>
+<li class="chapter" data-level="9.11.2" data-path="geoestatística.html"><a href="geoestatística.html#estrutura-do-variograma"><i class="fa fa-check"></i><b>9.11.2</b> Estrutura do variograma</a></li>
+<li class="chapter" data-level="9.11.3" data-path="geoestatística.html"><a href="geoestatística.html#variogramas-para-modelos-isotrópicos"><i class="fa fa-check"></i><b>9.11.3</b> Variogramas para modelos isotrópicos</a></li>
+<li class="chapter" data-level="9.11.4" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1"><i class="fa fa-check"></i><b>9.11.4</b> Aplicação 1</a></li>
+<li class="chapter" data-level="9.11.5" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-2"><i class="fa fa-check"></i><b>9.11.5</b> Aplicação 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9.12" data-path="geoestatística.html"><a href="geoestatística.html#modelagem-em-geoestatística"><i class="fa fa-check"></i><b>9.12</b> Modelagem em Geoestatística</a>
+<ul>
+<li class="chapter" data-level="9.12.1" data-path="geoestatística.html"><a href="geoestatística.html#modelando-dados-de-geoestatística---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>9.12.1</b> Modelando dados de Geoestatística - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="9.13" data-path="geoestatística.html"><a href="geoestatística.html#krigagem"><i class="fa fa-check"></i><b>9.13</b> Krigagem</a>
+<ul>
+<li class="chapter" data-level="9.13.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-universal"><i class="fa fa-check"></i><b>9.13.1</b> Krigagem Universal</a></li>
+<li class="chapter" data-level="9.13.2" data-path="geoestatística.html"><a href="geoestatística.html#algumas-considerações-da-krigagem-em-geral"><i class="fa fa-check"></i><b>9.13.2</b> Algumas considerações da krigagem em geral:</a></li>
+<li class="chapter" data-level="9.13.3" data-path="geoestatística.html"><a href="geoestatística.html#krigagem---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>9.13.3</b> Krigagem - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="9.14" data-path="geoestatística.html"><a href="geoestatística.html#prática-no-r-1"><i class="fa fa-check"></i><b>9.14</b> Prática no R</a></li>
+<li class="chapter" data-level="9.15" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1---dados-de-temperatura"><i class="fa fa-check"></i><b>9.15</b> Aplicação 1 - Dados de temperatura</a>
+<ul>
+<li class="chapter" data-level="9.15.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-1"><i class="fa fa-check"></i><b>9.15.1</b> Krigagem</a></li>
+</ul></li>
+<li class="chapter" data-level="9.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>9.16</b> Repita a análise para o banco de ovos em Higienópolis</a>
+<ul>
+<li class="chapter" data-level="9.16.1" data-path="geoestatística.html"><a href="geoestatística.html#resumindo-1"><i class="fa fa-check"></i><b>9.16.1</b> Resumindo</a></li>
+</ul></li>
+<li class="chapter" data-level="9.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>9.17</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Dados de Área I</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>10.2</b> Principais bibliotecas do R</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#novas-bibliotecas-2023-em-diante"><i class="fa fa-check"></i><b>10.2.1</b> Novas bibliotecas (2023 em diante)</a></li>
+<li class="chapter" data-level="10.2.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliotecas-antigas"><i class="fa fa-check"></i><b>10.2.2</b> bibliotecas antigas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-importantes"><i class="fa fa-check"></i><b>10.3</b> Pontos importantes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-de-corte-em-mapas"><i class="fa fa-check"></i><b>10.3.1</b> Pontos de Corte em mapas</a></li>
+<li class="chapter" data-level="10.3.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#escala-fixa-ao-longo-do-tempo"><i class="fa fa-check"></i><b>10.3.2</b> Escala fixa ao longo do tempo</a></li>
+<li class="chapter" data-level="10.3.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#tamanho-heterogêneo-das-áreas"><i class="fa fa-check"></i><b>10.3.3</b> Tamanho heterogêneo das áreas</a></li>
+<li class="chapter" data-level="10.3.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#o-problema-da-área-modificável-maup"><i class="fa fa-check"></i><b>10.3.4</b> O problema da área modificável (MAUP)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#exemplo-em-r"><i class="fa fa-check"></i><b>10.4</b> Exemplo em R</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>10.5</b> Visualização: Mapa Temático usando a biblioteca <code>tmap</code></a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória-1"><i class="fa fa-check"></i><b>10.6</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>10.6.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="10.6.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>10.6.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>10.7</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>10.8</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>10.9</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="10.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>10.10</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="10.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>10.11</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="10.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>10.12</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="10.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>10.13</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="10.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>10.14</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="10.15" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-standardized-mortality-ratiosmr-e-standardized-incidence-ratios-sirs"><i class="fa fa-check"></i><b>10.15</b> Uso de taxas padronizadas: Standardized mortality ratio(SMR) e Standardized Incidence Ratios (SIRs)</a></li>
+<li class="chapter" data-level="10.16" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>10.16</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área II</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#introdução-2"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
+<li class="chapter" data-level="11.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-espaciais-estatísticos-e-econométricos"><i class="fa fa-check"></i><b>11.2</b> Modelos espaciais estatísticos e econométricos</a></li>
+<li class="chapter" data-level="11.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-estatísticos-espaciais"><i class="fa fa-check"></i><b>11.3</b> Modelos Estatísticos Espaciais</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#simultaneous-autoregressive-models-sar"><i class="fa fa-check"></i><b>11.3.1</b> Simultaneous Autoregressive Models (SAR)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#conditional-autoregressive-models-car"><i class="fa fa-check"></i><b>11.3.2</b> Conditional Autoregressive Models (CAR)</a></li>
+<li class="chapter" data-level="11.3.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#exemplo-prático"><i class="fa fa-check"></i><b>11.3.3</b> Exemplo prático</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>11.4</b> Modelos com Efeitos Espaciais Locais</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#regressão-geograficamente-ponderada-gwr"><i class="fa fa-check"></i><b>11.4.1</b> Regressão Geograficamente Ponderada (GWR)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#bibliografia-sugerida-9"><i class="fa fa-check"></i><b>11.5</b> Bibliografia sugerida</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#online"><i class="fa fa-check"></i><b>11.5.1</b> Online</a></li>
+<li class="chapter" data-level="11.5.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#sistema-de-coordenadas"><i class="fa fa-check"></i><b>11.5.2</b> Sistema de Coordenadas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html"><i class="fa fa-check"></i><b>12</b> Exemplos de Analises Espaciais</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html#exemplo-com-os-dados-de-dengue-em-douradosms-1"><i class="fa fa-check"></i><b>12.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="12.2" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html#kernel-por-atributos"><i class="fa fa-check"></i><b>12.2</b> Kernel por atributos</a></li>
+<li class="chapter" data-level="12.3" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html#matriz-de-vizinhança-1"><i class="fa fa-check"></i><b>12.3</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="12.4" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html#autocorrelação-espacial-1"><i class="fa fa-check"></i><b>12.4</b> Autocorrelação Espacial</a></li>
+<li class="chapter" data-level="12.5" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html#modelos-linear-car-e-gwr"><i class="fa fa-check"></i><b>12.5</b> Modelos Linear, CAR e GWR</a></li>
+<li class="chapter" data-level="12.6" data-path="exemplos-de-analises-espaciais.html"><a href="exemplos-de-analises-espaciais.html#bibliografia-sugerida-10"><i class="fa fa-check"></i><b>12.6</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html"><i class="fa fa-check"></i><b>13</b> Roteiro para a execução do trabalho final</a>
+<ul>
+<li class="chapter" data-level="13.0.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>13.0.1</b> Sugestões de locais para baixar os dados e os mapas</a></li>
+<li class="chapter" data-level="13.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#ficha-de-avaliação"><i class="fa fa-check"></i><b>13.1</b> Ficha de Avaliação</a></li>
+<li class="chapter" data-level="13.2" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#fim"><i class="fa fa-check"></i><b>13.2</b> FIM</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS 2023</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dados-de-área-i" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number"> 10</span> Dados de Área I<a href="dados-de-área-i.html#dados-de-área-i" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução-1" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Introdução<a href="dados-de-área-i.html#introdução-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Na análise de áreas o atributo estudado é em geral resultado de uma
+contagem ou uma medida de síntese.</p></li>
+<li><p>O objetivo é a detecção e explicação de padrões e tendências
+observados entre áreas.</p></li>
+<li><p>Área é definida por um polígono, cuja forma pode ser complexa, bem
+como as relações de vizinhança.</p></li>
+</ul>
+<p>O modelo básico do banco de dados:</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th align="center">Local</th>
+<th align="center">Casos</th>
+<th align="center">População</th>
+<th align="center">Médicos p/ 1000 hab</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>001</td>
+<td align="center">Rio Bom</td>
+<td align="center">41</td>
+<td align="center">3209</td>
+<td align="center">5,4</td>
+</tr>
+<tr class="even">
+<td>002</td>
+<td align="center">Serra Verde</td>
+<td align="center">320</td>
+<td align="center">16897</td>
+<td align="center">2,6</td>
+</tr>
+<tr class="odd">
+<td>003</td>
+<td align="center">Poço Fundo</td>
+<td align="center">67</td>
+<td align="center">2569</td>
+<td align="center">1,3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="principais-bibliotecas-do-r" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Principais bibliotecas do R<a href="dados-de-área-i.html#principais-bibliotecas-do-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="novas-bibliotecas-2023-em-diante" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Novas bibliotecas (2023 em diante)<a href="dados-de-área-i.html#novas-bibliotecas-2023-em-diante" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><code>sf</code> (pacote moderno para dados de pontos, áreas, linhas etc…)</p></li>
+<li><p><code>ggspatial</code> (funções espaciais do sf para ggplot )</p></li>
+<li><p><code>spatstat</code> (análise de processos pontuais)</p></li>
+<li><p><code>splancs</code> (análise de processos pontuais)</p></li>
+<li><p><code>spdep</code> (análise de dados de área)</p></li>
+<li><p><code>SpatialEpi</code> (métodos para análise epidemiológica espacial)</p></li>
+<li><p><code>tmap</code> (mapas temáticos)</p></li>
+<li><p><code>mapsf</code> (mapas temáticos)</p></li>
+<li><p><code>terra</code> (dados raster)</p></li>
+<li><p><code>stars</code> (raster spaço temporal)</p></li>
+<li></li>
+</ul>
+</div>
+<div id="bibliotecas-antigas" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> bibliotecas antigas<a href="dados-de-área-i.html#bibliotecas-antigas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><code>maptools</code> (visualização de dados de área)</li>
+<li><code>sp</code> (antiga classe para dados pontos, área, grids, etc…)</li>
+<li><code>rgdal</code></li>
+<li><code>rgeos</code></li>
+</ul>
+<p>OBS:</p>
+<div class="greenbox">
+<p>a biblioteca <em>sp_2.1-0</em> foi publicado em 2 de outubro de 2023, eliminando todas as dependências dos pacotes obsoletos. sp continuará disponível e mantida, mas não será mais desenvolvida posteriormente.</p>
+<p>Para saber mais acesse:</p>
+<p><a href="https://www.mail-archive.com/r-sig-geo@r-project.org/msg18879.html">Complete retirement of maptools, rgdal, rgeos and rgrass7</a></p>
+</div>
+<p><br></p>
+<p>Podemos ver outros pacotes que podem interessar em:</p>
+<p><a href="https://CRAN.R-project.org/view=Spatial">Task View: Analysis of Spatial
+Data</a></p>
+</div>
+</div>
+<div id="pontos-importantes" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Pontos importantes<a href="dados-de-área-i.html#pontos-importantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Apesar de estarmos acostumados a analisar e interpretar dados
+apresentados em mapas coropléticos, existem algumas detalhes a que
+devemos estar sempre atentos.</p>
+<p><br></p>
+<div id="pontos-de-corte-em-mapas" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Pontos de Corte em mapas<a href="dados-de-área-i.html#pontos-de-corte-em-mapas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Veja os mapas abaixo. Eles contêm exatamente a mesma variável e a mesma
+paleta de cores, o que está diferente neles?</p>
+<p><img src="figuras/mapa_classes_big.png" /></p>
+<p>Veja a seguir o gráfico da densidade da variável <strong>índice de privação</strong>
+nos setores censitários em Olinda-PE. Os números mostram a quantidade de
+setores em cada classe.</p>
+<p><img src="figuras/mapas_corte.png" /></p>
+<p><br></p>
+</div>
+<div id="escala-fixa-ao-longo-do-tempo" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Escala fixa ao longo do tempo<a href="dados-de-área-i.html#escala-fixa-ao-longo-do-tempo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Outro ponto importante: quando se quer comparar mapas (por exemplo, em
+momentos distintos no tempo), é preciso se certificar que as classes
+sejam as mesmas em todos eles.</p>
+<p><br />
+</p>
+<p><img src="figuras/microcefaliaPE.png" /> <small> Fonte: SINASC. </small></p>
+<!-- ![](figuras/mapa_escala.png) -->
+<p><br></p>
+</div>
+<div id="tamanho-heterogêneo-das-áreas" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> Tamanho heterogêneo das áreas<a href="dados-de-área-i.html#tamanho-heterogêneo-das-áreas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Devemos estar atentos a grandes áreas (polígonos maiores) que apresentam
+uma população menor e em geral sujeita a valores extremos devido a
+instabildiade em pequenas áreas.</p>
+<p><img src="figuras/pct_analfabetismo.png" /></p>
+<p>Compare agora com a densidade populacional:</p>
+<p><img src="figuras/densidade.png" /></p>
+<p><br></p>
+</div>
+<div id="o-problema-da-área-modificável-maup" class="section level3 hasAnchor" number="10.3.4">
+<h3><span class="header-section-number">10.3.4</span> O problema da área modificável (MAUP)<a href="dados-de-área-i.html#o-problema-da-área-modificável-maup" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A utilização de variáveis agregadas, notadamente em pequenas áreas
+(setores censitários,quadras, etc…), pode levar a um problema pois as
+estatísticas obtidas nessas áreas (como por exemplo taxas, medidas de
+autocorrelação e regressões) podem variar em função do recorte
+empregado. A este problema soma-se a variação em pequenos números que
+nos obriga a empregar técnicas para reduzir esse efeito.</p>
+<p>Existem dois principais efeitos:</p>
+<p><br>
+<strong>- Efeitos da Escala</strong></p>
+<p>Este efeito ocorre quando se analise o mesmo dado em escalas diferentes,
+como pro exemplo em setores censitários e bairros ; bairros para regiões
+administrativas ; municipio para regional de saúde… Similar ao
+problema do paradoxo de Simpson!</p>
+<p><img src="figuras/paradoxo_simpson.jpeg" /></p>
+<p><strong>- Efeito de Zoneamento</strong></p>
+<p>Este efeito acontece na mesma escala, não sendo um problema relacionado
+ao nível de agregação, mas sim à maneira que se recorta o espaço usando
+polígonos diferentes.</p>
+<p>Por exemplo, na mesma área usar polígonos de
+abrangência de uma UBS e do PSF.</p>
+<p>Por exemplo, se analisarmos um evento por quadras:</p>
+<p><img src="figuras/quadras.png" /></p>
+<p>Se analisarmos este mesmo evento por setores censitários, podemos obter
+resultados diferentes.</p>
+<p><img src="figuras/setores.png" /></p>
+<p><strong>- Exemplo Gerrymandering</strong></p>
+<p>No EUA no contesto eleitoral esse recorte intencional das áreas é conhecido por Gerrymandering.É um método de definição dos distritos eleitorais de um território com o objetivo de obter vantagens no número de representantes políticos eleitos, em especial nos locais onde se utiliza o sistema eleitoral majoritário com voto distrital.</p>
+<p><img src="figuras/gerry.drawio.png" /></p>
+<p>Na figura abaixo podemos ver dois exemplos desse fenômeno. Note que os distritos são enormes +/- 760.00 hab isso facilita muito essa pratica.
+<img src="figuras/gerry_example.png" /></p>
+<p>Para saber mais:</p>
+<ul>
+<li><p><a href="https://www.scientificamerican.com/article/geometry-reveals-the-tricks-behind-gerrymandering/">Geometry Reveals the Tricks behind Gerrymandering</a></p></li>
+<li><p><a href="https://www.britannica.com/story/supreme-court-allows-states-to-use-unlawfully-gerrymandered-congressional-maps">Supreme Court allows states to use unlawfully gerrymandered congressional maps in the 2022 midterm elections</a></p></li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="exemplo-em-r" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Exemplo em R<a href="dados-de-área-i.html#exemplo-em-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para os exemplos a seguir utilizaremos as bibliotecas:</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="dados-de-área-i.html#cb234-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb234-2"><a href="dados-de-área-i.html#cb234-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb234-3"><a href="dados-de-área-i.html#cb234-3" tabindex="-1"></a><span class="fu">library</span>(maptools)</span>
+<span id="cb234-4"><a href="dados-de-área-i.html#cb234-4" tabindex="-1"></a><span class="fu">library</span>(cartography)</span>
+<span id="cb234-5"><a href="dados-de-área-i.html#cb234-5" tabindex="-1"></a><span class="fu">library</span>(osmdata)  <span class="co"># Open Street Map</span></span></code></pre></div>
+<p>Antes de mais nada, como na aula anterior, vamos baixar o <em>ZIP</em> contendo
+os arquivos no formato <strong>shape</strong>.</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="dados-de-área-i.html#cb235-1" tabindex="-1"></a><span class="co"># Opções para o Windows não se perder</span></span>
+<span id="cb235-2"><a href="dados-de-área-i.html#cb235-2" tabindex="-1"></a><span class="fu">options</span>(<span class="at">download.file.method =</span> <span class="st">&quot;libcurl&quot;</span>, <span class="at">url.method =</span> <span class="st">&quot;libcurl&quot;</span>)</span>
+<span id="cb235-3"><a href="dados-de-área-i.html#cb235-3" tabindex="-1"></a></span>
+<span id="cb235-4"><a href="dados-de-área-i.html#cb235-4" tabindex="-1"></a><span class="co"># Local dos dados na rede</span></span>
+<span id="cb235-5"><a href="dados-de-área-i.html#cb235-5" tabindex="-1"></a>local <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ogcruz/dados_eco_2023/main/dados/&quot;</span></span>
+<span id="cb235-6"><a href="dados-de-área-i.html#cb235-6" tabindex="-1"></a></span>
+<span id="cb235-7"><a href="dados-de-área-i.html#cb235-7" tabindex="-1"></a><span class="co"># tmpdir &lt;- tempdir()</span></span>
+<span id="cb235-8"><a href="dados-de-área-i.html#cb235-8" tabindex="-1"></a><span class="fu">download.file</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;olinda.zip&quot;</span>), <span class="at">destfile =</span> <span class="st">&quot;olinda.zip&quot;</span>)</span>
+<span id="cb235-9"><a href="dados-de-área-i.html#cb235-9" tabindex="-1"></a></span>
+<span id="cb235-10"><a href="dados-de-área-i.html#cb235-10" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="st">&quot;olinda.zip&quot;</span>, <span class="at">exdir =</span> <span class="st">&quot;olinda/&quot;</span>)</span>
+<span id="cb235-11"><a href="dados-de-área-i.html#cb235-11" tabindex="-1"></a><span class="fu">dir</span>(<span class="st">&quot;olinda&quot;</span>)</span></code></pre></div>
+<p>Lendo o shape de Olinda e exibindo os primeiros registros:</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="dados-de-área-i.html#cb236-1" tabindex="-1"></a>olinda.sf <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;olinda/olinda.shp&quot;</span>, <span class="at">crs =</span> <span class="dv">5535</span>)</span>
+<span id="cb236-2"><a href="dados-de-área-i.html#cb236-2" tabindex="-1"></a>olinda.sf</span></code></pre></div>
+<pre><code>## Simple feature collection with 241 features and 10 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 289000 ymin: 9111000 xmax: 298400 ymax: 9121000
+## Projected CRS: SAD69(96) / UTM zone 25S
+## # A tibble: 241 × 11
+##       AREA PERIMETER SETOR_ SETOR_ID  VAR5 DENS_DEMO   SET CASES   POP DEPRIV                                                                                     geometry
+##  *   &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;                                                                                &lt;POLYGON [m]&gt;
+##  1  79139.     1270.      2        1   242     4380.   242     1   337  0.412 ((295638 9120506, 295599 9120446, 295506 9120324, 295599 9120260, 295560 9120190, 295520 ...
+##  2 151153      2189.      3        2   224    10563.   224     6  1550  0.168 ((295909 9120474, 295909 9120473, 295893 9120443, 295889 9120405, 295884 9120395, 295868 ...
+##  3 265037      2818.      4        3   223     6642.   223     5  1711  0.192 ((295909 9120473, 295909 9120474, 295913 9120481, 296371 9120195, 296299 9120071, 296465 ...
+##  4 137696      2098.      5        4   229    13174.   229     1  1767  0.472 ((295527 9120106, 295691 9119937, 295716 9119911, 295774 9119851, 295783 9119842, 295791 ...
+##  5 121873      3353.      6        5   228    13812.   228     1  1638  0.302 ((295560 9120190, 295604 9120260, 295642 9120238, 295617 9120180, 295616 9120179, 295770 ...
+##  6  55007.     1078.      7        6   222    21309.   222     4  1139  0.097 ((296694 9119921, 296674 9119899, 296613 9119832, 296604 9119837, 296605 9119835, 296465 ...
+##  7 225463      2028.      8        9   218     5422.   218     6  1186  0.141 ((298128 9119189, 297987 9119214, 298028 9119457, 298042 9119509, 298152 9119852, 298193 ...
+##  8 184847      2547.      9       10   225    11724.   225     2  2108  0.199 ((296674 9119899, 296694 9119921, 296781 9119865, 296781 9119864, 296620 9119672, 296742 ...
+##  9  82379.     1636.     10       11   227    13646.   227     1  1088  0.228 ((296142 9119871, 296308 9119748, 296309 9119747, 296305 9119743, 296305 9119742, 296197 ...
+## 10  75166.     1094.     11       12   221    21053.   221     6  1535  0.223 ((296620 9119672, 296781 9119864, 297010 9119713, 296904 9119566, 296869 9119516, 296851 ...
+## # ℹ 231 more rows</code></pre>
+<!-- ```{r, echo=T, warning=FALSE, results='hide', message = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- ``` -->
+</div>
+<div id="visualização-mapa-temático-usando-a-biblioteca-tmap" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Visualização: Mapa Temático usando a biblioteca <code>tmap</code><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="dados-de-área-i.html#cb238-1" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb238-2"><a href="dados-de-área-i.html#cb238-2" tabindex="-1"></a></span>
+<span id="cb238-3"><a href="dados-de-área-i.html#cb238-3" tabindex="-1"></a><span class="fu">tm_shape</span>(olinda.sf) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="st">&quot;POP&quot;</span>, <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>,</span>
+<span id="cb238-4"><a href="dados-de-área-i.html#cb238-4" tabindex="-1"></a>    <span class="at">palette =</span> <span class="st">&quot;BuPu&quot;</span>) <span class="sc">+</span> <span class="fu">tm_legend</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="st">&quot;left&quot;</span>,</span>
+<span id="cb238-5"><a href="dados-de-área-i.html#cb238-5" tabindex="-1"></a>    <span class="st">&quot;bottom&quot;</span>))</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-221-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<!-- ```{r, echo=F, warning=FALSE, results='asis', message = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- DT::datatable(head(olinda.sf)) -->
+<!-- ``` -->
+<p>Calculando a taxa bruta de detecção por 10000:</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="dados-de-área-i.html#cb239-1" tabindex="-1"></a>olinda.sf<span class="sc">$</span>tx <span class="ot">&lt;-</span> olinda.sf<span class="sc">$</span>CASES <span class="sc">*</span> <span class="dv">10000</span><span class="sc">/</span>olinda.sf<span class="sc">$</span>POP</span></code></pre></div>
+<p>Plotando o mapa temático da taxa de detecção:</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="dados-de-área-i.html#cb240-1" tabindex="-1"></a><span class="fu">plot</span>(olinda.sf[<span class="st">&quot;tx&quot;</span>])</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-223-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Utilizando o ggplot para plotar o mapa temático da taxa de detecção:</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="dados-de-área-i.html#cb241-1" tabindex="-1"></a><span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">cut_number</span>(tx,</span>
+<span id="cb241-2"><a href="dados-de-área-i.html#cb241-2" tabindex="-1"></a>    <span class="dv">5</span>))) <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="st">&quot;Taxa de Detecção&quot;</span>,</span>
+<span id="cb241-3"><a href="dados-de-área-i.html#cb241-3" tabindex="-1"></a>    <span class="at">palette =</span> <span class="st">&quot;OrRd&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Taxa de Detecção de Hanseníase&quot;</span>) <span class="sc">+</span></span>
+<span id="cb241-4"><a href="dados-de-área-i.html#cb241-4" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-224-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Gerando mapas temáticos interativos da taxa de detecção:</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="dados-de-área-i.html#cb242-1" tabindex="-1"></a><span class="fu">tm_shape</span>(olinda.sf) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="st">&quot;tx&quot;</span>, <span class="at">style =</span> <span class="st">&quot;quantile&quot;</span>,</span>
+<span id="cb242-2"><a href="dados-de-área-i.html#cb242-2" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Taxa de Detecção de Hanseníase&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-225-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="dados-de-área-i.html#cb243-1" tabindex="-1"></a><span class="co"># tmap_mode(&#39;view&#39;) tmap_last()</span></span></code></pre></div>
+<p><br />
+</p>
+<p>Plotando o bubble map da taxa:</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="dados-de-área-i.html#cb244-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(olinda.sf))</span>
+<span id="cb244-2"><a href="dados-de-área-i.html#cb244-2" tabindex="-1"></a><span class="fu">propSymbolsLayer</span>(<span class="at">x =</span> olinda.sf, <span class="at">var =</span> <span class="st">&quot;tx&quot;</span>, <span class="at">legend.title.txt =</span> <span class="st">&quot;Taxa de Detecção&quot;</span>,</span>
+<span id="cb244-3"><a href="dados-de-área-i.html#cb244-3" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;#a7dfb4&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-226-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="análise-exploratória-1" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Análise exploratória<a href="dados-de-área-i.html#análise-exploratória-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="efeitos-de-primeira-ordem" class="section level3 hasAnchor" number="10.6.1">
+<h3><span class="header-section-number">10.6.1</span> Efeitos de primeira ordem:<a href="dados-de-área-i.html#efeitos-de-primeira-ordem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Médias móveis espaciais</p></li>
+<li><p>Kernel</p></li>
+</ul>
+</div>
+<div id="efeitos-de-segunda-ordem-dependência-espacial" class="section level3 hasAnchor" number="10.6.2">
+<h3><span class="header-section-number">10.6.2</span> Efeitos de segunda ordem (dependência espacial):<a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Índice de Moran</p></li>
+<li><p>Índice de Geary</p></li>
+<li><p>Correlograma</p></li>
+</ul>
+</div>
+</div>
+<div id="medidas-de-proximidade-em-dados-de-área" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Medidas de proximidade em dados de área<a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Quando trabalhamos com atributos variando continuamente na área de
+estudo (geoestatística) é natural usar distância entre localizações
+como medida de proximidade espacial.</p></li>
+<li><p>Precisamos definir como medir proximidade espacial em dados de área.</p></li>
+<li><p>Poderíamos calcular, por exemplo, a distância entre os centros ou
+centróides dos polígonos.</p></li>
+<li><p>De forma mais geral, utilizamos uma matriz <span class="math inline">\(W\)</span>, onde cada elemento
+<span class="math inline">\(w_{ij}\)</span> representa medida de proximidade espacial entre as áreas
+<span class="math inline">\(A_i\)</span> e <span class="math inline">\(A_j\)</span>.</p></li>
+<li><p>A escolha de <span class="math inline">\(w_{ij}\)</span> depende do tipo de dado, da região, dos
+mecanismos particulares da dependência espacial.</p></li>
+</ul>
+</div>
+<div id="matriz-de-vizinhança" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Matriz de vizinhança<a href="dados-de-área-i.html#matriz-de-vizinhança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Possíveis critérios:</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="97%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipos</th>
+<th>Matrizes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math display">\[w_{ij} = \begin{cases} 1 \ \ \text{centróide de } A_i \ \text{é o mais próximo de } A_j \\ 0 \ \ \text{caso contrário} \end{cases}\]</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math display">\[w_{ij} = \begin{cases} 1 \ \ \text{centróide de } A_i \ \text{dentro de distância especificada de } A_j \\ 0 \ \ \text{caso contrário} \end{cases}\]</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math display">\[w_{ij} = \begin{cases} 1 \ \ A_i \ \text{tem fronteira comum com } A_j \\ 0 \ \ \text{caso contrário} \end{cases}\]</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math display">\[w_{ij} = \dfrac{I_{ij}}{I_i} \ \text{sendo} \ I_{ij} \ \text{o comprimento da fronteira comum entre }A_i \ \text{e} \ A_j. I_{i} \ \text{é o perímetro de } \ A_i\]</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Vizinhança por contiguidade</p>
+<p><img src="figuras/matrizW.jpg" width="1270" /></p>
+<p>Ex: Ligações por estradas asfaltadas entre os municı́pios do estado do
+Rio de Janeiro.</p>
+<p><img src="figuras/matrizRJ.png" width="1270" /></p>
+<p>Construindo a Matrix de vizinhanca (lista de vizinhos):</p>
+<p>A função <code>poly2nb</code> da bilioteca <code>spdep</code> cria uma lista de vizinhos a
+partir de poligonos para áreas que fazem fronteira uma com a outra.</p>
+<p>Repare o número medio de conexões 5.49.</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="dados-de-área-i.html#cb245-1" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb245-2"><a href="dados-de-área-i.html#cb245-2" tabindex="-1"></a>viz <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(olinda.sf)</span>
+<span id="cb245-3"><a href="dados-de-área-i.html#cb245-3" tabindex="-1"></a>viz</span></code></pre></div>
+<p>Neighbour list object:
+Number of regions: 241
+Number of nonzero links: 1324
+Percentage nonzero weights: 2.28
+Average number of links: 5.494</p>
+<p>A classe do obj viz á “lista de vizinho” (<em>nb=neighbours lists</em>).</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="dados-de-área-i.html#cb246-1" tabindex="-1"></a><span class="fu">class</span>(viz)</span></code></pre></div>
+<p>[1] “nb”</p>
+<p>Para fazer a vizinhança por conectividade, iremos precisar das
+coordenadas dos centróides:</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="dados-de-área-i.html#cb247-1" tabindex="-1"></a>olinda.sp <span class="ot">&lt;-</span> <span class="fu">as</span>(olinda.sf, <span class="st">&quot;Spatial&quot;</span>)  <span class="co"># convertendo em formato sp</span></span>
+<span id="cb247-2"><a href="dados-de-área-i.html#cb247-2" tabindex="-1"></a>coord <span class="ot">&lt;-</span> <span class="fu">coordinates</span>(olinda.sp)  <span class="co"># coordenadas dos centroidas dos polígonos de olinda</span></span>
+<span id="cb247-3"><a href="dados-de-área-i.html#cb247-3" tabindex="-1"></a><span class="fu">class</span>(olinda.sp)</span></code></pre></div>
+<p>[1] “SpatialPolygonsDataFrame”
+attr(,“package”)
+[1] “sp”</p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="dados-de-área-i.html#cb248-1" tabindex="-1"></a>viz.sf <span class="ot">&lt;-</span> <span class="fu">as</span>(<span class="fu">nb2lines</span>(viz, <span class="at">coords =</span> coord), <span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb248-2"><a href="dados-de-área-i.html#cb248-2" tabindex="-1"></a>viz.sf <span class="ot">&lt;-</span> <span class="fu">st_set_crs</span>(viz.sf, <span class="fu">st_crs</span>(olinda.sf))</span>
+<span id="cb248-3"><a href="dados-de-área-i.html#cb248-3" tabindex="-1"></a></span>
+<span id="cb248-4"><a href="dados-de-área-i.html#cb248-4" tabindex="-1"></a><span class="co"># Plota o grafo de conectividade por contiguidade</span></span>
+<span id="cb248-5"><a href="dados-de-área-i.html#cb248-5" tabindex="-1"></a>mapa.viz1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;salmon&quot;</span>,</span>
+<span id="cb248-6"><a href="dados-de-área-i.html#cb248-6" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> viz.sf, <span class="at">size =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb248-7"><a href="dados-de-área-i.html#cb248-7" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Vizinhança por conectividade&quot;</span>) <span class="sc">+</span></span>
+<span id="cb248-8"><a href="dados-de-área-i.html#cb248-8" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Latitude&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Longitude&quot;</span>)</span>
+<span id="cb248-9"><a href="dados-de-área-i.html#cb248-9" tabindex="-1"></a>mapa.viz1</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-230-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Contruindo uma lista de <em>K</em> vizinhos mais próximos. Neste exemplo será
+feita a conectividade dos vizinhos mais próximos de primeira ordem.</p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="dados-de-área-i.html#cb249-1" tabindex="-1"></a>viz2 <span class="ot">&lt;-</span> <span class="fu">knn2nb</span>(<span class="fu">knearneigh</span>(coord, <span class="dv">1</span>))</span>
+<span id="cb249-2"><a href="dados-de-área-i.html#cb249-2" tabindex="-1"></a></span>
+<span id="cb249-3"><a href="dados-de-área-i.html#cb249-3" tabindex="-1"></a>viz2.sf <span class="ot">&lt;-</span> <span class="fu">as</span>(<span class="fu">nb2lines</span>(viz2, <span class="at">coords =</span> coord), <span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb249-4"><a href="dados-de-área-i.html#cb249-4" tabindex="-1"></a>viz2.sf <span class="ot">&lt;-</span> <span class="fu">st_set_crs</span>(viz2.sf, <span class="fu">st_crs</span>(olinda.sf))</span>
+<span id="cb249-5"><a href="dados-de-área-i.html#cb249-5" tabindex="-1"></a></span>
+<span id="cb249-6"><a href="dados-de-área-i.html#cb249-6" tabindex="-1"></a>mapa.viz2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;salmon&quot;</span>,</span>
+<span id="cb249-7"><a href="dados-de-área-i.html#cb249-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> viz2.sf, <span class="at">size =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb249-8"><a href="dados-de-área-i.html#cb249-8" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Vizinhança dos vizinhos </span><span class="sc">\n</span><span class="st">mais próximos de 1ª ordem&quot;</span>) <span class="sc">+</span></span>
+<span id="cb249-9"><a href="dados-de-área-i.html#cb249-9" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Latitude&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Longitude&quot;</span>)</span>
+<span id="cb249-10"><a href="dados-de-área-i.html#cb249-10" tabindex="-1"></a>mapa.viz2</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-231-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Contruindo conectividade dos vizinhos por triangulação (polígono de
+voronoi).</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="dados-de-área-i.html#cb250-1" tabindex="-1"></a>viz3 <span class="ot">&lt;-</span> <span class="fu">tri2nb</span>(coord)</span>
+<span id="cb250-2"><a href="dados-de-área-i.html#cb250-2" tabindex="-1"></a></span>
+<span id="cb250-3"><a href="dados-de-área-i.html#cb250-3" tabindex="-1"></a>viz3.sf <span class="ot">&lt;-</span> <span class="fu">as</span>(<span class="fu">nb2lines</span>(viz3, <span class="at">coords =</span> coord), <span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb250-4"><a href="dados-de-área-i.html#cb250-4" tabindex="-1"></a>viz3.sf <span class="ot">&lt;-</span> <span class="fu">st_set_crs</span>(viz3.sf, <span class="fu">st_crs</span>(olinda.sf))</span>
+<span id="cb250-5"><a href="dados-de-área-i.html#cb250-5" tabindex="-1"></a></span>
+<span id="cb250-6"><a href="dados-de-área-i.html#cb250-6" tabindex="-1"></a>mapa.viz3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;salmon&quot;</span>,</span>
+<span id="cb250-7"><a href="dados-de-área-i.html#cb250-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> viz3.sf, <span class="at">size =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb250-8"><a href="dados-de-área-i.html#cb250-8" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Vizinhança por triangulação&quot;</span>) <span class="sc">+</span></span>
+<span id="cb250-9"><a href="dados-de-área-i.html#cb250-9" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Latitude&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Longitude&quot;</span>)</span>
+<span id="cb250-10"><a href="dados-de-área-i.html#cb250-10" tabindex="-1"></a>mapa.viz3</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-232-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Contruindo conectividade dos vizinhos usando a distância entre os
+pontos. Se as coordenadas estiverem em UTM, temos distância em metros.</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="dados-de-área-i.html#cb251-1" tabindex="-1"></a>dista <span class="ot">&lt;-</span> <span class="fu">dist</span>(coord)  <span class="co"># distância euclidiana entre centroides</span></span>
+<span id="cb251-2"><a href="dados-de-área-i.html#cb251-2" tabindex="-1"></a></span>
+<span id="cb251-3"><a href="dados-de-área-i.html#cb251-3" tabindex="-1"></a>dista <span class="ot">&lt;-</span> dista[<span class="fu">lower.tri</span>(dista)]  <span class="co"># pega apenas o triângulo inferior</span></span>
+<span id="cb251-4"><a href="dados-de-área-i.html#cb251-4" tabindex="-1"></a></span>
+<span id="cb251-5"><a href="dados-de-área-i.html#cb251-5" tabindex="-1"></a><span class="fu">summary</span>(dista)  <span class="co"># sumário das distâncias</span></span></code></pre></div>
+<p>Min. 1st Qu. Median Mean 3rd Qu. Max. NA’s
+91 2298 4117 4071 5780 9467 7260</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="dados-de-área-i.html#cb252-1" tabindex="-1"></a><span class="fu">hist</span>(dista, <span class="at">br =</span> <span class="dv">100</span>, <span class="at">main =</span> <span class="st">&quot;Histograma das distâncias&quot;</span>)  <span class="co"># histograma das distâncias</span></span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-233-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="dados-de-área-i.html#cb253-1" tabindex="-1"></a>viz4 <span class="ot">&lt;-</span> <span class="fu">dnearneigh</span>(<span class="fu">coordinates</span>(olinda.sp), <span class="dv">1</span>, <span class="dv">1000</span>)  <span class="co"># vizinhos a cada 1000m do centroide</span></span>
+<span id="cb253-2"><a href="dados-de-área-i.html#cb253-2" tabindex="-1"></a></span>
+<span id="cb253-3"><a href="dados-de-área-i.html#cb253-3" tabindex="-1"></a>viz4.sf <span class="ot">&lt;-</span> <span class="fu">as</span>(<span class="fu">nb2lines</span>(viz4, <span class="at">coords =</span> coord), <span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb253-4"><a href="dados-de-área-i.html#cb253-4" tabindex="-1"></a>viz4.sf <span class="ot">&lt;-</span> <span class="fu">st_set_crs</span>(viz4.sf, <span class="fu">st_crs</span>(olinda.sf))</span>
+<span id="cb253-5"><a href="dados-de-área-i.html#cb253-5" tabindex="-1"></a></span>
+<span id="cb253-6"><a href="dados-de-área-i.html#cb253-6" tabindex="-1"></a><span class="co"># plota o grafo de conectividade da distancia ate</span></span>
+<span id="cb253-7"><a href="dados-de-área-i.html#cb253-7" tabindex="-1"></a><span class="co"># 1000m</span></span>
+<span id="cb253-8"><a href="dados-de-área-i.html#cb253-8" tabindex="-1"></a>mapa.viz4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;salmon&quot;</span>,</span>
+<span id="cb253-9"><a href="dados-de-área-i.html#cb253-9" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> viz4.sf, <span class="at">size =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb253-10"><a href="dados-de-área-i.html#cb253-10" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Vizinhança pela distância </span><span class="sc">\n</span><span class="st"> das coordenadas (1000m)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb253-11"><a href="dados-de-área-i.html#cb253-11" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Latitude&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Longitude&quot;</span>)</span>
+<span id="cb253-12"><a href="dados-de-área-i.html#cb253-12" tabindex="-1"></a>mapa.viz4</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-234-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="dados-de-área-i.html#cb254-1" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb254-2"><a href="dados-de-área-i.html#cb254-2" tabindex="-1"></a><span class="fu">grid.arrange</span>(mapa.viz1, mapa.viz2, mapa.viz3, mapa.viz4,</span>
+<span id="cb254-3"><a href="dados-de-área-i.html#cb254-3" tabindex="-1"></a>    <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-235-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="médias-móveis-espaciais" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> Médias Móveis espaciais<a href="dados-de-área-i.html#médias-móveis-espaciais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A média móvel espacial é dada por:</p>
+<p><span class="math display">\[\hat{\mu} = \dfrac{\sum_{j=1}^{n} w_{ij} y_i}{\sum_{j=1}^{n} w_{ij}}\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(w_{ij}\)</span> a ponderação obtida da matriz de vizinhança</p></li>
+<li><p><span class="math inline">\(y_i\)</span> o valor do atributo na área <span class="math inline">\(i\)</span></p></li>
+</ul>
+<p><img src="figuras/MM_formula.png" width="1270" /></p>
+<p>Ex: Percentual de idosos na cidade de São Paulo</p>
+<p><img src="figuras/MM_SP.png" width="1270" /></p>
+</div>
+<div id="kernel-de-área-ou-atributo" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> Kernel de Área (ou Atributo)<a href="dados-de-área-i.html#kernel-de-área-ou-atributo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Utiliza-se para áreas alocando o valor do atributo a um ponto da
+área, por exemplo centróide geométrico ou populacional.</p></li>
+<li><p>No kernel de um atributo contínuo (por ex., indicadores), inclui-se
+no denominador o kernel da distribuição dos centróides das áreas.</p></li>
+</ul>
+<p><span class="math display">\[\hat{\mu}_{\tau}(s) = \dfrac{\sum\limits_{i=1}^{n} K \left( \frac{(s - s_i)}{\tau} \right) y_i \nonumber}{\sum\limits_{i=1}^{n} K \left( \frac{(s - s_i)}{\tau} \right) \nonumber}\]</span></p>
+<p>Sendo:</p>
+<p><span class="math inline">\(k\)</span> - Função kernel</p>
+<p><span class="math inline">\(\tau\)</span> - Largura de banda</p>
+<p><span class="math inline">\(y_i\)</span> - Atributo em cada ponto (centróide da área)</p>
+<ul>
+<li><p>Obtém-se portanto a média do atributo na região.</p></li>
+<li><p>Quando as observações representam uma contagem, como por exemplo
+contagem da população, cada ponto receberá o atributo <span class="math inline">\(p_i\)</span>
+(população) alisado pela função <span class="math inline">\(k\)</span>, e largura de banda <span class="math inline">\(\tau\)</span>.</p></li>
+</ul>
+<p><span class="math display">\[\hat{p}_{\tau}(s) = \sum\limits_{i=1}^{n} \dfrac{1}{\tau^2} K \left( \frac{(s - s_i)}{\tau} \right) p_i \nonumber\]</span></p>
+<ul>
+<li>Obtém-se portanto uma contagem de eventos por unidade de área.</li>
+</ul>
+<p>Ex: Densidade dos casos de dengue no Rio de janeiro - 2008 a 2012</p>
+<p><img src="figuras/kernel_area.png" width="1270" /></p>
+<p>Como exemplo iremos plotar o kernel por atributo referente a taxa de
+detecção de hanseníase em Olinda/PE.</p>
+<p>Primeiramente é necessário dissolver os poligonos em formato <em>sf</em> para
+obter o contorno. Nesse caso queremos preservar o atributo <em>AREA</em></p>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="dados-de-área-i.html#cb255-1" tabindex="-1"></a>olinda.sf<span class="sc">$</span>AREA <span class="ot">&lt;-</span> <span class="fu">st_area</span>(olinda.sf)</span>
+<span id="cb255-2"><a href="dados-de-área-i.html#cb255-2" tabindex="-1"></a><span class="fu">names</span>(olinda.sf)</span></code></pre></div>
+<p>[1] “AREA” “PERIMETER” “SETOR_” “SETOR_ID” “VAR5” “DENS_DEMO” “SET” “CASES” “POP” “DEPRIV” “geometry” “tx”</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="dados-de-área-i.html#cb256-1" tabindex="-1"></a>olinda.contorno <span class="ot">&lt;-</span> olinda.sf <span class="sc">%&gt;%</span></span>
+<span id="cb256-2"><a href="dados-de-área-i.html#cb256-2" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">AREA =</span> <span class="fu">sum</span>(AREA))</span></code></pre></div>
+<p>Duas formas para plotar o contorno de Olinda/PE.</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="dados-de-área-i.html#cb257-1" tabindex="-1"></a><span class="fu">ggplot</span>(olinda.contorno) <span class="sc">+</span> <span class="fu">geom_sf</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-237-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Ou utilizando a biblioteca <code>spatstat</code>.</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="dados-de-área-i.html#cb258-1" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb258-2"><a href="dados-de-área-i.html#cb258-2" tabindex="-1"></a><span class="fu">plot</span>(olinda.contorno)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-238-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="dados-de-área-i.html#cb259-1" tabindex="-1"></a>olinda.w <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(<span class="fu">as_Spatial</span>(olinda.contorno))</span></code></pre></div>
+<p>Mas podemos fazer de uma maneira bem mais simples onde não preservamos
+nenhum atributo!</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="dados-de-área-i.html#cb260-1" tabindex="-1"></a>olinda2.contorno <span class="ot">&lt;-</span> <span class="fu">st_union</span>(olinda.sf)</span>
+<span id="cb260-2"><a href="dados-de-área-i.html#cb260-2" tabindex="-1"></a><span class="fu">plot</span>(olinda2.contorno)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-239-1.png" width="672" /></p>
+<p>Extraindo os centróidas dos polígonos em Olinda:</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="dados-de-área-i.html#cb261-1" tabindex="-1"></a>centroides <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(<span class="fu">st_geometry</span>(olinda.sf))</span>
+<span id="cb261-2"><a href="dados-de-área-i.html#cb261-2" tabindex="-1"></a></span>
+<span id="cb261-3"><a href="dados-de-área-i.html#cb261-3" tabindex="-1"></a><span class="co"># Transformando em os centróides em formato sp</span></span>
+<span id="cb261-4"><a href="dados-de-área-i.html#cb261-4" tabindex="-1"></a>centroides.sp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as_Spatial</span>(centroides))</span>
+<span id="cb261-5"><a href="dados-de-área-i.html#cb261-5" tabindex="-1"></a><span class="fu">names</span>(centroides.sp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb261-6"><a href="dados-de-área-i.html#cb261-6" tabindex="-1"></a></span>
+<span id="cb261-7"><a href="dados-de-área-i.html#cb261-7" tabindex="-1"></a><span class="fu">plot</span>(centroides.sp)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-240-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Colocando os pontos no formato <em>sp</em>:</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="dados-de-área-i.html#cb262-1" tabindex="-1"></a>centroides.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(centroides.sp<span class="sc">$</span>X, centroides.sp<span class="sc">$</span>Y,</span>
+<span id="cb262-2"><a href="dados-de-área-i.html#cb262-2" tabindex="-1"></a>    olinda.w)</span>
+<span id="cb262-3"><a href="dados-de-área-i.html#cb262-3" tabindex="-1"></a></span>
+<span id="cb262-4"><a href="dados-de-área-i.html#cb262-4" tabindex="-1"></a><span class="fu">plot</span>(centroides.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-241-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Fazendo o kernel por atributo da taxa de detecção</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="dados-de-área-i.html#cb263-1" tabindex="-1"></a>kernel.tx <span class="ot">&lt;-</span> <span class="fu">density</span>(centroides.ppp, <span class="dv">500</span>, <span class="at">weights =</span> olinda.sf<span class="sc">$</span>tx,</span>
+<span id="cb263-2"><a href="dados-de-área-i.html#cb263-2" tabindex="-1"></a>    <span class="at">scalekernel =</span> <span class="cn">TRUE</span>, <span class="at">diggle =</span> T)</span>
+<span id="cb263-3"><a href="dados-de-área-i.html#cb263-3" tabindex="-1"></a><span class="fu">plot</span>(kernel.tx)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-242-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="correlação-espacial-e-correlograma" class="section level2 hasAnchor" number="10.11">
+<h2><span class="header-section-number">10.11</span> Correlação espacial e Correlograma<a href="dados-de-área-i.html#correlação-espacial-e-correlograma" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Em geoestatı́stica, utlizamos o covariograma e o variograma para
+analisar a estrutura de covariância do processo.</p></li>
+<li><p>Ideias similares podem ser utilizadas para dados de área, supondo
+que os valores do atributo são localizados em um ponto dentro de
+cada área.</p></li>
+<li><p>Precisamos incorporar as medidas de proximidade espacial (matriz de
+vizinhança) utilizadas em dados de área.</p></li>
+<li><p>As técnicas mais comuns estimam correlação espacial ou
+autocorrelação espacial.</p></li>
+<li><p>As medidas mais comuns são: Índice de Moran e Índice de Geary.</p></li>
+</ul>
+<p>Para uma matriz de vizinhança <span class="math inline">\(W\)</span> a correlação espacial Moran <span class="math inline">\(I\)</span> é
+estimada como:</p>
+<p><span class="math display">\[I = \dfrac{n \sum_{i=1}^n \sum_{j=1}^n w_{ij} (y_{i}-\bar{y})(y_{j}-\bar{y})}{(\sum_{i=1}(y_{i}-\bar{y})^2)(\sum \sum_{i\neq j} w_{ij})}\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(w_{ij}\)</span> é o elemento da matriz de vizinhança.</p></li>
+<li><p>O Índice de Moran é um teste cuja hipótese nula é de independência
+ou aleatoriedade espacial.</p></li>
+<li><p>Valores positivos (entre 0 e 1) indicam correlação direta e
+negativos (entre -1 e 0) indicam correlação inversa.</p></li>
+</ul>
+<p>Para uma matriz de vizinhança W a correlação espacial <em>Geary C</em> é
+estimada como</p>
+<p><span class="math display">\[C = \dfrac{(n-1) \sum_{i=1}^n \sum_{j=1}^n w_{ij} (y_{i}-y_{j})}{2(\sum_{i=1}(y_{i}-\bar{y})^2)(\sum \sum_{i\neq j} w_{ij})}\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(w_{ij}\)</span> o elemento da matriz de vizinhança.</p></li>
+<li><p>O índice <em>C de Geary</em> assemelha-se ao variograma.</p></li>
+</ul>
+<p>Podemos generalizar as estimativas de correlação espacial para
+diferentes lags e calcular o correlograma. Por exemplo, o índice de
+Moran no lag <span class="math inline">\(k\)</span> é dado por:</p>
+<p><span class="math display">\[I^{(k)} = \dfrac{n \sum_{i=1}^n \sum_{j=1}^n w_{ij}^{(k)} (y_{i}-\bar{y})(y_{j}-\bar{y})}{(\sum_{i=1}(y_{i}-\bar{y})^2)(\sum \sum_{i\neq j} w_{ij}^{(k)})}\]</span></p>
+<p>Sendo:</p>
+<ul>
+<li><p><span class="math inline">\(w_{ij}\)</span> o elemento da matriz de vizinhança no lag <span class="math inline">\(k\)</span>, <span class="math inline">\(W^{(k)}\)</span></p></li>
+<li><p>Desta forma se constrói a função de autocorrelação para cada lag.</p></li>
+<li><p>A significância estatística pode ser calculada por permutação ou,
+caso a variável tenha distribuição normal, por teste <span class="math inline">\(Z\)</span>.</p></li>
+</ul>
+<p>Ex: Logaritmo da taxa mortalidade por homicídios no Sudeste, 1991.</p>
+<p><img src="figuras/correlacao_mapa.png" width="570" /></p>
+<p>Ex: Correlograma da taxa mortalidade por homicídios no Sudeste, 1991.</p>
+<p><img src="figuras/correlograma.png" width="570" /></p>
+</div>
+<div id="indicadores-locais-de-associação-espacial" class="section level2 hasAnchor" number="10.12">
+<h2><span class="header-section-number">10.12</span> Indicadores Locais de Associação Espacial<a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Os indicadores globais de autocorrelação espacial, como o <em>Índice de
+Moran</em>, fornecem um único valor como medida da associação espacial
+para todo o conjunto de dados, o que é útil na caracterização da
+região de estudo como um todo.</p></li>
+<li><p>Muitas vezes é desejável examinar padrões com mais detalhes.</p></li>
+<li><p>Os indicadores locais permitem encontrar os “bolsões” de dependência
+espacial não evidenciados nos índices globais.</p></li>
+<li><p>Permitem identificar:</p>
+<ul>
+<li><p>Clusters: agrupamentos de objetos com valores semelhantes</p></li>
+<li><p>Outliers: objetos anômalos</p></li>
+<li><p>Existência de mais de um regime espacial</p></li>
+</ul></li>
+<li><p>A significância estatística também é calculada por permutações e
+supõe-se normalidade da variável.</p></li>
+</ul>
+</div>
+<div id="indicadores-locais-de-associação-espacial-lisa" class="section level2 hasAnchor" number="10.13">
+<h2><span class="header-section-number">10.13</span> Indicadores Locais de Associação Espacial (LISA)<a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O Índice local de Moran pode ser expresso para cada área <span class="math inline">\(i\)</span> a partir
+dos valores normalizados <span class="math inline">\(z_i\)</span> do atributo como:</p>
+<p><span class="math display">\[I_{i} = \dfrac{z_{i}\sum_{j=1}^{n} w_{ij}z_{j}}{\sum_{j=1}^n z_{j}^2}\]</span></p>
+<p>Sendo <span class="math inline">\(z_i\)</span> o desvio de <em>i</em> em relação a média global e <span class="math inline">\(z_j\)</span> é a média
+dos desvios dos vizinhos de <em>i</em>.</p>
+<ul>
+<li><p><span class="math inline">\(i &gt; 0\)</span> - clusters de valores similares.</p></li>
+<li><p><span class="math inline">\(i &lt; 0\)</span> - clusters de valores distintos (Ex: uma localização com
+valores altos rodeada por uma vizinhança de valores baixos).</p></li>
+<li><p>A significância estatística do uso do Índice de Moran local também
+deve ser computada.</p></li>
+</ul>
+<p>Ex: Mapa temático com o Moran Global da Incidência de Hanseníase em São
+Paulo, 1989.</p>
+<p><img src="figuras/Moran_hansen0.png" width="570" /></p>
+<p>Ex: Moran Local da Incidência de Hanseníase em São Paulo, 1989.</p>
+<p><img src="figuras/Moran_hansen.png" width="570" /></p>
+<p>Obtendo a correlação da taxa de detecção de haseníase em Olinda/PE.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="dados-de-área-i.html#cb264-1" tabindex="-1"></a>pesos.viz <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(viz)</span>
+<span id="cb264-2"><a href="dados-de-área-i.html#cb264-2" tabindex="-1"></a><span class="fu">moran.test</span>(<span class="fu">na.omit</span>(olinda.sf<span class="sc">$</span>tx), pesos.viz)</span></code></pre></div>
+<pre><code>Moran I test under randomisation</code></pre>
+<p>data: na.omit(olinda.sf$tx)<br />
+weights: pesos.viz</p>
+<p>Moran I statistic standard deviate = 10, p-value &lt;2e-16
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic Expectation Variance
+0.393148 -0.004167 0.001552</p>
+<p>Plotando o correlograma</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="dados-de-área-i.html#cb266-1" tabindex="-1"></a>correl <span class="ot">&lt;-</span> <span class="fu">sp.correlogram</span>(viz, olinda.sf<span class="sc">$</span>tx, <span class="at">order =</span> <span class="dv">8</span>,</span>
+<span id="cb266-2"><a href="dados-de-área-i.html#cb266-2" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">&quot;I&quot;</span>)</span>
+<span id="cb266-3"><a href="dados-de-área-i.html#cb266-3" tabindex="-1"></a>correl</span></code></pre></div>
+<pre><code>Spatial correlogram for olinda.sf$tx 
+method: Moran&#39;s I
+         estimate expectation  variance standard deviate Pr(I) two sided    
+1 (241)  0.393148   -0.004167  0.001552            10.09         &lt; 2e-16 ***
+2 (241)  0.319179   -0.004167  0.000681            12.39         &lt; 2e-16 ***
+3 (241)  0.264313   -0.004167  0.000427            13.00         &lt; 2e-16 ***
+4 (241)  0.205452   -0.004167  0.000320            11.72         &lt; 2e-16 ***
+5 (241)  0.112051   -0.004167  0.000276             6.99         2.7e-12 ***
+6 (241)  0.036724   -0.004167  0.000256             2.56          0.0105 *  
+7 (241) -0.050565   -0.004167  0.000248            -2.94          0.0032 ** 
+8 (241) -0.107164   -0.004167  0.000300            -5.95         2.7e-09 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="dados-de-área-i.html#cb268-1" tabindex="-1"></a><span class="fu">plot</span>(correl)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-245-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Mapeando os polígonos que tiveram os p-valores mais significativos no
+Moran Local.</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="dados-de-área-i.html#cb269-1" tabindex="-1"></a>olinda.sf<span class="sc">$</span>pval <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(olinda.sf<span class="sc">$</span>tx, pesos.viz)[,</span>
+<span id="cb269-2"><a href="dados-de-área-i.html#cb269-2" tabindex="-1"></a>    <span class="dv">5</span>]</span>
+<span id="cb269-3"><a href="dados-de-área-i.html#cb269-3" tabindex="-1"></a></span>
+<span id="cb269-4"><a href="dados-de-área-i.html#cb269-4" tabindex="-1"></a><span class="fu">tm_shape</span>(olinda.sf) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">col =</span> <span class="st">&quot;pval&quot;</span>, <span class="at">title =</span> <span class="st">&quot;p-valores&quot;</span>,</span>
+<span id="cb269-5"><a href="dados-de-área-i.html#cb269-5" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="dv">1</span>), <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb269-6"><a href="dados-de-área-i.html#cb269-6" tabindex="-1"></a>    <span class="at">palette =</span> <span class="st">&quot;-Blues&quot;</span>) <span class="sc">+</span> <span class="fu">tm_scale_bar</span>(<span class="at">width =</span> <span class="fl">0.15</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-246-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p>Moran Local (Lisa Map) da taxa de detecção de haseníase em Olinda/PE.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="dados-de-área-i.html#cb270-1" tabindex="-1"></a>resI <span class="ot">&lt;-</span> <span class="fu">localmoran.sad</span>(<span class="fu">lm</span>(olinda.sf<span class="sc">$</span>tx <span class="sc">~</span> <span class="dv">1</span>), <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(viz),</span>
+<span id="cb270-2"><a href="dados-de-área-i.html#cb270-2" tabindex="-1"></a>    viz, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb270-3"><a href="dados-de-área-i.html#cb270-3" tabindex="-1"></a><span class="fu">summary</span>(resI)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ]</span></code></pre></div>
+<pre><code>      Local Morans I Stand. dev. (N) Pr. (N) Saddlepoint Pr. (Sad) Expectation Variance Skewness Kurtosis Minimum Maximum      omega    sad.r    sad.u
+1 1          0.12791         0.18796  0.8509     0.31170    0.7553   -0.004167   0.4938 -0.03470    8.709  -85.18   84.18  0.0010729  0.18582  0.19022
+2 2          0.02554         0.05188  0.9586     0.08267    0.9341   -0.004167   0.3278 -0.04259    8.710  -69.49   68.49  0.0003738  0.05165  0.05173
+3 3          0.15244         0.35459  0.7229     0.55676    0.5777   -0.004167   0.1951 -0.05521    8.711  -53.72   52.72  0.0030118  0.34460  0.37074
+4 4          0.50274         0.72134  0.4707     0.97384    0.3301   -0.004167   0.4938 -0.03470    8.709  -85.18   84.18  0.0031202  0.65981  0.81172
+5 5          0.42071         1.22465  0.2207     1.38111    0.1672   -0.004167   0.1204 -0.07028    8.712  -42.30   41.30  0.0082156  1.02832  1.47803
+6 6          0.07649         0.11478  0.9086     0.19135    0.8483   -0.004167   0.4938 -0.03470    8.709  -85.18   84.18  0.0006678  0.11401  0.11502
+7 7         -0.22400        -0.31283  1.2456    -0.50776    0.6116   -0.004167   0.4938 -0.03470    8.709  -85.18   84.18 -0.0016837 -0.30435 -0.32379
+8 8          0.27513         0.85568  0.3922     1.09593    0.2731   -0.004167   0.1065 -0.07470    8.712  -39.83   38.83  0.0074344  0.76668  0.98683
+9 9          0.32109         0.80844  0.4188     1.05417    0.2918   -0.004167   0.1619 -0.06061    8.711  -48.98   47.98  0.0058374  0.72961  0.92456
+10 10        0.04132         0.07945  0.9367     0.13008    0.8965   -0.004167   0.3278 -0.04259    8.710  -69.49   68.49  0.0005709  0.07904  0.07936</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="dados-de-área-i.html#cb272-1" tabindex="-1"></a>olinda.sf<span class="sc">$</span>MoranLocal <span class="ot">&lt;-</span> <span class="fu">summary</span>(resI)[, <span class="dv">1</span>]</span>
+<span id="cb272-2"><a href="dados-de-área-i.html#cb272-2" tabindex="-1"></a>olinda.sf<span class="sc">$</span>SaddlePoint <span class="ot">&lt;-</span> <span class="fu">summary</span>(resI)[, <span class="dv">4</span>]</span>
+<span id="cb272-3"><a href="dados-de-área-i.html#cb272-3" tabindex="-1"></a></span>
+<span id="cb272-4"><a href="dados-de-área-i.html#cb272-4" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb272-5"><a href="dados-de-área-i.html#cb272-5" tabindex="-1"></a></span>
+<span id="cb272-6"><a href="dados-de-área-i.html#cb272-6" tabindex="-1"></a>map.moran <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> MoranLocal),</span>
+<span id="cb272-7"><a href="dados-de-área-i.html#cb272-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb272-8"><a href="dados-de-área-i.html#cb272-8" tabindex="-1"></a>    <span class="st">&quot;white&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">values =</span> <span class="fu">rescale</span>(<span class="fu">c</span>(<span class="fu">min</span>(olinda.sf<span class="sc">$</span>MoranLocal),</span>
+<span id="cb272-9"><a href="dados-de-área-i.html#cb272-9" tabindex="-1"></a>    <span class="dv">0</span>, <span class="fu">max</span>(olinda.sf<span class="sc">$</span>MoranLocal))), <span class="at">guide =</span> <span class="st">&quot;colorbar&quot;</span>) <span class="sc">+</span></span>
+<span id="cb272-10"><a href="dados-de-área-i.html#cb272-10" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Moran local&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb272-11"><a href="dados-de-área-i.html#cb272-11" tabindex="-1"></a></span>
+<span id="cb272-12"><a href="dados-de-área-i.html#cb272-12" tabindex="-1"></a>map.saddle <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> SaddlePoint),</span>
+<span id="cb272-13"><a href="dados-de-área-i.html#cb272-13" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb272-14"><a href="dados-de-área-i.html#cb272-14" tabindex="-1"></a>    <span class="st">&quot;white&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">values =</span> <span class="fu">rescale</span>(<span class="fu">c</span>(<span class="fu">min</span>(olinda.sf<span class="sc">$</span>SaddlePoint),</span>
+<span id="cb272-15"><a href="dados-de-área-i.html#cb272-15" tabindex="-1"></a>    <span class="dv">0</span>, <span class="fu">max</span>(olinda.sf<span class="sc">$</span>SaddlePoint))), <span class="at">guide =</span> <span class="st">&quot;colorbar&quot;</span>) <span class="sc">+</span></span>
+<span id="cb272-16"><a href="dados-de-área-i.html#cb272-16" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Saddle Point&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb272-17"><a href="dados-de-área-i.html#cb272-17" tabindex="-1"></a></span>
+<span id="cb272-18"><a href="dados-de-área-i.html#cb272-18" tabindex="-1"></a></span>
+<span id="cb272-19"><a href="dados-de-área-i.html#cb272-19" tabindex="-1"></a><span class="fu">grid.arrange</span>(map.moran, map.saddle, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-248-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="greenbox">
+<p>Em termos matemáticos, o SaddlePoint (ponto de sela) é o ponto onde a derivada parcial de primeira ordem do I de Moran é igual a zero, mas a derivada parcial de segunda ordem não é zero. Isso significa que o moran está em um estado de máximo local em uma direção, mas de mínimo local em outra direção.</p>
+<p>Isso significa que o ponto é um ponto de equilíbrio instável, e a variável de interesse pode mudar de direção com um pequeno aumento ou diminuição na variável.</p>
+<p>Os SaddlePoint são frequentemente usados para identificar áreas de transição entre diferentes padrões espaciais. Por exemplo, um SaddlePoint pode ser usado para identificar a fronteira entre duas áreas com densidades populacionais diferentes.</p>
+</div>
+<p><img src="figuras/saddlepoint.png" /></p>
+<p><br></p>
+</div>
+<div id="método-bayesiano-empırico" class="section level2 hasAnchor" number="10.14">
+<h2><span class="header-section-number">10.14</span> Método Bayesiano Empı́rico<a href="dados-de-área-i.html#método-bayesiano-empırico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Suponha <span class="math inline">\(\theta_i\)</span> a taxa desconhecida na área <span class="math inline">\(i\)</span> e seja
+<span class="math inline">\(r_i = \dfrac{y_i}{n_i}\)</span> a taxa observada na área <span class="math inline">\(i\)</span>.</p></li>
+<li><p>Suponha que temos uma distribuição <em>a priori</em> para <span class="math inline">\(\theta_i\)</span> com
+média <span class="math inline">\(\mu_i\)</span> e variância <span class="math inline">\(\phi_i\)</span>.</p></li>
+<li><p>Assim a taxa bayesiana empírica é dada por:</p></li>
+</ul>
+<p><span class="math display">\[\hat{\theta} = w_i r_i + (1-w_i)\mu_i\]</span> Sabendo que:</p>
+<p><span class="math display">\[w_i = \dfrac{\phi_i}{\phi_i +\mu_i/n_i}\]</span></p>
+<ul>
+<li><span class="math inline">\(\mu_i\)</span> e <span class="math inline">\(\phi_i\)</span> são estimados a partir dos dados, supondo que
+<span class="math inline">\(\mu_i = \mu\)</span> e <span class="math inline">\(\phi_i = \phi\)</span>.</li>
+</ul>
+<p>EX: Taxa de Detecção de Hanseníase em Olinda/PE.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="dados-de-área-i.html#cb273-1" tabindex="-1"></a>tx.bayes <span class="ot">&lt;-</span> <span class="fu">EBlocal</span>(olinda.sf<span class="sc">$</span>CASES, olinda.sf<span class="sc">$</span>POP,</span>
+<span id="cb273-2"><a href="dados-de-área-i.html#cb273-2" tabindex="-1"></a>    viz)</span>
+<span id="cb273-3"><a href="dados-de-área-i.html#cb273-3" tabindex="-1"></a></span>
+<span id="cb273-4"><a href="dados-de-área-i.html#cb273-4" tabindex="-1"></a>olinda.sf<span class="sc">$</span>tx.bayes <span class="ot">&lt;-</span> tx.bayes[, <span class="dv">2</span>] <span class="sc">*</span> <span class="dv">10000</span>  <span class="co"># Incluindo somente a coluna da taxa bayesiana no banco olinda.sf</span></span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="dados-de-área-i.html#cb274-1" tabindex="-1"></a><span class="fu">plot</span>(olinda.sf<span class="sc">$</span>tx, olinda.sf<span class="sc">$</span>tx.bayes)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-250-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="dados-de-área-i.html#cb275-1" tabindex="-1"></a><span class="fu">library</span>(colorspace)  <span class="co"># Para fazer o scale_fill_discrete_sequential</span></span>
+<span id="cb275-2"><a href="dados-de-área-i.html#cb275-2" tabindex="-1"></a></span>
+<span id="cb275-3"><a href="dados-de-área-i.html#cb275-3" tabindex="-1"></a>olinda.sf<span class="sc">$</span>brks <span class="ot">&lt;-</span> <span class="fu">cut</span>(olinda.sf<span class="sc">$</span>tx, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb275-4"><a href="dados-de-área-i.html#cb275-4" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.01</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>,</span>
+<span id="cb275-5"><a href="dados-de-área-i.html#cb275-5" tabindex="-1"></a>        <span class="dv">100</span>, <span class="dv">300</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, <span class="st">&quot;15 - 30&quot;</span>,</span>
+<span id="cb275-6"><a href="dados-de-área-i.html#cb275-6" tabindex="-1"></a>        <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))</span>
+<span id="cb275-7"><a href="dados-de-área-i.html#cb275-7" tabindex="-1"></a></span>
+<span id="cb275-8"><a href="dados-de-área-i.html#cb275-8" tabindex="-1"></a>mapa.tx.bruta <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks),</span>
+<span id="cb275-9"><a href="dados-de-área-i.html#cb275-9" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Taxa Bruta&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat&quot;</span>,</span>
+<span id="cb275-10"><a href="dados-de-área-i.html#cb275-10" tabindex="-1"></a>    <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb275-11"><a href="dados-de-área-i.html#cb275-11" tabindex="-1"></a></span>
+<span id="cb275-12"><a href="dados-de-área-i.html#cb275-12" tabindex="-1"></a></span>
+<span id="cb275-13"><a href="dados-de-área-i.html#cb275-13" tabindex="-1"></a></span>
+<span id="cb275-14"><a href="dados-de-área-i.html#cb275-14" tabindex="-1"></a>olinda.sf<span class="sc">$</span>brks <span class="ot">&lt;-</span> <span class="fu">cut</span>(olinda.sf<span class="sc">$</span>tx.bayes, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb275-15"><a href="dados-de-área-i.html#cb275-15" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.01</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>,</span>
+<span id="cb275-16"><a href="dados-de-área-i.html#cb275-16" tabindex="-1"></a>        <span class="dv">100</span>, <span class="dv">231</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, <span class="st">&quot;15 - 30&quot;</span>,</span>
+<span id="cb275-17"><a href="dados-de-área-i.html#cb275-17" tabindex="-1"></a>        <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))</span>
+<span id="cb275-18"><a href="dados-de-área-i.html#cb275-18" tabindex="-1"></a></span>
+<span id="cb275-19"><a href="dados-de-área-i.html#cb275-19" tabindex="-1"></a>mapa.tx.bayes <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks),</span>
+<span id="cb275-20"><a href="dados-de-área-i.html#cb275-20" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Taxa Bayesiana empírica&quot;</span>) <span class="sc">+</span></span>
+<span id="cb275-21"><a href="dados-de-área-i.html#cb275-21" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat&quot;</span>,</span>
+<span id="cb275-22"><a href="dados-de-área-i.html#cb275-22" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb275-23"><a href="dados-de-área-i.html#cb275-23" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb275-24"><a href="dados-de-área-i.html#cb275-24" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;Taxa&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb275-25"><a href="dados-de-área-i.html#cb275-25" tabindex="-1"></a></span>
+<span id="cb275-26"><a href="dados-de-área-i.html#cb275-26" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb275-27"><a href="dados-de-área-i.html#cb275-27" tabindex="-1"></a><span class="fu">grid.arrange</span>(mapa.tx.bruta, mapa.tx.bayes, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-251-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="uso-de-taxas-padronizadas-standardized-mortality-ratiosmr-e-standardized-incidence-ratios-sirs" class="section level2 hasAnchor" number="10.15">
+<h2><span class="header-section-number">10.15</span> Uso de taxas padronizadas: Standardized mortality ratio(SMR) e Standardized Incidence Ratios (SIRs)<a href="dados-de-área-i.html#uso-de-taxas-padronizadas-standardized-mortality-ratiosmr-e-standardized-incidence-ratios-sirs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Para permitir comparações entre diferentes populações no espaço ou
+no tempo, as taxas devem ser padronizadas.</p></li>
+<li><p>Padronizar as população de risco por tamanho, estrutura etária e
+sexo é comumente empregado.</p></li>
+<li><p>O SMR/SIR permite comparar diferentes variáveis se adotamos uma escala
+única em vários mapas. Por exemplo, taxas de morbidade de doenças
+com incidência muito diferentes.</p></li>
+<li><p>Padronização direta pode ser usada (com população mundial como
+padrão) quando queremos oferecer o estudo para possíveis comparações
+internacionais. Estas taxas tendem a ter mais variância.</p></li>
+</ul>
+<p>Para cada região <span class="math inline">\(i\)</span>, calcula-se o número esperado de eventos caso o
+risco na área <span class="math inline">\(i\)</span> seja igual ao risco esperado na região total.</p>
+<p><span class="math display">\[E_i = Pop_{i} r\]</span></p>
+<ul>
+<li><p>Sabendo que <span class="math inline">\(r = \dfrac{\sum O_i}{\sum Pop_i}\)</span>, ou seja, <span class="math inline">\(r\)</span> é o
+número total de eventos em todas as regiões dividido pela população
+total das regiões.</p></li>
+<li><p>Número esperado: <span class="math inline">\(SMR_i = O_i /E_i\)</span>.</p></li>
+<li><p>É comum SMR/SIR ser multiplicada por 100.</p></li>
+</ul>
+<p>Resumindo SMR/SIR é uma medida de risco absoluto e permite que a comparação seja feita entre populações com diferentes características, como idade, sexo, etc…</p>
+<p><br></p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="dados-de-área-i.html#cb276-1" tabindex="-1"></a>tx_media <span class="ot">&lt;-</span> <span class="fu">sum</span>(olinda.sf<span class="sc">$</span>CASES)<span class="sc">/</span><span class="fu">sum</span>(olinda.sf<span class="sc">$</span>POP)</span>
+<span id="cb276-2"><a href="dados-de-área-i.html#cb276-2" tabindex="-1"></a>tx_media <span class="sc">*</span> <span class="dv">10000</span></span></code></pre></div>
+<pre><code>[1] 41.49</code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="dados-de-área-i.html#cb278-1" tabindex="-1"></a>casos <span class="ot">&lt;-</span> olinda.sf<span class="sc">$</span>CASES</span>
+<span id="cb278-2"><a href="dados-de-área-i.html#cb278-2" tabindex="-1"></a>esperados <span class="ot">&lt;-</span> (olinda.sf<span class="sc">$</span>POP <span class="sc">*</span> tx_media)</span>
+<span id="cb278-3"><a href="dados-de-área-i.html#cb278-3" tabindex="-1"></a></span>
+<span id="cb278-4"><a href="dados-de-área-i.html#cb278-4" tabindex="-1"></a>olinda.sf<span class="sc">$</span>SIR <span class="ot">&lt;-</span> (casos<span class="sc">/</span>esperados) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb278-5"><a href="dados-de-área-i.html#cb278-5" tabindex="-1"></a></span>
+<span id="cb278-6"><a href="dados-de-área-i.html#cb278-6" tabindex="-1"></a><span class="fu">boxplot</span>(olinda.sf<span class="sc">$</span>tx, olinda.sf<span class="sc">$</span>tx.bayes, olinda.sf<span class="sc">$</span>SIR,</span>
+<span id="cb278-7"><a href="dados-de-área-i.html#cb278-7" tabindex="-1"></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Taxa bruta&quot;</span>, <span class="st">&quot;Taxa baeysiana empírica&quot;</span>,</span>
+<span id="cb278-8"><a href="dados-de-área-i.html#cb278-8" tabindex="-1"></a>        <span class="st">&quot;SIR&quot;</span>), <span class="at">col =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-252-1.png" width="80%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="dados-de-área-i.html#cb279-1" tabindex="-1"></a>olinda.sf<span class="sc">$</span>brks <span class="ot">&lt;-</span> <span class="fu">cut</span>(olinda.sf<span class="sc">$</span>SIR, <span class="at">include.lowest =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb279-2"><a href="dados-de-área-i.html#cb279-2" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.01</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">45</span>,</span>
+<span id="cb279-3"><a href="dados-de-área-i.html#cb279-3" tabindex="-1"></a>        <span class="dv">100</span>, <span class="dv">600</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>, <span class="st">&quot;0 - 15&quot;</span>, <span class="st">&quot;15 - 30&quot;</span>,</span>
+<span id="cb279-4"><a href="dados-de-área-i.html#cb279-4" tabindex="-1"></a>        <span class="st">&quot;30 - 45&quot;</span>, <span class="st">&quot;45 - 100&quot;</span>, <span class="st">&quot;&gt; 100&quot;</span>))</span>
+<span id="cb279-5"><a href="dados-de-área-i.html#cb279-5" tabindex="-1"></a></span>
+<span id="cb279-6"><a href="dados-de-área-i.html#cb279-6" tabindex="-1"></a>mapa.sir <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(olinda.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks),</span>
+<span id="cb279-7"><a href="dados-de-área-i.html#cb279-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;SIR&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat&quot;</span>,</span>
+<span id="cb279-8"><a href="dados-de-área-i.html#cb279-8" tabindex="-1"></a>    <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>, <span class="at">p2 =</span> <span class="fl">1.5</span>,</span>
+<span id="cb279-9"><a href="dados-de-área-i.html#cb279-9" tabindex="-1"></a>    <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>, <span class="at">name =</span> <span class="st">&quot;SIR&quot;</span>) <span class="sc">+</span></span>
+<span id="cb279-10"><a href="dados-de-área-i.html#cb279-10" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb279-11"><a href="dados-de-área-i.html#cb279-11" tabindex="-1"></a></span>
+<span id="cb279-12"><a href="dados-de-área-i.html#cb279-12" tabindex="-1"></a></span>
+<span id="cb279-13"><a href="dados-de-área-i.html#cb279-13" tabindex="-1"></a><span class="co"># mapa.sir</span></span></code></pre></div>
+<div id="comparando-no-mapa-as-taxas" class="section level4 hasAnchor" number="10.15.0.1">
+<h4><span class="header-section-number">10.15.0.1</span> Comparando no mapa as taxas<a href="dados-de-área-i.html#comparando-no-mapa-as-taxas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-254-1.png" width="1056" /></p>
+<!-- ## https://mgimond.github.io/Spatial/mapping-rates-in-r.html -->
+<!-- ## https://mgimond.github.io/Spatial/mapping-rates-in-r.html -->
+<!-- ## https://rpubs.com/antoine-kossi/sir-analysis-with-r -->
+<!-- ## https://cran.r-project.org/web/packages/popEpi/vignettes/sir.html -->
+<!-- ## https://ace.amegroups.org/article/view/6094/html -->
+<!-- ## https://biodama.shinyapps.io/rankspa/ -->
+<!-- ## https://figshare.com/articles/code/R_script/11635908 -->
+</div>
+</div>
+<div id="bibliografia-sugerida-8" class="section level2 hasAnchor" number="10.16">
+<h2><span class="header-section-number">10.16</span> Bibliografia sugerida<a href="dados-de-área-i.html#bibliografia-sugerida-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trevor C. Bailey, Anthony C. Gatrell. Interactive Spatial Data Analysis.
+Routledge. 1995</p>
+<p>Lance A. Waller, Carol A. Gotway. Applied Spatial Statistics for Public
+Health Data. Wiley-Interscience. 2004.</p>
+<p>Roger S. Bivand, Edzer Pebesma, Virgilio Gomez-Rubio. Applied Spatial
+Data Analysis with R. Springer. 2013.</p>
+<ul>
+<li><p>Online</p>
+<ul>
+<li><p><a href="https://rspatial.org/raster/index.html">Spatial Data Science with
+R</a></p></li>
+<li><p><a href="https://mgimond.github.io/Spatial/mapping-rates-in-r.html">Mapping rates in R</a></p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="geoestatística.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dados-de-área-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"scroll_highlight": true,
+"toolbar": {
+"position": "fixed"
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
