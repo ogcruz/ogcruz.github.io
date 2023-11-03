@@ -228,6 +228,21 @@ regressão-geograficamente-ponderada-gwr
 bibliografia-sugerida-9
 online
 sistema-de-coordenadas
+análise-espaço-temporal
+alguns-conceitos-1
+processo-de-difusão-das-doenças
+difusão-espacial
+espacializando-a-difusão-das-doenças
+processo-de-difusão-das-doenças-1
+modelos-de-difusão-de-doenças
+analise-exploratória-espaço-temporal
+cluster-espaço-temporal
+a-estatística-scan
+aplicação-1---leptospirose-no-rio-de-janeiro
+aplicação-2---arboviroses-no-rio-de-janeiro
+modelagem-estatística-espaço-temporal
+alguns-resultados
+bibliografia-sugerida-10
 roteiro-para-a-execução-do-trabalho-final
 link-para-envio
 sugestões-de-locais-para-baixar-os-dados-e-os-mapas
@@ -245,4 +260,4 @@ exemplo-com-os-dados-de-dengue-em-pernambuco
 matriz-de-vizinhança-1
 autocorrelação-espacial-1
 modelos-linear-car-e-gwr
-bibliografia-sugerida-10
+bibliografia-sugerida-11
