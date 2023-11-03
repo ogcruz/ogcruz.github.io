@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 14 Anexo II - Exemplos de Analise Espacial | ESTUDOS ECOLÓGICOS 2023</title>
+  <meta name="description" content=" 14 Anexo II - Exemplos de Analise Espacial | ESTUDOS ECOLÓGICOS 2023" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 14 Anexo II - Exemplos de Analise Espacial | ESTUDOS ECOLÓGICOS 2023" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 14 Anexo II - Exemplos de Analise Espacial | ESTUDOS ECOLÓGICOS 2023" />
+  
+  
+  
+
+<meta name="author" content="Oswaldo G Cruz" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="anexo-i---exemplo-séries-temporais.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.30/datatables.js"></script>
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estudos Ecológicos 2023</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="apresentação.html"><a href="apresentação.html"><i class="fa fa-check"></i><b>1</b> Apresentação</a></li>
+<li class="chapter" data-level="2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html"><i class="fa fa-check"></i><b>2</b> Estudos Ecológicos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#o-que-são-estudos-ecológicos"><i class="fa fa-check"></i><b>2.1</b> O que são Estudos Ecológicos ?</a></li>
+<li class="chapter" data-level="2.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#principais-objetivos"><i class="fa fa-check"></i><b>2.2</b> Principais objetivos</a></li>
+<li class="chapter" data-level="2.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-variáveis-utilizadas"><i class="fa fa-check"></i><b>2.3</b> Tipos de Variáveis Utilizadas</a></li>
+<li class="chapter" data-level="2.4" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#tipos-de-desenhos-de-estudos-ecológicos"><i class="fa fa-check"></i><b>2.4</b> Tipos de Desenhos de Estudos Ecológicos</a></li>
+<li class="chapter" data-level="2.5" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#aspectos-históricos"><i class="fa fa-check"></i><b>2.5</b> Aspectos históricos</a></li>
+<li class="chapter" data-level="2.6" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#epidemiologia-social"><i class="fa fa-check"></i><b>2.6</b> Epidemiologia social</a></li>
+<li class="chapter" data-level="2.7" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#árvores-bosques-ou-as-florestas"><i class="fa fa-check"></i><b>2.7</b> Árvores, Bosques ou as Florestas?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-árvores"><i class="fa fa-check"></i><b>2.7.1</b> As Árvores</a></li>
+<li class="chapter" data-level="2.7.2" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#os-bosques"><i class="fa fa-check"></i><b>2.7.2</b> Os Bosques</a></li>
+<li class="chapter" data-level="2.7.3" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#as-florestas"><i class="fa fa-check"></i><b>2.7.3</b> As Florestas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#falácia-ecológica-ou-viés-de-agregação"><i class="fa fa-check"></i><b>2.8</b> Falácia Ecológica ou viés de agregação</a></li>
+<li class="chapter" data-level="2.9" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#problemas-práticos"><i class="fa fa-check"></i><b>2.9</b> Problemas práticos</a></li>
+<li class="chapter" data-level="2.10" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#vantagens"><i class="fa fa-check"></i><b>2.10</b> Vantagens</a></li>
+<li class="chapter" data-level="2.11" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#desvantagens"><i class="fa fa-check"></i><b>2.11</b> Desvantagens</a></li>
+<li class="chapter" data-level="2.12" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#resumindo"><i class="fa fa-check"></i><b>2.12</b> Resumindo</a></li>
+<li class="chapter" data-level="2.13" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#exercícios-propostos"><i class="fa fa-check"></i><b>2.13</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="2.14" data-path="estudos-ecológicos.html"><a href="estudos-ecológicos.html#bibliografia-sugerida"><i class="fa fa-check"></i><b>2.14</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html"><i class="fa fa-check"></i><b>3</b> Introdução às Séries Temporais</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#o-que-são-séries-temporais"><i class="fa fa-check"></i><b>3.1</b> O que são Séries Temporais ?</a></li>
+<li class="chapter" data-level="3.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#hipóteses-básicas-do-estudo-das-séries-temporais"><i class="fa fa-check"></i><b>3.2</b> Hipóteses básicas do estudo das séries temporais</a></li>
+<li class="chapter" data-level="3.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#classificação-dos-tipos-de-séries-temporais"><i class="fa fa-check"></i><b>3.3</b> Classificação dos tipos de séries temporais</a></li>
+<li class="chapter" data-level="3.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#processo-estocástico"><i class="fa fa-check"></i><b>3.4</b> Processo Estocástico</a></li>
+<li class="chapter" data-level="3.5" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#notação-e-nomenclatura"><i class="fa fa-check"></i><b>3.5</b> Notação e Nomenclatura</a></li>
+<li class="chapter" data-level="3.6" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#objetivos-análise-de-séries-temporais"><i class="fa fa-check"></i><b>3.6</b> Objetivos: análise de séries temporais</a></li>
+<li class="chapter" data-level="3.7" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#estacionariedade"><i class="fa fa-check"></i><b>3.7</b> Estacionariedade</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocovariância-de-um-processo-estacionário"><i class="fa fa-check"></i><b>3.7.1</b> Função de Autocovariância de um processo estacionário</a></li>
+<li class="chapter" data-level="3.7.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#por-que-a-estacionariedade-é-importante"><i class="fa fa-check"></i><b>3.7.2</b> Por que a estacionariedade é importante ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#pressuposto-da-independência"><i class="fa fa-check"></i><b>3.8</b> Pressuposto da Independência</a></li>
+<li class="chapter" data-level="3.9" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#dependência-serial"><i class="fa fa-check"></i><b>3.9</b> Dependência serial</a></li>
+<li class="chapter" data-level="3.10" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#função-de-autocorrelação---fac-autocorrelation-function---acf"><i class="fa fa-check"></i><b>3.10</b> Função de Autocorrelação - FAC (<em>Autocorrelation function - ACF</em>)</a></li>
+<li class="chapter" data-level="3.11" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#componentes-de-uma-série-temporal"><i class="fa fa-check"></i><b>3.11</b> Componentes de uma Série Temporal</a></li>
+<li class="chapter" data-level="3.12" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#tendência"><i class="fa fa-check"></i><b>3.12</b> Tendência</a></li>
+<li class="chapter" data-level="3.13" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#sazonalidade"><i class="fa fa-check"></i><b>3.13</b> Sazonalidade</a></li>
+<li class="chapter" data-level="3.14" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#ciclo"><i class="fa fa-check"></i><b>3.14</b> Ciclo</a>
+<ul>
+<li class="chapter" data-level="3.14.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#como-detectar-a-sazonalidade"><i class="fa fa-check"></i><b>3.14.1</b> Como detectar a sazonalidade ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.15" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#termo-aleatório-ou-ruído-branco"><i class="fa fa-check"></i><b>3.15</b> Termo Aleatório ou Ruído Branco</a></li>
+<li class="chapter" data-level="3.16" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#composição-dos-modelos-de-séries-temporais"><i class="fa fa-check"></i><b>3.16</b> Composição dos Modelos de séries temporais</a>
+<ul>
+<li class="chapter" data-level="3.16.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-aditivo"><i class="fa fa-check"></i><b>3.16.1</b> Modelo Aditivo</a></li>
+<li class="chapter" data-level="3.16.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#modelo-multiplicativo"><i class="fa fa-check"></i><b>3.16.2</b> Modelo Multiplicativo</a></li>
+</ul></li>
+<li class="chapter" data-level="3.17" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#decomposição-de-séries-temporais"><i class="fa fa-check"></i><b>3.17</b> Decomposição de séries temporais</a></li>
+<li class="chapter" data-level="3.18" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#prática-no-r"><i class="fa fa-check"></i><b>3.18</b> Prática no R</a>
+<ul>
+<li class="chapter" data-level="3.18.1" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#a-biblioteca-ts-é-a-mais-utilizada-no-r"><i class="fa fa-check"></i><b>3.18.1</b> A biblioteca <em>ts</em> é a mais utilizada no R</a></li>
+<li class="chapter" data-level="3.18.2" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#simulando-uma-série-temporal"><i class="fa fa-check"></i><b>3.18.2</b> Simulando uma Série Temporal</a></li>
+<li class="chapter" data-level="3.18.3" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#importando-uma-vetor-e-transformando-em-série-temporal"><i class="fa fa-check"></i><b>3.18.3</b> Importando uma vetor e transformando em Série Temporal</a></li>
+<li class="chapter" data-level="3.18.4" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#utilizando-dados-da-incidência-de-dengue-nas-filipinas-2008---2016"><i class="fa fa-check"></i><b>3.18.4</b> Utilizando dados da incidência de dengue nas Filipinas, 2008 - 2016</a></li>
+</ul></li>
+<li class="chapter" data-level="3.19" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#exercícios-propostos-1"><i class="fa fa-check"></i><b>3.19</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="3.20" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#outros-materiais-sobre-séries-temporais"><i class="fa fa-check"></i><b>3.20</b> Outros materiais sobre Séries Temporais</a></li>
+<li class="chapter" data-level="3.21" data-path="introdução-às-séries-temporais.html"><a href="introdução-às-séries-temporais.html#bibliografia-sugerida-1"><i class="fa fa-check"></i><b>3.21</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html"><i class="fa fa-check"></i><b>4</b> Transformações e Suavizações</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#introdução"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+<li class="chapter" data-level="4.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transfomação-dos-dados-em-st"><i class="fa fa-check"></i><b>4.2</b> Transfomação dos dados em ST</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#transformações-box-cox-diferenciação-e-logarítmica"><i class="fa fa-check"></i><b>4.2.1</b> Transformações Box-Cox, Diferenciação e Logarítmica</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#métodos-de-alisamento-ou-suavização"><i class="fa fa-check"></i><b>4.3</b> Métodos de Alisamento ou Suavização</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#algumas-funções-de-suavização"><i class="fa fa-check"></i><b>4.3.1</b> Algumas funções de suavização</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#médias-móveis"><i class="fa fa-check"></i><b>4.4</b> Médias móveis</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-das-médias-móveis"><i class="fa fa-check"></i><b>4.4.1</b> Utilização das Médias Móveis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#kernel"><i class="fa fa-check"></i><b>4.5</b> Kernel</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#diferentes-funções-kernel"><i class="fa fa-check"></i><b>4.5.1</b> Diferentes Funções Kernel</a></li>
+<li class="chapter" data-level="4.5.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#largura-de-banda"><i class="fa fa-check"></i><b>4.5.2</b> Largura de Banda</a></li>
+<li class="chapter" data-level="4.5.3" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-kernel"><i class="fa fa-check"></i><b>4.5.3</b> Utilização do Kernel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#loess-lowess"><i class="fa fa-check"></i><b>4.6</b> Loess / Lowess</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#utilização-do-loesslowess"><i class="fa fa-check"></i><b>4.6.1</b> Utilização do loess/lowess</a></li>
+<li class="chapter" data-level="4.6.2" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#comparando"><i class="fa fa-check"></i><b>4.6.2</b> Comparando</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines"><i class="fa fa-check"></i><b>4.7</b> Splines</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#splines-vs-loesslowess"><i class="fa fa-check"></i><b>4.7.1</b> Splines <em>vs</em> Loess/Lowess</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#exercícios-propostos-2"><i class="fa fa-check"></i><b>4.8</b> Exercícios Propostos</a></li>
+<li class="chapter" data-level="4.9" data-path="transformações-e-suavizações.html"><a href="transformações-e-suavizações.html#bibliografia-sugerida-2"><i class="fa fa-check"></i><b>4.9</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html"><i class="fa fa-check"></i><b>5</b> Modelagem em Séries Temporais</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#o-que-são-os-modelos-box-jenkins"><i class="fa fa-check"></i><b>5.1</b> O que são os Modelos Box &amp; Jenkins</a></li>
+<li class="chapter" data-level="5.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#alguns-processos-estocásticos"><i class="fa fa-check"></i><b>5.2</b> Alguns processos estocásticos</a></li>
+<li class="chapter" data-level="5.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-arima"><i class="fa fa-check"></i><b>5.3</b> Modelo ARIMA</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-ordem-p---arp-ou-arimap00"><i class="fa fa-check"></i><b>5.3.1</b> Modelo Autorregressivo de ordem <em>p</em> - AR(p) ou ARIMA(p,0,0)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-estacionariedade"><i class="fa fa-check"></i><b>5.3.2</b> Condições de estacionariedade</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-de-médias-móveis-de-ordem-q---maq-ou-arima00q"><i class="fa fa-check"></i><b>5.3.3</b> Modelo de Médias Móveis de ordem <em>q</em> - MA(q) ou ARIMA(0,0,q)</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#condições-de-invertibilidade"><i class="fa fa-check"></i><b>5.3.4</b> Condições de invertibilidade</a></li>
+<li class="chapter" data-level="5.3.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-de-médias-móveis-de-ordem-p-e-q---armapq-ou-arimap0q"><i class="fa fa-check"></i><b>5.3.5</b> Modelo Autorregressivo de Médias Móveis de ordem <em>p</em> e <em>q</em> - ARMA(p,q) ou ARIMA(p,0,q)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelo-autorregressivo-integrado-de-médias-móveis-de-ordem-p-d-e-q---arimapdq"><i class="fa fa-check"></i><b>5.3.6</b> Modelo Autorregressivo Integrado de Médias Móveis de ordem <em>p</em>, <em>d</em> e <em>q</em> - ARIMA(p,d,q)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#resumo---modelos-arima-não-sazonais"><i class="fa fa-check"></i><b>5.3.7</b> Resumo - Modelos ARIMA não sazonais</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-arima-sazonais-sarima---arimapdqpdq_m"><i class="fa fa-check"></i><b>5.4</b> Modelos ARIMA sazonais (SARIMA) - <span class="math inline">\(ARIMA(p,d,q)(P,D,Q)_m\)</span></a></li>
+<li class="chapter" data-level="5.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#função-de-autocorrelação-parcial-facp---partial-autocorrelation-function---pacf"><i class="fa fa-check"></i><b>5.5</b> Função de Autocorrelação Parcial (FACP) - (<em>Partial Autocorrelation Function - PACF</em>)</a></li>
+<li class="chapter" data-level="5.6" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-modelagem"><i class="fa fa-check"></i><b>5.6</b> Processo de Modelagem</a></li>
+<li class="chapter" data-level="5.7" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#processo-de-identificação"><i class="fa fa-check"></i><b>5.7</b> Processo de Identificação</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#simulando-os-dados-das-st-com-estruturas-arima"><i class="fa fa-check"></i><b>5.7.1</b> Simulando os dados das ST com estruturas ARIMA</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#métricas-para-avaliar-a-qualidade-do-ajuste"><i class="fa fa-check"></i><b>5.8</b> Métricas para avaliar a qualidade do ajuste</a></li>
+<li class="chapter" data-level="5.9" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#análise-de-resíduos"><i class="fa fa-check"></i><b>5.9</b> Análise de Resíduos</a></li>
+<li class="chapter" data-level="5.10" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-manual-de-modelo-arima"><i class="fa fa-check"></i><b>5.10</b> Ajuste manual de modelo ARIMA</a></li>
+<li class="chapter" data-level="5.11" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#ajuste-automático-de-modelos-arima"><i class="fa fa-check"></i><b>5.11</b> Ajuste automático de modelos ARIMA</a></li>
+<li class="chapter" data-level="5.12" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#modelos-de-previsão"><i class="fa fa-check"></i><b>5.12</b> Modelos de Previsão</a></li>
+<li class="chapter" data-level="5.13" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#correlação-cruzada-cross-correlation"><i class="fa fa-check"></i><b>5.13</b> Correlação Cruzada (<em>Cross-Correlation</em>)</a></li>
+<li class="chapter" data-level="5.14" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-generalized-additive-models"><i class="fa fa-check"></i><b>5.14</b> GAM (Generalized Additive Models)</a>
+<ul>
+<li class="chapter" data-level="5.14.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#tipos-de-splines"><i class="fa fa-check"></i><b>5.14.1</b> Tipos de splines</a></li>
+<li class="chapter" data-level="5.14.2" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#por-que-não-usar"><i class="fa fa-check"></i><b>5.14.2</b> Por que não usar ?</a></li>
+<li class="chapter" data-level="5.14.3" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#gam-em-séries-temporais"><i class="fa fa-check"></i><b>5.14.3</b> GAM em Séries Temporais</a></li>
+<li class="chapter" data-level="5.14.4" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-de-modelo-gam-aplicado-a-st-ldeaths"><i class="fa fa-check"></i><b>5.14.4</b> Exemplo de modelo GAM aplicado a ST ldeaths</a></li>
+<li class="chapter" data-level="5.14.5" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exemplo-gam-casos-de-leptospirose-vs-clima"><i class="fa fa-check"></i><b>5.14.5</b> Exemplo GAM: Casos de Leptospirose <em>vs</em> Clima</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-propostos-3"><i class="fa fa-check"></i><b>5.15</b> Exercícios Propostos</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#exercícios-resolvidos"><i class="fa fa-check"></i><b>5.15.1</b> Exercícios Resolvidos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.16" data-path="modelagem-em-séries-temporais.html"><a href="modelagem-em-séries-temporais.html#bibliografia-sugerida-3"><i class="fa fa-check"></i><b>5.16</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html"><i class="fa fa-check"></i><b>6</b> Introdução à Análise Estatística Espacial</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#o-que-é-análise-estatística-espacial"><i class="fa fa-check"></i><b>6.1</b> O que é Análise Estatística Espacial?</a></li>
+<li class="chapter" data-level="6.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#origem-da-estatística-espacial"><i class="fa fa-check"></i><b>6.2</b> Origem da Estatística Espacial</a></li>
+<li class="chapter" data-level="6.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#quando-usar-métodos-de-análise-espacial"><i class="fa fa-check"></i><b>6.3</b> Quando usar métodos de análise espacial?</a></li>
+<li class="chapter" data-level="6.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dependência-espacial"><i class="fa fa-check"></i><b>6.4</b> Dependência espacial</a></li>
+<li class="chapter" data-level="6.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#principais-aplicações-em-saúde"><i class="fa fa-check"></i><b>6.5</b> Principais aplicações em Saúde</a></li>
+<li class="chapter" data-level="6.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tipologia-dos-dados-espaciais"><i class="fa fa-check"></i><b>6.6</b> Tipologia dos dados espaciais</a></li>
+<li class="chapter" data-level="6.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-processos-pontuais"><i class="fa fa-check"></i><b>6.7</b> Dados de Processos Pontuais</a></li>
+<li class="chapter" data-level="6.8" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoestatıstica"><i class="fa fa-check"></i><b>6.8</b> Geoestatı́stica</a></li>
+<li class="chapter" data-level="6.9" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dados-de-área"><i class="fa fa-check"></i><b>6.9</b> Dados de Área</a></li>
+<li class="chapter" data-level="6.10" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#geoprocessamento"><i class="fa fa-check"></i><b>6.10</b> Geoprocessamento</a></li>
+<li class="chapter" data-level="6.11" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#tecnologias-de-geoprocessamento"><i class="fa fa-check"></i><b>6.11</b> Tecnologias de Geoprocessamento</a></li>
+<li class="chapter" data-level="6.12" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#sistema-de-informações-geográficas"><i class="fa fa-check"></i><b>6.12</b> Sistema de Informações Geográficas</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#qgis"><i class="fa fa-check"></i><b>6.12.1</b> QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-espacial-no-r"><i class="fa fa-check"></i><b>6.13</b> Análise Espacial no R</a></li>
+<li class="chapter" data-level="6.14" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#alguns-conceitos"><i class="fa fa-check"></i><b>6.14</b> Alguns Conceitos</a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#autocorrelação-espacial"><i class="fa fa-check"></i><b>6.14.1</b> Autocorrelação espacial</a></li>
+<li class="chapter" data-level="6.14.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#estacionariedade-1"><i class="fa fa-check"></i><b>6.14.2</b> Estacionariedade</a></li>
+<li class="chapter" data-level="6.14.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#isotropia"><i class="fa fa-check"></i><b>6.14.3</b> Isotropia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#aplicações"><i class="fa fa-check"></i><b>6.15</b> Aplicações</a>
+<ul>
+<li class="chapter" data-level="6.15.1" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#dengue-em-douradosms"><i class="fa fa-check"></i><b>6.15.1</b> Dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="6.15.2" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#vigilância-dos-vetores-da-dengue-usando-modelagem-espaço-temporal-bayesiana"><i class="fa fa-check"></i><b>6.15.2</b> Vigilância dos vetores da Dengue usando modelagem espaço-temporal Bayesiana</a></li>
+<li class="chapter" data-level="6.15.3" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelo-espaço-temporal-para-a-análise-da-morbimortalidade-por-influenza"><i class="fa fa-check"></i><b>6.15.3</b> Modelo Espaço-Temporal para a Análise da Morbimortalidade por Influenza</a></li>
+<li class="chapter" data-level="6.15.4" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#análise-da-temperatura-na-costa-central-da-califórnia"><i class="fa fa-check"></i><b>6.15.4</b> Análise da temperatura na costa central da Califórnia</a></li>
+<li class="chapter" data-level="6.15.5" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#a-relação-entre-a-malária-e-a-chuva-no-estado-do-pará-uma-análise-espaço-temporal."><i class="fa fa-check"></i><b>6.15.5</b> A Relação entre a Malária e a Chuva no Estado do Pará: Uma Análise Espaço-Temporal.</a></li>
+<li class="chapter" data-level="6.15.6" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#modelagem-espaço-temporal-da-chikungunya-no-município-do-rio-de-janeiro"><i class="fa fa-check"></i><b>6.15.6</b> Modelagem espaço temporal da Chikungunya no município do Rio de Janeiro</a></li>
+<li class="chapter" data-level="6.15.7" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#mapas-de-fluxo"><i class="fa fa-check"></i><b>6.15.7</b> Mapas de Fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="6.16" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#material-on-line-sobre-estatística-espacial"><i class="fa fa-check"></i><b>6.16</b> Material on line sobre Estatística Espacial</a></li>
+<li class="chapter" data-level="6.17" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#onde-encontrar-dados-espaciais"><i class="fa fa-check"></i><b>6.17</b> Onde encontrar dados espaciais ?</a></li>
+<li class="chapter" data-level="6.18" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#exemplo-i-malhas-no-r-com-geobr"><i class="fa fa-check"></i><b>6.18</b> Exemplo I: Malhas no R com geobr</a></li>
+<li class="chapter" data-level="6.19" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#exemplo-ii-geocodificação"><i class="fa fa-check"></i><b>6.19</b> Exemplo II: Geocodificação</a></li>
+<li class="chapter" data-level="6.20" data-path="introdução-à-análise-estatística-espacial.html"><a href="introdução-à-análise-estatística-espacial.html#bibliografia-sugerida-4"><i class="fa fa-check"></i><b>6.20</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html"><i class="fa fa-check"></i><b>7</b> Padrões Pontuais I</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#o-que-são-padrões-pontuais"><i class="fa fa-check"></i><b>7.1</b> O que são Padrões Pontuais?</a></li>
+<li class="chapter" data-level="7.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#tipos-de-distribuições"><i class="fa fa-check"></i><b>7.2</b> Tipos de Distribuições</a></li>
+<li class="chapter" data-level="7.3" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#processos-pontuais"><i class="fa fa-check"></i><b>7.3</b> Processos pontuais</a></li>
+<li class="chapter" data-level="7.4" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#completa-aletoriedade-espacial-csr---complete-spatial-randomness"><i class="fa fa-check"></i><b>7.4</b> Completa Aletoriedade Espacial (<em>CSR - complete spatial randomness</em>)</a></li>
+<li class="chapter" data-level="7.5" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel"><i class="fa fa-check"></i><b>7.5</b> Estimativa de Kernel</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#estimativa-de-kernel-com-correção-por-bordas"><i class="fa fa-check"></i><b>7.5.1</b> Estimativa de Kernel com correção por bordas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#kernel-por-atributo"><i class="fa fa-check"></i><b>7.6</b> Kernel por atributo</a></li>
+<li class="chapter" data-level="7.7" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#razão-de-kernel"><i class="fa fa-check"></i><b>7.7</b> Razão de Kernel</a></li>
+<li class="chapter" data-level="7.8" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#análise-preliminar-de-um-processo-pontual"><i class="fa fa-check"></i><b>7.8</b> Análise preliminar de um processo pontual</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-f-e-g---distância-do-vizinho-mais-próximo"><i class="fa fa-check"></i><b>7.8.1</b> Função F e G - Distância do vizinho mais próximo</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#propriedade-de-segunda-ordem"><i class="fa fa-check"></i><b>7.9</b> Propriedade de segunda ordem</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-k-de-ripley-ou-apenas-função-k"><i class="fa fa-check"></i><b>7.9.1</b> Função K de Ripley (ou apenas função K)</a></li>
+<li class="chapter" data-level="7.9.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#função-l"><i class="fa fa-check"></i><b>7.9.2</b> Função <em>L</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#detecção-de-cluster"><i class="fa fa-check"></i><b>7.10</b> Detecção de cluster</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#testes-genéricos-de-cluster"><i class="fa fa-check"></i><b>7.10.1</b> Testes Genéricos de Cluster</a></li>
+<li class="chapter" data-level="7.10.2" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#fonte-específica"><i class="fa fa-check"></i><b>7.10.2</b> Fonte Específica</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-propostos-4"><i class="fa fa-check"></i><b>7.11</b> Exercícios Propostos</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#exercícios-resolvidos-1"><i class="fa fa-check"></i><b>7.11.1</b> Exercícios Resolvidos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="padrões-pontuais-i.html"><a href="padrões-pontuais-i.html#bibliografia-sugerida-5"><i class="fa fa-check"></i><b>7.12</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html"><i class="fa fa-check"></i><b>8</b> Padrões Pontuais II</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#alguns-usos-em-epidemiologia-espacial"><i class="fa fa-check"></i><b>8.1</b> Alguns usos em Epidemiologia Espacial</a></li>
+<li class="chapter" data-level="8.2" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#exemplo-com-os-dados-de-dengue-em-douradosms"><i class="fa fa-check"></i><b>8.2</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="8.3" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-aditivos-generalizados-gam"><i class="fa fa-check"></i><b>8.3</b> Modelos Aditivos Generalizados (GAM)</a></li>
+<li class="chapter" data-level="8.4" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#modelos-espaciais-generalizados-aditivos"><i class="fa fa-check"></i><b>8.4</b> Modelos Espaciais Generalizados Aditivos</a></li>
+<li class="chapter" data-level="8.5" data-path="padrões-pontuais-ii.html"><a href="padrões-pontuais-ii.html#bibliografia-sugerida-6"><i class="fa fa-check"></i><b>8.5</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="geoestatística.html"><a href="geoestatística.html"><i class="fa fa-check"></i><b>9</b> Geoestatística</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="geoestatística.html"><a href="geoestatística.html#conceito"><i class="fa fa-check"></i><b>9.1</b> Conceito</a></li>
+<li class="chapter" data-level="9.2" data-path="geoestatística.html"><a href="geoestatística.html#objetivos"><i class="fa fa-check"></i><b>9.2</b> Objetivos</a></li>
+<li class="chapter" data-level="9.3" data-path="geoestatística.html"><a href="geoestatística.html#principais-aplicações"><i class="fa fa-check"></i><b>9.3</b> Principais aplicações</a></li>
+<li class="chapter" data-level="9.4" data-path="geoestatística.html"><a href="geoestatística.html#exemplo"><i class="fa fa-check"></i><b>9.4</b> Exemplo</a></li>
+<li class="chapter" data-level="9.5" data-path="geoestatística.html"><a href="geoestatística.html#efeitos"><i class="fa fa-check"></i><b>9.5</b> Efeitos</a></li>
+<li class="chapter" data-level="9.6" data-path="geoestatística.html"><a href="geoestatística.html#formalizando"><i class="fa fa-check"></i><b>9.6</b> Formalizando</a></li>
+<li class="chapter" data-level="9.7" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-primeira-ordem-regressão-linear"><i class="fa fa-check"></i><b>9.7</b> Efeito de primeira ordem: regressão linear</a></li>
+<li class="chapter" data-level="9.8" data-path="geoestatística.html"><a href="geoestatística.html#efeito-de-segunda-ordem-regressão-espacial"><i class="fa fa-check"></i><b>9.8</b> Efeito de segunda ordem: regressão espacial</a></li>
+<li class="chapter" data-level="9.9" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória"><i class="fa fa-check"></i><b>9.9</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="geoestatística.html"><a href="geoestatística.html#análise-exploratória-efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>9.9.1</b> Análise exploratória: efeitos de primeira ordem</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="geoestatística.html"><a href="geoestatística.html#simplificações-estacionariedade-e-isotropia"><i class="fa fa-check"></i><b>9.10</b> Simplificações: Estacionariedade e Isotropia</a></li>
+<li class="chapter" data-level="9.11" data-path="geoestatística.html"><a href="geoestatística.html#variograma-empírico"><i class="fa fa-check"></i><b>9.11</b> Variograma empírico</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="geoestatística.html"><a href="geoestatística.html#relação-entre-variograma-covariograma-e-correlograma"><i class="fa fa-check"></i><b>9.11.1</b> Relação entre variograma, covariograma e correlograma</a></li>
+<li class="chapter" data-level="9.11.2" data-path="geoestatística.html"><a href="geoestatística.html#estrutura-do-variograma"><i class="fa fa-check"></i><b>9.11.2</b> Estrutura do variograma</a></li>
+<li class="chapter" data-level="9.11.3" data-path="geoestatística.html"><a href="geoestatística.html#variogramas-para-modelos-isotrópicos"><i class="fa fa-check"></i><b>9.11.3</b> Variogramas para modelos isotrópicos</a></li>
+<li class="chapter" data-level="9.11.4" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1"><i class="fa fa-check"></i><b>9.11.4</b> Aplicação 1</a></li>
+<li class="chapter" data-level="9.11.5" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-2"><i class="fa fa-check"></i><b>9.11.5</b> Aplicação 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9.12" data-path="geoestatística.html"><a href="geoestatística.html#modelagem-em-geoestatística"><i class="fa fa-check"></i><b>9.12</b> Modelagem em Geoestatística</a>
+<ul>
+<li class="chapter" data-level="9.12.1" data-path="geoestatística.html"><a href="geoestatística.html#modelando-dados-de-geoestatística---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>9.12.1</b> Modelando dados de Geoestatística - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="9.13" data-path="geoestatística.html"><a href="geoestatística.html#krigagem"><i class="fa fa-check"></i><b>9.13</b> Krigagem</a>
+<ul>
+<li class="chapter" data-level="9.13.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-universal"><i class="fa fa-check"></i><b>9.13.1</b> Krigagem Universal</a></li>
+<li class="chapter" data-level="9.13.2" data-path="geoestatística.html"><a href="geoestatística.html#algumas-considerações-da-krigagem-em-geral"><i class="fa fa-check"></i><b>9.13.2</b> Algumas considerações da krigagem em geral:</a></li>
+<li class="chapter" data-level="9.13.3" data-path="geoestatística.html"><a href="geoestatística.html#krigagem---dados-de-chuva-no-paraná"><i class="fa fa-check"></i><b>9.13.3</b> Krigagem - Dados de chuva no Paraná</a></li>
+</ul></li>
+<li class="chapter" data-level="9.14" data-path="geoestatística.html"><a href="geoestatística.html#prática-no-r-1"><i class="fa fa-check"></i><b>9.14</b> Prática no R</a></li>
+<li class="chapter" data-level="9.15" data-path="geoestatística.html"><a href="geoestatística.html#aplicação-1---dados-de-temperatura"><i class="fa fa-check"></i><b>9.15</b> Aplicação 1 - Dados de temperatura</a>
+<ul>
+<li class="chapter" data-level="9.15.1" data-path="geoestatística.html"><a href="geoestatística.html#krigagem-1"><i class="fa fa-check"></i><b>9.15.1</b> Krigagem</a></li>
+</ul></li>
+<li class="chapter" data-level="9.16" data-path="geoestatística.html"><a href="geoestatística.html#repita-a-análise-para-o-banco-de-ovos-em-higienópolis"><i class="fa fa-check"></i><b>9.16</b> Repita a análise para o banco de ovos em Higienópolis</a>
+<ul>
+<li class="chapter" data-level="9.16.1" data-path="geoestatística.html"><a href="geoestatística.html#resumindo-1"><i class="fa fa-check"></i><b>9.16.1</b> Resumindo</a></li>
+</ul></li>
+<li class="chapter" data-level="9.17" data-path="geoestatística.html"><a href="geoestatística.html#bibliografia-sugerida-7"><i class="fa fa-check"></i><b>9.17</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html"><i class="fa fa-check"></i><b>10</b> Dados de Área I</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
+<li class="chapter" data-level="10.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#principais-bibliotecas-do-r"><i class="fa fa-check"></i><b>10.2</b> Principais bibliotecas do R</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#novas-bibliotecas-2023-em-diante"><i class="fa fa-check"></i><b>10.2.1</b> Novas bibliotecas (2023 em diante)</a></li>
+<li class="chapter" data-level="10.2.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliotecas-antigas"><i class="fa fa-check"></i><b>10.2.2</b> bibliotecas antigas</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-importantes"><i class="fa fa-check"></i><b>10.3</b> Pontos importantes</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#pontos-de-corte-em-mapas"><i class="fa fa-check"></i><b>10.3.1</b> Pontos de Corte em mapas</a></li>
+<li class="chapter" data-level="10.3.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#escala-fixa-ao-longo-do-tempo"><i class="fa fa-check"></i><b>10.3.2</b> Escala fixa ao longo do tempo</a></li>
+<li class="chapter" data-level="10.3.3" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#tamanho-heterogêneo-das-áreas"><i class="fa fa-check"></i><b>10.3.3</b> Tamanho heterogêneo das áreas</a></li>
+<li class="chapter" data-level="10.3.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#o-problema-da-área-modificável-maup"><i class="fa fa-check"></i><b>10.3.4</b> O problema da área modificável (MAUP)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#exemplo-em-r"><i class="fa fa-check"></i><b>10.4</b> Exemplo em R</a></li>
+<li class="chapter" data-level="10.5" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#visualização-mapa-temático-usando-a-biblioteca-tmap"><i class="fa fa-check"></i><b>10.5</b> Visualização: Mapa Temático usando a biblioteca <code>tmap</code></a></li>
+<li class="chapter" data-level="10.6" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#análise-exploratória-1"><i class="fa fa-check"></i><b>10.6</b> Análise exploratória</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-primeira-ordem"><i class="fa fa-check"></i><b>10.6.1</b> Efeitos de primeira ordem:</a></li>
+<li class="chapter" data-level="10.6.2" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#efeitos-de-segunda-ordem-dependência-espacial"><i class="fa fa-check"></i><b>10.6.2</b> Efeitos de segunda ordem (dependência espacial):</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#medidas-de-proximidade-em-dados-de-área"><i class="fa fa-check"></i><b>10.7</b> Medidas de proximidade em dados de área</a></li>
+<li class="chapter" data-level="10.8" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#matriz-de-vizinhança"><i class="fa fa-check"></i><b>10.8</b> Matriz de vizinhança</a></li>
+<li class="chapter" data-level="10.9" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#médias-móveis-espaciais"><i class="fa fa-check"></i><b>10.9</b> Médias Móveis espaciais</a></li>
+<li class="chapter" data-level="10.10" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#kernel-de-área-ou-atributo"><i class="fa fa-check"></i><b>10.10</b> Kernel de Área (ou Atributo)</a></li>
+<li class="chapter" data-level="10.11" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#correlação-espacial-e-correlograma"><i class="fa fa-check"></i><b>10.11</b> Correlação espacial e Correlograma</a></li>
+<li class="chapter" data-level="10.12" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial"><i class="fa fa-check"></i><b>10.12</b> Indicadores Locais de Associação Espacial</a></li>
+<li class="chapter" data-level="10.13" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#indicadores-locais-de-associação-espacial-lisa"><i class="fa fa-check"></i><b>10.13</b> Indicadores Locais de Associação Espacial (LISA)</a></li>
+<li class="chapter" data-level="10.14" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#método-bayesiano-empırico"><i class="fa fa-check"></i><b>10.14</b> Método Bayesiano Empı́rico</a></li>
+<li class="chapter" data-level="10.15" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#uso-de-taxas-padronizadas-standardized-mortality-ratiosmr-e-standardized-incidence-ratios-sirs"><i class="fa fa-check"></i><b>10.15</b> Uso de taxas padronizadas: Standardized mortality ratio(SMR) e Standardized Incidence Ratios (SIRs)</a></li>
+<li class="chapter" data-level="10.16" data-path="dados-de-área-i.html"><a href="dados-de-área-i.html#bibliografia-sugerida-8"><i class="fa fa-check"></i><b>10.16</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html"><i class="fa fa-check"></i><b>11</b> Dados de Área II</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#introdução-2"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
+<li class="chapter" data-level="11.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-espaciais-estatísticos-e-econométricos"><i class="fa fa-check"></i><b>11.2</b> Modelos espaciais estatísticos e econométricos</a></li>
+<li class="chapter" data-level="11.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-estatísticos-espaciais"><i class="fa fa-check"></i><b>11.3</b> Modelos Estatísticos Espaciais</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#simultaneous-autoregressive-models-sar"><i class="fa fa-check"></i><b>11.3.1</b> Simultaneous Autoregressive Models (SAR)</a></li>
+<li class="chapter" data-level="11.3.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#conditional-autoregressive-models-car"><i class="fa fa-check"></i><b>11.3.2</b> Conditional Autoregressive Models (CAR)</a></li>
+<li class="chapter" data-level="11.3.3" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#exemplo-prático"><i class="fa fa-check"></i><b>11.3.3</b> Exemplo prático</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#modelos-com-efeitos-espaciais-locais"><i class="fa fa-check"></i><b>11.4</b> Modelos com Efeitos Espaciais Locais</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#regressão-geograficamente-ponderada-gwr"><i class="fa fa-check"></i><b>11.4.1</b> Regressão Geograficamente Ponderada (GWR)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#bibliografia-sugerida-9"><i class="fa fa-check"></i><b>11.5</b> Bibliografia sugerida</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#online"><i class="fa fa-check"></i><b>11.5.1</b> Online</a></li>
+<li class="chapter" data-level="11.5.2" data-path="dados-de-área-ii.html"><a href="dados-de-área-ii.html#sistema-de-coordenadas"><i class="fa fa-check"></i><b>11.5.2</b> Sistema de Coordenadas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html"><i class="fa fa-check"></i><b>12</b> Roteiro para a execução do trabalho final</a>
+<ul>
+<li class="chapter" data-level="12.0.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#link-para-envio"><i class="fa fa-check"></i><b>12.0.1</b> Link para Envio</a></li>
+<li class="chapter" data-level="12.0.2" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#sugestões-de-locais-para-baixar-os-dados-e-os-mapas"><i class="fa fa-check"></i><b>12.0.2</b> Sugestões de locais para baixar os dados e os mapas</a></li>
+<li class="chapter" data-level="12.1" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#ficha-de-avaliação"><i class="fa fa-check"></i><b>12.1</b> Ficha de Avaliação</a></li>
+<li class="chapter" data-level="12.2" data-path="roteiro-para-a-execução-do-trabalho-final.html"><a href="roteiro-para-a-execução-do-trabalho-final.html#fim"><i class="fa fa-check"></i><b>12.2</b> FIM</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="anexo-i---exemplo-séries-temporais.html"><a href="anexo-i---exemplo-séries-temporais.html"><i class="fa fa-check"></i><b>13</b> Anexo I - Exemplo séries temporais</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="anexo-i---exemplo-séries-temporais.html"><a href="anexo-i---exemplo-séries-temporais.html#exemplo-1"><i class="fa fa-check"></i><b>13.1</b> Exemplo 1</a></li>
+<li class="chapter" data-level="13.2" data-path="anexo-i---exemplo-séries-temporais.html"><a href="anexo-i---exemplo-séries-temporais.html#exemplo-2"><i class="fa fa-check"></i><b>13.2</b> Exemplo 2</a></li>
+<li class="chapter" data-level="13.3" data-path="anexo-i---exemplo-séries-temporais.html"><a href="anexo-i---exemplo-séries-temporais.html#exemplo-3"><i class="fa fa-check"></i><b>13.3</b> Exemplo 3</a></li>
+<li class="chapter" data-level="13.4" data-path="anexo-i---exemplo-séries-temporais.html"><a href="anexo-i---exemplo-séries-temporais.html#referências"><i class="fa fa-check"></i><b>13.4</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html"><i class="fa fa-check"></i><b>14</b> Anexo II - Exemplos de Analise Espacial</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#exemplo-com-os-dados-de-dengue-em-douradosms-1"><i class="fa fa-check"></i><b>14.1</b> Exemplo com os dados de dengue em Dourados/MS</a></li>
+<li class="chapter" data-level="14.2" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#kernel-por-atributos"><i class="fa fa-check"></i><b>14.2</b> Kernel por atributos</a></li>
+<li class="chapter" data-level="14.3" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#exemplo-com-os-dados-de-dengue-em-pernambuco"><i class="fa fa-check"></i><b>14.3</b> Exemplo com os dados de dengue em Pernambuco</a></li>
+<li class="chapter" data-level="14.4" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#matriz-de-vizinhança-1"><i class="fa fa-check"></i><b>14.4</b> Matriz de Vizinhança</a></li>
+<li class="chapter" data-level="14.5" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#autocorrelação-espacial-1"><i class="fa fa-check"></i><b>14.5</b> Autocorrelação Espacial</a></li>
+<li class="chapter" data-level="14.6" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#modelos-linear-car-e-gwr"><i class="fa fa-check"></i><b>14.6</b> Modelos Linear, CAR e GWR</a></li>
+<li class="chapter" data-level="14.7" data-path="anexo-ii---exemplos-de-analise-espacial.html"><a href="anexo-ii---exemplos-de-analise-espacial.html#bibliografia-sugerida-10"><i class="fa fa-check"></i><b>14.7</b> Bibliografia sugerida</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://ogcruz.github.io" target="blank">Página Inicial</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ESTUDOS ECOLÓGICOS 2023</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="anexo-ii---exemplos-de-analise-espacial" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number"> 14</span> Anexo II - Exemplos de Analise Espacial<a href="anexo-ii---exemplos-de-analise-espacial.html#anexo-ii---exemplos-de-analise-espacial" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Neste anexo utilizaremos dois exemplos para estudar análise espacial.</p>
+<p><strong>ATENÇÃO</strong></p>
+<p>Devido a maneira que o Windows acessa as <strong>url</strong> usando a internet é necessario mudar a opção <em>default</em> dele para que possa usar apropiadamente os recursos https, ftps, etc… A linha abaixo deve ser utilizanda antes de usar as funções que acessam esse tipo de recurso.</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb367-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">download.file.method=</span><span class="st">&#39;libcurl&#39;</span>,<span class="at">url.method=</span><span class="st">&#39;libcurl&#39;</span>)</span></code></pre></div>
+<p>Carregando as bibliotecas necessárias:</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb368-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb368-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-3" tabindex="-1"></a><span class="fu">library</span>(maptools)</span>
+<span id="cb368-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-4" tabindex="-1"></a><span class="fu">library</span>(spatialreg)</span>
+<span id="cb368-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-5" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb368-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-6" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb368-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-7" tabindex="-1"></a><span class="fu">library</span>(spdep)</span>
+<span id="cb368-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-8" tabindex="-1"></a><span class="fu">library</span>(spgwr)</span>
+<span id="cb368-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-9" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb368-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb368-10" tabindex="-1"></a><span class="fu">library</span>(colorspace)</span></code></pre></div>
+<div id="exemplo-com-os-dados-de-dengue-em-douradosms-1" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Exemplo com os dados de dengue em Dourados/MS<a href="anexo-ii---exemplos-de-analise-espacial.html#exemplo-com-os-dados-de-dengue-em-douradosms-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Neste exeplo serão utilizados os dados da monografia de Isis Rodrigues Reitman, apresentada ao Curso de Geografia da Faculdade de Ciências Humanas da Universidade Federal da Grande Douradosos/MS, em março de 2013. O título da monografia é “DISTRIBUIÇÃO ESPACIAL DOS CASOS DE DENGUE NO PERÍMETRO URBANO DE DOURADOS-MS E SUA RELAÇÃO COM OS FATORES SOCIOAMBIENTAIS E POLÍTICOS”.</p>
+<p>Lendo a tabela da população por setor censitário e baixando os shapefiles do contorno e por setor censitário de Dourados/MS:</p>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-1" tabindex="-1"></a>local <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/ogcruz/dados_eco_2023/main/dados/&quot;</span></span>
+<span id="cb369-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-2" tabindex="-1"></a>pop2010 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;pop2010.csv&quot;</span>))</span>
+<span id="cb369-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-3" tabindex="-1"></a></span>
+<span id="cb369-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-4" tabindex="-1"></a>tmpdir <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb369-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-5" tabindex="-1"></a><span class="fu">download.file</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;setores_dourados.zip&quot;</span>),</span>
+<span id="cb369-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-6" tabindex="-1"></a>    <span class="at">destfile =</span> <span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>))</span>
+<span id="cb369-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-7" tabindex="-1"></a></span>
+<span id="cb369-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-8" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> <span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/dourados.zip&quot;</span>), <span class="at">exdir =</span> tmpdir)</span>
+<span id="cb369-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb369-9" tabindex="-1"></a><span class="fu">dir</span>(tmpdir)</span></code></pre></div>
+<pre><code>##  [1] &quot;35municipality_2010_simplified.gpkg&quot; &quot;contorno.dbf&quot;                        &quot;contorno.sbn&quot;                        &quot;contorno.sbx&quot;                        &quot;contorno.shp&quot;                        &quot;contorno.shx&quot;                        &quot;dourados.zip&quot;                       
+##  [8] &quot;file5a3a57dcb06ff&quot;                   &quot;metadata_gpkg.csv&quot;                   &quot;neighborhoods_2010_simplified.gpkg&quot;  &quot;olinda.dbf&quot;                          &quot;olinda.shp&quot;                          &quot;olinda.shx&quot;                          &quot;olinda.zip&quot;                         
+## [15] &quot;Setor_UTM_SIRGAS.dbf&quot;                &quot;Setor_UTM_SIRGAS.prj&quot;                &quot;Setor_UTM_SIRGAS.sbn&quot;                &quot;Setor_UTM_SIRGAS.sbx&quot;                &quot;Setor_UTM_SIRGAS.shp&quot;                &quot;Setor_UTM_SIRGAS.shx&quot;</code></pre>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb371-1" tabindex="-1"></a>setor.sf <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/Setor_UTM_SIRGAS.shp&quot;</span>),</span>
+<span id="cb371-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb371-2" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb371-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb371-3" tabindex="-1"></a>contorno.sf <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="fu">paste0</span>(tmpdir, <span class="st">&quot;/contorno.shp&quot;</span>),</span>
+<span id="cb371-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb371-4" tabindex="-1"></a>    <span class="at">crs =</span> <span class="dv">31981</span>)</span></code></pre></div>
+<p>Juntando com os dados de setores censitários e população:</p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb372-1" tabindex="-1"></a>setor.sf <span class="ot">&lt;-</span> setor.sf <span class="sc">%&gt;%</span></span>
+<span id="cb372-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb372-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">idsetor =</span> <span class="fu">as.numeric</span>(CD_GEOCODI)) <span class="sc">%&gt;%</span></span>
+<span id="cb372-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb372-3" tabindex="-1"></a>    <span class="fu">inner_join</span>(pop2010, <span class="at">by =</span> <span class="st">&quot;idsetor&quot;</span>)</span></code></pre></div>
+<p>Lendo e plotando os casos de dengue georreferenciados em Dourados/MS:</p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb373-1" tabindex="-1"></a>casos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;dengue_dourados.csv&quot;</span>))</span>
+<span id="cb373-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb373-2" tabindex="-1"></a>casos.sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(casos, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb373-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb373-3" tabindex="-1"></a></span>
+<span id="cb373-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb373-4" tabindex="-1"></a><span class="fu">ggplot</span>(setor.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb373-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb373-5" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> casos.sf, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb373-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb373-6" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-327-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Lendo e plotando os os pontos de coleta de lixo georreferenciados em Dourados/MS:</p>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb374-1" tabindex="-1"></a>lixo <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;/lixo_dourados.csv&quot;</span>))</span>
+<span id="cb374-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb374-2" tabindex="-1"></a>lixo.sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(lixo, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">crs =</span> <span class="dv">31981</span>)</span>
+<span id="cb374-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb374-3" tabindex="-1"></a></span>
+<span id="cb374-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb374-4" tabindex="-1"></a><span class="fu">ggplot</span>(setor.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb374-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb374-5" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> lixo.sf, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb374-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb374-6" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-328-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Como podemos observar, existem alguns pontos de coleta de lixo fora do contorno de Dourados/MS. Uma forma de ficarmos só com os pontos dentro do polígono é utilizando o comando <em>st_intersection</em>.</p>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-1" tabindex="-1"></a>lixo2.sf <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(contorno.sf, lixo.sf)</span>
+<span id="cb375-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-2" tabindex="-1"></a><span class="co"># ou lixo2.sf &lt;- st_intersection(setor.sf,</span></span>
+<span id="cb375-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-3" tabindex="-1"></a><span class="co"># lixo.sf)</span></span>
+<span id="cb375-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-4" tabindex="-1"></a></span>
+<span id="cb375-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-5" tabindex="-1"></a><span class="fu">ggplot</span>(setor.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb375-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-6" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> lixo2.sf, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb375-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb375-7" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-329-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Verificando as paletas de cores.</p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb376-1" tabindex="-1"></a><span class="fu">display.brewer.all</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-330-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Utilizando as informações dos casos (pontos), do lixo (ponto) e da população de cada setor censitário (mapa temático):</p>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-1" tabindex="-1"></a><span class="fu">ggplot</span>(setor.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pop)) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> casos.sf,</span>
+<span id="cb377-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-2" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.7</span>, <span class="at">alpha =</span> <span class="fl">0.9</span>, <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;Caso&quot;</span>),</span>
+<span id="cb377-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-3" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="st">&quot;point&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> lixo2.sf,</span>
+<span id="cb377-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-4" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.9</span>, <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;Lixo&quot;</span>), <span class="at">show.legend =</span> <span class="st">&quot;point&quot;</span>) <span class="sc">+</span></span>
+<span id="cb377-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-5" tabindex="-1"></a>    <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">&quot;PuBu&quot;</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb377-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-6" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Caso =</span> <span class="st">&quot;red&quot;</span>, <span class="at">Lixo =</span> <span class="st">&quot;green&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb377-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb377-7" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-331-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Iremos agora construir buffers de 500m de distância ao redor de cada ponto de coleta de lixo. Isso é interessante para verificar se os casos de dengue ocorrem em um raio de até 500m de distância dos pontos de coleta de lixo. Ou seja, a pergunta é, será que a distância dos pontos de coeta de lixo influenciam a ocorrência do caso de dengue?</p>
+<p><strong>Buffers:</strong> São polígonos que contornam um objeto a uma determinada distância. Sua principal função é materializar os conceitos de “perto” e “longe”.</p>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-1" tabindex="-1"></a>lixo_buffer <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(lixo2.sf, <span class="dv">500</span>)</span>
+<span id="cb378-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-2" tabindex="-1"></a></span>
+<span id="cb378-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-3" tabindex="-1"></a><span class="fu">ggplot</span>(setor.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pop)) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> casos.sf,</span>
+<span id="cb378-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-4" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.7</span>, <span class="at">alpha =</span> <span class="fl">0.9</span>, <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;Caso&quot;</span>),</span>
+<span id="cb378-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-5" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="st">&quot;point&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> lixo2.sf,</span>
+<span id="cb378-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-6" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.9</span>, <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;Lixo&quot;</span>), <span class="at">show.legend =</span> <span class="st">&quot;point&quot;</span>) <span class="sc">+</span></span>
+<span id="cb378-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-7" tabindex="-1"></a>    <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">&quot;PuBu&quot;</span>, <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb378-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-8" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> lixo_buffer, <span class="at">color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;transparent&quot;</span>,</span>
+<span id="cb378-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-9" tabindex="-1"></a>        <span class="at">size =</span> <span class="fl">0.4</span>) <span class="sc">+</span> <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Caso =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb378-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb378-10" tabindex="-1"></a>    <span class="at">Lixo =</span> <span class="st">&quot;green&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-332-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Represntando os casos e o lixo de forma interativa.</p>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb379-1" tabindex="-1"></a><span class="fu">tm_shape</span>(setor.sf) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">tm_shape</span>(casos.sf) <span class="sc">+</span></span>
+<span id="cb379-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb379-2" tabindex="-1"></a>    <span class="fu">tm_dots</span>(<span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">tm_shape</span>(lixo.sf) <span class="sc">+</span> <span class="fu">tm_dots</span>(<span class="st">&quot;green&quot;</span>) <span class="sc">+</span></span>
+<span id="cb379-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb379-3" tabindex="-1"></a>    <span class="fu">tm_shape</span>(lixo_buffer) <span class="sc">+</span> <span class="fu">tm_borders</span>(<span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> <span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-333-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-1" tabindex="-1"></a><span class="do">## conta casos por setor </span></span>
+<span id="cb380-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-2" tabindex="-1"></a>casos.sf<span class="sc">$</span>contador <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb380-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-3" tabindex="-1"></a>casos <span class="ot">&lt;-</span> setor.sf <span class="sc">%&gt;%</span>  </span>
+<span id="cb380-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-4" tabindex="-1"></a>  <span class="fu">st_join</span>(casos.sf) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-5" tabindex="-1"></a>  <span class="fu">filter</span>(CLASSI_FIN <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span>  <span class="do">## seleciona somente os casos confirmados</span></span>
+<span id="cb380-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-6" tabindex="-1"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-7" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">sum</span>(contador))</span>
+<span id="cb380-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-8" tabindex="-1"></a></span>
+<span id="cb380-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-9" tabindex="-1"></a><span class="fu">st_geometry</span>(casos) <span class="ot">&lt;-</span> <span class="cn">NULL</span>  <span class="do">## remove atributos de geometria</span></span>
+<span id="cb380-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-10" tabindex="-1"></a></span>
+<span id="cb380-11"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-11" tabindex="-1"></a><span class="do">## numero de depositos de Lixo por setor </span></span>
+<span id="cb380-12"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-12" tabindex="-1"></a>lixo.sf<span class="sc">$</span>contador <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb380-13"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-13" tabindex="-1"></a></span>
+<span id="cb380-14"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-14" tabindex="-1"></a>lixo <span class="ot">&lt;-</span> setor.sf <span class="sc">%&gt;%</span>  </span>
+<span id="cb380-15"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-15" tabindex="-1"></a>  <span class="fu">st_join</span>(lixo.sf) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-16"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-16" tabindex="-1"></a>  <span class="fu">group_by</span>(ID) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-17"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-17" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lixo =</span> <span class="fu">sum</span>(contador))</span>
+<span id="cb380-18"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-18" tabindex="-1"></a></span>
+<span id="cb380-19"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-19" tabindex="-1"></a><span class="fu">st_geometry</span>(lixo) <span class="ot">&lt;-</span> <span class="cn">NULL</span> <span class="do">## remove atributos de geometria</span></span>
+<span id="cb380-20"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-20" tabindex="-1"></a></span>
+<span id="cb380-21"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-21" tabindex="-1"></a><span class="co"># Inserindo as contagens dos casos e de pontos de coleta de lixo no atributo com a geometria.</span></span>
+<span id="cb380-22"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-22" tabindex="-1"></a>setor.sf <span class="ot">&lt;-</span> setor.sf <span class="sc">%&gt;%</span> </span>
+<span id="cb380-23"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-23" tabindex="-1"></a>  <span class="fu">left_join</span>(lixo,<span class="at">by =</span> <span class="st">&#39;ID&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-24"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb380-24" tabindex="-1"></a>  <span class="fu">left_join</span>(casos,<span class="at">by =</span> <span class="st">&#39;ID&#39;</span>) </span></code></pre></div>
+<p>Plotando o mapa temático dos casos por setor censitário:</p>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb381-1" tabindex="-1"></a><span class="fu">plot</span>(setor.sf[<span class="st">&quot;casos&quot;</span>])</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-335-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Plotando o mapa temático dos pontos de coleta de lixo por setor censitário:</p>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb382-1" tabindex="-1"></a><span class="fu">plot</span>(setor.sf[<span class="st">&quot;lixo&quot;</span>])</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-336-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Calculando a taxa de incidência e plotando o mapa temático dos pontos de coleta de lixo por setor censitário:</p>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb383-1" tabindex="-1"></a>setor.sf<span class="sc">$</span>tx <span class="ot">&lt;-</span> (setor.sf<span class="sc">$</span>casos<span class="sc">/</span>setor.sf<span class="sc">$</span>pop) <span class="sc">*</span> <span class="dv">1000</span></span>
+<span id="cb383-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb383-2" tabindex="-1"></a>setor.sf<span class="sc">$</span>tx[<span class="fu">is.na</span>(setor.sf<span class="sc">$</span>tx)] <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Transformando os missings em zero</span></span>
+<span id="cb383-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb383-3" tabindex="-1"></a></span>
+<span id="cb383-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb383-4" tabindex="-1"></a><span class="fu">summary</span>(setor.sf<span class="sc">$</span>tx)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00    0.00    1.74    4.06    4.31   56.40</code></pre>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb385-1" tabindex="-1"></a>pal <span class="ot">&lt;-</span> wesanderson<span class="sc">::</span><span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise3&quot;</span>, <span class="dv">20</span>, <span class="at">type =</span> <span class="st">&quot;continuous&quot;</span>)</span>
+<span id="cb385-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb385-2" tabindex="-1"></a></span>
+<span id="cb385-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb385-3" tabindex="-1"></a><span class="fu">ggplot</span>(setor.sf) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> tx), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb385-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb385-4" tabindex="-1"></a>    <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> pal) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Taxa de incidência de Dengue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb385-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb385-5" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-337-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="kernel-por-atributos" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Kernel por atributos<a href="anexo-ii---exemplos-de-analise-espacial.html#kernel-por-atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos plotar o kernel por atributos referente a taxa de incidência de dengue em Dourados/MS.</p>
+<p>Primeiramente é necessário dissolver os poligonos em formato <em>sf</em> para obter o contorno.
+Nesse caso queremos preservar o atributo <em>AREA</em></p>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb386-1" tabindex="-1"></a>dourados.contorno <span class="ot">&lt;-</span> <span class="fu">st_union</span>(setor.sf)</span>
+<span id="cb386-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb386-2" tabindex="-1"></a><span class="fu">plot</span>(dourados.contorno)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-338-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb387-1" tabindex="-1"></a>dourados.w <span class="ot">&lt;-</span> <span class="fu">as.owin</span>(<span class="fu">as_Spatial</span>(dourados.contorno))  <span class="co">#</span></span></code></pre></div>
+<p>Extraindo os centróidas dos polígonos em Dourados/MS.</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-1" tabindex="-1"></a>centroides <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(<span class="fu">st_geometry</span>(setor.sf))</span>
+<span id="cb388-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-2" tabindex="-1"></a></span>
+<span id="cb388-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-3" tabindex="-1"></a><span class="co"># Transformando em os centróides em formato sp</span></span>
+<span id="cb388-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-4" tabindex="-1"></a>centroides.sp <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as_Spatial</span>(centroides))</span>
+<span id="cb388-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-5" tabindex="-1"></a><span class="fu">names</span>(centroides.sp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb388-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-6" tabindex="-1"></a></span>
+<span id="cb388-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb388-7" tabindex="-1"></a><span class="fu">plot</span>(centroides.sp)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-339-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Colocando os pontos no formato <em>sp</em>:</p>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb389-1" tabindex="-1"></a>centroides.ppp <span class="ot">&lt;-</span> <span class="fu">ppp</span>(centroides.sp<span class="sc">$</span>X, centroides.sp<span class="sc">$</span>Y,</span>
+<span id="cb389-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb389-2" tabindex="-1"></a>    dourados.w)</span>
+<span id="cb389-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb389-3" tabindex="-1"></a><span class="fu">plot</span>(centroides.ppp, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-340-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Fazendo o kernel por atributo da taxa:</p>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb390-1" tabindex="-1"></a>kernel.tx <span class="ot">&lt;-</span> <span class="fu">density</span>(centroides.ppp, <span class="dv">500</span>, <span class="at">weights =</span> setor.sf<span class="sc">$</span>tx,</span>
+<span id="cb390-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb390-2" tabindex="-1"></a>    <span class="at">scalekernel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb390-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb390-3" tabindex="-1"></a><span class="fu">plot</span>(kernel.tx)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-341-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="exemplo-com-os-dados-de-dengue-em-pernambuco" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Exemplo com os dados de dengue em Pernambuco<a href="anexo-ii---exemplos-de-analise-espacial.html#exemplo-com-os-dados-de-dengue-em-pernambuco" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nesta prática serão utilizados os dados de dengue por município no estado de Pernambuco. Os dados foram organizados por <a href="https://doi.org/10.1101/2021.03.15.21253657">Freitas et al. (2021)</a>.</p>
+<p>Agora vamos ler os dados e o polígono de Pernambuco.</p>
+<p>Verificando os objetos:</p>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb391-1" tabindex="-1"></a><span class="fu">head</span>(dzc)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 8
+##   ID_MUNICIP  year Population dengue  zika chikungunya microcephaly live_births
+##        &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+## 1     260005  2013     96769.     14     0           0            0        1532
+## 2     260005  2014     96831.     23     0           0            0        1526
+## 3     260005  2015     96907.     54     0           0            5        1628
+## 4     260005  2016     96880.     23     0          29            2        1487
+## 5     260005  2017     96828.      0     0          10            0        1519
+## 6     260010  2013     36182.      0     0           0            0         638</code></pre>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb393-1" tabindex="-1"></a><span class="fu">summary</span>(dzc)</span></code></pre></div>
+<pre><code>##    ID_MUNICIP          year        Population          dengue           zika        chikungunya    microcephaly    live_births   
+##  Min.   :260005   Min.   :2013   Min.   :   4475   Min.   :    0   Min.   : 0.00   Min.   :   0   Min.   : 0.00   Min.   :   50  
+##  1st Qu.:260419   1st Qu.:2014   1st Qu.:  14295   1st Qu.:    0   1st Qu.: 0.00   1st Qu.:   0   1st Qu.: 0.00   1st Qu.:  203  
+##  Median :260822   Median :2015   Median :  22735   Median :    5   Median : 0.00   Median :   0   Median : 0.00   Median :  334  
+##  Mean   :260825   Mean   :2015   Mean   :  50606   Mean   :  140   Mean   : 0.18   Mean   :  36   Mean   : 0.89   Mean   :  757  
+##  3rd Qu.:261232   3rd Qu.:2016   3rd Qu.:  38049   3rd Qu.:   38   3rd Qu.: 0.00   3rd Qu.:   1   3rd Qu.: 1.00   3rd Qu.:  594  
+##  Max.   :261650   Max.   :2017   Max.   :1599273   Max.   :24793   Max.   :93.00   Max.   :9209   Max.   :87.00   Max.   :23664</code></pre>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb395-1" tabindex="-1"></a>PE</span></code></pre></div>
+<pre><code>## Simple feature collection with 184 features and 2 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -41.36 ymin: -9.483 xmax: -34.81 ymax: -7.273
+## Geodetic CRS:  WGS 84
+## # A tibble: 184 × 3
+##    NM_MUNICIP            CD_GEOCMU                                                                                         geom
+##  * &lt;chr&gt;                 &lt;chr&gt;                                                                                    &lt;POLYGON [°]&gt;
+##  1 ABREU E LIMA          2600054   ((-35.05 -7.88, -35.02 -7.888, -35.02 -7.888, -35 -7.894, -35 -7.895, -34.98 -7.9, -34.94...
+##  2 AFOGADOS DA INGAZEIRA 2600104   ((-37.56 -7.639, -37.56 -7.64, -37.56 -7.641, -37.56 -7.642, -37.56 -7.643, -37.56 -7.644...
+##  3 AFRÂNIO               2600203   ((-40.86 -8.371, -40.85 -8.446, -40.85 -8.459, -40.85 -8.462, -40.85 -8.526, -40.85 -8.55...
+##  4 AGRESTINA             2600302   ((-35.92 -8.366, -35.9 -8.375, -35.9 -8.375, -35.9 -8.381, -35.9 -8.384, -35.9 -8.384, -3...
+##  5 ÁGUA PRETA            2600401   ((-35.47 -8.546, -35.47 -8.545, -35.47 -8.549, -35.46 -8.549, -35.46 -8.549, -35.46 -8.54...
+##  6 ÁGUAS BELAS           2600500   ((-36.87 -8.887, -36.87 -8.888, -36.87 -8.893, -36.87 -8.895, -36.87 -8.905, -36.87 -8.90...
+##  7 ALAGOINHA             2600609   ((-36.76 -8.599, -36.76 -8.6, -36.77 -8.603, -36.77 -8.602, -36.77 -8.602, -36.78 -8.603,...
+##  8 ALIANÇA               2600708   ((-35.16 -7.503, -35.15 -7.506, -35.15 -7.507, -35.15 -7.509, -35.15 -7.51, -35.14 -7.51,...
+##  9 ALTINHO               2600807   ((-35.97 -8.536, -36 -8.547, -36 -8.547, -36 -8.547, -36 -8.534, -36 -8.534, -36 -8.534, ...
+## 10 AMARAJI               2600906   ((-35.41 -8.428, -35.41 -8.427, -35.41 -8.427, -35.41 -8.426, -35.41 -8.426, -35.41 -8.42...
+## # ℹ 174 more rows</code></pre>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb397-1" tabindex="-1"></a><span class="fu">ggplot</span>(PE) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">size =</span> <span class="fl">0.3</span>, <span class="at">fill =</span> <span class="st">&quot;darkseagreen1&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-343-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Calculando a incidência de dengue acumulada 2013-2017 e verificando a distribuição:</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-1" tabindex="-1"></a>dengue <span class="ot">&lt;-</span> dzc <span class="sc">%&gt;%</span></span>
+<span id="cb398-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-2" tabindex="-1"></a>    <span class="fu">group_by</span>(ID_MUNICIP) <span class="sc">%&gt;%</span></span>
+<span id="cb398-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-3" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">pop =</span> <span class="fu">mean</span>(Population), <span class="at">dengue =</span> <span class="fu">sum</span>(dengue),</span>
+<span id="cb398-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-4" tabindex="-1"></a>        <span class="at">inc =</span> (dengue<span class="sc">/</span>pop) <span class="sc">*</span> <span class="dv">10000</span>)</span>
+<span id="cb398-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-5" tabindex="-1"></a></span>
+<span id="cb398-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-6" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb398-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-7" tabindex="-1"></a><span class="fu">hist</span>(dengue<span class="sc">$</span>inc)</span>
+<span id="cb398-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb398-8" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log</span>(dengue<span class="sc">$</span>inc))</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-344-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb399-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb399-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb399-2" tabindex="-1"></a><span class="fu">ggplot</span>(dengue, <span class="fu">aes</span>(<span class="fu">log</span>(inc))) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),</span>
+<span id="cb399-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb399-3" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey90&quot;</span>) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;purple&quot;</span>,</span>
+<span id="cb399-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb399-4" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-344-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Agora vamos juntar os dados de dengue com o polígono de Pernambuco. Observe que a variável <code>ID_MUNICIP</code> do objeto com os dados dos casos tem 6 dígitos, enquanto que a variável <code>CD_GEOCMU</code> do polígono tem 7 dígitos. Porém, os 6 primeiros dígitos de <code>CD_GEOCMU</code> são correspondentes à variável <code>ID_MUNICIP</code>. É comum encontrar essa situação quando trabalhamos com dados do IBGE e do SINAN.</p>
+<p>Portanto, vamos criar a variável <code>ID_MUNICIP</code> no polígono, e juntar com o objeto de casos:</p>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb400-1" tabindex="-1"></a>PE2 <span class="ot">&lt;-</span> PE <span class="sc">%&gt;%</span></span>
+<span id="cb400-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb400-2" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">ID_MUNICIP =</span> CD_GEOCMU) <span class="sc">%&gt;%</span></span>
+<span id="cb400-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb400-3" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">ID_MUNICIP =</span> <span class="fu">as.numeric</span>(<span class="fu">str_sub</span>(ID_MUNICIP,</span>
+<span id="cb400-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb400-4" tabindex="-1"></a>        <span class="dv">1</span>, <span class="dv">6</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb400-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb400-5" tabindex="-1"></a>    <span class="fu">left_join</span>(dengue, <span class="at">by =</span> <span class="st">&quot;ID_MUNICIP&quot;</span>)</span></code></pre></div>
+<p>Agora vamos ver o mapa das incidências:</p>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-1" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">cut_number</span>(inc,</span>
+<span id="cb401-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-2" tabindex="-1"></a>    <span class="dv">5</span>)), <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Reds&quot;</span>,</span>
+<span id="cb401-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-3" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;casos</span><span class="sc">\n</span><span class="st">por 10000&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Incidência de dengue em Pernambuco, 2013-2017&quot;</span>) <span class="sc">+</span></span>
+<span id="cb401-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-4" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb401-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-5" tabindex="-1"></a></span>
+<span id="cb401-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-6" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2, <span class="fu">aes</span>(inc)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb401-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-7" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(PE2<span class="sc">$</span>inc,</span>
+<span id="cb401-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-8" tabindex="-1"></a>    <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.2</span>)), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb401-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-9" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="st">&quot;cm&quot;</span>))</span>
+<span id="cb401-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-10" tabindex="-1"></a></span>
+<span id="cb401-11"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-11" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">ggarrange</span>(g1, g2, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">widths =</span> <span class="fu">c</span>(<span class="fl">6.5</span>,</span>
+<span id="cb401-12"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb401-12" tabindex="-1"></a>    <span class="fl">3.5</span>))</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-346-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="matriz-de-vizinhança-1" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Matriz de Vizinhança<a href="anexo-ii---exemplos-de-analise-espacial.html#matriz-de-vizinhança-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Iremos precisar da coordenadas dos centróides:</p>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb402-1" tabindex="-1"></a>centroides <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(PE)</span>
+<span id="cb402-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb402-2" tabindex="-1"></a>coordenadas <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(centroides)</span></code></pre></div>
+<p>Criando e verificando a vizinhança de Pernambuco:</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-1" tabindex="-1"></a><span class="co"># Convertendo para Spatial Polygons para usar</span></span>
+<span id="cb403-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-2" tabindex="-1"></a><span class="co"># poly2nb</span></span>
+<span id="cb403-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-3" tabindex="-1"></a>PE.sp <span class="ot">&lt;-</span> <span class="fu">as_Spatial</span>(PE)</span>
+<span id="cb403-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-4" tabindex="-1"></a></span>
+<span id="cb403-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-5" tabindex="-1"></a><span class="co"># Criando a vizinhança</span></span>
+<span id="cb403-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-6" tabindex="-1"></a>viz <span class="ot">&lt;-</span> <span class="fu">poly2nb</span>(PE.sp)</span>
+<span id="cb403-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb403-7" tabindex="-1"></a>viz</span></code></pre></div>
+<pre><code>## Neighbour list object:
+## Number of regions: 184 
+## Number of nonzero links: 948 
+## Percentage nonzero weights: 2.8 
+## Average number of links: 5.152</code></pre>
+<p>Fazendo o mapa com a vizinhança:</p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-1" tabindex="-1"></a><span class="co"># Transformando a vizinhança em linhas para</span></span>
+<span id="cb405-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-2" tabindex="-1"></a><span class="co"># plotar</span></span>
+<span id="cb405-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-3" tabindex="-1"></a>viz.sf <span class="ot">&lt;-</span> <span class="fu">nb2lines</span>(viz, <span class="at">coords =</span> coordenadas, <span class="at">as_sf =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb405-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-4" tabindex="-1"></a>viz.sf <span class="ot">&lt;-</span> <span class="fu">st_set_crs</span>(viz.sf, <span class="fu">st_crs</span>(PE))</span>
+<span id="cb405-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-5" tabindex="-1"></a></span>
+<span id="cb405-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-6" tabindex="-1"></a><span class="co"># Plotando o mapa de conectividade por</span></span>
+<span id="cb405-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-7" tabindex="-1"></a><span class="co"># contiguidade</span></span>
+<span id="cb405-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-8" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> PE, <span class="at">fill =</span> <span class="st">&quot;salmon&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb405-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-9" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> centroides, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb405-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-10" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> viz.sf, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Vizinhança por conectividade&quot;</span>) <span class="sc">+</span></span>
+<span id="cb405-11"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb405-11" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Latitude&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Longitude&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-349-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="autocorrelação-espacial-1" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> Autocorrelação Espacial<a href="anexo-ii---exemplos-de-analise-espacial.html#autocorrelação-espacial-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Verificando a correlação da incidência de dengue em Pernambuco.</p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb406-1" tabindex="-1"></a>pesos.viz <span class="ot">&lt;-</span> <span class="fu">nb2listw</span>(viz)</span>
+<span id="cb406-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb406-2" tabindex="-1"></a><span class="fu">moran.test</span>(PE2<span class="sc">$</span>inc, pesos.viz)</span></code></pre></div>
+<pre><code>## 
+##  Moran I test under randomisation
+## 
+## data:  PE2$inc  
+## weights: pesos.viz    
+## 
+## Moran I statistic standard deviate = 3.2, p-value = 0.0006
+## alternative hypothesis: greater
+## sample estimates:
+## Moran I statistic       Expectation          Variance 
+##          0.140386         -0.005464          0.002022</code></pre>
+<p>Plotando o correlograma:</p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb408-1" tabindex="-1"></a>correl <span class="ot">&lt;-</span> <span class="fu">sp.correlogram</span>(viz, PE2<span class="sc">$</span>inc, <span class="at">order =</span> <span class="dv">8</span>, <span class="at">method =</span> <span class="st">&quot;I&quot;</span>)</span>
+<span id="cb408-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb408-2" tabindex="-1"></a>correl</span></code></pre></div>
+<pre><code>## Spatial correlogram for PE2$inc 
+## method: Moran&#39;s I
+##          estimate expectation  variance standard deviate Pr(I) two sided   
+## 1 (184)  0.140386   -0.005464  0.002022             3.24          0.0012 **
+## 2 (184)  0.008862   -0.005464  0.000977             0.46          0.6467   
+## 3 (184)  0.050621   -0.005464  0.000724             2.08          0.0372 * 
+## 4 (184)  0.017289   -0.005464  0.000643             0.90          0.3694   
+## 5 (184) -0.048713   -0.005464  0.000640            -1.71          0.0873 . 
+## 6 (184) -0.014771   -0.005464  0.000629            -0.37          0.7106   
+## 7 (184)  0.031309   -0.005464  0.000617             1.48          0.1387   
+## 8 (184) -0.020329   -0.005464  0.000669            -0.57          0.5655   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb410-1" tabindex="-1"></a><span class="fu">plot</span>(correl)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-351-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Mapeando os polígonos que tiveram os p-valores mais significativos no Moran Local:</p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb411-1" tabindex="-1"></a>PE2<span class="sc">$</span>pval <span class="ot">&lt;-</span> <span class="fu">localmoran</span>(PE2<span class="sc">$</span>inc, pesos.viz)[, <span class="dv">5</span>]</span>
+<span id="cb411-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb411-2" tabindex="-1"></a></span>
+<span id="cb411-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb411-3" tabindex="-1"></a><span class="fu">tm_shape</span>(PE2) <span class="sc">+</span> <span class="fu">tm_polygons</span>(<span class="at">col =</span> <span class="st">&quot;pval&quot;</span>, <span class="at">title =</span> <span class="st">&quot;p-valores&quot;</span>,</span>
+<span id="cb411-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb411-4" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="dv">1</span>), <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb411-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb411-5" tabindex="-1"></a>    <span class="at">palette =</span> <span class="st">&quot;-Oranges&quot;</span>) <span class="sc">+</span> <span class="fu">tm_scale_bar</span>(<span class="at">width =</span> <span class="fl">0.15</span>) <span class="sc">+</span></span>
+<span id="cb411-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb411-6" tabindex="-1"></a>    <span class="fu">tm_layout</span>(<span class="at">frame =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">tmap_mode</span>(<span class="st">&quot;plot&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-352-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Moran Local (Lisa Map) da incidência:</p>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb412-1" tabindex="-1"></a>resI <span class="ot">&lt;-</span> <span class="fu">localmoran.sad</span>(<span class="fu">lm</span>(PE2<span class="sc">$</span>inc <span class="sc">~</span> <span class="dv">1</span>), <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(viz),</span>
+<span id="cb412-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb412-2" tabindex="-1"></a>    viz, <span class="at">style =</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb412-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb412-3" tabindex="-1"></a><span class="fu">summary</span>(resI)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span></code></pre></div>
+<pre><code>##     Local Morans I Stand. dev. (N) Pr. (N) Saddlepoint Pr. (Sad) Expectation Variance Skewness Kurtosis Minimum Maximum       omega     sad.r     sad.u
+## 1 1      -0.122210        -0.26537  1.2093    -0.44298    0.6578   -0.005464   0.1935 -0.07213    8.624  -40.97   39.97 -0.00303917 -0.259013 -0.271654
+## 2 2      -0.170546        -0.33470  1.2621    -0.53962    0.5895   -0.005464   0.2433 -0.06434    8.624  -45.87   44.87 -0.00331024 -0.323850 -0.347289
+## 3 3       0.072842         0.11165  0.9111     0.18386    0.8541   -0.005464   0.4919 -0.04525    8.622  -65.02   64.02  0.00085244  0.110805  0.111706
+## 4 4      -0.007457        -0.00453  1.0036    -0.02005    0.9840   -0.005464   0.1935 -0.07213    8.624  -40.97   39.97 -0.00005565 -0.004505 -0.004506
+## 5 5       0.299109         0.88311  0.3772     1.11828    0.2634   -0.005464   0.1189 -0.09200    8.627  -32.23   31.23  0.00941159  0.788180  1.022395</code></pre>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb414-1" tabindex="-1"></a>PE2<span class="sc">$</span>MoranLocal <span class="ot">&lt;-</span> <span class="fu">summary</span>(resI)[, <span class="dv">1</span>]</span>
+<span id="cb414-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb414-2" tabindex="-1"></a></span>
+<span id="cb414-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb414-3" tabindex="-1"></a><span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> MoranLocal), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb414-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb414-4" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">scale_fill_continuous_diverging</span>(<span class="at">palette =</span> <span class="st">&quot;Blue-Red 3&quot;</span>,</span>
+<span id="cb414-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb414-5" tabindex="-1"></a>    <span class="at">mid =</span> <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Moran local&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-354-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+</div>
+<div id="modelos-linear-car-e-gwr" class="section level2 hasAnchor" number="14.6">
+<h2><span class="header-section-number">14.6</span> Modelos Linear, CAR e GWR<a href="anexo-ii---exemplos-de-analise-espacial.html#modelos-linear-car-e-gwr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Agora vamos utilizar o IDH para explorar os modelos.</p>
+<p>Primeiro, vamos visualizar o IDH por município e comparar com o mapa de incidência de dengue.</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb415-1" tabindex="-1"></a>idh <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(local, <span class="st">&quot;/idh_pernambuco.csv&quot;</span>))</span>
+<span id="cb415-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb415-2" tabindex="-1"></a><span class="fu">head</span>(idh)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   ID_MUNICIP  IDHM
+##        &lt;dbl&gt; &lt;dbl&gt;
+## 1     260005 0.679
+## 2     260010 0.657
+## 3     260020 0.588
+## 4     260030 0.592
+## 5     260040 0.553
+## 6     260050 0.526</code></pre>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-1" tabindex="-1"></a>PE2 <span class="ot">&lt;-</span> PE2 <span class="sc">%&gt;%</span></span>
+<span id="cb417-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-2" tabindex="-1"></a>    <span class="fu">left_join</span>(idh)</span>
+<span id="cb417-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-3" tabindex="-1"></a></span>
+<span id="cb417-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-4" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> IDHM), <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb417-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-5" tabindex="-1"></a>    <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Viridis&quot;</span>,</span>
+<span id="cb417-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-6" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;IDH&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;IDH, 2010&quot;</span>) <span class="sc">+</span></span>
+<span id="cb417-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-7" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb417-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-8" tabindex="-1"></a></span>
+<span id="cb417-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb417-9" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">ggarrange</span>(g1, g3, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-355-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Ajustando o modelo de regressão linear simples.</p>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb418-1" tabindex="-1"></a>dengue.lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(inc <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">~</span> IDHM, <span class="at">data =</span> PE2)</span>
+<span id="cb418-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb418-2" tabindex="-1"></a><span class="fu">summary</span>(dengue.lm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log(inc + 1) ~ IDHM, data = PE2)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -3.740 -1.001  0.065  1.142  3.538 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)    0.576      1.414    0.41    0.684  
+## IDHM           5.474      2.369    2.31    0.022 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.46 on 182 degrees of freedom
+## Multiple R-squared:  0.0285, Adjusted R-squared:  0.0232 
+## F-statistic: 5.34 on 1 and 182 DF,  p-value: 0.0219</code></pre>
+<p>Checando os residuos para verificar a presença de autocorrelação.</p>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb420-1" tabindex="-1"></a>dengue.lm<span class="sc">$</span>lmresid <span class="ot">&lt;-</span> <span class="fu">residuals</span>(dengue.lm)</span>
+<span id="cb420-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb420-2" tabindex="-1"></a><span class="fu">moran.test</span>(dengue.lm<span class="sc">$</span>lmresid, pesos.viz)</span></code></pre></div>
+<pre><code>## 
+##  Moran I test under randomisation
+## 
+## data:  dengue.lm$lmresid  
+## weights: pesos.viz    
+## 
+## Moran I statistic standard deviate = 3.8, p-value = 0.00007
+## alternative hypothesis: greater
+## sample estimates:
+## Moran I statistic       Expectation          Variance 
+##          0.174454         -0.005464          0.002233</code></pre>
+<p>Ajustando o modelo CAR.</p>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb422-1" tabindex="-1"></a>dengue.car <span class="ot">&lt;-</span> <span class="fu">spautolm</span>(<span class="fu">log</span>(inc <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">~</span> IDHM, <span class="at">data =</span> PE2,</span>
+<span id="cb422-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb422-2" tabindex="-1"></a>    <span class="at">listw =</span> pesos.viz, <span class="at">family =</span> <span class="st">&quot;CAR&quot;</span>)</span>
+<span id="cb422-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb422-3" tabindex="-1"></a><span class="fu">summary</span>(dengue.car)</span></code></pre></div>
+<pre><code>## 
+## Call: spautolm(formula = log(inc + 1) ~ IDHM, data = PE2, listw = pesos.viz,     family = &quot;CAR&quot;)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -3.957162 -0.944274  0.069071  1.082266  3.519477 
+## 
+## Coefficients: 
+##             Estimate Std. Error z value  Pr(&gt;|z|)
+## (Intercept)  -1.7043     1.5392 -1.1073 0.2681616
+## IDHM          9.1806     2.5812  3.5567 0.0003756
+## 
+## Lambda: 0.4945 LR test value: 9.016 p-value: 0.0026767 
+## Numerical Hessian standard error of lambda: 0.1806 
+## 
+## Log likelihood: -324.8 
+## ML residual variance (sigma squared): 1.943, (sigma: 1.394)
+## Number of observations: 184 
+## Number of parameters estimated: 4 
+## AIC: NA (not available for weighted model)</code></pre>
+<p>Checando os residuos para verificar a presença de autocorrelação.</p>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb424-1" tabindex="-1"></a>dengue.car<span class="sc">$</span>carresid <span class="ot">&lt;-</span> <span class="fu">residuals</span>(dengue.car)</span>
+<span id="cb424-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb424-2" tabindex="-1"></a><span class="fu">moran.test</span>(dengue.car<span class="sc">$</span>carresid, pesos.viz)</span></code></pre></div>
+<pre><code>## 
+##  Moran I test under randomisation
+## 
+## data:  dengue.car$carresid  
+## weights: pesos.viz    
+## 
+## Moran I statistic standard deviate = -1.5, p-value = 0.9
+## alternative hypothesis: greater
+## sample estimates:
+## Moran I statistic       Expectation          Variance 
+##         -0.078140         -0.005464          0.002231</code></pre>
+<p>Ajustando o modelo GWR.</p>
+<p>Precisamos estimar a largura de banda <em>“ideal”</em>.</p>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb426-1" tabindex="-1"></a>GWRbanda <span class="ot">&lt;-</span> <span class="fu">gwr.sel</span>(<span class="fu">log</span>(inc <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">~</span> IDHM, <span class="at">data =</span> PE2,</span>
+<span id="cb426-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb426-2" tabindex="-1"></a>    <span class="at">coords =</span> coordenadas, <span class="at">adapt =</span> T)</span></code></pre></div>
+<pre><code>## Adaptive q: 0.382 CV score: 381.1 
+## Adaptive q: 0.618 CV score: 387.6 
+## Adaptive q: 0.2361 CV score: 373.9 
+## Adaptive q: 0.1459 CV score: 364.4 
+## Adaptive q: 0.09017 CV score: 356 
+## Adaptive q: 0.05573 CV score: 355.6 
+## Adaptive q: 0.06991 CV score: 356.2 
+## Adaptive q: 0.03444 CV score: 364.3 
+## Adaptive q: 0.0476 CV score: 357.6 
+## Adaptive q: 0.06115 CV score: 355.4 
+## Adaptive q: 0.06449 CV score: 355.4 
+## Adaptive q: 0.06187 CV score: 355.4 
+## Adaptive q: 0.06224 CV score: 355.4 
+## Adaptive q: 0.06215 CV score: 355.4 
+## Adaptive q: 0.0622 CV score: 355.4 
+## Adaptive q: 0.06211 CV score: 355.4 
+## Adaptive q: 0.06215 CV score: 355.4</code></pre>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb428-1" tabindex="-1"></a>GWRbanda</span></code></pre></div>
+<pre><code>## [1] 0.06215</code></pre>
+<p>Ajustando o modelo:</p>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb430-1" tabindex="-1"></a>dengue.gwr <span class="ot">&lt;-</span> <span class="fu">gwr</span>(<span class="fu">log</span>(inc <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">~</span> IDHM, <span class="at">data =</span> PE2,</span>
+<span id="cb430-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb430-2" tabindex="-1"></a>    <span class="at">coords =</span> coordenadas, <span class="at">adapt =</span> GWRbanda, <span class="at">hatmatrix =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb430-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb430-3" tabindex="-1"></a>    <span class="at">se.fit =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb430-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb430-4" tabindex="-1"></a>dengue.gwr</span></code></pre></div>
+<pre><code>## Call:
+## gwr(formula = log(inc + 1) ~ IDHM, data = PE2, coords = coordenadas, 
+##     adapt = GWRbanda, hatmatrix = TRUE, se.fit = TRUE)
+## Kernel function: gwr.Gauss 
+## Adaptive quantile: 0.06215 (about 11 of 184 data points)
+## Summary of GWR coefficient estimates at data points:
+##               Min. 1st Qu. Median 3rd Qu.  Max. Global
+## X.Intercept. -9.94   -4.51  -1.31    2.25  6.44   0.58
+## IDHM         -4.01    3.20   8.74   13.56 22.62   5.47
+## Number of data points: 184 
+## Effective number of parameters (residual: 2traceS - traceS&#39;S): 23.35 
+## Effective degrees of freedom (residual: 2traceS - traceS&#39;S): 160.6 
+## Sigma (residual: 2traceS - traceS&#39;S): 1.358 
+## Effective number of parameters (model: traceS): 16.77 
+## Effective degrees of freedom (model: traceS): 167.2 
+## Sigma (model: traceS): 1.331 
+## Sigma (ML): 1.269 
+## AICc (GWR p. 61, eq 2.33; p. 96, eq. 4.21): 649.4 
+## AIC (GWR p. 96, eq. 4.22): 626.6 
+## Residual sum of squares: 296.3 
+## Quasi-global R2: 0.2549</code></pre>
+<p>Colocando a saída do modelo dentro de um dataframe:</p>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb432-1" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(dengue.gwr<span class="sc">$</span>SDF)</span>
+<span id="cb432-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb432-2" tabindex="-1"></a><span class="fu">head</span>(results)</span></code></pre></div>
+<pre><code>##   sum.w X.Intercept.   IDHM X.Intercept._se IDHM_se   gwr.e  pred pred.se localR2 X.Intercept._se_EDF IDHM_se_EDF pred.se.1      X      Y
+## 1 14.88       0.7623  5.026           3.386   5.226 -1.6280 4.175  0.3164 0.07349               3.455       5.332    0.3228 -35.02 -7.879
+## 2 14.64      -0.5301  7.412           4.686   7.820  1.3988 4.339  0.5436 0.07056               4.781       7.978    0.5547 -37.62 -7.737
+## 3 18.21      -3.7654 12.055           4.043   6.769  0.7456 3.323  0.2477 0.33591               4.125       6.906    0.2528 -41.01 -8.619
+## 4 23.48      -3.8527 12.241           3.466   5.954  1.4915 3.394  0.2101 0.22686               3.536       6.075    0.2144 -35.95 -8.457
+## 5 19.53      -6.4564 15.852           3.695   6.265  0.5644 2.310  0.3167 0.22434               3.770       6.392    0.3231 -35.48 -8.729
+## 6 20.67       5.7463 -2.824           2.921   5.135  1.1993 4.261  0.2978 0.17956               2.980       5.239    0.3039 -37.04 -9.087</code></pre>
+<p>Checando os residuos para verificar a presença de autocorrelação para o modelo GWR:</p>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb434-1" tabindex="-1"></a>results<span class="sc">$</span>residuos <span class="ot">&lt;-</span> <span class="fu">log</span>(PE2<span class="sc">$</span>inc <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">-</span> results<span class="sc">$</span>pred</span>
+<span id="cb434-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb434-2" tabindex="-1"></a><span class="fu">moran.test</span>(results<span class="sc">$</span>residuos, pesos.viz)</span></code></pre></div>
+<pre><code>## 
+##  Moran I test under randomisation
+## 
+## data:  results$residuos  
+## weights: pesos.viz    
+## 
+## Moran I statistic standard deviate = -0.064, p-value = 0.5
+## alternative hypothesis: greater
+## sample estimates:
+## Moran I statistic       Expectation          Variance 
+##         -0.008494         -0.005464          0.002231</code></pre>
+<p>Definindo as paletes de cores para a construção dos mapas.</p>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb436-1" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">&quot;BuPu&quot;</span>)</span></code></pre></div>
+<p>Mapa dos coeficientes de regressão para a variável <code>IDHM</code>.</p>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-1" tabindex="-1"></a>PE2<span class="sc">$</span>coef.IDH <span class="ot">&lt;-</span> results<span class="sc">$</span>IDHM</span>
+<span id="cb437-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-2" tabindex="-1"></a>PE2<span class="sc">$</span>localR2 <span class="ot">&lt;-</span> results<span class="sc">$</span>localR2</span>
+<span id="cb437-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-3" tabindex="-1"></a>PE2<span class="sc">$</span>pred.gwr <span class="ot">&lt;-</span> results<span class="sc">$</span>pred</span>
+<span id="cb437-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-4" tabindex="-1"></a></span>
+<span id="cb437-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-5" tabindex="-1"></a>map.idh <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> coef.IDH),</span>
+<span id="cb437-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-6" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> pal) <span class="sc">+</span></span>
+<span id="cb437-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-7" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Distribuição dos coeficientes da variável IDH&quot;</span>) <span class="sc">+</span></span>
+<span id="cb437-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb437-8" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p>Mapeando os coeficientes de regressão para a variável <code>IDHM</code> por significância através do teste de Wald.</p>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-1" tabindex="-1"></a><span class="co"># Calculando a estatística de wald</span></span>
+<span id="cb438-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-2" tabindex="-1"></a>PE2<span class="sc">$</span>wald.teste <span class="ot">&lt;-</span> <span class="fu">abs</span>(results<span class="sc">$</span>IDHM<span class="sc">/</span>results<span class="sc">$</span>IDHM_se)</span>
+<span id="cb438-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-3" tabindex="-1"></a><span class="co"># Dicotomizando a estatística de wald</span></span>
+<span id="cb438-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-4" tabindex="-1"></a>PE2<span class="sc">$</span>wald.teste <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(PE2<span class="sc">$</span>wald.teste <span class="sc">&lt;</span> <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb438-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-5" tabindex="-1"></a></span>
+<span id="cb438-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-6" tabindex="-1"></a></span>
+<span id="cb438-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-7" tabindex="-1"></a>map.wald <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(wald.teste)),</span>
+<span id="cb438-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-8" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>,</span>
+<span id="cb438-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-9" tabindex="-1"></a>    <span class="st">&quot;purple&quot;</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt; 2&quot;</span>, <span class="st">&quot;&gt;= 2&quot;</span>), <span class="at">name =</span> <span class="st">&quot;Wald&quot;</span>) <span class="sc">+</span></span>
+<span id="cb438-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-10" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Coef. IDH significativos&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb438-11"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-11" tabindex="-1"></a></span>
+<span id="cb438-12"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb438-12" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(map.idh, map.wald, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-366-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Mapa dos coeficientes de determinação regionalizados (<span class="math inline">\(R^2\)</span> local).</p>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb439-1" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">&quot;YlOrRd&quot;</span>)</span>
+<span id="cb439-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb439-2" tabindex="-1"></a><span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> localR2), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb439-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb439-3" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> pal) <span class="sc">+</span></span>
+<span id="cb439-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb439-4" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;R² local&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-367-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Mapeando os valores observados e preditos dos modelos ajustados.</p>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-1" tabindex="-1"></a><span class="co"># quantile(log(PE2$inc+1),seq(0,1,by=0.2))</span></span>
+<span id="cb440-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-2" tabindex="-1"></a>breaks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fu">quantile</span>(<span class="fu">log</span>(PE2<span class="sc">$</span>inc <span class="sc">+</span> <span class="dv">1</span>), <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>,</span>
+<span id="cb440-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-3" tabindex="-1"></a>    <span class="at">by =</span> <span class="fl">0.2</span>)))</span>
+<span id="cb440-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-4" tabindex="-1"></a>labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;[0]&quot;</span>, <span class="st">&quot;(0-2.6]&quot;</span>, <span class="st">&quot;(2.6-3.4]&quot;</span>, <span class="st">&quot;(3.4-4.4]&quot;</span>,</span>
+<span id="cb440-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-5" tabindex="-1"></a>    <span class="st">&quot;(4.4-5.2]&quot;</span>, <span class="st">&quot;&gt; 5.2&quot;</span>)</span>
+<span id="cb440-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-6" tabindex="-1"></a></span>
+<span id="cb440-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-7" tabindex="-1"></a>PE2<span class="sc">$</span>brks <span class="ot">&lt;-</span> <span class="fu">cut</span>(<span class="fu">log</span>(PE2<span class="sc">$</span>inc <span class="sc">+</span> <span class="dv">1</span>), <span class="at">include.lowest =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb440-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-8" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb440-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-9" tabindex="-1"></a></span>
+<span id="cb440-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-10" tabindex="-1"></a>bruta <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb440-11"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-11" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Log da Incidência&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat2&quot;</span>,</span>
+<span id="cb440-12"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-12" tabindex="-1"></a>    <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>, <span class="at">p2 =</span> <span class="fl">1.5</span>,</span>
+<span id="cb440-13"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-13" tabindex="-1"></a>    <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>, <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb440-14"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-14" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span>
+<span id="cb440-15"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-15" tabindex="-1"></a></span>
+<span id="cb440-16"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-16" tabindex="-1"></a></span>
+<span id="cb440-17"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-17" tabindex="-1"></a>PE2<span class="sc">$</span>brks.lm <span class="ot">&lt;-</span> <span class="fu">cut</span>(dengue.lm<span class="sc">$</span>fitted.values, <span class="at">lowest =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb440-18"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-18" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb440-19"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-19" tabindex="-1"></a></span>
+<span id="cb440-20"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-20" tabindex="-1"></a></span>
+<span id="cb440-21"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-21" tabindex="-1"></a>pred.lm <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks.lm),</span>
+<span id="cb440-22"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-22" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Predito - LM&quot;</span>) <span class="sc">+</span></span>
+<span id="cb440-23"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-23" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat2&quot;</span>,</span>
+<span id="cb440-24"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-24" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb440-25"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-25" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb440-26"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-26" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb440-27"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-27" tabindex="-1"></a></span>
+<span id="cb440-28"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-28" tabindex="-1"></a>PE2<span class="sc">$</span>brks.car <span class="ot">&lt;-</span> <span class="fu">cut</span>(dengue.car<span class="sc">$</span>fit<span class="sc">$</span>fitted.values, <span class="at">lowest =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb440-29"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-29" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb440-30"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-30" tabindex="-1"></a></span>
+<span id="cb440-31"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-31" tabindex="-1"></a></span>
+<span id="cb440-32"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-32" tabindex="-1"></a>pred.car <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks.car),</span>
+<span id="cb440-33"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-33" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Predito - CAR&quot;</span>) <span class="sc">+</span></span>
+<span id="cb440-34"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-34" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat2&quot;</span>,</span>
+<span id="cb440-35"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-35" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb440-36"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-36" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb440-37"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-37" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb440-38"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-38" tabindex="-1"></a></span>
+<span id="cb440-39"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-39" tabindex="-1"></a>PE2<span class="sc">$</span>brks.gwr <span class="ot">&lt;-</span> <span class="fu">cut</span>(results<span class="sc">$</span>pred, <span class="at">lowest =</span> <span class="cn">FALSE</span>, <span class="at">right =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb440-40"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-40" tabindex="-1"></a>    <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb440-41"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-41" tabindex="-1"></a></span>
+<span id="cb440-42"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-42" tabindex="-1"></a></span>
+<span id="cb440-43"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-43" tabindex="-1"></a>pred.gwr <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks.gwr),</span>
+<span id="cb440-44"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-44" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Predito - GWR&quot;</span>) <span class="sc">+</span></span>
+<span id="cb440-45"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-45" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Heat2&quot;</span>,</span>
+<span id="cb440-46"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-46" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb440-47"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-47" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb440-48"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-48" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb440-49"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-49" tabindex="-1"></a></span>
+<span id="cb440-50"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-50" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">ggarrange</span>(bruta, pred.lm, pred.car, pred.gwr,</span>
+<span id="cb440-51"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb440-51" tabindex="-1"></a>    <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">common.legend =</span> <span class="cn">TRUE</span>, <span class="at">legend =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-368-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Verificando a distribuição dos resíduos:</p>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb441-1" tabindex="-1"></a>vioplot<span class="sc">::</span><span class="fu">vioplot</span>(dengue.lm<span class="sc">$</span>residuals, dengue.car<span class="sc">$</span>fi<span class="sc">$</span>residuals,</span>
+<span id="cb441-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb441-2" tabindex="-1"></a>    results<span class="sc">$</span>residuos, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;LM&quot;</span>, <span class="st">&quot;CAR&quot;</span>, <span class="st">&quot;GWR&quot;</span>),</span>
+<span id="cb441-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb441-3" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb441-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb441-4" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Gráficos violinos da distribuição dos resíduos&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-369-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Mapeando os resíduos dos modelos ajustados:</p>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-1" tabindex="-1"></a>breaks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">1.2</span>, <span class="fl">3.6</span>)</span>
+<span id="cb442-2"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-2" tabindex="-1"></a>labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;&lt; -1&quot;</span>, <span class="st">&quot;-1 a 0&quot;</span>, <span class="st">&quot;0 a 1.2&quot;</span>, <span class="st">&quot;&gt; 1.2&quot;</span>)</span>
+<span id="cb442-3"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-3" tabindex="-1"></a></span>
+<span id="cb442-4"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-4" tabindex="-1"></a>PE2<span class="sc">$</span>brks.res.lm <span class="ot">&lt;-</span> <span class="fu">cut</span>(dengue.lm<span class="sc">$</span>residuals, <span class="at">include.lowest =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb442-5"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-5" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb442-6"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-6" tabindex="-1"></a></span>
+<span id="cb442-7"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-7" tabindex="-1"></a>res.lm <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks.res.lm),</span>
+<span id="cb442-8"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-8" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Resíduos - LM&quot;</span>) <span class="sc">+</span></span>
+<span id="cb442-9"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-9" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Purple-Yellow&quot;</span>,</span>
+<span id="cb442-10"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-10" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb442-11"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-11" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb442-12"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-12" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb442-13"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-13" tabindex="-1"></a></span>
+<span id="cb442-14"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-14" tabindex="-1"></a>PE2<span class="sc">$</span>brks.res.car <span class="ot">&lt;-</span> <span class="fu">cut</span>(dengue.car<span class="sc">$</span>fit<span class="sc">$</span>residuals, <span class="at">include.lowest =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb442-15"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-15" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb442-16"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-16" tabindex="-1"></a></span>
+<span id="cb442-17"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-17" tabindex="-1"></a>res.car <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks.res.car),</span>
+<span id="cb442-18"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-18" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Resíduos - CAR&quot;</span>) <span class="sc">+</span></span>
+<span id="cb442-19"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-19" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Purple-Yellow&quot;</span>,</span>
+<span id="cb442-20"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-20" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb442-21"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-21" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb442-22"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-22" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb442-23"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-23" tabindex="-1"></a></span>
+<span id="cb442-24"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-24" tabindex="-1"></a></span>
+<span id="cb442-25"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-25" tabindex="-1"></a>PE2<span class="sc">$</span>brks.res.gwr <span class="ot">&lt;-</span> <span class="fu">cut</span>(results<span class="sc">$</span>residuos, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb442-26"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-26" tabindex="-1"></a>    <span class="at">right =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> breaks, <span class="at">labels =</span> labels)</span>
+<span id="cb442-27"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-27" tabindex="-1"></a></span>
+<span id="cb442-28"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-28" tabindex="-1"></a>res.gwr <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(PE2) <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> brks.res.gwr),</span>
+<span id="cb442-29"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-29" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Resíduos - GWR&quot;</span>) <span class="sc">+</span></span>
+<span id="cb442-30"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-30" tabindex="-1"></a>    <span class="fu">scale_fill_discrete_sequential</span>(<span class="at">palette =</span> <span class="st">&quot;Purple-Yellow&quot;</span>,</span>
+<span id="cb442-31"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-31" tabindex="-1"></a>        <span class="at">c1 =</span> <span class="dv">80</span>, <span class="at">c2 =</span> <span class="dv">30</span>, <span class="at">l1 =</span> <span class="dv">30</span>, <span class="at">l2 =</span> <span class="dv">90</span>, <span class="at">p1 =</span> <span class="fl">0.2</span>,</span>
+<span id="cb442-32"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-32" tabindex="-1"></a>        <span class="at">p2 =</span> <span class="fl">1.5</span>, <span class="at">na.value =</span> <span class="st">&quot;grey75&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb442-33"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-33" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb442-34"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-34" tabindex="-1"></a></span>
+<span id="cb442-35"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-35" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">ggarrange</span>(res.lm, res.car, res.gwr, <span class="at">ncol =</span> <span class="dv">1</span>,</span>
+<span id="cb442-36"><a href="anexo-ii---exemplos-de-analise-espacial.html#cb442-36" tabindex="-1"></a>    <span class="at">common.legend =</span> <span class="cn">TRUE</span>, <span class="at">legend =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<p><img src="ecologico_book_files/figure-html/unnamed-chunk-370-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bibliografia-sugerida-10" class="section level2 hasAnchor" number="14.7">
+<h2><span class="header-section-number">14.7</span> Bibliografia sugerida<a href="anexo-ii---exemplos-de-analise-espacial.html#bibliografia-sugerida-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trevor C. Bailey , Anthony C. Gatrell Routledge. Interactive Spatial Data Analysis. 1995.</p>
+<p>Lance A. Waller, Carol A. Gotway. Applied Spatial Statistics for Public Health Data. Wiley-Interscience 1St ed. 2004.</p>
+<p>Roger S. Bivand, Edzer Pebesma , Virgilio Gomez-Rubio Springer. Applied Spatial Data Analysis with R. 2nd ed. 2013</p>
+<p><strong>Online:</strong></p>
+<ul>
+<li><a href="https://geocompr.robinlovelace.net/">Geocomputation with R</a></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="anexo-i---exemplo-séries-temporais.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"scroll_highlight": true,
+"toolbar": {
+"position": "fixed"
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
