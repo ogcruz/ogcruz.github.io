@@ -8,9 +8,11 @@
 
 ### Programa de Epidemiologia em Saúde Pública / ENSP
 
-* [Curso DataScience aplicada - 2017](livro_2017)
+[comment]: <> (* [Curso DataScience aplicada - 2017](livro_2017) )
 
 * [Curso Estudos Ecológicos - 2023](curso_2023/apresentação.html) 
+
+* [Ciência de Dados Aplicada à Epidemiologia I 2025](curso_2025)
 
 [comment]: <> (* [Curso Estudos Ecologicos - 2019](Bookdown/apresentação.html))
 

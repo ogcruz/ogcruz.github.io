@@ -1,0 +1,352 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ciência de Dados Aplicada à Epidemiologia - 2025",
+    "section": "",
+    "text": "Apresentação do Curso\n\nCiência de Dados Aplicada à Epidemiologia I - 2025\n\nSigla: ENSP.86.120.1\nCréditos: 2\nCarga Horária: 60\n\n\nOswaldo G Cruz & Laís Picinini Freitas\n\n\n\nOBJETIVO\nCapacitar os estudantes a compreender e aplicar os fundamentos da Ciência de Dados no contexto da Epidemiologia com o apoio de ferramentas computacionais.\n\n\nCONTEÚDO\n\nFundamentos da Ciência de Dados aplicada à Saúde\n\nConceitos básicos de Ciência de Dados e sua relevância na Epidemiologia\nÉtica no uso de dados de saúde\nReprodutibilidade e transparência em pesquisas científicas\nApresentação de ferramentas (SQL, DuckDB, R, RStudio, RMarkdown, git, github)\n\nBases de Dados e Linguagem SQL\n\nConceitos de bancos de dados relacionais\nLinguagem SQL: criação, consulta e manipulação de dados\nUso de DuckDB para análise local de grandes volumes de dados\n\nAcesso e Consumo de Dados\n\nLeitura de dados locais (CSV, Excel, etc.)\nConsumo de dados remotos: APIs, FTP e web scraping\nIntegração do DuckDB (SQL) com R para manipulação de dados locais e em nuvem\n\nLimpeza, Transformação e Armazenamento de Dados\n\nLimpeza e padronização de bases de dados (uso do dplyr, tidyr, janitor, etc.)\nManipulação eficiente com data.frame, tibble, e data.table\nArmazenamento em bancos relacionais com SQL e DuckDB\n\nVisualização de dados e comunicação\n\nVisualização de dados com ggplot2\nIntrodução ao Rmarkdown para documentação e relatórios dinâmicos\nDashboards com Shiny\nVisualizações interativas com leaflet e plotly\n\n\n\n\nAvaliação trabalho final\nPrazo Final 31 de Outubro de 2025 Trabalho individual ou em dupla Formato Quarto/Rmarkdown\nOs seguintes itens devem constar do Trabalho final\nformato de relatório com texto descrevendo os dados e procedimentos importação de dados externos preparação/limpeza dos dados usando o tidyverse criação de novas variaveis geração de pelo menos um grafico e uma tabela\nde preferencia use seus dados , caso não seja possível use dados públicos.",
+    "crumbs": [
+      "Apresentação do Curso"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "",
+    "text": "1.1 O que é Ciência de Dados?\nA Ciência de Dados é uma área interdisciplinar que combina conhecimentos de diversas áreas com o principal objetivo de transformar dados em informações úteis para a tomada de decisões.\nA Ciência de Dados não é tão nova quanto se imagina. Suas raízes remontam à estatística e à análise de dados, já existindo desde a década de 1970 em computação cientifica em diversas instituições e universidades. Recententemente, ganhou muito destaque com o aumento da disponibilidade de grandes volumes de dados e avanços em tecnologias de computação.\nA Ciência de Dados é uma evolução resultante da integração de várias disciplinas, incluindo:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#introdução-à-ciência-de-dados-e-epidemiologia",
+    "href": "intro.html#introdução-à-ciência-de-dados-e-epidemiologia",
+    "title": "1  Introdução à Ciência de Dados e Epidemiologia",
+    "section": "",
+    "text": "1.1.1 O que é Ciência de Dados\nConceitos Fundamentais\nA Ciência de Dados é uma área interdisciplinar que combina conhecimentos de diversas área de conhecimento, sendo um área especifico no nosso caso epidemiologia com outras áreas como matemática/estatística, ciências da computação para identificar padrões e extrair conhecimento de dados. O principal objetivo é transformar dados em informações úteis para tomada de decisões.\n\n\n\nDS Diagrama de Venn\n\n\nA ciência de dados dados não é tão nova quanto se imagina, suas raízes remontam à estatística e à análise de dados e desde a década de 1970 existia a área e computação cientifica em diversas instituições e universidades mas ganhou destaque com o aumento da disponibilidade de grandes volumes de dados e avanços em tecnologias de computação.\nA Ciência de Dados portanto é uma evolução resultante da integração de várias disciplinas , incluindo:\n\nEstatística (análise de dados tradicionais)\nBanco de Dados (dados estruturados e não estruturados)\nData Mining (mineiração de dados)\nMachine Learning (aprendizado de máquina)\nBig Data (grandes volumes de dados)\nInteligência Artificial (IA)\nVisualização de Dados (apresentação de dados)\nEngenharia de Dados (preparação e integração de dados)\n\n\n\n1.1.2 KDD\nSignifica Descoberta de Conhecimento em Bancos de Dados (do inglês Knowledge Discovery in Databases), é um processo que envolve a extração de padrões e informações úteis e compreensíveis a partir de grandes volumes de dados.\n\n\n\n1.1.3 Principais linguagens de programação utilizadas na ciência de dados\n\nR (Estatística, Matemática,Análise de Dados e visualização de dados)\nPython (Matemática,Machine Learning, IA, Análise de Dados)\nSQL (Banco de Dados)\nJulia (Alta performance, computação científica)\n\n\n\n1.1.4 Principais IDEs em Ciência de Dados\nUm IDE (Integrated Development Environment), ou Ambiente de Desenvolvimento Integrado, é um software que reúne em um só lugar as ferramentas essenciais para o desenvolvimento de codigos em uma determinada linguagem de programação.\n\nRstudio (R)\nPositron (R, Python)\nVisual Studio Code (R, Python. Julia, SQL, etc…)\nPyCharm (python)\nJupyter Notebook (Python, R, Julia)\nDBeaver (SQL)\n\n\n\n1.1.5 Banco de dados, grandes bases e os 3Vs\n\n\n1.1.6 DS quando usar e por que usar?\n\n\n1.1.7 \n\n\n1.1.8 Resultados/Aplicações\n\no que tem sido publicado?\nAlgumas Aplicações\n\n\n\n1.1.9 Considerações finais",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados e Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#introdução-ao-sql",
+    "href": "intro.html#introdução-ao-sql",
+    "title": "1  Introdução à Ciência de Dados e Epidemiologia",
+    "section": "1.2 Introdução ao SQL",
+    "text": "1.2 Introdução ao SQL\n\nSQL (Structured Query Language) é uma linguagem de programação padrão para gerenciamento de bancos de dados relacionais.\nInstalando o duckdb",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados e Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Referencias",
+    "section": "",
+    "text": "R for Data Science. 2nd Edition. Hadley Wickham, Mine Çetinkaya-Rundel, Garrett Grolemund. O’Reilly Media ; 2023.\nIntrodução à Ciência de Dados. Pedro A. Morettin, Julio M. Singer; Março 2020. https://www.ime.usp.br/~jmsinger/MorettinSinger/cdados2020mar.pdf\nEstatística e Ciência de Dados. Pedro A. Morettin, Julio M. Singer; Abril 2021. https://www.ime.usp.br/~pam/cdadosf3.pdf",
+    "crumbs": [
+      "Referencias"
+    ]
+  },
+  {
+    "objectID": "sql2.html",
+    "href": "sql2.html",
+    "title": "2  Banco de Dados & SQL",
+    "section": "",
+    "text": "2.1 Introdução",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Banco de Dados & SQL</span>"
+    ]
+  },
+  {
+    "objectID": "sql2.html#introdução-ao-sql",
+    "href": "sql2.html#introdução-ao-sql",
+    "title": "2  Banco de Dados & SQL",
+    "section": "3.1 1 Introdução ao SQL",
+    "text": "3.1 1 Introdução ao SQL\nSQL é a linguagem padrão para bancos de dados relacionais. Os principais Bancos de Dados Relacionais aceitam alguma forma do SQL. Abaixo, algumas terminologias em Banco de Dados\nSQL surgiu no início da década de 70, por uma iniciativa da IBM. desde a década de 1990 tornou-se a linguagem mais popular para acesso a bancos de dados, associado a difusão dos SGBDs relacionais\nexistem dois tipos básicos de linguagem:\n\n\nLinguagem procedural: fornece uma descrição detalhada de COMO uma tarefa é realizada, operando sobre um registro ou uma unidade de dados a cada vez.\nLinguagem não procedural: é uma descrição de O QUE se deseja, onde o sistema deverá determinar a forma de fazer.\n\n\no SQL consiste em uma linguagem não procedural que permite a interface básica para comunicação com o banco de dados\nUm SGBD realiza alguns processos que podem ser efetuados por meio da linguagem SQL\n\nDEFINIÇÃO (DDL): criação do esquema (tabelas e relacionamentos) que atenderá as necessidades no BD;\nMANIPULAÇÃO( DML): inclusão, deleção e modificação dos dados no BD;\nCONSULTA (DQL) : realização de consultas no BD;\n  select nome from alunos ; \n\n ​\n\n3.1.1 DEFINIÇÃO e MANIPULAÇÃO (DDL & DML)\nPara iniciar a definição de um BD é necessário conhecer os tipos de dados que o BD manipula. De uma maneira geral serão manipulados os tipos:\n• números           ( -45  |  0  |  25.57 )\n• caracteres        (José Roberto   | abacaxi| rua das amendoeiras, 516)\n• datas e horas     (dia, mês e ano | 23 / 12 / 01  | 2017-10-01 21:07:47 GMT0)\n• objetos binarios  (imagem, musica, arquivo executavel) \n\nobs: o dado faltante é chamado NULL\nA sintaxe que identifica estes tipos dependentes do BD, em geral:\n        integer, float, double – numéricos\n        character, char(n),varchar(n)  – caracteres variáveis até 4000\n        date  – de 1/1/4712 A.C. até 31/12/9999 D.C.\n        blob - objetos binarios até ~ 4Gb\n\n3.1.1.1 criando uma tabela\nPara criar uma tabela será usada a declaração SQL (DDL) criando a tabela. de uma maneira geral\ncreate table &lt;nome_tabela&gt;   (\n   campo_1  &lt;tipo de dado&gt;,        -- atributo do campo\n   campo_2  &lt;tipo de dado&gt;,\n   campo_3 &lt;tipo de dados&gt; ) ;\n\n\n O ponto e vírgula encerra uma instrução deixando-a pronta para ser executada &lt;ENTER&gt;.      \n\n\n3.1.1.2 Exemplo\nComo seria a criação de uma tabela que armazenaria os nomes e siglas de todas a UF\n​\nCREATE TABLE estados ( uf integer, sigla char(2), regiao char(2), nome varchar(50) )\n​\n#### Inserindo dados (populando a tabela)\nInstrução INSERT - Esta instrução é usada para inserir dados na tabela.\nINSERT INTO &lt;tabela&gt;[(coluna_1,...,coluna_n)] VALUES (valor_1,...,valor_n);\nExemplo:\n​\nINSERT INTO estados(uf, sigla, regiao,nome) VALUES (33, ‘RJ’, ‘SE’,‘Rio de Janeiro’); INSERT INTO estados VALUES (31, ‘MG’, ‘SE’,‘Minas Gerais’); INSERT INTO estados(sigla, nome,uf,regiao) VALUES (‘SP’, ‘São Paulo’, 35,‘SE’); INSERT INTO estados( nome,regiao,uf,sigla) VALUES (‘Espirito Santo’, ‘SE’,32,‘ES’); INSERT INTO estados(sigla,‘regiao’,nome) VALUES(‘GO’, ‘CO’,‘Goias’); – faltou UF que vai assumir valor NULL\na modificação dos registros é feita usando o comando UPDATE por exemplo\nUPDATE estado SET nome = 'Goiás' , uf = 52 WHERE sigla = 'GO';  \n\n\n3.1.1.3 Apagando os Dados\nInstrução DELETE - Esta instrução é usada para remover uma ou registros da tabela, possuindo duas formas básicas: ​\nDELETE FROM ;\nou DELETE FROM  WHERE ;\nA primeira forma é obrigatória e apaga todos os dados da tabela, enquanto que a segunda possui uma parte opcional, a partir do WHERE, que apaga somente os dados da tabela que atendem a uma condição (ou condições) imposta pela cláusula WHERE. ​\nExemplo:\nDELETE FROM ESTADOS WHERE SIGLA = 'SP'; -- 1 linha deletada\n\nDELETE FROM ESTADOS WHERE NOME = 'ACRE';  -- nenhuma linha encontrada\n\nDELETE FROM ESTADOS; -- todas as  linhas deletadas  ATENÇÃO. \n\n\n3.1.1.4 Remover uma Tabela\nPara se remover uma tabela deve-se usar o comando DROP TABLE.\nDROP TABLE &lt;nome_da_tabela&gt;;\nPor meio deste comando a tabela deixará de existir neste banco de dados, sendo todas as informações contidas nela vão ser ** TOTALMENTE apagadas (Não tem UNDO) **.\nExemplo: ​\nDROP TABLE ESTADOS; – Tabela eliminada\n\n\n\n3.1.2 CONSULTA (DQL)\nInstrução SELECT\nEsta instrução é a essência da linguagem SQL. É por meio dela que se recupera dados de um banco de dados. De modo simples, forma declarativa, está se dizendo ao BD quais informações foram selecionadas para serem recuperadas.\nPode-se dividir esta instrução em quatro partes básicas:\n• select    – seguido dos atributos que se deseja ver (obrigatório)\n• from      – seguido de onde se obterão os dados (obrigatório)\n• where     – seguido das restrições de recuperação (opcional)\n• order by  – seguido da forma como os dados serão classificados (opcional) \n• group by  – Agrega os dados  (opcional) \nO símbolo asterisco ( * ) significa que todos atributos da relação informada deverão ser recuperados.\nExemplo:\nSELECT * from ESTADO;\n\nSELECT * FROM estado WHERE SIGLA='GO' OR NOME='Acre' ; \n​\no SELECT será a instrução mais comumente usada na linguagem SQL. repare que o SQL não é case sensitive como a maioria das linguagens! ​\nNa cláusula WHERE serão utilizados alguns operadores de comparação e lógicos para que a condição seja especificada. Os operadores logicos usados em SQL são:\n\n\n3.1.2.1 criando novas tabelas a partir de tabelas existentes\nÉ muito simples a criação de novas tabelas bastausar o CREATE TABLE usando o resultado de um SELECT.\nCREATE TABLE sudeste AS (SELECT * FROM estados WHERE regiao = 'SE')  ;\n\n\n\n3.1.3 JOINS (Relacionando as Tabelas)\nExistem diversas maneiras de se fazer o relacionamento entre duas tabelas. os mais comuns são:\n\nINNER JOIN Este é simples e comumente empregado. Esta query retornará todos os registros da tabela A (esquerda) que têm correspondência com a tabela B (direita). Ou seja, o que existe de comum entre A e B. Podemos escrever este JOIN da seguinte forma:\nSELECT * FROM A INNER JOIN B ON A.chave = B.chave\nLEFT JOIN Esta consulta retorna todos os registros da tabela A (esquerda) e o que existir em comun com a tabela B (direita) O código ficará da seguinte forma:\nSELECT * FROM A LEFT JOIN B ON A.chave = B.chave\nOUTER JOIN Este relacionamento é conhecido tambem como FULL OUTER JOIN ou FULL JOIN. Esta consulta retornará todos os registros das duas tabelas e juntando também os registros correspondentes entres as duas tabelas. O que for diferente nas duas tabelas ficara com o valor NULL. O código ficará da seguinte forma:\nSELECT * FROM A FULL OUTER JOIN B ON A.chave = B.chave\n\n Fonte da figura\n\n\n3.1.4 Funções\nSeguem algumas funções comumente usadas em SQL, lembre-se que cada versão e SGDB usa dialetos diferentes.\nFunções simples (mais comumente usadas): ​\nABS(n)= Devolve o valor absoluto de (n). CEIL(n)= Obtém o valor inteiro imediatamente superior ou igual a “n”. FLOOT(n) = Devolve o valor inteiro imediatamente inferior ou igual a “n”. MOD (m, n)= Devolve o resto resultante de dividir “m” entre “n”. POWER (m, exponente)= Calcula a potência de um número. ROUND (número [, m])= Arredonda números com o número de dígitos de precisão indicados. SIGN (valor)= Indica o signal do “valor”. SQRT(n)= Devolve a raiz quadrada de “n”. TRUNC (número, [m])= Trunca números para que tenham uma certa quantidade de dígitos de precisão.\nFunções Agregadas :\nCOUNT ( * | Expressão)= Conta o número  de ocorrências (A opção \"*\" conta todos os registros selecionados). \nAVG (n)= Calcula o valor médio de \"n\" ignorando os valores nulos. \nMAX (expressão)= Calcula o máximo. \nMIN (expressão)= Calcula o mínimo. \nSUM (expressão)= Obtém a soma dos valores da expressão. (se houver NULL retorna NULL)\nTOTAL(expressão) = soma ignorando NULL\nFunções de caracteres:\nCONCAT (str1, str2)= Devolve \"str1\" concatenada com \"str2\". \nLOWER (str)= Devolve a string  em minúsculas. \nUPPER (str)= Devolve a string em maiúsculas. \nSUBSTR (str, m [,n])= Obtém parte de uma string. \nLENGTH (str)= Devolve o número de caracteres de str. \nREPLACE (str, cadeia_busca [, cadeia_substituição])= Substitui um caractere ou caracteres de uma cadeia com 0 ou mais caracteres. \n​\nfunções de datas:\nDATE() - retorna a data ou transforma em data\nTIME() - retorna tempo\nSTRFTIME(fmt,data) - formata a data no formato \nExemplos:\nSELECT count(*) from Estados;\nSELECT date() ; \nSELECT round(355.0 / 113.0,6) ;  -- que número é esse? Teste sem o .0",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Banco de Dados & SQL</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#o-que-é-ciência-de-dados",
+    "href": "intro.html#o-que-é-ciência-de-dados",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "",
+    "text": "Estatística (análise de dados tradicional)\nBanco de Dados (dados estruturados e não estruturados)\nData Mining (mineração de dados)\nMachine Learning (aprendizado de máquina)\nBig Data (grandes volumes de dados)\nInteligência Artificial (IA)\nVisualização de Dados (apresentação de dados)\nEngenharia de Dados (preparação e integração de dados)\n\n\n1.1.1 E na epidemiologia?\nVivemos um momento crítico em que o cenário epidemiológico é cada vez mais desafiador, com epidemias sobrepostas e mudanças climáticas. Ao mesmo tempo, temos uma enorme produção de dados administrativos e de vigilância, mas que ainda não são utilizados em todo o seu potencial.\nHá uma necessidade de respostas baseadas em evidência que sejam rápidas e robustas, e neste ponto a Ciência de Dados pode ser muito útil.\nNa epidemiologia, a Ciência de Dados combina com áreas como matemática, estatística, e ciências da computação para identificar padrões e extrair conhecimento a partir de dados.\n\n\n\nDS Diagrama de Venn\n\n\nAlguns exemplos de projetos que aplicam Ciência de Dados em Epidemiologia incluem:\n\nCentros de Inteligência Epidemiológica\nInfoGripe\nInfoDengue\nMosqlimate\nPCDaS",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#kdd",
+    "href": "intro.html#kdd",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.3 KDD",
+    "text": "1.3 KDD\nSignifica Descoberta de Conhecimento em Bancos de Dados (Knowledge Discovery in Databases), é um processo que envolve a extração de padrões e informações úteis e compreensíveis a partir de grandes volumes de dados.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#principais-linguagens-de-programação-utilizadas-na-ciência-de-dados",
+    "href": "intro.html#principais-linguagens-de-programação-utilizadas-na-ciência-de-dados",
+    "title": "1  Introdução à Ciência de Dados e Epidemiologia",
+    "section": "1.6 Principais linguagens de programação utilizadas na ciência de dados",
+    "text": "1.6 Principais linguagens de programação utilizadas na ciência de dados\n\nR (Estatística, Matemática,Análise e visualização de dados)\nPython (Matemática,Machine Learning, IA, Análise de Dados)\nSQL (Banco de Dados)\nJulia (Alta performance, computação científica,Estatística, Matemática)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados e Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#principais-ides-em-ciência-de-dados",
+    "href": "intro.html#principais-ides-em-ciência-de-dados",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.6 Principais IDEs em Ciência de Dados",
+    "text": "1.6 Principais IDEs em Ciência de Dados\nUm IDE (Integrated Development Environment), ou Ambiente de Desenvolvimento Integrado, é um software que reúne em um só lugar as ferramentas essenciais para o desenvolvimento de códigos em uma determinada linguagem de programação.\n\n\nRstudio (R)\nPositron (R, Python)\nVisual Studio Code (R, Python. Julia, SQL, etc…)\nPyCharm (python)\nJupyter Notebook (Python, R, Julia)\nDBeaver (SQL)\nColab (Google Colab)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#banco-de-dados-grandes-bases-e-os-3vs",
+    "href": "intro.html#banco-de-dados-grandes-bases-e-os-3vs",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.7 Banco de dados, grandes bases e os 3Vs",
+    "text": "1.7 Banco de dados, grandes bases e os 3Vs\n\n\n\n\n\n\n\n\nTamanho\nQuantidade de filmes\nDuração total (1 hora/filme)\n\n\n\n\n1 GB\n1 filme\n~1 hora\n\n\n1 TB\n250 filmes\n~10 dias\n\n\n1 PB\n250.000 filmes\n~28,5 anos",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#ds-quando-usar-e-por-que-usar",
+    "href": "intro.html#ds-quando-usar-e-por-que-usar",
+    "title": "1  Introdução à Ciência de Dados e Epidemiologia",
+    "section": "1.9 DS quando usar e por que usar?",
+    "text": "1.9 DS quando usar e por que usar?\n\n1.9.1",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados e Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "sql2.html#introdução",
+    "href": "sql2.html#introdução",
+    "title": "2  Banco de Dados & SQL",
+    "section": "",
+    "text": "O conceito de banco de dados está muito presente em nosso dia-a-dia e faz parte de nossa vida\nBanco de dados (BD) desempenha um papel crítico em muitas áreas onde computadores são utilizados\nBD está presente em muitas áreas diferentes (negócios, engenharia, educação, medicina, etc.)\nUm arranjo aleatório de dados não pode ser considerado um banco de dados\numa planilha não pode ser considerada um BD",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Banco de Dados & SQL</span>"
+    ]
+  },
+  {
+    "objectID": "sql2.html#sistema-gerenciador-de-banco-de-dados",
+    "href": "sql2.html#sistema-gerenciador-de-banco-de-dados",
+    "title": "2  Banco de Dados & SQL",
+    "section": "2.2 Sistema Gerenciador de Banco de Dados",
+    "text": "2.2 Sistema Gerenciador de Banco de Dados\nUm Sistema Gerenciador de Banco de Dados (SGBD) é uma coleção de programas que habilitam usuários a criar e manter um banco de dados.\nO SGBD é um software de propósito geral, que facilita o processo de definição, construção e manipulação de um banco de dados.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Banco de Dados & SQL</span>"
+    ]
+  },
+  {
+    "objectID": "sql2.html#terminologia-básica",
+    "href": "sql2.html#terminologia-básica",
+    "title": "2  Banco de Dados & SQL",
+    "section": "2.3 Terminologia Básica",
+    "text": "2.3 Terminologia Básica\n\n\nCampo – unidade básica de informação mínima com significado ( Coluna)\nRegistro - conjunto de campos (linha)\nAtributo - área que pode conter um tipo de dados. É a interseção de uma linha com uma coluna.\nTabela -conjunto de registros\nBanco de Dados (BD)-conjunto de Tabelas e as formas de manipulação (relacionamentos)\nModelo de Dados - Consiste de um conjunto de conceitos utilizados para descrever a estrutura de um BD, ou seja, os tipos de dados, relacionamentos e restrições sobre estes dados\nModelo Relaciona - representa os dados em um BD, por meio de um conjunto de relações\nChave Primária - É a coluna que identifica com exclusividade cada linha de um tabela\nChave Estrangeira - É uma coluna ou conjunto de colunas referente a uma chave primária de uma outra tabela. A partir da chave estrangeira podemos relacionar tabelas (join)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Banco de Dados & SQL</span>"
+    ]
+  },
+  {
+    "objectID": "sql2.html#modelo-de-dados",
+    "href": "sql2.html#modelo-de-dados",
+    "title": "2  Banco de Dados & SQL",
+    "section": "2.4 Modelo de Dados",
+    "text": "2.4 Modelo de Dados\n\nConsiste de um conjunto de conceitos utilizados para descrever a estrutura de um BD, ou seja, os tipos de dados, relacionamentos e restrições sobre estes dados\nNo Modelo Relacional representa-se os dados em um BD, por meio de um conjunto de relações.\nexistem várias técnicas e tipos de representações de modelagem ( modelo externo, modelo ER,modelo conceitual)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Banco de Dados & SQL</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#conteúdo",
+    "href": "index.html#conteúdo",
+    "title": "Ciência de Dados Aplicada à Epidemiologia - 2025",
+    "section": "CONTEÚDO",
+    "text": "CONTEÚDO\n\nFundamentos da Ciência de Dados aplicada à Saúde\n\nConceitos básicos de Ciência de Dados e sua relevância na Epidemiologia\nÉtica no uso de dados de saúde\nReprodutibilidade e transparência em pesquisas científicas\nApresentação de ferramentas (SQL, DuckDB, R, RStudio, RMarkdown, git, github)\n\nBases de Dados e Linguagem SQL\n\nConceitos de bancos de dados relacionais\nLinguagem SQL: criação, consulta e manipulação de dados\nUso de DuckDB para análise local de grandes volumes de dados\n\nAcesso e Consumo de Dados\n\nLeitura de dados locais (CSV, Excel, etc.)\nConsumo de dados remotos: APIs, FTP e web scraping\nIntegração do DuckDB (SQL) com R para manipulação de dados locais e em nuvem\n\nLimpeza, Transformação e Armazenamento de Dados\n\nLimpeza e padronização de bases de dados (uso do dplyr, tidyr, janitor, etc.)\nManipulação eficiente com data.frame, tibble, e data.table\nArmazenamento em bancos relacionais com SQL e DuckDB\n\nVisualização de dados e comunicação\n\nVisualização de dados com ggplot2\nIntrodução ao Rmarkdown para documentação e relatórios dinâmicos\nDashboards com Shiny\nVisualizações interativas com leaflet e plotly",
+    "crumbs": [
+      "Apresentação do Curso"
+    ]
+  },
+  {
+    "objectID": "index.html#avaliação",
+    "href": "index.html#avaliação",
+    "title": "Ciência de Dados Aplicada à Epidemiologia - 2025",
+    "section": "Avaliação",
+    "text": "Avaliação",
+    "crumbs": [
+      "Apresentação do Curso"
+    ]
+  },
+  {
+    "objectID": "intro.html#resultadosaplicações",
+    "href": "intro.html#resultadosaplicações",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.10 Resultados/Aplicações",
+    "text": "1.10 Resultados/Aplicações\n\n1.10.1 o que tem sido publicado?\n\n~600 artigos nos últimos 10 anos buscando pelo termo ‘DATA SCIENCE’[TIAB] AND EPIDEMIOLOGY no pubmed.\n\n \n\n\n\n1.10.2 Tese Mineração de dados na identificação de padrões de mortalidade no Brasil de 1979 a 2013:\nAluno: Davi Barroso Alves\nOrientador: Oswaldo G. Cruz\nBanco em postgresSQL criado a partit do SIM Brasil de 1979 a 2014\nLinhas: ~ 35 milhões colunas:20, espaço em memoria ~ 4GB",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#considerações-finais",
+    "href": "intro.html#considerações-finais",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.11 Considerações finais",
+    "text": "1.11 Considerações finais\n\nTornar-se um cientista de dados é um processo longo e exige dedicação e constante atualização.\nUso de grandes bancos de dados exige uma combinação de software e hardware muito diferente do que os usuários estão acostumados a usar.\nNecessário conhecimento de linguagens de programação e bancos de dados SQL (ou NoSQL).\nNenhum pacote estatístico por si só vai dar conta de criar, gerenciar e analisar dados.\nNecessário conhecimento aprofundado de estatística e ML.\n\n\n“…if the quantity of information is increasing by 2.5 quintillion bytes per day, the amount of useful information almost certainly isn’t. Most of it is just noise, and the noise is increasing faster than the signal. There are so many hypotheses to test, so many data sets to mine but a relatively constant amount of objective truth.”\n📚 Nate Silver, The Signal and the Noise: Why Most Predictions Fail – But Some Don’t\nPenguin Press/Classics 2013",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#o-que-é-pipeline-de-dados",
+    "href": "intro.html#o-que-é-pipeline-de-dados",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.2 O que é Pipeline de Dados?",
+    "text": "1.2 O que é Pipeline de Dados?\nUm projeto de Ciência de Dados é organizado seguindo um Pipeline de Dados, que é um fluxo automatizado de etapas desde a coleta/importação dos dados, passando pela transformação e análise de dados, até a visualização e comunicação.\nEtapas comuns de um Pipeline de Dados incluem:\n\nColeta de Dados: Capturar dados de fontes diversas: arquivos csv, dbf, APIs, bancos de dados, etc.\nLimpeza de Dados: Remover dados faltantes, duplicados, inconsistências e outliers.\nTransformação de Dados: Normalizar, padronizar, converter formatos, criar novas variáveis.\nArmazenamento de Dados: Guardar os dados em bases de dados, data lakes / data warehouse , armazenamento em nuvem, etc.\nAnálise e Modelagem: Aplicar técnicas de análises estatísticas, machine learning, etc.\nVisualização e Comunicação: Criar relatórios, dashboards, infográficos e comunicar resultados.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#infraestrutura-necessária-para-ciência-de-dados",
+    "href": "intro.html#infraestrutura-necessária-para-ciência-de-dados",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.4 Infraestrutura Necessária para Ciência de Dados",
+    "text": "1.4 Infraestrutura Necessária para Ciência de Dados\nPara fazer Ciência de Dados, é essencial ter uma infraestrutura adequada, que permita o processamento e análise eficiente dos dados.\nUmas dos principais requesitos é um servidor que vem a ser um computador especializado que fornece recursos, serviços ou dados a outros dispositivos chamados clientes. As principais características de um servidor são:\n\nUso centralizado: Não é usado para tarefas individuais, mas para armazenar dados, executar aplicações e oferecer serviços a muitos usuários simultaneamente.\nHardware especializado: Tem componentes otimizados para processamento de tarefas em larga escala, como processadores de alto desempenho, memória RAM de alta capacidade e armazenamento em disco de alto desempenho (geralmente espelhados, uso de RAID).\nSem interface gráfica: Normalmente não tem monitor, teclado ou mouse. É controlado remotamente por meio de interfaces de linha de comando ou softwares de gerenciamento.\nSistemas Operacionais: Roda SO específicos para servidores, como Linux, Unix, e o lixo do Windows Server, diponibilizando serviços tais como servidor web, banco de dados, arquivos em rede etc.\n\n\n1.4.1 Componentes Principais de um Data Center\nAqui estão os principais elementos que compõem um Data Center:\n\nServidores: São computadores especializados que executam aplicações, armazenam dados e processam requisições. Podem ser físicos (servidores de rack) ou virtuais (em nuvem).\nRedes: Switches, roteadores, firewalls e cabeamento garantem a comunicação entre servidores e clientes. As redes são altamente redundantes para evitar falhas.\nArmazenamento: Discos rígidos (HDD), SSDs, não-voláteis, bases de dados, data lakes e dados que podem também pode ser armazenamento em nuvem.\n\n\nO que é RAID?\nRAID (Redundant Array of Independent Disks) é uma tecnologia que combina vários discos rígidos em um único array (conjunto de discos rígidos conectados em paralelo, trabalhando juntos) para:\n\nGarantir redundância (cópias de dados em diferentes discos).\nAumentar a velocidade de leitura e escrita.\nProteger contra falhas (se um disco falhar, os dados ainda estão disponíveis).\nMelhorar a tolerância a falhas (continuidade do serviço).\n\n\n\nSistemas de Refrigeração: Para manter os servidores refrigerados, pois eles geram muito calor durante o processamento.\nEnergia e Backup: Sistemas de energia (como geração de energia, UPS, baterias) garantem que o Data Center nunca desligue. Sistemas de backup (cópias de segurança) protegem os dados contra perda.\nSegurança Física e Cibernética: Câmeras, sensores, portões eletrônicos, biometria para proteger o local físico. Firewalls, criptografia, autenticação de usuários para proteger os dados.\n\n\n\n1.4.2 Centro de Dados no Local (On-Premise) vs Nuvem (Cloud)\nO centro de dados no local, também chamado de on-premise, é uma infraestrutura de TI que fica em um local físico dentro um departamento ou unidade de uma instituição, geralmente em uma sala dedicada.\nA nuvem é um modelo de armazenamento e processamento de dados em servidores remotos, geralmente gerenciados por provedores de nuvem como Amazon AWS, Microsoft Azure, Google Cloud etc… De onde os serviços são contratados e expandidos ou alterados conforme desejo (ou o bolso) do cliente.\n\n1.4.2.1 Comparação: On-Premise vs Nuvem\n\n\n\n\n\n\n\n\nCritério\nOn-Premise (Centro de Dados no Local)\nNuvem (Cloud)\n\n\n\n\nControle sobre a infraestrutura\nAlto (gerencia todos os recursos)\nBaixo (provedor de nuvem gerencia a infraestrutura)\n\n\nCusto inicial\nAlto (compra de hardware, instalação, energia, etc.)\nBaixo (não há investimento inicial significativo)\n\n\nCusto operacional\nAlto (manutenção, energia, pessoal especializado)\nBaixo (custos sob demanda, modelos de assinatura)\n\n\nEscalabilidade\nBaixa (requer aquisição de novos recursos físicos)\nAlta (escala automaticamente conforme necessidade)\n\n\nManutenção\nAlta (empresa é responsável pela manutenção)\nBaixa (provedor cuida da manutenção e atualizações)\n\n\nSegurança\nMaior controle, mas depende da implementação local\nDepende do provedor e de suas medidas de segurança\n\n\nLatência\nBaixa (serviços locais)\nPode ser alta (depende da qualidade da conexão à internet)\n\n\nAcesso aos dados\nAcesso local (requer estar no mesmo local)\nAcesso remoto (disponível a partir de qualquer lugar)\n\n\nFlexibilidade\nBaixa (configurações fixas e complexas)\nAlta (recursos podem ser ajustados rapidamente)\n\n\nAtualizações\nManuais, exigem planejamento e intervenção\nAutomáticas, gerenciadas pelo provedor\n\n\nDependência da internet\nBaixa (funciona offline)\nAlta (depende da conectividade e da nuvem)\n\n\nBackup e recuperação\nGerenciado internamente, pode ser complexo\nGerenciado pelo provedor, geralmente automatizado\n\n\nUso comum\nEmpresas grandes, regulamentadas, sistemas críticos\nEmpresas de médio e pequeno porte, startups, aplicações web\n\n\nExemplos de provedores\nNenhum (Local)\nAWS, Azure, Google Cloud, Oracle Cloud, IBM Cloud\n\n\n\n\n\n\n1.4.3 Como se parece um pequeno data center local.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#componentes-principais-de-um-data-center",
+    "href": "intro.html#componentes-principais-de-um-data-center",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.5 Componentes Principais de um Data Center",
+    "text": "1.5 Componentes Principais de um Data Center\nAqui estão os principais elementos que compõem um Data Center:\n\nServidores: São computadores especializados que executam aplicações, armazenam dados e processam requisições. Podem ser físicos (servidores de rack) ou virtuais (em nuvem).\nRedes: Switches, roteadores, firewalls e cabeamento garantem a comunicação entre servidores e clientes. As redes são altamente redundantes para evitar falhas.\nArmazenamento: Discos rígidos (HDD), SSDs, não-voláteis, bases de dados, data lakes e dados que podem também pode ser armazenamento em nuvem.\nSistemas de Refrigeração: Para manter os servidores frescos, pois eles geram muito calor durante o processamento.\nEnergia e Backup: Sistemas de energia (como geração de energia, UPS, baterias) garantem que o Data Center nunca desligue. Sistemas de backup (cópias de segurança) protegem os dados contra perda.\nSegurança Física e Cibernética: Câmeras, sensores, portões eletrônicos, biometria para proteger o local físico. Firewalls, criptografia, autenticação de usuários para proteger os dados.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#principais-softwares-e-linguagens-de-programação-utilizadas-na-ciência-de-dados",
+    "href": "intro.html#principais-softwares-e-linguagens-de-programação-utilizadas-na-ciência-de-dados",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.5 Principais softwares e linguagens de programação utilizadas na Ciência de Dados",
+    "text": "1.5 Principais softwares e linguagens de programação utilizadas na Ciência de Dados\n\nR (estatística, matemática, análise e visualização de dados)\nPython (matemática, machine learning, IA, análise de dados)\nSistema Gerenciador de Banco de Dados (SGBD)\nSQL (linguagem padrão para bancos de dados relacionais)\nJulia (alta performance, computação científica, estatística, matemática)\nJava / Scala (Apache Spark, Weka,etc…)\nSAS (old days mas ainda usado especialmente em setores regulamentados)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#section",
+    "href": "intro.html#section",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.8 ",
+    "text": "1.8 \n\n1.8.1",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#centro-de-dados-no-local-on-premise-vs-nuvem-cloud",
+    "href": "intro.html#centro-de-dados-no-local-on-premise-vs-nuvem-cloud",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.6 Centro de Dados no Local (On-Premise) vs Nuvem (Cloud)",
+    "text": "1.6 Centro de Dados no Local (On-Premise) vs Nuvem (Cloud)\nO centro de dados no local, também chamado de on-premise, é uma infraestrutura de TI que fica em um local físico dentro um departamento ou unidade de uma instituição, geralmente em uma sala dedicada.\nA nuvem é um modelo de armazenamento e processamento de dados em servidores remotos, geralmente gerenciados por provedores de nuvem como Amazon AWS, Microsoft Azure, Google Cloud etc… De onde os serviços são contratados e expandidos ou alterados conforme desejo (ou o bolso) do cliente.\n\n1.6.1 Comparação: On-Premise vs Nuvem\n\n\n\n\n\n\n\n\nCritério\nOn-Premise (Centro de Dados no Local)\nNuvem (Cloud)\n\n\n\n\nControle sobre a infraestrutura\nAlto (gerencia todos os recursos)\nBaixo (provedor de nuvem gerencia a infraestrutura)\n\n\nCusto inicial\nAlto (compra de hardware, instalação, energia, etc.)\nBaixo (não há investimento inicial significativo)\n\n\nCusto operacional\nAlto (manutenção, energia, pessoal especializado)\nBaixo (custos sob demanda, modelos de assinatura)\n\n\nEscalabilidade\nBaixa (requer aquisição de novos recursos físicos)\nAlta (escala automaticamente conforme necessidade)\n\n\nManutenção\nAlta (empresa é responsável pela manutenção)\nBaixa (provedor cuida da manutenção e atualizações)\n\n\nSegurança\nMaior controle, mas depende da implementação local\nDepende do provedor e de suas medidas de segurança\n\n\nLatência\nBaixa (serviços locais)\nPode ser alta (depende da qualidade da conexão à internet)\n\n\nAcesso aos dados\nAcesso local (requer estar no mesmo local)\nAcesso remoto (disponível a partir de qualquer lugar)\n\n\nFlexibilidade\nBaixa (configurações fixas e complexas)\nAlta (recursos podem ser ajustados rapidamente)\n\n\nAtualizações\nManuais, exigem planejamento e intervenção\nAutomáticas, gerenciadas pelo provedor\n\n\nDependência da internet\nBaixa (funciona offline)\nAlta (depende da conectividade e da nuvem)\n\n\nBackup e recuperação\nGerenciado internamente, pode ser complexo\nGerenciado pelo provedor, geralmente automatizado\n\n\nUso comum\nEmpresas grandes, regulamentadas, sistemas críticos\nEmpresas de médio e pequeno porte, startups, aplicações web\n\n\nExemplos de provedores\nNenhum (Local)\nAWS, Azure, Google Cloud, Oracle Cloud, IBM Cloud",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#objetivo",
+    "href": "index.html#objetivo",
+    "title": "Ciência de Dados Aplicada à Epidemiologia - 2025",
+    "section": "OBJETIVO",
+    "text": "OBJETIVO\nCapacitar os estudantes a compreender e aplicar os fundamentos da Ciência de Dados no contexto da Epidemiologia com o apoio de ferramentas computacionais.",
+    "crumbs": [
+      "Apresentação do Curso"
+    ]
+  },
+  {
+    "objectID": "intro.html#banco-de-dados-big-data-grandes-bases-e-os-6vs",
+    "href": "intro.html#banco-de-dados-big-data-grandes-bases-e-os-6vs",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.7 Banco de dados (Big Data) , grandes bases e os 6Vs",
+    "text": "1.7 Banco de dados (Big Data) , grandes bases e os 6Vs\nBig Data (Dados em Grande Escala) refere-se a conjuntos de dados extremamente grandes e complexos que excedem a capacidade de processamento e armazenamento tradicionais de sistemas de informação. Esses dados podem ser estruturados (como tabelas em bancos de dados), semi-estruturados (como XML ou JSON) ou não estruturados (como textos, imagens, vídeos e áudios).\nO termo Big Data surgiu com o aumento exponencial da geração de dados no mundo digital, impulsionado por tecnologias como redes sociais, sensores, dispositivos móveis, Internet das Coisas (IoT), e outras fontes de dados em tempo real.\n\nOs 3Vs do Big Data\nOs 3Vs são os três principais características que definem o Big Data. Eles foram introduzidos por Doug Laney, da Gartner, em 2001. Com o tempo, outros “V” foram adicionados, mas os três principais são:\n\nVolume (Volume) • Refere-se à quantidade de dados gerados e acumulados. • Exemplo: Empresas geram petabytes de dados diariamente.\nVelocidade (Velocity) • Refere-se à rapidez com que os dados são gerados e processados. • Exemplo: Dados de sensores, transações em tempo real, redes sociais.\nVariedade (Variety) • Refere-se à diversidade de formatos e tipos de dados. • Exemplo: Dados estruturados (tabelas), semi-estruturados (JSON), e não estruturados (texto, imagens, vídeos).\n\nOutros “3 Vs” (opcional) • Verdade (Veracity): Qualidade e confiabilidade dos dados. • Valor (Value): A utilidade dos dados para a tomada de decisões. • Complexidade (Complexity): A dificuldade de processar e analisar os dados\n\n\n\n\n\n\n\n\nTamanho\nQuantidade de filmes\nDuração total (1 hora/filme)\n\n\n\n\n1 GB\n1 filme\n~1 hora\n\n\n1 TB\n250 filmes\n~10 dias\n\n\n1 PB\n250.000 filmes\n~28,5 anos",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#big-data-os-3vs-e-banco-de-dados",
+    "href": "intro.html#big-data-os-3vs-e-banco-de-dados",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.9 Big Data os 3Vs e Banco de dados",
+    "text": "1.9 Big Data os 3Vs e Banco de dados\nBig Data (Dados em Grande Escala) refere-se a conjuntos de dados extremamente grandes e complexos que excedem a capacidade de processamento e armazenamento tradicionais de sistemas de informação. Esses dados podem ser estruturados (como tabelas em bancos de dados), semi-estruturados (como XML ou JSON) ou não estruturados (como textos, imagens, vídeos e áudios).\nO termo Big Data surgiu com o aumento exponencial da geração de dados no mundo digital, impulsionado por tecnologias como redes sociais, sensores, dispositivos móveis, Internet das Coisas (IoT), e outras fontes de dados em tempo real.\nNo processamento de Big Data são necessárias o uso de ferramentas distribuídas, linguagens de programação e bibliotecas especializadas, bem diferentes do que estamos acostimados\n\nOs 3Vs do Big Data\nOs 3Vs são os três principais características que definem o Big Data. Eles foram introduzidos por Doug Laney, da Gartner, em 2001. Com o tempo, outros “V” foram adicionados, mas os três principais são:\n\nVolume (Volume) • Refere-se à quantidade de dados gerados e acumulados. • Exemplo: Empresas geram petabytes de dados diariamente.\nVelocidade (Velocity) • Refere-se à rapidez com que os dados são gerados e processados. • Exemplo: Dados de sensores, transações em tempo real, redes sociais.\nVariedade (Variety) • Refere-se à diversidade de formatos e tipos de dados. • Exemplo: Dados estruturados (tabelas), semi-estruturados (JSON), e não estruturados (texto, imagens, vídeos).\n\nOutros “3 Vs” (adicionais)\n• Verdade (Veracity): Qualidade e confiabilidade dos dados.\n• Valor (Value): A utilidade dos dados para a tomada de decisões.\n• Complexidade (Complexity): A dificuldade de processar e analisar os dados\n\n1.9.1 Quanto é um grande volume?\n\n\n\n\n\n\n\n\nTamanho\nQuantidade de filmes\nDuração total (1 hora/filme)\n\n\n\n\n1 GB\n1 filme\n~1 hora\n\n\n1 TB\n250 filmes\n~10 dias\n\n\n1 PB\n250.000 filmes\n~28,5 anos\n\n\n\n\n\n1.9.2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "anexo1.html",
+    "href": "anexo1.html",
+    "title": "Anexo 1 - Instalando o duckdb",
+    "section": "",
+    "text": "O duckDB https://duckdb.org/ é um banco de dados do tipo OLAP de alto desempenho, de código aberto, desenvolvido para análise de dados em ambiente de memória (in-memory) e processamento de grandes volumes de dados com baixa latência e alta velocidade.\n\nPrincipais Características\n\nRápido e eficiente:\n\nO duckDB é extremamente rápido pois processa dados na memória e sem necessidade de escrever em disco. É ideal para análises interativas e queries complexas, rodando dezenas de vezes mais rápido que R ou python.\n\nFácil de usar:\n\nPossui uma interface SQL, permitindo que usuários familiarizados com SQL possam usá-lo facilmente. Também pode ser usado diretamente em Python, R e Julia com bibliotecas de integração.\n\nLightweight e autônomo:\n\nNão precisa de servidores, clusters ou instalações complexas. Pode rodar como uma biblioteca em Python, ou diretamente do pacote do R sem instalação de banco de dados dedicado.\n\nSuporte a grandes volumes de dados:\nApesar de ser baseado em memória, o duckDB pode lidar com datasets muito grandes devido a sua otimização interna. Pode lidar com arquivos em disco sendo conteúdo deste é armazenado compactado, por exemplo, um CSV ou um DBF fica menos de 10% do valor original. Trabalha com arquivos modernos amplamente utilizados como parquet e json.\n\n\n\nComo instalar no Linux e Mac\nAbra um terminal e execute o código abaixo:\ncurl https://install.duckdb.org | sh\n\n\nComo instalar no Windows 10/11\nAcesse o link para download ou corte e cole a URL abaixo no seu navegador:\nhttps://duckdb.org/docs/installation/?version=stable&environment=cli&platform=win&download_method=direct&architecture=x86_64\n\n\nPasso a Passo\n\nAcesse o site do duckDB:\n\n\n\nClique em Installation e baixe o arquivo do link\n\n\n\nextrair o conteudo da pasta para a área de trabalho\n\n\n\nde um duplo clique no icone do duckdb\n\n\nVocê está na interface de linha do dudkdb , aqui comandos SQL pode ser digitados\n\npara iniciar a interface gráfica basat digitar:\n\nCALL start_ui();\n\nDuckDB UI local\n\nInterface gráfica semelhante ao jupyter\n\n\nClicando no botão azul “show me the basics” podemos testar o duckdb!",
+    "crumbs": [
+      "Anexo 1 - Instalando o duckdb"
+    ]
+  },
+  {
+    "objectID": "anexo1.html#duckdb-o-que-é",
+    "href": "anexo1.html#duckdb-o-que-é",
+    "title": "Instalando o duckdb",
+    "section": "",
+    "text": "🚀 Principais Características do DuckDB\n\nRápido e eficiente\n\n\nDuckDB é extremamente rápido, pois processa dados na memória e sem necessidade de escrever em disco.\nIdeal para análises interativas e queries complexas rodando dezenas de vezes mais rápido que R ou python.\n\n\nFácil de usar\n\n\nPossui uma interface semelhante ao SQL, permitindo que usuários familiarizados com SQL possam usá-lo facilmente.\nTambém pode ser usado diretamente em Python, R e Julia com bibliotecas de integração.\n\n\nLightweight e autônomo\n\n\nNão precisa de servidores, clusters ou instalações complexas.\nPode rodar como uma biblioteca em Python, ou diretamente do R sem instalação de banco de dados dedicado.\n\n\nSuporte a grandes volumes de dados\n\n\nApesar de ser baseado em memória, DuckDB pode lidar com datasets muito grandes devido a sua otimização interna.\npode lidar com arquivos em disco sendo conteudo deste é armazenado compactado, por exemplo, um CSV ou um DBF fica menos de 10% do valor original .\n\n\n\nComo instalar no Linux e Mac\ncurl https://install.duckdb.org | sh\n\n\nComo Instalar no Windows 10/11\nAcesso o link para download\nhttps://duckdb.org/docs/installation/?version=stable&environment=cli&platform=win&download_method=direct&architecture=x86_64",
+    "crumbs": [
+      "Instalando o duckdb"
+    ]
+  },
+  {
+    "objectID": "sql.html",
+    "href": "sql.html",
+    "title": "2  Introdução ao SQL & Banco de Dados",
+    "section": "",
+    "text": "2.0.1 \n\n\n2.0.2 Cerifique-se de intalar e testar o duckdb",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introdução ao SQL & Banco de Dados</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#bases-de-dados-armazenando-informações",
+    "href": "intro.html#bases-de-dados-armazenando-informações",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.7 Bases de Dados: Armazenando Informações",
+    "text": "1.7 Bases de Dados: Armazenando Informações\nUma Base de Dados é um conjunto organizado de dados, estruturado para facilitar o armazenamento, recuperação e manipulação de informações.\nTipos de Bases de Dados:\n• Relacional (ex: MySQL, PostgreSQL, Oracle)\n• NoSQL (ex: MongoDB, Cassandra)\nO que é uma Base de Dados Relacional?\n• Dados organizados em tabelas. • Relacionamentos entre tabelas são definidos por chaves primárias e estrangeiras. • Exemplo: Tabela de pacientes, tabela de internações, etc.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#sgbd",
+    "href": "intro.html#sgbd",
+    "title": "1  Introdução à Ciência de Dados em Epidemiologia",
+    "section": "1.8 SGBD",
+    "text": "1.8 SGBD\nO que é um Sistema Gerenciador de Banco de Dados (SGBD)?\nUm Sistema Gerenciador de Banco de Dados (SGBD) é um software que permite criar, gerenciar, armazenar e recuperar dados de forma organizada, eficiente e segura.\nO SGBD atua como um intermediário entre o usuário e o armazenamento físico dos dados (banco de dados), facilitando a criação, manipulação e consulta de dados.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução à Ciência de Dados em Epidemiologia</span>"
+    ]
+  }
+]
