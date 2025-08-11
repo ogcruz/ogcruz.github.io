@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Introdução ao SQL &amp; Banco de Dados – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
+<title>2&nbsp; Banco de Dados &amp; SQL – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sql.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao SQL &amp; Banco de Dados</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sql.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -122,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sql.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao SQL &amp; Banco de Dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -142,15 +177,54 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">2.1</span> Introdução</a></li>
+  <li><a href="#sistema-gerenciador-de-banco-de-dados" id="toc-sistema-gerenciador-de-banco-de-dados" class="nav-link" data-scroll-target="#sistema-gerenciador-de-banco-de-dados"><span class="header-section-number">2.2</span> Sistema Gerenciador de Banco de Dados</a></li>
+  <li><a href="#terminologia-básica" id="toc-terminologia-básica" class="nav-link" data-scroll-target="#terminologia-básica"><span class="header-section-number">2.3</span> Terminologia Básica</a></li>
+  <li><a href="#modelo-de-dados" id="toc-modelo-de-dados" class="nav-link" data-scroll-target="#modelo-de-dados"><span class="header-section-number">2.4</span> Modelo de Dados</a></li>
+  <li><a href="#sql---structured-query-language" id="toc-sql---structured-query-language" class="nav-link" data-scroll-target="#sql---structured-query-language"><span class="header-section-number">3</span> <code>SQL</code> - Structured Query Language</a>
+  <ul class="collapse">
+  <li><a href="#introdução-ao-sql" id="toc-introdução-ao-sql" class="nav-link" data-scroll-target="#introdução-ao-sql"><span class="header-section-number">3.1</span> Introdução ao <code>SQL</code></a></li>
+  <li><a href="#exemplo-de-uma-consulta-dql" id="toc-exemplo-de-uma-consulta-dql" class="nav-link" data-scroll-target="#exemplo-de-uma-consulta-dql"><span class="header-section-number">3.2</span> Exemplo de uma consulta (DQL)</a></li>
+  <li><a href="#definição-e-manipulação-ddl-dml" id="toc-definição-e-manipulação-ddl-dml" class="nav-link" data-scroll-target="#definição-e-manipulação-ddl-dml"><span class="header-section-number">3.3</span> Definição e Manipulação (DDL &amp; DML)</a>
+  <ul class="collapse">
+  <li><a href="#criando-uma-tabela" id="toc-criando-uma-tabela" class="nav-link" data-scroll-target="#criando-uma-tabela"><span class="header-section-number">3.3.1</span> Criando uma tabela</a></li>
+  <li><a href="#inserindo-dados-populando-a-tabela" id="toc-inserindo-dados-populando-a-tabela" class="nav-link" data-scroll-target="#inserindo-dados-populando-a-tabela"><span class="header-section-number">3.3.2</span> Inserindo dados (populando a tabela)</a></li>
+  <li><a href="#apagando-os-dados" id="toc-apagando-os-dados" class="nav-link" data-scroll-target="#apagando-os-dados"><span class="header-section-number">3.3.3</span> Apagando os Dados</a></li>
+  <li><a href="#remover-uma-tabela" id="toc-remover-uma-tabela" class="nav-link" data-scroll-target="#remover-uma-tabela"><span class="header-section-number">3.3.4</span> Remover uma Tabela</a></li>
+  </ul></li>
+  <li><a href="#consulta-dql" id="toc-consulta-dql" class="nav-link" data-scroll-target="#consulta-dql"><span class="header-section-number">3.4</span> Consulta (DQL)</a>
+  <ul class="collapse">
+  <li><a href="#criando-novas-tabelas-a-partir-de-tabelas-existentes" id="toc-criando-novas-tabelas-a-partir-de-tabelas-existentes" class="nav-link" data-scroll-target="#criando-novas-tabelas-a-partir-de-tabelas-existentes"><span class="header-section-number">3.4.1</span> Criando novas tabelas a partir de tabelas existentes</a></li>
+  <li><a href="#joins-relacionando-as-tabelas" id="toc-joins-relacionando-as-tabelas" class="nav-link" data-scroll-target="#joins-relacionando-as-tabelas"><span class="header-section-number">3.4.2</span> Joins (Relacionando as Tabelas)</a></li>
+  </ul></li>
+  <li><a href="#principais-funções-usadas-em-sql" id="toc-principais-funções-usadas-em-sql" class="nav-link" data-scroll-target="#principais-funções-usadas-em-sql"><span class="header-section-number">3.5</span> Principais funções usadas em <code>SQL</code></a></li>
+  <li><a href="#exercícios-e-prática" id="toc-exercícios-e-prática" class="nav-link" data-scroll-target="#exercícios-e-prática"><span class="header-section-number">3.6</span> Exercícios e prática</a>
+  <ul class="collapse">
+  <li><a href="#importando-arquivos-remotos" id="toc-importando-arquivos-remotos" class="nav-link" data-scroll-target="#importando-arquivos-remotos"><span class="header-section-number">3.6.1</span> Importando arquivos remotos</a></li>
+  <li><a href="#limpando-a-tabela-do-esus" id="toc-limpando-a-tabela-do-esus" class="nav-link" data-scroll-target="#limpando-a-tabela-do-esus"><span class="header-section-number">3.6.2</span> Limpando a tabela do ESUS</a></li>
+  <li><a href="#listando" id="toc-listando" class="nav-link" data-scroll-target="#listando"><span class="header-section-number">3.6.3</span> Listando</a></li>
+  </ul></li>
+  <li><a href="#exemplos-de-tabulações" id="toc-exemplos-de-tabulações" class="nav-link" data-scroll-target="#exemplos-de-tabulações"><span class="header-section-number">3.7</span> Exemplos de tabulações</a>
+  <ul class="collapse">
+  <li><a href="#tabulações-simples" id="toc-tabulações-simples" class="nav-link" data-scroll-target="#tabulações-simples"><span class="header-section-number">3.7.1</span> Tabulações simples</a></li>
+  <li><a href="#tabulações-avançadas" id="toc-tabulações-avançadas" class="nav-link" data-scroll-target="#tabulações-avançadas"><span class="header-section-number">3.7.2</span> Tabulações avançadas</a></li>
+  </ul></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">3.8</span> Conclusão</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao SQL &amp; Banco de Dados</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></h1>
 </div>
 
 
@@ -167,13 +241,595 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level3" data-number="2.0.1">
-<h3 data-number="2.0.1" class="anchored" data-anchor-id="section"><span class="header-section-number">2.0.1</span> </h3>
+<section id="introdução" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">2.1</span> Introdução</h2>
+<p>Você já parou para pensar na quantidade de dados que geramos no dia-a-dias? Quando postamos uma foto em uma rede social, fazemos uma compra online, assistimos a um vídeo, ou usamos um aplicativo de transporte — tudo isso envolve um banco de dados por trás.</p>
+<p>Bancos de dados são essenciais em praticamente todas as áreas onde computadores são utilizados: negócios, engenharia, educação, medicina, e a lista continua. Eles não são apenas um amontoado de informações — para ser um banco de dados, é preciso que esses dados estejam organizados, estruturados e prontos para serem consultados.</p>
+<p>Por isso, um arranjo aleatório de informações não é um banco de dados. E, embora úteis, planilhas não oferecem a mesma estrutura e funcionalidades de um sistema de gerenciamento de banco de dados (SGBD).</p>
 </section>
-<section id="cerifique-se-de-intalar-e-testar-o-duckdb" class="level3" data-number="2.0.2">
-<h3 data-number="2.0.2" class="anchored" data-anchor-id="cerifique-se-de-intalar-e-testar-o-duckdb"><span class="header-section-number">2.0.2</span> Cerifique-se de intalar e testar o <a href="./anexo1.html">duckdb</a></h3>
+<section id="sistema-gerenciador-de-banco-de-dados" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sistema-gerenciador-de-banco-de-dados"><span class="header-section-number">2.2</span> Sistema Gerenciador de Banco de Dados</h2>
+<p>Um Sistema Gerenciador de Banco de Dados (SGBD) é uma coleção de programas que habilitam usuários a criar e manter um banco de dados.</p>
+<p>O SGBD é um software de propósito geral, que facilita o processo de definição, construção e manipulação de um banco de dados.</p>
+<p><img src="./figuras/fig1.png" class="img-fluid"></p>
+<p>Exemplos de SGBDs populares:</p>
+<ul>
+<li>MySQL (muito usado em aplicações web)</li>
+<li>PostgreSQL (foco em robustez e recursos avançados)</li>
+<li>SQLite (leve e ideal para aplicações locais ou mobile)</li>
+<li>Oracle Database ($$$, amplamente utilizado em grandes corporações)</li>
+<li>Duckdb (moderno, usa filosofia OLAP, crescendo rapidamente)</li>
+<li>SQL Server (desenvolvido pela Microsoft) 🤮🤮🤮</li>
+</ul>
+</section>
+<section id="terminologia-básica" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="terminologia-básica"><span class="header-section-number">2.3</span> Terminologia Básica</h2>
+<p>Antes de trabalhar com SQL, é importante entender a linguagem básica dos bancos de dados. Esses termos descrevem como as informações são organizadas e manipuladas dentro de um SGBD.</p>
+<p><img src="./figuras/fig2.png" class="img-fluid"></p>
+<ul>
+<li><strong>Campo</strong>: unidade básica de informação mínima com significado (coluna).</li>
+<li><strong>Registro</strong>: conjunto de campos (linha).</li>
+<li><strong>Atributo</strong>: área que pode conter um tipo de dados. É a interseção de uma linha com uma coluna.</li>
+<li><strong>Tabela</strong>: conjunto de registros.</li>
+<li><strong>Banco de Dados (BD)</strong>: conjunto de tabelas e as formas de manipulação (relacionamentos).</li>
+<li><strong>Modelo de Dados</strong>: conjunto de conceitos utilizados para descrever a estrutura de um BD, ou seja, os tipos de dados, relacionamentos e restrições sobre estes dados.</li>
+<li><strong>Modelo Relacional</strong>: representa os dados em um BD por meio de um conjunto de relações.</li>
+<li><strong>Chave Primária</strong>: coluna que identifica com exclusividade cada linha de um tabela.</li>
+<li><strong>Chave Estrangeira</strong>: coluna ou conjunto de colunas referente a uma chave primária de uma outra tabela. A partir da chave estrangeira podemos relacionar tabelas (join).</li>
+</ul>
+</section>
+<section id="modelo-de-dados" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="modelo-de-dados"><span class="header-section-number">2.4</span> Modelo de Dados</h2>
+<p>Um <strong>Modelo de Dados</strong> consiste de um conjunto de conceitos utilizados para descrever a estrutura de um BD, ou seja, os tipos de dados, relacionamentos e restrições sobre estes dados.</p>
+<p>No Modelo Relacional representa-se os dados em um BD por meio de um conjunto de relações.</p>
+<p>Existem diferentes técnicas e tipos de representação de um modelo de dados, como:</p>
+<ul>
+<li><strong>Modelo Externo</strong> (visões específicas para determinados usuários ou aplicações)</li>
+<li><strong>Modelo Conceitual</strong> (representação abstrata e independente de tecnologia)</li>
+<li><strong>Modelo Entidade-Relacionamento (ER)</strong> (foco em entidades, atributos e relacionamentos)</li>
+</ul>
+<p>Abaixo temos um exemplo de um <strong>diagrama de entidade-relacionamento (ER)</strong> para um sistema de prontuário eletrônico:</p>
+<p><img src="./figuras/modelo_ER.png" class="img-fluid"></p>
+<p>No diagrama acima, podemos identificar três elementos principais: entidades, atributos e relações:</p>
+<ul>
+<li><strong>Entidades:</strong> Representam os objetos principais do sistema (ex: <code>Paciente</code>, <code>Médico</code>, <code>Prontuário Eletrônico</code>).</li>
+<li><strong>Atributos:</strong> Informações associadas a cada entidade (ex: <code>ID</code>, <code>sexo</code>, <code>dt nasc</code> para <code>Paciente</code>).</li>
+<li><strong>Relações:</strong> Indicam como as entidades estão conectadas (ex: um <code>Paciente</code> pode ter vários registros nos prontuários eletrônicos — relação 1:N; um <code>Médico</code> realiza diversas <code>Consultas</code> (1:N)).</li>
+</ul>
+</section>
+<section id="sql---structured-query-language" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <code>SQL</code> - Structured Query Language</h1>
+<section id="introdução-ao-sql" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introdução-ao-sql"><span class="header-section-number">3.1</span> Introdução ao <code>SQL</code></h2>
+<p>O <code>SQL</code> (Structured Query Language) foi criado em 1974 por Donald D. Chamberlin e Raymond F. Boyce, pesquisadores da IBM. Originalmente chamado SEQUEL (Structured English Query Language), ele foi desenvolvido para gerenciar e manipular dados de diferentes bancos de dados relacionais existentes na época.</p>
+<p>Desde a década de 1990 tornou-se a linguagem mais popular para acesso a bancos de dados, associado à difusão dos SGBDs relacionais. Neste mesmo ano, a Oracle lançou seu primeiro SGBD totalmente em <code>SQL</code>.</p>
+<p>Em inglês <code>SQL</code> é pronunciado como S-Q-L ou SEQUEL.</p>
+<p>Atualmente <code>SQL</code> é a linguagem padrão para bancos de dados relacionais. Os principais Bancos de Dados Relacionais operam com alguma forma de <code>SQL</code>.</p>
+<p>Existem dois tipos básicos de linguagem:</p>
+<ul>
+<li><p>Linguagem procedural: fornece uma descrição detalhada de <strong>COMO</strong> uma tarefa é realizada, operando sobre um registro ou uma unidade de dados a cada vez. Ex: <code>C</code>, <code>Java</code> etc…</p></li>
+<li><p>Linguagem não procedural: é uma descrição de <strong>O QUE</strong> se deseja, onde o sistema deverá determinar a forma de fazer. Ex: <code>SQL</code>, <code>HTML</code>.</p></li>
+</ul>
+<p><code>SQL</code> é uma <strong>linguagem não procedural</strong>, pois permite expressar consultas e operações em bancos de dados (como seleção, inserção e atualização de dados) sem especificar como o sistema deve executá-las. O usuário declara o que deseja, e o SGBD (Sistema Gerenciador de Banco de Dados) determina como atender a solicitação.</p>
+<p>Para efeitos didáticos, podemos organizar os módulos do <code>SQL</code> nas seguintes categorias:</p>
+<ul>
+<li><p><strong>Definição (DDL):</strong> criação do esquema (tabelas e relacionamentos) que atenderá as necessidades no BD;</p></li>
+<li><p><strong>Manipulação (DML):</strong> inclusão, deleção e modificação dos dados no BD;</p></li>
+<li><p><strong>Consulta (DQL):</strong> realização de consultas no BD;</p></li>
+<li><p><strong>Acessos (DCL):</strong> Controlar permissões e acesso definindo quem pode fazer o que com os tabelas e dados;</p></li>
+</ul>
+<p>A tabela abaixo resume as principais subcategorias dos comandos em <code>SQL</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Abreviação</th>
+<th>Nome completo</th>
+<th>Propósito</th>
+<th>Exemplos de comandos</th>
+<th><strong>DuckDB</strong>?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>DDL</strong></td>
+<td>Data Definition Language</td>
+<td>Criar, modificar ou excluir estruturas de dados</td>
+<td><code>CREATE</code>, <code>ALTER</code>, <code>DROP</code></td>
+<td>✅ <strong>Sim</strong></td>
+</tr>
+<tr class="even">
+<td><strong>DML</strong></td>
+<td>Data Manipulation Language</td>
+<td>Inserir, atualizar, excluir ou selecionar dados</td>
+<td><code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></td>
+<td>✅ <strong>Sim</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>DQL</strong></td>
+<td>Data Query Language</td>
+<td>Recuperar dados (subcategoria do DML)</td>
+<td><code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>JOIN</code></td>
+<td>✅ <strong>Sim</strong></td>
+</tr>
+<tr class="even">
+<td><strong>DCL</strong></td>
+<td>Data Control Language</td>
+<td>Controlar permissões e acesso aos dados</td>
+<td><code>GRANT</code>, <code>REVOKE</code></td>
+<td>❌ <strong>Não</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="exemplo-de-uma-consulta-dql" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="exemplo-de-uma-consulta-dql"><span class="header-section-number">3.2</span> Exemplo de uma consulta (DQL)</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> nome,idade <span class="kw">from</span> pacientes ; </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="./figuras/ex_select.png" class="img-fluid"> ​</p>
+</section>
+<section id="definição-e-manipulação-ddl-dml" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="definição-e-manipulação-ddl-dml"><span class="header-section-number">3.3</span> Definição e Manipulação (DDL &amp; DML)</h2>
+<p>Para iniciar a definição de um BD é necessário conhecer os tipos de dados que o BD manipula. Existe uma grande quantidade de diferentes tipos, mas, de uma maneira geral, os tipos mais frequentes são:</p>
+<ul>
+<li><strong>Numéricos</strong>: <code>INT</code>, <code>BIGINT</code>, <code>DECIMAL</code>, <code>FLOAT</code>, <code>DOUBLE</code></li>
+<li><strong>Data/Hora</strong>: <code>DATE</code>, <code>TIME</code>, <code>DATETIME</code>, <code>TIMESTAMP</code></li>
+<li><strong>Texto</strong>: <code>CHAR</code>, <code>VARCHAR</code>, <code>TEXT</code>, <code>NCHAR</code>, <code>NVARCHAR</code></li>
+<li><strong>Booleanos</strong>: <code>BOOLEAN</code>, <code>BIT</code></li>
+<li><strong>Binários</strong>: <code>BINARY</code>, <code>VARBINARY</code>, <code>BLOB</code></li>
+<li><strong>Intervalos</strong>: <code>INTERVAL</code> (representa um intervalo de tempo)</li>
+</ul>
+<p>Obs: O dado faltante é chamado <code>NULL</code>.</p>
+<section id="criando-uma-tabela" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="criando-uma-tabela"><span class="header-section-number">3.3.1</span> Criando uma tabela</h3>
+<p>Para criar uma tabela será usada a declaração <code>SQL</code> (DDL) <code>create table</code>. De uma maneira geral:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> <span class="op">&lt;</span>nome_tabela<span class="op">&gt;</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    campo_1 <span class="op">&lt;</span>tipo de dado<span class="op">&gt;</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    campo_2 <span class="op">&lt;</span>tipo de dado<span class="op">&gt;</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    campo_3 <span class="op">&lt;</span>tipo de dados<span class="op">&gt;</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O ponto e vírgula encerra uma instrução deixando-a pronta para ser executada após o <enter>.</enter></p>
+<p><strong>Exemplo</strong></p>
+<p>Como seria a criação de uma tabela que armazenaria os nomes e siglas de todas a UF?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>​ <span class="kw">CREATE</span> <span class="kw">TABLE</span> estados (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    uf <span class="dt">integer</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    sigla <span class="dt">char</span>(<span class="dv">2</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    regiao <span class="dt">char</span>(<span class="dv">2</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    nome <span class="dt">varchar</span>(<span class="dv">50</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>) ; </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inserindo-dados-populando-a-tabela" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="inserindo-dados-populando-a-tabela"><span class="header-section-number">3.3.2</span> Inserindo dados (populando a tabela)</h3>
+<p>Instrução <code>INSERT</code> é usada para inserir dados na tabela.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="op">&lt;</span>tabela<span class="op">&gt;</span>[(coluna_1,<span class="op">..</span>.,coluna_n)] <span class="kw">VALUES</span> (valor_1,<span class="op">..</span>.,valor_n);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> estados(uf, sigla, regiao, nome)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">33</span>, <span class="st">'RJ'</span>, <span class="st">'SE'</span>, <span class="st">'Rio de Janeiro'</span>);</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> estados</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">31</span>, <span class="st">'MG'</span>, <span class="st">'SE'</span>, <span class="st">'Minas Gerais'</span>);</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> estados(sigla, nome, uf, regiao)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="st">'SP'</span>, <span class="st">'São Paulo'</span>, <span class="dv">35</span>, <span class="st">'SE'</span>);</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> estados(nome, regiao, uf, sigla)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="st">'Espirito Santo'</span>, <span class="st">'SE'</span>, <span class="dv">32</span>, <span class="st">'ES'</span>);</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> estados(sigla, regiao, nome)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span>(<span class="st">'GO'</span>, <span class="st">'CO'</span>, <span class="st">'Goias'</span>); <span class="co">-- uf vai receber NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A modificação dos registros é feita usando o comando <code>UPDATE</code>. Por exemplo:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> estado <span class="kw">SET</span> nome <span class="op">=</span> <span class="st">'Goiás'</span>, uf <span class="op">=</span> <span class="dv">52</span> <span class="kw">WHERE</span> sigla <span class="op">=</span> <span class="st">'GO'</span>;  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="apagando-os-dados" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="apagando-os-dados"><span class="header-section-number">3.3.3</span> Apagando os Dados</h3>
+<p>Instrução <code>DELETE</code> é usada para remover uma ou registros da tabela, possuindo duas formas básicas:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> <span class="op">&lt;</span>tabela<span class="op">&gt;</span>;\</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- ou </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> <span class="op">&lt;</span>tabela<span class="op">&gt;</span> <span class="kw">WHERE</span> <span class="op">&lt;</span>condição<span class="op">&gt;</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A primeira forma é obrigatória e apaga todos os dados da tabela, enquanto que a segunda possui uma parte opcional, a partir do <code>WHERE</code>, que apaga somente os dados da tabela que atendem a uma condição (ou condições) imposta pela cláusula <code>WHERE</code>. Exemplo:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> ESTADOS <span class="kw">WHERE</span> SIGLA <span class="op">=</span> <span class="st">'SP'</span>; <span class="co">-- 1 linha deletada</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> ESTADOS <span class="kw">WHERE</span> NOME <span class="op">=</span> <span class="st">'ACRE'</span>;  <span class="co">-- nenhuma linha encontrada</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> ESTADOS; <span class="co">-- todas as  linhas deletadas  ATENÇÃO. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="remover-uma-tabela" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="remover-uma-tabela"><span class="header-section-number">3.3.4</span> Remover uma Tabela</h3>
+<p>Para se remover uma tabela deve-se usar o comando <code>DROP TABLE</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> <span class="op">&lt;</span>nome_da_tabela<span class="op">&gt;</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Por meio deste comando a tabela deixará de existir neste banco de dados, sendo todas as informações contidas nela vão ser <strong>TOTALMENTE apagadas</strong> (não tem como desfazer).</p>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> ESTADOS; <span class="co">-- Tabela eliminada</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="consulta-dql" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="consulta-dql"><span class="header-section-number">3.4</span> Consulta (DQL)</h2>
+<p>Instrução <code>SELECT</code> é a essência da linguagem SQL. É por meio dela que se recupera dados de um banco de dados. De modo simples, forma declarativa, está se dizendo ao BD quais informações foram selecionadas para serem recuperadas.</p>
+<p>Pode-se dividir esta instrução em quatro partes básicas:</p>
+<ul>
+<li><code>SELECT</code> seguido dos atributos que se deseja ver (obrigatório)</li>
+<li><code>FROM</code> seguido de onde se obterão os dados (obrigatório)</li>
+<li><code>WHERE</code> seguido das restrições de recuperação (opcional)</li>
+<li><code>ORDER BY</code> seguido da forma como os dados serão classificados (opcional)</li>
+<li><code>GROUP BY</code> serve para agregar os dados (opcional)</li>
+</ul>
+<p>O símbolo asterisco * significa que todos atributos da relação informada deverão ser recuperados.</p>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> ESTADO;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">FROM</span> estado <span class="kw">WHERE</span> SIGLA<span class="op">=</span><span class="st">'GO'</span> <span class="kw">OR</span> NOME<span class="op">=</span><span class="st">'Acre'</span> ; </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>SELECT</code> será a instrução mais comumente usada na linguagem <code>SQL</code>. Repare que o <code>SQL</code> não é <em>case sensitive</em> como a maioria das linguagens!</p>
+<p>Na cláusula <code>WHERE</code> serão utilizados alguns operadores de comparação e lógicos para que a condição seja especificada. Os operadores logicos usados em <code>SQL</code> são:</p>
+<p><img src="figuras/where.png" class="img-fluid"></p>
+<section id="criando-novas-tabelas-a-partir-de-tabelas-existentes" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="criando-novas-tabelas-a-partir-de-tabelas-existentes"><span class="header-section-number">3.4.1</span> Criando novas tabelas a partir de tabelas existentes</h3>
+<p>É muito simples a criação de novas tabelas a partir de outras, basta usar o <code>CREATE TABLE</code> com o resultado de um <code>SELECT</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> sudeste <span class="kw">AS</span> (<span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> estados <span class="kw">WHERE</span> regiao <span class="op">=</span> <span class="st">'SE'</span>)  ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="joins-relacionando-as-tabelas" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="joins-relacionando-as-tabelas"><span class="header-section-number">3.4.2</span> Joins (Relacionando as Tabelas)</h3>
+<p>Existem diversas maneiras de se fazer o relacionamento entre duas tabelas. Os mais comuns são:</p>
+<ol type="1">
+<li><code>INNER JOIN</code>: Este é simples e comumente empregado. Esta query retornará todos os registros da tabela A (esquerda) que têm correspondência com a tabela B (direita). Ou seja, o que existe de comum entre A e B. Podemos escrever este JOIN da seguinte forma:</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> A <span class="kw">INNER</span> <span class="kw">JOIN</span> B <span class="kw">ON</span> A.chave <span class="op">=</span> B.chave</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><code>LEFT JOIN</code>: Esta consulta retorna todos os registros da tabela A (esquerda) e o que existir em comum com a tabela B (direita). O código fica da seguinte forma:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> A <span class="kw">LEFT</span> <span class="kw">JOIN</span> B <span class="kw">ON</span> A.chave <span class="op">=</span> B.chave</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><code>OUTER JOIN</code>: Este relacionamento é conhecido também como <code>FULL OUTER JOIN</code> ou <code>FULL JOIN</code>. Esta consulta retornará todos os registros das duas tabelas e juntando também os registros correspondentes entre as duas tabelas. O que for diferente nas duas tabelas ficara com o valor NULL. O código ficará da seguinte forma:</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> A <span class="kw">FULL</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> B <span class="kw">ON</span> A.chave <span class="op">=</span> B.chave</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="figuras/SQL_Joins.png" class="img-fluid"> <a href="https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins">Fonte da figura</a></p>
+</section>
+</section>
+<section id="principais-funções-usadas-em-sql" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="principais-funções-usadas-em-sql"><span class="header-section-number">3.5</span> Principais funções usadas em <code>SQL</code></h2>
+<p>Seguem algumas funções comumente usadas em <code>SQL</code>, lembre-se que cada versão e SGDB usa dialetos diferentes.</p>
+<p>Funções simples (mais comumente usadas):</p>
+<ul>
+<li><code>ABS(n)</code>: Devolve o valor absoluto de <code>n</code>.</li>
+<li><code>CEIL(n)</code>: Obtém o valor inteiro imediatamente superior ou igual a <code>n</code>.</li>
+<li><code>FLOOT(n)</code>: Devolve o valor inteiro imediatamente inferior ou igual a <code>n</code>.</li>
+<li><code>MOD(m, n)</code>: Devolve o resto resultante de dividir <code>m</code> entre <code>n</code>.</li>
+<li><code>POWER(m, exponente)</code>: Calcula a potência de um número.</li>
+<li><code>ROUND(número [, m])</code>: Arredonda números com o número de dígitos de precisão indicados.</li>
+<li><code>SIGN(valor)</code>: Indica o sinal do <code>valor</code>.</li>
+<li><code>SQRT(n)</code>: Devolve a raiz quadrada de <code>n</code>.</li>
+<li><code>TRUNC(número, [m])</code>: Trunca números para que tenham uma certa quantidade de dígitos de precisão.</li>
+</ul>
+<p>Funções Agregadas :</p>
+<ul>
+<li><code>COUNT ( * | Expressão)</code>: Conta o número de ocorrências (A opção “*” conta todos os registros selecionados).</li>
+<li><code>AVG (n)</code>: Calcula o valor médio de <code>n</code> ignorando os valores nulos.</li>
+<li><code>MAX (expressão)</code>: Calcula o máximo.</li>
+<li><code>MIN (expressão)</code>: Calcula o mínimo.</li>
+<li><code>SUM (expressão)</code>: Obtém a soma dos valores da expressão (se houver <code>NULL</code> retorna <code>NULL</code>).</li>
+<li><code>TOTAL (expressão)</code>: soma ignorando <code>NULL</code>.</li>
+</ul>
+<p>Funções de caracteres:</p>
+<ul>
+<li><code>CONCAT (str1, str2)</code>: Devolve “str1” concatenada com “str2”.</li>
+<li><code>LOWER (str)</code>: Devolve a string em minúsculas.</li>
+<li><code>UPPER (str)</code>: Devolve a string em maiúsculas.</li>
+<li><code>SUBSTR (str, m [,n])</code>: Obtém parte de uma string.</li>
+<li><code>LENGTH (str)</code>: Devolve o número de caracteres de str.</li>
+<li><code>REPLACE (str, cadeia_busca [, cadeia_substituição])</code>: Substitui um caractere ou caracteres de uma cadeia com 0 ou mais caracteres.</li>
+</ul>
+<p>Funções de datas:</p>
+<ul>
+<li><code>DATE()</code>: Retorna a data ou transforma em data.</li>
+<li><code>TIME()</code>: Retorna tempo.</li>
+<li><code>STRFTIME(fmt, data)</code>: Formata a data.</li>
+</ul>
+<p>Exemplos:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">from</span> Estados;</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> now() ; </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">round</span>(<span class="fl">355.0</span> <span class="op">/</span> <span class="fl">113.0</span>,<span class="dv">6</span>) ;  <span class="co">-- que número é esse? Teste sem o .0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="meu-raid" style="color:black;background-color:rgb(101, 236, 11);font-size: 100%; padding: 15px; border-radius: 10px;">
+<p>Para saber mais sobre os tipos de dados e funções do duckDB consulte o <a href="https://duckdb.org/docs/stable/">Documentação online do duckDB</a>.</p>
+</div>
+</section>
+<section id="exercícios-e-prática" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="exercícios-e-prática"><span class="header-section-number">3.6</span> Exercícios e prática</h2>
+<p>Usando o duckDB (<a href="./anexo1.html">instalação feita aqui</a>), faça os exercícios a seguir.</p>
+<p>Crie a tabela <code>pessoas</code>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Criar tabela pessoas</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pessoas (</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    cpf BIGINT <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    nome <span class="dt">VARCHAR</span>(<span class="dv">100</span>),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    idade <span class="dt">INT</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    sexo <span class="dt">VARCHAR</span>(<span class="dv">10</span>),</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    telefone <span class="dt">VARCHAR</span>(<span class="dv">20</span>),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    uf <span class="dt">int</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Insira dados na tabela <code>pessoas</code>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Inserir dados de pessoas </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> pessoas (cpf, nome, idade, sexo, telefone,uf)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">12345678901</span>, <span class="st">'João Silva'</span>, <span class="dv">35</span>, <span class="st">'Masculino'</span>, <span class="st">'(21) 98765-4321'</span>,<span class="dv">33</span>),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">23456789012</span>, <span class="st">'Maria Oliveira'</span>, <span class="dv">28</span>, <span class="st">'Feminino'</span>, <span class="st">'(21) 99565-0987'</span>,<span class="dv">33</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">34567890123</span>, <span class="st">'Pedro Almeida'</span>, <span class="dv">42</span>, <span class="st">'Masculino'</span>, <span class="st">'(31) 78765-4323'</span>, <span class="dv">31</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>(<span class="dv">45678901234</span>, <span class="st">'Ana Costa'</span>, <span class="dv">31</span>, <span class="st">'Feminino'</span>, <span class="st">'(11) 98765-4324'</span>,<span class="dv">35</span>),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>(<span class="dv">56789012345</span>, <span class="st">'Lucas Ferreira'</span>, <span class="dv">25</span>, <span class="st">'Masculino'</span>, <span class="st">'(21) 98765-4325'</span>,<span class="dv">31</span>),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>(<span class="dv">67890123456</span>, <span class="st">'Julia Santos'</span>, <span class="dv">29</span>, <span class="st">'Feminino'</span>, <span class="st">'(22) 98765-4326'</span>,<span class="dv">32</span>),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>(<span class="dv">78901234567</span>, <span class="st">'Ricardo Lima'</span>, <span class="dv">50</span>, <span class="st">'Masculino'</span>, <span class="st">'(11) 98765-4327'</span>,<span class="dv">35</span>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>(<span class="dv">89012345678</span>, <span class="st">'Fernanda Souza'</span>, <span class="dv">33</span>, <span class="st">'Feminino'</span>, <span class="st">'(65) 98765-4328'</span>, <span class="dv">52</span>),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>(<span class="dv">90123456789</span>, <span class="st">'Mateus Pereira'</span>, <span class="dv">40</span>, <span class="st">'Masculino'</span>, <span class="st">'(21) 98765-4329'</span>,<span class="dv">33</span>),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>(<span class="dv">10234567890</span>, <span class="st">'Isabela Lima'</span>, <span class="dv">27</span>, <span class="st">'Feminino'</span>, <span class="st">'(68) 98765-4330'</span>,<span class="dv">11</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Crie a tabela <code>estados</code>:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> estados (</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    uf <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    sigla <span class="dt">VARCHAR</span>(<span class="dv">2</span>),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    nome <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    regiao <span class="dt">VARCHAR</span>(<span class="dv">20</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Insira dados na tabela <code>estados</code>:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> estados (uf,sigla,nome,regiao)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>(<span class="dv">12</span>,<span class="st">'AC'</span>,<span class="st">'Acre'</span>,<span class="st">'Norte'</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">13</span>,<span class="st">'AM'</span>,<span class="st">'Amazonas'</span>,<span class="st">'Norte'</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">14</span>,<span class="st">'RR'</span>,<span class="st">'Roraima'</span>,<span class="st">'Norte'</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">15</span>,<span class="st">'PA'</span>,<span class="st">'Pará'</span>,<span class="st">'Norte'</span>),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>(<span class="dv">16</span>,<span class="st">'AP'</span>,<span class="st">'Amapá'</span>,<span class="st">'Norte'</span>),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>(<span class="dv">17</span>,<span class="st">'TO'</span>,<span class="st">'Tocantins'</span>,<span class="st">'Norte'</span>),</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>(<span class="dv">21</span>,<span class="st">'MA'</span>,<span class="st">'Maranhão'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>(<span class="dv">22</span>,<span class="st">'PI'</span>,<span class="st">'Piauí'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>(<span class="dv">23</span>,<span class="st">'CE'</span>,<span class="st">'Ceará'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>(<span class="dv">24</span>,<span class="st">'RN'</span>,<span class="st">'Rio Grande do Norte'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>(<span class="dv">25</span>,<span class="st">'PB'</span>,<span class="st">'Paraíba'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>(<span class="dv">26</span>,<span class="st">'PE'</span>,<span class="st">'Pernambuco'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>(<span class="dv">27</span>,<span class="st">'AL'</span>,<span class="st">'Alagoas'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>(<span class="dv">28</span>,<span class="st">'SE'</span>,<span class="st">'Sergipe'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>(<span class="dv">29</span>,<span class="st">'BA'</span>,<span class="st">'Bahia'</span>,<span class="st">'Nordeste'</span>),</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>(<span class="dv">31</span>,<span class="st">'MG'</span>,<span class="st">'Minas Gerais'</span>,<span class="st">'Sudeste'</span>),</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>(<span class="dv">32</span>,<span class="st">'ES'</span>,<span class="st">'Espírito Santo'</span>,<span class="st">'Sudeste'</span>),</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>(<span class="dv">33</span>,<span class="st">'RJ'</span>,<span class="st">'Rio de Janeiro'</span>,<span class="st">'Sudeste'</span>),</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>(<span class="dv">35</span>,<span class="st">'SP'</span>,<span class="st">'São Paulo'</span>,<span class="st">'Sudeste'</span>),</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>(<span class="dv">41</span>,<span class="st">'PR'</span>,<span class="st">'Paraná'</span>,<span class="st">'Sul'</span>),</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>(<span class="dv">42</span>,<span class="st">'SC'</span>,<span class="st">'Santa Catarina'</span>,<span class="st">'Sul'</span>),</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>(<span class="dv">43</span>,<span class="st">'RS'</span>,<span class="st">'Rio Grande do Sul'</span>,<span class="st">'Sul'</span>),</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>(<span class="dv">50</span>,<span class="st">'MS'</span>,<span class="st">'Mato Grosso do Sul'</span>,<span class="st">'Centro-Oeste'</span>),</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>(<span class="dv">51</span>,<span class="st">'MT'</span>,<span class="st">'Mato Grosso'</span>,<span class="st">'Centro-Oeste'</span>),</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>(<span class="dv">52</span>,<span class="st">'GO'</span>,<span class="st">'Goiás'</span>,<span class="st">'Centro-Oeste'</span>),</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>(<span class="dv">53</span>,<span class="st">'DF'</span>,<span class="st">'Distrito Federal'</span>,<span class="st">'Centro-Oeste'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Siga os passos abaixo:</p>
+<ol type="1">
+<li><p>Certifique-se que as tabelas foram criadas listando o conteúdo de cada uma delas (dica: use <code>SELECT</code>).</p></li>
+<li><p>Insira mais um registro a tabela <code>pessoas</code> usando o comando abaixo:</p></li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">insert</span> <span class="kw">into</span> pessoas <span class="kw">values</span> (<span class="dv">53565635794</span>, <span class="st">'Joana da Silva'</span>, <span class="dv">33</span>, <span class="st">'Feminino'</span>, <span class="st">''</span>, <span class="kw">NULL</span>) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>O registro foi inserido?</li>
+<li><code>NULL</code> é igual a ’’ ?</li>
+<li>Qual é a idade média das pessoas?</li>
+</ul>
+<ol start="3" type="1">
+<li>Em seguida, vamos adicionar mais um registro:</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">insert</span> <span class="kw">into</span> pessoas <span class="kw">values</span> (<span class="dv">78901234567</span>, <span class="st">'Carlos Valente'</span>,<span class="dv">53</span>,<span class="st">'Masculino'</span>,<span class="st">'(21)9765-4320'</span>,<span class="dv">26</span>) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>O registro foi inserido?</li>
+<li>Em caso negativo, alguma ideia do motivo ?</li>
+<li>Que campo você deve modificar para poder incluir esse registro?</li>
+</ul>
+<ol start="4" type="1">
+<li>Você quer saber qual a frequência por <code>sexo</code> na tabela <code>pessoas</code> e usou o código abaixo:</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> sexo, <span class="fu">count</span>(sexo) <span class="kw">from</span> pessoas </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Funcionou? (lembre-se do terminador)</li>
+<li>Funcionou quando adicionou o ‘;’ ? (dica: leia as mensagens de erro com atenção)</li>
+</ul>
+<ol start="5" type="1">
+<li>Faça um join entre as tabelas <code>pessoas</code> e <code>estados</code>.</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pessoas </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">left</span> <span class="kw">join</span> estados <span class="kw">on</span> pessoas.uf <span class="op">=</span> estados.uf ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Por que a Isabela Lima e a Joana da Silva ficaram sem UF?</li>
+</ul>
+<ol start="6" type="1">
+<li>Faça agora um <code>INNER JOIN</code> e responda o que muda em relação ao <code>left join</code>.</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pessoas </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">inner</span> <span class="kw">join</span> estados <span class="kw">on</span> pessoas.uf <span class="op">=</span> estados.uf ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Vamos corrigir os problemas nas nossas tabelas:
+<ol type="a">
+<li>Insira na tabela estados uma linha para Rondônia (RO) que tem o código 11 e está na região norte.</li>
+<li>Modifique o registo de Joana da Silva para a UF 29 (lembre-se de usar <code>where</code> para especificar o que vai ser alterado).</li>
+</ol></li>
+</ol>
+<p>Selecione com o mouse para ver a resposta no box abaixo!</p>
+<div class="meu-resp" style="color:yellow;background-color:yellow;font-size: 100%; padding: 15px; border-radius: 10px;">
+<ol type="a">
+<li><p>INSERT INTO estados VALUES (11,‘RO’,‘Rondônia’,‘Norte’) ;</p></li>
+<li><p>UPDATE pessoas set uf = 29 where cpf = ‘53565635794’;</p></li>
+</ol>
+</div>
+<p>Agora que nosso dado está devidamente corrigido, vamos criar uma nova tabela chama <code>pessoa_uf</code> que recebe os dados unidos de ambas as tabelas.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">or</span> <span class="kw">replace</span> <span class="kw">table</span> pessoa_uf <span class="kw">as</span> (</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pessoas <span class="kw">as</span> p </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">left</span> <span class="kw">join</span> estados <span class="kw">as</span> e <span class="kw">on</span> p.uf <span class="op">=</span> e.uf );</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Aqui poderíamos usar o INNER JOIN pois ficariam iguais!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aqui um exemplo de como qualquer tabela pode ser facilmente exportada para csv (neste caso csv2, com delimitador <strong>“;”</strong> , o default é <strong>,</strong> .</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> pessoa_uf <span class="kw">TO</span> <span class="st">'pessoas.csv'</span> (<span class="kw">HEADER</span>, DELIMITER <span class="st">';'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="importando-arquivos-remotos" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="importando-arquivos-remotos"><span class="header-section-number">3.6.1</span> Importando arquivos remotos</h3>
+<section id="importando-csv-com-a-população-do-tcu-de-2024" class="level4" data-number="3.6.1.1">
+<h4 data-number="3.6.1.1" class="anchored" data-anchor-id="importando-csv-com-a-população-do-tcu-de-2024"><span class="header-section-number">3.6.1.1</span> Importando CSV com a população do TCU de 2024</h4>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- lendo a população do TCU por muni do github</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> tcu <span class="kw">as</span> (</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="st">'https://raw.githubusercontent.com/ogcruz/curso_DS2025/refs/heads/main/sql/poptcu_2024.csv'</span>) ; </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- cria a a coluna numérica UF </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">or</span> <span class="kw">replace</span> <span class="kw">table</span> tcu <span class="kw">as</span> (</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="fu">substr</span>(MUNI_RES:<span class="ch">:CHAR</span>,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> uf,<span class="op">*</span>, <span class="kw">from</span> tcu) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- soma a população por UF</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> pop_tcu <span class="kw">as</span> (</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> uf,<span class="fu">sum</span>(POPULACAO) <span class="kw">as</span> pop2024 <span class="kw">from</span> tcu <span class="kw">group</span> <span class="kw">by</span> uf <span class="kw">order</span> <span class="kw">by</span> pop2024 <span class="kw">desc</span> ) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- atualiza a tabela estados com a pop do TCU de 2024</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> estados <span class="kw">as</span> (</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span>  <span class="kw">from</span> estados e </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="kw">left</span> <span class="kw">join</span> pop_tcu p <span class="kw">on</span> e.uf <span class="op">=</span> p.uf </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> e.uf ) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="importando-um-parquet-com-esus-do-rj-de-2020" class="level4" data-number="3.6.1.2">
+<h4 data-number="3.6.1.2" class="anchored" data-anchor-id="importando-um-parquet-com-esus-do-rj-de-2020"><span class="header-section-number">3.6.1.2</span> Importando um parquet com ESUS do RJ de 2020</h4>
+<p>Vamos importar um arquivo paquet com cerca de ~2.56 milhões de registos direto da nuvem da Fiocruz. O tamanho do arquivo em CSV é de cerca de 900MB, já em parquet 140MB (15% do CSV).</p>
+<div class="meu-raid" style="color:black;background-color:rgb(101, 236, 11);font-size: 100%; padding: 15px; border-radius: 10px;">
+<p><strong>Parquet</strong> é um formato de armazenamento <strong>colunar</strong> , amplamente utilizado em ecossistemas de big data por ser muito eficiente tanto na leitura quanto na escrita, suporta diferentes algoritmos de compressão de dados e é altamente portável é suportado por ferramentas de Big Data e também em Python, R, Julia, DuckDB entre outros.</p>
+</div>
+<p>Para ler arquivos externos em geral o duckDB já vem com a extensão httpfs pré-instaladas por default</p>
+<p>Essa extensão é a responsável por ler e escrever remotamente, ela dá suporte a leitura por <strong>http</strong> e <strong>https</strong> e leitura e escrita usando <strong>S3</strong> (protocolo da Amazon Clould)</p>
+<p>Caso você tenha algum problema aqui está o código para instalar, mas não deve ser necessário fazer essa instalação.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>INSTALL httpfs;</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>LOAD httpfs;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Antes de começar um projeto maior no duckDB é recomendável ajustar o tamanho da memória e número de núcleos da CPU que o duckDB poderá usar.</p>
+<p>Você deve ajustar esses parâmetros conforme a quantidade de RAM do seu sistema e a quantidade de núcleos (cores) da sua CPU. Nas CPU modernas um núcleo roda 2 tarefas (Threads) por núcleo. Para a quantidade de memoria um parâmetro 4GB é razoável, mas a depender do dado pode ser necessário aumentar esse valor. Já para a CPU aposta segura é que toda a maquina é no mínimo um dual core atualmente.</p>
+<p>Mas lembre-se que se você for usar também o R ou alguma outra linguagem / ‘software’ simultaneamente você deve ajustar esses valores.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> memory_limit <span class="op">=</span> <span class="st">'4GB'</span>; <span class="co">-- ajuste de acordo </span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> threads <span class="kw">TO</span> <span class="dv">4</span>; <span class="co">-- toda cpu moderna tem no minimo 4 threads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> esus <span class="kw">as</span> (</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span>  <span class="op">*</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="st">'https://own.procc.fiocruz.br/DS2025/esus_rj.parquet'</span> </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>); </span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- cerca de 15 segundos </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>DESCRIBE esus ; </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note que a maioria das variáveis foi importada como VARCHAR somente index e testeSorologico são inteiros e idade é um double</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> esus <span class="kw">limit</span> <span class="dv">100</span>; </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="limpando-a-tabela-do-esus" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="limpando-a-tabela-do-esus"><span class="header-section-number">3.6.2</span> Limpando a tabela do ESUS</h3>
+<p>Vamos proceder algumas transformações para transformar os campos <strong>dataNotificacao, dataInicioSintomas e dataTeste</strong> de texto para data. Repare que eles são, na verdade, do tipo <em>timestamps</em> assim temos de fazer uma dupla transformação, de texto para <em>timestamp</em> e depois de <em>timestamp</em> para <em>date</em>. Vamos aproveitar e colocar um filtro de data de primeiro sintomas maior ou igual a 1 de março de 2020 e salvar em uma tabela <strong>esus2</strong>.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">or</span> <span class="kw">replace</span> <span class="kw">table</span> esus2 <span class="kw">as</span> ( </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span>  <span class="kw">index</span>, </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cast</span>(dataNotificacao:<span class="ch">:TIMESTAMP</span> <span class="kw">as</span> <span class="dt">date</span>) <span class="kw">as</span> dt_not , <span class="co">--converte pra data</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cast</span>(dataInicioSintomas:<span class="ch">:TIMESTAMP</span> <span class="kw">as</span> <span class="dt">date</span>) <span class="kw">as</span> dt_sint,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cast</span>(dataTeste:<span class="ch">:TIMESTAMP</span> <span class="kw">as</span> <span class="dt">date</span>) <span class="kw">as</span> dt_test,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">*</span> EXCLUDE (dataNotificacao,dataInicioSintomas,dataTeste,index_1) <span class="co">--não há virgula!!!</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">from</span> esus <span class="kw">where</span> dt_sint <span class="op">&gt;=</span> <span class="st">'2020-03-01'</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        ) ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos visualizar a nova tabela usando o comando <strong>select …</strong> como já fizemos antes no, entretanto existe um atalho para isso. use o painel a direita do duckDB UI para explorar a nova tabela.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> esus2;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="listando" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="listando"><span class="header-section-number">3.6.3</span> Listando</h3>
+<p>Como fazer uma listagem dos nomes dos município do estado do Rio de Janeiro que constam da tabela esus2 ?</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="kw">distinct</span> municipio </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> esus2 </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> estado <span class="op">=</span> <span class="st">'RIO DE JANEIRO'</span> </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> municipio;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note que no comando acima temo o uso do <strong><code>DISTINCT</code></strong> é usado para <strong>eliminar registros duplicados</strong> de um resultado da consulta. O uso de <code>DISTINCT</code> pode impactar a performance, especialmente em tabelas grandes, pois o SQL precisa ordenar e remover duplicados.</p>
+<p>caso eu queira saber quantos são:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="fu">count</span>(<span class="kw">distinct</span> municipio) </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> esus2;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="exemplos-de-tabulações" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="exemplos-de-tabulações"><span class="header-section-number">3.7</span> Exemplos de tabulações</h2>
+<section id="tabulações-simples" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="tabulações-simples"><span class="header-section-number">3.7.1</span> Tabulações simples</h3>
+<p>Tabulações simples podem ser obtidas usando alguma função de agregação como <em>count</em>,<em>sum</em>,<em>avg</em> e combinadas com <code>group by</code> e <code>order by</code></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> racaCor,<span class="fu">count</span>(racaCor) <span class="kw">as</span> freq</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> esus2</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="kw">group</span> <span class="kw">by</span> racaCor </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> freq <span class="kw">desc</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tabulações-avançadas" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="tabulações-avançadas"><span class="header-section-number">3.7.2</span> Tabulações avançadas</h3>
+<p>Tabulações avançadas como tabelas cruzadas necessitam de códigos mais complexos usando <code>CASE WHEN</code> , <code>PIVOT</code> , <code>WITH</code> , subquery etc…</p>
+<p>Abaixo um exemplo geral de como fazer uma tabela cruzada num SQL qualquer(a versão ISO-92 foi uma das grandes revisões, a mais atual é a ISO-2023).</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    classificacaoFinal,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Masculino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Masculino,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Feminino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Feminino,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    Masculino<span class="op">+</span>Feminino <span class="kw">as</span> Total</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> esus2</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dv">2</span> ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Usando o dialeto SQL do duckDB (o PostgreSQL é 98% semelhante ) podemos usar o comando <strong>PIVOT</strong> que reorganiza dados de uma tabela, transformando valores de uma coluna em nomes de colunas e aplicando uma função de agregação para calcular os valores correspondentes.</p>
+<p>No uso a seguir não temos a categoria <code>Total</code> que teria de ser implementada de outra forma. Por outro lado, o comando é mais enxuto e objetivo.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> (</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> classificacaoFinal, sexo</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> esus2</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>) PIVOT (<span class="fu">COUNT</span>(<span class="op">*</span>) <span class="cf">FOR</span> sexo <span class="kw">IN</span> (<span class="st">'Masculino'</span>, <span class="st">'Feminino'</span>))</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dv">2</span> ;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>E se quiséssemos adicionar uma linha final totalizando todas as classificações?</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Total'</span> <span class="kw">AS</span> classificacaoFinal,</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Masculino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Masculino,</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Feminino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Feminino,</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    Masculino <span class="op">+</span> Feminino <span class="kw">AS</span> Total</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> esus2</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span>   Total</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>E como colocar tudo isso junto numa mesma query?</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    classificacaoFinal,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Masculino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Masculino,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Feminino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Feminino,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>     Masculino <span class="op">+</span> Feminino <span class="kw">AS</span> Total</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> esus2</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="kw">UNION</span> <span class="kw">ALL</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Total'</span> <span class="kw">AS</span> classificacaoFinal,</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Masculino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Masculino,</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sexo <span class="op">=</span> <span class="st">'Feminino'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> Feminino,</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    Masculino <span class="op">+</span> Feminino <span class="kw">AS</span> Total</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> esus2</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span>   Total</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se você fez tudo corretamente deve chegar a uma tabela como essa:</p>
+<p><img src="figuras/result_crosstab.png" class="img-fluid"></p>
+<section id="common-table-expression-cte" class="level4" data-number="3.7.2.1">
+<h4 data-number="3.7.2.1" class="anchored" data-anchor-id="common-table-expression-cte"><span class="header-section-number">3.7.2.1</span> <strong>Common Table Expression (CTE)</strong></h4>
+<p>Uma CTE é uma subconsulta que pode ser nomeada e usada dentro de uma consulta SQL subsequente. Ela é definida com a cláusula <code>WITH</code> e serve para organizar e simplificar consultas complexas, tornando o código mais legível e fácil de manter.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> filtro_obito <span class="kw">as</span> (</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">select</span> <span class="op">*</span> </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">from</span> esus2</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">where</span> evolucaoCaso <span class="op">=</span> <span class="st">'Óbito'</span> <span class="kw">and</span> regexp_matches(classificacaoFinal,<span class="st">'^Confirmado'</span>,<span class="st">'i'</span>) </span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> sexo, </span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">as</span> freq , </span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ROUND</span>((freq <span class="op">*</span> <span class="fl">100.0</span> <span class="op">/</span> (<span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FROM</span> filtro_obito )), <span class="dv">2</span>) <span class="kw">AS</span> percentual </span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> filtro_obito </span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="kw">group</span> <span class="kw">by</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note o uso de uma das funções de expressão regular (<em>regexp_matches</em>) para selecionar todos que começam pela palavra “Confirmado” . Existem muitas funções que lidam com textos e o uso delas em especial das expressões regulares nos possibilita uma enorme gama de soluções rápidas e simples.</p>
+<p>Vamos ver mais sobre esse assunto na próxima aula.</p>
+</section>
+</section>
+</section>
+<section id="conclusão" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">3.8</span> Conclusão</h2>
+<div class="meu-raid" style="color:black;background-color:rgb(101, 236, 11);font-size: 100%; padding: 15px; border-radius: 10px;">
+<p><strong>Conclusões da aula de SQL</strong></p>
+<p>Esses são apenas os primeiros passos no SQL há muito mais a ser aprendido como vocês viram ele é flexível e relativamente simples ainda que tenhamos de escrever um código um tanto mais longo se comparado ao <strong>R</strong>.</p>
+<ul>
+<li><p>SQL é <strong>linguagem nativa para manipulação e consulta de dados em bancos relacionais</strong>, enquanto R e Python são linguagens gerais</p></li>
+<li><p>SQL é <strong>otimizado para consultas em grandes volumes de dados</strong> armazenados em bancos, com suporte a <strong>índices, otimização de consultas e ACID</strong> (atomicidade, consistência, isolamento, duração).</p></li>
+<li><p>SQL é padrão para interagir com bancos de dados, facilitando a manipulação de dados diretamente no armazenamento, sem precisar carregar todos os dados em memória (como em R/Python)</p></li>
+<li><p>SQL é mais eficiente para <strong>consultas distribuídas</strong> (ex: clusters, bancos em nuvem)</p></li>
+</ul>
+<p><strong>Onde aprender mais sobre SQL</strong>:</p>
+<p>Existem muitos tutoriais em plataformas de cursos (a maioria não é gratuita) , livros, capítulos de livros , apostilas e vídeos no youtube.</p>
+<p>Abaixo alguns recursos gratuitos:</p>
+<ul>
+<li><a href="https://www.w3schools.com/sql/">Tutorial online W3 - com exercícios interativos</a></li>
+<li><a href="https://www.tutorialspoint.com/sql/sql_tutorial.pdf">SQL Tutorial in PDF</a></li>
+<li><a href="https://duckdb.org/docs/stable/">Documentação online do duckDB</a></li>
+</ul>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

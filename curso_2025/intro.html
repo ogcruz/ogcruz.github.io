@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao SQL &amp; Banco de Dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -146,17 +146,33 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Conteúdo</h2>
    
+  <ul>
+  <li><a href="#o-que-é-ciência-de-dados" id="toc-o-que-é-ciência-de-dados" class="nav-link active" data-scroll-target="#o-que-é-ciência-de-dados"><span class="header-section-number">1.1</span> O que é Ciência de Dados?</a>
   <ul class="collapse">
-  <li><a href="#o-que-é-ciência-de-dados" id="toc-o-que-é-ciência-de-dados" class="nav-link active" data-scroll-target="#o-que-é-ciência-de-dados"><span class="header-section-number">1.1</span> O que é Ciência de Dados?</a></li>
+  <li><a href="#e-na-epidemiologia" id="toc-e-na-epidemiologia" class="nav-link" data-scroll-target="#e-na-epidemiologia"><span class="header-section-number">1.1.1</span> E na epidemiologia?</a></li>
+  </ul></li>
   <li><a href="#o-que-é-pipeline-de-dados" id="toc-o-que-é-pipeline-de-dados" class="nav-link" data-scroll-target="#o-que-é-pipeline-de-dados"><span class="header-section-number">1.2</span> O que é Pipeline de Dados?</a></li>
   <li><a href="#kdd" id="toc-kdd" class="nav-link" data-scroll-target="#kdd"><span class="header-section-number">1.3</span> KDD</a></li>
-  <li><a href="#infraestrutura-necessária-para-ciência-de-dados" id="toc-infraestrutura-necessária-para-ciência-de-dados" class="nav-link" data-scroll-target="#infraestrutura-necessária-para-ciência-de-dados"><span class="header-section-number">1.4</span> Infraestrutura Necessária para Ciência de Dados</a></li>
+  <li><a href="#infraestrutura-necessária-para-ciência-de-dados" id="toc-infraestrutura-necessária-para-ciência-de-dados" class="nav-link" data-scroll-target="#infraestrutura-necessária-para-ciência-de-dados"><span class="header-section-number">1.4</span> Infraestrutura Necessária para Ciência de Dados</a>
+  <ul class="collapse">
+  <li><a href="#componentes-principais-de-um-data-center" id="toc-componentes-principais-de-um-data-center" class="nav-link" data-scroll-target="#componentes-principais-de-um-data-center"><span class="header-section-number">1.4.1</span> Componentes Principais de um Data Center</a></li>
+  <li><a href="#centro-de-dados-no-local-on-premise-vs-nuvem-cloud" id="toc-centro-de-dados-no-local-on-premise-vs-nuvem-cloud" class="nav-link" data-scroll-target="#centro-de-dados-no-local-on-premise-vs-nuvem-cloud"><span class="header-section-number">1.4.2</span> Centro de Dados no Local (On-Premise) vs Nuvem (Cloud)</a></li>
+  <li><a href="#como-se-parece-um-pequeno-data-center-local." id="toc-como-se-parece-um-pequeno-data-center-local." class="nav-link" data-scroll-target="#como-se-parece-um-pequeno-data-center-local."><span class="header-section-number">1.4.3</span> Como se parece um pequeno data center local.</a></li>
+  </ul></li>
   <li><a href="#principais-softwares-e-linguagens-de-programação-utilizadas-na-ciência-de-dados" id="toc-principais-softwares-e-linguagens-de-programação-utilizadas-na-ciência-de-dados" class="nav-link" data-scroll-target="#principais-softwares-e-linguagens-de-programação-utilizadas-na-ciência-de-dados"><span class="header-section-number">1.5</span> Principais softwares e linguagens de programação utilizadas na Ciência de Dados</a></li>
   <li><a href="#principais-ides-em-ciência-de-dados" id="toc-principais-ides-em-ciência-de-dados" class="nav-link" data-scroll-target="#principais-ides-em-ciência-de-dados"><span class="header-section-number">1.6</span> Principais IDEs em Ciência de Dados</a></li>
   <li><a href="#bases-de-dados-armazenando-informações" id="toc-bases-de-dados-armazenando-informações" class="nav-link" data-scroll-target="#bases-de-dados-armazenando-informações"><span class="header-section-number">1.7</span> Bases de Dados: Armazenando Informações</a></li>
   <li><a href="#sgbd" id="toc-sgbd" class="nav-link" data-scroll-target="#sgbd"><span class="header-section-number">1.8</span> SGBD</a></li>
-  <li><a href="#big-data-os-3vs-e-banco-de-dados" id="toc-big-data-os-3vs-e-banco-de-dados" class="nav-link" data-scroll-target="#big-data-os-3vs-e-banco-de-dados"><span class="header-section-number">1.9</span> Big Data os 3Vs e Banco de dados</a></li>
-  <li><a href="#resultadosaplicações" id="toc-resultadosaplicações" class="nav-link" data-scroll-target="#resultadosaplicações"><span class="header-section-number">1.10</span> Resultados/Aplicações</a></li>
+  <li><a href="#big-data-os-3vs-e-banco-de-dados" id="toc-big-data-os-3vs-e-banco-de-dados" class="nav-link" data-scroll-target="#big-data-os-3vs-e-banco-de-dados"><span class="header-section-number">1.9</span> Big Data os 3Vs e Banco de dados</a>
+  <ul class="collapse">
+  <li><a href="#quanto-é-um-grande-volume" id="toc-quanto-é-um-grande-volume" class="nav-link" data-scroll-target="#quanto-é-um-grande-volume"><span class="header-section-number">1.9.1</span> Quanto é um grande volume?</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">1.9.2</span> </a></li>
+  </ul></li>
+  <li><a href="#resultadosaplicações" id="toc-resultadosaplicações" class="nav-link" data-scroll-target="#resultadosaplicações"><span class="header-section-number">1.10</span> Resultados/Aplicações</a>
+  <ul class="collapse">
+  <li><a href="#o-que-tem-sido-publicado" id="toc-o-que-tem-sido-publicado" class="nav-link" data-scroll-target="#o-que-tem-sido-publicado"><span class="header-section-number">1.10.1</span> o que tem sido publicado?</a></li>
+  <li><a href="#tese-mineração-de-dados-na-identificação-de-padrões-de-mortalidade-no-brasil-de-1979-a-2013" id="toc-tese-mineração-de-dados-na-identificação-de-padrões-de-mortalidade-no-brasil-de-1979-a-2013" class="nav-link" data-scroll-target="#tese-mineração-de-dados-na-identificação-de-padrões-de-mortalidade-no-brasil-de-1979-a-2013"><span class="header-section-number">1.10.2</span> Tese Mineração de dados na identificação de padrões de mortalidade no Brasil de 1979 a 2013:</a></li>
+  </ul></li>
   <li><a href="#considerações-finais" id="toc-considerações-finais" class="nav-link" data-scroll-target="#considerações-finais"><span class="header-section-number">1.11</span> Considerações finais</a></li>
   </ul>
 </nav>
@@ -911,8 +927,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sql.html" class="pagination-link" aria-label="Introdução ao SQL &amp; Banco de Dados">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao SQL &amp; Banco de Dados</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sql.html" class="pagination-link" aria-label="Banco de Dados &amp; SQL">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
