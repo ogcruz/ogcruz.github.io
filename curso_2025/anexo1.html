@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./anexo_xml_json.html" rel="next">
 <link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -121,7 +122,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introdução ao SQL &amp; Banco de Dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tidy_import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Importando e arrumando os dados</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -136,13 +143,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Anexo 1 - Instalando o duckdb</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./anexo_xml_json.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">XML</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#principais-características" id="toc-principais-características" class="nav-link active" data-scroll-target="#principais-características">Principais Características</a></li>
+  <li><a href="#como-instalar-no-linux-e-mac" id="toc-como-instalar-no-linux-e-mac" class="nav-link" data-scroll-target="#como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</a></li>
+  <li><a href="#como-instalar-no-windows-1011" id="toc-como-instalar-no-windows-1011" class="nav-link" data-scroll-target="#como-instalar-no-windows-1011">Como instalar no Windows 10/11</a></li>
+  <li><a href="#passo-a-passo" id="toc-passo-a-passo" class="nav-link" data-scroll-target="#passo-a-passo">Passo a Passo</a></li>
+  <li><a href="#duckdb-online" id="toc-duckdb-online" class="nav-link" data-scroll-target="#duckdb-online">duckDB online</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -167,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><img src="figuras/DuckDB_Logo.png" class="img-fluid"></p>
-<p>O duckDB <a href="https://duckdb.org/">https://duckdb.org/</a> é um banco de dados do tipo OLAP de alto desempenho, de código aberto, desenvolvido para análise de dados em ambiente de memória (in-memory) e processamento de grandes volumes de dados com baixa latência e alta velocidade.</p>
+<p>O duckDB <a href="https://duckdb.org/" class="uri">https://duckdb.org/</a> é um banco de dados do tipo OLAP de alto desempenho, de código aberto, desenvolvido para análise de dados em ambiente de memória (in-memory) e processamento de grandes volumes de dados com baixa latência e alta velocidade.</p>
 <section id="principais-características" class="level3">
 <h3 class="anchored" data-anchor-id="principais-características">Principais Características</h3>
 <ol type="1">
@@ -228,6 +251,14 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="figuras/duck14.png" class="img-fluid"></p>
 <p>Clicando no botão azul “show me the basics” podemos testar o duckdb!</p>
 <p><img src="figuras/duck15.png" class="img-fluid"></p>
+</section>
+<section id="duckdb-online" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-online">duckDB online</h2>
+<p>Você também pode testar o duckdb online atraves desses dois sites abaixo:</p>
+<ul>
+<li><p><a href="https://sql-workbench.com/">SQL Workbench</a></p></li>
+<li><p><a href="https://shell.duckdb.org/">DuckDB Web Shell</a></p></li>
+</ul>
 
 
 </section>
@@ -639,6 +670,9 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./anexo_xml_json.html" class="pagination-link" aria-label="XML">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">XML</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
