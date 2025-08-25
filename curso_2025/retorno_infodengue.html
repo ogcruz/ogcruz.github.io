@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Anexo 1 - Instalando o duckdb – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
+<title>retorno_infodengue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,253 +23,134 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./anexo_xml_json.html" rel="next">
-<link href="./references.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3a901a7f3f9867c8ff05ae937ae4b75b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<script src="retorno_infodengue_files/libs/clipboard/clipboard.min.js"></script>
+<script src="retorno_infodengue_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="retorno_infodengue_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="retorno_infodengue_files/libs/quarto-html/popper.min.js"></script>
+<script src="retorno_infodengue_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="retorno_infodengue_files/libs/quarto-html/anchor.min.js"></script>
+<link href="retorno_infodengue_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="retorno_infodengue_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="retorno_infodengue_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="retorno_infodengue_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="retorno_infodengue_files/libs/bootstrap/bootstrap-77ddc7917352537df6a93a2dcbfca7fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="fullcontent quarto-light">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anexo1.html">Anexo 1 - Instalando o duckdb</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Ciência de Dados Aplicada à Epidemiologia - 2025</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Apresentação do Curso</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução à Ciência de Dados em Epidemiologia</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Banco de Dados &amp; SQL</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./tidy_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Importando e arrumando dados</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Referencias</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./anexo1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Anexo 1 - Instalando o duckdb</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./anexo_xml_json.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Anexo 2 - XML &amp; JSON</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./regex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Expressões Regulares</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#principais-características" id="toc-principais-características" class="nav-link active" data-scroll-target="#principais-características">Principais Características</a></li>
-  <li><a href="#como-instalar-no-linux-e-mac" id="toc-como-instalar-no-linux-e-mac" class="nav-link" data-scroll-target="#como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</a></li>
-  <li><a href="#como-instalar-no-windows-1011" id="toc-como-instalar-no-windows-1011" class="nav-link" data-scroll-target="#como-instalar-no-windows-1011">Como instalar no Windows 10/11</a></li>
-  <li><a href="#passo-a-passo" id="toc-passo-a-passo" class="nav-link" data-scroll-target="#passo-a-passo">Passo a Passo</a></li>
-  <li><a href="#duckdb-online" id="toc-duckdb-online" class="nav-link" data-scroll-target="#duckdb-online">duckDB online</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Anexo 1 - Instalando o duckdb</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><img src="figuras/DuckDB_Logo.png" class="img-fluid"></p>
-<p>O duckDB <a href="https://duckdb.org/" class="uri">https://duckdb.org/</a> é um banco de dados do tipo OLAP de alto desempenho, de código aberto, desenvolvido para análise de dados em ambiente de memória (in-memory) e processamento de grandes volumes de dados com baixa latência e alta velocidade.</p>
-<section id="principais-características" class="level3">
-<h3 class="anchored" data-anchor-id="principais-características">Principais Características</h3>
-<ol type="1">
-<li><p><strong>Rápido e eficiente:</strong></p>
-<ul>
-<li>O duckDB é extremamente rápido pois processa dados na memória e sem necessidade de escrever em disco. É ideal para análises interativas e queries complexas, rodando dezenas de vezes mais rápido que R ou python.</li>
-</ul></li>
-<li><p><strong>Fácil de usar:</strong></p>
-<ul>
-<li>Possui uma interface SQL, permitindo que usuários familiarizados com SQL possam usá-lo facilmente. Também pode ser usado diretamente em Python, R e Julia com bibliotecas de integração.</li>
-</ul></li>
-<li><p><strong>Lightweight e autônomo:</strong></p>
-<ul>
-<li>Não precisa de servidores, clusters ou instalações complexas. Pode rodar como uma biblioteca em Python, ou diretamente do pacote do R sem instalação de banco de dados dedicado.</li>
-</ul></li>
-<li><p><strong>Suporte a grandes volumes de dados:</strong></p>
-<p>Apesar de ser baseado em memória, o duckDB pode lidar com datasets muito grandes devido a sua otimização interna. Pode lidar com arquivos em disco sendo conteúdo deste é armazenado compactado, por exemplo, um CSV ou um DBF fica menos de 10% do valor original. Trabalha com arquivos modernos amplamente utilizados como parquet e json.</p></li>
-</ol>
+<section id="retorno-do-infodengue" class="level2">
+<h2 class="anchored" data-anchor-id="retorno-do-infodengue">Retorno do infodengue</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>variáveis</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>data_iniSE</strong></td>
+<td style="text-align: left;">data do inicio da semana epidemiológica</td>
+</tr>
+<tr class="even">
+<td><strong>SE</strong></td>
+<td style="text-align: left;">semana epidemiológica</td>
+</tr>
+<tr class="odd">
+<td><strong>casos_est</strong></td>
+<td style="text-align: left;">Numero de casos na semana estimado pelo nowcast (obs: casos são reestimados retrospectivamente)</td>
+</tr>
+<tr class="even">
+<td><strong>casos_est_min</strong></td>
+<td style="text-align: left;">numero mínimo de casos estimados com um intervalo de credibilidade de 95%</td>
+</tr>
+<tr class="odd">
+<td><strong>casos_est_max</strong></td>
+<td style="text-align: left;">numero máximo de casos estimados com um intervalo de credibilidade de 95%</td>
+</tr>
+<tr class="even">
+<td><strong>casos</strong></td>
+<td style="text-align: left;">Numero de casos reportados na semana (atualizados retrospectivamente)</td>
+</tr>
+<tr class="odd">
+<td><strong>p_rt1</strong></td>
+<td style="text-align: left;">Probabilidade do <strong>Rt</strong> &gt; 1 (usado para o alerta laranja quando esse valor é maior que 0.95 por 3 semanas ou mais)</td>
+</tr>
+<tr class="even">
+<td><strong>p_inc100k</strong></td>
+<td style="text-align: left;">Taxa de incidência estimada por 100.000</td>
+</tr>
+<tr class="odd">
+<td><strong>Localidade_id</strong></td>
+<td style="text-align: left;">Nível intra municipal (usado somente para o MRJ)</td>
+</tr>
+<tr class="even">
+<td><strong>nivel</strong></td>
+<td style="text-align: left;">Nível do alerta (1 = verde, 2 = amarelo, 3 = laranja, 4 = vermelho)</td>
+</tr>
+<tr class="odd">
+<td><strong>id</strong></td>
+<td style="text-align: left;">índice numérico</td>
+</tr>
+<tr class="even">
+<td><strong>versao_modelo</strong></td>
+<td style="text-align: left;">Versão do Modelo (uso interno )</td>
+</tr>
+<tr class="odd">
+<td><strong>tweet</strong></td>
+<td style="text-align: left;">Numero de mensagens mencionando sintomas de dengue fonte: Observatório dengue / UFMG</td>
+</tr>
+<tr class="even">
+<td><strong>Rt</strong></td>
+<td style="text-align: left;">Estimativa pontual do numero reprodutivo de casos (ver nota)</td>
+</tr>
+<tr class="odd">
+<td><strong>pop</strong></td>
+<td style="text-align: left;">população estimada (IBGE)</td>
+</tr>
+<tr class="even">
+<td><strong>tempmin</strong></td>
+<td style="text-align: left;">media da temperatura mínima diária durante a semana</td>
+</tr>
+<tr class="odd">
+<td><strong>umidmax</strong></td>
+<td style="text-align: left;">media umidade máxima diária durante a semana</td>
+</tr>
+<tr class="even">
+<td><strong>receptivo</strong></td>
+<td style="text-align: left;">receptividade climática , indica as condições ambientais para a reprodução vetorial onde: 0 = não favorável, 1 = favorável, 2 = favorável nessa semana e na anterior, 3 = favorável por 3 semanas (suficiente para um ciclo de transmissão vetorial)</td>
+</tr>
+<tr class="odd">
+<td><strong>transmissao</strong></td>
+<td style="text-align: left;">evidencia de transmissão sustentada: 0 = sem evidencia, 1 = possível, 2 = provável , 3 = altamente provável</td>
+</tr>
+<tr class="even">
+<td><strong>nivel_inc</strong></td>
+<td style="text-align: left;">Nível da Incidência : 0= Incidência estimada abaixo do nível pre-epidemico, 1 = acima de pre</td>
+</tr>
+<tr class="odd">
+<td><strong>notif_accum_year</strong></td>
+<td style="text-align: left;">numero de casos acumulados no ano</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="como-instalar-no-linux-e-mac" class="level3">
-<h3 class="anchored" data-anchor-id="como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</h3>
-<p>Abra um terminal e execute o código abaixo:</p>
-<pre><code>curl https://install.duckdb.org | sh</code></pre>
-</section>
-<section id="como-instalar-no-windows-1011" class="level3">
-<h3 class="anchored" data-anchor-id="como-instalar-no-windows-1011">Como instalar no Windows 10/11</h3>
-<p>Acesse o link para <a href="https://duckdb.org/docs/installation/?version=stable&amp;environment=cli&amp;platform=win&amp;download_method=direct&amp;architecture=x86_64">download</a> ou corte e cole a URL abaixo no seu navegador:</p>
-<pre><code>https://duckdb.org/docs/installation/?version=stable&amp;environment=cli&amp;platform=win&amp;download_method=direct&amp;architecture=x86_64</code></pre>
-</section>
-<section id="passo-a-passo" class="level3">
-<h3 class="anchored" data-anchor-id="passo-a-passo">Passo a Passo</h3>
-<ol type="1">
-<li>Acesse o site do duckDB:</li>
-</ol>
-<p><img src="figuras/duckdb1.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li>Clique em Installation e baixe o arquivo do link</li>
-</ol>
-<p><img src="figuras/duckdb5.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>extrair o conteudo da pasta para a área de trabalho</li>
-</ol>
-<p><img src="figuras/duckdb7.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>de um duplo clique no icone do duckdb</li>
-</ol>
-<p><img src="figuras/duckdb10.png" class="img-fluid"></p>
-<p>Você está na interface de linha do dudkdb , aqui comandos SQL pode ser digitados</p>
-<ol start="5" type="1">
-<li>para iniciar a interface gráfica basat digitar:</li>
-</ol>
-<p><strong>CALL start_ui();</strong></p>
-<p><img src="figuras/duckdb11b.png" class="img-fluid"></p>
-<p><a href="https://duckdb.org/2025/03/12/duckdb-ui.html">DuckDB UI local</a></p>
-<ol start="6" type="1">
-<li>Interface gráfica semelhante ao jupyter</li>
-</ol>
-<p><img src="figuras/duck14.png" class="img-fluid"></p>
-<p>Clicando no botão azul “show me the basics” podemos testar o duckdb!</p>
-<p><img src="figuras/duck15.png" class="img-fluid"></p>
-</section>
-<section id="duckdb-online" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-online">duckDB online</h2>
-<p>Você também pode testar o duckdb online atraves desses dois sites abaixo:</p>
-<ul>
-<li><p><a href="https://sql-workbench.com/">SQL Workbench</a></p></li>
-<li><p><a href="https://shell.duckdb.org/">DuckDB Web Shell</a></p></li>
-</ul>
 
-
-</section>
-
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -669,18 +550,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./references.html" class="pagination-link" aria-label="Referencias">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Referencias</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./anexo_xml_json.html" class="pagination-link" aria-label="Anexo 2 - XML &amp; JSON">
-        <span class="nav-page-text">Anexo 2 - XML &amp; JSON</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

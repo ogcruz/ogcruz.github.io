@@ -184,6 +184,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Anexo 2 - XML &amp; JSON</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Expressões Regulares</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -209,9 +215,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#importando-via-web" id="toc-importando-via-web" class="nav-link" data-scroll-target="#importando-via-web"><span class="header-section-number">3.2.2</span> Importando via WEB</a></li>
   <li><a href="#acessando-o-feed-de-notícias-rss-do-ministério-da-saúde" id="toc-acessando-o-feed-de-notícias-rss-do-ministério-da-saúde" class="nav-link" data-scroll-target="#acessando-o-feed-de-notícias-rss-do-ministério-da-saúde"><span class="header-section-number">3.2.3</span> Acessando o feed de notícias RSS do Ministério da Saúde</a></li>
   <li><a href="#usando-uma-api-para-acessar-dados" id="toc-usando-uma-api-para-acessar-dados" class="nav-link" data-scroll-target="#usando-uma-api-para-acessar-dados"><span class="header-section-number">3.2.4</span> Usando uma API para acessar Dados</a></li>
-  <li><a href="#importando-diretamente-do-datasus" id="toc-importando-diretamente-do-datasus" class="nav-link" data-scroll-target="#importando-diretamente-do-datasus"><span class="header-section-number">3.2.5</span> Importando diretamente do DATASUS</a></li>
-  <li><a href="#acesso-a-base-de-dados" id="toc-acesso-a-base-de-dados" class="nav-link" data-scroll-target="#acesso-a-base-de-dados"><span class="header-section-number">3.2.6</span> Acesso a Base de Dados</a></li>
-  <li><a href="#armazenado-os-dados" id="toc-armazenado-os-dados" class="nav-link" data-scroll-target="#armazenado-os-dados"><span class="header-section-number">3.2.7</span> Armazenado os dados</a></li>
+  <li><a href="#api-do-infodengue" id="toc-api-do-infodengue" class="nav-link" data-scroll-target="#api-do-infodengue"><span class="header-section-number">3.2.5</span> API do INFODENGUE</a></li>
+  <li><a href="#api-open-meteor" id="toc-api-open-meteor" class="nav-link" data-scroll-target="#api-open-meteor"><span class="header-section-number">3.2.6</span> API Open-Meteor</a></li>
+  <li><a href="#importando-diretamente-do-datasus" id="toc-importando-diretamente-do-datasus" class="nav-link" data-scroll-target="#importando-diretamente-do-datasus"><span class="header-section-number">3.2.7</span> Importando diretamente do DATASUS</a></li>
+  <li><a href="#acesso-a-base-de-dados" id="toc-acesso-a-base-de-dados" class="nav-link" data-scroll-target="#acesso-a-base-de-dados"><span class="header-section-number">3.2.8</span> Acesso a Base de Dados</a></li>
+  <li><a href="#armazenado-os-dados" id="toc-armazenado-os-dados" class="nav-link" data-scroll-target="#armazenado-os-dados"><span class="header-section-number">3.2.9</span> Armazenado os dados</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -439,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">locale=</span><span class="fu">locale</span>(<span class="at">encoding=</span><span class="st">'latin1'</span>))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>anvisa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="figuras/anvisa.png" class="img-fluid"></p>
+<p><img src="figuras/anvisa_ssl.png" class="img-fluid"></p>
 <p>Como podem ver, obtivemos 53436 linhas e 16 colunas.</p>
 <p>Podemos agora perguntar, por exemplo, quantos medicamentos estão registados que usam acido acetilsalicílico nesta base.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>anvisa <span class="sc">|&gt;</span> </span>
@@ -481,21 +489,128 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(noticias_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="meu-raid" style="color:black;background-color:yellow;font-size: 80px; padding: 25px; border-radius: 10px; align-items:center;justify-content:center;text-align: center;">
-<p>por hoje é só!</p>
-</div>
 </section>
 <section id="usando-uma-api-para-acessar-dados" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="usando-uma-api-para-acessar-dados"><span class="header-section-number">3.2.4</span> Usando uma API para acessar Dados</h3>
+<p>O que é um API?</p>
+<p>Uma Application Programming Interface (API), em português, Interface de Programação de Aplicações, é um conjunto de definições, protocolos e ferramentas para a criação de software e acesso a dados. Pense nela como um meio que permite a comunicação entre diferentes programas, ou mesmo entre um software e um hardware. As APIs são amplamente utilizadas no desenvolvimento de software para integrar sistemas e funcionalidades.</p>
+<p>Neste curso, vamos nos concentrar no uso de APIs Web, também conhecidas como Web Services ou Web APIs. Como você pode ver no gráfico abaixo, o uso delas tem crescido significativamente, impulsionado pela popularização de repositórios de dados e pela crescente adoção de políticas de dados abertos por governos e instituições.</p>
+<p><img src="figuras/API2025.png" class="img-fluid"></p>
+<p>Para entendermos melhor como funciona uma API, imagine que você é o cliente (software) e vai a um restaurante, escolhe um prato (dados) que consta de um menu (lista de dados disponíveis) faz o pedido ao garçon (API) que leva o seu pedido a cozinha (servidor) onde o chefe (SGBD) vai preparar o seu prato. Uma vez pronto o seu prato é levado a você pelo garçon (API). Em alguns casos o menu pode deixar você customizar alguns aspetos do prato(dado), por exemplo, o ponto do filé, que deve ser especificado ao garçon (API) e preparado pelo chefe dentro de parâmetros pre estabelecidos.</p>
 </section>
-<section id="importando-diretamente-do-datasus" class="level3" data-number="3.2.5">
-<h3 data-number="3.2.5" class="anchored" data-anchor-id="importando-diretamente-do-datasus"><span class="header-section-number">3.2.5</span> Importando diretamente do DATASUS</h3>
+<section id="api-do-infodengue" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="api-do-infodengue"><span class="header-section-number">3.2.5</span> API do INFODENGUE</h3>
+<p>O InfoDengue é um sistema de alerta para arboviroses baseado em dados híbridos gerados por meio da análise integrada de dados minerados a partir da web social e de dados climáticos e epidemiológicos.</p>
+<p>Em 2021, o sistema ganhou amplitude nacional com o apoio do Ministério da Saúde realizando análises em nível estadual. Com isso, mais secretarias passaram a receber semanalmente os boletins do InfoDengue. Implementado em 2015, o sistema foi desenvolvido por pesquisadores do Programa de Computação Científica (Fundação Oswaldo Cruz, RJ) e da Escola de Matemática Aplicada (Fundação Getúlio Vargas) com a forte colaboração da Secretaria Municipal de Saúde do Rio de Janeiro</p>
+<p>As tabelas geradas pelo Infodengue contem dados agregados por semana provenientes de diferentes fontes. Elas podem ser consultadas via <a href="https://info.dengue.mat.br/services/api">formulário</a>, ou diretamente do R, por meio de uma consulta à API.</p>
+<p>Essa funcionalidade está disponível por meio da URL:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>info.dengue.mat.br<span class="sc">/</span>api<span class="sc">/</span>alertcity?PARAMETROS_DA_CONSULTA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Onde PARAMETROS_DA_CONSULTA deve conter os parâmetros:</p>
+<pre><code>geocode: código IBGE da cidade
+disease: tipo de doença a ser consultado (dengue|chikungunya|zika)
+format: formato de saída dos dados (str:json|csv)
+ew_start: semana epidemiológica de início da consulta (int:1-53)
+ew_end: semana epidemiológica de término da consulta (int:1-53)
+ey_start: ano de início da consulta (int:0-9999)
+ey_end: ano de término da consulta (int:0-9999)</code></pre>
+<p><strong>ATENÇÃO</strong> Todos os parâmetros acima mencionados são obrigatórios para a consulta.</p>
+<p><a href="retorno_infodengue.html">Retorno da API do Infodengue</a></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://info.dengue.mat.br/api/alertcity?"</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>geocode <span class="ot">&lt;-</span> <span class="dv">4108304</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>disease <span class="ot">&lt;-</span> <span class="st">"dengue"</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>format <span class="ot">&lt;-</span> <span class="st">"csv"</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>ew_start <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>ew_end <span class="ot">&lt;-</span> <span class="dv">52</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>ey_start <span class="ot">&lt;-</span> <span class="dv">2015</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>ey_end <span class="ot">&lt;-</span> <span class="dv">2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Em seguida precisamos concatenar a string de consulta a API nossa URL a cada um dos parâmetros separados por <strong>&amp;</strong></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>cons <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,<span class="st">"geocode="</span>,geocode,<span class="st">"&amp;disease="</span>,disease,<span class="st">"&amp;format="</span>,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>format,<span class="st">"&amp;ew_start="</span>,ew_start,<span class="st">"&amp;ew_end="</span>,ew_end,<span class="st">"&amp;ey_start="</span>,ey_start,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">"&amp;ey_end="</span>,ey_end)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Formando a seguinte URL que fará a consulta ao site do infodengue:</p>
+<div class="meu-raid" style="color:black;background-color:yellow;font-size: 100%; padding: 15px; border-radius: 10px; word-wrap: 40;flex-wrap: wrap;overflow: hidden">
+<p>https://info.dengue.mat.br/api/alertcity?geocode=4108304&amp;disease=dengue&amp;format=csv &amp;ew_start=1&amp;ew_end=53&amp;ey_start=2015&amp;ey_end=2025</p>
+</div>
+<p>Executando o código abaixo vamos receber o resultado da nossa consulta.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dengue_foz <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(cons)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dengue_foz)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dengue_foz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="acesso-a-base-de-dados" class="level3" data-number="3.2.6">
-<h3 data-number="3.2.6" class="anchored" data-anchor-id="acesso-a-base-de-dados"><span class="header-section-number">3.2.6</span> Acesso a Base de Dados</h3>
+<section id="api-open-meteor" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="api-open-meteor"><span class="header-section-number">3.2.6</span> API Open-Meteor</h3>
+<p>A API do Open-Meteo é uma interface de programação de aplicativos que oferece dados de previsão do tempo e climáticos de forma gratuita e com código aberto para uso não comercial e para desenvolvedores e não requer nem cadastro e nem chave para poder acessar.</p>
+<p><a href="'https://api.open-meteo.com/v1/forecast?latitude=-22.875&amp;longitude=-43.25&amp;timezone=America/Sao_Paulo,&amp;current=temperature_2m,relative_humidity_2m,wind_speed_10m&amp;hourly=temperature_2m,relative_humidity_2m,wind_speed_10m">Previsão para o Rio</a></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>meteor <span class="ot">&lt;-</span> <span class="st">'https://api.open-meteo.com/v1/forecast?latitude=-22.875&amp;longitude=-43.25&amp;timezone=America/Sao_Paulo,&amp;current=temperature_2m,relative_humidity_2m,wind_speed_10m&amp;hourly=temperature_2m,relative_humidity_2m,wind_speed_10m'</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>previsao <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">read_json</span>(meteor,<span class="at">simplifyVector =</span> T)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>previsao</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="figuras/meteor_api.png" class="img-fluid"></p>
 </section>
-<section id="armazenado-os-dados" class="level3" data-number="3.2.7">
-<h3 data-number="3.2.7" class="anchored" data-anchor-id="armazenado-os-dados"><span class="header-section-number">3.2.7</span> Armazenado os dados</h3>
+<section id="importando-diretamente-do-datasus" class="level3" data-number="3.2.7">
+<h3 data-number="3.2.7" class="anchored" data-anchor-id="importando-diretamente-do-datasus"><span class="header-section-number">3.2.7</span> Importando diretamente do DATASUS</h3>
+<p>O datasus além dos conhecidos serviços disponibilizados pela internet também, há muitos anos, possui um servidor <strong>FTP</strong> de onde podemos descarregar diretamente os dados.</p>
+<p>Podemos usar funções do <strong>R</strong> para fazer o download de um arquivo usando o protocolo <strong>FTP</strong> por exemplo:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"ftp://ftp.datasus.gov.br/territorio/tabelas/04-base_territorial_abr25.zip"</span>,<span class="st">"base_terr.zip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vamos agora “descompactar” o arquivo <strong>ZIP</strong>. Em primeiro lugar vamos selecionar um diretório temporário que está sendo usado usando pelo <strong>R</strong> no seu sistema operacional. ​</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>loc <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>loc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Em seguida vamos mandar extrair o conteúdo do <strong>ZIP</strong> nesse diretório temporário e usar o dir desse local para verificar se o conteúdo foi expandido.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"base_terr.zip"</span>,<span class="at">exdir=</span>loc)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(loc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>a partir dai você poderia importar um ou mais dos arquivos que foram expandidos.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>arq <span class="ot">&lt;-</span> <span class="fu">paste0</span>(loc,<span class="st">"/"</span>,<span class="st">"tb_uf.csv"</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>tb_uf <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(arq,<span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">'latin1'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exemplo-importando-sinasc-do-acre-diretamente-do-datasus" class="level4" data-number="3.2.7.1">
+<h4 data-number="3.2.7.1" class="anchored" data-anchor-id="exemplo-importando-sinasc-do-acre-diretamente-do-datasus"><span class="header-section-number">3.2.7.1</span> Exemplo: Importando SINASC do Acre diretamente do DATASUS</h4>
+<p>até aqui você já viu todos os elementos necessários para fazer a importação de dados direto do FTP do DATASUS, o que precisamos é um <em>workflow</em>, ou seja, um plano, para fazer a importação.</p>
+<p><br></p>
+<p><img src="figuras/fluxo.png" class="img-fluid"></p>
+<p>em primeiro lugar vamos usar o pacote RCurl que permite acesso a paginas http , https, ftp etc…</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RCurl)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'ftp://ftp.datasus.gov.br/dissemin/publicos/SINASC/NOV/DNRES/'</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">getURL</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>vamos inspecionar o objeto <em>lista</em>. como vocês podem observar esse arquivo precisa ainda ser transformado para ser usado.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">str_split</span>(lista,<span class="st">'</span><span class="sc">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>após pedirmos ao <strong>R</strong> para inserir uma quebra apos o caractere ‘***’ agora fica mais fácil de entender a listagem que obtivemos!</p>
+<p>vamos selecionar como <strong>UF</strong> o Acre pois o tamanho dos arquivos é pequeno e a rede da ENSP em geral não é rápida.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(lista[[<span class="dv">1</span>]],<span class="st">'(DNAC</span><span class="sc">\\</span><span class="st">d+.[dbc|DBC]{3})'</span>)<span class="do">## DN do ACRE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aqui vamos fazer um parêntesis para falar de um recurso extremamente poderoso, as <a href="./regex.html"><strong>expressões regulares</strong></a> conhecidas por <a href="./regex.html"><strong>REGEX</strong></a></p>
+<p>Agora que vocês já aprenderam um pouco sobre as REGEX vamos selecionar as linhas que possuem as DN do ACRE</p>
+<p>de uma maneira simples selecionamos todas que possuem o padrão DNAC no nome seguido de um ou mais numeros (\d+) e terminado em .dbc ou .DBC.</p>
+<p>Onde não houve match a função retorna NA, assim vamos nos livra deles!</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    l3 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">na.exclude</span>(l2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Verifique o objeto l3 para se certificar que tenhamos somente um vetor de caracteres com o nome dos arquivos! ​ Aqui temos 27 nomes de arquivos , vamos tentar trazer todos.</p>
+<p>Como fazer isso?</p>
+<p>Vamos precisar criar uma nova função que possa fazer o download dos arquivos DBC e posteriormente importá-los e finalmente juntar todos. Existem diversas maneiras de se fazer isso, mas vamos usar filosofia do tideverse executando a função <strong>map</strong> do pacote <em>purr</em>.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>le_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(arq) {</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">require</span>(read.dbc))  <span class="fu">stop</span>(<span class="st">"o pacote read.dbc deve estar instalado"</span>) <span class="co"># verifica se existe o pacote e carrega </span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  origem <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,arq)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  destino <span class="ot">&lt;-</span> <span class="fu">paste0</span>( <span class="fu">tempdir</span>(),<span class="st">'/temp.dbc'</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(origem,destino,<span class="at">mode=</span><span class="st">"wb"</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  temp <span class="ot">&lt;-</span> <span class="fu">read.dbc</span>(destino,<span class="at">as.is=</span>T) <span class="sc">|&gt;</span> </span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>()</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.remove</span>(destino)</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temp)</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vamos testar nossa função lendo apenas um arquivo, por exemplo o DNAC2020.dbc que está na posição 25 do vetor l3.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="fu">le_dbc</span>(l3[<span class="dv">25</span>])</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>teste</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Se tudo estiver certo você vai receber um objeto assim <img src="figuras/le_dbc.png" class="img-fluid"></p>
+<p>podemos ajustar nossa função para retornar os tipos desejados, datas etc…</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sinasc_ac <span class="ot">&lt;-</span> l3 <span class="sc">|&gt;</span> <span class="fu">map_df</span>(le_dbc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="acesso-a-base-de-dados" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="acesso-a-base-de-dados"><span class="header-section-number">3.2.8</span> Acesso a Base de Dados</h3>
+</section>
+<section id="armazenado-os-dados" class="level3" data-number="3.2.9">
+<h3 data-number="3.2.9" class="anchored" data-anchor-id="armazenado-os-dados"><span class="header-section-number">3.2.9</span> Armazenado os dados</h3>
 
 
 </section>

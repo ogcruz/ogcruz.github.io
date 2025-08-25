@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Anexo 1 - Instalando o duckdb – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
+<title>Expressões Regulares – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./anexo_xml_json.html" rel="next">
-<link href="./references.html" rel="prev">
+<link href="./anexo_xml_json.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anexo1.html">Anexo 1 - Instalando o duckdb</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./regex.html">Expressões Regulares</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anexo1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./anexo1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo 1 - Instalando o duckdb</span></a>
   </div>
 </li>
@@ -151,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./regex.html" class="sidebar-item-text sidebar-link">
+  <a href="./regex.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Expressões Regulares</span></a>
   </div>
 </li>
@@ -160,25 +194,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul>
-  <li><a href="#principais-características" id="toc-principais-características" class="nav-link active" data-scroll-target="#principais-características">Principais Características</a></li>
-  <li><a href="#como-instalar-no-linux-e-mac" id="toc-como-instalar-no-linux-e-mac" class="nav-link" data-scroll-target="#como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</a></li>
-  <li><a href="#como-instalar-no-windows-1011" id="toc-como-instalar-no-windows-1011" class="nav-link" data-scroll-target="#como-instalar-no-windows-1011">Como instalar no Windows 10/11</a></li>
-  <li><a href="#passo-a-passo" id="toc-passo-a-passo" class="nav-link" data-scroll-target="#passo-a-passo">Passo a Passo</a></li>
-  <li><a href="#duckdb-online" id="toc-duckdb-online" class="nav-link" data-scroll-target="#duckdb-online">duckDB online</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anexo 1 - Instalando o duckdb</h1>
+<h1 class="title">Expressões Regulares</h1>
 </div>
 
 
@@ -195,76 +219,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="figuras/DuckDB_Logo.png" class="img-fluid"></p>
-<p>O duckDB <a href="https://duckdb.org/" class="uri">https://duckdb.org/</a> é um banco de dados do tipo OLAP de alto desempenho, de código aberto, desenvolvido para análise de dados em ambiente de memória (in-memory) e processamento de grandes volumes de dados com baixa latência e alta velocidade.</p>
-<section id="principais-características" class="level3">
-<h3 class="anchored" data-anchor-id="principais-características">Principais Características</h3>
-<ol type="1">
-<li><p><strong>Rápido e eficiente:</strong></p>
+<p>Uma <a href="https://pt.wikipedia.org/wiki/Express%C3%A3o_regular">Expressão Regular</a>, conhecidas por <a href="https://pt.wikipedia.org/wiki/Express%C3%A3o_regular">REGEX</a>, é um método formal de se especificar um padrão de texto.</p>
+<p>É uma composição de símbolos, caracteres com funções especiais, chamados “metacaracteres” que, agrupados formam uma sequencia, ou expressão regular</p>
+<p>Uma expressão regular é testada em textos e retorna sucesso caso este texto obedeça exatamente a todas as suas condições. Neste caso dizemos que o texto “casa” com (<strong>match</strong>) a expressão regular.</p>
+<p>As REGEXs servem para se dizer algo abrangente de forma mais rigorosa. Definido o padrão, tem-se uma lista (finita ou não) de possibilidades de casamento.</p>
+<p>Exemplo: [rgp]ato pode casar com “rato”, “gato” e “pato” Mas não “mato”</p>
+<p>Utilidade das Expressões Regulares e a busca de padrões em textos</p>
 <ul>
-<li>O duckDB é extremamente rápido pois processa dados na memória e sem necessidade de escrever em disco. É ideal para análises interativas e queries complexas, rodando dezenas de vezes mais rápido que R ou python.</li>
-</ul></li>
-<li><p><strong>Fácil de usar:</strong></p>
-<ul>
-<li>Possui uma interface SQL, permitindo que usuários familiarizados com SQL possam usá-lo facilmente. Também pode ser usado diretamente em Python, R e Julia com bibliotecas de integração.</li>
-</ul></li>
-<li><p><strong>Lightweight e autônomo:</strong></p>
-<ul>
-<li>Não precisa de servidores, clusters ou instalações complexas. Pode rodar como uma biblioteca em Python, ou diretamente do pacote do R sem instalação de banco de dados dedicado.</li>
-</ul></li>
-<li><p><strong>Suporte a grandes volumes de dados:</strong></p>
-<p>Apesar de ser baseado em memória, o duckDB pode lidar com datasets muito grandes devido a sua otimização interna. Pode lidar com arquivos em disco sendo conteúdo deste é armazenado compactado, por exemplo, um CSV ou um DBF fica menos de 10% do valor original. Trabalha com arquivos modernos amplamente utilizados como parquet e json.</p></li>
-</ol>
-</section>
-<section id="como-instalar-no-linux-e-mac" class="level3">
-<h3 class="anchored" data-anchor-id="como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</h3>
-<p>Abra um terminal e execute o código abaixo:</p>
-<pre><code>curl https://install.duckdb.org | sh</code></pre>
-</section>
-<section id="como-instalar-no-windows-1011" class="level3">
-<h3 class="anchored" data-anchor-id="como-instalar-no-windows-1011">Como instalar no Windows 10/11</h3>
-<p>Acesse o link para <a href="https://duckdb.org/docs/installation/?version=stable&amp;environment=cli&amp;platform=win&amp;download_method=direct&amp;architecture=x86_64">download</a> ou corte e cole a URL abaixo no seu navegador:</p>
-<pre><code>https://duckdb.org/docs/installation/?version=stable&amp;environment=cli&amp;platform=win&amp;download_method=direct&amp;architecture=x86_64</code></pre>
-</section>
-<section id="passo-a-passo" class="level3">
-<h3 class="anchored" data-anchor-id="passo-a-passo">Passo a Passo</h3>
-<ol type="1">
-<li>Acesse o site do duckDB:</li>
-</ol>
-<p><img src="figuras/duckdb1.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li>Clique em Installation e baixe o arquivo do link</li>
-</ol>
-<p><img src="figuras/duckdb5.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>extrair o conteudo da pasta para a área de trabalho</li>
-</ol>
-<p><img src="figuras/duckdb7.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>de um duplo clique no icone do duckdb</li>
-</ol>
-<p><img src="figuras/duckdb10.png" class="img-fluid"></p>
-<p>Você está na interface de linha do dudkdb , aqui comandos SQL pode ser digitados</p>
-<ol start="5" type="1">
-<li>para iniciar a interface gráfica basat digitar:</li>
-</ol>
-<p><strong>CALL start_ui();</strong></p>
-<p><img src="figuras/duckdb11b.png" class="img-fluid"></p>
-<p><a href="https://duckdb.org/2025/03/12/duckdb-ui.html">DuckDB UI local</a></p>
-<ol start="6" type="1">
-<li>Interface gráfica semelhante ao jupyter</li>
-</ol>
-<p><img src="figuras/duck14.png" class="img-fluid"></p>
-<p>Clicando no botão azul “show me the basics” podemos testar o duckdb!</p>
-<p><img src="figuras/duck15.png" class="img-fluid"></p>
-</section>
-<section id="duckdb-online" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-online">duckDB online</h2>
-<p>Você também pode testar o duckdb online atraves desses dois sites abaixo:</p>
-<ul>
-<li><p><a href="https://sql-workbench.com/">SQL Workbench</a></p></li>
-<li><p><a href="https://shell.duckdb.org/">DuckDB Web Shell</a></p></li>
+<li>Data e Horário</li>
+<li>Número IP,Sites</li>
+<li>Endereço de e-mail</li>
+<li>URL</li>
+<li>Número de telefone, CPF, cartão de crédito</li>
 </ul>
+<p>Vários Linguagens de Programação, editores de texto têm suporte às REGEXs.</p>
+<p>Para exemplificar o uso das REGEX em <strong>R</strong> , usaremos as funções <strong>grep</strong>, <strong>gsub</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cores <span class="ot">&lt;-</span> <span class="fu">colors</span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"blue"</span>,cores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Retorna o índice de todos os elementos do vetor cores que possuem “blue”</p>
+<section id="alguns-metacaracteres" class="level4">
+<h4 class="anchored" data-anchor-id="alguns-metacaracteres">Alguns Metacaracteres</h4>
+<ul>
+<li><p>Circunflexo ^ - Simboliza o início de uma linha</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^blue"</span>,cores) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>​ ​<br>
+Retorna o índice de todos os elementos do vetor cores começados por “blue”</p></li>
+<li><p>Cifrão $ - Simboliza o fim de uma linha</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"yellow$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>​</p></li>
+</ul>
+<p>Retorna o índice de todos os elementos do vetor cores terminados por “yellow”</p>
+<ul>
+<li>Listas [] - Simboliza conjunto de caracteres numa determinada posição.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"^[aeiou]"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>cores começadas por vogais</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"[0-9]$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>cores terminadas por numeros</p>
+<ul>
+<li>Ponto . - Simboliza “qualquer” caracteres numa determinada posição</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"grey.."</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>cor cinza seguida por dois caracteres qualquer</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"^....$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>cores com apenas 4 caracteres</p>
+<ul>
+<li><p>Chaves {} - Simboliza a quantidade de repetições do caractere anterior</p>
+<pre><code>      grep("e{2}",cores,value=T)</code></pre>
+<p>padrão onde cores tem dois “e” seguidos</p>
+<pre><code>      grep("[0-9]{3,5}",cores ,value=T)</code></pre></li>
+</ul>
+<p>onde cores tem de 3 a 5 numeros</p>
+<ul>
+<li><p>Curinga * - Simboliza “qualquer coisa”, inclusive nada.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[s].*[0-9]$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>cores começadas por “s” e terminadas por numero!</p></li>
+<li><p>Operador logico <strong>OU</strong> (OR) ‘|’</p></li>
+</ul>
+<p>Para fazer um OU lógico, onde buscamos uma coisa OU outra, deve-se usar o | e delimitar as opções entre parênteses: ​</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"^[w]|^[y]"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Não deve conter espaços! Nesse exemplo é o mesmo que</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">"^[wy]"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Operador logico <strong>NÃO</strong> (NOT) [^]</li>
+</ul>
+<p>Pesquisa para retornar as cores que não começam por vogais</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> (<span class="st">"^[bcdfghjklmnpqrstvwxyz]"</span>,cores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ou usar negativa (NOT) usando “^”</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> (<span class="st">"^[^aeiou]"</span>, cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>repare que o não é o ^ que está dentro das chaves!</p>
+<ul>
+<li><p>Intervalo de Lista [-] - Busca por faixa de caracteres ou números</p>
+<p>grep (“[0-9]{3,}”, cores,value=T)</p></li>
+</ul>
+<p>Busca por números de três dígitos ou mais</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"[r-z]$"</span>,cores,<span class="at">value=</span>T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Busca por cores terminadas com letras entre r e z ​<br>
+A função <strong>gsub</strong> faz substituições em strings usando REGEX ​</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="st">"   caracteres em branco, no incio e final  "</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">s+|</span><span class="sc">\\</span><span class="st">s+$"</span>, <span class="st">""</span>, teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Existem varias funções que podem usar REGEX, o R utiliza dialeto de REGEX aprenda um pouco mais nessa <a href="https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html">Vignette</a> e no <a href="https://r4ds.had.co.nz/strings.html">no capítulo sobre strings do livro R for Data Science</a></p>
 
 
 </section>
@@ -671,14 +705,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./references.html" class="pagination-link" aria-label="Referencias">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Referencias</span>
+      <a href="./anexo_xml_json.html" class="pagination-link" aria-label="Anexo 2 - XML &amp; JSON">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Anexo 2 - XML &amp; JSON</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./anexo_xml_json.html" class="pagination-link" aria-label="Anexo 2 - XML &amp; JSON">
-        <span class="nav-page-text">Anexo 2 - XML &amp; JSON</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
