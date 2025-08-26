@@ -585,7 +585,7 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <p>Vamos precisar criar uma nova função que possa fazer o download dos arquivos DBC e posteriormente importá-los e finalmente juntar todos. Existem diversas maneiras de se fazer isso, mas vamos usar filosofia do tideverse executando a função <strong>map</strong> do pacote <em>purr</em>.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>le_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(arq) {</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">require</span>(read.dbc))  <span class="fu">stop</span>(<span class="st">"o pacote read.dbc deve estar instalado"</span>) <span class="co"># verifica se existe o pacote e carrega </span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(read.dbc))  <span class="fu">stop</span>(<span class="st">"o pacote read.dbc deve estar instalado"</span>) <span class="co"># verifica se existe o pacote e carrega </span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  origem <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,arq)</span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  destino <span class="ot">&lt;-</span> <span class="fu">paste0</span>( <span class="fu">tempdir</span>(),<span class="st">'/temp.dbc'</span>)</span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -602,8 +602,57 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="fu">le_dbc</span>(l3[<span class="dv">25</span>])</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>teste</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se tudo estiver certo você vai receber um objeto assim <img src="figuras/le_dbc.png" class="img-fluid"></p>
-<p>podemos ajustar nossa função para retornar os tipos desejados, datas etc…</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sinasc_ac <span class="ot">&lt;-</span> l3 <span class="sc">|&gt;</span> <span class="fu">map_df</span>(le_dbc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Apesar da função ter retornado um tibble podemos notar a necessidade de fazer pequenos ajustes para que ela nos retorne um conjunto de dados melhor para ser trabalhado. Os principais pontos são:</p>
+<ol type="1">
+<li><p>todas as variáveis retornam como texto, transformar em numéricas, datas e fatores conforme o caso.</p></li>
+<li><p>nome das variáveis em maiúsculas, usar a função <em>clean_names()</em> do pacote <strong>janitor</strong>.</p></li>
+<li><p>Criar variáveis novas com código de município de 6 caracteres para município de residência e de notificação</p></li>
+<li><p>remover variáveis desnecessárias e com baixo grau de completude</p></li>
+</ol>
+<p>Vamos utilizar o pacote <em>naniar</em> que tem funções que ajudam a sumarizar, visualizar e manipular dados falantes (missing data) .</p>
+<p>As funções <em>miss_var_summary</em> e <em>gg_miss_var()</em> vão nos mostrar quais variáveis tem maior grau de dados faltantes.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a> naniar<span class="sc">::</span><span class="fu">miss_var_summary</span>(teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="figuras/naniar_pct_NA.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_var</span>(teste,<span class="at">show_pct =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="figuras/teste_miss.png" class="img-fluid"></p>
+<p>Como podemos observar as variáveis <code>DTRECORIGA</code>, <code>CODANOMAL</code> e <code>IDADEPAI</code> todas têm alto percentual de NAs . A coluna <code>SERIESCMAE</code>parece em quarto com 58% de dados faltantes baseado nessa amostra das DN do Acre de 2020.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>le_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(arq) {</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(read.dbc))  <span class="fu">stop</span>(<span class="st">"o pacote read.dbc deve estar instalado"</span>) <span class="co"># verifica se existe </span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  remover <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'CODANOMAL'</span>,<span class="st">'DTRECORIGA'</span>,<span class="st">'SERIESCMAE'</span>,<span class="st">'IDADEPAI'</span>) <span class="do">## Vars a remover </span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  origem <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,arq)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  destino <span class="ot">&lt;-</span> <span class="fu">paste0</span>( <span class="fu">tempdir</span>(),<span class="st">'/temp.dbc'</span>)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(origem,destino,<span class="at">mode=</span><span class="st">"wb"</span>)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  temp <span class="ot">&lt;-</span> <span class="fu">read.dbc</span>(destino,<span class="at">as.is=</span>T) <span class="sc">|&gt;</span> </span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">!</span><span class="fu">any_of</span>(remover)) <span class="sc">|&gt;</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">peso =</span> <span class="fu">as.numeric</span>(peso),</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">idademae =</span> <span class="fu">as.numeric</span>(idademae),</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">dtnasc =</span> <span class="fu">dmy</span>(dtnasc),</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">codmunres6 =</span> <span class="fu">str_sub</span>(codmunres,<span class="dv">1</span>,<span class="dv">6</span>),</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">codmun6 =</span> <span class="fu">str_sub</span>(codmunnasc,<span class="dv">1</span>,<span class="dv">6</span>))</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.remove</span>(destino)</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temp)</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Uma vez implementada a nova função atendendo a todo o itens podemos executá-la para todo o nosso conjunto de dados usando a função <em>map</em> do pacote <strong>purrr</strong>.</p>
+<p>Na verdade, vamos usar a função <em>map_df()</em> que agrega os resultados numa estrutura de dados tipo data.frame ou tibble.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sinasc_ac <span class="ot">&lt;-</span> l3 <span class="sc">|&gt;</span> <span class="fu">map_df</span>(le_dbc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Essa função, na minha máquina, demorou 19,5 segundos e retorno um tibble com 433.265 e um tamanho em memória de 233.7 Mb contendo todos os Nascidos vivos do AC disponíveis no FTP datasus</p>
+<p>Vamos ver como estamos em termos de completude</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a> naniar<span class="sc">::</span><span class="fu">miss_var_summary</span>(sinasc_ac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="figuras/naniar_sinasc.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_var</span>(sinasc_ac,<span class="at">show_pct =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como se pode observar ainda há muitas variáveis com alta taxa de dados faltantes. Que tal modificar mais uma vez sua função de leitura e remover também essas?</p>
+<p>Observe que o banco passou de 22 colunas em 1996 para 59 em 2022 (ultimo dado disponível em 2025) !</p>
+<p><strong>Parece que o seu trabalho não terminou!</strong></p>
 </section>
 </section>
 <section id="acesso-a-base-de-dados" class="level3" data-number="3.2.8">
