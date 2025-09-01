@@ -167,6 +167,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./arrumando_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limpeza, manipulação e transformação dos dados</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -194,8 +200,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#regexp-no-modulo-base" id="toc-regexp-no-modulo-base" class="nav-link active" data-scroll-target="#regexp-no-modulo-base">regexp no modulo base</a></li>
+  <li><a href="#funções-stringr-para-expressões-regulares" id="toc-funções-stringr-para-expressões-regulares" class="nav-link" data-scroll-target="#funções-stringr-para-expressões-regulares">Funções stringr para Expressões Regulares</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -233,72 +246,158 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Número de telefone, CPF, cartão de crédito</li>
 </ul>
 <p>Vários Linguagens de Programação, editores de texto têm suporte às REGEXs.</p>
-<p>Para exemplificar o uso das REGEX em <strong>R</strong> , usaremos as funções <strong>grep</strong>, <strong>gsub</strong></p>
+<p>Para exemplificar o uso das REGEX em <strong>R</strong> , usaremos as funções do modulo base <strong>grep</strong>, <strong>gsub</strong></p>
+<section id="regexp-no-modulo-base" class="level3">
+<h3 class="anchored" data-anchor-id="regexp-no-modulo-base">regexp no modulo base</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cores <span class="ot">&lt;-</span> <span class="fu">colors</span>()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"blue"</span>,cores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Retorna o índice de todos os elementos do vetor cores que possuem “blue”</p>
 <section id="alguns-metacaracteres" class="level4">
 <h4 class="anchored" data-anchor-id="alguns-metacaracteres">Alguns Metacaracteres</h4>
 <ul>
-<li><p>Circunflexo ^ - Simboliza o início de uma linha</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^blue"</span>,cores) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>​ ​<br>
-Retorna o índice de todos os elementos do vetor cores começados por “blue”</p></li>
-<li><p>Cifrão $ - Simboliza o fim de uma linha</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"yellow$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>​</p></li>
+<li>Circunflexo ^ - Simboliza o início de uma linha</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^blue"</span>,cores) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>​ ​\
+Retorna o índice de todos os elementos do vetor cores começados por "blue"</code></pre>
+<ul>
+<li>Cifrão $ - Simboliza o fim de uma linha</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"yellow$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>​</code></pre>
 <p>Retorna o índice de todos os elementos do vetor cores terminados por “yellow”</p>
 <ul>
 <li>Listas [] - Simboliza conjunto de caracteres numa determinada posição.</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"^[aeiou]"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[aeiou]"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>cores começadas por vogais</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"[0-9]$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"[0-9]$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>cores terminadas por numeros</p>
 <ul>
 <li>Ponto . - Simboliza “qualquer” caracteres numa determinada posição</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"grey.."</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"grey.."</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>cor cinza seguida por dois caracteres qualquer</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"^....$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^....$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>cores com apenas 4 caracteres</p>
 <ul>
-<li><p>Chaves {} - Simboliza a quantidade de repetições do caractere anterior</p>
-<pre><code>      grep("e{2}",cores,value=T)</code></pre>
-<p>padrão onde cores tem dois “e” seguidos</p>
-<pre><code>      grep("[0-9]{3,5}",cores ,value=T)</code></pre></li>
+<li>Chaves {} - Simboliza a quantidade de repetições do caractere anterior</li>
 </ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"e{2}"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>padrão onde cores tem dois "e" seguidos</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"[0-9]{3,5}"</span>,cores ,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>onde cores tem de 3 a 5 numeros</p>
 <ul>
-<li><p>Curinga * - Simboliza “qualquer coisa”, inclusive nada.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[s].*[0-9]$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>cores começadas por “s” e terminadas por numero!</p></li>
-<li><p>Operador logico <strong>OU</strong> (OR) ‘|’</p></li>
+<li>Curinga * - Simboliza “qualquer coisa”, inclusive nada.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[s].*[0-9]$"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>cores começadas por "s" e terminadas por numero!</code></pre>
+<ul>
+<li>Operador logico <strong>OU</strong> (OR) ‘|’</li>
 </ul>
 <p>Para fazer um OU lógico, onde buscamos uma coisa OU outra, deve-se usar o | e delimitar as opções entre parênteses: ​</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span>(<span class="st">"^[w]|^[y]"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[w]|^[y]"</span>,cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Não deve conter espaços! Nesse exemplo é o mesmo que</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">"^[wy]"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">"^[wy]"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Operador logico <strong>NÃO</strong> (NOT) [^]</li>
 </ul>
 <p>Pesquisa para retornar as cores que não começam por vogais</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> (<span class="st">"^[bcdfghjklmnpqrstvwxyz]"</span>,cores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[bcdfghjklmnpqrstvwxyz]"</span>,cores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ou usar negativa (NOT) usando “^”</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> (<span class="st">"^[^aeiou]"</span>, cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"^[^aeiou]"</span>, cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>repare que o não é o ^ que está dentro das chaves!</p>
 <ul>
-<li><p>Intervalo de Lista [-] - Busca por faixa de caracteres ou números</p>
-<p>grep (“[0-9]{3,}”, cores,value=T)</p></li>
+<li>Intervalo de Lista [-] - Busca por faixa de caracteres ou números</li>
 </ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"\[0-9\]{3,}"</span>, cores,<span class="at">value=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Busca por números de três dígitos ou mais</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"[r-z]$"</span>,cores,<span class="at">value=</span>T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"[r-z]$"</span>,cores,<span class="at">value=</span>T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Busca por cores terminadas com letras entre r e z ​<br>
 A função <strong>gsub</strong> faz substituições em strings usando REGEX ​</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="st">"   caracteres em branco, no incio e final  "</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">s+|</span><span class="sc">\\</span><span class="st">s+$"</span>, <span class="st">""</span>, teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Existem varias funções que podem usar REGEX, o R utiliza dialeto de REGEX aprenda um pouco mais nessa <a href="https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html">Vignette</a> e no <a href="https://r4ds.had.co.nz/strings.html">no capítulo sobre strings do livro R for Data Science</a></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="st">"   caracteres em branco, no incio e final  "</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">s+|</span><span class="sc">\\</span><span class="st">s+$"</span>, <span class="st">""</span>, teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O Pacote stringr</p>
+<p>O pacote stringr é parte do “tidyverse” e foi projetado para simplificar a manipulação de strings em R. Ele oferece funções que são mais consistentes com a filosofia do tidyverse, como:</p>
+<ul>
+<li>Sintaxe clara e intuitiva: Funções com nomes descritivos e argumentos bem definidos.</li>
+<li>Tratamento consistente de NA: stringr lida com valores NA de forma previsível.</li>
+<li>Integração com o tidyverse: Funciona bem com outros pacotes do tidyverse, como dplyr e ggplot2.</li>
+</ul>
+<p>Vamos revisar alguns dos caracteres e metacaracteres mais comuns em expressões regulares:</p>
+<ul>
+<li>. (ponto): Corresponde a qualquer caractere, exceto quebra de linha.</li>
+<li><ul>
+<li>(asterisco): Corresponde a zero ou mais ocorrências do caractere/grupo anterior.</li>
+</ul></li>
+<li><ul>
+<li>(mais): Corresponde a uma ou mais ocorrências do caractere/grupo anterior.</li>
+</ul></li>
+<li>? (interrogação): Corresponde a zero ou uma ocorrência do caractere/grupo anterior (opcional).</li>
+<li><label><input type="checkbox">(colchetes): Define uma classe de caracteres. Ex: [aeiou] corresponde a qualquer vogal.</label></li>
+<li>[^ ] (colchetes com acento): Define uma classe de caracteres negada. Ex: [0-9] corresponde a qualquer caractere que não seja um dígito.</li>
+<li>^ (circunflexo): Corresponde ao início da string.</li>
+<li>$ (cifrão): Corresponde ao final da string.</li>
+<li> Corresponde a um dígito (0-9).</li>
+<li>: Corresponde a um caractere alfanumérico (a-z, A-Z, 0-9, _).</li>
+<li>: Corresponde a um espaço em branco (espaço, tabulação, quebra de linha).</li>
+<li>() (parênteses): Agrupa partes da expressão regular.</li>
+</ul>
+</section>
+</section>
+<section id="funções-stringr-para-expressões-regulares" class="level3">
+<h3 class="anchored" data-anchor-id="funções-stringr-para-expressões-regulares">Funções stringr para Expressões Regulares</h3>
+<p>O pacote stringr oferece diversas funções para trabalhar com expressões regulares. As mais utilizadas são:</p>
+<ul>
+<li>str_detect(string, pattern): Retorna um vetor lógico indicando se cada string no vetor string corresponde ao padrão pattern.</li>
+<li>str_match(string, pattern): Retorna uma matriz com as correspondências encontradas no padrão. A primeira coluna contém as correspondências completas, e as colunas subsequentes correspondem aos grupos de captura (definidos por parênteses na regex).</li>
+<li>str_match_all(string, pattern): Semelhante a str_match, mas retorna um objeto “list” que pode conter mais informações sobre as correspondências.</li>
+<li>str_replace(string, pattern, replacement): Substitui a primeira ocorrência do padrão pattern por replacement em cada string.</li>
+<li>str_replace_all(string, pattern, replacement): Substitui todas as ocorrências do padrão pattern por replacement em cada string.</li>
+<li>str_extract(string, pattern): Extrai a primeira ocorrência do padrão pattern de cada string.</li>
+<li>str_extract_all(string, pattern): Extrai todas as ocorrências do padrão pattern de cada string.</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sintomas <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Febre alta, tosse seca, dor de garganta, fadiga"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dor de cabeça, congestão nasal, espirros, coriza"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dor abdominal, náuseas, vômitos, diarreia"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Erupção cutânea, coceira, febre baixa, fadiga"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dores musculares, febre,falta de ar, tosse produtiva"</span>,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dor de cabeça, visão turva, rigidez no pescoço, febre"</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Falta de apetite, perda de peso, cansaço, dor abdominal"</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Tosse crônica, falta de ar, chiado no peito, fadiga"</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dor nas articulações, inchaço, febre baixa, cansaço"</span>,</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dor de cabeça, tontura, zumbido no ouvido"</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Usando as funções do <em>stringr</em></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># quantos falam em febre</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">str_detect</span>(sintomas,<span class="st">'[Ff]ebre'</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#quantos relatam fadiga ou cansaço</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">str_detect</span>(sintomas,<span class="st">'[Ff]adiga|cansaço'</span>))</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#qual a palavra vem deposi de febre</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(sintomas,<span class="st">'[Ff]ebre [a-zA-Z]{1,}'</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dor E Febre</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>((<span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Dd]or'</span>) <span class="sc">&amp;</span> <span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Ff]ebre'</span>)))</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Dor OU Febre</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>((<span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Dd]or'</span>) <span class="sc">|</span> <span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Ff]ebre'</span>)))</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co"># qual e a palavra que vem depois de febre</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">str_match</span>(sintomas,<span class="st">'[Ff]ebre</span><span class="sc">\\</span><span class="st">s([a-zA-Z]{1,})'</span>)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace_all</span>(sintomas,<span class="st">'falta.*ar'</span>,<span class="st">'falta_de_ar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como vimos existem vários pacotes com funções que permitem usar REGEX, lembre-se que o R utiliza dialeto de REGEX aprenda um pouco mais os recursos no R</p>
+<ul>
+<li><a href="https://r4ds.had.co.nz/strings.html">no capítulo sobre strings do livro R for Data Science</a></li>
+<li>Documentação do stringr: <a href="https://stringr.tidyverse.org">https://stringr.tidyverse.org/</a></li>
+<li><a href="https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html">Vignette do Stringr</a></li>
+<li>Regex101: <a href="https://regex101.com/">https://regex101.com/</a> (Ferramenta online para testar e depurar expressões regulares)</li>
+<li>Regular-Expressions.info: <a href="https://www.regular-expressions.info/">https://www.regular-expressions.info/</a> (Tutorial sobre expressões regulares)</li>
+</ul>
 
 
 </section>

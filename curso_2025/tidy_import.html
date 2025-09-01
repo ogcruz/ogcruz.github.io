@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./arrumando_dados.html" rel="next">
 <link href="./sql.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -168,6 +168,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./arrumando_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limpeza, manipulação e transformação dos dados</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -218,8 +224,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#api-do-infodengue" id="toc-api-do-infodengue" class="nav-link" data-scroll-target="#api-do-infodengue"><span class="header-section-number">3.2.5</span> API do INFODENGUE</a></li>
   <li><a href="#api-open-meteor" id="toc-api-open-meteor" class="nav-link" data-scroll-target="#api-open-meteor"><span class="header-section-number">3.2.6</span> API Open-Meteor</a></li>
   <li><a href="#importando-diretamente-do-datasus" id="toc-importando-diretamente-do-datasus" class="nav-link" data-scroll-target="#importando-diretamente-do-datasus"><span class="header-section-number">3.2.7</span> Importando diretamente do DATASUS</a></li>
-  <li><a href="#acesso-a-base-de-dados" id="toc-acesso-a-base-de-dados" class="nav-link" data-scroll-target="#acesso-a-base-de-dados"><span class="header-section-number">3.2.8</span> Acesso a Base de Dados</a></li>
-  <li><a href="#armazenado-os-dados" id="toc-armazenado-os-dados" class="nav-link" data-scroll-target="#armazenado-os-dados"><span class="header-section-number">3.2.9</span> Armazenado os dados</a></li>
+  <li><a href="#lendo-planilhas-com-readr" id="toc-lendo-planilhas-com-readr" class="nav-link" data-scroll-target="#lendo-planilhas-com-readr"><span class="header-section-number">3.2.8</span> Lendo planilhas com <code>readr</code></a></li>
+  <li><a href="#acesso-a-base-de-dados" id="toc-acesso-a-base-de-dados" class="nav-link" data-scroll-target="#acesso-a-base-de-dados"><span class="header-section-number">3.2.9</span> Acesso a Base de Dados</a></li>
+  <li><a href="#armazenado-os-dados" id="toc-armazenado-os-dados" class="nav-link" data-scroll-target="#armazenado-os-dados"><span class="header-section-number">3.2.10</span> Armazenado os dados</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -655,11 +662,112 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <p><strong>Parece que o seu trabalho não terminou!</strong></p>
 </section>
 </section>
-<section id="acesso-a-base-de-dados" class="level3" data-number="3.2.8">
-<h3 data-number="3.2.8" class="anchored" data-anchor-id="acesso-a-base-de-dados"><span class="header-section-number">3.2.8</span> Acesso a Base de Dados</h3>
+<section id="lendo-planilhas-com-readr" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="lendo-planilhas-com-readr"><span class="header-section-number">3.2.8</span> Lendo planilhas com <code>readr</code></h3>
+<p><img src="figuras/readxl.png" class="img-fluid" style="width:20.0%"></p>
+<p>O <code>readxl</code> é um pacote que permite ler arquivos de Excel para o <code>R</code>. Ele faz parte do <code>tidyverse</code>, entretanto, precisa ser chamado individualmente com <code>library(readxl)</code>. Para saber mais sobre o <code>readxl</code>, clique <a href="https://readxl.tidyverse.org/">AQUI</a>.</p>
+<p>As principais funções do <code>readxl</code> são:</p>
+<ul>
+<li><code>read_excel()</code> : lê uma planilha do Excel (.xls ou .xlsx)</li>
+<li><code>excel_sheets()</code> : lista os nomes das abas do arquivo Excel</li>
+</ul>
+<p>Os principais parâmetros da <code>read_excel()</code> são:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 54%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parâmetro</th>
+<th>O que faz</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sheet</code></td>
+<td>Define qual aba será lida (pelo nome ou posição)</td>
+<td><code>read_excel("dados.xlsx", sheet = "Dados 2024")</code></td>
+</tr>
+<tr class="even">
+<td><code>skip</code></td>
+<td>Pula um número definido de linhas no início do arquivo</td>
+<td><code>read_excel("dados.xlsx", skip = 2)</code></td>
+</tr>
+<tr class="odd">
+<td><code>na</code></td>
+<td>Define quais strings devem ser interpretadas como valores ausentes (NA)</td>
+<td><code>read_excel("dados.xlsx", na = c("", "NA", "-"))</code></td>
+</tr>
+<tr class="even">
+<td><code>guess_max</code></td>
+<td>Número de linhas usadas para a função tentar identificar automaticamente o tipo das colunas</td>
+<td><code>read_excel("dados.xlsx", guess_max = 1000)</code></td>
+</tr>
+<tr class="odd">
+<td><code>col_names</code></td>
+<td>Indica se a primeira linha deve ser usada como nome das colunas</td>
+<td><code>read_excel("dados.xlsx", col_names = FALSE)</code></td>
+</tr>
+</tbody>
+</table>
+<section id="exemplo-com-a-pnad-contínua" class="level4" data-number="3.2.8.1">
+<h4 data-number="3.2.8.1" class="anchored" data-anchor-id="exemplo-com-a-pnad-contínua"><span class="header-section-number">3.2.8.1</span> Exemplo com a PNAD contínua</h4>
+<p>Muitas vezes precisamos trabalhar com dados armazenados em planilhas de Excel. Veja abaixo, por exemplo, a planilha da PNAD contínua, do IBGE:</p>
+<p><img src="figuras/pnad continua.png" class="img-fluid"></p>
+<p>Perceba que existem duas planilhas. A primeira tem a descrição das variáveis. Vamos ver a segunda:</p>
+<p><img src="figuras/pnad 2.png" class="img-fluid"></p>
+<p>A segunda tem os dados.</p>
+<p><br>
+</p>
+<p><strong>Que tipo de problemas você pode ter ao tentar importar esta planilha para o <code>R</code>?</strong></p>
+<p><br>
+</p>
+<p>Vamos tentar com o <code>readxl</code>. Precisamos primeiro carregar o pacote. Vamos baixar os dados da PNAD e ler com <code>read_excel</code>.</p>
+<p><strong>Que parâmetros precisamos usar?</strong></p>
+<p><br>
+</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://github.com/laispfreitas/curso_CD1/raw/refs/heads/main/PNAD_Continua_2012_2018_Caracteristicas_Gerais_RACA.xlsx"</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">"pnad.xlsx"</span>, <span class="at">mode =</span> <span class="st">"wb"</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>pnad <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"pnad.xlsx"</span>, </span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">sheet =</span> <span class="dv">2</span>, </span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">skip =</span> <span class="dv">5</span>)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>New names<span class="sc">:</span>                                                                                           </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Variável de abertura</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Variável de abertura...4</span><span class="st">`</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Categoria</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Categoria...5</span><span class="st">`</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Variável de abertura</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Variável de abertura...6</span><span class="st">`</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Categoria</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Categoria...7</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Repare que recebemos um aviso que algumas variáveis foram renomeadas. Isto porque a planilha original possuía várias colunas com o mesmo nome, o que não é como dados devem ser armazenados! Vamos verificar essa tabela:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pnad</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 42,120 × 14</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>   Indicador         <span class="st">`</span><span class="at">Nível Territorial</span><span class="st">`</span> <span class="st">`</span><span class="at">Abertura Territorial</span><span class="st">`</span> Variável de abertura…¹ Categoria...<span class="dv">5</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>               <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                  <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                  <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        </span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> População (mil p… País                Brasil                 Sexo                   Total        </span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> População (mil p… País                Brasil                 Sexo                   Homem        </span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> População (mil p… País                Brasil                 Sexo                   Mulher       </span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> População (mil p… País                Brasil                 Sexo                   Total        </span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> População (mil p… País                Brasil                 Sexo                   Total        </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> População (mil p… País                Brasil                 Sexo                   Total        </span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> População (mil p… País                Brasil                 Sexo                   Total        </span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> População (mil p… País                Brasil                 Sexo                   Homem        </span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> População (mil p… País                Brasil                 Sexo                   Homem        </span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> População (mil p… País                Brasil                 Sexo                   Homem        </span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 42,110 more rows</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ abbreviated name: ¹​`Variável de abertura...4`</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 9 more variables: `Variável de abertura...6` &lt;chr&gt;, Categoria...7 &lt;chr&gt;, `2012` &lt;dbl&gt;,</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   `2013` &lt;dbl&gt;, `2014` &lt;dbl&gt;, `2015` &lt;dbl&gt;, `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;</span></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Parece que a planilha foi importada corretamente. Agora, há um longo caminho para transformar esses dados em dados <strong>tidy</strong>…</p>
 </section>
-<section id="armazenado-os-dados" class="level3" data-number="3.2.9">
-<h3 data-number="3.2.9" class="anchored" data-anchor-id="armazenado-os-dados"><span class="header-section-number">3.2.9</span> Armazenado os dados</h3>
+</section>
+<section id="acesso-a-base-de-dados" class="level3" data-number="3.2.9">
+<h3 data-number="3.2.9" class="anchored" data-anchor-id="acesso-a-base-de-dados"><span class="header-section-number">3.2.9</span> Acesso a Base de Dados</h3>
+</section>
+<section id="armazenado-os-dados" class="level3" data-number="3.2.10">
+<h3 data-number="3.2.10" class="anchored" data-anchor-id="armazenado-os-dados"><span class="header-section-number">3.2.10</span> Armazenado os dados</h3>
 
 
 </section>
@@ -1072,8 +1180,8 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="Referencias">
-        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./arrumando_dados.html" class="pagination-link" aria-label="Limpeza, manipulação e transformação dos dados">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Limpeza, manipulação e transformação dos dados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
