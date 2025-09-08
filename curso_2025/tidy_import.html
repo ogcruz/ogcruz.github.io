@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#api-do-infodengue" id="toc-api-do-infodengue" class="nav-link" data-scroll-target="#api-do-infodengue"><span class="header-section-number">3.2.5</span> API do INFODENGUE</a></li>
   <li><a href="#api-open-meteor" id="toc-api-open-meteor" class="nav-link" data-scroll-target="#api-open-meteor"><span class="header-section-number">3.2.6</span> API Open-Meteor</a></li>
   <li><a href="#importando-diretamente-do-datasus" id="toc-importando-diretamente-do-datasus" class="nav-link" data-scroll-target="#importando-diretamente-do-datasus"><span class="header-section-number">3.2.7</span> Importando diretamente do DATASUS</a></li>
-  <li><a href="#lendo-planilhas-com-readr" id="toc-lendo-planilhas-com-readr" class="nav-link" data-scroll-target="#lendo-planilhas-com-readr"><span class="header-section-number">3.2.8</span> Lendo planilhas com <code>readr</code></a></li>
+  <li><a href="#lendo-planilhas-com-readxl" id="toc-lendo-planilhas-com-readxl" class="nav-link" data-scroll-target="#lendo-planilhas-com-readxl"><span class="header-section-number">3.2.8</span> Lendo planilhas com <code>readxl</code></a></li>
   <li><a href="#acesso-a-base-de-dados" id="toc-acesso-a-base-de-dados" class="nav-link" data-scroll-target="#acesso-a-base-de-dados"><span class="header-section-number">3.2.9</span> Acesso a Base de Dados</a></li>
   <li><a href="#armazenado-os-dados" id="toc-armazenado-os-dados" class="nav-link" data-scroll-target="#armazenado-os-dados"><span class="header-section-number">3.2.10</span> Armazenado os dados</a></li>
   </ul></li>
@@ -662,8 +662,8 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <p><strong>Parece que o seu trabalho não terminou!</strong></p>
 </section>
 </section>
-<section id="lendo-planilhas-com-readr" class="level3" data-number="3.2.8">
-<h3 data-number="3.2.8" class="anchored" data-anchor-id="lendo-planilhas-com-readr"><span class="header-section-number">3.2.8</span> Lendo planilhas com <code>readr</code></h3>
+<section id="lendo-planilhas-com-readxl" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="lendo-planilhas-com-readxl"><span class="header-section-number">3.2.8</span> Lendo planilhas com <code>readxl</code></h3>
 <p><img src="figuras/readxl.png" class="img-fluid" style="width:20.0%"></p>
 <p>O <code>readxl</code> é um pacote que permite ler arquivos de Excel para o <code>R</code>. Ele faz parte do <code>tidyverse</code>, entretanto, precisa ser chamado individualmente com <code>library(readxl)</code>. Para saber mais sobre o <code>readxl</code>, clique <a href="https://readxl.tidyverse.org/">AQUI</a>.</p>
 <p>As principais funções do <code>readxl</code> são:</p>
@@ -674,9 +674,9 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <p>Os principais parâmetros da <code>read_excel()</code> são:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 54%">
-<col style="width: 36%">
+<col style="width: 23%">
+<col style="width: 45%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -692,21 +692,26 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <td><code>read_excel("dados.xlsx", sheet = "Dados 2024")</code></td>
 </tr>
 <tr class="even">
+<td><code>range</code></td>
+<td>Lê apenas um intervalo específico da planilha (ex: <code>"B2:D10"</code>)</td>
+<td><code>read_excel("dados.xlsx", range = "B2:D10")</code></td>
+</tr>
+<tr class="odd">
 <td><code>skip</code></td>
 <td>Pula um número definido de linhas no início do arquivo</td>
 <td><code>read_excel("dados.xlsx", skip = 2)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>na</code></td>
 <td>Define quais strings devem ser interpretadas como valores ausentes (NA)</td>
 <td><code>read_excel("dados.xlsx", na = c("", "NA", "-"))</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>guess_max</code></td>
 <td>Número de linhas usadas para a função tentar identificar automaticamente o tipo das colunas</td>
 <td><code>read_excel("dados.xlsx", guess_max = 1000)</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>col_names</code></td>
 <td>Indica se a primeira linha deve ser usada como nome das colunas</td>
 <td><code>read_excel("dados.xlsx", col_names = FALSE)</code></td>

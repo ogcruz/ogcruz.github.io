@@ -376,20 +376,18 @@ A função <strong>gsub</strong> faz substituições em strings usando REGEX ​
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#quantos relatam fadiga ou cansaço</span></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">str_detect</span>(sintomas,<span class="st">'[Ff]adiga|cansaço'</span>))</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#qual a palavra vem deposi de febre</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(sintomas,<span class="st">'[Ff]ebre [a-zA-Z]{1,}'</span>)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dor E Febre</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>((<span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Dd]or'</span>) <span class="sc">&amp;</span> <span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Ff]ebre'</span>)))</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Dor OU Febre</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>((<span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Dd]or'</span>) <span class="sc">|</span> <span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Ff]ebre'</span>)))</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co"># qual e a palavra que vem depois de febre</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">str_match</span>(sintomas,<span class="st">'[Ff]ebre</span><span class="sc">\\</span><span class="st">s([a-zA-Z]{1,})'</span>)</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace_all</span>(sintomas,<span class="st">'falta.*ar'</span>,<span class="st">'falta_de_ar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Dor E Febre</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>((<span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Dd]or'</span>) <span class="sc">&amp;</span> <span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Ff]ebre'</span>)))</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Dor OU Febre</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>((<span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Dd]or'</span>) <span class="sc">|</span> <span class="fu">str_detect</span>(sintomas  ,<span class="st">'[Ff]ebre'</span>)))</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># qual e a palavra que vem depois de febre</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">str_match</span>(sintomas,<span class="st">'[Ff]ebre</span><span class="sc">\\</span><span class="st">s([a-zA-Z]{1,})'</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># mudar falta de ar para falta_de_ar</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace_all</span>(sintomas,<span class="st">'falta.*ar'</span>,<span class="st">'falta_de_ar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Como vimos existem vários pacotes com funções que permitem usar REGEX, lembre-se que o R utiliza dialeto de REGEX aprenda um pouco mais os recursos no R</p>
 <ul>
 <li><a href="https://r4ds.had.co.nz/strings.html">no capítulo sobre strings do livro R for Data Science</a></li>
