@@ -223,7 +223,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#camadas" id="toc-camadas" class="nav-link active" data-scroll-target="#camadas"><span class="header-section-number">5.1</span> Camadas</a></li>
   <li><a href="#a-camada-estética-aes" id="toc-a-camada-estética-aes" class="nav-link" data-scroll-target="#a-camada-estética-aes"><span class="header-section-number">5.2</span> A camada estética <code>aes()</code></a></li>
-  <li><a href="#histogramas-e-densidade" id="toc-histogramas-e-densidade" class="nav-link" data-scroll-target="#histogramas-e-densidade"><span class="header-section-number">5.3</span> Histogramas e densidade</a></li>
+  <li><a href="#temas" id="toc-temas" class="nav-link" data-scroll-target="#temas"><span class="header-section-number">5.3</span> Temas</a></li>
+  <li><a href="#facetas" id="toc-facetas" class="nav-link" data-scroll-target="#facetas"><span class="header-section-number">5.4</span> Facetas</a>
+  <ul class="collapse">
+  <li><a href="#facet_geo" id="toc-facet_geo" class="nav-link" data-scroll-target="#facet_geo"><span class="header-section-number">5.4.1</span> <code>facet_geo</code></a></li>
+  </ul></li>
+  <li><a href="#histogramas-e-densidade" id="toc-histogramas-e-densidade" class="nav-link" data-scroll-target="#histogramas-e-densidade"><span class="header-section-number">5.5</span> Histogramas e densidade</a></li>
   </ul>
 </nav>
     </div>
@@ -305,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/sw_ggplot2.png" class="img-fluid"></p>
-<p>Agora na estética especificamos que as observações sejam coloridas de acordo com o sexo biológico. Além disso, adicionamos título e nome dos eixos x e y dentro do <code>labs()</code> e com <code>anottate()</code> adicionamos uma anotação com o nome do personagem no ponto <em>outlier</em>.</p>
+<p>Agora na estética especificamos que as observações sejam coloridas de acordo com o sexo biológico. Além disso, adicionamos título e nome dos eixos x e y dentro do <code>labs()</code> e com <code>anottate()</code> adicionamos uma anotação com o nome do personagem no ponto <em>outlier</em>. Além disso, utilizamos o tema <code>theme_minimal()</code> para estilizar o gráfico.</p>
 <p>Este é apenas um exemplo! Existem muitas outras possibilidades!</p>
 <p>Veja abaixo um resumo dos principais componentes utilizados para criar gráficos no <code>ggplot2</code>:</p>
 <table class="caption-top table">
@@ -487,85 +492,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/laispfreitas/curso_CD1/refs/heads/main/aids_uf.csv"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>aids.uf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>aids.uf</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 1,188 × 3</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     ano cod_UF_res casos</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span>         <span class="dv">11</span>     <span class="dv">0</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1980</span>         <span class="dv">12</span>     <span class="dv">0</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1980</span>         <span class="dv">13</span>     <span class="dv">0</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1980</span>         <span class="dv">14</span>     <span class="dv">0</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1980</span>         <span class="dv">15</span>     <span class="dv">0</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1980</span>         <span class="dv">16</span>     <span class="dv">0</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1980</span>         <span class="dv">17</span>     <span class="dv">0</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1980</span>         <span class="dv">21</span>     <span class="dv">0</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1980</span>         <span class="dv">22</span>     <span class="dv">0</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1980</span>         <span class="dv">23</span>     <span class="dv">0</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 1,188 × 7</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     ano cod_UF_res casos abbrev_state name_state code_region name_region</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>chr<span class="sc">&gt;</span>            <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>      </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span>         <span class="dv">11</span>     <span class="dv">0</span> RO           Rondônia             <span class="dv">1</span> Norte      </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1980</span>         <span class="dv">12</span>     <span class="dv">0</span> AC           Acre                 <span class="dv">1</span> Norte      </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1980</span>         <span class="dv">13</span>     <span class="dv">0</span> AM           Amazonas             <span class="dv">1</span> Norte      </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1980</span>         <span class="dv">14</span>     <span class="dv">0</span> RR           Roraima              <span class="dv">1</span> Norte      </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1980</span>         <span class="dv">15</span>     <span class="dv">0</span> PA           Pará                 <span class="dv">1</span> Norte      </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1980</span>         <span class="dv">16</span>     <span class="dv">0</span> AP           Amapá                <span class="dv">1</span> Norte      </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1980</span>         <span class="dv">17</span>     <span class="dv">0</span> TO           Tocantins            <span class="dv">1</span> Norte      </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1980</span>         <span class="dv">21</span>     <span class="dv">0</span> MA           Maranhão             <span class="dv">2</span> Nordeste   </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1980</span>         <span class="dv">22</span>     <span class="dv">0</span> PI           Piauí                <span class="dv">2</span> Nordeste   </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1980</span>         <span class="dv">23</span>     <span class="dv">0</span> CE           Ceará                <span class="dv">2</span> Nordeste   </span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 1,178 more rows</span></span>
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vamos agora fazer um gráfico com as séries temporais das UFs do Nordeste, variando tanto a cor quanto o tipo de linha.</p>
 <p>Os tipos de linha podem ser os seguintes:</p>
 <p><img src="figuras/linhas.png" class="img-fluid"></p>
-<p>Primeiro precisamos transformar os códigos de UF em fator e selecionar as UFs desejadas:</p>
+<p>Vamos selecionar as UFs desejadas:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>aids.NE <span class="ot">&lt;-</span> aids.uf <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cod_UF_res =</span> <span class="fu">factor</span>(cod_UF_res)) <span class="sc">|&gt;</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_starts</span>(cod_UF_res, <span class="st">"2"</span>))</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>aids.NE</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 396 × 3</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>     ano cod_UF_res casos</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>fct<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span> <span class="dv">21</span>             <span class="dv">0</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1980</span> <span class="dv">22</span>             <span class="dv">0</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1980</span> <span class="dv">23</span>             <span class="dv">0</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1980</span> <span class="dv">24</span>             <span class="dv">0</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1980</span> <span class="dv">25</span>             <span class="dv">0</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1980</span> <span class="dv">26</span>             <span class="dv">0</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1980</span> <span class="dv">27</span>             <span class="dv">0</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1980</span> <span class="dv">28</span>             <span class="dv">0</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1980</span> <span class="dv">29</span>             <span class="dv">0</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1982</span> <span class="dv">21</span>             <span class="dv">0</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 386 more rows</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> cod_UF_res, </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> cod_UF_res)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name_region <span class="sc">==</span> <span class="st">"Nordeste"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>aids.NE</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 396 × 7</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     ano cod_UF_res casos abbrev_state name_state          code_region name_region</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                     <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>      </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span>         <span class="dv">21</span>     <span class="dv">0</span> MA           Maranhão                      <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1980</span>         <span class="dv">22</span>     <span class="dv">0</span> PI           Piauí                         <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1980</span>         <span class="dv">23</span>     <span class="dv">0</span> CE           Ceará                         <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1980</span>         <span class="dv">24</span>     <span class="dv">0</span> RN           Rio Grande Do Norte           <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1980</span>         <span class="dv">25</span>     <span class="dv">0</span> PB           Paraíba                       <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1980</span>         <span class="dv">26</span>     <span class="dv">0</span> PE           Pernambuco                    <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1980</span>         <span class="dv">27</span>     <span class="dv">0</span> AL           Alagoas                       <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1980</span>         <span class="dv">28</span>     <span class="dv">0</span> SE           Sergipe                       <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1980</span>         <span class="dv">29</span>     <span class="dv">0</span> BA           Bahia                         <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1982</span>         <span class="dv">21</span>     <span class="dv">0</span> MA           Maranhão                      <span class="dv">2</span> Nordeste   </span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 386 more rows</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gg_aidsNE <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> casos, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">color =</span> abbrev_state, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">linetype =</span> abbrev_state)) <span class="sc">+</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/aidsNE.png" class="img-fluid"></p>
 <p>Perceba que adicionamos <code>linewidth = 1</code> em <code>geom_line()</code> para especificar a espessura da linha.</p>
 </section>
-<section id="histogramas-e-densidade" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="histogramas-e-densidade"><span class="header-section-number">5.3</span> Histogramas e densidade</h2>
+<section id="temas" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="temas"><span class="header-section-number">5.3</span> Temas</h2>
+<p>Os temas do <code>ggplot2</code> são o que controlam a aparência não relacionada aos dados do gráfico, como:</p>
+<ul>
+<li>Cor de fundo do gráfico e do painel de plotagem<br>
+</li>
+<li>Linhas de grade (major/minor gridlines)<br>
+</li>
+<li>Títulos e textos (fonte, tamanho, posição)<br>
+</li>
+<li>Aparência de legendas (posição, caixa, título)<br>
+</li>
+<li>Margens e espaçamentos</li>
+</ul>
+<p>Os temas podem ser adicionados ao ggplot como uma nova camada, com o operador <code>+</code>, como já vimos em exemplos passados. Se um tema não for adicionado, o <code>ggplot2</code> usará o seu tema padrão, <code>theme_gray()</code>.</p>
+<p>Existem outros temas no pacote <code>ggplot2</code> que podem ser utilizados: <code>theme_bw()</code>, <code>theme_minimal()</code>, <code>theme_light()</code>, <code>theme_dark()</code>, <code>theme_classic()</code> e <code>theme_void()</code>.</p>
+<p>Vamos refazer o gráfico anterior usando o <code>theme_light()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> abbrev_state, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> abbrev_state)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/aidsNE2.png" class="img-fluid"></p>
+<p>Além de usar temas prontos, você pode personalizar elementos específicos com <code>theme()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> abbrev_state, </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> abbrev_state)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Casos de AIDS registrados no Nordeste por UF"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ano"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Código UF"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Código UF"</span>) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">'black'</span>), </span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">'grey90'</span>, <span class="at">linewidth =</span> .<span class="dv">3</span>),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">'white'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/aidsNE3.png" class="img-fluid"></p>
+<p>Alguns pacotes oferecem opções de temas adicionais para o <code>ggplot2</code>. Um dos mais famosos é o <code>ggthemes</code>, que tem temas baseados em estilos de jornais ou publicações famosas.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> abbrev_state, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> abbrev_state)) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Casos de AIDS registrados no Nordeste por UF"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ano"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Código UF"</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Código UF"</span>) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_clean</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/aids_clean.png" class="img-fluid"></p>
+</section>
+<section id="facetas" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="facetas"><span class="header-section-number">5.4</span> Facetas</h2>
+<p>Podemos separar os gráficos para que cada UF fique em uma faceta acrescentando uma camada com <code>facet_wrap()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> abbrev_state, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> abbrev_state)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>abbrev_state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/aids_NEfacets.png" class="img-fluid"></p>
+<p>No exemplo acima todos as facetas ficaram na mesma escala no eixo x e y. Em alguns casos pode ser interessante deixar o eixo y variar. Isto pode ser especificado acrescentando <code>scale = "free_y"</code> em <code>facet_wrap()</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.NE, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> abbrev_state, </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> abbrev_state)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>abbrev_state, <span class="at">scale =</span> <span class="st">"free_y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/aids_NEfacet2.png" class="img-fluid"></p>
+<section id="facet_geo" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="facet_geo"><span class="header-section-number">5.4.1</span> <code>facet_geo</code></h3>
+<p><img src="figuras/geofacetlogo.png" class="img-fluid" style="width:20.0%"></p>
+<p>Existe um pacote chamado <code>geofacet</code> que permite adicionar uma camada com <code>facet_geo()</code> ao ggplot. As facetas resultantes preservação em parte a orientação geográfica. Para saber mais sobre a <code>geofacet</code>, clique <a href="https://hafen.github.io/geofacet/index.html">AQUI</a>.</p>
+<p>Como temos os dados de AIDS por UF, podemos usar esse pacote para ter as facetas preservando em parte a localização das UFs no Brasil.</p>
+<p>Agora vamos fazer o gráfico:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geofacet)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.uf2, <span class="fu">aes</span>(<span class="at">x =</span> ano,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> casos, </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">color =</span> abbrev_state)) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_geo</span>(<span class="sc">~</span>abbrev_state, <span class="at">grid =</span> <span class="st">"br_states_grid1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/geofacet.png" class="img-fluid"></p>
+<p>Legal, mas vamos melhorar esse gráfico? O que podemos fazer?</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="histogramas-e-densidade" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="histogramas-e-densidade"><span class="header-section-number">5.5</span> Histogramas e densidade</h2>
 <p>Agora que já vimos a ideia de camadas e conhecemos as opções de mapeamento estético em <code>aes()</code>, vamos fazer um histograma:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width)) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">stat_bin()</span><span class="st">`</span> using <span class="st">`</span><span class="at">bins = 30</span><span class="st">`</span>. Pick better value with <span class="st">`</span><span class="at">binwidth</span><span class="st">`</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">stat_bin()</span><span class="st">`</span> using <span class="st">`</span><span class="at">bins = 30</span><span class="st">`</span>. Pick better value with <span class="st">`</span><span class="at">binwidth</span><span class="st">`</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Repare que retornou uma mensagem de aviso. Podemos especificar a quantidade de classes usando os parâmetros <code>binwidth</code> ou <code>bins</code>. Você deve sempre buscar um valor mais adequado que o padrão (que é de 30 classes).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_um.png" class="img-fluid"></p>
 <p>Alterando o número de classes:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_2.png" class="img-fluid"></p>
 <p>Existe uma fórmula para converter aproximadamente bins em binwidth. Considerando bins = 20:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(iris<span class="sc">$</span>Sepal.Width) <span class="sc">/</span> <span class="dv">20</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.12</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(iris<span class="sc">$</span>Sepal.Width) <span class="sc">/</span> <span class="dv">20</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.12</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Suponha agora que queremos um histograma para cada especie.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_spp.png" class="img-fluid"></p>
 <p>podemos também usar o parâmetro <code>position</code> em <code>geom_histogram()</code> para especificar barras lado a lado ou empilhadas. Teste as opções <code>dodge</code> e <code>fill</code>. A padrão é <code>stack</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_dodge.png" class="img-fluid"></p>
 <p>Teste também as opções de coordenadas <code>cord_flip()</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_flip.png" class="img-fluid"></p>
 <p>E <code>coord_polar()</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_polar.png" class="img-fluid"></p>
 <p>A função <code>geom_density()</code> é semelhante. Vamos testar com o parâmetro <code>alpha</code>:</p>
 <pre><code>ggplot(iris, aes(Sepal.Width, fill = Species)) +
