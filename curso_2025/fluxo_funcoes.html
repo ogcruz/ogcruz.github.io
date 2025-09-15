@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Anexo 1 - Instalando o duckdb – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
+<title>Anexo 4: Controle de Fluxo e Funções em R – Ciência de Dados Aplicada à Epidemiologia - 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./anexo_xml_json.html" rel="next">
-<link href="./references.html" rel="prev">
+<link href="./regex.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./anexo1.html">Anexo 1 - Instalando o duckdb</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./fluxo_funcoes.html">Anexo 4: Controle de Fluxo e Funções em R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anexo1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./anexo1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo 1 - Instalando o duckdb</span></a>
   </div>
 </li>
@@ -172,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fluxo_funcoes.html" class="sidebar-item-text sidebar-link">
+  <a href="./fluxo_funcoes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Anexo 4: Controle de Fluxo e Funções em R</span></a>
   </div>
 </li>
@@ -186,11 +249,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Conteúdo</h2>
    
   <ul>
-  <li><a href="#principais-características" id="toc-principais-características" class="nav-link active" data-scroll-target="#principais-características">Principais Características</a></li>
-  <li><a href="#como-instalar-no-linux-e-mac" id="toc-como-instalar-no-linux-e-mac" class="nav-link" data-scroll-target="#como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</a></li>
-  <li><a href="#como-instalar-no-windows-1011" id="toc-como-instalar-no-windows-1011" class="nav-link" data-scroll-target="#como-instalar-no-windows-1011">Como instalar no Windows 10/11</a></li>
-  <li><a href="#passo-a-passo" id="toc-passo-a-passo" class="nav-link" data-scroll-target="#passo-a-passo">Passo a Passo</a></li>
-  <li><a href="#duckdb-online" id="toc-duckdb-online" class="nav-link" data-scroll-target="#duckdb-online">duckDB online</a></li>
+  <li><a href="#o-que-são-funções" id="toc-o-que-são-funções" class="nav-link active" data-scroll-target="#o-que-são-funções">O que são Funções</a></li>
+  <li><a href="#blocos-de-código-if-condicionais" id="toc-blocos-de-código-if-condicionais" class="nav-link" data-scroll-target="#blocos-de-código-if-condicionais">Blocos de Código if (Condicionais)</a></li>
+  <li><a href="#o-controle-de-fluxo-por-laços" id="toc-o-controle-de-fluxo-por-laços" class="nav-link" data-scroll-target="#o-controle-de-fluxo-por-laços">O controle de fluxo por laços</a></li>
   </ul>
 </nav>
     </div>
@@ -199,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anexo 1 - Instalando o duckdb</h1>
+<h1 class="title">Anexo 4: Controle de Fluxo e Funções em R</h1>
 </div>
 
 
@@ -216,76 +277,182 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="figuras/DuckDB_Logo.png" class="img-fluid"></p>
-<p>O duckDB <a href="https://duckdb.org/" class="uri">https://duckdb.org/</a> é um banco de dados do tipo OLAP de alto desempenho, de código aberto, desenvolvido para análise de dados em ambiente de memória (in-memory) e processamento de grandes volumes de dados com baixa latência e alta velocidade.</p>
-<section id="principais-características" class="level3">
-<h3 class="anchored" data-anchor-id="principais-características">Principais Características</h3>
+<p>Conteúdo:</p>
 <ol type="1">
-<li><p><strong>Rápido e eficiente:</strong></p>
+<li>Funções em R
 <ul>
-<li>O duckDB é extremamente rápido pois processa dados na memória e sem necessidade de escrever em disco. É ideal para análises interativas e queries complexas, rodando dezenas de vezes mais rápido que R ou python.</li>
+<li>O que são Funções?</li>
+<li>Parâmetros (Argumentos)</li>
+<li>Retorno de Valores</li>
 </ul></li>
-<li><p><strong>Fácil de usar:</strong></p>
+<li>Blocos de Código <code>if</code> (Condicionais)</li>
+<li>Controle de Fluxo com Loops: <code>for</code> , <code>while</code> e <code>repeat</code></li>
+<li>modo base: <code>apply</code>, <code>lapply, tapply</code> e <code>sapply</code></li>
+<li>purr tidyverse: <code>map</code>, <code>walk,etc..</code></li>
+</ol>
+<section id="o-que-são-funções" class="level3">
+<h3 class="anchored" data-anchor-id="o-que-são-funções">O que são Funções</h3>
+<p>Funções são blocos de código que executam uma tarefa específica e podem ser reutilizados em diferentes partes do seu programa. Elas são Com elas que você pode criar para automatizar processos, tornando seu código mais organizado, eficiente e fácil de manter evitando retrabalho.</p>
+<p>Nós interagimos com funções o tempo inteiro no R quase tudo que você faz é usar funções e especificar parâmetros.</p>
+<p>Uma função básica em R tem os seguintes elementos:</p>
 <ul>
-<li>Possui uma interface SQL, permitindo que usuários familiarizados com SQL possam usá-lo facilmente. Também pode ser usado diretamente em Python, R e Julia com bibliotecas de integração.</li>
-</ul></li>
-<li><p><strong>Lightweight e autônomo:</strong></p>
-<ul>
-<li>Não precisa de servidores, clusters ou instalações complexas. Pode rodar como uma biblioteca em Python, ou diretamente do pacote do R sem instalação de banco de dados dedicado.</li>
-</ul></li>
-<li><p><strong>Suporte a grandes volumes de dados:</strong></p>
-<p>Apesar de ser baseado em memória, o duckDB pode lidar com datasets muito grandes devido a sua otimização interna. Pode lidar com arquivos em disco sendo conteúdo deste é armazenado compactado, por exemplo, um CSV ou um DBF fica menos de 10% do valor original. Trabalha com arquivos modernos amplamente utilizados como parquet e json.</p></li>
-</ol>
-</section>
-<section id="como-instalar-no-linux-e-mac" class="level3">
-<h3 class="anchored" data-anchor-id="como-instalar-no-linux-e-mac">Como instalar no Linux e Mac</h3>
-<p>Abra um terminal e execute o código abaixo:</p>
-<pre><code>curl https://install.duckdb.org | sh</code></pre>
-</section>
-<section id="como-instalar-no-windows-1011" class="level3">
-<h3 class="anchored" data-anchor-id="como-instalar-no-windows-1011">Como instalar no Windows 10/11</h3>
-<p>Acesse o link para <a href="https://duckdb.org/docs/installation/?version=stable&amp;environment=cli&amp;platform=win&amp;download_method=direct&amp;architecture=x86_64">download</a> ou corte e cole a URL abaixo no seu navegador:</p>
-<pre><code>https://duckdb.org/docs/installation/?version=stable&amp;environment=cli&amp;platform=win&amp;download_method=direct&amp;architecture=x86_64</code></pre>
-</section>
-<section id="passo-a-passo" class="level3">
-<h3 class="anchored" data-anchor-id="passo-a-passo">Passo a Passo</h3>
-<ol type="1">
-<li>Acesse o site do duckDB:</li>
-</ol>
-<p><img src="figuras/duckdb1.png" class="img-fluid"></p>
-<ol start="2" type="1">
-<li>Clique em Installation e baixe o arquivo do link</li>
-</ol>
-<p><img src="figuras/duckdb5.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>extrair o conteudo da pasta para a área de trabalho</li>
-</ol>
-<p><img src="figuras/duckdb7.png" class="img-fluid"></p>
-<ol start="4" type="1">
-<li>de um duplo clique no icone do duckdb</li>
-</ol>
-<p><img src="figuras/duckdb10.png" class="img-fluid"></p>
-<p>Você está na interface de linha do dudkdb , aqui comandos SQL pode ser digitados</p>
-<ol start="5" type="1">
-<li>para iniciar a interface gráfica basat digitar:</li>
-</ol>
-<p><strong>CALL start_ui();</strong></p>
-<p><img src="figuras/duckdb11b.png" class="img-fluid"></p>
-<p><a href="https://duckdb.org/2025/03/12/duckdb-ui.html">DuckDB UI local</a></p>
-<ol start="6" type="1">
-<li>Interface gráfica semelhante ao jupyter</li>
-</ol>
-<p><img src="figuras/duck14.png" class="img-fluid"></p>
-<p>Clicando no botão azul “show me the basics” podemos testar o duckdb!</p>
-<p><img src="figuras/duck15.png" class="img-fluid"></p>
-</section>
-<section id="duckdb-online" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-online">duckDB online</h2>
-<p>Você também pode testar o duckdb online atraves desses dois sites abaixo:</p>
-<ul>
-<li><p><a href="https://sql-workbench.com/">SQL Workbench</a></p></li>
-<li><p><a href="https://shell.duckdb.org/">DuckDB Web Shell</a></p></li>
+<li><p><strong><code>nome_da_funcao</code></strong>: É o nome que você dá à sua função para poder chamá-la depois.</p></li>
+<li><p><strong><code>function()</code></strong>: É a palavra-chave que indica a criação de uma função.</p></li>
+<li><p><strong><code>(argumentos)</code></strong>: São os valores que a função recebe para trabalhar. Eles são opcionais.</p></li>
+<li><p><strong><code>{corpo_da_funcao}</code></strong>: É o bloco de código dentro das chaves (<code>{}</code>) que contém as instruções a serem executadas.</p></li>
+<li><p><strong><code>return()</code></strong>: É a instrução que especifica o valor que a função deve retornar como resultado. No R, a última expressão avaliada no corpo da função é retornada automaticamente, então o <code>return()</code> é opcional, mas é uma boa prática para clareza.</p></li>
 </ul>
+<p>Vamos construir uma função que transforma uma temperatura em graus Fahrenheit para graus celsius.</p>
+<p>A fórmula para converter a temperatura é:</p>
+<p><span class="math display">\[
+C = \frac{(F - 32) * 5} {9}
+\]</span></p>
+<p>Vamos chamar a nossa função <strong><code>conv_c2c</code></strong> (existe uma série de recomendações sobre como dar nome a funções). A função vai receber um parâmetro <code>temp_f</code> com a temperatura a ser convertida e retorna rum valor com a temperatura em Celsius.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conv_f2c <span class="ot">&lt;-</span> <span class="cf">function</span>(temp_f) { </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># O argumento 'f' representa a temperatura em Fahrenheit.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica a fórmula de conversão</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  temp_c <span class="ot">&lt;-</span> (temp_f <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> (<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Retorna o valor em Celsius</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temp_c)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Escopo de Variáveis em Funções</p>
+<p>O escopo de uma variável determina onde ela pode ser acessada. Em R, as variáveis definidas dentro de uma função têm escopo local, o que significa que elas só podem ser acessadas dentro da função. Variáveis definidas fora de uma função têm escopo global e podem ser acessadas em qualquer lugar do código.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variavel global</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>minha_funcao <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Variavel local</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> x<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x) <span class="co"># Acessa a variavel global x</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(y)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">minha_funcao</span>() <span class="co"># Saída: 10, 5</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># print(y)# Erro: y não está definido fora da função</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Uma função deve receber os argumentos necessários a sua execução. As variáveis internas a função só existem dentro do espaço da função. A função retorna apenas um valor que pode ser qq tipo de dado.</p>
+<p>Vantagens de usar funções</p>
+<ul>
+<li><p><strong>Reusabilidade:</strong> Você escreve o código uma vez e pode usá-lo várias vezes, evitando repetição de código.</p></li>
+<li><p><strong>Organização:</strong> Funções dividem seu código em partes lógicas e gerenciáveis.</p></li>
+<li><p><strong>Facilidade de manutenção:</strong> Se você precisar corrigir ou melhorar um pedaço do seu código, só precisa fazer a alteração na função, e não em todos os lugares onde o código foi repetido.</p></li>
+<li><p><strong>Legibilidade:</strong> O código se torna mais fácil de ler e entender, pois o nome da função já descreve o que ela faz.</p></li>
+<li><p><strong>Debug:</strong> Possibilidade de depurar o código inspecionando o seu funcionamento passo a passo.</p></li>
+</ul>
+</section>
+<section id="blocos-de-código-if-condicionais" class="level3">
+<h3 class="anchored" data-anchor-id="blocos-de-código-if-condicionais">Blocos de Código if (Condicionais)</h3>
+<p>Os blocos if permitem que você execute diferentes partes do código com base em uma condição. o blocos {} delimitam o bloco de código que será executado se a condição do if for verdadeira.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condição) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código a ser executado se a condição for verdadeira</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código a ser executado se a condição for falsa (opcional)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Analise o código abaixo</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (idade <span class="sc">&gt;=</span> <span class="dv">18</span>) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Você é maior de idade."</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"você já pode dirigir"</span>)  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Você é menor de idade."</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>As chaves <strong><code>{}</code></strong> são essenciais quando você tem mais de uma instrução a ser executada dentro do bloco if. Sem as chaves, apenas a primeira instrução após o if é considerada parte do bloco, o que pode levar a erros. Mesmo com uma única instrução, usar chaves melhora a legibilidade do código. As condições dentro do IF podem ser complexas usando os demais operadores lógicos.</p>
+</section>
+<section id="o-controle-de-fluxo-por-laços" class="level3">
+<h3 class="anchored" data-anchor-id="o-controle-de-fluxo-por-laços">O controle de fluxo por laços</h3>
+<p>As estruturas for, while e repeat são as principais ferramentas em R para criar laços de repetição (ou loops), que são usados para executar um bloco de código várias vezes.</p>
+<p>O <strong><code>for</code></strong> for é ideal quando você sabe exatamente quantas vezes a repetição precisa ocorrer. Ele itera sobre uma sequência de itens, como um vetor, uma lista ou uma coluna de um data frame, executando o código para cada item.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (item <span class="cf">in</span> sequencia) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código a ser executado</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>por exemplo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span> ) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> numeros) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  quadrado <span class="ot">&lt;-</span> n<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"O quadrado de"</span>, n, <span class="st">"é"</span>, quadrado))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>o <strong><code>for</code></strong> é laço mais comum e seguro, pois evita loops infinitos. É a melhor escolha para a maioria das tarefas de iteração. em sua forma geral temos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> <span class="cf">while</span> (condicao) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código a ser executado</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>contador <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (contador <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(contador)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  contador <span class="ot">&lt;-</span> contador <span class="sc">-</span> <span class="dv">1</span>  <span class="co"># É crucial alterar a variável para evitar um loop infinito</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Contador chegou a ZERO!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O <strong><code>while</code></strong> útil quando você não sabe o número exato de repetições, mas sabe qual condição deve ser satisfeita para que o loop pare.</p>
+<p>o <strong><code>repeat</code></strong> executa um bloco de código indefinidamente até que seja explicitamente interrompido. Você deve usar uma instrução break dentro do laço para parar a execução, baseada em uma condição. Se não houver break, o loop será infinito.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código a ser executado</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (condicao_de_parada) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">15</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  numero_atual <span class="ot">&lt;-</span> numeros[i]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (numero_atual <span class="sc">&gt;</span> <span class="dv">10</span>) {</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"O primeiro número maior que 10 é"</span>, numero_atual))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span>  <span class="co"># Sai do loop</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O <strong><code>repeat</code></strong> útil para situações onde a condição de saída pode estar no meio do bloco de código, ou quando você precisa garantir que o laço execute pelo menos uma vez. No entanto, é mais propenso a erros (como loops infinitos) e geralmente menos usado que o for e o while.</p>
+<p>Em resumo:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>for</th>
+<th>while</th>
+<th>repeat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Interações</td>
+<td>conhecida</td>
+<td>condicional</td>
+<td>indefinida (break)</td>
+</tr>
+<tr class="even">
+<td>condição parada</td>
+<td>sequencia definida</td>
+<td>condição é FALSA</td>
+<td>comando break</td>
+</tr>
+<tr class="odd">
+<td>uso tipico</td>
+<td>iteragir em uma sequencia</td>
+<td>repetir até condição</td>
+<td>simulações, eventos do sistema</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>TBC!!!!</p>
 
 
 </section>
@@ -693,14 +860,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./references.html" class="pagination-link" aria-label="Referencias">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Referencias</span>
+      <a href="./regex.html" class="pagination-link" aria-label="Anexo 3 - Expressões Regulares">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Anexo 3 - Expressões Regulares</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./anexo_xml_json.html" class="pagination-link" aria-label="Anexo 2 - XML &amp; JSON">
-        <span class="nav-page-text">Anexo 2 - XML &amp; JSON</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

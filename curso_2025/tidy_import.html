@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,14 +69,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./sql.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3a901a7f3f9867c8ff05ae937ae4b75b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c3855da63d5285531ce763c868110e25.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -130,7 +131,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Ciência de Dados Aplicada à Epidemiologia - 2025</a> 
     </div>
@@ -174,6 +177,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visualizando dados com <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -194,6 +203,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./regex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo 3 - Expressões Regulares</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fluxo_funcoes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anexo 4: Controle de Fluxo e Funções em R</span></a>
   </div>
 </li>
     </ul>
@@ -280,11 +295,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a-clareza-do-operador-pipe-ou-no-r-4.1" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="a-clareza-do-operador-pipe-ou-no-r-4.1"><span class="header-section-number">3.1.3</span> A clareza do operador pipe (<code>%&gt;%</code> ou <code>|&gt;</code> no <code>R</code> 4.1+)</h3>
 <p>O operador pipe é o que realmente torna o código <code>tidyverse</code> tão intuitivo. Ele permite que você encaminhe o resultado de uma função diretamente para a próxima, criando uma sequência lógica de operações. Isso melhora drasticamente a legibilidade e a manutenção do seu código.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span>                        <span class="co"># Começa com o objeto 'dados'</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span>                        <span class="co"># Começa com o objeto 'dados'</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(coluna1, coluna2) <span class="sc">|&gt;</span>   <span class="co"># Usa select() para manter apenas as variáveis coluna1 e coluna2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(coluna1 <span class="sc">==</span> <span class="st">'exemplo'</span>)  <span class="co"># Depois, usa filter() para manter apenas as linhas onde coluna1 == 'exemplo'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(coluna1 <span class="sc">==</span> <span class="st">'exemplo'</span>)  <span class="co"># Depois, usa filter() para manter apenas as linhas onde coluna1 == 'exemplo'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>O operador pipe pega o resultado da linha anterior e passa como primeiro argumento para a função da próxima linha. Assim:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(<span class="fu">select</span>(dados, coluna1, coluna2), coluna1 <span class="sc">==</span> <span class="st">'exemplo'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(<span class="fu">select</span>(dados, coluna1, coluna2), coluna1 <span class="sc">==</span> <span class="st">'exemplo'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Mas com o pipe, fica mais legível e mais próximo da lógica humana: “pegue os dados → selecione colunas → filtre as linhas”.</p>
 <p>Juntos, esses três pilares criam uma abordagem de ciência de dados que é consistente, poderosa e, acima de tudo, agradável de se trabalhar.</p>
 </section>
@@ -340,9 +355,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Essa é a maneira que todos estão mais acostumados. Em geral se importa um arquivo texto do tipo <strong>CSV</strong> ou ainda <strong>TXT</strong> com algum tipo de delimitador, que pode ser espaço, <tab> ou qualquer outro.</tab></p>
 <p>Comumente se utiliza a função <code>read.table()</code> ou alguma de suas variantes como <code>read.csv()</code> ou <code>read.csv2()</code>.</p>
 <p>Alguns exemplos:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"planilha.csv"</span>)  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"planilha.csv"</span>)  </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ou </span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dados2  <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"arquivo.txt"</span>, <span class="at">header=</span>F, <span class="at">sep=</span><span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dados2  <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"arquivo.txt"</span>, <span class="at">header=</span>F, <span class="at">sep=</span><span class="st">";"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="benchmarks-e-cuidados-na-importação" class="level4" data-number="3.2.1.1">
 <h4 data-number="3.2.1.1" class="anchored" data-anchor-id="benchmarks-e-cuidados-na-importação"><span class="header-section-number">3.2.1.1</span> Benchmarks e cuidados na importação</h4>
 <p>Um rápido benchmark compara o tempo que cada uma das funções em <code>R</code> (em diferentes pacotes), Python e <code>duckDB</code> demorou para ler um arquivo CSV de 1.5 Gb contendo 3.297.660 linhas e 123 colunas.</p>
@@ -411,91 +426,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>No pacote <code>haven</code> você encontra as funções <code>read_sas()</code>, <code>read_sav()</code> e <code>read_dta()</code> para importar respectivamente do SAS, SPSS e STATA.</p>
 <p>Por conta da influência dos sistemas do DATASUS na saúde, até hoje temos de lidar com um formato legado chamado DBASE que possui a extensão .DBF ou ainda .DBC (DBase compactado, formato criado pelo DATASUS).</p>
 <p>Para importar um DBF com o pacote <code>foreign</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.dbf</span>(<span class="st">"datasus.dbf"</span>, <span class="at">as.is=</span><span class="cn">TRUE</span>) </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## as.is = TRUE não transforma as strings em fatores</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## as.is = TRUE não transforma as strings em fatores</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Já para o DBC vamos precisar do pacote <code>read.dbc</code>, desenvolvido por <a href="https://github.com/danicat/read.dbc">Daniela Petruzalek</a>. Não está disponível no CRAN (o repositório oficial do <code>R</code>) no momento deste curso. Por isso, para instalá-lo, você precisará seguir um procedimento alternativo. Vamos instalar do repositório no github da autora e, para isso, precisamos do pacote <code>devtools</code> instalado.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"danicat/read.dbc"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"danicat/read.dbc"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(read.dbc)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.dbc</span>(<span class="st">"datasus.DBC"</span>, <span class="at">as.is=</span><span class="cn">TRUE</span>)  <span class="do">## DBC é um DBF mas compactado</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.dbc</span>(<span class="st">"datasus.DBC"</span>, <span class="at">as.is=</span><span class="cn">TRUE</span>)  <span class="do">## DBC é um DBF mas compactado</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="importando-via-web" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="importando-via-web"><span class="header-section-number">3.2.2</span> Importando via WEB</h3>
 <p>Uma das facilidades do <code>R</code> que é pouco explorada é a possibilidade de ler arquivo através da internet. Algumas das funções podem acessar diretamente e referenciar um link remoto (URL).</p>
 <p>Veja o exemplo abaixo:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/wcota/covid19br/refs/heads/master/cases-brazil-cities.csv'</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tab)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/wcota1.png" class="img-fluid"></p>
 <p>Tendo o endereço da URL, em apenas um comando podemos importar o conteúdo de uma tabela ou dados localizados numa página.</p>
 <p>Essa página pode ser num local web usando o protocolo https, http ou, por exemplo, ftp.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>paises <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'http://157.86.198.20/dados/paises.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>paises <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'http://157.86.198.20/dados/paises.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Mas nem sempre é tão simples assim. A segurança na web evoluiu significativamente, e os navegadores modernos e até mesmo as ferramentas que fazem requisições HTTP estão se tornando cada vez mais rigorosas na validação de certificados SSL/TLS.</p>
 <p>Vamos baixar uma lista de preços de medicamentos do site da ANVISA:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://dados.anvisa.gov.br/dados/TA_PRECOS_MEDICAMENTOS.csv"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://dados.anvisa.gov.br/dados/TA_PRECOS_MEDICAMENTOS.csv"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/anvisa_ssl.png" class="img-fluid"></p>
 <p>Ainda é possível acessar a tabela, mas vamos precisar de um pacote chamado <code>httr2</code>, usado para “raspagem” (scrapper) de dados da web. Nesse pacote podemos dizer para que a autenticação seja ignorada desativando as opções (ssl_verifypeer e ssl_verifyhost). Assim, nem a conexão e nem o site serão validados.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>req <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_options</span>(<span class="at">ssl_verifypeer =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_options</span>(<span class="at">ssl_verifyhost =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_options</span>(<span class="at">ssl_verifyhost =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>o comando acima montou uma requisição “req” que vai ser executada a seguir pela função <code>req_perform()</code>. Somente o dado será acessado.</p>
 <p>A função <code>resp_status()</code> vai nos retornar o código web resultante da operação. Caso seja 200, a operação foi realizada com sucesso. Caso a página ou a URL esteja mal formatada, teremos como resultado o código 404, também conhecido como “Página Não Encontrada”.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>resposta <span class="ot">&lt;-</span> <span class="fu">req_perform</span>(req)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>resposta <span class="ot">&lt;-</span> <span class="fu">req_perform</span>(req)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">resp_status</span>(resposta)  <span class="do">## ou resposta$status_code </span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 200</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Recebemos o código 200, indicando que a função foi bem sucedida, mas não termina aqui ainda. É necessário extrair o dado do objeto resposta para poder importá-lo usando uma função como <code>read_csv()</code>. Nesse caso vamos usar <code>read_delim()</code>.</p>
 <p>A função <code>resp_body_raw()</code> é a que vai extrair os dados do objeto resposta e passar a função que vai realizar a importação. Vamos informar a função <code>read_delim()</code> que o delimitador é “;” e também que o code_page usados para a acentuação é o Latin-1 (o mesmo que ISO-8859-1 / Windows-1252), usado, em geral, pelo Windows. Já o Linux e o MAC utilizam UTF-8 . Assim, se o seu computador roda Linux, é preciso informar isso. Caso você use Windows, não é necessário, mas também não retorna erro se usar.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>anvisa <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="at">file=</span><span class="fu">resp_body_raw</span>(resposta), <span class="at">delim =</span> <span class="st">';'</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>anvisa <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="at">file=</span><span class="fu">resp_body_raw</span>(resposta), <span class="at">delim =</span> <span class="st">';'</span>,</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">locale=</span><span class="fu">locale</span>(<span class="at">encoding=</span><span class="st">'latin1'</span>))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>anvisa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>anvisa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/anvisa_ssl.png" class="img-fluid"></p>
 <p>Como podem ver, obtivemos 53436 linhas e 16 colunas.</p>
 <p>Podemos agora perguntar, por exemplo, quantos medicamentos estão registados que usam acido acetilsalicílico nesta base.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>anvisa <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>anvisa <span class="sc">|&gt;</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(DS_SUBSTANCIA, <span class="st">'acetilsalicílico'</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 281</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 281</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Não se preocupe que vamos ver em maiores detalhes essas funções acima nas próximas aulas.</p>
 </section>
 <section id="acessando-o-feed-de-notícias-rss-do-ministério-da-saúde" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="acessando-o-feed-de-notícias-rss-do-ministério-da-saúde"><span class="header-section-number">3.2.3</span> Acessando o feed de notícias RSS do Ministério da Saúde</h3>
 <p>Vamos acessar o RSS que é o serviço de notícias do MS. O formato dos dados está em XML.</p>
 <p>Formatos <a href="./anexo_xml_json.html">XML e JSON</a>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xml2)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xml2)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># URL do feed RSS</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>rss_url <span class="ot">&lt;-</span> <span class="st">"https://www.gov.br/aids/pt-br/assuntos/noticias/site-feed/RSS"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leia o conteúdo do XML da URL</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>xml_data <span class="ot">&lt;-</span> <span class="fu">read_xml</span>(rss_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defina os namespaces usados no arquivo XML</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>rss_url <span class="ot">&lt;-</span> <span class="st">"https://www.gov.br/aids/pt-br/assuntos/noticias/site-feed/RSS"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leia o conteúdo do XML da URL</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>xml_data <span class="ot">&lt;-</span> <span class="fu">read_xml</span>(rss_url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defina os namespaces usados no arquivo XML</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>namespaces <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rdf =</span> <span class="st">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span>,</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">d1 =</span> <span class="st">"http://purl.org/rss/1.0/"</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Encontre todos os nós &lt;item&gt; usando o namespace padrão</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">xml_find_all</span>(xml_data, <span class="st">"//d1:item"</span>, <span class="at">ns =</span> namespaces)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraia os títulos de cada &lt;item&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Encontre todos os nós &lt;item&gt; usando o namespace padrão</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">xml_find_all</span>(xml_data, <span class="st">"//d1:item"</span>, <span class="at">ns =</span> namespaces)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraia os títulos de cada &lt;item&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># O título está na tag 'title'</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>titulo <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(items, <span class="st">"d1:title"</span>, <span class="at">ns =</span> namespaces))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraia os links de cada &lt;item&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>titulo <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(items, <span class="st">"d1:title"</span>, <span class="at">ns =</span> namespaces))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraia os links de cada &lt;item&gt;</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># O link da notícia está na tag 'link'</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>links <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(items, <span class="st">"d1:link"</span>, <span class="at">ns =</span> namespaces))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># o mesmo para o corpo</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>corpo <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(items, <span class="st">"d1:description"</span>, <span class="at">ns =</span> namespaces))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crie um data frame para organizar as informações</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>links <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(items, <span class="st">"d1:link"</span>, <span class="at">ns =</span> namespaces))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># o mesmo para o corpo</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>corpo <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(items, <span class="st">"d1:description"</span>, <span class="at">ns =</span> namespaces))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crie um data frame para organizar as informações</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>noticias_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Titulo =</span> titulo,</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Corpo =</span> corpo,</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Link =</span> links,</span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(noticias_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(noticias_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="usando-uma-api-para-acessar-dados" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="usando-uma-api-para-acessar-dados"><span class="header-section-number">3.2.4</span> Usando uma API para acessar Dados</h3>
@@ -511,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Em 2021, o sistema ganhou amplitude nacional com o apoio do Ministério da Saúde realizando análises em nível estadual. Com isso, mais secretarias passaram a receber semanalmente os boletins do InfoDengue. Implementado em 2015, o sistema foi desenvolvido por pesquisadores do Programa de Computação Científica (Fundação Oswaldo Cruz, RJ) e da Escola de Matemática Aplicada (Fundação Getúlio Vargas) com a forte colaboração da Secretaria Municipal de Saúde do Rio de Janeiro</p>
 <p>As tabelas geradas pelo Infodengue contem dados agregados por semana provenientes de diferentes fontes. Elas podem ser consultadas via <a href="https://info.dengue.mat.br/services/api">formulário</a>, ou diretamente do R, por meio de uma consulta à API.</p>
 <p>Essa funcionalidade está disponível por meio da URL:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>info.dengue.mat.br<span class="sc">/</span>api<span class="sc">/</span>alertcity?PARAMETROS_DA_CONSULTA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>info.dengue.mat.br<span class="sc">/</span>api<span class="sc">/</span>alertcity?PARAMETROS_DA_CONSULTA</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Onde PARAMETROS_DA_CONSULTA deve conter os parâmetros:</p>
 <pre><code>geocode: código IBGE da cidade
 disease: tipo de doença a ser consultado (dengue|chikungunya|zika)
@@ -522,75 +537,75 @@ ey_start: ano de início da consulta (int:0-9999)
 ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <p><strong>ATENÇÃO</strong> Todos os parâmetros acima mencionados são obrigatórios para a consulta.</p>
 <p><a href="retorno_infodengue.html">Retorno da API do Infodengue</a></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://info.dengue.mat.br/api/alertcity?"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://info.dengue.mat.br/api/alertcity?"</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>geocode <span class="ot">&lt;-</span> <span class="dv">4108304</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>disease <span class="ot">&lt;-</span> <span class="st">"dengue"</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>format <span class="ot">&lt;-</span> <span class="st">"csv"</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>ew_start <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>ew_end <span class="ot">&lt;-</span> <span class="dv">52</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>ey_start <span class="ot">&lt;-</span> <span class="dv">2015</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>ey_end <span class="ot">&lt;-</span> <span class="dv">2025</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>ey_end <span class="ot">&lt;-</span> <span class="dv">2025</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Em seguida precisamos concatenar a string de consulta a API nossa URL a cada um dos parâmetros separados por <strong>&amp;</strong></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>cons <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,<span class="st">"geocode="</span>,geocode,<span class="st">"&amp;disease="</span>,disease,<span class="st">"&amp;format="</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>cons <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,<span class="st">"geocode="</span>,geocode,<span class="st">"&amp;disease="</span>,disease,<span class="st">"&amp;format="</span>,</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>format,<span class="st">"&amp;ew_start="</span>,ew_start,<span class="st">"&amp;ew_end="</span>,ew_end,<span class="st">"&amp;ey_start="</span>,ey_start,</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">"&amp;ey_end="</span>,ey_end)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="st">"&amp;ey_end="</span>,ey_end)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Formando a seguinte URL que fará a consulta ao site do infodengue:</p>
 <div class="meu-raid" style="color:black;background-color:yellow;font-size: 100%; padding: 15px; border-radius: 10px; word-wrap: 40;flex-wrap: wrap;overflow: hidden">
 <p>https://info.dengue.mat.br/api/alertcity?geocode=4108304&amp;disease=dengue&amp;format=csv &amp;ew_start=1&amp;ew_end=53&amp;ey_start=2015&amp;ey_end=2025</p>
 </div>
 <p>Executando o código abaixo vamos receber o resultado da nossa consulta.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dengue_foz <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(cons)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dengue_foz <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(cons)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dengue_foz)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dengue_foz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dengue_foz)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="api-open-meteor" class="level3" data-number="3.2.6">
 <h3 data-number="3.2.6" class="anchored" data-anchor-id="api-open-meteor"><span class="header-section-number">3.2.6</span> API Open-Meteor</h3>
 <p>A API do Open-Meteo é uma interface de programação de aplicativos que oferece dados de previsão do tempo e climáticos de forma gratuita e com código aberto para uso não comercial e para desenvolvedores e não requer nem cadastro e nem chave para poder acessar.</p>
 <p><a href="'https://api.open-meteo.com/v1/forecast?latitude=-22.875&amp;longitude=-43.25&amp;timezone=America/Sao_Paulo,&amp;current=temperature_2m,relative_humidity_2m,wind_speed_10m&amp;hourly=temperature_2m,relative_humidity_2m,wind_speed_10m">Previsão para o Rio</a></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>meteor <span class="ot">&lt;-</span> <span class="st">'https://api.open-meteo.com/v1/forecast?latitude=-22.875&amp;longitude=-43.25&amp;timezone=America/Sao_Paulo,&amp;current=temperature_2m,relative_humidity_2m,wind_speed_10m&amp;hourly=temperature_2m,relative_humidity_2m,wind_speed_10m'</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>meteor <span class="ot">&lt;-</span> <span class="st">'https://api.open-meteo.com/v1/forecast?latitude=-22.875&amp;longitude=-43.25&amp;timezone=America/Sao_Paulo,&amp;current=temperature_2m,relative_humidity_2m,wind_speed_10m&amp;hourly=temperature_2m,relative_humidity_2m,wind_speed_10m'</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>previsao <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">read_json</span>(meteor,<span class="at">simplifyVector =</span> T)</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>previsao</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>previsao</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/meteor_api.png" class="img-fluid"></p>
 </section>
 <section id="importando-diretamente-do-datasus" class="level3" data-number="3.2.7">
 <h3 data-number="3.2.7" class="anchored" data-anchor-id="importando-diretamente-do-datasus"><span class="header-section-number">3.2.7</span> Importando diretamente do DATASUS</h3>
 <p>O datasus além dos conhecidos serviços disponibilizados pela internet também, há muitos anos, possui um servidor <strong>FTP</strong> de onde podemos descarregar diretamente os dados.</p>
 <p>Podemos usar funções do <strong>R</strong> para fazer o download de um arquivo usando o protocolo <strong>FTP</strong> por exemplo:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"ftp://ftp.datasus.gov.br/territorio/tabelas/04-base_territorial_abr25.zip"</span>,<span class="st">"base_terr.zip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"ftp://ftp.datasus.gov.br/territorio/tabelas/04-base_territorial_abr25.zip"</span>,<span class="st">"base_terr.zip"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vamos agora “descompactar” o arquivo <strong>ZIP</strong>. Em primeiro lugar vamos selecionar um diretório temporário que está sendo usado usando pelo <strong>R</strong> no seu sistema operacional. ​</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>loc <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>loc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>loc <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>loc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Em seguida vamos mandar extrair o conteúdo do <strong>ZIP</strong> nesse diretório temporário e usar o dir desse local para verificar se o conteúdo foi expandido.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"base_terr.zip"</span>,<span class="at">exdir=</span>loc)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(loc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="st">"base_terr.zip"</span>,<span class="at">exdir=</span>loc)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(loc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>a partir dai você poderia importar um ou mais dos arquivos que foram expandidos.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>arq <span class="ot">&lt;-</span> <span class="fu">paste0</span>(loc,<span class="st">"/"</span>,<span class="st">"tb_uf.csv"</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>tb_uf <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(arq,<span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">'latin1'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>arq <span class="ot">&lt;-</span> <span class="fu">paste0</span>(loc,<span class="st">"/"</span>,<span class="st">"tb_uf.csv"</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>tb_uf <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(arq,<span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">'latin1'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="exemplo-importando-sinasc-do-acre-diretamente-do-datasus" class="level4" data-number="3.2.7.1">
 <h4 data-number="3.2.7.1" class="anchored" data-anchor-id="exemplo-importando-sinasc-do-acre-diretamente-do-datasus"><span class="header-section-number">3.2.7.1</span> Exemplo: Importando SINASC do Acre diretamente do DATASUS</h4>
 <p>até aqui você já viu todos os elementos necessários para fazer a importação de dados direto do FTP do DATASUS, o que precisamos é um <em>workflow</em>, ou seja, um plano, para fazer a importação.</p>
 <p><br></p>
 <p><img src="figuras/fluxo.png" class="img-fluid"></p>
 <p>em primeiro lugar vamos usar o pacote RCurl que permite acesso a paginas http , https, ftp etc…</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RCurl)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RCurl)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">'ftp://ftp.datasus.gov.br/dissemin/publicos/SINASC/NOV/DNRES/'</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">getURL</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">getURL</span>(url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>vamos inspecionar o objeto <em>lista</em>. como vocês podem observar esse arquivo precisa ainda ser transformado para ser usado.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">str_split</span>(lista,<span class="st">'</span><span class="sc">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">str_split</span>(lista,<span class="st">'</span><span class="sc">\n</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>após pedirmos ao <strong>R</strong> para inserir uma quebra apos o caractere ‘***’ agora fica mais fácil de entender a listagem que obtivemos!</p>
 <p>vamos selecionar como <strong>UF</strong> o Acre pois o tamanho dos arquivos é pequeno e a rede da ENSP em geral não é rápida.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(lista[[<span class="dv">1</span>]],<span class="st">'(DNAC</span><span class="sc">\\</span><span class="st">d+.[dbc|DBC]{3})'</span>)<span class="do">## DN do ACRE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(lista[[<span class="dv">1</span>]],<span class="st">'(DNAC</span><span class="sc">\\</span><span class="st">d+.[dbc|DBC]{3})'</span>)<span class="do">## DN do ACRE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Aqui vamos fazer um parêntesis para falar de um recurso extremamente poderoso, as <a href="./regex.html"><strong>expressões regulares</strong></a> conhecidas por <a href="./regex.html"><strong>REGEX</strong></a></p>
 <p>Agora que vocês já aprenderam um pouco sobre as REGEX vamos selecionar as linhas que possuem as DN do ACRE</p>
 <p>de uma maneira simples selecionamos todas que possuem o padrão DNAC no nome seguido de um ou mais numeros (\d+) e terminado em .dbc ou .DBC.</p>
 <p>Onde não houve match a função retorna NA, assim vamos nos livra deles!</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    l3 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">na.exclude</span>(l2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    l3 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">na.exclude</span>(l2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Verifique o objeto l3 para se certificar que tenhamos somente um vetor de caracteres com o nome dos arquivos! ​ Aqui temos 27 nomes de arquivos , vamos tentar trazer todos.</p>
 <p>Como fazer isso?</p>
 <p>Vamos precisar criar uma nova função que possa fazer o download dos arquivos DBC e posteriormente importá-los e finalmente juntar todos. Existem diversas maneiras de se fazer isso, mas vamos usar filosofia do tideverse executando a função <strong>map</strong> do pacote <em>purr</em>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>le_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(arq) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>le_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(arq) {</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(read.dbc))  <span class="fu">stop</span>(<span class="st">"o pacote read.dbc deve estar instalado"</span>) <span class="co"># verifica se existe o pacote e carrega </span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  origem <span class="ot">&lt;-</span> <span class="fu">paste0</span>(url,arq)</span>
@@ -604,10 +619,10 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.remove</span>(destino)</span>
 <span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temp)</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vamos testar nossa função lendo apenas um arquivo, por exemplo o DNAC2020.dbc que está na posição 25 do vetor l3.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="fu">le_dbc</span>(l3[<span class="dv">25</span>])</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>teste</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>teste <span class="ot">&lt;-</span> <span class="fu">le_dbc</span>(l3[<span class="dv">25</span>])</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>teste</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Se tudo estiver certo você vai receber um objeto assim <img src="figuras/le_dbc.png" class="img-fluid"></p>
 <p>Apesar da função ter retornado um tibble podemos notar a necessidade de fazer pequenos ajustes para que ela nos retorne um conjunto de dados melhor para ser trabalhado. Os principais pontos são:</p>
 <ol type="1">
@@ -618,12 +633,12 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 </ol>
 <p>Vamos utilizar o pacote <em>naniar</em> que tem funções que ajudam a sumarizar, visualizar e manipular dados falantes (missing data) .</p>
 <p>As funções <em>miss_var_summary</em> e <em>gg_miss_var()</em> vão nos mostrar quais variáveis tem maior grau de dados faltantes.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a> naniar<span class="sc">::</span><span class="fu">miss_var_summary</span>(teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a> naniar<span class="sc">::</span><span class="fu">miss_var_summary</span>(teste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/naniar_pct_NA.png" class="img-fluid"></p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_var</span>(teste,<span class="at">show_pct =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_var</span>(teste,<span class="at">show_pct =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/teste_miss.png" class="img-fluid"></p>
 <p>Como podemos observar as variáveis <code>DTRECORIGA</code>, <code>CODANOMAL</code> e <code>IDADEPAI</code> todas têm alto percentual de NAs . A coluna <code>SERIESCMAE</code>parece em quarto com 58% de dados faltantes baseado nessa amostra das DN do Acre de 2020.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>le_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(arq) {</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(read.dbc))  <span class="fu">stop</span>(<span class="st">"o pacote read.dbc deve estar instalado"</span>) <span class="co"># verifica se existe </span></span>
@@ -648,15 +663,15 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.remove</span>(destino)</span>
 <span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(temp)</span>
-<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Uma vez implementada a nova função atendendo a todo o itens podemos executá-la para todo o nosso conjunto de dados usando a função <em>map</em> do pacote <strong>purrr</strong>.</p>
 <p>Na verdade, vamos usar a função <em>map_df()</em> que agrega os resultados numa estrutura de dados tipo data.frame ou tibble.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sinasc_ac <span class="ot">&lt;-</span> l3 <span class="sc">|&gt;</span> <span class="fu">map_df</span>(le_dbc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sinasc_ac <span class="ot">&lt;-</span> l3 <span class="sc">|&gt;</span> <span class="fu">map_df</span>(le_dbc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Essa função, na minha máquina, demorou 19,5 segundos e retorno um tibble com 433.265 e um tamanho em memória de 233.7 Mb contendo todos os Nascidos vivos do AC disponíveis no FTP datasus</p>
 <p>Vamos ver como estamos em termos de completude</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a> naniar<span class="sc">::</span><span class="fu">miss_var_summary</span>(sinasc_ac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a> naniar<span class="sc">::</span><span class="fu">miss_var_summary</span>(sinasc_ac)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/naniar_sinasc.png" class="img-fluid"></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_var</span>(sinasc_ac,<span class="at">show_pct =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_var</span>(sinasc_ac,<span class="at">show_pct =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Como se pode observar ainda há muitas variáveis com alta taxa de dados faltantes. Que tal modificar mais uma vez sua função de leitura e remover também essas?</p>
 <p>Observe que o banco passou de 22 colunas em 1996 para 59 em 2022 (ultimo dado disponível em 2025) !</p>
 <p><strong>Parece que o seu trabalho não terminou!</strong></p>
@@ -734,7 +749,7 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <p><strong>Que parâmetros precisamos usar?</strong></p>
 <p><br>
 </p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://github.com/laispfreitas/curso_CD1/raw/refs/heads/main/PNAD_Continua_2012_2018_Caracteristicas_Gerais_RACA.xlsx"</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> <span class="st">"pnad.xlsx"</span>, <span class="at">mode =</span> <span class="st">"wb"</span>)</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>pnad <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"pnad.xlsx"</span>, </span>
@@ -744,9 +759,9 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Variável de abertura</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Variável de abertura...4</span><span class="st">`</span></span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Categoria</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Categoria...5</span><span class="st">`</span></span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Variável de abertura</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Variável de abertura...6</span><span class="st">`</span></span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Categoria</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Categoria...7</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>• <span class="st">`</span><span class="at">Categoria</span><span class="st">`</span> <span class="ot">-&gt;</span> <span class="st">`</span><span class="at">Categoria...7</span><span class="st">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Repare que recebemos um aviso que algumas variáveis foram renomeadas. Isto porque a planilha original possuía várias colunas com o mesmo nome, o que não é como dados devem ser armazenados! Vamos verificar essa tabela:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pnad</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pnad</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 42,120 × 14</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>   Indicador         <span class="st">`</span><span class="at">Nível Territorial</span><span class="st">`</span> <span class="st">`</span><span class="at">Abertura Territorial</span><span class="st">`</span> Variável de abertura…¹ Categoria...<span class="dv">5</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>               <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                  <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                  <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        </span>
@@ -764,7 +779,7 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
 <span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ abbreviated name: ¹​`Variável de abertura...4`</span></span>
 <span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 9 more variables: `Variável de abertura...6` &lt;chr&gt;, Categoria...7 &lt;chr&gt;, `2012` &lt;dbl&gt;,</span></span>
 <span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   `2013` &lt;dbl&gt;, `2014` &lt;dbl&gt;, `2015` &lt;dbl&gt;, `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;, `2018` &lt;dbl&gt;</span></span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Parece que a planilha foi importada corretamente. Agora, há um longo caminho para transformar esses dados em dados <strong>tidy</strong>…</p>
 </section>
 </section>
@@ -830,13 +845,14 @@ ey_end: ano de término da consulta (int:0-9999)</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
