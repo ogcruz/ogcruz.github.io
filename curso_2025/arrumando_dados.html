@@ -264,6 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#criando-datas" id="toc-criando-datas" class="nav-link" data-scroll-target="#criando-datas"><span class="header-section-number">4.6.1</span> Criando datas</a></li>
   </ul></li>
   <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios">Exercícios</a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">5</span> Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -1572,7 +1573,7 @@ O <code>tidyr</code> é o pacote do <code>tidyverse</code> focado em ajudar a tr
 <section id="demais-funções-úteis" class="level3" data-number="4.4.13">
 <h3 data-number="4.4.13" class="anchored" data-anchor-id="demais-funções-úteis"><span class="header-section-number">4.4.13</span> Demais funções úteis</h3>
 <p>Existem ainda outras funções bastante úteis no pacote <code>dplyr</code>.</p>
-<p>Vamos pegar os dados de algumas variavéis do Rio de Janeiro por bairros no ano de 2016 para servir como exemplo:</p>
+<p>Vamos pegar os dados de algumas variavéis do Rio de Janeiro por bairros no ano de 2016 (Freitas L et al., 2021) para servir como exemplo:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/laispfreitas/ICAR_chikungunya/refs/heads/master/covariates_rio.csv"</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>rio <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>rio</span>
@@ -2204,10 +2205,10 @@ O <code>tidyr</code> é o pacote do <code>tidyverse</code> focado em ajudar a tr
 <p>Existem várias funções, resumidas abaixo:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 24%">
 <col style="width: 27%">
-<col style="width: 25%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2384,6 +2385,10 @@ O <code>tidyr</code> é o pacote do <code>tidyverse</code> focado em ajudar a tr
 </ol>
 <p>“https://github.com/laispfreitas/curso_CD1/raw/refs/heads/main/PNAD_Continua_2012_2018_Caracteristicas_Gerais_RACA.xlsx”</p>
 <p>Agora você deve ter conhecido todas as ferramentas necessárias para transformar essa planilha em dados <strong>tidy</strong>. Tente em casa! Vai ser importante para praticar, fixar o conteúdo, e encontrar dúvidas.</p>
+</section>
+<section id="referências" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Referências</h1>
+<p>Freitas LP, Schmidt AM, Cossich W, Cruz OG, Carvalho MS. <strong>“Spatio-temporal modelling of the first Chikungunya epidemic in an intra-urban setting: The role of socioeconomic status, environment and temperature”</strong>. PLOS Neglected Tropical Diseases, 15(6):e0009537 (2021). <a href="https://doi.org/10.1371/journal.pntd.0009537">https://doi.org/10.1371/journal.pntd.0009537</a></p>
 <!--#  -->
 <!-- [Resposta do Exercício](http://gitlab.procc.fiocruz.br/oswaldo/DS_2017/raw/master/limpando/exercicio_2.5.10.r) -->
 <!-- ###### **Exercício:** -->

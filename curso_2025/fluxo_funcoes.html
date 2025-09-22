@@ -252,6 +252,8 @@ window.Quarto = {
   <li><a href="#o-que-são-funções" id="toc-o-que-são-funções" class="nav-link active" data-scroll-target="#o-que-são-funções">O que são Funções</a></li>
   <li><a href="#blocos-de-código-if-condicionais" id="toc-blocos-de-código-if-condicionais" class="nav-link" data-scroll-target="#blocos-de-código-if-condicionais">Blocos de Código if (Condicionais)</a></li>
   <li><a href="#o-controle-de-fluxo-por-laços" id="toc-o-controle-de-fluxo-por-laços" class="nav-link" data-scroll-target="#o-controle-de-fluxo-por-laços">O controle de fluxo por laços</a></li>
+  <li><a href="#familia-apply" id="toc-familia-apply" class="nav-link" data-scroll-target="#familia-apply">Familia apply</a></li>
+  <li><a href="#pacote-purrdo-tidyverse" id="toc-pacote-purrdo-tidyverse" class="nav-link" data-scroll-target="#pacote-purrdo-tidyverse">Pacote `purr’do tidyverse</a></li>
   </ul>
 </nav>
     </div>
@@ -452,7 +454,189 @@ C = \frac{(F - 32) * 5} {9}
 </tr>
 </tbody>
 </table>
-<p>TBC!!!!</p>
+</section>
+<section id="familia-apply" class="level3">
+<h3 class="anchored" data-anchor-id="familia-apply">Familia apply</h3>
+<p>No R BASE, as funções <code>apply</code>, <code>lapply</code> e <code>sapply</code> são ferramentas poderosas para aplicar uma função a uma estrutura de dados (como um vetor, matriz, lista ou data frame) sem a necessidade de escrever um loop explícito. Elas são fundamentais para programação funcional e para tornar o código mais rápido conciso e eficiente.</p>
+<p><strong>1. <code>apply()</code></strong></p>
+<ul>
+<li><strong>Finalidade:</strong> Aplica uma função a cada linha ou coluna de uma matriz ou array.</li>
+<li><strong>Estrutura:</strong> <code>apply(X, MARGIN, FUN, ...)</code>.
+<ul>
+<li><code>X</code>: A matriz, array ou data frame a ser processado.</li>
+<li><code>MARGIN</code>: Especifica se a função deve ser aplicada a:
+<ul>
+<li><code>1</code>: Linhas.</li>
+<li><code>2</code>: Colunas.</li>
+</ul></li>
+<li><code>FUN</code>: A função a ser aplicada.</li>
+<li><code>...</code>: Argumentos adicionais a serem passados para a função <code>FUN</code>.</li>
+</ul></li>
+<li><strong>Retorno:</strong> Depende da função <code>FUN</code> e da estrutura de dados <code>X</code>. Pode ser um vetor, matriz, lista ou outra estrutura de dados.</li>
+<li><strong>Exemplo:</strong></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma matriz</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>matriz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>matriz</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando a função 'mean' a cada linha</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(matriz, <span class="dv">1</span>, mean)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando a função 'sum' a cada coluna</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(matriz, <span class="dv">2</span>, sum)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>2. <code>lapply()</code></strong></p>
+<ul>
+<li><strong>Finalidade:</strong> Aplica uma função a cada elemento de uma lista.</li>
+<li><strong>Estrutura:</strong> <code>lapply(X, FUN, ...)</code>
+<ul>
+<li><code>X</code>: A lista a ser processada.</li>
+<li><code>FUN</code>: A função a ser aplicada.</li>
+<li><code>...</code>: Argumentos adicionais a serem passados para a função <code>FUN</code>.</li>
+</ul></li>
+<li><strong>Retorno:</strong> Sempre retorna uma lista, mesmo que a função <code>FUN</code> retorne valores que poderiam ser combinados em um vetor ou matriz.</li>
+<li><strong>Exemplo:</strong></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma lista</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>minha_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando a função 'length' a cada elemento da lista</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>comprimentos <span class="ot">&lt;-</span> <span class="fu">lapply</span>(minha_lista, length)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(comprimentos)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>3. <code>sapply()</code></strong></p>
+<ul>
+<li><strong>Finalidade:</strong> Semelhante a <code>lapply()</code>, mas tenta simplificar a saída. Aplica uma função a cada elemento de uma lista e tenta simplificar a saída para um vetor ou matriz, se possível.</li>
+<li><strong>Estrutura:</strong> <code>sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)</code>
+<ul>
+<li><code>X</code>: A lista a ser processada.</li>
+<li><code>FUN</code>: A função a ser aplicada.</li>
+<li><code>...</code>: Argumentos adicionais a serem passados para a função <code>FUN</code>.</li>
+<li><code>simplify</code>: Um argumento lógico (TRUE por padrão). Se TRUE, tenta simplificar a saída. Se FALSE, o comportamento é idêntico a <code>lapply</code>.</li>
+<li><code>USE.NAMES</code>: Um argumento lógico (TRUE por padrão). Se TRUE, os nomes dos elementos da lista de entrada são preservados na lista de saída (se possível).</li>
+</ul></li>
+<li><strong>Retorno:</strong> Pode retornar um vetor, matriz, lista ou outra estrutura de dados, dependendo do resultado da função <code>FUN</code>.</li>
+<li><strong>Exemplo:</strong></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma lista</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>minha_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando a função 'length' a cada elemento da lista</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>comprimentos <span class="ot">&lt;-</span> <span class="fu">sapply</span>(minha_lista, length)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(comprimentos)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Principais Diferenças e Quando Usar:</strong></p>
+<ul>
+<li><strong><code>apply()</code>:</strong> Ideal para trabalhar com matrizes e arrays, permitindo aplicar funções a linhas ou colunas.</li>
+<li><strong><code>lapply()</code>:</strong> Use quando você precisa aplicar uma função a cada elemento de uma lista e <em>sempre</em> precisa de uma lista como resultado. É uma boa escolha quando você não tem certeza sobre o tipo de saída da função que está aplicando.</li>
+<li><strong><code>sapply()</code>:</strong> Use quando você quer aplicar uma função a uma lista e obter uma saída simplificada (vetor ou matriz) sempre que possível. Se a função <code>FUN</code> retornar resultados de tamanhos diferentes, <code>sapply</code> ainda retornará uma lista. É um atalho conveniente para usar <code>lapply</code> e, em seguida, tentar simplificar o resultado.</li>
+</ul>
+<p><strong>Em resumo:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th><code>apply()</code></th>
+<th><code>lapply()</code></th>
+<th><code>sapply()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Estrutura de Dados</strong></td>
+<td>Matrizes, arrays</td>
+<td>Listas</td>
+<td>Listas</td>
+</tr>
+<tr class="even">
+<td><strong>Retorno</strong></td>
+<td>Depende da função e da estrutura de dados</td>
+<td>Sempre uma lista</td>
+<td>Tenta simplificar para vetor/matriz</td>
+</tr>
+<tr class="odd">
+<td><strong>Foco</strong></td>
+<td>Aplicar a linhas/colunas</td>
+<td>Aplicar a cada elemento (lista)</td>
+<td>Aplicar e simplificar</td>
+</tr>
+</tbody>
+</table>
+<p>Dominar essas funções é fundamental para escrever código R mais eficiente e elegante. Experimente com diferentes funções e estruturas de dados para entender completamente como elas funcionam.</p>
+</section>
+<section id="pacote-purrdo-tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="pacote-purrdo-tidyverse">Pacote `purr’do tidyverse</h3>
+<p>As funções <code>map</code> e <code>walk</code> do pacote <code>purrr</code> em R são alternativas modernas e expressivas às funções <code>lapply</code>, <code>sapply</code> e <code>walk</code> do R base. O <code>purrr</code> faz parte do ecossistema <code>tidyverse</code>, que enfatiza a clareza, a consistência e a legibilidade do código. Elas oferecem recursos adicionais e uma sintaxe mais intuitiva para trabalhar com listas e vetores.</p>
+<p><strong>1. <code>map()</code></strong></p>
+<ul>
+<li><p><strong>Finalidade:</strong> Aplica uma função a cada elemento de um vetor, lista ou tibble. É a alternativa mais direta para <code>lapply</code> e <code>sapply</code>.</p></li>
+<li><p><strong>Estrutura:</strong> <code>map(x, f, ..., .x = NULL, .y = NULL, by = NULL, .keep = NULL, .call = NULL)</code></p>
+<ul>
+<li><code>x</code>: O vetor, lista ou tibble a ser processado.</li>
+<li><code>f</code>: A função a ser aplicada.</li>
+<li><code>...</code>: Argumentos adicionais a serem passados para a função <code>f</code>.</li>
+<li><code>.x</code>, <code>.y</code>: Nomes padrão dos argumentos que recebem o vetor/lista original e o índice (opcional).</li>
+<li><code>by</code>: Permite aplicar a função a subconjuntos dos dados.</li>
+<li><code>.keep</code>: Especifica quais nomes devem ser mantidos na lista de saída.</li>
+<li><code>.call</code>: Permite usar uma expressão como a função a ser aplicada (menos comum).</li>
+</ul></li>
+<li><p><strong>Variações:</strong> <code>map_lgl()</code>, <code>map_int()</code>, <code>map_dbl()</code>, <code>map_chr()</code>, <code>map_logl()</code>, <code>map_int()</code>, <code>map_dbl()</code>, <code>map_chr()</code>. Essas variações forçam o tipo de saída da função <code>f</code> para lógico, inteiro, numérico (double) e caracter, respectivamente. Isso ajuda a evitar ambiguidades e garante que a saída seja do tipo esperado.</p></li>
+<li><p><strong>Retorno:</strong> Sempre retorna uma lista, a menos que você use uma das variantes que forçam um tipo específico (como <code>map_dbl</code>, que retorna um vetor numérico).</p></li>
+<li><p><strong>Exemplo:</strong></p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma lista</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>minha_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicando a função 'length' a cada elemento da lista</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>comprimentos <span class="ot">&lt;-</span> <span class="fu">map</span>(minha_lista, length)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(comprimentos)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Forçando o tipo de saída para numérico</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>comprimentos_num <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(minha_lista, length)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(comprimentos_num)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>2. <code>walk()</code></strong></p>
+<ul>
+<li><p><strong>Finalidade:</strong> Aplica uma função a cada elemento de um vetor, lista ou tibble e <em>não</em> retorna nada. É projetada para efeitos colaterais, como imprimir resultados, escrever em arquivos ou atualizar gráficos. É uma alternativa à função <code>for</code> (embora geralmente mais legível).</p></li>
+<li><p><strong>Estrutura:</strong> <code>walk(x, f, ..., .x = NULL, .y = NULL)</code></p>
+<ul>
+<li><code>x</code>: O vetor, lista ou tibble a ser processado.</li>
+<li><code>f</code>: A função a ser aplicada.</li>
+<li><code>...</code>: Argumentos adicionais a serem passados para a função <code>f</code>.</li>
+<li><code>.x</code>, <code>.y</code>: Nomes padrão dos argumentos que recebem o vetor/lista original e o índice (opcional).</li>
+</ul></li>
+<li><p><strong>Variações:</strong> <code>walk_list()</code>, <code>walk2()</code>, <code>walk_along()</code>. <code>walk_list()</code> retorna uma lista dos resultados da função aplicada (útil em alguns casos), enquanto <code>walk2()</code> aplica a função a dois vetores/listas simultaneamente. <code>walk_along()</code> itera sobre os elementos de um vetor ou lista, em vez de sobre os nomes.</p></li>
+<li><p><strong>Retorno:</strong> <code>NULL</code>. A função é utilizada apenas pelos seus efeitos colaterais.</p></li>
+<li><p><strong>Exemplo:</strong></p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma lista</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>minha_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">10</span>), <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">8</span>))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo o comprimento de cada elemento da lista</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">walk</span>(minha_lista, <span class="cf">function</span>(x) <span class="fu">length</span>(x))<span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Principais Diferenças e Vantagens de <code>purrr</code>:</strong></p>
+<ul>
+<li><strong>Clareza e Consistência:</strong> O <code>purrr</code> segue uma filosofia de design consistente, tornando o código mais fácil de entender e manter.</li>
+<li><strong>Nomes de Argumentos Padrão:</strong> Os nomes de argumentos <code>.x</code> e <code>.y</code> tornam mais claro qual argumento recebe o elemento atual e qual recebe o índice (se você precisar dele).</li>
+<li><strong>Forçamento de Tipos de Dados:</strong> As variantes <code>map_lgl()</code>, <code>map_int()</code>, <code>map_dbl()</code>, <code>map_chr()</code> e também o <code>map_db</code> que forçam o tipo de dados da saída, evitando ambiguidades e facilitando o debugging.</li>
+<li><strong>Efeitos Colaterais Explícitos:</strong> <code>walk()</code> é projetada especificamente para efeitos colaterais, o que torna o código mais legível e fácil de entender.</li>
+<li><strong>Integração com <code>tidyverse</code>:</strong> O <code>purrr</code> se integra perfeitamente com outras funções do <code>tidyverse</code>, facilitando a criação de pipelines de dados elegantes e eficientes.</li>
+<li><strong>Mais Expressivo:</strong> Em muitos casos, o <code>purrr</code> oferece uma sintaxe mais concisa e expressiva do que as funções do R base.</li>
+</ul>
+<p><strong>Quando Usar:</strong></p>
+<ul>
+<li><strong><code>map()</code>:</strong> Substitui <code>lapply</code> e <code>sapply</code> quando você precisa aplicar uma função a uma lista ou vetor e precisa de uma lista como resultado ou quer forçar o tipo de saída.</li>
+<li><strong><code>walk()</code>:</strong> Use em vez de loops <code>for</code> quando você precisa executar uma ação (efeito colateral) para cada elemento de uma lista ou vetor.</li>
+<li><strong>Em geral:</strong> Se você estiver trabalhando com o <code>tidyverse</code>, usar <code>purrr</code> é altamente recomendado para consistência e clareza do código.</li>
+</ul>
+<p>O <code>purrr</code> é uma adição valiosa ao seu arsenal de ferramentas em R, especialmente se você valoriza a clareza, a consistência e a legibilidade do código.</p>
 
 
 </section>

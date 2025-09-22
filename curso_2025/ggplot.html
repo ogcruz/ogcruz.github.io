@@ -229,6 +229,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#facet_geo" id="toc-facet_geo" class="nav-link" data-scroll-target="#facet_geo"><span class="header-section-number">5.4.1</span> <code>facet_geo</code></a></li>
   </ul></li>
   <li><a href="#histogramas-e-densidade" id="toc-histogramas-e-densidade" class="nav-link" data-scroll-target="#histogramas-e-densidade"><span class="header-section-number">5.5</span> Histogramas e densidade</a></li>
+  <li><a href="#gráfico-de-barras-barplot" id="toc-gráfico-de-barras-barplot" class="nav-link" data-scroll-target="#gráfico-de-barras-barplot"><span class="header-section-number">5.6</span> Gráfico de barras (barplot)</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">5.7</span> Boxplot</a></li>
+  <li><a href="#gráficos-de-linha" id="toc-gráficos-de-linha" class="nav-link" data-scroll-target="#gráficos-de-linha"><span class="header-section-number">5.8</span> Gráficos de linha</a></li>
+  <li><a href="#mapas" id="toc-mapas" class="nav-link" data-scroll-target="#mapas"><span class="header-section-number">5.9</span> Mapas</a></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">6</span> Exercícios</a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">7</span> Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -315,9 +321,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Veja abaixo um resumo dos principais componentes utilizados para criar gráficos no <code>ggplot2</code>:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 41%">
-<col style="width: 43%">
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -385,8 +391,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vamos conhecer um pouco mais as opções disponíveis na camada estética (<code>aes()</code>). Nela, você pode definir diferentes parâmetros:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 79%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -570,8 +576,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Casos de AIDS registrados no Nordeste por UF"</span>,</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ano"</span>,</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Código UF"</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Código UF"</span>) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"UF"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"UF"</span>) <span class="sc">+</span></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
@@ -589,8 +595,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Casos de AIDS registrados no Nordeste por UF"</span>,</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ano"</span>,</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Código UF"</span>,</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Código UF"</span>) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"UF"</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"UF"</span>) <span class="sc">+</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_clean</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/aids_clean.png" class="img-fluid"></p>
 </section>
@@ -625,13 +631,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_geo</span>(<span class="sc">~</span>abbrev_state, <span class="at">grid =</span> <span class="st">"br_states_grid1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/geofacet.png" class="img-fluid"></p>
-<p>Legal, mas vamos melhorar esse gráfico? O que podemos fazer?</p>
+<p><strong>Legal, mas vamos melhorar esse gráfico? O que podemos fazer?</strong></p>
 <p><br>
 <br>
 <br>
 <br>
 </p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="histogramas-e-densidade" class="level2" data-number="5.5">
@@ -663,7 +669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_flip.png" class="img-fluid"></p>
-<p>E <code>coord_polar()</code></p>
+<p>E <code>coord_polar()</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -672,140 +678,509 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>ggplot(iris, aes(Sepal.Width, fill = Species)) +
   geom_density(binwidth = 0.1, alpha = 0.6)  </code></pre>
 <p><img src="figuras/densi.png" class="img-fluid"></p>
-<!-- #### 1.3 Gráfico de barras (barplot) -->
-<!-- um barplot simples é facilmente obtido , veja que aqui nesse *data.frame* por default o total é "contado" pela  função **geom_bat()** que tem como *default* o parâmetro *stat="count"*  , ou seja, as ocorrências de cada tipo da variável *vore* serão contadas e exibidas no gráfico gerado. -->
-<!-- ``` -->
-<!--   ggplot(msleep, aes(vore)) +  geom_bar()  ## bar plot!!!! -->
-<!-- ``` -->
-<!-- mas se tivermos o seguinte dado, como fazer para ter um barplot -->
-<!-- ```R -->
-<!--  exemplo <-  data.frame(sexo = c( "Masculino", "Feminino","Ignorado"), -->
-<!--              total = c(4567,3867,90)) -->
-<!-- ``` -->
-<!-- uma primeira tentativa seria: -->
-<!-- ``` -->
-<!-- ggplot(exemplo,aes(sexo)) + geom_bar() -->
-<!-- ``` -->
-<!-- ou quem sabe -->
-<!-- ``` -->
-<!-- ggplot(exemplo,aes(total)) + geom_bar() -->
-<!-- ``` -->
-<!-- parece que vamos precisar da variável *sexo* e também de *total* -->
-<!-- ```R -->
-<!-- ggplot(exemplo,aes(sexo,total)) + geom_bar() -->
-<!-- Erro: stat_count() must not be used with a y aesthetic -->
-<!-- ``` -->
-<!-- continuamos sem sucesso mas a mensagem de erro da uma pista. a função **geom_bar()**  está contando o numero de vezes que Feminino, Masculino e ignorado aparecem no *data.frame*, assim sendo precisamos além de especificar *aes(sexo,total)* também avisar a função **geom_bar()** para usar o valro de total -->
-<!-- ```R -->
-<!--  ggplot(exemplo,aes(sexo,total,fill=sexo)) + geom_bar(stat='identity') -->
-<!-- ``` -->
-<!-- ![](barplot.png) -->
-<!-- Valor olhar os dados -->
-<!-- ``` -->
-<!-- str(exemplo) -->
-<!-- 'data.frame':  3 obs. of  2 variables: -->
-<!--  $ sexo : Factor w/ 3 levels "Feminino","Ignorado",..: 3 1 2 -->
-<!--  $ total: num  4567 3867 90 -->
-<!-- ``` -->
-<!-- Observe que  sexo é um fator e que por default a ordem do fator é alfabética, você pode confirmar isso pedindo -->
-<!-- ```R -->
-<!-- > levels(exemplo$sexo) -->
-<!-- [1] "Feminino"  "Ignorado"  "Masculino" -->
-<!-- ``` -->
-<!-- uma das principais razões de não conseguirmos fazer gráficos corretamente na *ggplot2* tem a ver com a maneira que a biblioteca trata os fatores. Para resolver esse problema precisamos reordenar o fator para seguir a ordem de entrada. -->
-<!-- ``` -->
-<!--  exemplo$sexo<- factor(exemplo$sexo, levels=as.character(exemplo$sexo)) -->
-<!-- ``` -->
-<!-- vamos conferir -->
-<!-- ``` -->
-<!-- > levels(exemplo$sexo) -->
-<!-- [1] "Masculino" "Feminino"  "Ignorado" -->
-<!-- ``` -->
-<!-- e por fim fazer mais uma vez o nosso gráfico na ordem especificada no novo fator. -->
-<!-- ```R -->
-<!--  ggplot(exemplo,aes(sexo,total,fill=sexo)) + geom_bar(stat='identity') -->
-<!-- ``` -->
-<!-- ![](barplot2.png) -->
-<!-- mais um exemplo, suponha que você tem dados das medias mensais de temperaturas medias , máximas , mínimas e precipitação do Rio de janeiro -->
-<!-- ```R -->
-<!-- rio <-   data.frame( -->
-<!--    T_media = c(26.1,   26, 25.2,   23.6,   21.8,   20.9,   20.6,   21, 21.7,   22.5,   23.8,   24.6) , -->
-<!--    T_minima= c(22.3,   22.4,   21.7,   20.1,   18.2,   17, 16.7,   17, 18, 19, 20.3,   21), -->
-<!--    T_maxima = c(30,    29.7,   28.8,   27.2,   25.5,   24.9,   24.5,   25, 25.4,   26.1,   27.3,   28.2), -->
-<!--    Chuva = c(149,  147,    147,    130,    93, 58, 55, 59, 76, 103,    116,    145) , -->
-<!--    mes = c("Janeiro",  "Fevereiro",    "Março" , "Abril",  "Maio",     "Junho" , "Julho",  "Agosto",   "Setembro", "Outubro",  "Novembro", "Dezembro"), -->
-<!--    stringsAsFactors = FALSE) -->
-<!-- ``` -->
-<!-- antes de mais nada apos inspecionar os dados vamos corrigir o fator *mes* -->
-<!-- ``` -->
-<!--  rio$mes <- factor(rio$mes, levels=as.character(rio$mes)) -->
-<!-- ``` -->
-<!-- e agora vamos produzir um gráfico de barras com os valores médios mensais e em cada barra os valores mínimo e máximo. Vamos colorir de acordo com uma escala de cores onde azul são temperaturas mais frias e vermelho as  mais quentes. -->
-<!-- ```R -->
-<!--  ggplot(rio,aes(mes,T_media))  + -->
-<!--    geom_bar(aes(fill=T_media),stat='identity') + -->
-<!--    scale_fill_gradient(low= "blue",high="red") + -->
-<!--    geom_errorbar(aes(ymin=T_minima,ymax=T_maxima)) -->
-<!-- ``` -->
-<!-- ![](barplot3.png) -->
-<!-- Repare no comando acima que temos duas funções **geom_???()** no mesmo gráfico, no caso uma faz as barras e outra as barras de erros.  Esse é um recurso comumente empregado para adicionar diversas camadas a nosso gráfico. -->
-<!-- #### 1.4 boxplot -->
-<!-- um boxplot básico teria -->
-<!-- ```R -->
-<!-- ggplot(iris, aes( Species,Sepal.Length)) + -->
-<!-- geom_boxplot()  + -->
-<!-- theme_linedraw() -->
-<!-- ``` -->
-<!-- ![](boxplot1.png) -->
-<!-- ou ainda algo por especie e com as coordenadas rodadas! -->
-<!-- ``` -->
-<!--  ggplot(iris, aes(x = Species, y = Sepal.Width,fill=Species)) + -->
-<!--    geom_boxplot() + -->
-<!--    coord_flip() -->
-<!-- ``` -->
-<!-- ![](boxplot2.png) -->
-<!-- Suponha que necessitamos de um boxplot para as quatro variáveis do *dataframe* *iris* como fazer isso em *ggplot2* ? no  **R** padrão (*graphics*) faríamos -->
-<!-- ``` -->
-<!-- boxplot(iris$Sepal.Length,iris$Sepal.Width,iris$Petal.Length,iris$Petal.Width) -->
-<!-- ``` -->
-<!-- Este é onde a maioria dos iniciantes em *ggplot2* se confunde. Para fazer isso é necessario transformar o dado para um formato longo, ou seja, apenas 3 colunas. -->
-<!-- ``` -->
-<!--  iris.wide <- iris %>%  gather(tipo, valor, -Species) -->
-<!-- ``` -->
-<!-- use **str()** e **head()** para ver como ficou a nova estrutura de dados. A partir desse novo formato podemos: -->
-<!-- ``` -->
-<!-- ggplot(iris.wide,aes(tipo,valor)) + -->
-<!-- geom_boxplot() -->
-<!-- ``` -->
-<!-- ![](boxplot3a.png) -->
-<!-- Se quisermos diferenciar por especie -->
-<!-- ``` -->
-<!--  ggplot(iris.wide,aes(tipo,valor,fill=Species)) + -->
-<!--  geom_boxplot() -->
-<!-- ``` -->
-<!-- ![](boxplot3b.png) -->
-<!-- se quisermos agora subplots  especie -->
-<!-- ``` -->
-<!--   ggplot(iris.wide,aes(tipo,valor,fill=tipo)) + -->
-<!--   geom_boxplot() + -->
-<!--   facet_grid(~Species) -->
-<!-- ``` -->
-<!-- ![](boxplot4.png) -->
-<!-- repare que o texto do label em *x* ficou confuso, como podemos modificar isso? Seria possível também eliminar a legenda a direita já que as variáveis tem label? -->
-<!-- ``` -->
-<!--  ggplot(iris.wide,aes(tipo,valor,fill=tipo)) + -->
-<!--  geom_boxplot() + -->
-<!--  facet_grid(~Species) + -->
-<!--  theme(axis.text.x=element_text(angle=90,hjust=1), -->
-<!--    legend.position="none", -->
-<!--    panel.background =element_rect(fill="white",color="black") ) -->
-<!-- ``` -->
-<!-- ![](boxplot5.png) -->
-<!-- Repare que no gráfico acima customizamos o tema, mudando vários aspectos como a orientação do texto no label, e a cor de fundo no background. para se ter uma ideia de quantos parâmetros podem ser modificados no tema, use o comando -->
-<!-- ``` -->
-<!-- View(theme_grey()) -->
-<!-- ``` -->
-<!-- #### 1.5 gráficos de linha -->
+</section>
+<section id="gráfico-de-barras-barplot" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="gráfico-de-barras-barplot"><span class="header-section-number">5.6</span> Gráfico de barras (barplot)</h2>
+<p>Um gráfico de barras pode ser facilmente obtido com <code>geom_bar()</code>. Por padrão, o parâmetro <code>stat = "count"</code>, ou seja, o eixo y mostrará a quantidade de ocorrências de cada tipo de categoria em x. Veja abaixo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(msleep, <span class="fu">aes</span>(vore)) <span class="sc">+</span>  </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbar1.png" class="img-fluid"></p>
+<p>Agora vamos pra dados reais! Vamos utilizar dados que foram obtidos do <a href="https://www.gov.br/saude/pt-br/composicao/svsa/cnie/painel-vigilancia-genomica-arboviroses">Painel de Vigilância Genômica de Arboviroses do Ministério da Saúde</a> com o número de amostras positivas para cada genótipo de vírus dengue em 2024 no Brasil.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/laispfreitas/curso_CD1/refs/heads/main/tabela_dengue_genotipos.csv"</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>dengue <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 4 × 10</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  sorotipo em_branco denv_1_genotipo_v denv_2_genotipo_ii denv_2_genotipo_ii_cosmopolita denv_2_genotipo_iii_as…¹</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>             <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>              <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>                          <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>                    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> DENV1            <span class="dv">3</span>              <span class="dv">1738</span>                 <span class="cn">NA</span>                             <span class="cn">NA</span>                       <span class="cn">NA</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> DENV2           <span class="dv">21</span>                <span class="cn">NA</span>                 <span class="cn">NA</span>                           <span class="dv">1405</span>                       <span class="dv">58</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> DENV3           <span class="cn">NA</span>                <span class="cn">NA</span>                  <span class="dv">1</span>                             <span class="cn">NA</span>                       <span class="cn">NA</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> DENV4           <span class="cn">NA</span>                <span class="cn">NA</span>                 <span class="cn">NA</span>                             <span class="cn">NA</span>                       <span class="cn">NA</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ abbreviated name: ¹​denv_2_genotipo_iii_asiatico_americano</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 4 more variables: denv_2_genotipo_v_asiatico_i &lt;dbl&gt;, denv_3_genotipo_iii &lt;dbl&gt;, denv_4_genotipo_ii &lt;dbl&gt;,</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   total &lt;dbl&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Observação:</strong> No código acima encadeamos a leitura do dado com a função <code>clean_names()</code> do pacote <code>janitor</code> para “limpar” os nomes das variáveis tornando-os únicos, todos em minículos e sem espaços em branco.</p>
+<p>Vamos tentar fazer um barplot desses dados!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dengue, <span class="fu">aes</span>(sorotipo)) <span class="sc">+</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbar2.png" class="img-fluid"></p>
+<p><strong>Funcionou?</strong></p>
+<p>Vamos pra segunda tentativa, então:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dengue, <span class="fu">aes</span>(total)) <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbar3.png" class="img-fluid"></p>
+<p>Ainda não funcionou!</p>
+<p>Parece que vamos precisar das variável <em>sorotipo</em> e <em>total</em>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dengue, <span class="fu">aes</span>(sorotipo, total)) <span class="sc">+</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="st">`</span><span class="at">geom_bar()</span><span class="st">`</span><span class="sc">:</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span> Problem <span class="cf">while</span> computing stat.</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>ℹ Error occurred <span class="cf">in</span> the <span class="dv">1</span>st layer.</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>Caused by error <span class="cf">in</span> <span class="st">`</span><span class="at">setup_params()</span><span class="st">`</span><span class="sc">:</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span> <span class="st">`</span><span class="at">stat_count()</span><span class="st">`</span> must only have an x or y aesthetic.</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>Run <span class="st">`</span><span class="at">rlang::last_trace()</span><span class="st">`</span> to see where the error occurred.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Continuamos sem sucesso, mas a mensagem de erro nos diz que função <code>geom_bar()</code> está contando o número de vezes que cada sorotipo aparece nos dados, então precisamos trocar o padrão <code>stat = "count"</code> para <code>stat = "identity"</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dengue, <span class="fu">aes</span>(sorotipo, total, <span class="at">fill =</span> sorotipo)) <span class="sc">+</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbar4.png" class="img-fluid"></p>
+<p>Ou seja:</p>
+<p>Você deve usar <code>stat = "count"</code> para contar automaticamente o número de observações em cada categoria de x; e você deve usar <code>stat = "identity"</code> para usar diretamente os valores de uma variável em y.</p>
+<p>Agora vamos representar no gráfico também as informações de genótipos, além de sorotipos. Perceba que os dados estão em formato <strong>largo</strong> (wide):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dengue</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 4 × 10</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  sorotipo em_branco denv_1_genotipo_v denv_2_genotipo_ii denv_2_genotipo_ii_cosmopolita denv_2_genotipo_iii_as…¹</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>             <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>              <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>                          <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>                    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> DENV1            <span class="dv">3</span>              <span class="dv">1738</span>                 <span class="cn">NA</span>                             <span class="cn">NA</span>                       <span class="cn">NA</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> DENV2           <span class="dv">21</span>                <span class="cn">NA</span>                 <span class="cn">NA</span>                           <span class="dv">1405</span>                       <span class="dv">58</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> DENV3           <span class="cn">NA</span>                <span class="cn">NA</span>                  <span class="dv">1</span>                             <span class="cn">NA</span>                       <span class="cn">NA</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> DENV4           <span class="cn">NA</span>                <span class="cn">NA</span>                 <span class="cn">NA</span>                             <span class="cn">NA</span>                       <span class="cn">NA</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ abbreviated name: ¹​denv_2_genotipo_iii_asiatico_americano</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 4 more variables: denv_2_genotipo_v_asiatico_i &lt;dbl&gt;, denv_3_genotipo_iii &lt;dbl&gt;, denv_4_genotipo_ii &lt;dbl&gt;,</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   total &lt;dbl&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O <code>ggplot2</code> funciona melhor com dados no formato <strong>longo</strong> (long), porque ele mapeia variáveis para estéticas (<code>aes()</code>) — se os genótipos são colunas, você não consegue dizer <code>fill = genotipo</code> (não existe uma coluna com esse nome!).</p>
+<p>Então vamos precisar usar uma função do <code>tidyr</code> que vimos no capítulo 4! Qual é ela?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dengue.longo <span class="ot">&lt;-</span> dengue <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>total) <span class="sc">|&gt;</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">cols =</span> <span class="sc">-</span>sorotipo,</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">'n'</span>,</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">'genotipo'</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>dengue.longo </span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 32 × 3</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>   sorotipo genotipo                                   n</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>    <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                                  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> DENV1    em_branco                                  <span class="dv">3</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> DENV1    denv_1_genotipo_v                       <span class="dv">1738</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> DENV1    denv_2_genotipo_ii                        <span class="cn">NA</span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> DENV1    denv_2_genotipo_ii_cosmopolita            <span class="cn">NA</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> DENV1    denv_2_genotipo_iii_asiatico_americano    <span class="cn">NA</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> DENV1    denv_2_genotipo_v_asiatico_i              <span class="cn">NA</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> DENV1    denv_3_genotipo_iii                       <span class="cn">NA</span></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> DENV1    denv_4_genotipo_ii                        <span class="cn">NA</span></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> DENV2    em_branco                                 <span class="dv">21</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> DENV2    denv_1_genotipo_v                         <span class="cn">NA</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 22 more rows</span></span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pronto! Agora podemos fazer nosso gráfico!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dengue.longo, <span class="fu">aes</span>(<span class="at">x =</span> sorotipo, <span class="at">y =</span> n, <span class="at">fill =</span> genotipo)) <span class="sc">+</span>  </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbar5.png" class="img-fluid"></p>
+<p>Por padrão, as barras aparecerão empilhadas, ou seja, <code>position = "stack"</code>. Podemos usar outras opções.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 46%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>position</code></th>
+<th>O que faz</th>
+<th>Exemplo visual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>"stack"</code> <em>(padrão)</em></td>
+<td>Empilha os valores um em cima do outro (mostra soma total).</td>
+<td>Barras empilhadas</td>
+</tr>
+<tr class="even">
+<td><code>"dodge"</code></td>
+<td>Coloca lado a lado as barras de cada grupo.</td>
+<td>Barras lado a lado</td>
+</tr>
+<tr class="odd">
+<td><code>"fill"</code></td>
+<td>Igual a stack, mas normaliza para 100% (proporções).</td>
+<td>Barras empilhadas com mesma altura</td>
+</tr>
+<tr class="even">
+<td><code>"identity"</code></td>
+<td>Usa as alturas exatamente como estão, sem empilhar. Pode sobrepor barras.</td>
+<td>Cada barra fica independente (pode sobrepor)</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos testar <code>position = "fill"</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dengue.longo, <span class="fu">aes</span>(<span class="at">x =</span> sorotipo, <span class="at">y =</span> n, <span class="at">fill =</span> genotipo)) <span class="sc">+</span>  </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbar6.png" class="img-fluid"></p>
+<p>O que aconteceu?</p>
+<p>Agora teste outras opções de <code>position =</code>, escolha uma e finalize o gráfico usando <code>labs()</code> para acrescentar um título, definir os rótulos de x, y, e o título da legenda, e adicione um tema.</p>
+</section>
+<section id="boxplot" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">5.7</span> Boxplot</h2>
+<p>Um boxplot é um dos gráficos mais comuns para explorar a distribuição de uma variável numérica. Pode ser obtido com o <code>ggplot()</code> mais a camada <code>geom_boxplot()</code>.</p>
+<p>Para explorar esse tipo de gráfico, vamos voltar aos dados de AIDS no Brasil:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>aids.uf</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 1,188 × 7</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>     ano cod_UF_res casos abbrev_state name_state code_region name_region</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>chr<span class="sc">&gt;</span>            <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>      </span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span>         <span class="dv">11</span>     <span class="dv">0</span> RO           Rondônia             <span class="dv">1</span> Norte      </span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1980</span>         <span class="dv">12</span>     <span class="dv">0</span> AC           Acre                 <span class="dv">1</span> Norte      </span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1980</span>         <span class="dv">13</span>     <span class="dv">0</span> AM           Amazonas             <span class="dv">1</span> Norte      </span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1980</span>         <span class="dv">14</span>     <span class="dv">0</span> RR           Roraima              <span class="dv">1</span> Norte      </span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1980</span>         <span class="dv">15</span>     <span class="dv">0</span> PA           Pará                 <span class="dv">1</span> Norte      </span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1980</span>         <span class="dv">16</span>     <span class="dv">0</span> AP           Amapá                <span class="dv">1</span> Norte      </span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1980</span>         <span class="dv">17</span>     <span class="dv">0</span> TO           Tocantins            <span class="dv">1</span> Norte      </span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1980</span>         <span class="dv">21</span>     <span class="dv">0</span> MA           Maranhão             <span class="dv">2</span> Nordeste   </span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1980</span>         <span class="dv">22</span>     <span class="dv">0</span> PI           Piauí                <span class="dv">2</span> Nordeste   </span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1980</span>         <span class="dv">23</span>     <span class="dv">0</span> CE           Ceará                <span class="dv">2</span> Nordeste   </span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 1,178 more rows</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Primeiro, vamos agrupar os dados por região e ano.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>aids.regiao <span class="ot">&lt;-</span> aids.uf <span class="sc">|&gt;</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano, name_region) <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">sum</span>(casos, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>aids.regiao</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 220 × 3</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Groups:   ano [44]</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>     ano name_region  casos</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span> Centro Oeste     <span class="dv">0</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1980</span> Nordeste         <span class="dv">0</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1980</span> Norte            <span class="dv">0</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1980</span> Sudeste          <span class="dv">1</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1980</span> Sul              <span class="dv">0</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1982</span> Centro Oeste     <span class="dv">0</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1982</span> Nordeste         <span class="dv">1</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1982</span> Norte            <span class="dv">0</span></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1982</span> Sudeste         <span class="dv">14</span></span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1982</span> Sul              <span class="dv">2</span></span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 210 more rows</span></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>O dado já está em formato longo, então vamos partir para o ggplot!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.regiao, <span class="fu">aes</span>(name_region, casos)) <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_linedraw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbox1.png" class="img-fluid"></p>
+<p>Poderia rodar as coordenadas e colorir por região:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.regiao, <span class="fu">aes</span>(name_region, casos, <span class="at">fill =</span> name_region)) <span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"AIDS no Brasil por região, 1980-2024*"</span>,</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"*Dados de 2024 são preliminares"</span>,</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Região"</span>,</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Região"</span>) <span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_linedraw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbox2.png" class="img-fluid"></p>
+<p>Podemos acrescentar os pontos dos valores individuais de forma aleatória acrescentando uma camada de <code>geom_jitter()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.regiao, <span class="fu">aes</span>(name_region, casos, <span class="at">fill =</span> name_region)) <span class="sc">+</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"AIDS no Brasil por região, 1980-2024*"</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"*Dados de 2024 são preliminares"</span>,</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Região"</span>,</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Região"</span>) <span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_linedraw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbox3.png" class="img-fluid"></p>
+<p>E se quisermos ver a distribuição de casos a cada década?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>aids.dec <span class="ot">&lt;-</span> aids.uf <span class="sc">|&gt;</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decada =</span> <span class="fu">case_when</span>(</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    ano <span class="sc">&lt;</span> <span class="dv">1990</span> <span class="sc">~</span> <span class="st">'1980s'</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    ano <span class="sc">&lt;</span> <span class="dv">2000</span> <span class="sc">~</span> <span class="st">'1990s'</span>, </span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    ano <span class="sc">&lt;</span> <span class="dv">2010</span> <span class="sc">~</span> <span class="st">'2000s'</span>,</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    ano <span class="sc">&lt;</span> <span class="dv">2020</span> <span class="sc">~</span> <span class="st">'2010s'</span>,</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    ano <span class="sc">&gt;=</span> <span class="dv">2020</span> <span class="sc">~</span> <span class="st">'2020s'</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(decada, abbrev_state, name_region) <span class="sc">|&gt;</span> </span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">sum</span>(casos, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>aids.dec</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 135 × 4</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Groups:   decada, abbrev_state [135]</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>   decada abbrev_state name_region  casos</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>  <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>chr<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">1980</span>s  AC           Norte            <span class="dv">9</span></span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">1980</span>s  AL           Nordeste         <span class="dv">0</span></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">1980</span>s  AM           Norte           <span class="dv">32</span></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">1980</span>s  AP           Norte            <span class="dv">7</span></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">1980</span>s  BA           Nordeste       <span class="dv">275</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">1980</span>s  CE           Nordeste       <span class="dv">117</span></span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">1980</span>s  DF           Centro Oeste   <span class="dv">153</span></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">1980</span>s  ES           Sudeste        <span class="dv">117</span></span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">1980</span>s  GO           Centro Oeste   <span class="dv">187</span></span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="dv">1980</span>s  MA           Nordeste        <span class="dv">55</span></span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 125 more rows</span></span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Agora veja como fazer o boxplot:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.dec, <span class="fu">aes</span>(decada, casos, <span class="at">fill =</span> name_region)) <span class="sc">+</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbox4.png" class="img-fluid"></p>
+<p>Poderíamos separar facetas por região:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.dec, <span class="fu">aes</span>(decada, casos, <span class="at">fill =</span> name_region)) <span class="sc">+</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>name_region) <span class="sc">+</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbox5.png" class="img-fluid"></p>
+<p>Que alterações você faria neste gráfico?</p>
+</section>
+<section id="gráficos-de-linha" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="gráficos-de-linha"><span class="header-section-number">5.8</span> Gráficos de linha</h2>
+<p>O gráfico de linha é um dos tipos mais comuns de gráfico. Na epidemiologia o utilizamos muito para mostrar séries temporais de casos, incidência, etc. No <code>ggplot</code>, o gráfico de linha pode ser feito acrescentado a camada <code>geom_line()</code>.</p>
+<p>Podemos fazer uma série temporal de casos de AIDS no Brasil de 1980 a 2024.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/laispfreitas/curso_CD1/refs/heads/main/aids_br.csv"</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>aids.br <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>aids.br</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 44 × 2</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>     ano casos</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>  <span class="dv">1980</span>     <span class="dv">1</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>  <span class="dv">1982</span>    <span class="dv">17</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>  <span class="dv">1983</span>    <span class="dv">42</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>  <span class="dv">1984</span>   <span class="dv">136</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>  <span class="dv">1985</span>   <span class="dv">535</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>  <span class="dv">1986</span>  <span class="dv">1121</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>  <span class="dv">1987</span>  <span class="dv">2708</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>  <span class="dv">1988</span>  <span class="dv">4353</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>  <span class="dv">1989</span>  <span class="dv">6019</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="dv">1990</span>  <span class="dv">8660</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 34 more rows</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vamos ao gráfico:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.br, <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> casos, <span class="at">color =</span> casos)) <span class="sc">+</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total de casos de AIDS por ano, Brasil, 1980 a 2024*"</span>,</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"2024: dados preliminares*"</span>,</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ano"</span>,</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Casos"</span>) <span class="sc">+</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_clean</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggline.png" class="img-fluid"></p>
+<p>Perceba que associamos uma paleta à variável especificada em <code>color =</code> com <code>scale_color_continuous()</code>!</p>
+<p>Podemos combinar <code>geom_line()</code> com <code>geom_point()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.br, <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> casos, <span class="at">color =</span> casos)) <span class="sc">+</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total de casos de AIDS por ano, Brasil, 1980 a 2024*"</span>,</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"2024: dados preliminares*"</span>,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Número de casos"</span>,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ano"</span>,</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Casos"</span>) <span class="sc">+</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_clean</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggline2.png" class="img-fluid"></p>
+<p><strong>ATENÇÃO!!!</strong></p>
+<p>O <code>geom_line()</code> vai <strong>sempre</strong> criar um pedaço de linha entre as observações. Ou seja, se existirem dados faltantes e isso não for corrigido no dado, o gráfico ficará errado!!!</p>
+<p>Vamos fazer o gráfico sem os ponto dos anos 2020 a 2023:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.br <span class="sc">|&gt;</span> <span class="fu">filter</span>(ano <span class="sc">&lt;</span> <span class="dv">2020</span> <span class="sc">|</span> ano <span class="sc">&gt;</span> <span class="dv">2023</span>), <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> casos, <span class="at">color =</span> casos)) <span class="sc">+</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_clean</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggline3.png" class="img-fluid"></p>
+<p>Repare no que aconteceu!</p>
+</section>
+<section id="mapas" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="mapas"><span class="header-section-number">5.9</span> Mapas</h2>
+<p>É possível fazer mapas com o <code>ggplot</code> carregando também o pacote <code>sf</code> e acrescentando a camada <code>geom_sf()</code>.</p>
+<p>Vamos fazer um exemplo com os dados de um estudo sobre arboviroses e microcefalia em Pernambuco de 2013 a 2017 (Freitas L et al., 2023).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/laispfreitas/PE_satscan/refs/heads/main/data_by_year.csv"</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>PE <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url) </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>PE</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 920 × 8</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>   ID_MUNICIP  year Population dengue  zika chikungunya microcephaly live_births</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>        <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>       <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>       <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>     <span class="dv">260005</span>  <span class="dv">2013</span>     <span class="fl">96769.</span>     <span class="dv">14</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">0</span>        <span class="dv">1532</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>     <span class="dv">260005</span>  <span class="dv">2014</span>     <span class="fl">96831.</span>     <span class="dv">23</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">0</span>        <span class="dv">1526</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>     <span class="dv">260005</span>  <span class="dv">2015</span>     <span class="fl">96907.</span>     <span class="dv">54</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">5</span>        <span class="dv">1628</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>     <span class="dv">260005</span>  <span class="dv">2016</span>     <span class="fl">96880.</span>     <span class="dv">23</span>     <span class="dv">0</span>          <span class="dv">29</span>            <span class="dv">2</span>        <span class="dv">1487</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>     <span class="dv">260005</span>  <span class="dv">2017</span>     <span class="fl">96828.</span>      <span class="dv">0</span>     <span class="dv">0</span>          <span class="dv">10</span>            <span class="dv">0</span>        <span class="dv">1519</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>     <span class="dv">260010</span>  <span class="dv">2013</span>     <span class="fl">36182.</span>      <span class="dv">0</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">0</span>         <span class="dv">638</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>     <span class="dv">260010</span>  <span class="dv">2014</span>     <span class="fl">36266.</span>      <span class="dv">5</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">0</span>         <span class="dv">653</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>     <span class="dv">260010</span>  <span class="dv">2015</span>     <span class="fl">36355.</span>    <span class="dv">891</span>     <span class="dv">0</span>          <span class="dv">39</span>            <span class="dv">2</span>         <span class="dv">666</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>     <span class="dv">260010</span>  <span class="dv">2016</span>     <span class="fl">36431.</span>    <span class="dv">205</span>     <span class="dv">0</span>          <span class="dv">23</span>            <span class="dv">3</span>         <span class="dv">580</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>     <span class="dv">260010</span>  <span class="dv">2017</span>     <span class="fl">36495.</span>     <span class="dv">24</span>     <span class="dv">0</span>           <span class="dv">8</span>            <span class="dv">0</span>         <span class="dv">522</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 910 more rows</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este dado é espaço-temporal. Para começar, vamos calcular a taxa de microcefalia por nascidos vivos para todo o período de estudo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>PE_total <span class="ot">&lt;-</span> PE <span class="sc">|&gt;</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ID_MUNICIP) <span class="sc">|&gt;</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(dengue<span class="sc">:</span>live_births, \(x) <span class="fu">sum</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">pop =</span> <span class="fu">mean</span>(Population)) <span class="sc">|&gt;</span> </span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tx_micro =</span> (microcephaly<span class="sc">/</span>live_births)<span class="sc">*</span><span class="dv">10000</span>)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>PE_total</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co"># A tibble: 184 × 8</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>   ID_MUNICIP dengue  zika chikungunya microcephaly live_births    pop tx_micro</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>        <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>       <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>        <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>       <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span>     <span class="dv">260005</span>    <span class="dv">114</span>     <span class="dv">0</span>          <span class="dv">39</span>            <span class="dv">7</span>        <span class="dv">7692</span> <span class="fl">96843.</span>     <span class="fl">9.10</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span>     <span class="dv">260010</span>   <span class="dv">1125</span>     <span class="dv">0</span>          <span class="dv">70</span>            <span class="dv">5</span>        <span class="dv">3059</span> <span class="fl">36345.</span>    <span class="fl">16.3</span> </span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span>     <span class="dv">260020</span>    <span class="dv">109</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">2</span>        <span class="dv">1415</span> <span class="fl">18966.</span>    <span class="fl">14.1</span> </span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span>     <span class="dv">260030</span>    <span class="dv">316</span>     <span class="dv">1</span>           <span class="dv">6</span>            <span class="dv">4</span>        <span class="dv">1736</span> <span class="fl">24062.</span>    <span class="fl">23.0</span> </span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span>     <span class="dv">260040</span>     <span class="dv">60</span>     <span class="dv">0</span>           <span class="dv">4</span>            <span class="dv">0</span>        <span class="dv">2565</span> <span class="fl">35908.</span>     <span class="dv">0</span>   </span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span>     <span class="dv">260050</span>    <span class="dv">996</span>     <span class="dv">0</span>         <span class="dv">200</span>            <span class="dv">5</span>        <span class="dv">3724</span> <span class="fl">42542.</span>    <span class="fl">13.4</span> </span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span>     <span class="dv">260060</span>     <span class="dv">25</span>     <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">0</span>         <span class="dv">909</span> <span class="fl">14434.</span>     <span class="dv">0</span>   </span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span>     <span class="dv">260070</span>    <span class="dv">398</span>     <span class="dv">0</span>          <span class="dv">47</span>            <span class="dv">6</span>        <span class="dv">2701</span> <span class="fl">37825.</span>    <span class="fl">22.2</span> </span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span>     <span class="dv">260080</span>    <span class="dv">523</span>     <span class="dv">0</span>         <span class="dv">563</span>            <span class="dv">2</span>        <span class="dv">1275</span> <span class="fl">22411.</span>    <span class="fl">15.7</span> </span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>     <span class="dv">260090</span>     <span class="dv">34</span>     <span class="dv">0</span>          <span class="dv">16</span>            <span class="dv">0</span>        <span class="dv">1632</span> <span class="fl">22543.</span>     <span class="dv">0</span>   </span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ 174 more rows</span></span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vamos precisar de um objeto <code>sf</code> com a geometria dos municípios de Pernambuco. Podemos obter com o pacote <code>geobr</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geobr)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>PE.sf <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="dv">26</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>PE.sf</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>Simple feature collection with <span class="dv">185</span> features and <span class="dv">4</span> fields</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>Geometry type<span class="sc">:</span> MULTIPOLYGON</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>Dimension<span class="sc">:</span>     XY</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>Bounding box<span class="sc">:</span>  xmin<span class="sc">:</span> <span class="sc">-</span><span class="fl">41.35834</span> ymin<span class="sc">:</span> <span class="sc">-</span><span class="fl">9.48269</span> xmax<span class="sc">:</span> <span class="sc">-</span><span class="fl">32.39111</span> ymax<span class="sc">:</span> <span class="sc">-</span><span class="fl">3.828784</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>Geodetic CRS<span class="sc">:</span>  SIRGAS <span class="dv">2000</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>First <span class="dv">10</span> features<span class="sc">:</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>   code_muni             name_muni code_state abbrev_state                           geom</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">2600054</span>          Abreu E Lima         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">34.89651</span> <span class="sc">-</span>...</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2600104</span> Afogados Da Ingazeira         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">37.6847</span> <span class="sc">-</span><span class="dv">7</span>...</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    <span class="dv">2600203</span>               Afrânio         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">40.90285</span> <span class="sc">-</span>...</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">2600302</span>             Agrestina         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.96779</span> <span class="sc">-</span>...</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    <span class="dv">2600401</span>            Água Preta         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.3699</span> <span class="sc">-</span><span class="dv">8</span>...</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>    <span class="dv">2600500</span>           Águas Belas         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">36.98842</span> <span class="sc">-</span>...</span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>    <span class="dv">2600609</span>             Alagoinha         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">36.82263</span> <span class="sc">-</span>...</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>    <span class="dv">2600708</span>               Aliança         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.16946</span> <span class="sc">-</span>...</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    <span class="dv">2600807</span>               Altinho         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">36.02505</span> <span class="sc">-</span>...</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>   <span class="dv">2600906</span>               Amaraji         <span class="dv">26</span>           PE <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.50934</span> <span class="sc">-</span>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Para juntar os dois objetos, vamos precisar criar o código do município de 6 dígitos em <code>PE.sf</code>.</p>
+<p>Mas primeiro, vamos visualizar esse objeto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> PE.sf) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggsf1.png" class="img-fluid"></p>
+<p>A ilha afastada é Fernando de Noronha, que não existe nos dados <code>PE</code> e que vai dificultar a visualização dos dados agora. Então, por ora, vamos excluí-la de <code>PE.sf</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>PE.sf <span class="ot">&lt;-</span> PE.sf <span class="sc">|&gt;</span> </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID_MUNICIP =</span> <span class="fu">str_sub</span>(code_muni, <span class="dv">1</span>, <span class="dv">6</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(code_muni <span class="sc">!=</span> <span class="dv">2605459</span>)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>PE_total <span class="ot">&lt;-</span> PE_total <span class="sc">|&gt;</span> </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ID_MUNICIP =</span> <span class="fu">as.character</span>(ID_MUNICIP))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Agora vamos juntar os dois objetos. Neste caso, a ordem importa!</p>
+<p>Veja o que acontece se fizermos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>PE_total <span class="sc">|&gt;</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(PE.sf, <span class="at">by =</span> <span class="fu">join_by</span>(ID_MUNICIP)) <span class="sc">|&gt;</span> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>()</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"tbl_df"</span>     <span class="st">"tbl"</span>        <span class="st">"data.frame"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Agora veja o que acontece se fizermos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>PE.sf <span class="sc">|&gt;</span> </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(PE_total, <span class="at">by =</span> <span class="fu">join_by</span>(ID_MUNICIP)) <span class="sc">|&gt;</span> </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>()</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"sf"</span>         <span class="st">"data.frame"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Portanto, como queremos fazer mapas, temos que fazer a ordem <code>sf |&gt; left_join(dataframe)</code>!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>PE.sf.casos <span class="ot">&lt;-</span> PE.sf <span class="sc">|&gt;</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(PE_total, <span class="at">by =</span> <span class="fu">join_by</span>(ID_MUNICIP))</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>PE.sf.casos </span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>Simple feature collection with <span class="dv">184</span> features and <span class="dv">12</span> fields</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>Geometry type<span class="sc">:</span> MULTIPOLYGON</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>Dimension<span class="sc">:</span>     XY</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>Bounding box<span class="sc">:</span>  xmin<span class="sc">:</span> <span class="sc">-</span><span class="fl">41.35834</span> ymin<span class="sc">:</span> <span class="sc">-</span><span class="fl">9.48269</span> xmax<span class="sc">:</span> <span class="sc">-</span><span class="fl">34.80743</span> ymax<span class="sc">:</span> <span class="sc">-</span><span class="fl">7.272954</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>Geodetic CRS<span class="sc">:</span>  SIRGAS <span class="dv">2000</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>First <span class="dv">10</span> features<span class="sc">:</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>   code_muni             name_muni code_state abbrev_state ID_MUNICIP dengue zika chikungunya microcephaly live_births      pop</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">2600054</span>          Abreu E Lima         <span class="dv">26</span>           PE     <span class="dv">260005</span>    <span class="dv">114</span>    <span class="dv">0</span>          <span class="dv">39</span>            <span class="dv">7</span>        <span class="dv">7692</span> <span class="fl">96842.74</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2600104</span> Afogados Da Ingazeira         <span class="dv">26</span>           PE     <span class="dv">260010</span>   <span class="dv">1125</span>    <span class="dv">0</span>          <span class="dv">70</span>            <span class="dv">5</span>        <span class="dv">3059</span> <span class="fl">36345.46</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    <span class="dv">2600203</span>               Afrânio         <span class="dv">26</span>           PE     <span class="dv">260020</span>    <span class="dv">109</span>    <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">2</span>        <span class="dv">1415</span> <span class="fl">18965.87</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">2600302</span>             Agrestina         <span class="dv">26</span>           PE     <span class="dv">260030</span>    <span class="dv">316</span>    <span class="dv">1</span>           <span class="dv">6</span>            <span class="dv">4</span>        <span class="dv">1736</span> <span class="fl">24061.54</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    <span class="dv">2600401</span>            Água Preta         <span class="dv">26</span>           PE     <span class="dv">260040</span>     <span class="dv">60</span>    <span class="dv">0</span>           <span class="dv">4</span>            <span class="dv">0</span>        <span class="dv">2565</span> <span class="fl">35908.20</span></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>    <span class="dv">2600500</span>           Águas Belas         <span class="dv">26</span>           PE     <span class="dv">260050</span>    <span class="dv">996</span>    <span class="dv">0</span>         <span class="dv">200</span>            <span class="dv">5</span>        <span class="dv">3724</span> <span class="fl">42542.15</span></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>    <span class="dv">2600609</span>             Alagoinha         <span class="dv">26</span>           PE     <span class="dv">260060</span>     <span class="dv">25</span>    <span class="dv">0</span>           <span class="dv">0</span>            <span class="dv">0</span>         <span class="dv">909</span> <span class="fl">14433.64</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>    <span class="dv">2600708</span>               Aliança         <span class="dv">26</span>           PE     <span class="dv">260070</span>    <span class="dv">398</span>    <span class="dv">0</span>          <span class="dv">47</span>            <span class="dv">6</span>        <span class="dv">2701</span> <span class="fl">37824.76</span></span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    <span class="dv">2600807</span>               Altinho         <span class="dv">26</span>           PE     <span class="dv">260080</span>    <span class="dv">523</span>    <span class="dv">0</span>         <span class="dv">563</span>            <span class="dv">2</span>        <span class="dv">1275</span> <span class="fl">22411.03</span></span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>   <span class="dv">2600906</span>               Amaraji         <span class="dv">26</span>           PE     <span class="dv">260090</span>     <span class="dv">34</span>    <span class="dv">0</span>          <span class="dv">16</span>            <span class="dv">0</span>        <span class="dv">1632</span> <span class="fl">22543.40</span></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>    tx_micro                           geom</span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>   <span class="fl">9.100364</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">34.89651</span> <span class="sc">-</span>...</span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  <span class="fl">16.345211</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">37.6847</span> <span class="sc">-</span><span class="dv">7</span>...</span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  <span class="fl">14.134276</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">40.90285</span> <span class="sc">-</span>...</span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  <span class="fl">23.041475</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.96779</span> <span class="sc">-</span>...</span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>   <span class="fl">0.000000</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.3699</span> <span class="sc">-</span><span class="dv">8</span>...</span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>  <span class="fl">13.426423</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">36.98842</span> <span class="sc">-</span>...</span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>   <span class="fl">0.000000</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">36.82263</span> <span class="sc">-</span>...</span>
+<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  <span class="fl">22.213995</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.16946</span> <span class="sc">-</span>...</span>
+<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>  <span class="fl">15.686275</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">36.02505</span> <span class="sc">-</span>...</span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>  <span class="fl">0.000000</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">35.50934</span> <span class="sc">-</span>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Agora vamos ao mapa!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> PE.sf.casos, <span class="fu">aes</span>(<span class="at">fill =</span> tx_micro))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggsf2.png" class="img-fluid"></p>
+<p>O <code>ggplot2</code> automaticamente designou uma paleta de cores para o mapa. Ela é ideal?</p>
+<p>Existem diversos pacotes de paletas para utilizar com o <code>ggplot2</code>. Dentre elas, descatam-se <code>colorspace</code> e <code>RColorBrewer</code> (saiba mais clicando <a href="https://cran.r-project.org/web/packages/colorspace/vignettes/colorspace.html">aqui</a> e <a href="https://colorbrewer2.org/">aqui</a>).</p>
+<p>Vamos usar a <code>colorspace</code>. Ela possui funções “primas” das funções <code>scale_*</code> nativas do <code>ggplot2</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(colorspace)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> PE.sf.casos, <span class="fu">aes</span>(<span class="at">fill =</span> tx_micro)) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">'Heat'</span>, </span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">name =</span> <span class="st">"Microcefalia</span><span class="sc">\n</span><span class="st">por 10mil"</span>) <span class="sc">+</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>g1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggsf3.png" class="img-fluid"></p>
+<p>Agora, vamos fazer o mapa usando número de casos de microcefalia, e ver se a distribuição espacial muda. Vamos colocar os dois mapas na mesma figura usando a função <code>ggarrange()</code> do pacote <code>ggpubr</code>.</p>
+<pre><code>library(ggpubr)
+
+g2 &lt;- ggplot() +
+  geom_sf(data = PE.sf.casos, aes(fill = microcephaly)) +
+  scale_fill_continuous_sequential(palette = 'Heat', 
+                                   name = "Microcefalia") +
+  theme_void()
+
+ggarrange(g1, g2, nrow = 2, common.legend = FALSE)</code></pre>
+<p><a href="figuras/ggsf4.png"></a></p>
+<p>Qual mapa você escolheria? Por que?</p>
+<p>Podemos usar mais de uma camada <code>geom_sf()</code> em um mapa. Vamos para isso fazer um mapa do número de casos de AIDS no Brasil por Unidade Federativa no ano de 2023. Vamos precisar dos polígonos dos estados e das regiões:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>uf.sf <span class="ot">&lt;-</span> <span class="fu">read_state</span>()</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>reg.sf <span class="ot">&lt;-</span> <span class="fu">read_region</span>()</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>aids.sf <span class="ot">&lt;-</span> uf.sf <span class="sc">|&gt;</span> </span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(aids.uf <span class="sc">|&gt;</span> <span class="fu">filter</span>(ano <span class="sc">==</span> <span class="dv">2023</span>), </span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(code_state <span class="sc">==</span> cod_UF_res, abbrev_state, name_state, code_region, name_region))</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>aids.sf</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>Simple feature collection with <span class="dv">27</span> features and <span class="dv">7</span> fields</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>Geometry type<span class="sc">:</span> MULTIPOLYGON</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>Dimension<span class="sc">:</span>     XY</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>Bounding box<span class="sc">:</span>  xmin<span class="sc">:</span> <span class="sc">-</span><span class="fl">73.99045</span> ymin<span class="sc">:</span> <span class="sc">-</span><span class="fl">33.75208</span> xmax<span class="sc">:</span> <span class="sc">-</span><span class="fl">28.83594</span> ymax<span class="sc">:</span> <span class="fl">5.271841</span></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>Geodetic CRS<span class="sc">:</span>  SIRGAS <span class="dv">2000</span></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>First <span class="dv">10</span> features<span class="sc">:</span></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>   code_state abbrev_state name_state code_region name_region  ano casos                           geom</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>          <span class="dv">11</span>           RO   Rondônia           <span class="dv">1</span>       Norte <span class="dv">2023</span>   <span class="dv">403</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">63.32721</span> <span class="sc">-</span>...</span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>          <span class="dv">12</span>           AC       Acre           <span class="dv">1</span>       Norte <span class="dv">2023</span>   <span class="dv">144</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">73.18253</span> <span class="sc">-</span>...</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>          <span class="dv">13</span>           AM   Amazonas           <span class="dv">1</span>       Norte <span class="dv">2023</span>  <span class="dv">1386</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">67.32609</span> <span class="dv">2</span>...</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>          <span class="dv">14</span>           RR    Roraima           <span class="dv">1</span>       Norte <span class="dv">2023</span>   <span class="dv">271</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">60.20051</span> <span class="dv">5</span>...</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>          <span class="dv">15</span>           PA       Pará           <span class="dv">1</span>       Norte <span class="dv">2023</span>  <span class="dv">2300</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">54.95431</span> <span class="dv">2</span>...</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>          <span class="dv">16</span>           AP      Amapá           <span class="dv">1</span>       Norte <span class="dv">2023</span>   <span class="dv">211</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">51.1797</span> <span class="dv">4</span>....</span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>          <span class="dv">17</span>           TO  Tocantins           <span class="dv">1</span>       Norte <span class="dv">2023</span>   <span class="dv">276</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">48.35878</span> <span class="sc">-</span>...</span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>          <span class="dv">21</span>           MA   Maranhão           <span class="dv">2</span>    Nordeste <span class="dv">2023</span>  <span class="dv">1314</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">45.84073</span> <span class="sc">-</span>...</span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>          <span class="dv">22</span>           PI      Piauí           <span class="dv">2</span>    Nordeste <span class="dv">2023</span>   <span class="dv">422</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">41.74605</span> <span class="sc">-</span>...</span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>         <span class="dv">23</span>           CE      Ceará           <span class="dv">2</span>    Nordeste <span class="dv">2023</span>  <span class="dv">1525</span> <span class="fu">MULTIPOLYGON</span> (((<span class="sc">-</span><span class="fl">41.16703</span> <span class="sc">-</span>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Agora vamos pro mapa! Primeiro, vamos simplesmente fazer o mapa com a camada dos casos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> aids.sf, <span class="fu">aes</span>(<span class="at">fill =</span> casos)) <span class="sc">+</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">"Inferno"</span>, <span class="at">name =</span> <span class="st">"Nº de casos"</span>) <span class="sc">+</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbr1.png" class="img-fluid"></p>
+<p>Agora vamos acrescentar a camada com a região:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> aids.sf, <span class="fu">aes</span>(<span class="at">fill =</span> casos)) <span class="sc">+</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">"Inferno"</span>, <span class="at">name =</span> <span class="st">"Nº de casos"</span>) <span class="sc">+</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> reg.sf) <span class="sc">+</span> </span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbr2.png" class="img-fluid"></p>
+<p>O que aconteceu?</p>
+<p>As camadas aparecem na ordem que estão no código! Então a cor de preenchimento padrão de <code>geom_sf(data = reg.sf)</code> sobrepôs a escala de cores dos números de casos. Queremos somente as bordas das regiões, então precisamos especificar que não queremos preenchimento com <code>fill = NA</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> aids.sf, <span class="fu">aes</span>(<span class="at">fill =</span> casos)) <span class="sc">+</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">"Inferno"</span>, <span class="at">name =</span> <span class="st">"Nº de casos"</span>) <span class="sc">+</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> reg.sf, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbr3.png" class="img-fluid"></p>
+<p>Agora vemos a escala de cores que está abaixo da camada de regiões, mas as bordas das regiões ainda não está muito distinta das bordas das UFs. Vamos mexer em alguns parâmetros pra melhorar a visualização deste mapa!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> aids.sf, <span class="fu">aes</span>(<span class="at">fill =</span> casos), <span class="at">linewidth =</span> .<span class="dv">1</span>, <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">"Inferno"</span>, <span class="at">name =</span> <span class="st">"Nº de casos"</span>) <span class="sc">+</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> reg.sf, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">'grey20'</span>, <span class="at">linewidth =</span> .<span class="dv">5</span>) <span class="sc">+</span> </span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Número de casos de AIDS por Unidade Federativa, 2023'</span>) <span class="sc">+</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">'bold'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggbr4.png" class="img-fluid"></p>
 <!-- O grafico de linha é um dos mais empregados , são necessárias duas variáveis *x* e *y* , em geral continuas. existem algumas funções que fazem -->
 <!-- ``` -->
 <!-- ggplot(economics, aes(date, unemploy)) + -->
@@ -858,23 +1233,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- Visite esses sites para ter algumas indeias/ inspirações -->
 <!-- [ggplot gallery](http://www.ggplot2-exts.org/gallery/) -->
 <!-- [top 50 ggplot2 visualization](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) -->
-<!-- #### 1.6 Gráficos interativos -->
-<!-- Existem bibliotecas que implementam gráficos interativos que são compatíveis com a *ggplot2* , segue um pequeno exemplo usando a plotly: -->
-<!-- ``` -->
-<!-- install.packages(plotly) -->
-<!-- ``` -->
-<!-- ``` -->
-<!-- p <- ggplot(p <- economics, aes(date, unemploy)) + -->
-<!--   geom_line(colour = "red") -->
-<!-- library(plotly) -->
-<!-- ggplotly(p) -->
-<!-- ``` -->
-<!-- ####1.7 Exercício -->
-<!-- - Em apenas um gráfico o boxplot da variável Sepal.Length para cada uma das especies -->
-<!-- - faça o boxplot acima no formato horizontal (ver função de coordenada para rodar o gráfico) -->
-<!-- - o mesmo que acima com  preenchimento de cor solido (parâmetro da função **aes()**) -->
-<!-- - ​ -->
-<!-- - ​ -->
+</section>
+<section id="exercícios" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Exercícios</h1>
+<ol type="A">
+<li>Importe os dados de temperatura por bairro e semana do Rio de Janeiro em 2016 (Freitas L et al., 2021):</li>
+</ol>
+<p>https://raw.githubusercontent.com/laispfreitas/ICAR_chikungunya/refs/heads/master/temperature_rio_2016.csv</p>
+<ul>
+<li>Verifique a distribuição da temperatura através de um histograma.</li>
+<li>Faça um boxplot da temperatura por semana.</li>
+<li>Obtenha o valor médio da temperatura para o Rio de Janeiro e faça um gráfico de linha com a data no eixo x (dica: você vai precisar do pacote <code>aweek</code>).</li>
+</ul>
+<ol start="2" type="A">
+<li>Usando os dados de Pernambuco:</li>
+</ol>
+<ul>
+<li>Tente fazer o mapa das incidências de dengue, Zika e chikungunya (um mapa para cada doença).</li>
+</ul>
+</section>
+<section id="referências" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Referências</h1>
+<p>Freitas LP, Lowe R, Koepp AE, Valongueiro SA, Dondero M, Marteleto LJ. <strong>“Identifying hidden Zika hotspots in Pernambuco, Brazil: A spatial analysis”</strong>. Transactions of the Royal Society of Tropical Medicine and Hygiene, 117(3):189–196 (2023). <a href="https://doi.org/10.1093/trstmh/trac099" class="uri">https://doi.org/10.1093/trstmh/trac099</a></p>
+<p>Freitas LP, Schmidt AM, Cossich W, Cruz OG, Carvalho MS. <strong>“Spatio-temporal modelling of the first Chikungunya epidemic in an intra-urban setting: The role of socioeconomic status, environment and temperature”</strong>. PLOS Neglected Tropical Diseases, 15(6):e0009537 (2021). <a href="https://doi.org/10.1371/journal.pntd.0009537" class="uri">https://doi.org/10.1371/journal.pntd.0009537</a></p>
 
 
 </section>
