@@ -233,8 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">5.7</span> Boxplot</a></li>
   <li><a href="#gráficos-de-linha" id="toc-gráficos-de-linha" class="nav-link" data-scroll-target="#gráficos-de-linha"><span class="header-section-number">5.8</span> Gráficos de linha</a></li>
   <li><a href="#mapas" id="toc-mapas" class="nav-link" data-scroll-target="#mapas"><span class="header-section-number">5.9</span> Mapas</a></li>
-  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">6</span> Exercícios</a></li>
-  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">7</span> Referências</a></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">5.10</span> Exercícios</a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">5.11</span> Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -660,7 +660,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_spp.png" class="img-fluid"></p>
-<p>podemos também usar o parâmetro <code>position</code> em <code>geom_histogram()</code> para especificar barras lado a lado ou empilhadas. Teste as opções <code>dodge</code> e <code>fill</code>. A padrão é <code>stack</code>.</p>
+<p>Podemos também usar o parâmetro <code>position</code> em <code>geom_histogram()</code> para especificar barras lado a lado ou empilhadas. Teste as opções <code>dodge</code> e <code>fill</code>. A padrão é <code>stack</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_dodge.png" class="img-fluid"></p>
@@ -675,8 +675,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/hist_polar.png" class="img-fluid"></p>
 <p>A função <code>geom_density()</code> é semelhante. Vamos testar com o parâmetro <code>alpha</code>:</p>
-<pre><code>ggplot(iris, aes(Sepal.Width, fill = Species)) +
-  geom_density(binwidth = 0.1, alpha = 0.6)  </code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Width, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/densi.png" class="img-fluid"></p>
 </section>
 <section id="gráfico-de-barras-barplot" class="level2" data-number="5.6">
@@ -946,7 +946,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vamos ao gráfico:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.br, <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> casos, <span class="at">color =</span> casos)) <span class="sc">+</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total de casos de AIDS por ano, Brasil, 1980 a 2024*"</span>,</span>
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"2024: dados preliminares*"</span>,</span>
@@ -958,7 +958,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Perceba que associamos uma paleta à variável especificada em <code>color =</code> com <code>scale_color_continuous()</code>!</p>
 <p>Podemos combinar <code>geom_line()</code> com <code>geom_point()</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.br, <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> casos, <span class="at">color =</span> casos)) <span class="sc">+</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
 <span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total de casos de AIDS por ano, Brasil, 1980 a 2024*"</span>,</span>
@@ -972,7 +972,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>O <code>geom_line()</code> vai <strong>sempre</strong> criar um pedaço de linha entre as observações. Ou seja, se existirem dados faltantes e isso não for corrigido no dado, o gráfico ficará errado!!!</p>
 <p>Vamos fazer o gráfico sem os ponto dos anos 2020 a 2023:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aids.br <span class="sc">|&gt;</span> <span class="fu">filter</span>(ano <span class="sc">&lt;</span> <span class="dv">2020</span> <span class="sc">|</span> ano <span class="sc">&gt;</span> <span class="dv">2023</span>), <span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> casos, <span class="at">color =</span> casos)) <span class="sc">+</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_continuous</span>(<span class="at">type =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_clean</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1115,16 +1115,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>g1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/ggsf3.png" class="img-fluid"></p>
 <p>Agora, vamos fazer o mapa usando número de casos de microcefalia, e ver se a distribuição espacial muda. Vamos colocar os dois mapas na mesma figura usando a função <code>ggarrange()</code> do pacote <code>ggpubr</code>.</p>
-<pre><code>library(ggpubr)
-
-g2 &lt;- ggplot() +
-  geom_sf(data = PE.sf.casos, aes(fill = microcephaly)) +
-  scale_fill_continuous_sequential(palette = 'Heat', 
-                                   name = "Microcefalia") +
-  theme_void()
-
-ggarrange(g1, g2, nrow = 2, common.legend = FALSE)</code></pre>
-<p><a href="figuras/ggsf4.png"></a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> PE.sf.casos, <span class="fu">aes</span>(<span class="at">fill =</span> microcephaly)) <span class="sc">+</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous_sequential</span>(<span class="at">palette =</span> <span class="st">'Heat'</span>, </span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">name =</span> <span class="st">"Microcefalia"</span>) <span class="sc">+</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(g1, g2, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">common.legend =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="figuras/ggsf4.png" class="img-fluid"></p>
 <p>Qual mapa você escolheria? Por que?</p>
 <p>Podemos usar mais de uma camada <code>geom_sf()</code> em um mapa. Vamos para isso fazer um mapa do número de casos de AIDS no Brasil por Unidade Federativa no ano de 2023. Vamos precisar dos polígonos dos estados e das regiões:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>uf.sf <span class="ot">&lt;-</span> <span class="fu">read_state</span>()</span>
@@ -1181,79 +1181,27 @@ ggarrange(g1, g2, nrow = 2, common.legend = FALSE)</code></pre>
 <span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
 <span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> .<span class="dv">5</span>, <span class="at">face =</span> <span class="st">'bold'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="figuras/ggbr4.png" class="img-fluid"></p>
-<!-- O grafico de linha é um dos mais empregados , são necessárias duas variáveis *x* e *y* , em geral continuas. existem algumas funções que fazem -->
-<!-- ``` -->
-<!-- ggplot(economics, aes(date, unemploy)) + -->
-<!--     geom_line(colour = "red") -->
-<!-- ``` -->
-<!-- ![](linha1.png) -->
-<!-- podemos também representar a área abaixo da linha -->
-<!-- ``` -->
-<!--   ggplot(economics, aes(date, unemploy)) + -->
-<!--     geom_area(colour = "red",fill="blue",alpha=0.3) + -->
-<!--     theme_bw() -->
-<!-- ``` -->
-<!-- ![](linha2.png) -->
-<!-- ou ainda como uma função em escada (*step*) -->
-<!-- ``` -->
-<!--   ggplot(economics[1:32,], aes(date, unemploy)) + -->
-<!--     geom_step(colour = "red") -->
-<!-- ``` -->
-<!-- ![](linha3.png) -->
-<!-- podemos representar vários elementos, como pontos e linhas suavizadas -->
-<!-- ``` -->
-<!--  ggplot(economics, aes(date, unemploy)) + -->
-<!--     geom_point(size=0.5) + -->
-<!--     geom_smooth(colour="blue") -->
-<!-- ``` -->
-<!-- ![](linha5.png) -->
-<!-- só para mostrar que podemos fazer linhas com outros tipos de dados -->
-<!-- ``` -->
-<!-- kilo <- data.frame( -->
-<!--   sexo = factor(c("Feminino","Feminino","Masculino","Masculino")), -->
-<!--   hora = factor(c("Almoço","Jantar","Almoço","Jantar"), levels=c("Almoço","Jantar")), -->
-<!--   gramas = c(289, 334, 450, 385)) -->
-<!-- ``` -->
-<!-- Note que temos 2 fatores e uma variável numérica apenas. -->
-<!-- ``` -->
-<!-- ggplot(data=kilo, aes(x=hora, y=gramas, group=sexo, shape=sexo, colour=sexo)) + -->
-<!-- geom_line(aes(linetype=sexo), size=1) + -->
-<!--   geom_point(size=5) + -->
-<!--   scale_colour_hue(name="Sexo", -->
-<!--                    l=30)  + -->
-<!--   scale_shape_manual(name="Sexo", -->
-<!--                      values=c(22,21)) + -->
-<!--   scale_linetype_discrete(name="Sexo") + -->
-<!--   xlab("Refeição") + ylab("Gramas") + -->
-<!--   ggtitle("Quantidade consumida por 2 pessoas em um restaurante à Kilo") + -->
-<!--   theme_bw() -->
-<!-- ``` -->
-<!-- ![](linha6.png) -->
-<!-- Existem ainda muitas outras funções que são capazes de produzir gráficos interessantes e complexos. Além da existência de muitos pacotes que estendem as funções da *ggplot2*, podemos destacar *ggExtra*, *ggmaps*, *ggedit* entre cerca de 70 outros. -->
-<!-- Visite esses sites para ter algumas indeias/ inspirações -->
-<!-- [ggplot gallery](http://www.ggplot2-exts.org/gallery/) -->
-<!-- [top 50 ggplot2 visualization](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) -->
 </section>
-<section id="exercícios" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Exercícios</h1>
+<section id="exercícios" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">5.10</span> Exercícios</h2>
 <ol type="A">
 <li>Importe os dados de temperatura por bairro e semana do Rio de Janeiro em 2016 (Freitas L et al., 2021):</li>
 </ol>
-<p>https://raw.githubusercontent.com/laispfreitas/ICAR_chikungunya/refs/heads/master/temperature_rio_2016.csv</p>
+<p><a href="https://raw.githubusercontent.com/laispfreitas/ICAR_chikungunya/refs/heads/master/temperature_rio_2016.csv">https://raw.githubusercontent.com/laispfreitas/ICAR_chikungunya/refs/heads/master/temperature_rio_2016.csv</a></p>
 <ul>
 <li>Verifique a distribuição da temperatura através de um histograma.</li>
 <li>Faça um boxplot da temperatura por semana.</li>
-<li>Obtenha o valor médio da temperatura para o Rio de Janeiro e faça um gráfico de linha com a data no eixo x (dica: você vai precisar do pacote <code>aweek</code>).</li>
+<li>Obtenha o valor médio da temperatura por semana para o Rio de Janeiro e faça um gráfico de linha com a data no eixo x (dica: você vai precisar do pacote <code>aweek</code>).</li>
 </ul>
 <ol start="2" type="A">
 <li>Usando os dados de Pernambuco:</li>
 </ol>
 <ul>
-<li>Tente fazer o mapa das incidências de dengue, Zika e chikungunya (um mapa para cada doença).</li>
+<li>Tente fazer mapas das incidências de dengue, Zika e chikungunya (um mapa para cada doença) e apresente-os em uma mesma figura.</li>
 </ul>
 </section>
-<section id="referências" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Referências</h1>
+<section id="referências" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="referências"><span class="header-section-number">5.11</span> Referências</h2>
 <p>Freitas LP, Lowe R, Koepp AE, Valongueiro SA, Dondero M, Marteleto LJ. <strong>“Identifying hidden Zika hotspots in Pernambuco, Brazil: A spatial analysis”</strong>. Transactions of the Royal Society of Tropical Medicine and Hygiene, 117(3):189–196 (2023). <a href="https://doi.org/10.1093/trstmh/trac099" class="uri">https://doi.org/10.1093/trstmh/trac099</a></p>
 <p>Freitas LP, Schmidt AM, Cossich W, Cruz OG, Carvalho MS. <strong>“Spatio-temporal modelling of the first Chikungunya epidemic in an intra-urban setting: The role of socioeconomic status, environment and temperature”</strong>. PLOS Neglected Tropical Diseases, 15(6):e0009537 (2021). <a href="https://doi.org/10.1371/journal.pntd.0009537" class="uri">https://doi.org/10.1371/journal.pntd.0009537</a></p>
 
