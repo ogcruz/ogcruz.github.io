@@ -14,6 +14,8 @@
 
 * [Ciência de Dados Aplicada à Epidemiologia I 2025](curso_2025)
 
+* [Ciência de Dados Aplicada à Epidemiologia II 2026](curso_ds2)
+
 [comment]: <> (* [Curso Estudos Ecologicos - 2019](Bookdown/apresentação.html))
 
 [comment]: <> (* [Curso Estudos Ecologicos - 2021](Curso_eco_2021/apresentação.html) )
