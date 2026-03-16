@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Automação de Relatórios – Ciência de Dados Aplicada à Epidemiologia II - 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./dashboard.html" rel="next">
+<link href="./datavis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-56c7f7d68268274d97eff651f45ecc60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./relatorios.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Automação de Relatórios</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Ciência de Dados Aplicada à Epidemiologia II - 2026</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação do Curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Reprodutibilidade e Git</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./datavis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visualização Avançada e Interativa</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./relatorios.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Automação de Relatórios</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dashboards</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#rmarkdown" id="toc-rmarkdown" class="nav-link active" data-scroll-target="#rmarkdown"><span class="header-section-number">3.1</span> Rmarkdown</a>
+  <ul class="collapse">
+  <li><a href="#somente-as-media-das-variáveis" id="toc-somente-as-media-das-variáveis" class="nav-link" data-scroll-target="#somente-as-media-das-variáveis"><span class="header-section-number">3.1.1</span> Somente as media das variáveis</a></li>
+  <li><a href="#desvio-padrão" id="toc-desvio-padrão" class="nav-link" data-scroll-target="#desvio-padrão"><span class="header-section-number">3.1.2</span> Desvio padrão</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Automação de Relatórios</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<ul>
+<li>RMarkdown: estrutura e renderização.</li>
+<li>Quarto: diferenças e vantagens.</li>
+<li>Relatórios customizados e parametrizados.</li>
+</ul>
+<section id="rmarkdown" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="rmarkdown"><span class="header-section-number">3.1</span> Rmarkdown</h2>
+<section id="o-que-é-markdown" class="level4" data-number="3.1.0.1">
+<h4 data-number="3.1.0.1" class="anchored" data-anchor-id="o-que-é-markdown"><span class="header-section-number">3.1.0.1</span> 1. o que é Markdown</h4>
+<p>Markdown é uma linguagem simples de marcação (<em>markup language</em>). Ela foi influenciada por diversas linguagens principalmente pelo <em>HTML</em>. desenvolvido em 2004 por John Gruber e Aaron Swartz.</p>
+<p>O <em>Markdown</em> permite que seus elementos sejam definidos usando marcações de texto, sem a necessidade de <em>tags</em> com outras linguagens. Seu arquivo fonte é em formato texto e mesmo com os marcadores de formatação o texto continua legível.</p>
+<p>Veja a frase abaixo</p>
+<p>O <strong>R</strong> pode ser baixado do <em>site</em> do <a href="cran.fiocruz.br">Mirror do CRAN</a> localizado na <strong>FIOCRUZ</strong></p>
+<p>em HTML :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>O <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>R<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> pode ser baixado do <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span> site<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> do <span class="dt">&lt;</span><span class="kw">ahref</span><span class="op">=</span><span class="st">"http://cran.fiocruz.br "</span><span class="ot"> </span><span class="er">&amp;</span><span class="ot"> g t</span><span class="er">;</span><span class="ot"> Mirror do CRAN</span><span class="er">,</span><span class="ot">  target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> </span><span class="dt">&gt;</span> localizado na <span class="dt">&lt;</span><span class="kw">em</span><span class="dt">&gt;</span>Fiocruz<span class="dt">&lt;/</span><span class="kw">em</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>em Markdown teríamos :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>O **R** pode ser baixado do *site* do [Mirror do CRAN](cran.fiocruz.br) localizado na **FIOCRUZ**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Como vemos no pequeno exemplo acima o <em>markdown</em> é simples, usa símbolos para fazer formatações como <strong>negrito</strong>, <em>Itálico</em> , links etc…, como você pode deduzir da linha acima, texto entre um * estará em <strong>negrito</strong> , já entre apenas um * estará em <em>itálico</em> .</p>
+<p>O <em>markdown</em> é uma ferramenta muito prática para o dia a dia e seu conteúdo pode ser convertido facilmente em diversos formatos , HTML, PDF , EPUB (ebook) e ate mesmo MS WORD DOC.</p>
+</section>
+<section id="o-que-é-rmarkdown" class="level4" data-number="3.1.0.2">
+<h4 data-number="3.1.0.2" class="anchored" data-anchor-id="o-que-é-rmarkdown"><span class="header-section-number">3.1.0.2</span> 1.1 o que é Rmarkdown</h4>
+<p>O <a href="https://rmarkdown.rstudio.com/"><em>Rmarkdown</em></a> é uma extensão do <em>markdown</em> que adiciona ao <strong>R</strong> um ambiente integrado para</p>
+<ul>
+<li>Realização de analises ,</li>
+<li>Documentação de scripts</li>
+<li>Geração de relatórios</li>
+</ul>
+<p>Essas características fazem do <em>RMarkdown</em> uma ferramenta única possibilitando uma expansão e inovação na maneira que usamos o <strong>R</strong>. As características apontadas acima tornam o <strong>R</strong> uma ferramenta de excelência , facilitado a produção de análises, mantende e documentando de uma forma mais amigável os scripts em <strong>R</strong> e, por fim, gerando relatórios complexos integrando facilmente , textos gráficos e tabelas e gerando documentos em qualidade de editoração</p>
+<p>usando o <em>Rmarkdown</em> podemos facilmente formatar</p>
+<ul>
+<li><p>textos em <strong>negrito</strong> e <em>itálico</em></p></li>
+<li><p>listas</p></li>
+<li><p>cabeçalhos (títulos, sub-títulos etc…)</p></li>
+<li><p>hyperlinks</p></li>
+<li><p>gráficos e tabelas</p></li>
+<li><p>equações matemáticas</p></li>
+<li><p>bibliografia e citações</p></li>
+<li><p>etc…</p></li>
+</ul>
+<p>em resumo tudo que voce necessita para um relatório técnico, trabalho de fim de curso ou até mesmo um artigo científico</p>
+</section>
+<section id="usando-rmarkdown-no-rstudio" class="level4" data-number="3.1.0.3">
+<h4 data-number="3.1.0.3" class="anchored" data-anchor-id="usando-rmarkdown-no-rstudio"><span class="header-section-number">3.1.0.3</span> 1.2 usando Rmarkdown no Rstudio</h4>
+<p>Apesar de não ser obrigatório fazer o <em>rmarkdown</em> no <em>Rstudio</em>, ele nos facilita muito a tarefa de criar, editar e gerar o formato de saída.</p>
+<p>Antes de entrarmos nos detalhes do <em>markdown</em> vamos ilustrar o processo do <em>Rstudio</em> para que fique mais claro como é o processo.</p>
+<p>Após iniciar o <em>Rstudio</em> clique na opção <em>file</em> em seguida <em>new file</em> e, por fim, no menu lateral a opção <em>Rmarkdown</em></p>
+<p><img src="figuras/rstudio.png" class="img-fluid"></p>
+<p>so para ficar mais claro</p>
+<p><img src="figuras/Menu.png" class="img-fluid"></p>
+<p>Apos selecionar <em>Rmarkdown</em> o seguinte menu vai aparecer</p>
+<p><img src="figuras/Menu2.png" class="img-fluid"></p>
+<p>Informe o Título do documento , o nome do Autor e o formato de saída.</p>
+<p><strong>ATENÇÃO</strong> Nesse curso vamos lidar somente com <em>HTML</em> , como se pode ver é necessária a instalação de programas adicionais para implementar a saída em <em>PDF</em></p>
+<p>Apos clicar em OK o <em>rstudio</em> cria uma aba no editor com um código de exemplo</p>
+<p><img src="figuras/rmd.png" class="img-fluid"></p>
+<p>Para gerar o documento devemos clicar no pequeno botão onde está escrito <em>knit</em></p>
+<p><img src="figuras/gerar.png" class="img-fluid"></p>
+<p>caso ainda não tenha salvo o arquivo o <em>rstudio</em> vai solicitar um nome, de um nome para o arquivo (a extensão dele será _*.Rmd_ )</p>
+<p>Em seguida você vera no console do <strong>R</strong> o arquivo sendo <em>transformado</em> para o formato <em>html</em> e exibido em uma janela de apresentação do próprio <em>rstudio</em></p>
+<p><img src="figuras/output.png" class="img-fluid"></p>
+<p>A janela de apresentação é um ambiente de visualizar o html, mas se quiser clilcar no botão <em>open in Browser</em> a página será exibida no navegador <em>default</em> do seu sistema operacional.</p>
+<p>Vamos a segui conhecer um pouco mais da sintaxe do <em>Rmarkdown</em></p>
+</section>
+<section id="formatação-básica-do-rmarkdown" class="level4" data-number="3.1.0.4">
+<h4 data-number="3.1.0.4" class="anchored" data-anchor-id="formatação-básica-do-rmarkdown"><span class="header-section-number">3.1.0.4</span> 1.4 formatação básica do Rmarkdown</h4>
+<p>Vamos apresentar os elementos basicos de formatação do <em>Rmarkdown</em>, note que muitas vezes existem mais de uma maneira de especificar um formato.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>*italico*   **negrito**</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>_italico  __negrito__</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Existem 6 níveis de cabeçalho</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># cabeçalho 1 </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## cabeçalho 2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### cabeçalho 3</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">#### cabeçalho 4</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">##### cabeçalho 5</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">###### cabeçalho 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Importante notar que o símbolo # deve estar na primeira coluna, nenhum espaço ou tabulação antes dele</p>
+<p>Para criar listas use * ou -</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>item 1</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item 2</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>item 3</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>sub item 3.1</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>sub item 3.2</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Atenção aos sub itens , que devem ter uma tabulação ou espaços antes do símbolo * ou -</p>
+<p>Para listas numeradas</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>um </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>dois </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>tres</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>sub 3a</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>sub 3b</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>quatro </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Repare que mesmo estando fora de ordem, o <em>Rmarkdown</em> vai ordenar corretamente os itens</p>
+<p>Linha separadora</p>
+<p>Em muitas ocasiões pode ser útil ter uma linha separando pedaços do texto. em <em>rmarkdown</em> basta fazer uma linha com 3 asteriscos para se obter:</p>
+<hr>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bloco de citações (block quotation)</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; “essentially, all models are wrong,</span>  </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; but some are useful”</span>  </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; George P. Box </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vamos testar esses elementos que vimos acima. Crie no <em>rstudio</em> um novo documento do tipo Rmarkdown, apague totalmente o conteúdo e cole o conteúdo abaixo. em seguida crie o arquivo de saída (neste caso <em>html</em>) clicando no botão <em>knitr</em></p>
+<p>Quebrando parágrafos e forçando quebra de linhas</p>
+<p>Para inserir uma quebra entre parágrafos inclua uma linha totalmente em branco</p>
+<p>Para forçar uma quebra de linha, ponha dois espaços<br>
+em branco no final da linha.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Quebrando parágrafos e forçando quebra de linhas</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Para inserir uma quebra entre parágrafos inclua uma linha totalmente em branco</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>para forçar uma quebra de linha, ponha dois espaços  </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>em branco no final da linha</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Observe que a primeira no incio do arquivo gerado pelo <em>rstudio</em> temos</p>
+<pre><code>---
+title: “Exemplo de formatos em Rmarkdown”
+author: ""
+date: ""
+output: html_document
+---</code></pre>
+<p>Esse início é denominado cabeçalho YAML , onde se setam opções que serão passadas a um programa chamado <em>pandoc</em> que é o responsável por transformar o Rmarkdown no formato desejado!</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>title: “Exemplo de formatos em Rmarkdown”</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>author: ""</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>date: ""</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>output: html_document</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>Os tipos de cabeçalho são :</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># cabeçalho 1</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## cabeçalho 2</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### cabeçalho 3</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="fu">#### cabeçalho 4</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">##### cabeçalho 5</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="fu">###### cabeçalho 6</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>***</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Formatação: </span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>Texto Normal</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>*Itálico*</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>**Negrito**</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Listas:</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>item 1</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item 2</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>item 3</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>sub item 3.1</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>sub item 3.2</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item 4</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Listas Numeradas</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>um </span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>dois </span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>três</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>sub 3a</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>sub 3b</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>quatro </span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>Ronald Fisher em 1938 disse:</span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;"To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Observe o documento gerado, agora experimente, por exemplo, colocar um espaço antes de uma # , ou remover a linha entre “Ronald Fisher em 1938 disse” e o resto da citação.</p>
+</section>
+<section id="links-e-imagens-em-rmarkdown" class="level4" data-number="3.1.0.5">
+<h4 data-number="3.1.0.5" class="anchored" data-anchor-id="links-e-imagens-em-rmarkdown"><span class="header-section-number">3.1.0.5</span> 1.5 Links e Imagens em Rmarkdown</h4>
+<section id="links" class="level5" data-number="3.1.0.5.1">
+<h5 data-number="3.1.0.5.1" class="anchored" data-anchor-id="links"><span class="header-section-number">3.1.0.5.1</span> 1.5.1 Links</h5>
+<p>Criar um link é bem simples, vamos criar um link apontando para o site da Fiocruz</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Acesse o site da <span class="co">[</span><span class="ot">Fiocruz</span><span class="co">](http://www.fiocruz.br)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Neste caso teremos somente o link que esta entre [] e o endereço da <em>URL</em> não vai aparecer. já no formato abaixo o link sera exibido e estará ativo .</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Acesse o site da Fiocruz em (http://www.fiocruz.br)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pode-se combinar o link a vários outros elementos, uma lista por exemplo.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Lista de Sites</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">ENSP</span><span class="co">](http://www.ensp.fiocruz.br)</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">PROCC</span><span class="co">](http://www.procc.fiocruz.br)</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">INI</span><span class="co">](www.ini.fiocruz.br)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Uma vez mais precisamos estar atentos ao espaço. Não pode haver espaçamento entre as chaves e os parêntesis.</p>
+<p>Tente incluir um link no nome de Ronald Fisher apontando para https://pt.wikipedia.org/wiki/Ronald_Fisher</p>
+</section>
+<section id="imagens" class="level5" data-number="3.1.0.5.2">
+<h5 data-number="3.1.0.5.2" class="anchored" data-anchor-id="imagens"><span class="header-section-number">3.1.0.5.2</span> 1.5.2 Imagens</h5>
+<p>Para imagens temos um processo semelhante. para incluir por exemplo o logo do PROCC buscando a imagem através da rede.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="al">![PROCC](http://www.procc.fiocruz.br/logo.jpg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://www.procc.fiocruz.br/logo.jpg" class="img-fluid figure-img"></p>
+<figcaption>PROCC</figcaption>
+</figure>
+</div>
+<p>Note que o texto entre os colchetes diferente dos links não aparece, então na prática</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](http://www.ensp.fiocruz.br/portal-ensp/_imagens/bg_ensp_barra-ensp.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="http://www.ensp.fiocruz.br/portal-ensp/_imagens/bg_ensp_barra-ensp.png" class="img-fluid"></p>
+<p>Caso a imagem esteja local, você deve apenas apontar para o caminha do imagem, por exemplo</p>
+<pre><code>![](c:\\users\\serinfaula\\figuras\\gráfico1.jpg)</code></pre>
+<p>ou por exemplo como abaixo caso esteja no mesmo diretorio que seu arquivo .Rmd</p>
+<pre><code>![](meugráfico.png)</code></pre>
+<p>Modifique o arquivo <em>Rmarkdown</em> criado anteriormente e insira os links abaixo como figuras!</p>
+<p>http://images.memes.com/meme/836717</p>
+<p>http://blog.revolutionanalytics.com/downloads/datasaurus.gif</p>
+<p>Como vimos vários formatos gráficos podem ser usados</p>
+<ul>
+<li>jpeg, jpg</li>
+<li>png</li>
+<li>tiff</li>
+<li>gif, gif animados</li>
+<li>svg (formato vetorial)</li>
+<li>etc…</li>
+</ul>
+<p>Mas note que o tamanho depende do tamanho original da imagem! Assim para ajustar o tamanho deve-se fazer o download da imagem e alterar localmente o tamanho. Outras linguagens de marcação como por exemplo <em>HTML</em> ou <em>LaTex</em> possuim opções para se ajustar o tamanho.</p>
+<pre><code>![](https://www.r-project.org/logo/Rlogo.png)</code></pre>
+<p><img src="https://www.r-project.org/logo/Rlogo.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="tabelas" class="level4" data-number="3.1.0.6">
+<h4 data-number="3.1.0.6" class="anchored" data-anchor-id="tabelas"><span class="header-section-number">3.1.0.6</span> 1.6 Tabelas</h4>
+<p>Vamos falar brevemente sobre tabelas básicas em Rmarkdown. Antes de mais nada, aqui estamos falando de tabelas implementadas em <em>markdown</em> e não as tabelas geradas por um comando no <strong>R</strong>.</p>
+<p>Veja o código abaixo</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Nome  <span class="pp">|</span> Sexo <span class="pp">|</span> Idade <span class="pp">|</span> Grupo <span class="pp">|</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="pp">| :----</span> <span class="pp">|</span> :--: <span class="pp">| ----:</span> <span class="pp">| -----</span> <span class="pp">|</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> João  <span class="pp">|</span>  M   <span class="pp">|</span>    34 <span class="pp">|</span> A     <span class="pp">|</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Maria <span class="pp">|</span>  F   <span class="pp">|</span>    29 <span class="pp">|</span> A     <span class="pp">|</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Ana   <span class="pp">|</span>  F   <span class="pp">|</span>    32 <span class="pp">|</span> B     <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>ele vai gerar a seguinte tabela:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Nome</th>
+<th style="text-align: center;">Sexo</th>
+<th style="text-align: right;">Idade</th>
+<th>Grupo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">João</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: right;">34</td>
+<td>A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Maria</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: right;">29</td>
+<td>A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ana</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: right;">32</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p>Repare que a coluna <em>Nome</em> temos na segunda linha :—- , o que faz com que a coluna seja alinhada à esquerda. Já a coluna <em>sexo</em> :—: indicando que estará centralizada , <em>Idade</em> está —-: significando alinhada à direita e por fim a coluna <em>Grupo</em> que estão na opção <em>default</em> que é alinhada à esquerda.</p>
+<p>Alguns elementos podem ser combinados dentro da tabela, como negrito, itálico, links e imagens!</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><a href="http://www.fiocruz.br">Fiocruz</a></th>
+<th style="text-align: center;"><a href="http://www.procc.fiocruz.br">PROCC</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="../imagens/logo_fiocruz.jpg" class="img-fluid"></td>
+<td style="text-align: center;"><img src="../imagens/logo_procc.jpg" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<p>Esse seria o código para reproduzir essa tabela. No entanto lembre-se que vai precisar das imagens e de configurar o caminho para refletir a localização das imagens na sua máquina. Outro fato a ser notado é que não ha a necessidade de estar tudo alinhado, já que temos como separador o símbolo |.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">Fiocruz</span><span class="co">](http://www.fiocruz.br)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">PROCC</span><span class="co">](http://www.procc.fiocruz.br)</span> <span class="pp">|</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------------------------:</span> <span class="pp">| :----------------------------------:</span> <span class="pp">|</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="al">![](../imagens/logo_fiocruz.jpg)</span> <span class="pp">|</span>    <span class="al">![](../imagens/logo_procc.jpg)</span>    <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="equações" class="level4" data-number="3.1.0.7">
+<h4 data-number="3.1.0.7" class="anchored" data-anchor-id="equações"><span class="header-section-number">3.1.0.7</span> 1.7 Equações</h4>
+<p>A formatações das equações existentes no <em>Rmarkdown</em> seguem o padrão <a href="https://pt.wikipedia.org/wiki/LaTeX">LaTeX</a>. Existem basicamente duas maneiras de se escrever uma equação no <em>Rmarkdown</em> , no formato chamado <em>inline</em> e na forma de blocos.</p>
+<p>Por exemplo podemos escrever <span class="math inline">\(\frac{2}{3}\)</span> dos Brasileiros tem sobre peso ou obesidade! ou ainda o parâmetro obtido foi <span class="math inline">\(\hat{\lambda}=1.02\)</span> e ainda algo como <span class="math inline">\(\sqrt{4}=2\)</span> , as letras gregas <span class="math inline">\(\alpha, \beta,   \gamma...\)</span> , símbolos especiais como $a $ , operadores matemáticos e lógicos como <span class="math inline">\(x \ge 15\)</span> ou ainda <span class="math inline">\(a_i \ge 0~~~\forall i\)</span></p>
+<p>veja o fonte do paragrafo acima:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Por exemplo podemos escrever  <span class="ss">$</span><span class="sc">\frac</span><span class="ss">{2}{3}$</span> dos Brasileiros tem sobre peso ou obesidade!  ou ainda o parâmetro obtido foi  <span class="ss">$</span><span class="sc">\hat</span><span class="ss">{</span><span class="sc">\lambda</span><span class="ss">}=1.02$</span>  e ainda algo como <span class="ss">$</span><span class="sc">\sqrt</span><span class="ss">{4}=2$</span> , as letras gregas <span class="ss">$</span><span class="sc">\alpha</span><span class="ss">, </span><span class="sc">\beta</span><span class="ss">,   </span><span class="sc">\gamma</span><span class="ss">...$</span>  ,  símbolos especiais como <span class="ss">$a </span><span class="sc">\pm</span><span class="ss"> $</span> , operadores matemáticos e lógicos como <span class="ss">$x </span><span class="sc">\ge</span><span class="ss"> 15$</span> ou ainda <span class="ss">$a_i </span><span class="sc">\ge</span><span class="ss"> 0~~~</span><span class="sc">\forall</span><span class="ss"> i$</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O modo <em>inline</em> permite que misturemos fórmulas, letras gregas, símbolos junto ao texto. Para isso usamos o $ para abrir e fecha o trecho com o formato Matemático.</p>
+<p>Já no modo bloco devemos escrever uma ou mais equações dentro de um bloco iniciado por $$ e fechado pelo mesmo comando. por exemplo</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>A equação de segundo grau é dada por:</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ss">x=</span><span class="sc">\frac</span><span class="ss">{-b </span><span class="sc">\pm</span><span class="ss"> </span><span class="sc">\sqrt</span><span class="ss">{bˆ2-4ac}}{2a}</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A equação de segundo grau é dada por: <span class="math display">\[
+x=\frac{-b \pm \sqrt{bˆ2-4ac}}{2a}
+\]</span></p>
+<p>ou ainda a forma da variância é</p>
+<p><span class="math display">\[
+cov_{x,y} = \frac{\sum\limits_{i=1}^{n}{(x_i-\overline{x}) \cdot (y_i-\overline{y})} }{n-1}
+\]</span></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ss">cov_{x,y} = </span><span class="sc">\frac</span><span class="ss">{</span><span class="sc">\sum\limits</span><span class="ss">_{i=1}^{n}{(x_i-</span><span class="sc">\overline</span><span class="ss">{x}) </span><span class="sc">\cdot</span><span class="ss"> (y_i-</span><span class="sc">\overline</span><span class="ss">{y})} }{n-1}</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Podemos também definir bloco de matrizes</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">bmatrix</span>}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    x_{11}       &amp; x_{12} &amp; x_{13} &amp; </span><span class="sc">\dots</span><span class="ss"> &amp; x_{1n} </span><span class="sc">\\</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    x_{21}       &amp; x_{22} &amp; x_{23} &amp; </span><span class="sc">\dots</span><span class="ss"> &amp; x_{2n} </span><span class="sc">\\</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    x_{d1}       &amp; x_{d2} &amp; x_{d3} &amp; </span><span class="sc">\dots</span><span class="ss"> &amp; x_{dn}</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">bmatrix</span>}</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+$$
+<span class="math display">\[\begin{bmatrix}
+    x_{11}       &amp; x_{12} &amp; x_{13} &amp; \dots &amp; x_{1n} \\
+    x_{21}       &amp; x_{22} &amp; x_{23} &amp; \dots &amp; x_{2n} \\
+    
+    x_{d1}       &amp; x_{d2} &amp; x_{d3} &amp; \dots &amp; x_{dn}
+\end{bmatrix}\]</span>
+<p>$$</p>
+<p>O formato Para compreender algumas das possibilidades desse formato veja <a href="http://www.statpower.net/Content/310/R%20Stuff/SampleMarkdown.html">Aqui</a> e <a href="http://www.stat.cmu.edu/~cshalizi/rmarkdown/#elements-of-math-mode">Aqui</a> para intruções sobre como usar equações no formato <em>Rmarkdown</em> e <a href="https://pt.wikipedia.org/wiki/Ajuda:Guia_de_edi%C3%A7%C3%A3o/F%C3%B3rmulas_TeX">Aqui</a> para instruções gerais do formato matemático usado na linguagem LaTeX.</p>
+</section>
+<section id="executando-comandos-r" class="level4" data-number="3.1.0.8">
+<h4 data-number="3.1.0.8" class="anchored" data-anchor-id="executando-comandos-r"><span class="header-section-number">3.1.0.8</span> 2.0 Executando comandos R</h4>
+<p>Ate aqui vimos como lidar com o formato do <em>Rmarkdown</em> mas ainda não vimos como integrar com o <strong>R</strong>.</p>
+<p>Aqui também existem duas maneiras de utilizar o <strong>R</strong>, o modo <em>inline</em> e o modo de bloco de código <strong>R</strong>, que também vamos chamar de <em>chunk</em> .</p>
+<p>o modo <em>inline</em> é simples , podemos, por exemplo, escrever a seguinte linha em qualquer pedaço.</p>
+<p>104 graus fahrenheit são 40 graus Celsius</p>
+<pre><code> 104 graus  fahrenheit  são 40 graus Celsius 
+</code></pre>
+<p>Repare que o <em>acento</em> grave ` para criar o código <em>inline</em>, também é necessário usar o r minúsculo após o primeiro acento grave.</p>
+<p>Tente rodar o <em>rmarkdown</em> abaixo</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"R inline"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">""</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">""</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>Hoje é Rio de Janeiro, <span class="dv">03</span> de março de <span class="dv">2026</span>  </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>Estou usando o R version <span class="dv">4</span>.<span class="fl">5.2</span> (<span class="dv">2025-10-31</span>)  no sistema operacional linux<span class="sc">-</span>gnu</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>Posso afirmar que <span class="sc">$</span>\pi \approx<span class="sc">$</span> <span class="fl">3.1415927</span> </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O uso do comando <em>inline</em> do <strong>R</strong> e deve ser restrito a pequenos cálculos e formatação de <em>strings</em>, pois essa maneira não permite comandos mais complexos e nem gráficos.</p>
+</section>
+<section id="o-bloco-r-chunk-e-algumas-opções" class="level4" data-number="3.1.0.9">
+<h4 data-number="3.1.0.9" class="anchored" data-anchor-id="o-bloco-r-chunk-e-algumas-opções"><span class="header-section-number">3.1.0.9</span> 2.1 O bloco R (chunk) e algumas opções</h4>
+<p>Antes de falarmos sobre os blocos há algumas considerações importantes a serem feitas:</p>
+<ol type="1">
+<li>O espaço de trabalho <em>workspace</em> da sua sessão de <strong>R</strong> não é compartilhado com o <em>rmarkdown</em> , ou seja, todos os objetos , pacotes que estão carregados não serão passados ao <em>rmarkdown</em></li>
+<li>Nenhum objeto será exportado por default, a não ser que seja explicitamente salvo</li>
+<li>O arquivo produzido como saída pelo <em>rmarkdown</em>, quer seja uma página HTML, um PDF ou um DOC no formato Word pode ser salvo.</li>
+</ol>
+<section id="o-bloco-r" class="level5" data-number="3.1.0.9.1">
+<h5 data-number="3.1.0.9.1" class="anchored" data-anchor-id="o-bloco-r"><span class="header-section-number">3.1.0.9.1</span> 2.1.1 O Bloco R</h5>
+<p>Os blocos de comandos em <strong>R</strong> (chunk) usados no <em>rmarkdown</em> são usados para fazer o processamento em <strong>R</strong>, produzir resultados, gráficos ou simplesmente para ilustrar o código quando se prepara uma aula ou se quer deixar o código visível em um relatório pro exemplo.</p>
+<p>um exemplo de bloco em <em>rmarkdown</em> , note que a repetição de 3 acentos graves seguidos de {r} marcam o início do bloco e informam que aquele bloco contem código em <strong>R</strong>. Para fechar o bloco são necessários 3 acentos graves. O código</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Bloco de código em R"</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> ""</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> ""</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exemplo de bloco de comandos em **R** </span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r .cell-code}</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mpg             cyl             disp             hp       
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+      drat             wt             qsec             vs        
+ Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+ 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+ Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+ Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+ 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+ Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+       am              gear            carb      
+ Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+ 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+ Median :0.0000   Median :4.000   Median :2.000  
+ Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+ 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :1.0000   Max.   :5.000   Max.   :8.000  </code></pre>
+</div>
+<p>:::</p>
+<pre><code>
+
+
+Ao executar o comando acima teremos em nossa janela de saída a seguinte figura. de agora em diante vou **omitir** a parte relativa ao YAML. 
+
+
+
+![](bloco_output.png)
+
+Note que temos duas regiões, 
+
+* A) com um fundo cinza claro, onde existe o eco do comando **R** contido no bloco 
+
+* B)  a saída da função *summary* que estava no bloco precedida por ## em cada linha
+
+  
+
+E se quisermos incluir mais um bloco?  Poderíamos digitar todos os comandos para criar o bloco, no entanto o editor do *rstudio* oferece um atalho para isso.
+
+![](bloco.png)
+
+No canto superior direito do editor do *rstudio* clique em *insert* e em seguida na opção **R**. esse comando vai criar um bloco vazio na posição do cursor.
+
+Insira dentro desse bloco o seguinte comando:
+
+
+</code></pre>
+<p>colMeans(mtcars)</p>
+<pre><code>
+de maneira que tenha um código mais ou menos como esse
+
+```markdown
+## Exemplo de bloco de comandos em **R** 
+
+###  Estatística sumária de todas as variáveis do data.frame mtcars
+
+::: {.cell}
+
+```{.r .cell-code}
+summary(mtcars)</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mpg             cyl             disp             hp       
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+      drat             wt             qsec             vs        
+ Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+ 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+ Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+ Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+ 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+ Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+       am              gear            carb      
+ Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+ 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+ Median :0.0000   Median :4.000   Median :2.000  
+ Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+ 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :1.0000   Max.   :5.000   Max.   :8.000  </code></pre>
+</div>
+<p>:::</p>
+</section>
+</section>
+<section id="somente-as-media-das-variáveis" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="somente-as-media-das-variáveis"><span class="header-section-number">3.1.1</span> Somente as media das variáveis</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colMeans</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
+ 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+        vs         am       gear       carb 
+  0.437500   0.406250   3.687500   2.812500 </code></pre>
+</div>
+</div>
+<pre><code>
+Execute o *rmarkdown* e observe como fica o resultado.
+
+Apague e tente agora o seguinte código.
+
+```markdown
+### Somente as media das variáveis 
+
+::: {.cell}
+
+```{.r .cell-code}
+media &lt;- colMeans(mtcars)</code></pre>
+<p>:::</p>
+</section>
+<section id="desvio-padrão" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="desvio-padrão"><span class="header-section-number">3.1.2</span> Desvio padrão</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>desvio <span class="ot">&lt;-</span> <span class="fu">apply</span>(mtcars, <span class="dv">2</span>, sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>
+o que aconteceu?  Porque? Como fazer que os resultados obtidos sejam exibidos?
+
+```markdown
+### Calcula a  media e DP das variáveis 
+
+::: {.cell}
+
+```{.r .cell-code}
+media &lt;- colMeans(mtcars)
+desvio &lt;- apply(mtcars, 2, sd)</code></pre>
+<p>:::</p>
+<pre><code>
+Vamos fazer mais um exemplo, desta vez 
+
+```R
+
+::: {.cell}
+
+```{.r .cell-code}
+ library(dplyr)</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Anexando pacote: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Os seguintes objetos são mascarados por 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Os seguintes objetos são mascarados por 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">kpl =</span> (mpg <span class="sc">/</span><span class="fl">3.78541</span>) <span class="sc">*</span><span class="fl">1.6</span> ,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">disp =</span> disp <span class="sc">*</span> <span class="fl">0.0163871</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">wt =</span> (wt <span class="sc">*</span> <span class="fl">0.45352</span>)<span class="sc">*</span><span class="dv">1000</span>,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">am =</span> <span class="fu">factor</span>(am,<span class="at">label=</span><span class="fu">c</span>(<span class="st">'Manual'</span>,<span class="st">'Automatico'</span>)),</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">rownames</span>(mtcars),</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mpg =</span> <span class="cn">NULL</span> </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 32 × 12
+     cyl  disp    hp  drat    wt  qsec    vs am          gear  carb   kpl name  
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; 
+ 1     6  2.62   110  3.9  1188.  16.5     0 Automatico     4     4  8.88 Mazda…
+ 2     6  2.62   110  3.9  1304.  17.0     0 Automatico     4     4  8.88 Mazda…
+ 3     4  1.77    93  3.85 1052.  18.6     1 Automatico     4     1  9.64 Datsu…
+ 4     6  4.23   110  3.08 1458.  19.4     1 Manual         3     1  9.05 Horne…
+ 5     8  5.90   175  3.15 1560.  17.0     0 Manual         3     2  7.90 Horne…
+ 6     6  3.69   105  2.76 1569.  20.2     1 Manual         3     1  7.65 Valia…
+ 7     8  5.90   245  3.21 1619.  15.8     0 Manual         3     4  6.04 Duste…
+ 8     4  2.40    62  3.69 1447.  20       1 Manual         4     2 10.3  Merc …
+ 9     4  2.31    95  3.92 1429.  22.9     1 Manual         4     2  9.64 Merc …
+10     6  2.75   123  3.92 1560.  18.3     1 Manual         4     4  8.12 Merc …
+# ℹ 22 more rows</code></pre>
+</div>
+<p>:::</p>
+<pre><code>
+
+
+Note que ao carregarmos um pacote ou qualquer outra mensagem de aviso tambem será ecoada para a saída. Podemos silenciar a saída da função **library()** usando as seguintes opções.
+
+
+</code></pre>
+<p>library(dplyr,warn.conflicts = FALSE,quietly = TRUE)</p>
+<pre><code>
+
+
+##### 2.1.2 Opções do bloco R
+
+Cada  bloco **R** pode ter um nome, isso ajudar quando temos muitos blocos e ajuda também na detecção de erros pois o nome do bloco. O nome é opcional mas nunca deve se repetir.
+
+
+
+```R
+
+---
+title: "Modelo GLM"
+author: ""
+date: ""
+output: 
+ html_document
+---
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(MASS)</code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Anexando pacote: 'MASS'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>O seguinte objeto é mascarado por 'package:dplyr':
+
+    select</code></pre>
+</div>
+<p>:::</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>bwt <span class="ot">&lt;-</span> <span class="fu">with</span>(birthwt, {</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>race <span class="ot">&lt;-</span> <span class="fu">factor</span>(race, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"other"</span>))</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>ptd <span class="ot">&lt;-</span> <span class="fu">factor</span>(ptl <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>ftv <span class="ot">&lt;-</span> <span class="fu">factor</span>(ftv)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(ftv)[<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)] <span class="ot">&lt;-</span> <span class="st">"2+"</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">low =</span> <span class="fu">factor</span>(low), age, lwt, race, <span class="at">smoke =</span> (smoke <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>           ptd, <span class="at">ht =</span> (ht <span class="sc">&gt;</span> <span class="dv">0</span>), <span class="at">ui =</span> (ui <span class="sc">&gt;</span> <span class="dv">0</span>), ftv)</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">glm</span>(low <span class="sc">~</span> ., <span class="at">family=</span>binomial, <span class="at">data=</span>bwt)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = low ~ ., family = binomial, data = bwt)
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)   
+(Intercept)  0.82302    1.24471   0.661  0.50848   
+age         -0.03723    0.03870  -0.962  0.33602   
+lwt         -0.01565    0.00708  -2.211  0.02705 * 
+raceblack    1.19241    0.53597   2.225  0.02609 * 
+raceother    0.74069    0.46174   1.604  0.10869   
+smokeTRUE    0.75553    0.42502   1.778  0.07546 . 
+ptdTRUE      1.34376    0.48062   2.796  0.00518 **
+htTRUE       1.91317    0.72074   2.654  0.00794 **
+uiTRUE       0.68019    0.46434   1.465  0.14296   
+ftv1        -0.43638    0.47939  -0.910  0.36268   
+ftv2+        0.17901    0.45638   0.392  0.69488   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 234.67  on 188  degrees of freedom
+Residual deviance: 195.48  on 178  degrees of freedom
+AIC: 217.48
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+<pre><code>
+
+
+Repare que cada bloco tem um nome único. 
+
+Suponha que no exemplo acima queremos suprimir a exibição dos blocos  setup e transformação , bastaria introduzir a opção *echo=FALSE*  no início do bloco.
+</code></pre>
+<p>e</p>
+<pre><code>
+::: {.cell}
+::: {.cell-output .cell-output-stdout}
+</code></pre>
+<p>Call: glm(formula = low ~ ., family = binomial, data = bwt)</p>
+<p>Coefficients: Estimate Std. Error z value Pr(&gt;|z|)<br>
+(Intercept) 0.82302 1.24471 0.661 0.50848<br>
+age -0.03723 0.03870 -0.962 0.33602<br>
+lwt -0.01565 0.00708 -2.211 0.02705 * raceblack 1.19241 0.53597 2.225 0.02609 * raceother 0.74069 0.46174 1.604 0.10869<br>
+smokeTRUE 0.75553 0.42502 1.778 0.07546 . ptdTRUE 1.34376 0.48062 2.796 0.00518 <strong> htTRUE 1.91317 0.72074 2.654 0.00794 </strong> uiTRUE 0.68019 0.46434 1.465 0.14296<br>
+ftv1 -0.43638 0.47939 -0.910 0.36268<br>
+ftv2+ 0.17901 0.45638 0.392 0.69488<br>
+— Signif. codes: 0 ‘<em><strong>’ 0.001 ’</strong>’ 0.01 ’</em>’ 0.05 ‘.’ 0.1 ’ ’ 1</p>
+<p>(Dispersion parameter for binomial family taken to be 1)</p>
+<pre><code>Null deviance: 234.67  on 188  degrees of freedom</code></pre>
+<p>Residual deviance: 195.48 on 178 degrees of freedom AIC: 217.48</p>
+<p>Number of Fisher Scoring iterations: 4</p>
+<pre><code>
+
+:::
+:::
+
+
+
+
+faça isso para os dois blocos e rode novamente. A opção *echo* portanto controla se o comando **R** dentro do bloco sera exibido ou não.
+
+Experimente alterar novamente esse bloco e adicionar a opção *eval=FALSE* e volte *echo* para *TRUE* 
+</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>bwt <span class="ot">&lt;-</span> <span class="fu">with</span>(birthwt, {</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>race <span class="ot">&lt;-</span> <span class="fu">factor</span>(race, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"other"</span>))</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>ptd <span class="ot">&lt;-</span> <span class="fu">factor</span>(ptl <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>ftv <span class="ot">&lt;-</span> <span class="fu">factor</span>(ftv)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(ftv)[<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)] <span class="ot">&lt;-</span> <span class="st">"2+"</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">low =</span> <span class="fu">factor</span>(low), age, lwt, race, <span class="at">smoke =</span> (smoke <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>           ptd, <span class="at">ht =</span> (ht <span class="sc">&gt;</span> <span class="dv">0</span>), <span class="at">ui =</span> (ui <span class="sc">&gt;</span> <span class="dv">0</span>), ftv)</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>o que ocorreu?</p>
+<p>A opção <em>eval</em> controla se o comando será executado (<em>evalueted</em>) ou não , mas repare que ele foi exibido mas não executado! Então veja que esse parâmetro é util para exibir o código sem de fato executa-lo.</p>
+<p>agora vá no block setup e coloque a opção <em>include=FALSE</em>.</p>
+<pre><code>
+
+essa opção faz com que o bloco não apareça, que não haja output nenhum. a diferenção para a opção *echo* e que nesta o código não é mostrado mas o *output*  é
+
+
+
+existem muitas outras opções , para saber mais veja no [pacote *knitr*](https://yihui.name/knitr/)  na sessão [Code Evaluation](https://yihui.name/knitr/options/#code-evaluation) e saiba mais sobre essas e outras opções disponiveis. 
+
+algumas mas mais frequentes estão abaixo. 
+
+
+
+| opção   | default  | descrição                                |
+| ------- | :------: | :--------------------------------------- |
+| eval    |   TRUE   | executa  o código **R** dentro do bloco  |
+| echo    |   TRUE   | exibe o código **R** contido no bloco e também seu *output* |
+| warning |   TRUE   | exibe mensagens de aviso ocorridas no bloco |
+| error   |  FALSE   | exibe mensagens de erro ocorridas no bloco |
+| message |   TRUE   | exibe mensagens ocorridas durante a execução |
+| tidy    |  FALSE   | reorganiza o texto no output             |
+| result  | "markup" | formato do output "markup", "asis", "hold", or "hide" |
+| cache   |  FALSE   | cria um cache para armazenar os dados&lt;br /&gt; (aumenta velocidade em multiplas execuções) |
+| comment |   "##"   | caracteres exibidos antes de cada linha de *output*&lt;br /&gt;para desligar comment=NA ou commnet="" |
+| include |   TRUE   | inclui ou não o bloco no output final do documento, quando FALSE nada sera exibido mas o código será executado assim mesmo. |
+|         |          |                                          |
+
+
+
+#### 2.2 Incluído gráficos do R 
+
+Até aqui vimos formatos de *output* de texto, vamos ver como fazer gráficos e conhecer as principais opções para controlar sua exibição.
+
+```R
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Modo base
+plot(cars$speed,cars$dist)</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="relatorios_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<p>:::</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando ggplot2</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#poderia estar em no bloco setup por exemplo</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cars, <span class="fu">aes</span>(speed, dist)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="relatorios_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>
+
+
+Vamos altera um pouco o gráfico usando as opções do bloco. As principais opções são as seguintes:
+
+
+| opção      |   default   | descrição                                |
+| ---------- | :---------: | ---------------------------------------- |
+| fig.width  | 7 polegadas | largura da figura                        |
+| fig.height | 5 polegadas | altura da figura                         |
+| fig.retina |      2      | qualidade da figura, 1 = baixa, 2 = alta |
+| out.width  |     NA      | largura que pode ser especificado em valor o em %&lt;br /&gt; por exemplo out.width = "20%" |
+| out.height |     NA      | idem a descrição acima aplicada a altura. |
+| dpi        |     96      | pontos por polegada, alta= 300 DPI       |
+|            |             |                                          |
+
+
+
+Vamos especificar a largura em apenas 2.5 " (polegadas)
+
+```R
+
+::: {.cell}
+
+```{.r .cell-code}
+# Usando ggplot2
+library(ggplot2) #poderia estar em no bloco setup por exemplo
+ggplot(cars, aes(speed, dist)) + geom_point()</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="relatorios_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="240"></p>
+</figure>
+</div>
+</div>
+<p>:::</p>
+<pre><code>
+Vamos controlar a altura e largura
+
+```R
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width,color=Species)) +
+  geom_jitter(alpha = 0.6) +
+  facet_grid(. ~ Species)</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="relatorios_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<p>:::</p>
+<pre><code>
+Especificando o percentual da largura
+
+```R
+
+::: {.cell}
+
+```{.r .cell-code}
+# tamanho de 20% do original
+ggplot(cars, aes(speed, dist)) + geom_point()</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="relatorios_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:20.0%"></p>
+</figure>
+</div>
+</div>
+<p>:::</p>
+<pre><code>
+Com as opções out.width e out.height é possível controlar qualquer tipo de output gráfico,
+Lembram-se da figura grande do logo do R? 
+</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">include_graphics</span>(<span class="st">"https://www.r-project.org/logo/Rlogo.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://www.r-project.org/logo/Rlogo.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>
+Esses são algumas das opções mais usadas nos output gráficos, no entanto existem outros parâmetros gráficos, como, por exemplo, margens que também devem ser levados em consideração.
+
+
+
+#### 2.3 formatando tabelas  
+
+Para melhorar o aspecto na apresentação de tabelas, existem varios pacotes que nos ajudar, vamos ver dois deles.
+
+O primeiro é o pacote *knitr* que já deve estar instalado pois junto com o *rmarkdown* é um dos principais pacotes para a implementação do *markdown* no **R**.
+
+Vamos usar a função *kable* que vai formatar a tabela um *html* , para que ela possa ser renderizadas vamos usar a opção result="asis" . 
+
+```R
+
+
+Table: Tabela usando a Knitr
+
+|                  |  mpg| cyl| disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|
+|:-----------------|----:|---:|----:|---:|----:|-----:|-----:|--:|--:|----:|----:|
+|Mazda RX4         | 21.0|   6|  160| 110| 3.90| 2.620| 16.46|  0|  1|    4|    4|
+|Mazda RX4 Wag     | 21.0|   6|  160| 110| 3.90| 2.875| 17.02|  0|  1|    4|    4|
+|Datsun 710        | 22.8|   4|  108|  93| 3.85| 2.320| 18.61|  1|  1|    4|    1|
+|Hornet 4 Drive    | 21.4|   6|  258| 110| 3.08| 3.215| 19.44|  1|  0|    3|    1|
+|Hornet Sportabout | 18.7|   8|  360| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|</code></pre>
+<p>Um outro pacote que permite formatar tabelas e até mesmo as saídas de modelos é o pacote <em>pander</em>. Caso esse pacote não esteja instalado é necessário instalar ou pelo menu do <em>rstudio</em> ou</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pander"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>em seguida teste o comando.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="sc">|</span>        <span class="er">&amp;</span>nbsp;         <span class="sc">|</span> mpg  <span class="sc">|</span> cyl <span class="sc">|</span> disp <span class="sc">|</span> hp  <span class="sc">|</span> drat <span class="sc">|</span>  wt   <span class="sc">|</span> qsec  <span class="sc">|</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="er">|:</span><span class="sc">---------------------</span><span class="er">:|:</span><span class="sc">----</span><span class="er">:|:</span><span class="sc">---</span><span class="er">:|:</span><span class="sc">----</span><span class="er">:|:</span><span class="sc">---</span><span class="er">:|:</span><span class="sc">----</span><span class="er">:|:</span><span class="sc">-----</span><span class="er">:|:</span><span class="sc">-----</span><span class="er">:|</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>     <span class="er">**</span>Mazda RX4<span class="sc">**</span>     <span class="er">|</span>  <span class="dv">21</span>  <span class="sc">|</span>  <span class="dv">6</span>  <span class="sc">|</span> <span class="dv">160</span>  <span class="sc">|</span> <span class="dv">110</span> <span class="sc">|</span> <span class="fl">3.9</span>  <span class="sc">|</span> <span class="fl">2.62</span>  <span class="sc">|</span> <span class="fl">16.46</span> <span class="sc">|</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>   <span class="er">**</span>Mazda RX4 Wag<span class="sc">**</span>   <span class="er">|</span>  <span class="dv">21</span>  <span class="sc">|</span>  <span class="dv">6</span>  <span class="sc">|</span> <span class="dv">160</span>  <span class="sc">|</span> <span class="dv">110</span> <span class="sc">|</span> <span class="fl">3.9</span>  <span class="sc">|</span> <span class="fl">2.875</span> <span class="sc">|</span> <span class="fl">17.02</span> <span class="sc">|</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>    <span class="er">**</span>Datsun <span class="dv">710</span><span class="sc">**</span>     <span class="er">|</span> <span class="fl">22.8</span> <span class="sc">|</span>  <span class="dv">4</span>  <span class="sc">|</span> <span class="dv">108</span>  <span class="sc">|</span> <span class="dv">93</span>  <span class="sc">|</span> <span class="fl">3.85</span> <span class="sc">|</span> <span class="fl">2.32</span>  <span class="sc">|</span> <span class="fl">18.61</span> <span class="sc">|</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>  <span class="er">**</span>Hornet <span class="dv">4</span> Drive<span class="sc">**</span>   <span class="er">|</span> <span class="fl">21.4</span> <span class="sc">|</span>  <span class="dv">6</span>  <span class="sc">|</span> <span class="dv">258</span>  <span class="sc">|</span> <span class="dv">110</span> <span class="sc">|</span> <span class="fl">3.08</span> <span class="sc">|</span> <span class="fl">3.215</span> <span class="sc">|</span> <span class="fl">19.44</span> <span class="sc">|</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> <span class="er">**</span>Hornet Sportabout<span class="sc">**</span> <span class="er">|</span> <span class="fl">18.7</span> <span class="sc">|</span>  <span class="dv">8</span>  <span class="sc">|</span> <span class="dv">360</span>  <span class="sc">|</span> <span class="dv">175</span> <span class="sc">|</span> <span class="fl">3.15</span> <span class="sc">|</span> <span class="fl">3.44</span>  <span class="sc">|</span> <span class="fl">17.02</span> <span class="sc">|</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>Table<span class="sc">:</span> Tabela usando <span class="fu">Pander</span> (continued below)</span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="sc">|</span>        <span class="er">&amp;</span>nbsp;         <span class="sc">|</span> vs <span class="sc">|</span> am <span class="sc">|</span> gear <span class="sc">|</span> carb <span class="sc">|</span></span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="er">|:</span><span class="sc">---------------------</span><span class="er">:|:</span><span class="sc">--</span><span class="er">:|:</span><span class="sc">--</span><span class="er">:|:</span><span class="sc">----</span><span class="er">:|:</span><span class="sc">----</span><span class="er">:|</span></span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>     <span class="er">**</span>Mazda RX4<span class="sc">**</span>     <span class="er">|</span> <span class="dv">0</span>  <span class="sc">|</span> <span class="dv">1</span>  <span class="sc">|</span>  <span class="dv">4</span>   <span class="sc">|</span>  <span class="dv">4</span>   <span class="sc">|</span></span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>   <span class="er">**</span>Mazda RX4 Wag<span class="sc">**</span>   <span class="er">|</span> <span class="dv">0</span>  <span class="sc">|</span> <span class="dv">1</span>  <span class="sc">|</span>  <span class="dv">4</span>   <span class="sc">|</span>  <span class="dv">4</span>   <span class="sc">|</span></span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>    <span class="er">**</span>Datsun <span class="dv">710</span><span class="sc">**</span>     <span class="er">|</span> <span class="dv">1</span>  <span class="sc">|</span> <span class="dv">1</span>  <span class="sc">|</span>  <span class="dv">4</span>   <span class="sc">|</span>  <span class="dv">1</span>   <span class="sc">|</span></span>
+<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>  <span class="er">**</span>Hornet <span class="dv">4</span> Drive<span class="sc">**</span>   <span class="er">|</span> <span class="dv">1</span>  <span class="sc">|</span> <span class="dv">0</span>  <span class="sc">|</span>  <span class="dv">3</span>   <span class="sc">|</span>  <span class="dv">1</span>   <span class="sc">|</span></span>
+<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> <span class="er">**</span>Hornet Sportabout<span class="sc">**</span> <span class="er">|</span> <span class="dv">0</span>  <span class="sc">|</span> <span class="dv">0</span>  <span class="sc">|</span>  <span class="dv">3</span>   <span class="sc">|</span>  <span class="dv">2</span>   <span class="sc">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>E por fim vamos usar o pacote <em>pander</em> para formatar o resultado de uma regressão logística.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Warning: glm.fit: algoritmo não convergiu</p>
+<pre><code></code></pre>
+<p>Warning: glm.fit: probabilidades ajustadas numericamente 0 ou 1 ocorreu</p>
+<pre><code>
+
+-----------------------------------------------------------------
+     &amp;nbsp;        Estimate   Std. Error    z value     Pr(&gt;|z|) 
+----------------- ---------- ------------ ------------ ----------
+ **(Intercept)**     1161       207421       0.0056      0.9955  
+
+     **age**        0.3223       1787      0.0001804     0.9999  
+
+     **lwt**       -0.1733      320.2      -0.0005413    0.9996  
+
+    **race**        0.6494      31652      2.052e-05       1     
+
+    **smoke**       -17.46      76680      -0.0002277    0.9998  
+
+     **ptl**        126.7       340550     0.0003721     0.9997  
+
+     **ht**         36.36       123685      0.000294     0.9998  
+
+     **ui**         -61.83      75468      -0.0008193    0.9993  
+
+     **ftv**        -8.925      16243      -0.0005495    0.9996  
+
+     **bwt**       -0.4466      64.68      -0.006904     0.9945  
+-----------------------------------------------------------------
+
+Table: Fitting generalized (binomial/logit) linear model: low ~ .</code></pre>
+<section id="um-exemplo-em-rmarkdown-e-considerações-finais" class="level4" data-number="3.1.2.1">
+<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="um-exemplo-em-rmarkdown-e-considerações-finais"><span class="header-section-number">3.1.2.1</span> 2.4 Um exemplo em Rmarkdown e considerações finais</h4>
+<p>O link abaixo contem trechos de uma aula em <em>rmarkdown</em> onde vários elementos podem ser encontrados.</p>
+<p><a href="http://gitlab.procc.fiocruz.br/oswaldo/DS_2017/raw/master/markdown/exemplo.rmd">Exemplo</a></p>
+<p>O <em>rmarkdown</em> possui muitos recursos e extensões que podem ser utilizadas. Um dos pontos importantes e que por vezes você precisa de antemão saber que tipo de documento quer produzir, se <em>HTML</em> , <em>PDF</em>, etc… pois em alguns comandos avançados podem ser específicos para cada documento.</p>
+<p>É possível injetar comandos <em>HTML</em> caso deseje ter esse tipo de documento ou ainda comandos em LaTeX caso quera um <em>PDF</em>.</p>
+<p>Existe até um <a href="https://bookdown.org/yihui/bookdown/">pacote chamado bookdown</a> que permite editar livros, que podem ser hospedados na nuvem. Existem alguns livros já disponíveis nesse formato, vários deles sobre <em>Data Science</em> explore esses livros em (https://bookdown.org/).</p>
+</section>
+<section id="referencias" class="level4" data-number="3.1.2.2">
+<h4 data-number="3.1.2.2" class="anchored" data-anchor-id="referencias"><span class="header-section-number">3.1.2.2</span> REFERENCIAS</h4>
+<ul>
+<li><p><a href="https://support.rstudio.com/hc/en-us/articles/205368677-R-Markdown-Dynamic-Documents-for-R">R Markdown - Dynamic Documents for R</a></p></li>
+<li><p>O <a href="http://yihui.name/knitr/">website do knitr</a></p></li>
+<li><p>O <a href="http://bit.ly/117OLVl">manual do knitr</a></p></li>
+<li><p><a href="https://rapporter.github.io/pander/">Pander</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">awesome_table_in_html</a></p></li>
+</ul>
+<pre><code></code></pre>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./datavis.html" class="pagination-link" aria-label="Visualização Avançada e Interativa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visualização Avançada e Interativa</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./dashboard.html" class="pagination-link" aria-label="Dashboards">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dashboards</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
