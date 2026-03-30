@@ -235,8 +235,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#quarto-vs-r-markdown" id="toc-quarto-vs-r-markdown" class="nav-link" data-scroll-target="#quarto-vs-r-markdown"><span class="header-section-number">3.3</span> Quarto VS R Markdown</a></li>
   <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
-  <li><a href="#prática" id="toc-prática" class="nav-link" data-scroll-target="#prática">Prática</a></li>
-  <li><a href="#geração-de-relatórios-automatizados-com-rmarkdown-quarto" id="toc-geração-de-relatórios-automatizados-com-rmarkdown-quarto" class="nav-link" data-scroll-target="#geração-de-relatórios-automatizados-com-rmarkdown-quarto"><span class="header-section-number">4</span> Geração de Relatórios Automatizados com RMarkdown / Quarto</a></li>
+  <li><a href="#prática" id="toc-prática" class="nav-link" data-scroll-target="#prática">Prática</a>
+  <ul class="collapse">
+  <li><a href="#geração-de-relatórios-automatizados-com-rmarkdown-quarto" id="toc-geração-de-relatórios-automatizados-com-rmarkdown-quarto" class="nav-link" data-scroll-target="#geração-de-relatórios-automatizados-com-rmarkdown-quarto"><span class="header-section-number">3.4</span> Geração de Relatórios Automatizados com RMarkdown / Quarto</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2043,9 +2045,8 @@ Estou usando o `r R.version$version.string` no sistema operacional `r R.version$
 <ol start="5" type="1">
 <li>Agora, tente criar um <strong>Quarto</strong> com o conteúdo equivalente ao obtido ao final das atividades anteriores.</li>
 </ol>
-</section>
-<section id="geração-de-relatórios-automatizados-com-rmarkdown-quarto" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Geração de Relatórios Automatizados com RMarkdown / Quarto</h1>
+<section id="geração-de-relatórios-automatizados-com-rmarkdown-quarto" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="geração-de-relatórios-automatizados-com-rmarkdown-quarto"><span class="header-section-number">3.4</span> Geração de Relatórios Automatizados com RMarkdown / Quarto</h2>
 <p>RMarkdown e o Quarto são uma ferramentas poderosas para criar relatórios dinâmicos e reproduzíveis em R. Ele combina a flexibilidade do código R com a simplicidade do Markdown, permitindo que você combine texto formatado, resultados de análises estatísticas, gráficos e tabelas em um único documento.</p>
 <p>A automação de relatórios com R Markdown ou Quarto vai além de simplesmente escrever código. Para um processo realmente bem-sucedido, é crucial garantir a robustez e a confiabilidade do relatório, antecipando possíveis problemas. Comece definindo claramente o objetivo do relatório e as fontes de dados a serem utilizadas, optando por formatos de dados estáveis e acessíveis, como CSV ou bancos de dados. O dados devem estar armazenando-os em locais acessiveis, seguros e versionados.</p>
 <p>O código R Markdown (ou Quarto) deve ser modularizado, bem comentado e incluir tratamento de erros para lidar com situações inesperadas, como arquivos ausentes mudanças de tipos de variaveis ou dados corrompidos.</p>
@@ -2054,9 +2055,10 @@ Estou usando o `r R.version$version.string` no sistema operacional `r R.version$
 <p>Determine o formato de saída desejado (HTML, PDF, Word, etc.) e como ele será distribuído.</p>
 <p>Por fim, monitore a execução do relatório e se possivel automatize tambem o envio de emails para alertas e/ou acompanhar o processo.</p>
 <p>Ao seguir esses passos, você transforma a geração de relatórios em um processo automatizado, robusto e que entrega resultados precisos e consistentes</p>
-<p><em>Última atualização: 30-mar-2026 10:11</em></p>
+<p><em>Última atualização: 30-mar-2026 10:17</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
