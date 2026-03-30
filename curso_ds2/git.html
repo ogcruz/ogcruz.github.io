@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,15 +69,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c8a0de7342c5d8e9e043fef34c954060.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-56c7f7d68268274d97eff651f45ecc60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,9 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Ciência de Dados Aplicada à Epidemiologia II - 2026</a> 
     </div>
@@ -288,9 +285,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Pronto! Agora você tem um projeto criado, e o <strong>RStudio</strong> já definiu a pasta do projeto como o diretório de trabalho! Ou seja, nada mais de ficar usando <code>setwd()</code>!</p>
 <p>Você pode começar a organizar seus arquivos dentro dessa pasta. Assim, qualquer pessoa que abra o projeto terá acesso aos arquivos corretamente, desde que a estrutura de pastas seja mantida.</p>
 <p>Trabalhar em um <code>.proj</code> permite trabalhar com caminhos relativos, por exemplo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">"data/dados.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">"data/dados.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>em vez de caminhos absolutos como:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">"C:/Users/fulaninho/Documentos/projeto/data/dados.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">"C:/Users/fulaninho/Documentos/projeto/data/dados.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Isso evita a dependência da estrutura de pastas do computador, facilitando a reprodutibilidade do código.</p>
 </section>
 <section id="estrutura-de-pastas-recomendada" class="level3" data-number="1.2.2">
@@ -470,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="no-linux" class="level4" data-number="1.3.5.1">
 <h4 data-number="1.3.5.1" class="anchored" data-anchor-id="no-linux"><span class="header-section-number">1.3.5.1</span> No Linux</h4>
 <p>Nas distribuições Ubuntu/Debian, execute no terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="no-windows" class="level4" data-number="1.3.5.2">
 <h4 data-number="1.3.5.2" class="anchored" data-anchor-id="no-windows"><span class="header-section-number">1.3.5.2</span> No Windows</h4>
@@ -484,8 +481,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Se você seguiu os passos do <a href="https://www.youtube.com/watch?v=pSJz4DzvbFI">vídeo</a> até o final, já deve ter feito essa configuração.</p>
 <p>Tanto no Linux quanto no Windows, os passos para configurar sua identidade no <code>Git</code> (ou seja, como seu nome aparecerá nos <em>commits</em>) são os mesmos:</p>
 <p>Abra um terminal, e use os comandos:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Seu Nome"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"seu_email@example.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Seu Nome"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"seu_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>O <code>user.name</code> e <code>user.email</code> precisam ser do <strong>GitHub</strong>? Não obrigatoriamente, mas é altamente recomendável que o e-mail seja o mesmo da sua conta no <strong>GitHub</strong>, pois o <strong>GitHub</strong> usa o e-mail para associar o <em>commit</em> à sua conta. Se o e-mail for diferente do que está cadastrado no <strong>GitHub</strong>, o <em>commit</em> pode não ficar vinculado ao seu perfil.</p>
 </section>
 <section id="integrando-git-e-github" class="level3" data-number="1.3.7">
@@ -546,23 +543,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h5 data-number="1.3.7.1.1" class="anchored" data-anchor-id="no-linux-1"><span class="header-section-number">1.3.7.1.1</span> No Linux</h5>
 <p><strong>1. Verificar se já existe chave SSH</strong></p>
 <p>No terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se aparecer algo como id_ed25519 ou id_rsa, você já tem uma chave.</p>
 <p><strong>2. Gerar uma nova chave</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"seu_email@example.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"seu_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>O sistema pergunta:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> file in which to save the key <span class="er">(</span><span class="ex">/home/usuario/.ssh/id_ed25519</span><span class="kw">)</span><span class="bu">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> file in which to save the key <span class="er">(</span><span class="ex">/home/usuario/.ssh/id_ed25519</span><span class="kw">)</span><span class="bu">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se você apenas apertar ENTER, ele usa o nome padrão:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">home/usuario/.ssh/id_ed25519</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">home/usuario/.ssh/id_ed25519</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Atenção!</strong> Se você já possui outra chave ed25519, é melhor salvar a nova em outro arquivo para não sobrescrever. Em vez disso, digite algo como:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">home/usuario/.ssh/id_ed25519_trabalho</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">home/usuario/.ssh/id_ed25519_trabalho</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Aperte ENTER.</p>
 <p>O sistema te pede para definir uma senha (passphrase), que você pode deixar em branco.</p>
 <p><strong>3. Ativar o agente SSH</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> /home/usuario/.ssh/id_ed25519</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> /home/usuario/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>4. Copiar a chave pública</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /home/usuario/.ssh/id_ed25519.pub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /home/usuario/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Copie todo o conteúdo exibido.</p>
 <p><strong>5. Adicionar a chave no GitHub</strong></p>
 <p>Na web, abra as suas configurações do <strong>GitHub</strong> e clique em <code>SSH and GPG keys</code>. Em seguida, clique em <code>New SSH Key</code>.</p>
@@ -571,9 +568,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="figuras/github ssh 2.png" class="img-fluid"></p>
 <p><strong>6. Testar a conexão</strong></p>
 <p>No terminal, digite:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Se aparecer algo como:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hi</span> username! You<span class="st">'ve successfully authenticated...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hi</span> username! You<span class="st">'ve successfully authenticated...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>O <strong>GitHub</strong> está conectado localmente!</p>
 </section>
 <section id="no-windows-1" class="level5" data-number="1.3.7.1.2">
@@ -588,7 +585,7 @@ Windows → <code>C:\Users\Usuario\.ssh\</code></p>
 <p>No <strong>GitHub</strong>, vá até a página do repositório e clique no botão verde <code>&lt;&gt; Code</code>, e “SSH”, pois é a forma que fizemos a autenticação. Copie o endereço que aparece (no exemplo abaixo, <code>git@github.com:laisCDII/curso_CD2.git</code>):</p>
 <p><img src="figuras/github clone.png" class="img-fluid"></p>
 <p>No seu computador, vá até a pasta onde deseja salvar o projeto, abra o terminal nesta pasta, e execute:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:laisCDII/curso_CD2.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:laisCDII/curso_CD2.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Veja que utilizamos o comando <code>git clone</code>, que é usado para criar uma cópia local de um repositório remoto <strong>apenas uma vez</strong>. Uma vez que o repositório está clonado, as alterações serão realizadas com outros comandos. Existem vários comandos <code>git [AÇÃO]</code> para trabalhar com o <code>Git</code>. Veremos alguns mais adiante.</p>
 <p>Pronto, agora todo o repositório foi clonado localmente:</p>
 <p><img src="figuras/github repo local.png" class="img-fluid"></p>
@@ -599,12 +596,12 @@ Windows → <code>C:\Users\Usuario\.ssh\</code></p>
 <h4 data-number="1.3.7.3" class="anchored" data-anchor-id="recebendo-e-enviando-alterações"><span class="header-section-number">1.3.7.3</span> Recebendo e enviando alterações</h4>
 <p>Agora vamos passar a usar alguns comandos básicos de <code>Git</code> para sincronizar as alterações entre o repositório local (no computador) e o remoto (no <strong>GitHub</strong>).</p>
 <p>Antes de começar a trabalhar em um repositório local, é fundamental que ele esteja sincronizado com a última versão do repositório remoto! Para isso, utiliza-se o comando <code>git pull</code> (no terminal sempre na pasta do repositório <code>Git</code>!).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git pull</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Already</span> up to date.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git pull</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Already</span> up to date.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Após trabalhar localmente, faça essa sequência de comandos no terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">'estrutura do rmd para o trabalho'</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>O que cada comando faz?</p>
 <ul>
 <li><code>git add .</code> : Diz ao Git quais arquivos modificados você quer incluir no próximo registro de alterações. O ponto (.) significa “todos os arquivos modificados nesta pasta”.<br>
@@ -615,7 +612,7 @@ Windows → <code>C:\Users\Usuario\.ssh\</code></p>
 </ul>
 <p><strong>Exemplo:</strong></p>
 <p>No meu repositório local “curso_CD2”, alterei o script <code>trabalho_final.Rmd</code>. No terminal, primeiro uso o comando <code>git status</code> para verificar o estado atual do repositório local:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git status</span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git status</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> ramo main</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is up to date with <span class="st">'origin/main'</span>.</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -624,9 +621,9 @@ Windows → <code>C:\Users\Usuario\.ssh\</code></p>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">modified:</span>   scripts/trabalho_final.Rmd</span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="ex">nenhuma</span> modificação adicionada à submissão <span class="er">(</span><span class="ex">utilize</span> <span class="st">"git add"</span> e/ou <span class="st">"git commit -a"</span><span class="kw">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="ex">nenhuma</span> modificação adicionada à submissão <span class="er">(</span><span class="ex">utilize</span> <span class="st">"git add"</span> e/ou <span class="st">"git commit -a"</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Veja que o sistema me informa que tenho alterações no repositório local ainda não <em>comittadas</em>. Agora, sigo com a sequência add → commit → push:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git add . </span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git add . </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lais@desktop:~/Documentos/GIT/curso_CD2$</span> git commit <span class="at">-m</span> <span class="st">'estrutura do rmd para o trabalho'</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[main</span> 873f5eb] estrutura do rmd para o trabalho</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span> file changed, 30 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
@@ -639,9 +636,9 @@ Windows → <code>C:\Users\Usuario\.ssh\</code></p>
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> 4 <span class="er">(</span><span class="ex">delta</span> 1<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Resolving deltas: 100% <span class="er">(</span><span class="ex">1/1</span><span class="kw">)</span><span class="ex">,</span> completed with 1 local object.</span>
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> github.com:laisCDII/curso_CD2.git</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>   <span class="ex">e876920..873f5eb</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>   <span class="ex">e876920..873f5eb</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Esse código (873f5eb) é um <em>hash</em>, ou seja, um identificador único gerado pelo <code>Git</code>. Cada <em>commit</em> tem um <em>hash</em> próprio, o que garante que cada versão do projeto seja única e rastreável. Ao rodar git push, o Git envia essa nova versão para o repositório remoto no <strong>GitHub</strong>, atualizando a branch main lá também:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">e876920..873f5eb</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">e876920..873f5eb</span>  main <span class="at">-</span><span class="op">&gt;</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Isso significa que o repositório remoto avançou do <em>commit</em> e876920 para 873f5eb. Vamos conferir no <strong>GitHub</strong> na web:</p>
 <p><img src="figuras/git com comit.png" class="img-fluid"></p>
 <p>Veja que apenas na pasta onde houve alteração (“scripts”) aparece a mensagem do último <em>commit</em>. Se clicarmos na mensagem, podemos ver detalhes do <em>commit</em>:</p>
@@ -782,14 +779,13 @@ Windows → <code>C:\Users\Usuario\.ssh\</code></p>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
