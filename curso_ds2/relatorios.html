@@ -234,11 +234,9 @@ window.Quarto = {
   <li><a href="#quarto-no-rstudio" id="toc-quarto-no-rstudio" class="nav-link" data-scroll-target="#quarto-no-rstudio"><span class="header-section-number">3.2.1</span> Quarto no RStudio</a></li>
   </ul></li>
   <li><a href="#quarto-vs-r-markdown" id="toc-quarto-vs-r-markdown" class="nav-link" data-scroll-target="#quarto-vs-r-markdown"><span class="header-section-number">3.3</span> Quarto VS R Markdown</a></li>
+  <li><a href="#geração-de-relatórios-automatizados-com-r-markdown-quarto" id="toc-geração-de-relatórios-automatizados-com-r-markdown-quarto" class="nav-link" data-scroll-target="#geração-de-relatórios-automatizados-com-r-markdown-quarto"><span class="header-section-number">3.4</span> Geração de Relatórios Automatizados com R Markdown / Quarto</a></li>
   <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
-  <li><a href="#prática" id="toc-prática" class="nav-link" data-scroll-target="#prática">Prática</a>
-  <ul class="collapse">
-  <li><a href="#geração-de-relatórios-automatizados-com-rmarkdown-quarto" id="toc-geração-de-relatórios-automatizados-com-rmarkdown-quarto" class="nav-link" data-scroll-target="#geração-de-relatórios-automatizados-com-rmarkdown-quarto"><span class="header-section-number">3.4</span> Geração de Relatórios Automatizados com RMarkdown / Quarto</a></li>
-  </ul></li>
+  <li><a href="#prática" id="toc-prática" class="nav-link" data-scroll-target="#prática">Prática</a></li>
   </ul>
 </nav>
     </div>
@@ -494,7 +492,7 @@ window.Quarto = {
 <p>Criamos dois parâmetros, <code>ano</code> e <code>uf</code>.</p>
 <p>Dentro do <strong>R Markdown</strong>, você utiliza os parâmetros usando <code>params$nome</code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Relatório de vendas</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Situação Epidemiológica de Dengue</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Ano analisado: <span class="in">`r params$ano`</span>  </span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>UF analisada: <span class="in">`r params$uf`</span></span>
@@ -893,7 +891,7 @@ x=\frac{-b \pm \sqrt{bˆ2-4ac}}{2a}
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>dadosUF <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/laispfreitas/curso_CD1/refs/heads/main/SIM_MIF_2024_UF_catCID.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Podemos escrever:</p>
-<p>“Em 2024, morreram 69548 mulheres de 15 a 49 anos no Brasil. Isto representa uma mortalidade de 123.79 óbitos por 100 mil mulheres nesta faixa etária. A maior mortalidade específica por categoria do CID-19 foi observada em Roraima, correspondente a 12.32 óbitos por”Neoplasia maligna do colo do útero” por 100 mil.”</p>
+<p>“Em 2024, morreram 69548 mulheres de 15 a 49 anos no Brasil. Isto representa uma mortalidade de 123.79 óbitos por 100 mil mulheres nesta faixa etária. A maior mortalidade específica por categoria do CID-10 foi observada em Roraima, correspondente a 12.32 óbitos por”Neoplasia maligna do colo do útero” por 100 mil.”</p>
 <p>Veja como fazer isso de forma automatizada:</p>
 <p>“Em 2024, morreram <strong>`r format(sum(dadosUF$n), scientific = FALSE)`</strong> mulheres de 15 a 49 anos no Brasil. Isto representa uma mortalidade de <strong>`r round(sum(dadosUF$n)/sum(unique(dadosUF$Pop)) * 100000,2)`</strong> óbitos por 100 mil mulheres nesta faixa etária. A maior mortalidade específica por categoria do CID-19 foi observada em <strong>`r dadosUF$UF[which.max(dadosUF$mortalidade)]`</strong>, correspondente a <strong>`r round(max(dadosUF$mortalidade) * 100,2)`</strong> óbitos por”<strong>`r dadosUF$DESC_CAT[which.max(dadosUF$mortalidade)]`</strong>” por 100 mil.”</p>
 <p>O uso do comando <code>R</code> <em>inline</em> deve ser restrito a pequenos cálculos e formatação de <em>strings</em>, pois essa maneira não permite comandos mais complexos e nem gráficos.</p>
@@ -1443,7 +1441,7 @@ Características
 <p><br>
 </p>
 <p>Nem todas as estilizações vão funcionar em todos os formatos. Geralmente, todas funcionam em HTML, a maioria em PDF, e em Word… Bom. Aí complica.</p>
-<p>Um outro pacote que permite formatar tabelas e até mesmo as saídas de modelos é o <code>pander</code>. Caso esse pacote não esteja instalado é necessário instalar ou pelo menu do <strong>R Studio</strong> ou:</p>
+<p>Um outro pacote que permite formatar tabelas e até mesmo as saídas de modelos é o <code>pander</code>. Caso esse pacote não esteja instalado é necessário instalar ou pelo menu do <strong>RStudio</strong> ou:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pander"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Em seguida, teste o comando:</p>
 <div class="cell">
@@ -1714,7 +1712,7 @@ Table: Tabela usando Pander (continued below)
 <p><br>
 </p>
 <p>Repare que saiu uma mensagem de aviso do modelo. Como poderíamos fazer para que isso não ocorra?</p>
-<p>Por fim, essas são algumas opções para fazer tabelas com <code>R</code>no <strong>R Markdown</strong>. Exitem muitas outras! Veja abaixo um pequeno resumo sobre algumas principais utilizadas:</p>
+<p>Por fim, essas são algumas opções para fazer tabelas com <code>R</code> no <strong>R Markdown</strong>. Exitem muitas outras! Veja abaixo um pequeno resumo sobre algumas principais utilizadas:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
@@ -1783,6 +1781,22 @@ Table: Tabela usando Pander (continued below)
 <td>Dashboards e relatórios interativos</td>
 <td>HTML</td>
 </tr>
+<tr class="odd">
+<td><code>gtsummary</code></td>
+<td>Cria tabelas estatísticas formatadas (ex: tabelas 1)</td>
+<td>Muito usado em análises estatísticas, integração com <code>gt</code>, automático</td>
+<td>Menos flexível fora de estatística</td>
+<td>Relatórios biomédicos e análises</td>
+<td>HTML, PDF (via gt)</td>
+</tr>
+<tr class="even">
+<td><code>DT</code></td>
+<td>Interface para DataTables (tabelas interativas)</td>
+<td>Interatividade completa (filtro, paginação, busca)</td>
+<td>Só funciona em HTML</td>
+<td>Exploração de dados e dashboards</td>
+<td>HTML</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -1796,7 +1810,7 @@ Table: Tabela usando Pander (continued below)
 </ul>
 <p>Como vimos, um dos pontos importantes é que muitas vezes você precisa de antemão saber que tipo de documento quer produzir (HTML, PDF, etc), pois alguns comandos podem ser específicos para cada formato.</p>
 <p>Além disso, é possível injetar comandos <strong>HTML</strong> caso seja este o formato de <em>output</em>, ou ainda comandos em LaTeX caso seja <strong>PDF</strong>.</p>
-<p>Existe um <a href="https://bookdown.org/yihui/bookdown/">pacote chamado bookdown</a> que permite editar livros, que podem ser hospedados na nuvem. Existem muitos livros disponíveis nesse formato, inclusive alguns já indicados sobre <strong>Data Science</strong>. Explore a lista de livros em (https://bookdown.org/).</p>
+<p>Existe um <a href="https://bookdown.org/yihui/bookdown/">pacote chamado bookdown</a> que permite editar livros, que podem ser hospedados na nuvem. Existem muitos livros disponíveis nesse formato, inclusive alguns já indicados sobre <strong>Data Science</strong>. Explore a lista de livros em (<a href="https://bookdown.org/" class="uri">https://bookdown.org/</a>).</p>
 </section>
 </section>
 <section id="quarto" class="level2" data-number="3.2">
@@ -1833,7 +1847,7 @@ Table: Tabela usando Pander (continued below)
 <span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto</span></span>
 <span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>Esse é um documento Quarto. Quando você clica no botão **Render**, este arquivo será renderizado e um documento será gerado incluindo o texto e códigos e *outputs* de *chunks*. Blocos de códigos (*cunks*) podem ser inseridos assim:</span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>Esse é um documento Quarto. Quando você clica no botão **Render**, este arquivo será renderizado e um documento será gerado incluindo o texto e códigos e *outputs* de *chunks*. Blocos de códigos (*chunks*) podem ser inseridos assim:</span>
 <span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: cars</span></span>
@@ -1955,6 +1969,17 @@ Table: Tabela usando Pander (continued below)
 </tbody>
 </table>
 </section>
+<section id="geração-de-relatórios-automatizados-com-r-markdown-quarto" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="geração-de-relatórios-automatizados-com-r-markdown-quarto"><span class="header-section-number">3.4</span> Geração de Relatórios Automatizados com R Markdown / Quarto</h2>
+<p><strong>R Markdown</strong> e o <strong>Quarto</strong> são uma ferramentas poderosas para criar relatórios dinâmicos e reproduzíveis em <code>R</code>. Ele combina a flexibilidade do código <code>R</code> com a simplicidade do <strong>Markdown</strong>, permitindo que você combine texto formatado, resultados de análises estatísticas, gráficos e tabelas em um único documento.</p>
+<p>A automação de relatórios com <strong>R Markdown</strong> ou <strong>Quarto</strong> vai além de simplesmente escrever código. Para um processo realmente bem-sucedido, é crucial garantir a robustez e a confiabilidade do relatório, antecipando possíveis problemas. Comece definindo claramente o objetivo do relatório e as fontes de dados a serem utilizadas, optando por formatos de dados estáveis e acessíveis, como CSV ou bancos de dados. O dados devem estar armazenando-os em locais acessiveis, seguros e versionados.</p>
+<p>O código <strong>R Markdown</strong> (ou <strong>Quarto</strong>) deve ser modularizado, bem comentado e incluir tratamento de erros para lidar com situações inesperadas, como arquivos ausentes mudanças de tipos de variaveis ou dados corrompidos.</p>
+<p>Testes exaustivos são fundamentais: simule cenários , como mudanças de ano, semanas epidemiológicas incompletas ou dados com tipos inesperados, para garantir que o relatório se comporte corretamente em todas as situações.</p>
+<p>Automatize esses testes sempre que possível. A documentação detalhada do código e o controle de versão são essenciais para facilitar a manutenção e a colaboração.</p>
+<p>Determine o formato de saída desejado (HTML, PDF, Word, etc.) e como ele será distribuído.</p>
+<p>Por fim, monitore a execução do relatório e se possivel automatize tambem o envio de emails para alertas e/ou acompanhar o processo.</p>
+<p>Ao seguir esses passos, você transforma a geração de relatórios em um processo automatizado, robusto e que entrega resultados precisos e consistentes</p>
+</section>
 <section id="referências" class="level1 unnumbered">
 <h1 class="unnumbered">Referências</h1>
 <ul>
@@ -2045,20 +2070,9 @@ Estou usando o `r R.version$version.string` no sistema operacional `r R.version$
 <ol start="5" type="1">
 <li>Agora, tente criar um <strong>Quarto</strong> com o conteúdo equivalente ao obtido ao final das atividades anteriores.</li>
 </ol>
-<section id="geração-de-relatórios-automatizados-com-rmarkdown-quarto" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="geração-de-relatórios-automatizados-com-rmarkdown-quarto"><span class="header-section-number">3.4</span> Geração de Relatórios Automatizados com RMarkdown / Quarto</h2>
-<p>RMarkdown e o Quarto são uma ferramentas poderosas para criar relatórios dinâmicos e reproduzíveis em R. Ele combina a flexibilidade do código R com a simplicidade do Markdown, permitindo que você combine texto formatado, resultados de análises estatísticas, gráficos e tabelas em um único documento.</p>
-<p>A automação de relatórios com R Markdown ou Quarto vai além de simplesmente escrever código. Para um processo realmente bem-sucedido, é crucial garantir a robustez e a confiabilidade do relatório, antecipando possíveis problemas. Comece definindo claramente o objetivo do relatório e as fontes de dados a serem utilizadas, optando por formatos de dados estáveis e acessíveis, como CSV ou bancos de dados. O dados devem estar armazenando-os em locais acessiveis, seguros e versionados.</p>
-<p>O código R Markdown (ou Quarto) deve ser modularizado, bem comentado e incluir tratamento de erros para lidar com situações inesperadas, como arquivos ausentes mudanças de tipos de variaveis ou dados corrompidos.</p>
-<p>Testes exaustivos são fundamentais: simule cenários , como mudanças de ano, semanas epidemiológicas incompletas ou dados com tipos inesperados, para garantir que o relatório se comporte corretamente em todas as situações.</p>
-<p>Automatize esses testes sempre que possível. A documentação detalhada do código e o controle de versão são essenciais para facilitar a manutenção e a colaboração.</p>
-<p>Determine o formato de saída desejado (HTML, PDF, Word, etc.) e como ele será distribuído.</p>
-<p>Por fim, monitore a execução do relatório e se possivel automatize tambem o envio de emails para alertas e/ou acompanhar o processo.</p>
-<p>Ao seguir esses passos, você transforma a geração de relatórios em um processo automatizado, robusto e que entrega resultados precisos e consistentes</p>
-<p><em>Última atualização: 30-mar-2026 10:17</em></p>
+<p><em>Última atualização: 06-abr-2026 11:11</em></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

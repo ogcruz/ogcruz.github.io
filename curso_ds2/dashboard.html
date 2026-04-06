@@ -213,15 +213,14 @@ window.Quarto = {
     <h2 id="toc-title">Conteúdo</h2>
    
   <ul>
-  <li><a href="#conceitos-básicos-shiny-vs-flexdashboard" id="toc-conceitos-básicos-shiny-vs-flexdashboard" class="nav-link active" data-scroll-target="#conceitos-básicos-shiny-vs-flexdashboard"><span class="header-section-number">4.1</span> Conceitos básicos: <code>Shiny</code> vs <code>flexdashboard</code></a></li>
-  <li><a href="#flexdashboard-layouts-em-markdown" id="toc-flexdashboard-layouts-em-markdown" class="nav-link" data-scroll-target="#flexdashboard-layouts-em-markdown"><span class="header-section-number">4.2</span> <code>flexdashboard</code>: layouts em <code>markdown</code></a></li>
+  <li><a href="#conceitos-básicos-flexdashboard-vs-shiny" id="toc-conceitos-básicos-flexdashboard-vs-shiny" class="nav-link active" data-scroll-target="#conceitos-básicos-flexdashboard-vs-shiny"><span class="header-section-number">4.1</span> Conceitos básicos: <code>flexdashboard</code> vs <code>Shiny</code></a></li>
+  <li><a href="#flexdashboard" id="toc-flexdashboard" class="nav-link" data-scroll-target="#flexdashboard"><span class="header-section-number">4.2</span> Flexdashboard</a></li>
   <li><a href="#shiny" id="toc-shiny" class="nav-link" data-scroll-target="#shiny"><span class="header-section-number">4.3</span> Shiny</a>
   <ul class="collapse">
-  <li><a href="#introdução-e-exemplos" id="toc-introdução-e-exemplos" class="nav-link" data-scroll-target="#introdução-e-exemplos"><span class="header-section-number">4.3.1</span> 1.1 Introdução e Exemplos</a></li>
-  <li><a href="#criando-um-app" id="toc-criando-um-app" class="nav-link" data-scroll-target="#criando-um-app"><span class="header-section-number">4.3.2</span> 1.2 Criando um App</a></li>
-  <li><a href="#ui-e-widgets" id="toc-ui-e-widgets" class="nav-link" data-scroll-target="#ui-e-widgets"><span class="header-section-number">4.3.3</span> 1.3 UI e Widgets</a></li>
-  <li><a href="#server" id="toc-server" class="nav-link" data-scroll-target="#server"><span class="header-section-number">4.3.4</span> 1.4 Server</a></li>
-  <li><a href="#um-exemplo-de-app-bem-simples" id="toc-um-exemplo-de-app-bem-simples" class="nav-link" data-scroll-target="#um-exemplo-de-app-bem-simples"><span class="header-section-number">4.3.5</span> 1.5 Um exemplo de App bem simples</a></li>
+  <li><a href="#criando-um-app" id="toc-criando-um-app" class="nav-link" data-scroll-target="#criando-um-app"><span class="header-section-number">4.3.1</span> 1.2 Criando um App</a></li>
+  <li><a href="#ui-e-widgets" id="toc-ui-e-widgets" class="nav-link" data-scroll-target="#ui-e-widgets"><span class="header-section-number">4.3.2</span> 1.3 UI e Widgets</a></li>
+  <li><a href="#server" id="toc-server" class="nav-link" data-scroll-target="#server"><span class="header-section-number">4.3.3</span> 1.4 Server</a></li>
+  <li><a href="#um-exemplo-de-app-bem-simples" id="toc-um-exemplo-de-app-bem-simples" class="nav-link" data-scroll-target="#um-exemplo-de-app-bem-simples"><span class="header-section-number">4.3.4</span> 1.5 Um exemplo de App bem simples</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -248,20 +247,119 @@ window.Quarto = {
 </header>
 
 
-<section id="conceitos-básicos-shiny-vs-flexdashboard" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="conceitos-básicos-shiny-vs-flexdashboard"><span class="header-section-number">4.1</span> Conceitos básicos: <code>Shiny</code> vs <code>flexdashboard</code></h2>
+<section id="conceitos-básicos-flexdashboard-vs-shiny" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="conceitos-básicos-flexdashboard-vs-shiny"><span class="header-section-number">4.1</span> Conceitos básicos: <code>flexdashboard</code> vs <code>Shiny</code></h2>
+<p>Tanto o Flexdashboard quanto o shiny são pacotes do R para criar aplicações web interativas, mas eles servem a propósitos distintos e têm abordagens diferentes.</p>
+<p>No Flexdashboard o propósito é a Criação de painéis interativos e relatórios web de forma rápida e fácil. É ideal para apresentar resultados de análises, dashboards e relatórios com visualizações interativas.</p>
+<p>ele é totalmente Baseado em Markdown. Combina texto formatado em Markdown com trechos de código R, tornando a criação de painéis muito mais intuitiva e rápida.</p>
+<p>o Shiny permite a criação de aplicações web interativas mais complexas e personalizadas. Ele é ideal para construir aplicativos que exigem uma lógica e reações mais elaboradas, interações dinâmicas e controle total sobre a interface do usuário.</p>
+<p><strong>Tabela Comparativa Resumida:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Shiny</th>
+<th>Flexdashboard</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Propósito</strong></td>
+<td>Aplicações Web Complexas</td>
+<td>Painéis Interativos e Relatórios</td>
+</tr>
+<tr class="even">
+<td><strong>Abordagem</strong></td>
+<td>Reativa</td>
+<td>Markdown</td>
+</tr>
+<tr class="odd">
+<td><strong>Complexidade</strong></td>
+<td>Alta</td>
+<td>Baixa</td>
+</tr>
+<tr class="even">
+<td><strong>Flexibilidade</strong></td>
+<td>Alta</td>
+<td>Limitada</td>
+</tr>
+<tr class="odd">
+<td><strong>Escopo</strong></td>
+<td>Aplicações Web Completas</td>
+<td>Relatórios, Dashboards, Apresentações</td>
+</tr>
+<tr class="even">
+<td><strong>Curva de Aprendizagem</strong></td>
+<td>Íngreme</td>
+<td>Suave</td>
+</tr>
+<tr class="odd">
+<td><strong>Personalização</strong></td>
+<td>Total</td>
+<td>Limitada</td>
+</tr>
+<tr class="even">
+<td><strong>Interatividade</strong></td>
+<td>Altamente Personalizável</td>
+<td>Baseada em Widgets</td>
+</tr>
+<tr class="odd">
+<td><strong>Nessesidade de Servidor</strong></td>
+<td>Sim</td>
+<td>Não</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="flexdashboard-layouts-em-markdown" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="flexdashboard-layouts-em-markdown"><span class="header-section-number">4.2</span> <code>flexdashboard</code>: layouts em <code>markdown</code></h2>
-<ul>
-<li>Shiny: inputs, outputs e reatividade.</li>
-<li>Demonstração de uso de dashboard.</li>
-</ul>
+<section id="flexdashboard" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="flexdashboard"><span class="header-section-number">4.2</span> Flexdashboard</h2>
+<p>O <a href="https://pkgs.rstudio.com/flexdashboard/"><code>flexdashboard</code></a> é um um pacote do R que permite criar painéis interativos e responsivos de forma fácil e rápida. Ele combina a simplicidade do Markdown com o poder do R para gerar relatórios web dinâmicos, apresentações, tabelas e gráficos<br>
+Em essência, um flexdashboard é um documento Markdown especial que contém trechos de código R intercalados com texto formatado. Quando renderizado, esses trechos de código são executados e seus resultados (gráficos, tabelas, texto, etc.) são incorporados ao documento HTML, gerando uma página web interativa.</p>
+<p>Como no Rmardown e no Quarto tambem temos um cabeçalho YAML onde podemos definir o título do dashboard, o layout, o tema e outras opções de configuração. O layout pode ser organizado em colunas, linhas ou abas, permitindo uma estrutura flexível para apresentar os dados e visualizações.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"flexdashboard"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>para começar um Rmd preprado para o flexdashbord basta usar o template do Rstudio para isso vá em File &gt; New File &gt; R Markdown &gt; From Template &gt; Flexdashboard. Isso vai criar um arquivo com a estrutura básica de um flexdashboard, incluindo o cabeçalho YAML e alguns exemplos de código.</p>
+<p><img src="figuras/flex1.png" class="img-fluid"></p>
+<p><img src="figuras/flex2.png" class="img-fluid"></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Meu Primeiro Flexdashboard"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: "united"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A seguir, podemos adicionar trechos de código R para criar gráficos, tabelas e outros elementos interativos.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>{r setup, include=FALSE}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>knitr::opts_chunk$set(echo = TRUE)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>library(tidyverse)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>`</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Introdução</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Este é um flexdashboard simples para demonstrar como criar painéis interativos com R.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>`{r plot_example}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Cria um gráfico de dispersão</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ggplot(mtcars, aes(x = mpg, y = hp)) +</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  geom_point() +</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  labs(title = "Relação entre MPG e HP")</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>`</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>Tabela de Dados</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>`{r table_example}</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>Exibe as primeiras linhas do dataset mtcars</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>head(mtcars)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>`</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ao renderizar este documento, ele se transformará em um painel interativo onde o gráfico de dispersão e a tabela de dados serão exibidos. O flexdashboard é uma ótima ferramenta para criar relatórios e dashboards de forma rápida, especialmente quando você deseja compartilhar insights de dados de maneira visual e interativa.</p>
+<p>O <code>flexdashboard</code> oferece diferentes layouts para organizar o conteúdo do painel. Use a sintaxe <code>{.tabset}</code> para criar abas e <code>{.row-fluid}</code> para organizar elementos em linhas.</p>
+<p>Veja os possíveis <a href="https://pkgs.rstudio.com/flexdashboard/articles/layouts.html">layouts</a></p>
+<p>Veja algusn exemplos:</p>
+<p><a href="https://testing-apps.shinyapps.io/flexdashboard-ggplotly/#section-geom_density"></a> <a href="https://pkgs.rstudio.com/flexdashboard/articles/examples.html"></a></p>
 </section>
 <section id="shiny" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="shiny"><span class="header-section-number">4.3</span> Shiny</h2>
-<section id="introdução-e-exemplos" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="introdução-e-exemplos"><span class="header-section-number">4.3.1</span> 1.1 Introdução e Exemplos</h3>
 <p>Shiny* é um pacote do <strong>R</strong> que permite a construção de aplicações web para analise de dados usando comandos em <strong>R</strong> sem precisar de conhecimentos de <em>HTML</em>, <em>CSS</em> e nem <em>JavaScript</em>.</p>
 <p>dentre suas principais vantagens destacamos:</p>
 <ol type="1">
@@ -274,11 +372,11 @@ window.Quarto = {
 <p>como foi dito no item 5 uma parte do código é executada no servidor e outra no seu browser (Chrome, firefox, etc…) assim quando modificamos um parâmetro na UI de nosso cliente (browser) esbida. sa informação e enviada ao <em>server</em> que a processa e envia novamente os resultados ao nosso cliente para ser exibida.</p>
 <p><img src="server.png" class="img-fluid"></p>
 <p>Para instalar o <em>Shiny</em> no seu computador</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"shiny"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"shiny"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vamos agora demonstrar rodando um dos exemplos que acompanha o pacote</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runExample</span>(<span class="st">"01_hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">runExample</span>(<span class="st">"01_hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Após rodarmos o exemplo teremos uma tela com 3 áreas distintas mas antes de falarmos nelas repare que você esta em uma pagina web (elipse no alto a esquerda) que esta pagina está sendo exibida pelo Rstudio no endereço http://127.0.0.1:3842 ou seja, na sua maquina local na porta 3842. o Shiny iniciou um <em>server</em> na sua maquina</p>
 <p><img src="ex1.png" class="img-fluid"></p>
 <ol type="1">
@@ -289,81 +387,81 @@ window.Quarto = {
 </ol>
 <p>Em uma aplicação típica o item 1 e o 2 são definidos na <em>UI</em> (user interface) , e o resultado exibido no item 2 é o que retornam de fa função <em>Server</em></p>
 <p>Para se criar um <em>App</em> é necessário definir no mínimo duas funções <strong>ui</strong> e <strong>server</strong> vamos dar uma olhada no código fonte como comentários extras para explicar melhor como um <em>App</em> funciona.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># o App inicia chamando a biblioteca shiny</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># o trecho a seguir define a UI, interface com o usuario</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># que neste exemplo e um controle deslizante que permite </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># o parametro bin seja modificado!</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># função fluidPage define varios componetes da UI</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI for app that draws a histogram ----</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># App title ----</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Hello Shiny!"</span>),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sidebar layout with input and output definitions ----</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sidebar panel for inputs ----</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Input: Slider for the number of bins ----</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bins"</span>,</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                  <span class="at">label =</span> <span class="st">"Number of bins:"</span>,</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                  <span class="at">min =</span> <span class="dv">1</span>,</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                  <span class="at">max =</span> <span class="dv">50</span>,</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">value =</span> <span class="dv">30</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Nesta parte da UI é definida a tela de "Resultados"</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Neste exemplo um histograma  </span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Main panel for displaying outputs ----</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Output: Histogram ----</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"distPlot"</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co"># A seguir temos a segunda parte do codigo que é a definição da função</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Server que vai execurar o codigo R usando os parametros definidos na funcão UI</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co"># neste caso o histograma</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic required to draw a histogram ----</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Histogram of the Old Faithful Geyser Data ----</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># with requested number of bins</span></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This expression that generates a histogram is wrapped in a call</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># to renderPlot to indicate that:</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. It is "reactive" and therefore should be automatically</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    re-executed when inputs (input$bins) change</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. Its output type is a plot</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    x    <span class="ot">&lt;-</span> faithful<span class="sc">$</span>waiting</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">"#75AADB"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"Waiting time to next eruption (in mins)"</span>,</span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span> <span class="st">"Histogram of waiting times"</span>)</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="co"># por fim uma parametro que faz a execução do aplicativo</span></span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="co"># essa função rececbe o nome das funçoes UI e Server</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Shiny app ----</span></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># o App inicia chamando a biblioteca shiny</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># o trecho a seguir define a UI, interface com o usuario</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># que neste exemplo e um controle deslizante que permite </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># o parametro bin seja modificado!</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># função fluidPage define varios componetes da UI</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Define UI for app that draws a histogram ----</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># App title ----</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Hello Shiny!"</span>),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sidebar layout with input and output definitions ----</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sidebar panel for inputs ----</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarPanel</span>(</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Input: Slider for the number of bins ----</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bins"</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                  <span class="at">label =</span> <span class="st">"Number of bins:"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                  <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>                  <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Nesta parte da UI é definida a tela de "Resultados"</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Neste exemplo um histograma  </span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Main panel for displaying outputs ----</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mainPanel</span>(</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Output: Histogram ----</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"distPlot"</span>)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="co"># A seguir temos a segunda parte do codigo que é a definição da função</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Server que vai execurar o codigo R usando os parametros definidos na funcão UI</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co"># neste caso o histograma</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Define server logic required to draw a histogram ----</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Histogram of the Old Faithful Geyser Data ----</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># with requested number of bins</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This expression that generates a histogram is wrapped in a call</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># to renderPlot to indicate that:</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. It is "reactive" and therefore should be automatically</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    re-executed when inputs (input$bins) change</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. Its output type is a plot</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>    x    <span class="ot">&lt;-</span> faithful<span class="sc">$</span>waiting</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">"#75AADB"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">"Waiting time to next eruption (in mins)"</span>,</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span> <span class="st">"Histogram of waiting times"</span>)</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="co"># por fim uma parametro que faz a execução do aplicativo</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="co"># essa função rececbe o nome das funçoes UI e Server</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Shiny app ----</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Teste algum dos exemplos disponíveis com o pacote <em>Shiny</em> .os exemplos são :</p>
 <p>use a função <strong>runExample()</strong> para executar um deles.</p>
 <pre><code>runExample("01_hello")      # um histograma
@@ -379,24 +477,23 @@ runExample("10_download")   # download de um DF para arquivo
 runExample("11_timer")      # exibe um timer </code></pre>
 <p>Veja o potencial das aplicações na <a href="https://shiny.rstudio.com/gallery/">Galeria Shiny</a>, mas saiba que construir uma aplicação mais complexa e trabalhoso e exige conhecimentos de programação que vão alem do <strong>R</strong> básico.</p>
 <p>Repare que aqui você vai estar usando servidores remotos para executar as aplicações. O Shiny disponibiliza um serviço http://www.shinyapps.io/ que permite que você hospede gratuitamente até 5 aplicações, lembrando que neste modo todos seus códigos e dados estão visíveis a todas as pessoas.</p>
-</section>
-<section id="criando-um-app" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="criando-um-app"><span class="header-section-number">4.3.2</span> 1.2 Criando um App</h3>
+<section id="criando-um-app" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="criando-um-app"><span class="header-section-number">4.3.1</span> 1.2 Criando um App</h3>
 <p>Para criar um é necessário ter uma boa ideia do que se deseja atingir com ele, bem como pensar bem como se dará a interação como o usuários e quais as respostas esperadas. e estar preparado para testar inúmeras vezes.</p>
 </section>
-<section id="ui-e-widgets" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="ui-e-widgets"><span class="header-section-number">4.3.3</span> 1.3 UI e Widgets</h3>
+<section id="ui-e-widgets" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="ui-e-widgets"><span class="header-section-number">4.3.2</span> 1.3 UI e Widgets</h3>
 <p>Como podemos ver no exemplo <em>07_widgets</em> nossa interação com a UI se da através de botões, opções de checkbox, datas, etc… que chamamos de <em>widgets</em>. Eles são definidos através de funções especificas para cada tipo com seus parâmetros, opções diferentes. Abaixo podemos ver os principais deles.</p>
 <p><img src="ex2.png" class="img-fluid"></p>
 <p>Alem dos <em>widgets</em> é necessário, na parte final do <em>UI</em> especificar o tipo de saída (<em>output</em>) onde o resultado é comunicado ao usuário através de tabelas, gráficos, imagens , textos. Os textos podem ter resultados de funções ou ate mesmo códigos HTML embutidos</p>
 </section>
-<section id="server" class="level3" data-number="4.3.4">
-<h3 data-number="4.3.4" class="anchored" data-anchor-id="server"><span class="header-section-number">4.3.4</span> 1.4 Server</h3>
+<section id="server" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="server"><span class="header-section-number">4.3.3</span> 1.4 Server</h3>
 <p>A principal função executada pelo <em>server</em> e reagir as especificações e modificações nos parâmetros de entrada, que são acessados através dos widgets. Em resumo a função server vai rodar seu código usando como <em>input</em> os parâmetros dos <em>widgets</em>. Essa característica é que vai tornar o <em>App</em> verdadeiramente interativo, reagindo a cada mudança .</p>
 <p>A preocupação e que nessa sessão os tipo de entrada correspondam as que foram especificas na UI bem como o tipo de <em>output</em> que foi declarado. Assim, se declaramos na <em>UI</em> que o output seria um tipo de <em>plot</em> o resultado não pode ser uma tabela.</p>
 </section>
-<section id="um-exemplo-de-app-bem-simples" class="level3" data-number="4.3.5">
-<h3 data-number="4.3.5" class="anchored" data-anchor-id="um-exemplo-de-app-bem-simples"><span class="header-section-number">4.3.5</span> 1.5 Um exemplo de App bem simples</h3>
+<section id="um-exemplo-de-app-bem-simples" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="um-exemplo-de-app-bem-simples"><span class="header-section-number">4.3.4</span> 1.5 Um exemplo de App bem simples</h3>
 <p>Como dissemos anteriormente a primeira coisa a fazer é planejar bem o que deseja. Vamos imaginar um <em>App</em> que permita escolher uma das variáveis de um dos exemplos do <strong>R</strong>, digamos, o <em>iris</em> e fazer uma estatística sumaria da variável selecionada.</p>
 <p>Primeiramente vamos então pensar na interface</p>
 <ul>
@@ -404,70 +501,70 @@ runExample("11_timer")      # exibe um timer </code></pre>
 <li>um painel lateral com um <em>widget</em> de seleção do nome da variável</li>
 <li>um painel principal com o texto do tipo verbatimText e como o nome <em>sumario</em></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  o UI </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="co"># titulo do painel lateral</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">titlePanel</span>(<span class="st">"Sumario"</span>),</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>   <span class="co"># barra lateral com lista de input</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">sidebarLayout</span>(</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sidebarPanel</span>(</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">selectInput</span>(<span class="st">"VAR"</span>, </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Seleção da Variavel"</span>, </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">choices =</span> <span class="fu">names</span>(iris), <span class="at">selected =</span> <span class="dv">1</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Define o painel principal como sendo texto (verbatin)</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mainPanel</span>(</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>         <span class="fu">verbatimTextOutput</span>(<span class="st">"sumario"</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>   )</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  o UI </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>   <span class="co"># titulo do painel lateral</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">titlePanel</span>(<span class="st">"Sumario"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>   <span class="co"># barra lateral com lista de input</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">sidebarLayout</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sidebarPanel</span>(</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>            <span class="fu">selectInput</span>(<span class="st">"VAR"</span>, </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"Seleção da Variavel"</span>, </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">choices =</span> <span class="fu">names</span>(iris), <span class="at">selected =</span> <span class="dv">1</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Define o painel principal como sendo texto (verbatin)</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mainPanel</span>(</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>         <span class="fu">verbatimTextOutput</span>(<span class="st">"sumario"</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Em seguida definimos a função <em>server</em></p>
-<p>observe que fazemos apenas um <strong>cat()</strong> com o texto e o resultado da função <strong>summary()</strong> , a seleção da variável e feita a partir do resultado de <strong>SelectInput()</strong> no UI, que define o nome da variável como <em>VAR</em> ,e vamos usar seu nome dentro da função <em>server</em> como <em>input<span class="math inline">\(VAR* . Por fim observe que o nome do objeto retornado pela função **renderPrint()** é *output\)</span>sumario</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  server e a funçao de output do tipo Print</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado de um summary</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>   output<span class="sc">$</span>sumario <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">cat</span>(<span class="st">"Resultado da variável = "</span>,input<span class="sc">$</span>VAR,<span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>     <span class="fu">summary</span>(iris[,input<span class="sc">$</span>VAR])</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        })</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>observe que fazemos apenas um <strong>cat()</strong> com o texto e o resultado da função <strong>summary()</strong> , a seleção da variável e feita a partir do resultado de <strong>SelectInput()</strong> no UI, que define o nome da variável como <em>VAR</em> ,e vamos usar seu nome dentro da função <em>server</em> como <em>input</em><span class="math inline">\(VAR* . Por fim observe que o nome do objeto retornado pela função **renderPrint()** é *output\)</span>sumario</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  server e a funçao de output do tipo Print</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado de um summary</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>   output<span class="sc">$</span>sumario <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">cat</span>(<span class="st">"Resultado da variável = "</span>,input<span class="sc">$</span>VAR,<span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>     <span class="fu">summary</span>(iris[,input<span class="sc">$</span>VAR])</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>colocando tudo junto em um único arquivo de nome <em>App.R</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chama  o shiny</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  o UI</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(<span class="co"># titulo do painel lateral</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Sumario"</span>),</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># barra lateral com lista de input</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(<span class="fu">sidebarPanel</span>(</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">selectInput</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"VAR"</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Seleção da Variavel"</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">choices =</span> <span class="fu">names</span>(iris),</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">selected =</span> <span class="dv">1</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define o painel principal como sendo texto (verbatin)</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mainPanel</span>(<span class="fu">verbatimTextOutput</span>(<span class="st">"sumario"</span>))))</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  server e a funçao de output do tipo Print</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado de um summary</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>sumario <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Resultado Var = "</span>, input<span class="sc">$</span>VAR, <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(iris[, input<span class="sc">$</span>VAR])</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicia o app usando as funçoes ui e server</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chama  o shiny</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  o UI</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(<span class="co"># titulo do painel lateral</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Sumario"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># barra lateral com lista de input</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sidebarLayout</span>(<span class="fu">sidebarPanel</span>(</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">selectInput</span>(</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"VAR"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Seleção da Variavel"</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">choices =</span> <span class="fu">names</span>(iris),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">selected =</span> <span class="dv">1</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define o painel principal como sendo texto (verbatin)</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mainPanel</span>(<span class="fu">verbatimTextOutput</span>(<span class="st">"sumario"</span>))))</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Define  server e a funçao de output do tipo Print</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># resultado de um summary</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>sumario <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Resultado Var = "</span>, input<span class="sc">$</span>VAR, <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(iris[, input<span class="sc">$</span>VAR])</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicia o app usando as funçoes ui e server</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Execute o <em>App</em> e verifique se tudo está funcionando.</p>
 <p>Pense em implementar um que alem da estatística sumaria também fizesse um <em>boxplot</em> das variáveis! O que você deveria adicionar ao código? Bastaria fazer uma chamada a função <em>boxplot</em> em <em>server</em> ? Ou seria necessários outros passos adicionais? Que erros potenciais você enxergaria com essa aplicação ?</p>
 <p>Essa foi uma brevíssima introdução ao potencial do <em>Shiny</em> aprenda mais em</p>
