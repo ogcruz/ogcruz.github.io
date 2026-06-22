@@ -1,0 +1,332 @@
+[
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html",
+    "href": "anexos/anexo_era5_copernicus.html",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "",
+    "text": "7 Apresentação\nEste anexo apresenta o Copernicus Climate Data Store (CDS), uma plataforma gratuita e aberta mantida pelo Serviço de Mudanças Climáticas Copernicus (C3S) da União Europeia, que disponibiliza reanálises climáticas globais de alta qualidade para uso científico e técnico.\nNo contexto do curso CISC, o CDS é utilizado como fonte de dados climáticos diários — temperatura do ar, ponto de orvalho e precipitação — a partir do produto ERA5-Land, com cobertura histórica a partir de 1950 e atualização regular com poucos dias de defasagem.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#navegando-até-o-cds",
+    "href": "anexos/anexo_era5_copernicus.html#navegando-até-o-cds",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "8.1 Navegando até o CDS",
+    "text": "8.1 Navegando até o CDS\nO ponto de entrada é o portal principal do Copernicus, em climate.copernicus.eu.\n\n\n\nPágina principal do portal Copernicus Climate Change Service.\n\n\nNa barra de navegação superior, clique na aba Data para acessar os produtos disponíveis.\n\n\n\nA aba “Data” na barra de navegação do portal Copernicus.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#o-climate-data-store",
+    "href": "anexos/anexo_era5_copernicus.html#o-climate-data-store",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "8.2 O Climate Data Store",
+    "text": "8.2 O Climate Data Store\nApós clicar em Data, você será direcionado à página do Climate Data Store (CDS) — o repositório central de dados climáticos do Copernicus.\n\n\n\nPágina inicial do Climate Data Store.\n\n\nPara explorar os produtos disponíveis, clique na aba Datasets.\n\n\n\nA aba “Datasets” na barra de navegação do CDS.\n\n\nA página de Datasets lista os produtos disponíveis para download, incluindo o ERA5-Land que utilizaremos neste curso.\n\n\n\nCatálogo de datasets disponíveis no CDS.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#iniciando-o-cadastro",
+    "href": "anexos/anexo_era5_copernicus.html#iniciando-o-cadastro",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "9.1 Iniciando o cadastro",
+    "text": "9.1 Iniciando o cadastro\nNa página inicial do CDS, clique em Login / Register no canto superior direito.\n\n\n\nOpção de Login/Register na página inicial do CDS.\n\n\nVocê será redirecionado para a página de autenticação do ECMWF.\n\n\n\nPágina de login do ECMWF.\n\n\nComo ainda não possui conta, clique na opção de criar uma nova conta.\n\n\n\nOpção de criação de conta na página de login.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Curso CISC",
+    "section": "",
+    "text": "1 Introdução",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#o-que-é-análise-de-dados-de-clima-e-saúde",
+    "href": "index.html#o-que-é-análise-de-dados-de-clima-e-saúde",
+    "title": "Curso CISC",
+    "section": "1.1 O que é análise de dados de clima e saúde?",
+    "text": "1.1 O que é análise de dados de clima e saúde?\nA análise de dados de clima e saúde é um campo interdisciplinar que combina conhecimentos de meteorologia, epidemiologia, estatística e ciência de dados para entender como as condições climáticas afetam a saúde humana. Essa análise envolve a coleta, processamento e interpretação de dados relacionados ao clima (como temperatura, umidade, precipitação) e à saúde (como incidência de doenças, hospitalizações, mortalidade) para identificar padrões, tendências e relações causais.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#por-que-é-importante-analisar-dados-de-clima-e-saúde",
+    "href": "index.html#por-que-é-importante-analisar-dados-de-clima-e-saúde",
+    "title": "Curso CISC",
+    "section": "1.2 Por que é importante analisar dados de clima e saúde?",
+    "text": "1.2 Por que é importante analisar dados de clima e saúde?\nA análise de dados de clima e saúde é crucial para: - Prevenção de doenças: Identificar como as condições climáticas influenciam a propagação de doenças, como doenças respiratórias, doenças transmitidas por vetores e doenças relacionadas ao calor. - Planejamento de políticas públicas: Informar políticas de saúde pública e estratégias de mitigação para proteger a população contra os impactos negativos do clima. - Adaptação às mudanças climáticas: Compreender como as mudanças climáticas podem afetar a saúde humana no futuro e desenvolver estratégias de adaptação. - Resposta a emergências: Preparar sistemas de saúde para responder a eventos climáticos extremos, como ondas de calor, tempestades e inundações.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#quais-são-os-principais-desafios-na-análise-de-dados-de-clima-e-saúde",
+    "href": "index.html#quais-são-os-principais-desafios-na-análise-de-dados-de-clima-e-saúde",
+    "title": "Curso CISC",
+    "section": "1.3 Quais são os principais desafios na análise de dados de clima e saúde?",
+    "text": "1.3 Quais são os principais desafios na análise de dados de clima e saúde?\n\nobtençcão de dados climaticos: A obtenção de dados climáticos de qualidade e resoluções temporais e espaciais pode ser difícil, especialmente em regiões com infraestrutura limitada para monitoramento climático. Alternativamente podemos usar dados obtidos de aeroportos (REDEMET) ou dados de satelites.\nQualidade dos dados de saúde: Alem dos sistemas tradicionais como SIM,AIH , etc… A existencia de dados de assistenciais pode não existir ou ser inconsistente, incompleta ou imprecisa, o que pode dificultar bastante as análises.\nComplexidade das relações: As relações entre clima e saúde são complexas e podem ser influenciadas por muitos fatores, como comportamento humano, condições socioeconômicas e acesso a serviços de saúde.\nModelagem estatística: Desenvolver modelos estatísticos que capturem adequadamente as relações entre clima e saúde pode ser desafiador, especialmente quando há muitos fatores de confusão.\nInterdisciplinaridade: A análise de dados de clima e saúde requer colaboração entre especialistas de diferentes áreas, o que pode ser difícil de coordenar.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#ciênca-de-dados-e-análise-de-dados-de-clima-e-saúde",
+    "href": "index.html#ciênca-de-dados-e-análise-de-dados-de-clima-e-saúde",
+    "title": "Curso CISC",
+    "section": "1.4 Ciênca de dados e análise de dados de clima e saúde",
+    "text": "1.4 Ciênca de dados e análise de dados de clima e saúde\nA ciência de dados desempenha um papel fundamental na análise do impacto ambiental na saúde pública, fornecendo ferramentas essenciais para processar e interpretar grandes volumes de informações. Por meio de métodos estatísticos avançados, aprendizado de máquina e técnicas de visualização, essa disciplina permite identificar padrões e relações complexas entre variáveis climáticas e epidemiológicas. Além disso, a abordagem facilita a integração de diferentes fontes — como registros meteorológicos, dados de saúde e indicadores socioeconômicos —, proporcionando uma compreensão muito mais completa dessas interações.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#conclusão",
+    "href": "index.html#conclusão",
+    "title": "Curso CISC",
+    "section": "1.5 Conclusão",
+    "text": "1.5 Conclusão\nA análise de dados de clima e saúde é um campo vital para entender e mitigar os impactos do clima na saúde humana. Com a crescente preocupação com as mudanças climáticas, a análise de dados de clima e saúde se torna cada vez mais importante para informar políticas públicas, planejar respostas a emergências e proteger a saúde da população. Apesar dos desafios, avanços na coleta de dados, modelagem estatística e colaboração interdisciplinar estão ajudando a superar essas dificuldades e a melhorar nossa compreensão das complexas relações entre clima e saúde.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introdução</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#preenchendo-os-dados-de-cadastro",
+    "href": "anexos/anexo_era5_copernicus.html#preenchendo-os-dados-de-cadastro",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "9.2 Preenchendo os dados de cadastro",
+    "text": "9.2 Preenchendo os dados de cadastro\nPreencha os campos obrigatórios: nome, sobrenome, endereço de e-mail e senha.\n\n\n\nFormulário inicial de criação de conta: nome, sobrenome, e-mail e senha.\n\n\nApós submeter o formulário, o sistema enviará um e-mail de verificação.\n\n\n\nConfirmação de envio do e-mail de verificação.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#verificando-o-e-mail",
+    "href": "anexos/anexo_era5_copernicus.html#verificando-o-e-mail",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "9.3 Verificando o e-mail",
+    "text": "9.3 Verificando o e-mail\nAcesse sua caixa de entrada e abra o e-mail recebido do ECMWF. Clique no link de confirmação para continuar o cadastro.\n\n\n\nE-mail de verificação enviado pelo ECMWF com link de ativação.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#complementando-o-perfil",
+    "href": "anexos/anexo_era5_copernicus.html#complementando-o-perfil",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "9.4 Complementando o perfil",
+    "text": "9.4 Complementando o perfil\nAo clicar no link, você será redirecionado para uma segunda etapa de cadastro, onde deverá informar: país, afiliação, organização, atividade temática e setor de atividade. Também é necessário marcar a opção de aceite dos termos de uso.\n\n\n\nSegunda etapa do cadastro: informações institucionais e termos de uso.\n\n\nCom todos os campos preenchidos, clique no botão para ativar a conta.\n\n\n\nFormulário preenchido e botão de ativação da conta destacado.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#confirmando-o-login",
+    "href": "anexos/anexo_era5_copernicus.html#confirmando-o-login",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "10.1 Confirmando o login",
+    "text": "10.1 Confirmando o login\nApós ativar a conta e fazer login, o CDS exibirá seu nome de usuário no canto superior direito, confirmando que você está autenticado.\n\n\n\nNome do usuário logado exibido no canto superior direito do CDS.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#aceitando-as-licenças-de-uso",
+    "href": "anexos/anexo_era5_copernicus.html#aceitando-as-licenças-de-uso",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "10.2 Aceitando as licenças de uso",
+    "text": "10.2 Aceitando as licenças de uso\nClique no seu nome de usuário e acesse a aba Licenses. É necessário aceitar as licenças dos datasets que deseja utilizar antes de efetuar qualquer download.\n\n\n\n\n\n\nImportanteAtenção: licenças obrigatórias\n\n\n\nSem aceitar as licenças correspondentes, as requisições de download via API serão recusadas, mesmo com a chave configurada corretamente. Certifique-se de aceitar a licença do ERA5-Land antes de executar o script.\n\n\n\n\n\nAba “Licenses” no perfil do usuário, com opções de licença para aceite.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#obtendo-a-chave-da-api",
+    "href": "anexos/anexo_era5_copernicus.html#obtendo-a-chave-da-api",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "10.3 Obtendo a chave da API",
+    "text": "10.3 Obtendo a chave da API\nNa mesma área do perfil, acesse a aba Your profile. Lá você encontrará:\n\nA opção de revelar a chave da API (API key)\nA chave em si, que deverá ser copiada e colada no script R\n\n\n\n\nAba “Your profile” com opção de revelar e copiar a chave da API.\n\n\n\n\n\n\n\n\nDicaGuarde sua chave com cuidado\n\n\n\nA chave da API é pessoal e intransferível. Não a compartilhe publicamente (por exemplo, em repositórios GitHub abertos). No script do curso, ela é atribuída a uma variável local que não deve ser incluída em arquivos versionados.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#pacotes-necessários",
+    "href": "anexos/anexo_era5_copernicus.html#pacotes-necessários",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.1 Pacotes necessários",
+    "text": "11.1 Pacotes necessários\n\n\nMostrar código\n# ============================================================\n# Verificação e instalação automática de pacotes\n# ============================================================\n\npacotes_obrigatorios &lt;- c(\n  \"ecmwfr\",     # interface com a API do CDS\n  \"tidyverse\",  # manipulação de dados\n  \"purrr\",      # iteração funcional\n  \"ncdf4\",      # leitura de arquivos NetCDF\n  \"terra\",      # processamento de rasters\n  \"sf\",         # dados espaciais vetoriais\n  \"geobr\",      # limites municipais do Brasil\n  \"lubridate\"   # manipulação de datas\n)\n\npacotes_ausentes &lt;- pacotes_obrigatorios[\n  !sapply(pacotes_obrigatorios, require, character.only = TRUE, quietly = TRUE)\n]\n\nif (length(pacotes_ausentes) &gt; 0) {\n  message(\"Instalando pacotes ausentes: \",\n          paste(pacotes_ausentes, collapse = \", \"))\n  install.packages(pacotes_ausentes, dependencies = TRUE)\n\n  carregados &lt;- sapply(pacotes_ausentes, require, character.only = TRUE, quietly = TRUE)\n\n  if (!all(carregados)) {\n    stop(\"Falha ao carregar alguns pacotes: \",\n         paste(pacotes_ausentes[!carregados], collapse = \", \"))\n  }\n}",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#configuração-da-chave-de-api",
+    "href": "anexos/anexo_era5_copernicus.html#configuração-da-chave-de-api",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.2 Configuração da chave de API",
+    "text": "11.2 Configuração da chave de API\n\n\nMostrar código\n# ============================================================\n# Substitua pelo valor copiado da aba \"Your profile\" no CDS\n# ============================================================\n\nkey_CDO &lt;- \"COLE_SUA_CHAVE_AQUI\"\n\n# Registra a chave na sessão R — necessário antes de qualquer download\nwf_set_key(key = key_CDO)\n\n\n\n\n\n\n\n\nImportanteOnde obter a chave?\n\n\n\nAcesse cds.climate.copernicus.eu → clique no seu nome de usuário → aba Your profile → botão para revelar a chave → copie e cole acima, substituindo \"COLE_SUA_CHAVE_AQUI\".",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#área-de-interesse",
+    "href": "anexos/anexo_era5_copernicus.html#área-de-interesse",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.3 Área de interesse",
+    "text": "11.3 Área de interesse\n\n\nMostrar código\n# ============================================================\n# Define a área de download a partir do limite municipal (geobr)\n# Substitua o código IBGE pelo do município de interesse\n# ============================================================\n\n# Exemplo: Rio de Janeiro (código IBGE 3304557)\nshape  &lt;- geobr::read_municipality(code_muni = 3304557, year = 2020)\naoi_bb &lt;- sf::st_bbox(shape)\n\n# Formato exigido pelo CDS: norte, oeste, sul, leste\narea &lt;- c(aoi_bb[\"ymax\"], aoi_bb[\"xmin\"], aoi_bb[\"ymin\"], aoi_bb[\"xmax\"])\n\n\n\n\n\n\n\n\nDicaAdaptando para outro município\n\n\n\nBasta substituir o code_muni pelo código IBGE de 7 dígitos do município desejado. O bounding box é calculado automaticamente a partir do polígono municipal.\nPara obter o código IBGE, consulte ibge.gov.br/cidades-e-estados.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#seleção-do-período",
+    "href": "anexos/anexo_era5_copernicus.html#seleção-do-período",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.4 Seleção do período",
+    "text": "11.4 Seleção do período\nO script oferece quatro opções de seleção de datas. Escolha a que melhor se adapta ao seu fluxo de trabalho e atribua à variável datas_interesse.\n\n\nMostrar código\n# ============================================================\n# OPÇÃO 1 — Datas específicas (lista manual)\n# ============================================================\ndatas_especificas &lt;- as.Date(c(\n  \"2023-11-17\",\n  \"2023-11-18\",\n  \"2023-11-19\"\n))\n\n# ============================================================\n# OPÇÃO 2 — Combinações de ano × mês × dia\n# ============================================================\n# anos   &lt;- c(2023, 2024)\n# meses  &lt;- c(11, 12, 1)\n# dias   &lt;- c(1, 15)\n#\n# datas_por_componente &lt;- expand_grid(\n#   year  = anos,\n#   month = meses,\n#   day   = dias\n# ) %&gt;%\n#   mutate(date = make_date(year, month, day)) %&gt;%\n#   filter(!is.na(date)) %&gt;%\n#   pull(date)\n\n# ============================================================\n# OPÇÃO 3 — Intervalo contínuo entre duas datas\n# ============================================================\n# datas_intervalo &lt;- seq(\n#   as.Date(\"2023-11-01\"),\n#   as.Date(\"2023-11-30\"),\n#   by = \"day\"\n# )\n\n# ============================================================\n# OPÇÃO 4 — Do início do ano até ontem (pipeline automático)\n# ============================================================\n# datas_ate_ontem &lt;- seq(\n#   as.Date(\"2023-01-01\"),\n#   Sys.Date() - 1,\n#   by = \"day\"\n# )\n\n# ── Selecione qual opção usar ──────────────────────────────\ndatas_interesse &lt;- datas_especificas  # &lt;- troque aqui\n\n# Agrupa por ano-mês para montar as requisições ao CDS\nym &lt;- datas_interesse %&gt;%\n  as_tibble() %&gt;%\n  rename(date = value) %&gt;%\n  mutate(year = year(date), month = month(date), day = day(date)) %&gt;%\n  group_by(year, month) %&gt;%\n  summarise(days = list(day), .groups = \"drop\")\n\nprint(ym)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#funções-auxiliares",
+    "href": "anexos/anexo_era5_copernicus.html#funções-auxiliares",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.5 Funções auxiliares",
+    "text": "11.5 Funções auxiliares\n\n11.5.1 Função de download\n\n\nMostrar código\n# ============================================================\n# download_era5_days()\n# Baixa um arquivo NetCDF por variável e por mês,\n# pulando arquivos já existentes no diretório de saída.\n# ============================================================\n\ndownload_era5_days &lt;- function(year, month, days, variavel, prefix,\n                               dir_out = \"./era5/\") {\n  dir.create(dir_out, showWarnings = FALSE, recursive = TRUE)\n\n  target &lt;- paste0(prefix, \"_\", year, sprintf(\"%02d\", month), \".nc\")\n\n  # Evita redownload de arquivos já existentes\n  if (file.exists(file.path(dir_out, target))) {\n    cat(\"⏭ já existe:\", target, \"\\n\")\n    return(invisible(NULL))\n  }\n\n  request &lt;- list(\n    dataset_short_name = \"reanalysis-era5-land\",\n    product_type       = \"reanalysis\",\n    variable           = variavel,\n    year               = as.character(year),\n    month              = sprintf(\"%02d\", month),\n    day                = sprintf(\"%02d\", days),\n    time               = sprintf(\"%02d:00\", 0:23),  # todas as horas (24 layers/dia)\n    data_format        = \"netcdf\",\n    download_format    = \"unarchived\",\n    area               = area,\n    target             = target\n  )\n\n  tryCatch({\n    wf_request(request = request, transfer = TRUE,\n               path = dir_out, verbose = TRUE)\n    cat(\"✓\", prefix, year, sprintf(\"%02d\", month),\n        \"dias:\", paste(days, collapse = \", \"), \"\\n\")\n  }, error = function(e) {\n    cat(\"✗\", prefix, year, sprintf(\"%02d\", month), \":\", e$message, \"\\n\")\n    write_lines(\n      paste(prefix, year, month, \"FAILED\"),\n      file.path(dir_out, \"failed.txt\"),\n      append = TRUE\n    )\n  })\n}\n\n\n\n\n11.5.2 Função de processamento NetCDF → data.frame\n\n\nMostrar código\n# ============================================================\n# nc_to_df()\n# Converte um arquivo NetCDF horário em um data.frame diário,\n# aplicando a estatística escolhida (mean, max, min, sum)\n# e convertendo unidades:\n#   - temperatura: Kelvin → °C  (−273,15)\n#   - precipitação: m → mm      (×1000)\n# ============================================================\n\nnc_to_df &lt;- function(nc_path, varname,\n                     stat = c(\"mean\", \"max\", \"min\", \"sum\")) {\n  stat &lt;- match.arg(stat)\n\n  r        &lt;- rast(nc_path)\n  n_layers &lt;- nlyr(r)\n  n_days   &lt;- n_layers / 24\n  day_idx  &lt;- rep(1:n_days, each = 24)\n\n  # Agrega 24 camadas horárias em 1 camada diária\n  if (n_days == 1) {\n    r_daily &lt;- app(r, fun = stat)\n    names(r_daily) &lt;- \"lyr1\"\n  } else {\n    r_daily &lt;- tapp(r, day_idx, fun = stat)\n  }\n\n  # Conversão de unidades\n  varname_base &lt;- str_extract(varname, \"^[a-z0-9]+\")\n  if (varname_base == \"tp\") {\n    r_daily &lt;- r_daily * 1000       # m → mm\n  } else {\n    r_daily &lt;- r_daily - 273.15     # K → °C\n  }\n\n  # Extrai datas a partir dos metadados do arquivo NetCDF\n  nc    &lt;- ncdf4::nc_open(nc_path)\n  tempo &lt;- ncdf4::ncvar_get(nc, \"valid_time\")\n  ncdf4::nc_close(nc)\n\n  datas &lt;- as.Date(as.POSIXct(\n    tempo[seq(1, length(tempo), by = 24)],\n    origin = \"1970-01-01\", tz = \"UTC\"\n  ))\n\n  as.data.frame(r_daily, xy = TRUE) %&gt;%\n    rename(lon = x, lat = y) %&gt;%\n    pivot_longer(cols = -c(lon, lat),\n                 names_to = \"day_idx\", values_to = varname) %&gt;%\n    mutate(\n      day_idx = as.integer(str_extract(day_idx, \"\\\\d+\")),\n      date    = datas[day_idx]\n    ) %&gt;%\n    select(lon, lat, date, all_of(varname))\n}",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#executando-o-download",
+    "href": "anexos/anexo_era5_copernicus.html#executando-o-download",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.6 Executando o download",
+    "text": "11.6 Executando o download\n\n\nMostrar código\n# ============================================================\n# Variáveis para download\n# t2m = temperatura a 2 m (Kelvin → °C)\n# d2m = ponto de orvalho a 2 m (Kelvin → °C)\n# tp  = precipitação total (m → mm)\n# ============================================================\n\nvariaveis &lt;- list(\n  list(variavel = \"2m_temperature\",          prefix = \"t2m\"),\n  list(variavel = \"2m_dewpoint_temperature\", prefix = \"d2m\"),\n  list(variavel = \"total_precipitation\",     prefix = \"tp\")\n)\n\n# Itera sobre variáveis e meses\nwalk(variaveis, function(v) {\n  cat(\"\\n⬇ Baixando\", v$prefix, \"\\n\")\n  pwalk(ym, function(year, month, days) {\n    download_era5_days(year, month, days, v$variavel, v$prefix)\n  })\n})\n\n\n\n\n\n\n\n\nNotaTempo de download\n\n\n\nO CDS processa as requisições em fila. Dependendo do volume de dados e da carga do servidor, cada arquivo pode levar de segundos a vários minutos. O pacote ecmwfr aguarda automaticamente e exibe o progresso no console.\nArquivos já baixados são automaticamente pulados (verificação por nome de arquivo).",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#processando-os-arquivos-netcdf",
+    "href": "anexos/anexo_era5_copernicus.html#processando-os-arquivos-netcdf",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.7 Processando os arquivos NetCDF",
+    "text": "11.7 Processando os arquivos NetCDF\n\n\nMostrar código\n# ============================================================\n# Lista os arquivos baixados por variável\n# ============================================================\n\narquivos_t2m &lt;- list.files(\"./era5/\", pattern = \"^t2m_.*\\\\.nc$\", full.names = TRUE)\narquivos_d2m &lt;- list.files(\"./era5/\", pattern = \"^d2m_.*\\\\.nc$\", full.names = TRUE)\narquivos_tp  &lt;- list.files(\"./era5/\", pattern = \"^tp_.*\\\\.nc$\",  full.names = TRUE)\n\n# Processa cada conjunto de arquivos com as estatísticas diárias\ndf_t2m_mean &lt;- map_dfr(arquivos_t2m, nc_to_df, varname = \"t2m_mean\", stat = \"mean\")\ndf_t2m_max  &lt;- map_dfr(arquivos_t2m, nc_to_df, varname = \"t2m_max\",  stat = \"max\")\ndf_t2m_min  &lt;- map_dfr(arquivos_t2m, nc_to_df, varname = \"t2m_min\",  stat = \"min\")\ndf_d2m_mean &lt;- map_dfr(arquivos_d2m, nc_to_df, varname = \"d2m_mean\", stat = \"mean\")\ndf_d2m_max  &lt;- map_dfr(arquivos_d2m, nc_to_df, varname = \"d2m_max\",  stat = \"max\")\ndf_d2m_min  &lt;- map_dfr(arquivos_d2m, nc_to_df, varname = \"d2m_min\",  stat = \"min\")\ndf_tp_sum   &lt;- map_dfr(arquivos_tp,  nc_to_df, varname = \"tp_mm\",    stat = \"sum\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#consolidando-o-data.frame-final",
+    "href": "anexos/anexo_era5_copernicus.html#consolidando-o-data.frame-final",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.8 Consolidando o data.frame final",
+    "text": "11.8 Consolidando o data.frame final\n\n\nMostrar código\n# ============================================================\n# Integra todas as variáveis e calcula a umidade relativa\n# ============================================================\n\ndf_final &lt;- df_t2m_mean %&gt;%\n  left_join(df_t2m_max,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_t2m_min,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_d2m_mean, by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_d2m_max,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_d2m_min,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_tp_sum,   by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  filter(date %in% datas_interesse) %&gt;%\n  mutate(\n    # Precipitação: trata NA como zero (ausência de chuva)\n    tp_mm = replace_na(tp_mm, 0),\n\n    # Umidade relativa via fórmula de Magnus (truncada em [0, 100])\n    rh_mean = pmin(100, pmax(0,\n      100 * exp(17.625 * d2m_mean / (243.04 + d2m_mean)) /\n            exp(17.625 * t2m_mean / (243.04 + t2m_mean)))),\n\n    # rh_max: orvalho máximo / temperatura mínima (condição mais úmida)\n    rh_max  = pmin(100, pmax(0,\n      100 * exp(17.625 * d2m_max  / (243.04 + d2m_max))  /\n            exp(17.625 * t2m_min  / (243.04 + t2m_min)))),\n\n    # rh_min: orvalho mínimo / temperatura máxima (condição mais seca)\n    rh_min  = pmin(100, pmax(0,\n      100 * exp(17.625 * d2m_min  / (243.04 + d2m_min))  /\n            exp(17.625 * t2m_max  / (243.04 + t2m_max))))\n  ) %&gt;%\n  arrange(date, lat, lon)\n\n# Estrutura esperada do data.frame final:\n# lon | lat | date | t2m_mean | t2m_max | t2m_min |\n# d2m_mean | d2m_max | d2m_min | tp_mm |\n# rh_mean  | rh_max  | rh_min\n\nglimpse(df_final)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "anexos/anexo_era5_copernicus.html#salvando-o-resultado",
+    "href": "anexos/anexo_era5_copernicus.html#salvando-o-resultado",
+    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
+    "section": "11.9 Salvando o resultado",
+    "text": "11.9 Salvando o resultado\n\n\nMostrar código\n# ============================================================\n# Salva em formato .rds para uso nas análises do boletim\n# ============================================================\n\nsaveRDS(df_final, \"./era5/era5_completo.rds\")\n\n# Para carregar posteriormente:\n# df_final &lt;- readRDS(\"./era5/era5_completo.rds\")\n\n\n\n\n\n\n\n\nDicaIntegrando ao boletim\n\n\n\nO arquivo era5_completo.rds pode ser lido diretamente no modelo_boletim_saude_clima_cisc.qmd, na seção de importação de bases climáticas:\nclima &lt;- readRDS(file.path(dir_dados_proc, \"era5_completo.rds\"))\nAdapte o caminho conforme a estrutura de diretórios do seu projeto.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "",
+    "text": "7.1 Introdução ao R\nO R é uma linguagem de programação gratuita e de código aberto voltada para análise estatística, visualização de dados e computação científica. É amplamente utilizado em epidemiologia, saúde pública e ciências ambientais, sendo uma ferramenta essencial para quem trabalha com dados de saúde e clima.\nO RStudio é um ambiente de desenvolvimento integrado (IDE) que facilita o uso do R, oferecendo editor de código, console, visualização de gráficos e gerenciamento de projetos em uma única interface.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#introdução-ao-r",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#introdução-ao-r",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "",
+    "text": "⚠️ Importante: instale primeiro o R e depois o RStudio. O RStudio depende do R para funcionar — sem o R instalado, o RStudio não abrirá corretamente.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-windows",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-windows",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "7.2 Instalação no Windows",
+    "text": "7.2 Instalação no Windows\n\n7.2.1 1. Instalar o R\n\nAcesse https://cran.r-project.org/\nClique em “Download R for Windows” → “base”\nBaixe e execute o instalador (ex.: R-4.6.0-win.exe)\nSiga as instruções padrão do instalador\n\n\n\n\nPágina de download do R para Windows no CRAN\n\n\nApós a instalação, você pode abrir o R Console diretamente — ele terá a seguinte aparência:\n\n\n\nR Console aberto no Windows\n\n\n\n💡 Dica: o R Console básico (Rgui) já funciona, mas é muito limitado. Na prática, usaremos sempre o RStudio, que instalamos a seguir.\n\n\n\n7.2.2 2. Instalar o Rtools (recomendado)\nO Rtools é necessário para compilar pacotes a partir do código-fonte no Windows. Muitos pacotes de análise espacial e dados ambientais exigem o Rtools.\n\nAcesse https://cran.r-project.org/bin/windows/Rtools/\nBaixe a versão compatível com sua versão do R (ex.: Rtools44 para R 4.4.x, Rtools46 para R 4.6.x)\nExecute o instalador e mantenha as opções padrão\nApós instalar, abra o R e execute:\n\n# Verificar se o Rtools foi reconhecido\ninstall.packages(\"pkgbuild\")\npkgbuild::has_build_tools(debug = TRUE)\n\n\n7.2.3 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o instalador para Windows e execute\nSiga as instruções padrão",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-linux-ubuntulinux-mint",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-linux-ubuntulinux-mint",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "7.3 Instalação no Linux (Ubuntu/Linux Mint)",
+    "text": "7.3 Instalação no Linux (Ubuntu/Linux Mint)\n\n7.3.1 1. Instalar dependências do sistema\nAntes de instalar o R, garanta que as bibliotecas necessárias estejam presentes:\nsudo apt update\nsudo apt install -y \\\n    software-properties-common \\\n    dirmngr \\\n    gnupg \\\n    apt-transport-https \\\n    ca-certificates \\\n    curl \\\n    build-essential \\\n    libcurl4-openssl-dev \\\n    libssl-dev \\\n    libxml2-dev \\\n    libfontconfig1-dev \\\n    libharfbuzz-dev \\\n    libfribidi-dev \\\n    libfreetype6-dev \\\n    libpng-dev \\\n    libtiff5-dev \\\n    libjpeg-dev \\\n    libgdal-dev \\\n    libgeos-dev \\\n    libproj-dev\n\n\n7.3.2 2. Instalar o R\nO CRAN oferece instruções específicas para Ubuntu e distribuições derivadas (como o Linux Mint):\n\n\n\nPágina de instalação do R para Ubuntu/Linux no CRAN\n\n\n# Adicionar repositório CRAN\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\n\nsudo apt update\nsudo apt install -y r-base r-base-dev\n\n⚠️ Linux Mint: o comando $(lsb_release -cs) pode retornar o codinome do Mint (ex.: wilma) em vez do Ubuntu base (ex.: noble). Se o repositório não for encontrado, substitua manualmente pelo codinome Ubuntu correspondente. Consulte a tabela de equivalência.\n\nApós a instalação, você pode abrir o R diretamente no terminal digitando R:\n\n\n\nR aberto no terminal do Linux\n\n\n\n💡 Dica: assim como no Windows, o R no terminal é funcional mas limitado. Usaremos o RStudio no dia a dia.\n\n\n\n7.3.3 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o pacote .deb (compatível com Ubuntu e Linux Mint)\nInstale via terminal:\n\nsudo dpkg -i rstudio-*.deb\nsudo apt --fix-broken install   # corrige dependências, se necessário",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-macos",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-macos",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "7.4 Instalação no macOS",
+    "text": "7.4 Instalação no macOS\n\n7.4.1 1. Instalar o R\n\nAcesse https://cran.r-project.org/ → “Download R for macOS”\nEscolha o instalador correto para o seu chip:\n\n\n\n\nPágina de download do R para macOS no CRAN — opções arm64 (Apple Silicon) e x86_64 (Intel)\n\n\n\nApple Silicon (M1/M2/M3): R-4.6.0-arm64.pkg\nIntel: R-4.6.0-x86_64.pkg\n\n\nExecute o .pkg e siga as instruções\n\n\n💡 Não sabe qual chip tem? Clique em → Sobre este Mac. Se aparecer “Chip Apple M…” é Apple Silicon; se aparecer “Processador Intel”, é Intel.\n\nApós a instalação, o R Console no macOS terá esta aparência:\n\n\n\nR Console aberto no macOS\n\n\n\n\n7.4.2 2. Instalar ferramentas de compilação (recomendado)\nxcode-select --install\nPara pacotes que exigem Fortran, instale também o gfortran em https://mac.r-project.org/tools/.\n\n\n7.4.3 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o .dmg para macOS\nArraste o RStudio para a pasta Aplicativos",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#conhecendo-o-rstudio",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#conhecendo-o-rstudio",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "7.5 Conhecendo o RStudio",
+    "text": "7.5 Conhecendo o RStudio\nApós instalar o R e o RStudio, abra o RStudio (não o R diretamente). A interface é dividida em 4 painéis:\n\n\n\n\nInterface do RStudio com os 4 painéis principais\n\n\n\n\n\n\n\n\n\n\nPainel\nLocalização\nFunção\n\n\n\n\nEditor\nSuperior esquerdo\nEscrever e salvar scripts .R\n\n\nConsole\nInferior esquerdo\nExecutar comandos e ver resultados\n\n\nEnvironment\nSuperior direito\nVisualizar objetos criados na sessão\n\n\nFiles / Plots / Help\nInferior direito\nNavegar arquivos, ver gráficos e buscar ajuda",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#verificando-a-instalação-e-primeiros-passos",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#verificando-a-instalação-e-primeiros-passos",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "7.6 Verificando a instalação e primeiros passos",
+    "text": "7.6 Verificando a instalação e primeiros passos\nAbra o RStudio e no Console execute os comandos abaixo um a um:\n# 1. Verificar a versão do R instalada\nR.version.string\n\n# 2. Instalar um pacote (só é necessário fazer isso uma vez)\ninstall.packages(\"tidyverse\")\n\n# 3. Carregar o pacote na sessão atual\nlibrary(tidyverse)\n\n# 4. Ver a lista de pacotes carregados\nsessionInfo()\n\n✅ Instalação concluída! Se não houver mensagens de erro após library(tidyverse), seu ambiente está pronto para as próximas práticas do curso.\n\n\n💡 Diferença importante:\n\ninstall.packages(\"nome\") → baixa e instala o pacote no seu computador. Faça uma vez.\nlibrary(nome) → carrega o pacote na sessão atual. Faça toda vez que abrir o RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#material-de-apoio-externo",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#material-de-apoio-externo",
+    "title": "7  Pratica - Instalando o R e RStudio",
+    "section": "7.7 Material de apoio externo",
+    "text": "7.7 Material de apoio externo\nCaso precise de suporte adicional durante a instalação, indicamos os vídeos do curso “Análise de dados para a vigilância em saúde” (UFSC). Trata-se de um curso de outra instituição, disponibilizado como referência complementar — não faz parte da programação do nosso curso.\n\n🎬 Vídeos de instalação (material externo — UFSC): Acesse aqui\nOs vídeos do Módulo 1 cobrem em detalhe a instalação do R e a introdução ao RStudio, caso você precise de um passo a passo mais detalhado do que o apresentado neste documento.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+    ]
+  }
+]
