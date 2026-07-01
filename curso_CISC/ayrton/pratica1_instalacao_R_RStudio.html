@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Pratica - Instalando o R e RStudio – Curso CISC</title>
+<title>6&nbsp; Introdução ao R – Curso CISC</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,17 +65,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../anexos/anexo_era5_copernicus.html" rel="prev">
+<link href="../ayrton/pratica2_importacao_dados.html" rel="next">
+<link href="../dashboard.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1c5bbed2f73a95c4b06c2081d23306e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c2efb2a299cc5bdc3a8f877b72c0097e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ayrton/pratica1_instalacao_R_RStudio.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pratica - Instalando o R e RStudio</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ayrton/pratica1_instalacao_R_RStudio.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introdução ao R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,14 +175,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anexos/anexo_era5_copernicus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anexo — Dados Climáticos via Copernicus Climate Data Store</span></span></a>
+  <a href="../ayrton/pratica1_instalacao_R_RStudio.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ayrton/pratica1_instalacao_R_RStudio.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pratica - Instalando o R e RStudio</span></span></a>
+  <a href="../ayrton/pratica2_importacao_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parte 1 — Importação com <code>microdatasus</code> (R)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ayrton/pratica3_redemet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parte 1 — Conhecendo a REDEMET</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../anexos/anexo_era5_copernicus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Anexo — Dados Climáticos via Copernicus Climate Data Store</span></span></a>
   </div>
 </li>
     </ul>
@@ -196,28 +207,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Conteúdo</h2>
    
   <ul>
-  <li><a href="#introdução-ao-r" id="toc-introdução-ao-r" class="nav-link active" data-scroll-target="#introdução-ao-r"><span class="header-section-number">7.1</span> Introdução ao R</a></li>
-  <li><a href="#instalação-no-windows" id="toc-instalação-no-windows" class="nav-link" data-scroll-target="#instalação-no-windows"><span class="header-section-number">7.2</span> Instalação no Windows</a>
+  <li><a href="#instalação-no-windows" id="toc-instalação-no-windows" class="nav-link active" data-scroll-target="#instalação-no-windows"><span class="header-section-number">6.1</span> Instalação no Windows</a></li>
+  <li><a href="#instalar-o-r" id="toc-instalar-o-r" class="nav-link" data-scroll-target="#instalar-o-r"><span class="header-section-number">6.2</span> 1. Instalar o R</a></li>
+  <li><a href="#instalar-o-rtools-recomendado" id="toc-instalar-o-rtools-recomendado" class="nav-link" data-scroll-target="#instalar-o-rtools-recomendado"><span class="header-section-number">6.3</span> 2. Instalar o Rtools (recomendado)</a></li>
+  <li><a href="#instalar-o-rstudio" id="toc-instalar-o-rstudio" class="nav-link" data-scroll-target="#instalar-o-rstudio"><span class="header-section-number">6.4</span> 3. Instalar o RStudio</a></li>
+  <li><a href="#instalação-no-linux-ubuntulinux-mint" id="toc-instalação-no-linux-ubuntulinux-mint" class="nav-link" data-scroll-target="#instalação-no-linux-ubuntulinux-mint"><span class="header-section-number">6.5</span> Instalação no Linux (Ubuntu/Linux Mint)</a>
   <ul class="collapse">
-  <li><a href="#instalar-o-r" id="toc-instalar-o-r" class="nav-link" data-scroll-target="#instalar-o-r"><span class="header-section-number">7.2.1</span> 1. Instalar o R</a></li>
-  <li><a href="#instalar-o-rtools-recomendado" id="toc-instalar-o-rtools-recomendado" class="nav-link" data-scroll-target="#instalar-o-rtools-recomendado"><span class="header-section-number">7.2.2</span> 2. Instalar o Rtools (recomendado)</a></li>
-  <li><a href="#instalar-o-rstudio" id="toc-instalar-o-rstudio" class="nav-link" data-scroll-target="#instalar-o-rstudio"><span class="header-section-number">7.2.3</span> 3. Instalar o RStudio</a></li>
+  <li><a href="#instalar-dependências-do-sistema" id="toc-instalar-dependências-do-sistema" class="nav-link" data-scroll-target="#instalar-dependências-do-sistema"><span class="header-section-number">6.5.1</span> 1. Instalar dependências do sistema</a></li>
   </ul></li>
-  <li><a href="#instalação-no-linux-ubuntulinux-mint" id="toc-instalação-no-linux-ubuntulinux-mint" class="nav-link" data-scroll-target="#instalação-no-linux-ubuntulinux-mint"><span class="header-section-number">7.3</span> Instalação no Linux (Ubuntu/Linux Mint)</a>
-  <ul class="collapse">
-  <li><a href="#instalar-dependências-do-sistema" id="toc-instalar-dependências-do-sistema" class="nav-link" data-scroll-target="#instalar-dependências-do-sistema"><span class="header-section-number">7.3.1</span> 1. Instalar dependências do sistema</a></li>
-  <li><a href="#instalar-o-r-1" id="toc-instalar-o-r-1" class="nav-link" data-scroll-target="#instalar-o-r-1"><span class="header-section-number">7.3.2</span> 2. Instalar o R</a></li>
-  <li><a href="#instalar-o-rstudio-1" id="toc-instalar-o-rstudio-1" class="nav-link" data-scroll-target="#instalar-o-rstudio-1"><span class="header-section-number">7.3.3</span> 3. Instalar o RStudio</a></li>
-  </ul></li>
-  <li><a href="#instalação-no-macos" id="toc-instalação-no-macos" class="nav-link" data-scroll-target="#instalação-no-macos"><span class="header-section-number">7.4</span> Instalação no macOS</a>
-  <ul class="collapse">
-  <li><a href="#instalar-o-r-2" id="toc-instalar-o-r-2" class="nav-link" data-scroll-target="#instalar-o-r-2"><span class="header-section-number">7.4.1</span> 1. Instalar o R</a></li>
-  <li><a href="#instalar-ferramentas-de-compilação-recomendado" id="toc-instalar-ferramentas-de-compilação-recomendado" class="nav-link" data-scroll-target="#instalar-ferramentas-de-compilação-recomendado"><span class="header-section-number">7.4.2</span> 2. Instalar ferramentas de compilação (recomendado)</a></li>
-  <li><a href="#instalar-o-rstudio-2" id="toc-instalar-o-rstudio-2" class="nav-link" data-scroll-target="#instalar-o-rstudio-2"><span class="header-section-number">7.4.3</span> 3. Instalar o RStudio</a></li>
-  </ul></li>
-  <li><a href="#conhecendo-o-rstudio" id="toc-conhecendo-o-rstudio" class="nav-link" data-scroll-target="#conhecendo-o-rstudio"><span class="header-section-number">7.5</span> Conhecendo o RStudio</a></li>
-  <li><a href="#verificando-a-instalação-e-primeiros-passos" id="toc-verificando-a-instalação-e-primeiros-passos" class="nav-link" data-scroll-target="#verificando-a-instalação-e-primeiros-passos"><span class="header-section-number">7.6</span> Verificando a instalação e primeiros passos</a></li>
-  <li><a href="#material-de-apoio-externo" id="toc-material-de-apoio-externo" class="nav-link" data-scroll-target="#material-de-apoio-externo"><span class="header-section-number">7.7</span> Material de apoio externo</a></li>
+  <li><a href="#instalar-o-r-1" id="toc-instalar-o-r-1" class="nav-link" data-scroll-target="#instalar-o-r-1"><span class="header-section-number">6.6</span> 2. Instalar o R</a></li>
+  <li><a href="#instalar-o-rstudio-1" id="toc-instalar-o-rstudio-1" class="nav-link" data-scroll-target="#instalar-o-rstudio-1"><span class="header-section-number">6.7</span> 3. Instalar o RStudio</a></li>
+  <li><a href="#instalação-no-macos" id="toc-instalação-no-macos" class="nav-link" data-scroll-target="#instalação-no-macos"><span class="header-section-number">6.8</span> Instalação no macOS</a></li>
+  <li><a href="#instalar-o-r-2" id="toc-instalar-o-r-2" class="nav-link" data-scroll-target="#instalar-o-r-2"><span class="header-section-number">6.9</span> 1. Instalar o R</a></li>
+  <li><a href="#instalar-ferramentas-de-compilação-recomendado" id="toc-instalar-ferramentas-de-compilação-recomendado" class="nav-link" data-scroll-target="#instalar-ferramentas-de-compilação-recomendado"><span class="header-section-number">6.10</span> 2. Instalar ferramentas de compilação (recomendado)</a></li>
+  <li><a href="#instalar-o-rstudio-2" id="toc-instalar-o-rstudio-2" class="nav-link" data-scroll-target="#instalar-o-rstudio-2"><span class="header-section-number">6.11</span> 3. Instalar o RStudio</a></li>
+  <li><a href="#conhecendo-o-rstudio" id="toc-conhecendo-o-rstudio" class="nav-link" data-scroll-target="#conhecendo-o-rstudio"><span class="header-section-number">6.12</span> Conhecendo o RStudio</a></li>
+  <li><a href="#verificando-a-instalação-e-primeiros-passos" id="toc-verificando-a-instalação-e-primeiros-passos" class="nav-link" data-scroll-target="#verificando-a-instalação-e-primeiros-passos"><span class="header-section-number">6.13</span> Verificando a instalação e primeiros passos</a></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pratica - Instalando o R e RStudio</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introdução ao R</span></h1>
 </div>
 
 
@@ -243,19 +248,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introdução-ao-r" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introdução-ao-r"><span class="header-section-number">7.1</span> Introdução ao R</h2>
 <p>O R é uma linguagem de programação gratuita e de código aberto voltada para análise estatística, visualização de dados e computação científica. É amplamente utilizado em epidemiologia, saúde pública e ciências ambientais, sendo uma ferramenta essencial para quem trabalha com dados de saúde e clima.</p>
 <p>O <strong>RStudio</strong> é um ambiente de desenvolvimento integrado (IDE) que facilita o uso do R, oferecendo editor de código, console, visualização de gráficos e gerenciamento de projetos em uma única interface.</p>
 <div class="warning">
 <p>⚠️ <strong>Importante:</strong> instale primeiro o <strong>R</strong> e depois o <strong>RStudio</strong>. O RStudio depende do R para funcionar — sem o R instalado, o RStudio não abrirá corretamente.</p>
 </div>
 <hr>
+<section id="instalação-no-windows" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="instalação-no-windows"><span class="header-section-number">6.1</span> Instalação no Windows</h2>
 </section>
-<section id="instalação-no-windows" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="instalação-no-windows"><span class="header-section-number">7.2</span> Instalação no Windows</h2>
-<section id="instalar-o-r" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="instalar-o-r"><span class="header-section-number">7.2.1</span> 1. Instalar o R</h3>
+<section id="instalar-o-r" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="instalar-o-r"><span class="header-section-number">6.2</span> 1. Instalar o R</h2>
 <ol type="1">
 <li>Acesse <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></li>
 <li>Clique em <strong>“Download R for Windows”</strong> → <strong>“base”</strong></li>
@@ -279,8 +282,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>💡 <strong>Dica:</strong> o R Console básico (Rgui) já funciona, mas é muito limitado. Na prática, usaremos sempre o <strong>RStudio</strong>, que instalamos a seguir.</p>
 </div>
 </section>
-<section id="instalar-o-rtools-recomendado" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="instalar-o-rtools-recomendado"><span class="header-section-number">7.2.2</span> 2. Instalar o Rtools (recomendado)</h3>
+<section id="instalar-o-rtools-recomendado" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="instalar-o-rtools-recomendado"><span class="header-section-number">6.3</span> 2. Instalar o Rtools (recomendado)</h2>
 <p>O <strong>Rtools</strong> é necessário para compilar pacotes a partir do código-fonte no Windows. Muitos pacotes de análise espacial e dados ambientais exigem o Rtools.</p>
 <ol type="1">
 <li>Acesse <a href="https://cran.r-project.org/bin/windows/Rtools/" class="uri">https://cran.r-project.org/bin/windows/Rtools/</a></li>
@@ -292,8 +295,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pkgbuild"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pkgbuild<span class="sc">::</span><span class="fu">has_build_tools</span>(<span class="at">debug =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="instalar-o-rstudio" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="instalar-o-rstudio"><span class="header-section-number">7.2.3</span> 3. Instalar o RStudio</h3>
+<section id="instalar-o-rstudio" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="instalar-o-rstudio"><span class="header-section-number">6.4</span> 3. Instalar o RStudio</h2>
 <ol type="1">
 <li>Acesse <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
 <li>Baixe o instalador para Windows e execute</li>
@@ -301,11 +304,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <hr>
 </section>
-</section>
-<section id="instalação-no-linux-ubuntulinux-mint" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="instalação-no-linux-ubuntulinux-mint"><span class="header-section-number">7.3</span> Instalação no Linux (Ubuntu/Linux Mint)</h2>
-<section id="instalar-dependências-do-sistema" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="instalar-dependências-do-sistema"><span class="header-section-number">7.3.1</span> 1. Instalar dependências do sistema</h3>
+<section id="instalação-no-linux-ubuntulinux-mint" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="instalação-no-linux-ubuntulinux-mint"><span class="header-section-number">6.5</span> Instalação no Linux (Ubuntu/Linux Mint)</h2>
+<section id="instalar-dependências-do-sistema" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="instalar-dependências-do-sistema"><span class="header-section-number">6.5.1</span> 1. Instalar dependências do sistema</h3>
 <p>Antes de instalar o R, garanta que as bibliotecas necessárias estejam presentes:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> <span class="dt">\</span></span>
@@ -330,8 +332,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    libgeos-dev <span class="dt">\</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    libproj-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="instalar-o-r-1" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="instalar-o-r-1"><span class="header-section-number">7.3.2</span> 2. Instalar o R</h3>
+</section>
+<section id="instalar-o-r-1" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="instalar-o-r-1"><span class="header-section-number">6.6</span> 2. Instalar o R</h2>
 <p>O CRAN oferece instruções específicas para Ubuntu e distribuições derivadas (como o Linux Mint):</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -359,8 +362,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>💡 <strong>Dica:</strong> assim como no Windows, o R no terminal é funcional mas limitado. Usaremos o <strong>RStudio</strong> no dia a dia.</p>
 </div>
 </section>
-<section id="instalar-o-rstudio-1" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="instalar-o-rstudio-1"><span class="header-section-number">7.3.3</span> 3. Instalar o RStudio</h3>
+<section id="instalar-o-rstudio-1" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="instalar-o-rstudio-1"><span class="header-section-number">6.7</span> 3. Instalar o RStudio</h2>
 <ol type="1">
 <li>Acesse <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
 <li>Baixe o pacote <code>.deb</code> (compatível com Ubuntu e Linux Mint)</li>
@@ -370,11 +373,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt <span class="at">--fix-broken</span> install   <span class="co"># corrige dependências, se necessário</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
+<section id="instalação-no-macos" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="instalação-no-macos"><span class="header-section-number">6.8</span> Instalação no macOS</h2>
 </section>
-<section id="instalação-no-macos" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="instalação-no-macos"><span class="header-section-number">7.4</span> Instalação no macOS</h2>
-<section id="instalar-o-r-2" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="instalar-o-r-2"><span class="header-section-number">7.4.1</span> 1. Instalar o R</h3>
+<section id="instalar-o-r-2" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="instalar-o-r-2"><span class="header-section-number">6.9</span> 1. Instalar o R</h2>
 <ol type="1">
 <li>Acesse <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> → <strong>“Download R for macOS”</strong></li>
 <li>Escolha o instalador correto para o seu chip:</li>
@@ -386,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <ul>
-<li><strong>Apple Silicon (M1/M2/M3):</strong> <code>R-4.6.0-arm64.pkg</code></li>
-<li><strong>Intel:</strong> <code>R-4.6.0-x86_64.pkg</code></li>
+<li><p><strong>Apple Silicon (M1/M2/M3):</strong> <code>R-4.6.0-arm64.pkg</code></p></li>
+<li><p><strong>Intel:</strong> <code>R-4.6.0-x86_64.pkg</code></p></li>
 </ul>
 <ol start="3" type="1">
 <li>Execute o <code>.pkg</code> e siga as instruções</li>
@@ -403,13 +406,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="instalar-ferramentas-de-compilação-recomendado" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="instalar-ferramentas-de-compilação-recomendado"><span class="header-section-number">7.4.2</span> 2. Instalar ferramentas de compilação (recomendado)</h3>
+<section id="instalar-ferramentas-de-compilação-recomendado" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="instalar-ferramentas-de-compilação-recomendado"><span class="header-section-number">6.10</span> 2. Instalar ferramentas de compilação (recomendado)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Para pacotes que exigem Fortran, instale também o <strong>gfortran</strong> em <a href="https://mac.r-project.org/tools/" class="uri">https://mac.r-project.org/tools/</a>.</p>
 </section>
-<section id="instalar-o-rstudio-2" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="instalar-o-rstudio-2"><span class="header-section-number">7.4.3</span> 3. Instalar o RStudio</h3>
+<section id="instalar-o-rstudio-2" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="instalar-o-rstudio-2"><span class="header-section-number">6.11</span> 3. Instalar o RStudio</h2>
 <ol type="1">
 <li>Acesse <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
 <li>Baixe o <code>.dmg</code> para macOS</li>
@@ -417,27 +420,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <hr>
 </section>
-</section>
-<section id="conhecendo-o-rstudio" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="conhecendo-o-rstudio"><span class="header-section-number">7.5</span> Conhecendo o RStudio</h2>
+<section id="conhecendo-o-rstudio" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="conhecendo-o-rstudio"><span class="header-section-number">6.12</span> Conhecendo o RStudio</h2>
 <p>Após instalar o R e o RStudio, abra o <strong>RStudio</strong> (não o R diretamente). A interface é dividida em 4 painéis:</p>
-<!-- 📸 IMAGEM SUGERIDA: screenshot do RStudio com os 4 painéis identificados por número ou seta:
-     1. Editor de código (superior esquerdo)
-     2. Console (inferior esquerdo)
-     3. Ambiente/Environment (superior direito)
-     4. Arquivos/Plots/Help (inferior direito)
-     → capturar em qualquer sistema operacional, preferencialmente com um script simples aberto -->
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Imagens/mod1_p1_rstudio_interface.png" class="img-fluid figure-img"></p>
+<p><img src="../Imagens/mod1_p1_rstudio.png" class="img-fluid figure-img"></p>
 <figcaption>Interface do RStudio com os 4 painéis principais</figcaption>
 </figure>
 </div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 27%">
-<col style="width: 44%">
-<col style="width: 27%">
+<col style="width: 19%">
+<col style="width: 52%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -471,8 +467,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <hr>
 </section>
-<section id="verificando-a-instalação-e-primeiros-passos" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="verificando-a-instalação-e-primeiros-passos"><span class="header-section-number">7.6</span> Verificando a instalação e primeiros passos</h2>
+<section id="verificando-a-instalação-e-primeiros-passos" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="verificando-a-instalação-e-primeiros-passos"><span class="header-section-number">6.13</span> Verificando a instalação e primeiros passos</h2>
 <p>Abra o RStudio e no <strong>Console</strong> execute os comandos abaixo um a um:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Verificar a versão do R instalada</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
@@ -491,14 +487,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="dica">
 <p>💡 <strong>Diferença importante:</strong></p>
 <ul>
-<li><code>install.packages("nome")</code> → baixa e instala o pacote no seu computador. Faça <strong>uma vez</strong>.</li>
-<li><code>library(nome)</code> → carrega o pacote na sessão atual. Faça <strong>toda vez</strong> que abrir o RStudio.</li>
+<li><p><code>install.packages("nome")</code> → baixa e instala o pacote no seu computador. Faça <strong>uma vez</strong>.</p></li>
+<li><p><code>library(nome)</code> → carrega o pacote na sessão atual. Faça <strong>toda vez</strong> que abrir o RStudio.</p>
+<p>:::</p></li>
 </ul>
-</div>
 <hr>
-</section>
-<section id="material-de-apoio-externo" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="material-de-apoio-externo"><span class="header-section-number">7.7</span> Material de apoio externo</h2>
+<section id="material-de-apoio-externo" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="material-de-apoio-externo"><span class="header-section-number">6.14</span> Material de apoio externo</h2>
 <p>Caso precise de suporte adicional durante a instalação, indicamos os vídeos do curso <strong>“Análise de dados para a vigilância em saúde”</strong> (UFSC). Trata-se de um curso de outra instituição, disponibilizado como referência complementar — não faz parte da programação do nosso curso.</p>
 <div class="saiba">
 <p>🎬 <strong>Vídeos de instalação (material externo — UFSC):</strong> <a href="https://grupos.moodle.ufsc.br/pluginfile.php/2467463/mod_resource/content/152/site_do_curso/videos_do_curso.html">Acesse aqui</a></p>
@@ -507,6 +502,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 
 
+</section>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -912,11 +909,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../anexos/anexo_era5_copernicus.html" class="pagination-link" aria-label="Anexo — Dados Climáticos via Copernicus Climate Data Store">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Anexo — Dados Climáticos via Copernicus Climate Data Store</span></span>
+      <a href="../dashboard.html" class="pagination-link" aria-label="dashboard.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">dashboard.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../ayrton/pratica2_importacao_dados.html" class="pagination-link" aria-label="Parte 1 — Importação com `microdatasus` (R)">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parte 1 — Importação com <code>microdatasus</code> (R)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

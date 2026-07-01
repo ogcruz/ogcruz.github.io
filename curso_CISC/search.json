@@ -24,7 +24,7 @@
     "href": "anexos/anexo_era5_copernicus.html#o-climate-data-store",
     "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
     "section": "8.2 O Climate Data Store",
-    "text": "8.2 O Climate Data Store\nApós clicar em Data, você será direcionado à página do Climate Data Store (CDS) — o repositório central de dados climáticos do Copernicus.\n\n\n\nPágina inicial do Climate Data Store.\n\n\nPara explorar os produtos disponíveis, clique na aba Datasets.\n\n\n\nA aba “Datasets” na barra de navegação do CDS.\n\n\nA página de Datasets lista os produtos disponíveis para download, incluindo o ERA5-Land que utilizaremos neste curso.\n\n\n\nCatálogo de datasets disponíveis no CDS.",
+    "text": "8.2 O Climate Data Store\nApós clicar em Data, você será direcionado à página do Climate Data Store (CDS) — o repositório central de dados climáticos do Copernicus.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
     ]
@@ -34,7 +34,7 @@
     "href": "anexos/anexo_era5_copernicus.html#iniciando-o-cadastro",
     "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
     "section": "9.1 Iniciando o cadastro",
-    "text": "9.1 Iniciando o cadastro\nNa página inicial do CDS, clique em Login / Register no canto superior direito.\n\n\n\nOpção de Login/Register na página inicial do CDS.\n\n\nVocê será redirecionado para a página de autenticação do ECMWF.\n\n\n\nPágina de login do ECMWF.\n\n\nComo ainda não possui conta, clique na opção de criar uma nova conta.\n\n\n\nOpção de criação de conta na página de login.",
+    "text": "9.1 Iniciando o cadastro\nNa página inicial do CDS, clique em Login / Register no canto superior direito.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
     ]
@@ -100,233 +100,463 @@
     ]
   },
   {
-    "objectID": "anexos/anexo_era5_copernicus.html#preenchendo-os-dados-de-cadastro",
-    "href": "anexos/anexo_era5_copernicus.html#preenchendo-os-dados-de-cadastro",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "9.2 Preenchendo os dados de cadastro",
-    "text": "9.2 Preenchendo os dados de cadastro\nPreencha os campos obrigatórios: nome, sobrenome, endereço de e-mail e senha.\n\n\n\nFormulário inicial de criação de conta: nome, sobrenome, e-mail e senha.\n\n\nApós submeter o formulário, o sistema enviará um e-mail de verificação.\n\n\n\nConfirmação de envio do e-mail de verificação.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#verificando-o-e-mail",
-    "href": "anexos/anexo_era5_copernicus.html#verificando-o-e-mail",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "9.3 Verificando o e-mail",
-    "text": "9.3 Verificando o e-mail\nAcesse sua caixa de entrada e abra o e-mail recebido do ECMWF. Clique no link de confirmação para continuar o cadastro.\n\n\n\nE-mail de verificação enviado pelo ECMWF com link de ativação.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#complementando-o-perfil",
-    "href": "anexos/anexo_era5_copernicus.html#complementando-o-perfil",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "9.4 Complementando o perfil",
-    "text": "9.4 Complementando o perfil\nAo clicar no link, você será redirecionado para uma segunda etapa de cadastro, onde deverá informar: país, afiliação, organização, atividade temática e setor de atividade. Também é necessário marcar a opção de aceite dos termos de uso.\n\n\n\nSegunda etapa do cadastro: informações institucionais e termos de uso.\n\n\nCom todos os campos preenchidos, clique no botão para ativar a conta.\n\n\n\nFormulário preenchido e botão de ativação da conta destacado.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#confirmando-o-login",
-    "href": "anexos/anexo_era5_copernicus.html#confirmando-o-login",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "10.1 Confirmando o login",
-    "text": "10.1 Confirmando o login\nApós ativar a conta e fazer login, o CDS exibirá seu nome de usuário no canto superior direito, confirmando que você está autenticado.\n\n\n\nNome do usuário logado exibido no canto superior direito do CDS.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#aceitando-as-licenças-de-uso",
-    "href": "anexos/anexo_era5_copernicus.html#aceitando-as-licenças-de-uso",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "10.2 Aceitando as licenças de uso",
-    "text": "10.2 Aceitando as licenças de uso\nClique no seu nome de usuário e acesse a aba Licenses. É necessário aceitar as licenças dos datasets que deseja utilizar antes de efetuar qualquer download.\n\n\n\n\n\n\nImportanteAtenção: licenças obrigatórias\n\n\n\nSem aceitar as licenças correspondentes, as requisições de download via API serão recusadas, mesmo com a chave configurada corretamente. Certifique-se de aceitar a licença do ERA5-Land antes de executar o script.\n\n\n\n\n\nAba “Licenses” no perfil do usuário, com opções de licença para aceite.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#obtendo-a-chave-da-api",
-    "href": "anexos/anexo_era5_copernicus.html#obtendo-a-chave-da-api",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "10.3 Obtendo a chave da API",
-    "text": "10.3 Obtendo a chave da API\nNa mesma área do perfil, acesse a aba Your profile. Lá você encontrará:\n\nA opção de revelar a chave da API (API key)\nA chave em si, que deverá ser copiada e colada no script R\n\n\n\n\nAba “Your profile” com opção de revelar e copiar a chave da API.\n\n\n\n\n\n\n\n\nDicaGuarde sua chave com cuidado\n\n\n\nA chave da API é pessoal e intransferível. Não a compartilhe publicamente (por exemplo, em repositórios GitHub abertos). No script do curso, ela é atribuída a uma variável local que não deve ser incluída em arquivos versionados.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#pacotes-necessários",
-    "href": "anexos/anexo_era5_copernicus.html#pacotes-necessários",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.1 Pacotes necessários",
-    "text": "11.1 Pacotes necessários\n\n\nMostrar código\n# ============================================================\n# Verificação e instalação automática de pacotes\n# ============================================================\n\npacotes_obrigatorios &lt;- c(\n  \"ecmwfr\",     # interface com a API do CDS\n  \"tidyverse\",  # manipulação de dados\n  \"purrr\",      # iteração funcional\n  \"ncdf4\",      # leitura de arquivos NetCDF\n  \"terra\",      # processamento de rasters\n  \"sf\",         # dados espaciais vetoriais\n  \"geobr\",      # limites municipais do Brasil\n  \"lubridate\"   # manipulação de datas\n)\n\npacotes_ausentes &lt;- pacotes_obrigatorios[\n  !sapply(pacotes_obrigatorios, require, character.only = TRUE, quietly = TRUE)\n]\n\nif (length(pacotes_ausentes) &gt; 0) {\n  message(\"Instalando pacotes ausentes: \",\n          paste(pacotes_ausentes, collapse = \", \"))\n  install.packages(pacotes_ausentes, dependencies = TRUE)\n\n  carregados &lt;- sapply(pacotes_ausentes, require, character.only = TRUE, quietly = TRUE)\n\n  if (!all(carregados)) {\n    stop(\"Falha ao carregar alguns pacotes: \",\n         paste(pacotes_ausentes[!carregados], collapse = \", \"))\n  }\n}",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#configuração-da-chave-de-api",
-    "href": "anexos/anexo_era5_copernicus.html#configuração-da-chave-de-api",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.2 Configuração da chave de API",
-    "text": "11.2 Configuração da chave de API\n\n\nMostrar código\n# ============================================================\n# Substitua pelo valor copiado da aba \"Your profile\" no CDS\n# ============================================================\n\nkey_CDO &lt;- \"COLE_SUA_CHAVE_AQUI\"\n\n# Registra a chave na sessão R — necessário antes de qualquer download\nwf_set_key(key = key_CDO)\n\n\n\n\n\n\n\n\nImportanteOnde obter a chave?\n\n\n\nAcesse cds.climate.copernicus.eu → clique no seu nome de usuário → aba Your profile → botão para revelar a chave → copie e cole acima, substituindo \"COLE_SUA_CHAVE_AQUI\".",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#área-de-interesse",
-    "href": "anexos/anexo_era5_copernicus.html#área-de-interesse",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.3 Área de interesse",
-    "text": "11.3 Área de interesse\n\n\nMostrar código\n# ============================================================\n# Define a área de download a partir do limite municipal (geobr)\n# Substitua o código IBGE pelo do município de interesse\n# ============================================================\n\n# Exemplo: Rio de Janeiro (código IBGE 3304557)\nshape  &lt;- geobr::read_municipality(code_muni = 3304557, year = 2020)\naoi_bb &lt;- sf::st_bbox(shape)\n\n# Formato exigido pelo CDS: norte, oeste, sul, leste\narea &lt;- c(aoi_bb[\"ymax\"], aoi_bb[\"xmin\"], aoi_bb[\"ymin\"], aoi_bb[\"xmax\"])\n\n\n\n\n\n\n\n\nDicaAdaptando para outro município\n\n\n\nBasta substituir o code_muni pelo código IBGE de 7 dígitos do município desejado. O bounding box é calculado automaticamente a partir do polígono municipal.\nPara obter o código IBGE, consulte ibge.gov.br/cidades-e-estados.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#seleção-do-período",
-    "href": "anexos/anexo_era5_copernicus.html#seleção-do-período",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.4 Seleção do período",
-    "text": "11.4 Seleção do período\nO script oferece quatro opções de seleção de datas. Escolha a que melhor se adapta ao seu fluxo de trabalho e atribua à variável datas_interesse.\n\n\nMostrar código\n# ============================================================\n# OPÇÃO 1 — Datas específicas (lista manual)\n# ============================================================\ndatas_especificas &lt;- as.Date(c(\n  \"2023-11-17\",\n  \"2023-11-18\",\n  \"2023-11-19\"\n))\n\n# ============================================================\n# OPÇÃO 2 — Combinações de ano × mês × dia\n# ============================================================\n# anos   &lt;- c(2023, 2024)\n# meses  &lt;- c(11, 12, 1)\n# dias   &lt;- c(1, 15)\n#\n# datas_por_componente &lt;- expand_grid(\n#   year  = anos,\n#   month = meses,\n#   day   = dias\n# ) %&gt;%\n#   mutate(date = make_date(year, month, day)) %&gt;%\n#   filter(!is.na(date)) %&gt;%\n#   pull(date)\n\n# ============================================================\n# OPÇÃO 3 — Intervalo contínuo entre duas datas\n# ============================================================\n# datas_intervalo &lt;- seq(\n#   as.Date(\"2023-11-01\"),\n#   as.Date(\"2023-11-30\"),\n#   by = \"day\"\n# )\n\n# ============================================================\n# OPÇÃO 4 — Do início do ano até ontem (pipeline automático)\n# ============================================================\n# datas_ate_ontem &lt;- seq(\n#   as.Date(\"2023-01-01\"),\n#   Sys.Date() - 1,\n#   by = \"day\"\n# )\n\n# ── Selecione qual opção usar ──────────────────────────────\ndatas_interesse &lt;- datas_especificas  # &lt;- troque aqui\n\n# Agrupa por ano-mês para montar as requisições ao CDS\nym &lt;- datas_interesse %&gt;%\n  as_tibble() %&gt;%\n  rename(date = value) %&gt;%\n  mutate(year = year(date), month = month(date), day = day(date)) %&gt;%\n  group_by(year, month) %&gt;%\n  summarise(days = list(day), .groups = \"drop\")\n\nprint(ym)",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#funções-auxiliares",
-    "href": "anexos/anexo_era5_copernicus.html#funções-auxiliares",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.5 Funções auxiliares",
-    "text": "11.5 Funções auxiliares\n\n11.5.1 Função de download\n\n\nMostrar código\n# ============================================================\n# download_era5_days()\n# Baixa um arquivo NetCDF por variável e por mês,\n# pulando arquivos já existentes no diretório de saída.\n# ============================================================\n\ndownload_era5_days &lt;- function(year, month, days, variavel, prefix,\n                               dir_out = \"./era5/\") {\n  dir.create(dir_out, showWarnings = FALSE, recursive = TRUE)\n\n  target &lt;- paste0(prefix, \"_\", year, sprintf(\"%02d\", month), \".nc\")\n\n  # Evita redownload de arquivos já existentes\n  if (file.exists(file.path(dir_out, target))) {\n    cat(\"⏭ já existe:\", target, \"\\n\")\n    return(invisible(NULL))\n  }\n\n  request &lt;- list(\n    dataset_short_name = \"reanalysis-era5-land\",\n    product_type       = \"reanalysis\",\n    variable           = variavel,\n    year               = as.character(year),\n    month              = sprintf(\"%02d\", month),\n    day                = sprintf(\"%02d\", days),\n    time               = sprintf(\"%02d:00\", 0:23),  # todas as horas (24 layers/dia)\n    data_format        = \"netcdf\",\n    download_format    = \"unarchived\",\n    area               = area,\n    target             = target\n  )\n\n  tryCatch({\n    wf_request(request = request, transfer = TRUE,\n               path = dir_out, verbose = TRUE)\n    cat(\"✓\", prefix, year, sprintf(\"%02d\", month),\n        \"dias:\", paste(days, collapse = \", \"), \"\\n\")\n  }, error = function(e) {\n    cat(\"✗\", prefix, year, sprintf(\"%02d\", month), \":\", e$message, \"\\n\")\n    write_lines(\n      paste(prefix, year, month, \"FAILED\"),\n      file.path(dir_out, \"failed.txt\"),\n      append = TRUE\n    )\n  })\n}\n\n\n\n\n11.5.2 Função de processamento NetCDF → data.frame\n\n\nMostrar código\n# ============================================================\n# nc_to_df()\n# Converte um arquivo NetCDF horário em um data.frame diário,\n# aplicando a estatística escolhida (mean, max, min, sum)\n# e convertendo unidades:\n#   - temperatura: Kelvin → °C  (−273,15)\n#   - precipitação: m → mm      (×1000)\n# ============================================================\n\nnc_to_df &lt;- function(nc_path, varname,\n                     stat = c(\"mean\", \"max\", \"min\", \"sum\")) {\n  stat &lt;- match.arg(stat)\n\n  r        &lt;- rast(nc_path)\n  n_layers &lt;- nlyr(r)\n  n_days   &lt;- n_layers / 24\n  day_idx  &lt;- rep(1:n_days, each = 24)\n\n  # Agrega 24 camadas horárias em 1 camada diária\n  if (n_days == 1) {\n    r_daily &lt;- app(r, fun = stat)\n    names(r_daily) &lt;- \"lyr1\"\n  } else {\n    r_daily &lt;- tapp(r, day_idx, fun = stat)\n  }\n\n  # Conversão de unidades\n  varname_base &lt;- str_extract(varname, \"^[a-z0-9]+\")\n  if (varname_base == \"tp\") {\n    r_daily &lt;- r_daily * 1000       # m → mm\n  } else {\n    r_daily &lt;- r_daily - 273.15     # K → °C\n  }\n\n  # Extrai datas a partir dos metadados do arquivo NetCDF\n  nc    &lt;- ncdf4::nc_open(nc_path)\n  tempo &lt;- ncdf4::ncvar_get(nc, \"valid_time\")\n  ncdf4::nc_close(nc)\n\n  datas &lt;- as.Date(as.POSIXct(\n    tempo[seq(1, length(tempo), by = 24)],\n    origin = \"1970-01-01\", tz = \"UTC\"\n  ))\n\n  as.data.frame(r_daily, xy = TRUE) %&gt;%\n    rename(lon = x, lat = y) %&gt;%\n    pivot_longer(cols = -c(lon, lat),\n                 names_to = \"day_idx\", values_to = varname) %&gt;%\n    mutate(\n      day_idx = as.integer(str_extract(day_idx, \"\\\\d+\")),\n      date    = datas[day_idx]\n    ) %&gt;%\n    select(lon, lat, date, all_of(varname))\n}",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#executando-o-download",
-    "href": "anexos/anexo_era5_copernicus.html#executando-o-download",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.6 Executando o download",
-    "text": "11.6 Executando o download\n\n\nMostrar código\n# ============================================================\n# Variáveis para download\n# t2m = temperatura a 2 m (Kelvin → °C)\n# d2m = ponto de orvalho a 2 m (Kelvin → °C)\n# tp  = precipitação total (m → mm)\n# ============================================================\n\nvariaveis &lt;- list(\n  list(variavel = \"2m_temperature\",          prefix = \"t2m\"),\n  list(variavel = \"2m_dewpoint_temperature\", prefix = \"d2m\"),\n  list(variavel = \"total_precipitation\",     prefix = \"tp\")\n)\n\n# Itera sobre variáveis e meses\nwalk(variaveis, function(v) {\n  cat(\"\\n⬇ Baixando\", v$prefix, \"\\n\")\n  pwalk(ym, function(year, month, days) {\n    download_era5_days(year, month, days, v$variavel, v$prefix)\n  })\n})\n\n\n\n\n\n\n\n\nNotaTempo de download\n\n\n\nO CDS processa as requisições em fila. Dependendo do volume de dados e da carga do servidor, cada arquivo pode levar de segundos a vários minutos. O pacote ecmwfr aguarda automaticamente e exibe o progresso no console.\nArquivos já baixados são automaticamente pulados (verificação por nome de arquivo).",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#processando-os-arquivos-netcdf",
-    "href": "anexos/anexo_era5_copernicus.html#processando-os-arquivos-netcdf",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.7 Processando os arquivos NetCDF",
-    "text": "11.7 Processando os arquivos NetCDF\n\n\nMostrar código\n# ============================================================\n# Lista os arquivos baixados por variável\n# ============================================================\n\narquivos_t2m &lt;- list.files(\"./era5/\", pattern = \"^t2m_.*\\\\.nc$\", full.names = TRUE)\narquivos_d2m &lt;- list.files(\"./era5/\", pattern = \"^d2m_.*\\\\.nc$\", full.names = TRUE)\narquivos_tp  &lt;- list.files(\"./era5/\", pattern = \"^tp_.*\\\\.nc$\",  full.names = TRUE)\n\n# Processa cada conjunto de arquivos com as estatísticas diárias\ndf_t2m_mean &lt;- map_dfr(arquivos_t2m, nc_to_df, varname = \"t2m_mean\", stat = \"mean\")\ndf_t2m_max  &lt;- map_dfr(arquivos_t2m, nc_to_df, varname = \"t2m_max\",  stat = \"max\")\ndf_t2m_min  &lt;- map_dfr(arquivos_t2m, nc_to_df, varname = \"t2m_min\",  stat = \"min\")\ndf_d2m_mean &lt;- map_dfr(arquivos_d2m, nc_to_df, varname = \"d2m_mean\", stat = \"mean\")\ndf_d2m_max  &lt;- map_dfr(arquivos_d2m, nc_to_df, varname = \"d2m_max\",  stat = \"max\")\ndf_d2m_min  &lt;- map_dfr(arquivos_d2m, nc_to_df, varname = \"d2m_min\",  stat = \"min\")\ndf_tp_sum   &lt;- map_dfr(arquivos_tp,  nc_to_df, varname = \"tp_mm\",    stat = \"sum\")",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#consolidando-o-data.frame-final",
-    "href": "anexos/anexo_era5_copernicus.html#consolidando-o-data.frame-final",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.8 Consolidando o data.frame final",
-    "text": "11.8 Consolidando o data.frame final\n\n\nMostrar código\n# ============================================================\n# Integra todas as variáveis e calcula a umidade relativa\n# ============================================================\n\ndf_final &lt;- df_t2m_mean %&gt;%\n  left_join(df_t2m_max,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_t2m_min,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_d2m_mean, by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_d2m_max,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_d2m_min,  by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  left_join(df_tp_sum,   by = c(\"lon\", \"lat\", \"date\")) %&gt;%\n  filter(date %in% datas_interesse) %&gt;%\n  mutate(\n    # Precipitação: trata NA como zero (ausência de chuva)\n    tp_mm = replace_na(tp_mm, 0),\n\n    # Umidade relativa via fórmula de Magnus (truncada em [0, 100])\n    rh_mean = pmin(100, pmax(0,\n      100 * exp(17.625 * d2m_mean / (243.04 + d2m_mean)) /\n            exp(17.625 * t2m_mean / (243.04 + t2m_mean)))),\n\n    # rh_max: orvalho máximo / temperatura mínima (condição mais úmida)\n    rh_max  = pmin(100, pmax(0,\n      100 * exp(17.625 * d2m_max  / (243.04 + d2m_max))  /\n            exp(17.625 * t2m_min  / (243.04 + t2m_min)))),\n\n    # rh_min: orvalho mínimo / temperatura máxima (condição mais seca)\n    rh_min  = pmin(100, pmax(0,\n      100 * exp(17.625 * d2m_min  / (243.04 + d2m_min))  /\n            exp(17.625 * t2m_max  / (243.04 + t2m_max))))\n  ) %&gt;%\n  arrange(date, lat, lon)\n\n# Estrutura esperada do data.frame final:\n# lon | lat | date | t2m_mean | t2m_max | t2m_min |\n# d2m_mean | d2m_max | d2m_min | tp_mm |\n# rh_mean  | rh_max  | rh_min\n\nglimpse(df_final)",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
-    "objectID": "anexos/anexo_era5_copernicus.html#salvando-o-resultado",
-    "href": "anexos/anexo_era5_copernicus.html#salvando-o-resultado",
-    "title": "6  Anexo — Dados Climáticos via Copernicus Climate Data Store",
-    "section": "11.9 Salvando o resultado",
-    "text": "11.9 Salvando o resultado\n\n\nMostrar código\n# ============================================================\n# Salva em formato .rds para uso nas análises do boletim\n# ============================================================\n\nsaveRDS(df_final, \"./era5/era5_completo.rds\")\n\n# Para carregar posteriormente:\n# df_final &lt;- readRDS(\"./era5/era5_completo.rds\")\n\n\n\n\n\n\n\n\nDicaIntegrando ao boletim\n\n\n\nO arquivo era5_completo.rds pode ser lido diretamente no modelo_boletim_saude_clima_cisc.qmd, na seção de importação de bases climáticas:\nclima &lt;- readRDS(file.path(dir_dados_proc, \"era5_completo.rds\"))\nAdapte o caminho conforme a estrutura de diretórios do seu projeto.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo — Dados Climáticos via Copernicus Climate Data Store</span>"
-    ]
-  },
-  {
     "objectID": "ayrton/pratica1_instalacao_R_RStudio.html",
     "href": "ayrton/pratica1_instalacao_R_RStudio.html",
-    "title": "7  Pratica - Instalando o R e RStudio",
+    "title": "6  Introdução ao R",
     "section": "",
-    "text": "7.1 Introdução ao R\nO R é uma linguagem de programação gratuita e de código aberto voltada para análise estatística, visualização de dados e computação científica. É amplamente utilizado em epidemiologia, saúde pública e ciências ambientais, sendo uma ferramenta essencial para quem trabalha com dados de saúde e clima.\nO RStudio é um ambiente de desenvolvimento integrado (IDE) que facilita o uso do R, oferecendo editor de código, console, visualização de gráficos e gerenciamento de projetos em uma única interface.",
+    "text": "6.1 Instalação no Windows\nO R é uma linguagem de programação gratuita e de código aberto voltada para análise estatística, visualização de dados e computação científica. É amplamente utilizado em epidemiologia, saúde pública e ciências ambientais, sendo uma ferramenta essencial para quem trabalha com dados de saúde e clima.\nO RStudio é um ambiente de desenvolvimento integrado (IDE) que facilita o uso do R, oferecendo editor de código, console, visualização de gráficos e gerenciamento de projetos em uma única interface.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
-    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#introdução-ao-r",
-    "href": "ayrton/pratica1_instalacao_R_RStudio.html#introdução-ao-r",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "",
-    "text": "⚠️ Importante: instale primeiro o R e depois o RStudio. O RStudio depende do R para funcionar — sem o R instalado, o RStudio não abrirá corretamente.",
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-r",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-r",
+    "title": "6  Introdução ao R",
+    "section": "6.2 1. Instalar o R",
+    "text": "6.2 1. Instalar o R\n\nAcesse https://cran.r-project.org/\nClique em “Download R for Windows” → “base”\nBaixe e execute o instalador (ex.: R-4.6.0-win.exe)\nSiga as instruções padrão do instalador\n\n\n\n\nPágina de download do R para Windows no CRAN\n\n\nApós a instalação, você pode abrir o R Console diretamente — ele terá a seguinte aparência:\n\n\n\nR Console aberto no Windows\n\n\n\n💡 Dica: o R Console básico (Rgui) já funciona, mas é muito limitado. Na prática, usaremos sempre o RStudio, que instalamos a seguir.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
-    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-windows",
-    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-windows",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "7.2 Instalação no Windows",
-    "text": "7.2 Instalação no Windows\n\n7.2.1 1. Instalar o R\n\nAcesse https://cran.r-project.org/\nClique em “Download R for Windows” → “base”\nBaixe e execute o instalador (ex.: R-4.6.0-win.exe)\nSiga as instruções padrão do instalador\n\n\n\n\nPágina de download do R para Windows no CRAN\n\n\nApós a instalação, você pode abrir o R Console diretamente — ele terá a seguinte aparência:\n\n\n\nR Console aberto no Windows\n\n\n\n💡 Dica: o R Console básico (Rgui) já funciona, mas é muito limitado. Na prática, usaremos sempre o RStudio, que instalamos a seguir.\n\n\n\n7.2.2 2. Instalar o Rtools (recomendado)\nO Rtools é necessário para compilar pacotes a partir do código-fonte no Windows. Muitos pacotes de análise espacial e dados ambientais exigem o Rtools.\n\nAcesse https://cran.r-project.org/bin/windows/Rtools/\nBaixe a versão compatível com sua versão do R (ex.: Rtools44 para R 4.4.x, Rtools46 para R 4.6.x)\nExecute o instalador e mantenha as opções padrão\nApós instalar, abra o R e execute:\n\n# Verificar se o Rtools foi reconhecido\ninstall.packages(\"pkgbuild\")\npkgbuild::has_build_tools(debug = TRUE)\n\n\n7.2.3 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o instalador para Windows e execute\nSiga as instruções padrão",
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rtools-recomendado",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rtools-recomendado",
+    "title": "6  Introdução ao R",
+    "section": "6.3 2. Instalar o Rtools (recomendado)",
+    "text": "6.3 2. Instalar o Rtools (recomendado)\nO Rtools é necessário para compilar pacotes a partir do código-fonte no Windows. Muitos pacotes de análise espacial e dados ambientais exigem o Rtools.\n\nAcesse https://cran.r-project.org/bin/windows/Rtools/\nBaixe a versão compatível com sua versão do R (ex.: Rtools44 para R 4.4.x, Rtools46 para R 4.6.x)\nExecute o instalador e mantenha as opções padrão\nApós instalar, abra o R e execute:\n\n# Verificar se o Rtools foi reconhecido\ninstall.packages(\"pkgbuild\")\npkgbuild::has_build_tools(debug = TRUE)",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rstudio",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rstudio",
+    "title": "6  Introdução ao R",
+    "section": "6.4 3. Instalar o RStudio",
+    "text": "6.4 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o instalador para Windows e execute\nSiga as instruções padrão",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
     "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-linux-ubuntulinux-mint",
     "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-linux-ubuntulinux-mint",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "7.3 Instalação no Linux (Ubuntu/Linux Mint)",
-    "text": "7.3 Instalação no Linux (Ubuntu/Linux Mint)\n\n7.3.1 1. Instalar dependências do sistema\nAntes de instalar o R, garanta que as bibliotecas necessárias estejam presentes:\nsudo apt update\nsudo apt install -y \\\n    software-properties-common \\\n    dirmngr \\\n    gnupg \\\n    apt-transport-https \\\n    ca-certificates \\\n    curl \\\n    build-essential \\\n    libcurl4-openssl-dev \\\n    libssl-dev \\\n    libxml2-dev \\\n    libfontconfig1-dev \\\n    libharfbuzz-dev \\\n    libfribidi-dev \\\n    libfreetype6-dev \\\n    libpng-dev \\\n    libtiff5-dev \\\n    libjpeg-dev \\\n    libgdal-dev \\\n    libgeos-dev \\\n    libproj-dev\n\n\n7.3.2 2. Instalar o R\nO CRAN oferece instruções específicas para Ubuntu e distribuições derivadas (como o Linux Mint):\n\n\n\nPágina de instalação do R para Ubuntu/Linux no CRAN\n\n\n# Adicionar repositório CRAN\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\n\nsudo apt update\nsudo apt install -y r-base r-base-dev\n\n⚠️ Linux Mint: o comando $(lsb_release -cs) pode retornar o codinome do Mint (ex.: wilma) em vez do Ubuntu base (ex.: noble). Se o repositório não for encontrado, substitua manualmente pelo codinome Ubuntu correspondente. Consulte a tabela de equivalência.\n\nApós a instalação, você pode abrir o R diretamente no terminal digitando R:\n\n\n\nR aberto no terminal do Linux\n\n\n\n💡 Dica: assim como no Windows, o R no terminal é funcional mas limitado. Usaremos o RStudio no dia a dia.\n\n\n\n7.3.3 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o pacote .deb (compatível com Ubuntu e Linux Mint)\nInstale via terminal:\n\nsudo dpkg -i rstudio-*.deb\nsudo apt --fix-broken install   # corrige dependências, se necessário",
+    "title": "6  Introdução ao R",
+    "section": "6.5 Instalação no Linux (Ubuntu/Linux Mint)",
+    "text": "6.5 Instalação no Linux (Ubuntu/Linux Mint)\n\n6.5.1 1. Instalar dependências do sistema\nAntes de instalar o R, garanta que as bibliotecas necessárias estejam presentes:\nsudo apt update\nsudo apt install -y \\\n    software-properties-common \\\n    dirmngr \\\n    gnupg \\\n    apt-transport-https \\\n    ca-certificates \\\n    curl \\\n    build-essential \\\n    libcurl4-openssl-dev \\\n    libssl-dev \\\n    libxml2-dev \\\n    libfontconfig1-dev \\\n    libharfbuzz-dev \\\n    libfribidi-dev \\\n    libfreetype6-dev \\\n    libpng-dev \\\n    libtiff5-dev \\\n    libjpeg-dev \\\n    libgdal-dev \\\n    libgeos-dev \\\n    libproj-dev",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-r-1",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-r-1",
+    "title": "6  Introdução ao R",
+    "section": "6.6 2. Instalar o R",
+    "text": "6.6 2. Instalar o R\nO CRAN oferece instruções específicas para Ubuntu e distribuições derivadas (como o Linux Mint):\n\n\n\nPágina de instalação do R para Ubuntu/Linux no CRAN\n\n\n# Adicionar repositório CRAN\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/\"\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\n\nsudo apt update\nsudo apt install -y r-base r-base-dev\n\n⚠️ Linux Mint: o comando $(lsb_release -cs) pode retornar o codinome do Mint (ex.: wilma) em vez do Ubuntu base (ex.: noble). Se o repositório não for encontrado, substitua manualmente pelo codinome Ubuntu correspondente. Consulte a tabela de equivalência.\n\nApós a instalação, você pode abrir o R diretamente no terminal digitando R:\n\n\n\nR aberto no terminal do Linux\n\n\n\n💡 Dica: assim como no Windows, o R no terminal é funcional mas limitado. Usaremos o RStudio no dia a dia.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rstudio-1",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rstudio-1",
+    "title": "6  Introdução ao R",
+    "section": "6.7 3. Instalar o RStudio",
+    "text": "6.7 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o pacote .deb (compatível com Ubuntu e Linux Mint)\nInstale via terminal:\n\nsudo dpkg -i rstudio-*.deb\nsudo apt --fix-broken install   # corrige dependências, se necessário",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
     "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-macos",
     "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalação-no-macos",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "7.4 Instalação no macOS",
-    "text": "7.4 Instalação no macOS\n\n7.4.1 1. Instalar o R\n\nAcesse https://cran.r-project.org/ → “Download R for macOS”\nEscolha o instalador correto para o seu chip:\n\n\n\n\nPágina de download do R para macOS no CRAN — opções arm64 (Apple Silicon) e x86_64 (Intel)\n\n\n\nApple Silicon (M1/M2/M3): R-4.6.0-arm64.pkg\nIntel: R-4.6.0-x86_64.pkg\n\n\nExecute o .pkg e siga as instruções\n\n\n💡 Não sabe qual chip tem? Clique em → Sobre este Mac. Se aparecer “Chip Apple M…” é Apple Silicon; se aparecer “Processador Intel”, é Intel.\n\nApós a instalação, o R Console no macOS terá esta aparência:\n\n\n\nR Console aberto no macOS\n\n\n\n\n7.4.2 2. Instalar ferramentas de compilação (recomendado)\nxcode-select --install\nPara pacotes que exigem Fortran, instale também o gfortran em https://mac.r-project.org/tools/.\n\n\n7.4.3 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o .dmg para macOS\nArraste o RStudio para a pasta Aplicativos",
+    "title": "6  Introdução ao R",
+    "section": "6.8 Instalação no macOS",
+    "text": "6.8 Instalação no macOS",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-r-2",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-r-2",
+    "title": "6  Introdução ao R",
+    "section": "6.9 1. Instalar o R",
+    "text": "6.9 1. Instalar o R\n\nAcesse https://cran.r-project.org/ → “Download R for macOS”\nEscolha o instalador correto para o seu chip:\n\n\n\n\nPágina de download do R para macOS no CRAN — opções arm64 (Apple Silicon) e x86_64 (Intel)\n\n\n\nApple Silicon (M1/M2/M3): R-4.6.0-arm64.pkg\nIntel: R-4.6.0-x86_64.pkg\n\n\nExecute o .pkg e siga as instruções\n\n\n💡 Não sabe qual chip tem? Clique em → Sobre este Mac. Se aparecer “Chip Apple M…” é Apple Silicon; se aparecer “Processador Intel”, é Intel.\n\nApós a instalação, o R Console no macOS terá esta aparência:\n\n\n\nR Console aberto no macOS",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-ferramentas-de-compilação-recomendado",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-ferramentas-de-compilação-recomendado",
+    "title": "6  Introdução ao R",
+    "section": "6.10 2. Instalar ferramentas de compilação (recomendado)",
+    "text": "6.10 2. Instalar ferramentas de compilação (recomendado)\nxcode-select --install\nPara pacotes que exigem Fortran, instale também o gfortran em https://mac.r-project.org/tools/.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rstudio-2",
+    "href": "ayrton/pratica1_instalacao_R_RStudio.html#instalar-o-rstudio-2",
+    "title": "6  Introdução ao R",
+    "section": "6.11 3. Instalar o RStudio",
+    "text": "6.11 3. Instalar o RStudio\n\nAcesse https://posit.co/download/rstudio-desktop/\nBaixe o .dmg para macOS\nArraste o RStudio para a pasta Aplicativos",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
     "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#conhecendo-o-rstudio",
     "href": "ayrton/pratica1_instalacao_R_RStudio.html#conhecendo-o-rstudio",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "7.5 Conhecendo o RStudio",
-    "text": "7.5 Conhecendo o RStudio\nApós instalar o R e o RStudio, abra o RStudio (não o R diretamente). A interface é dividida em 4 painéis:\n\n\n\n\nInterface do RStudio com os 4 painéis principais\n\n\n\n\n\n\n\n\n\n\nPainel\nLocalização\nFunção\n\n\n\n\nEditor\nSuperior esquerdo\nEscrever e salvar scripts .R\n\n\nConsole\nInferior esquerdo\nExecutar comandos e ver resultados\n\n\nEnvironment\nSuperior direito\nVisualizar objetos criados na sessão\n\n\nFiles / Plots / Help\nInferior direito\nNavegar arquivos, ver gráficos e buscar ajuda",
+    "title": "6  Introdução ao R",
+    "section": "6.12 Conhecendo o RStudio",
+    "text": "6.12 Conhecendo o RStudio\nApós instalar o R e o RStudio, abra o RStudio (não o R diretamente). A interface é dividida em 4 painéis:\n\n\n\nInterface do RStudio com os 4 painéis principais\n\n\n\n\n\n\n\n\n\n\nPainel\nLocalização\nFunção\n\n\n\n\nEditor\nSuperior esquerdo\nEscrever e salvar scripts .R\n\n\nConsole\nInferior esquerdo\nExecutar comandos e ver resultados\n\n\nEnvironment\nSuperior direito\nVisualizar objetos criados na sessão\n\n\nFiles / Plots / Help\nInferior direito\nNavegar arquivos, ver gráficos e buscar ajuda",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
     "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#verificando-a-instalação-e-primeiros-passos",
     "href": "ayrton/pratica1_instalacao_R_RStudio.html#verificando-a-instalação-e-primeiros-passos",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "7.6 Verificando a instalação e primeiros passos",
-    "text": "7.6 Verificando a instalação e primeiros passos\nAbra o RStudio e no Console execute os comandos abaixo um a um:\n# 1. Verificar a versão do R instalada\nR.version.string\n\n# 2. Instalar um pacote (só é necessário fazer isso uma vez)\ninstall.packages(\"tidyverse\")\n\n# 3. Carregar o pacote na sessão atual\nlibrary(tidyverse)\n\n# 4. Ver a lista de pacotes carregados\nsessionInfo()\n\n✅ Instalação concluída! Se não houver mensagens de erro após library(tidyverse), seu ambiente está pronto para as próximas práticas do curso.\n\n\n💡 Diferença importante:\n\ninstall.packages(\"nome\") → baixa e instala o pacote no seu computador. Faça uma vez.\nlibrary(nome) → carrega o pacote na sessão atual. Faça toda vez que abrir o RStudio.",
+    "title": "6  Introdução ao R",
+    "section": "6.13 Verificando a instalação e primeiros passos",
+    "text": "6.13 Verificando a instalação e primeiros passos\nAbra o RStudio e no Console execute os comandos abaixo um a um:\n# 1. Verificar a versão do R instalada\nR.version.string\n\n# 2. Instalar um pacote (só é necessário fazer isso uma vez)\ninstall.packages(\"tidyverse\")\n\n# 3. Carregar o pacote na sessão atual\nlibrary(tidyverse)\n\n# 4. Ver a lista de pacotes carregados\nsessionInfo()\n\n✅ Instalação concluída! Se não houver mensagens de erro após library(tidyverse), seu ambiente está pronto para as próximas práticas do curso.\n\n\n💡 Diferença importante:\n\ninstall.packages(\"nome\") → baixa e instala o pacote no seu computador. Faça uma vez.\nlibrary(nome) → carrega o pacote na sessão atual. Faça toda vez que abrir o RStudio.\n:::\n\n\n\n6.14 Material de apoio externo\nCaso precise de suporte adicional durante a instalação, indicamos os vídeos do curso “Análise de dados para a vigilância em saúde” (UFSC). Trata-se de um curso de outra instituição, disponibilizado como referência complementar — não faz parte da programação do nosso curso.\n\n🎬 Vídeos de instalação (material externo — UFSC): Acesse aqui\nOs vídeos do Módulo 1 cobrem em detalhe a instalação do R e a introdução ao RStudio, caso você precise de um passo a passo mais detalhado do que o apresentado neste documento.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
     "objectID": "ayrton/pratica1_instalacao_R_RStudio.html#material-de-apoio-externo",
     "href": "ayrton/pratica1_instalacao_R_RStudio.html#material-de-apoio-externo",
-    "title": "7  Pratica - Instalando o R e RStudio",
-    "section": "7.7 Material de apoio externo",
-    "text": "7.7 Material de apoio externo\nCaso precise de suporte adicional durante a instalação, indicamos os vídeos do curso “Análise de dados para a vigilância em saúde” (UFSC). Trata-se de um curso de outra instituição, disponibilizado como referência complementar — não faz parte da programação do nosso curso.\n\n🎬 Vídeos de instalação (material externo — UFSC): Acesse aqui\nOs vídeos do Módulo 1 cobrem em detalhe a instalação do R e a introdução ao RStudio, caso você precise de um passo a passo mais detalhado do que o apresentado neste documento.",
+    "title": "6  Introdução ao R",
+    "section": "6.14 Material de apoio externo",
+    "text": "6.14 Material de apoio externo\nCaso precise de suporte adicional durante a instalação, indicamos os vídeos do curso “Análise de dados para a vigilância em saúde” (UFSC). Trata-se de um curso de outra instituição, disponibilizado como referência complementar — não faz parte da programação do nosso curso.\n\n🎬 Vídeos de instalação (material externo — UFSC): Acesse aqui\nOs vídeos do Módulo 1 cobrem em detalhe a instalação do R e a introdução ao RStudio, caso você precise de um passo a passo mais detalhado do que o apresentado neste documento.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Pratica - Instalando o R e RStudio</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html",
+    "href": "ayrton/pratica2_importacao_dados.html",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "",
+    "text": "7.1 1.1 Instalação\nNesta prática, trabalharemos com dois sistemas principais do DATASUS:\nO microdatasus é um pacote R que automatiza o download e a leitura dos microdados do DATASUS, poupando a necessidade de acessar o FTP manualmente.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#instalação",
+    "href": "ayrton/pratica2_importacao_dados.html#instalação",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "",
+    "text": "# Instalar o microdatasus (via remotes, pois não está no CRAN)\ninstall.packages(\"remotes\")\nremotes::install_github(\"rfsaldanha/microdatasus\")\n\n# Pacotes auxiliares\ninstall.packages(c(\"tidyverse\", \"lubridate\"))\n\no microdatasus depende do pacote read.dbc, que requer o Rtools (Windows) ou ferramentas de compilação (Linux/macOS). Certifique-se de que estão instalados (ver Prática 1).\n\n\n7.1.1 1.2 Baixando dados do SIM (óbitos)\nlibrary(microdatasus)\nlibrary(tidyverse)\n\n# Definir o município de interesse (código IBGE de 6 dígitos)\n# Exemplo: Rio de Janeiro = 330455\ncod_municipio &lt;- \"330455\"\n\n# Baixar dados do SIM para o estado do Rio de Janeiro, anos 2020-2022\ndados_sim &lt;- fetch_datasus(\n  year_start  = 2020,\n  year_end    = 2022,\n  uf          = \"RJ\",          # sigla do estado\n  information_system = \"SIM-DO\" # Sistema de Informação sobre Mortalidade\n)\n\n# Processar as variáveis (decodifica categorias, converte datas, etc.)\ndados_sim &lt;- process_sim(dados_sim)\n\nglimpse(dados_sim)\n\nprocess_sim() é uma função do próprio microdatasus que transforma o arquivo bruto do SIM em um data frame mais legível e pronto para análise. Entre as principais operações:\n\nConverte datas — campos como DTOBITO, DTNASC e DTATESTADO, que chegam como texto no formato DDMMAAAA, são convertidos para o tipo Date do R\nDecodifica categorias — variáveis codificadas numericamente (como SEXO, RACACOR, CAUSABAS) recebem rótulos descritivos (ex.: 1 → \"Masculino\")\nPadroniza o código do município — CODMUNRES e CODMUNOCOR são ajustados para 6 ou 7 dígitos, conforme necessário para cruzamento com tabelas do IBGE\nCalcula a idade — quando possível, deriva a variável de idade em anos a partir de DTNASC e DTOBITO\n\n\n\nO argumento uf define o estado de onde os dados serão baixados. Sempre baixe pelo estado e depois filtre pelo município — o DATASUS organiza os arquivos por UF.\n\n\n\n7.1.2 1.3 Filtrando pelo município\n# Filtrar pelo código do município (coluna CODMUNRES = município de residência)\ndados_sim_municipio &lt;- dados_sim |&gt;\n  filter(CODMUNRES == cod_municipio)\n\n# Verificar\nnrow(dados_sim_municipio)\nhead(dados_sim_municipio)\n\nVariáveis de município no SIM:\n\nCODMUNRES — município de residência do falecido\nCODMUNOCOR — município de ocorrência do óbito\n\nPara análises de saúde local, utilize CODMUNRES.\n\n\n\n7.1.3 1.4 Baixando dados do SIH (internações)\n# Baixar dados do SIH (Autorização de Internação Hospitalar)\ndados_sih &lt;- fetch_datasus(\n  year_start  = 2020,\n  month_start = 1,\n  month_end = 3,\n  year_end    = 2022,\n  uf          = \"RJ\",\n  information_system = \"SIH-RD\" # Registro de AIH aprovadas\n)\n\ndados_sih &lt;- process_sih(dados_sih)\n\n# Filtrar pelo município de residência do paciente\ndados_sih_municipio &lt;- dados_sih |&gt;\n  filter(MUNIC_RES == cod_municipio)\n\nnrow(dados_sih_municipio)\n\nDe maneira análoga à process_sim(), a função process_sih() aplica transformações equivalentes aos dados brutos do SIH. As principais:\n\nConverte datas — campos como DT_INTER (data de internação) e DT_SAIDA (data de saída) são convertidos para o tipo Date\nCalcula o tempo de internação — deriva automaticamente a variável DIAS_PERM como diferença entre entrada e saída, quando ausente ou inconsistente\nDecodifica categorias — variáveis como COBRANCA, COMPLEX e INSTRU recebem rótulos legíveis\nPadroniza municípios — MUNIC_RES e MUNIC_MOV são padronizados para cruzamento com o IBGE",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#parte-2-acesso-direto-via-ftp-r",
+    "href": "ayrton/pratica2_importacao_dados.html#parte-2-acesso-direto-via-ftp-r",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.2 Parte 2 — Acesso direto via FTP (R)",
+    "text": "7.2 Parte 2 — Acesso direto via FTP (R)\nO DATASUS disponibiliza os arquivos .dbc diretamente em seu servidor FTP. Este método é útil quando você já tem um domínio maior sobre os arquivos ou quando o microdatasus não cobre o período desejado.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#estrutura-do-ftp-do-datasus",
+    "href": "ayrton/pratica2_importacao_dados.html#estrutura-do-ftp-do-datasus",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.3 2.1 Estrutura do FTP do DATASUS",
+    "text": "7.3 2.1 Estrutura do FTP do DATASUS\nO endereço base é: ftp://ftp.datasus.gov.br/dissemin/publicos/\nA estrutura dos diretórios segue o padrão:\nftp://ftp.datasus.gov.br/dissemin/publicos/\n  ├── SIM/\n  │   └── CID10/DORES/        # Óbitos CID-10\n  │       └── DORJ2022.dbc    # DO + UF + ano\n  └── SIHSUS/\n      └── ST/RD/              # AIH aprovadas\n          └── RDRJ2201.dbc    # RD + UF + ano + mês\n\nNota sobre o FTP: o servidor FTP do DATASUS pode apresentar instabilidade. Se o download falhar, aguarde alguns minutos e tente novamente. Para downloads grandes, prefira horários fora do horário comercial.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#download-via-r",
+    "href": "ayrton/pratica2_importacao_dados.html#download-via-r",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.4 2.2 Download via R",
+    "text": "7.4 2.2 Download via R\nlibrary(tidyverse)\n\n# Instalar read.dbc para ler arquivos .dbc\ninstall.packages(\"read.dbc\")\nlibrary(read.dbc)\n\n# Função auxiliar para baixar e ler um arquivo .dbc do FTP\nbaixar_dbc &lt;- function(url_ftp, destino) {\n  download.file(url_ftp, destfile = destino, mode = \"wb\", method = \"auto\")\n  read.dbc(destino)\n}\n\n# Exemplo: SIM do Rio de Janeiro, ano 2022\nurl_sim_rj_2022 &lt;- \"ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DORJ2022.dbc\"\n\ndados_sim_ftp &lt;- baixar_dbc(\n  url_sim_rj_2022,\n  destino = \"dados/DORJ2022.dbc\"\n)\n\nglimpse(dados_sim_ftp)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#download-de-múltiplos-anos",
+    "href": "ayrton/pratica2_importacao_dados.html#download-de-múltiplos-anos",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.5 2.3 Download de múltiplos anos",
+    "text": "7.5 2.3 Download de múltiplos anos\n# Definir anos de interesse\nanos &lt;- 2019:2022\nuf   &lt;- \"RJ\"\n\n# Construir URLs e baixar todos os arquivos\ndados_sim_lista &lt;- map(anos, function(ano) {\n  url &lt;- paste0(\n    \"ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DO\",\n    uf, ano, \".dbc\"\n  )\n  arquivo &lt;- paste0(\"dados/DO\", uf, ano, \".dbc\")\n\n  message(\"Baixando: \", url)\n  download.file(url, destfile = arquivo, mode = \"wb\", quiet = TRUE)\n  read.dbc(arquivo)\n})\n\n# Combinar todos os anos\ndados_sim_ftp_todos &lt;- bind_rows(dados_sim_lista)\n\n# Filtrar pelo município\ncod_municipio &lt;- \"3304557\"\ndados_sim_ftp_municipio &lt;- dados_sim_ftp_todos |&gt;\n  filter(CODMUNRES == cod_municipio)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#download-via-sih-por-mês",
+    "href": "ayrton/pratica2_importacao_dados.html#download-via-sih-por-mês",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.6 2.4 Download via SIH (por mês)",
+    "text": "7.6 2.4 Download via SIH (por mês)\nO SIH tem arquivos mensais. O padrão de nome é RD + UF + ano (2 dígitos) + mês (2 dígitos):\n\nVeja que a função url_sih é necessária para construir o url correto visto que a partir de 2007 houve uma modificação na base.\n\nurl_sih &lt;- function(uf, ano2, mes) {\n  ano4 &lt;- as.integer(paste0(\"20\", ano2))  # \"22\" -&gt; 2022L (inteiro)\n  \n  base &lt;- ifelse(\n    ano4 &gt;= 2008,\n    \"ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/\",\n    \"ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/199201_200712/Dados/\"\n  )\n  \n  paste0(base, \"RD\", toupper(uf), ano2, mes, \".dbc\")\n}\n\n\n# Exemplo: SIH RJ, janeiro a dezembro de 2022\nmeses &lt;- sprintf(\"%02d\", 1:12)\nano2  &lt;- \"22\"\nuf    &lt;- \"RJ\"\n\ndados_sih_lista &lt;- map(meses, function(mes) {\n  url     &lt;- url_sih(uf, ano2, mes)\n  arquivo &lt;- paste0(\"dados/RD\", uf, ano2, mes, \".dbc\")\n  \n  tryCatch({\n    download.file(url, destfile = arquivo, mode = \"wb\", quiet = TRUE)\n    read.dbc(arquivo)\n  }, error = function(e) {\n    message(\"Não encontrado: \", url)\n    NULL\n  })\n})\n\ndados_sih_lista_&lt;- dados_sih_lista |&gt;  \n  filter(MUNIC_RES == cod_municipio)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#parte-3-importação-com-pysus-python",
+    "href": "ayrton/pratica2_importacao_dados.html#parte-3-importação-com-pysus-python",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.7 Parte 3 — Importação com pysus (Python)",
+    "text": "7.7 Parte 3 — Importação com pysus (Python)\nO pysus é o equivalente do microdatasus para Python, permitindo baixar e processar dados do DATASUS diretamente.\n\n\n\nPágina do pacote PySUS\n\n\n\nSeção opcional: esta parte é indicada para participantes que já trabalham com Python ou querem integrar os dados do DATASUS a um fluxo Python/pandas. Se você usa apenas R, pode pular para a Parte 4 sem prejuízo — os dados produzidos aqui são equivalentes aos das Partes 1 e 2.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#instalação-1",
+    "href": "ayrton/pratica2_importacao_dados.html#instalação-1",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.8 3.1 Instalação",
+    "text": "7.8 3.1 Instalação\n# No terminal (ou prompt de comando)\npip install pysus\n\nRequisitos: Python 3.8+ e pip instalados. Recomenda-se usar um ambiente virtual (venv ou conda).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#baixando-dados-do-sim",
+    "href": "ayrton/pratica2_importacao_dados.html#baixando-dados-do-sim",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.9 3.2 Baixando dados do SIM",
+    "text": "7.9 3.2 Baixando dados do SIM\nfrom pysus.online_data.SIM import download\nimport pandas as pd\n\n# Definir código do município (IBGE, 7 dígitos)\ncod_municipio = \"3304557\"  # Exemplo: Rio de Janeiro\n\ndados_sim = download(\n    states=[\"RJ\"],\n    years=[2020, 2021, 2022]\n)\n\ndf_sim = dados_sim.to_dataframe()\n\nprint(df_sim.shape)\nprint(df_sim.head())",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#filtrando-pelo-município-1",
+    "href": "ayrton/pratica2_importacao_dados.html#filtrando-pelo-município-1",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.10 3.3 Filtrando pelo município",
+    "text": "7.10 3.3 Filtrando pelo município\ndf_sim_municipio = df_sim[df_sim[\"CODMUNRES\"] == cod_municipio]\n\nprint(f\"Registros para o município {cod_municipio}: {len(df_sim_municipio)}\")",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#baixando-dados-do-sih",
+    "href": "ayrton/pratica2_importacao_dados.html#baixando-dados-do-sih",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.11 3.4 Baixando dados do SIH",
+    "text": "7.11 3.4 Baixando dados do SIH\nfrom pysus.online_data.SIH import download as download_sih\n\ndados_sih = download_sih(\n    group=\"RD\",\n    states=[\"RJ\"],\n    years=[2020, 2021, 2022],\n    months=list(range(1, 13))\n)\n\ndf_sih = dados_sih.to_dataframe()\n\ndf_sih_municipio = df_sih[df_sih[\"MUNIC_RES\"] == cod_municipio]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#salvando-os-dados",
+    "href": "ayrton/pratica2_importacao_dados.html#salvando-os-dados",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.12 3.5 Salvando os dados",
+    "text": "7.12 3.5 Salvando os dados\n# Parquet (eficiente para grandes volumes)\ndf_sim_municipio.to_parquet(\"dados/sim_municipio.parquet\", index=False)\ndf_sih_municipio.to_parquet(\"dados/sih_municipio.parquet\", index=False)\n\n# Ou em CSV\ndf_sim_municipio.to_csv(\"dados/sim_municipio.csv\", index=False)\n\nExplorando mais: documentação do pysus em: https://pysus.readthedocs.io/",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#usando-pysus-dentro-do-rstudio-com-reticulate-opcional",
+    "href": "ayrton/pratica2_importacao_dados.html#usando-pysus-dentro-do-rstudio-com-reticulate-opcional",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.13 3.6 Usando pysus dentro do RStudio com reticulate (opcional)",
+    "text": "7.13 3.6 Usando pysus dentro do RStudio com reticulate (opcional)\n\nSubseção opcional: esta abordagem é para quem quer rodar código Python diretamente no RStudio, sem sair do ambiente R. Requer Python instalado e o pacote reticulate.\n\nO pacote reticulate permite chamar Python a partir do R, compartilhando objetos entre as duas linguagens na mesma sessão do RStudio. Isso significa que você pode baixar dados com pysus em Python e, em seguida, analisá-los com tidyverse em R — sem precisar salvar e recarregar arquivos.\n# Instalar o reticulate (se necessário)\ninstall.packages(\"reticulate\")\nlibrary(reticulate)\n\n# Indicar qual instalação do Python usar.\n# Se você usa conda:\nuse_condaenv(\"nome-do-seu-ambiente\", required = TRUE)\n# Se você usa o Python do sistema ou venv:\n# use_python(\"/usr/bin/python3\", required = TRUE)\n\n# Verificar se o pysus está acessível\npy_run_string(\"import pysus; print(pysus.__version__)\")\n\nSe não souber o caminho do Python, rode py_discover_config() no console do R — o reticulate lista as instalações encontradas e qual está sendo usada.\n\nApós configurar o reticulate, você pode rodar blocos Python diretamente em um R Markdown (chunk com {python}) ou chamar via py_run_string():\n# Chunk Python dentro de um R Markdown\nfrom pysus.online_data.SIM import download\n\ncod_municipio = \"3304557\"\n\ndados_sim = download(states=[\"RJ\"], years=[2020, 2021, 2022])\ndf_sim     = dados_sim.to_dataframe()\n\ndf_sim_municipio = df_sim[df_sim[\"CODMUNRES\"] == cod_municipio]\n\nprint(df_sim_municipio.shape)\nLogo após, em um chunk R do mesmo documento, o objeto fica disponível via py$:\n# Acessar o DataFrame pandas como tibble no R\nlibrary(tidyverse)\n\nsim_r &lt;- py$df_sim_municipio   # py$ converte automaticamente para data.frame\n\nglimpse(sim_r)\n\n# Já é possível usar tidyverse normalmente\nsim_r |&gt;\n  count(SEXO, name = \"obitos\") |&gt;\n  arrange(desc(obitos))\n\nExplorando mais: documentação do pysus em: https://pysus.readthedocs.io/",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#parte-4-comparativo-e-boas-práticas",
+    "href": "ayrton/pratica2_importacao_dados.html#parte-4-comparativo-e-boas-práticas",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.14 Parte 4 — Comparativo e boas práticas",
+    "text": "7.14 Parte 4 — Comparativo e boas práticas",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#quando-usar-cada-abordagem",
+    "href": "ayrton/pratica2_importacao_dados.html#quando-usar-cada-abordagem",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.15 Quando usar cada abordagem?",
+    "text": "7.15 Quando usar cada abordagem?\n\n\n\n\n\n\n\n\nAbordagem\nVantagens\nLimitações\n\n\n\n\nmicrodatasus (R)\nSimples, processa variáveis automaticamente\nDepende da manutenção do pacote\n\n\nFTP direto (R)\nControle total, funciona offline\nRequer montar as URLs manualmente\n\n\npysus (Python)\nIntegração com ecossistema Python/pandas\nInterface muda com frequência",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#boas-práticas-gerais",
+    "href": "ayrton/pratica2_importacao_dados.html#boas-práticas-gerais",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.16 Boas práticas gerais",
+    "text": "7.16 Boas práticas gerais\n# R: verificar o número de registros antes e depois do filtro\ncat(\"Total de registros baixados:\", nrow(dados_sim), \"\\n\")\ncat(\"Registros do município:\", nrow(dados_sim_municipio), \"\\n\")\ncat(\"Proporção:\", round(nrow(dados_sim_municipio)/nrow(dados_sim)*100, 1), \"%\\n\")\n# Python: verificar tipos e valores ausentes\nprint(df_sim_municipio.dtypes)\nprint(df_sim_municipio.isnull().sum())\n\nDica para o Módulo 2: salve sempre os dados filtrados pelo município em uma pasta organizada (ex.: dados/municipio/). No Módulo 2, carregaremos diretamente esses arquivos para análise, sem precisar repetir o download.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#resumo-estrutura-de-pastas-sugerida",
+    "href": "ayrton/pratica2_importacao_dados.html#resumo-estrutura-de-pastas-sugerida",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.17 Resumo: estrutura de pastas sugerida",
+    "text": "7.17 Resumo: estrutura de pastas sugerida\nprojeto/\n├── dados/\n│   ├── brutos/          # arquivos .dbc baixados do FTP\n│   └── municipio/       # dados filtrados pelo código IBGE\n│       ├── sim_municipio.rds\n│       ├── sinasc_municipio.rds\n│       └── sih_municipio.rds\n├── scripts/\n│   ├── 01_importacao.R  # este script\n│   └── 02_analise.R     # Módulo 2\n└── resultados/",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#exercício-proposto",
+    "href": "ayrton/pratica2_importacao_dados.html#exercício-proposto",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.18 Exercício proposto",
+    "text": "7.18 Exercício proposto\n\nIdentifique o código IBGE do seu município de interesse.\nUsando uma das três abordagens, baixe os dados do SIM para os anos 2019–2022.\nFiltre pelo código do município e salve o resultado.\nCalcule quantos óbitos foram registrados por ano e apresente em uma tabela simples ou um gráfico.\n\n# Dica para o exercício (R)\ndados_sim_municipio |&gt;\n  mutate(ano = lubridate::year(DTOBITO)) |&gt;\n  count(ano, name = \"obitos\") |&gt;\n  arrange(ano)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos",
+    "href": "ayrton/pratica2_importacao_dados.html#carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.19 Carregando dados locais do município (para equipes com arquivos já em mãos!)",
+    "text": "7.19 Carregando dados locais do município (para equipes com arquivos já em mãos!)\n\nQuando usar esta parte: se a sua equipe já possui arquivos do SIM ou SIH baixados diretamente do DATASUS ou fornecidos pela Secretaria de Saúde, use esta seção diretamente. O resultado final será o mesmo.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#lendo-arquivos-.dbc",
+    "href": "ayrton/pratica2_importacao_dados.html#lendo-arquivos-.dbc",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.20 4.1 Lendo arquivos .dbc",
+    "text": "7.20 4.1 Lendo arquivos .dbc\nO formato .dbc é o formato nativo do DATASUS. Para lê-lo diretamente no R:\nlibrary(read.dbc)\nlibrary(tidyverse)\n\n# Ler um arquivo .dbc local\nsim_local &lt;- read.dbc(\"caminho/para/DORJ2022.dbc\") # modif\n\nglimpse(sim_local)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#lendo-arquivos-.csv",
+    "href": "ayrton/pratica2_importacao_dados.html#lendo-arquivos-.csv",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.21 4.2 Lendo arquivos .csv",
+    "text": "7.21 4.2 Lendo arquivos .csv\nSecretarias de Saúde frequentemente exportam os dados via TabWin, gerando .csv com separador ; e encoding Latin-1:\nsim_local &lt;-read_csv2(\n  \"caminho/para/sim_2022.csv\",\n  locale    = locale(encoding = \"latin1\"),\n  col_types = cols(.default = \"c\")\n)\n\nLeia sempre como texto primeiro (col_types = cols(.default = \"c\")). Deixar o R adivinhar os tipos na leitura é a principal fonte de erros com dados do DATASUS — datas viram números, códigos de município perdem o zero à esquerda.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#lendo-múltiplos-arquivos-de-uma-pasta",
+    "href": "ayrton/pratica2_importacao_dados.html#lendo-múltiplos-arquivos-de-uma-pasta",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.22 4.3 Lendo múltiplos arquivos de uma pasta",
+    "text": "7.22 4.3 Lendo múltiplos arquivos de uma pasta\nSe a equipe tiver vários arquivos por ano ou por mês numa mesma pasta:\n# Listar todos os .dbc de uma pasta\narquivos_dbc &lt;- list.files(\n  path       = \"caminho/para/pasta/\",\n  pattern    = \"\\\\.dbc$\",\n  full.names = TRUE\n)\n\n# Ler e combinar todos\nsim_local &lt;- map(arquivos_dbc, read.dbc) |&gt;\n  bind_rows()\n\n# O mesmo funciona para .csv\narquivos_csv &lt;- list.files(\"caminho/para/pasta/\", pattern = \"\\\\.csv$\", full.names = TRUE)\n\nsim_local &lt;- map(arquivos_csv, ~read_csv2(\n  .x,\n  locale    = locale(encoding = \"latin1\"),\n  col_types = cols(.default = \"c\")\n)) |&gt;\n  bind_rows()",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#filtrando-pelo-código-do-município",
+    "href": "ayrton/pratica2_importacao_dados.html#filtrando-pelo-código-do-município",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.23 4.4 Filtrando pelo código do município",
+    "text": "7.23 4.4 Filtrando pelo código do município\nMesmo que o arquivo já seja do seu município, vale confirmar — arquivos fornecidos por Secretarias Estaduais costumam conter todos os municípios do estado:\ncod_municipio &lt;- \"330455\"  # substitua pelo código do seu município\n\nsim_local &lt;- sim_local |&gt;\n  filter(CODMUNRES == cod_municipio)\n\ncat(\"Registros do município:\", nrow(sim_local), \"\\n\")",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#verificação-e-correção-de-tipos",
+    "href": "ayrton/pratica2_importacao_dados.html#verificação-e-correção-de-tipos",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.24 4.5 Verificação e correção de tipos",
+    "text": "7.24 4.5 Verificação e correção de tipos\nApós carregar os dados locais, é importante fazer uma verificação mínima nos dados antes de seguir adiante.\n# Visão geral dos tipos atuais\nglimpse(sim_local)\nAs correções mais comuns nos dados do DATASUS:\nsim_local \n  mutate(\n    # Datas: SIM usa formato DDMMAAAA\n    DTOBITO  = dmy(DTOBITO),\n    DTNASC   = dmy(DTNASC),\n\n    # Códigos de município: sempre character (zeros à esquerda)\n    CODMUNRES  = as.character(CODMUNRES),\n    CODMUNOCOR = as.character(CODMUNOCOR),\n\n    # Idade: numérico\n    IDADE = as.integer(IDADE)\n  )\n\nDatas com formato errado não geram erro — geram NA silenciosamente. Após a conversão, verifique:\n# Proporção de datas inválidas\nsim_local |&gt;\n  summarise(\n    n_total        = n(),\n    na_dtobito     = sum(is.na(DTOBITO)),\n    pct_na_dtobito = round(mean(is.na(DTOBITO)) * 100, 1)\n  )\nSe pct_na_dtobito for maior que 1–2%, algo está errado — provavelmente o formato da data (dmy vs ymd). Veja a tabela abaixo.\n\n\n\nSistema\nFormato original\nFunção correta\n\n\n\n\nSIM\n\"15032022\" (DDMMAAAA)\ndmy()\n\n\nSINASC\n\"15032022\" (DDMMAAAA)\ndmy()\n\n\nSIH\n\"20220315\" (AAAAMMDD)\nymd()\n\n\n\nPara o SIH, as correções equivalentes são:\n\nsih_local \n  mutate(\n    DT_INTER  = ymd(DT_INTER),\n    DT_SAIDA  = ymd(DT_SAIDA),\n    DIAS_PERM = as.integer(DIAS_PERM),\n    VAL_TOT   = as.numeric(VAL_TOT),\n    MUNIC_RES = as.character(MUNIC_RES),\n    MUNIC_MOV = as.character(MUNIC_MOV)\n  )\n\nNunca converta códigos de município para numeric — municípios com zero à esquerda (ex.: \"050001\") perdem o zero e viram um código inexistente.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#salvando-no-formato-padrão-do-curso",
+    "href": "ayrton/pratica2_importacao_dados.html#salvando-no-formato-padrão-do-curso",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.25 4.6 Salvando no formato padrão do curso",
+    "text": "7.25 4.6 Salvando no formato padrão do curso\nPara seguir o mesmo fluxo das Partes 1 e 2 a partir daqui:\nsaveRDS(sim_local, \"dados/municipio/sim_pronto.rds\")",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica2_importacao_dados.html#exercício-proposto-1",
+    "href": "ayrton/pratica2_importacao_dados.html#exercício-proposto-1",
+    "title": "7  Parte 1 — Importação com microdatasus (R)",
+    "section": "7.26 Exercício proposto",
+    "text": "7.26 Exercício proposto\n\nIdentifique o código IBGE do seu município de interesse.\nCalcule quantos óbitos foram registrados por ano e apresente em uma tabela simples ou um gráfico.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Parte 1 — Importação com `microdatasus` (R)</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica3_redemet.html",
+    "href": "ayrton/pratica3_redemet.html",
+    "title": "8  Parte 1 — Conhecendo a REDEMET",
+    "section": "",
+    "text": "8.0.1 1.1 Acessando pelo site do DECEA\nNesta prática, vamos usar a REDEMET (Rede de Meteorologia do Comando da Aeronáutica), mantida pelo DECEA, como fonte de variáveis meteorológicas (temperatura, ponto de orvalho e pressão) para cruzar com os dados de saúde trabalhados nas práticas anteriores.\nA REDEMET é acessada a partir do site institucional do DECEA (Departamento de Controle do Espaço Aéreo).\nNa página inicial, localize o link de acesso à REDEMET, geralmente na seção de serviços meteorológicos.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Parte 1 — Conhecendo a REDEMET</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica3_redemet.html#parte-2-obtendo-acesso-à-api",
+    "href": "ayrton/pratica3_redemet.html#parte-2-obtendo-acesso-à-api",
+    "title": "8  Parte 1 — Conhecendo a REDEMET",
+    "section": "8.1 Parte 2 — Obtendo acesso à API",
+    "text": "8.1 Parte 2 — Obtendo acesso à API\n\n8.1.1 2.1 Localizando a API\nNa mesma interface, há um link de acesso à API de dados da REDEMET.\n\n\n\nInterface da REDEMET com destaque para a API\n\n\nA página inicial da API explica seu funcionamento e indica onde solicitar uma chave de acesso.\n\n\n\nPágina inicial da API, com destaque para a criação de chave\n\n\n\n\n8.1.2 2.2 Solicitando a chave\nO formulário de solicitação pede Nome, Sobrenome, Email e o motivo de uso da API.\n\n\n\nFormulário de solicitação de chave da API\n\n\nApós enviar, a página confirma que a solicitação foi efetuada com sucesso.\n\n\n\nConfirmação de solicitação efetuada\n\n\nEm seguida, chega um email na conta informada, contendo a chave de API e o cabeçalho HTTP necessário para autenticação.\n\n\n\nEmail recebido com a chave de API e o cabeçalho HTTP\n\n\n\nNunca compartilhe sua chave de API publicamente (em repositórios, prints, ou em código enviado a terceiros). Se isso acontecer, gere uma nova chave assim que possível. Ao longo desta prática, vamos guardar a chave numa variável de ambiente, e não diretamente no script.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Parte 1 — Conhecendo a REDEMET</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica3_redemet.html#parte-3-baixando-dados-via-r",
+    "href": "ayrton/pratica3_redemet.html#parte-3-baixando-dados-via-r",
+    "title": "8  Parte 1 — Conhecendo a REDEMET",
+    "section": "8.2 Parte 3 — Baixando dados via R",
+    "text": "8.2 Parte 3 — Baixando dados via R\n\n8.2.1 3.1 Preparando o ambiente\ninstall.packages(c(\"httr\", \"jsonlite\", \"dplyr\", \"stringr\", \"lubridate\", \"ggplot2\"))\n\nlibrary(httr)\nlibrary(jsonlite)\nlibrary(dplyr)\nlibrary(stringr)\nlibrary(lubridate)\nlibrary(ggplot2)\n\nChave de teste A chave abaixo é uma chave de teste, criada apenas para validar o código durante a preparação desta prática. Troque por Sys.getenv(\"REDEMET_API_KEY\") e oriente cada participante a solicitar sua própria chave (Parte 2).\n\n\n\n8.2.2 3.2 Configuração\napi_key    &lt;- \"i6A6HLbiXNSrM8t1wdnR3p72p2Kg2KXBty1Fnii2\"  # chave de teste — substituir\nlocalidade &lt;- \"SBBR\"           # código ICAO da estação (ver Parte 1)\ndata_ini   &lt;- \"2026010100\"     # formato AAAAMMDDHH\ndata_fim   &lt;- \"2026063000\"\n\nEm produção (ou ao disponibilizar o material aos participantes), guarde a chave no arquivo .Renviron em vez de deixá-la no script. Para editar esse arquivo, rode usethis::edit_r_environ() no console e adicione a linha:\nREDEMET_API_KEY=\"sua_chave_aqui\"\nDepois, reinicie o RStudio e troque a linha acima por api_key &lt;- Sys.getenv(\"REDEMET_API_KEY\").\n\n\n\n8.2.3 3.3 Baixando e interpretando as mensagens METAR\nA REDEMET disponibiliza os dados meteorológicos no formato METAR — um padrão internacional usado na aviação. Cada mensagem é uma linha de texto codificada, por exemplo:\nMETAR SBBR 010000Z VRB02KT 9999 -RA FEW015 OVC100 20/18 Q1018=\n\nLendo um METAR: 20/18 é temperatura/ponto de orvalho em °C (temperaturas negativas aparecem como M05, por exemplo M05/M08); Q1018 é a pressão QNH em hPa; -RA indica chuva fraca; VRB02KT é vento variável a 2 nós. O METAR não traz volume de precipitação em mm — apenas um código qualitativo do tempo presente.\n\nPrecisamos, portanto, de uma função para extrair essas variáveis de cada mensagem:\nparse_metar &lt;- function(mens) {\n  partes &lt;- str_split(mens, \" \")[[1]]\n\n  temp_token    &lt;- partes[str_detect(partes, \"^M?\\\\d{2}/M?\\\\d{2}$\")]\n  pressao_token &lt;- partes[str_detect(partes, \"^Q\\\\d{4}=?$\")]\n\n  if (length(temp_token) &gt; 0) {\n    par &lt;- str_split(temp_token[1], \"/\")[[1]]\n    temperatura   &lt;- as.numeric(str_replace(par[1], \"M\", \"-\"))\n    ponto_orvalho &lt;- as.numeric(str_replace(par[2], \"M\", \"-\"))\n  } else {\n    temperatura   &lt;- NA\n    ponto_orvalho &lt;- NA\n  }\n\n  pressao &lt;- if (length(pressao_token) &gt; 0) {\n    as.numeric(str_remove(pressao_token[1], \"[Q=]\"))\n  } else {\n    NA\n  }\n\n  tibble(temperatura = temperatura, ponto_orvalho = ponto_orvalho, pressao = pressao)\n}\n\n\n8.2.4 3.4 Requisição à API\nO endpoint de mensagens METAR retorna os resultados paginados. A função abaixo percorre todas as páginas do período solicitado:\nbaixar_metar &lt;- function(localidade, data_ini, data_fim, api_key) {\n  pagina &lt;- 1\n  resultados &lt;- list()\n\n  repeat {\n    resposta &lt;- GET(\n      url = paste0(\"https://api-redemet.decea.mil.br/mensagens/metar/\", localidade),\n      query = list(\n        api_key  = api_key,\n        data_ini = data_ini,\n        data_fim = data_fim,\n        page     = pagina\n      )\n    )\n\n    conteudo &lt;- fromJSON(\n      content(resposta, as = \"text\", encoding = \"UTF-8\"),\n      simplifyDataFrame = FALSE\n    )\n\n    dados_pagina &lt;- conteudo$data$data\n    if (length(dados_pagina) == 0) break\n\n    resultados[[pagina]] &lt;- dados_pagina\n\n    ultima_pagina &lt;- conteudo$data$last_page\n    if (is.null(ultima_pagina) || pagina &gt;= ultima_pagina) break\n    pagina &lt;- pagina + 1\n  }\n\n  bind_rows(unlist(resultados, recursive = FALSE))\n}\n\nRequisições em excesso podem ser bloqueadas. A API tem limite de uso — se o período solicitado for muito longo (vários anos, por exemplo), prefira baixar em blocos menores e combinar os resultados depois com bind_rows().\n\n\n\n8.2.5 3.5 Montando o dataframe\nbrutos &lt;- baixar_metar(localidade, data_ini, data_fim, api_key)\n\nmetar_df &lt;- brutos %&gt;%\n  rowwise() %&gt;%\n  mutate(\n    datahora = ymd_hms(validade_inicial),\n    parse_metar(mens)\n  ) %&gt;%\n  ungroup() %&gt;%\n  select(localidade = id_localidade, datahora, temperatura, ponto_orvalho, pressao) %&gt;%\n  arrange(datahora)\n\nglimpse(metar_df)\n\n\n8.2.6 3.6 Gráfico de série temporal\nggplot(metar_df, aes(x = datahora)) +\n  geom_line(aes(y = temperatura, color = \"Temperatura\")) +\n  geom_line(aes(y = ponto_orvalho, color = \"Ponto de orvalho\")) +\n  labs(\n    title = paste(\"Série temporal —\", localidade),\n    x = \"Data/Hora (UTC)\", y = \"°C\", color = \"Variável\"\n  ) +\n  theme_minimal()\n\n\n8.2.7 3.7 Agregando por média diária\nComo o METAR normalmente é reportado de hora em hora, pode ser útil resumir os dados em uma média diária:\nmetar_diario &lt;- metar_df %&gt;%\n  mutate(data = as_date(datahora)) %&gt;%\n  group_by(data) %&gt;%\n  summarise(\n    temperatura_media   = mean(temperatura, na.rm = TRUE),\n    ponto_orvalho_medio = mean(ponto_orvalho, na.rm = TRUE),\n    pressao_media       = mean(pressao, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nggplot(metar_diario, aes(x = data)) +\n  geom_line(aes(y = temperatura_media, color = \"Temperatura média\")) +\n  geom_point(aes(y = temperatura_media, color = \"Temperatura média\")) +\n  geom_line(aes(y = ponto_orvalho_medio, color = \"Ponto de orvalho médio\")) +\n  geom_point(aes(y = ponto_orvalho_medio, color = \"Ponto de orvalho médio\")) +\n  labs(\n    title = paste(\"Média diária —\", localidade),\n    x = \"Data\", y = \"°C\", color = \"Variável\"\n  ) +\n  theme_minimal()\n\nA pressão (pressao_media) fica melhor num gráfico separado, já que sua escala (hPa) é bem diferente da escala de temperatura (°C).\n\n\n\n8.2.8 3.8 Salvando os dados\nsaveRDS(metar_df, paste0(\"dados/metar_\", localidade, \".rds\"))\nwrite_csv(metar_df, paste0(\"dados/metar_\", localidade, \".csv\"))",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Parte 1 — Conhecendo a REDEMET</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica3_redemet.html#limitações-a-considerar",
+    "href": "ayrton/pratica3_redemet.html#limitações-a-considerar",
+    "title": "8  Parte 1 — Conhecendo a REDEMET",
+    "section": "8.3 Limitações a considerar",
+    "text": "8.3 Limitações a considerar\n\nO que a REDEMET não oferece: como é uma fonte de meteorologia aeronáutica, a REDEMET não fornece volume de precipitação em mm. Se sua análise depende de dados quantitativos de chuva, a fonte mais adequada é o INMET (Instituto Nacional de Meteorologia), que disponibiliza estações automáticas com pluviômetro via sua própria API (BDMEP).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Parte 1 — Conhecendo a REDEMET</span>"
+    ]
+  },
+  {
+    "objectID": "ayrton/pratica3_redemet.html#exercício-proposto",
+    "href": "ayrton/pratica3_redemet.html#exercício-proposto",
+    "title": "8  Parte 1 — Conhecendo a REDEMET",
+    "section": "8.4 Exercício proposto",
+    "text": "8.4 Exercício proposto\n\nIdentifique o código ICAO da estação meteorológica mais próxima do seu município de interesse.\nSolicite sua própria chave de API, seguindo os passos da Parte 2.\nBaixe os dados METAR para um período de pelo menos 30 dias.\nGere o gráfico de série temporal e o de média diária.\nCompare visualmente os dois: a média diária suaviza alguma variação importante que aparecia na série horária?",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Parte 1 — Conhecendo a REDEMET</span>"
     ]
   }
 ]
