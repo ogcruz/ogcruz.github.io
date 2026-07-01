@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Parte 1 — Importação com microdatasus (R) – Curso CISC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../ayrton/pratica3_redemet.html" rel="next">
+<link href="../ayrton/pratica1_instalacao_R_RStudio.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c2efb2a299cc5bdc3a8f877b72c0097e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ayrton/pratica2_importacao_dados.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parte 1 — Importação com <code>microdatasus</code> (R)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Curso CISC</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modulo_I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análise de Séries Temporais</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modulo_II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">modulo_II.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modulo_III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">modulo_III.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">dashboard.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ayrton/pratica1_instalacao_R_RStudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ayrton/pratica2_importacao_dados.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parte 1 — Importação com <code>microdatasus</code> (R)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ayrton/pratica3_redemet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parte 1 — Conhecendo a REDEMET</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../anexos/anexo_era5_copernicus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Anexo — Dados Climáticos via Copernicus Climate Data Store</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul>
+  <li><a href="#instalação" id="toc-instalação" class="nav-link active" data-scroll-target="#instalação"><span class="header-section-number">7.1</span> 1.1 Instalação</a>
+  <ul class="collapse">
+  <li><a href="#baixando-dados-do-sim-óbitos" id="toc-baixando-dados-do-sim-óbitos" class="nav-link" data-scroll-target="#baixando-dados-do-sim-óbitos"><span class="header-section-number">7.1.1</span> 1.2 Baixando dados do SIM (óbitos)</a></li>
+  <li><a href="#filtrando-pelo-município" id="toc-filtrando-pelo-município" class="nav-link" data-scroll-target="#filtrando-pelo-município"><span class="header-section-number">7.1.2</span> 1.3 Filtrando pelo município</a></li>
+  <li><a href="#baixando-dados-do-sih-internações" id="toc-baixando-dados-do-sih-internações" class="nav-link" data-scroll-target="#baixando-dados-do-sih-internações"><span class="header-section-number">7.1.3</span> 1.4 Baixando dados do SIH (internações)</a></li>
+  <li><a href="#salvando-os-dados-preparados" id="toc-salvando-os-dados-preparados" class="nav-link" data-scroll-target="#salvando-os-dados-preparados"><span class="header-section-number">7.1.4</span> 1.5 Salvando os dados preparados</a></li>
+  </ul></li>
+  <li><a href="#parte-2-acesso-direto-via-ftp-r" id="toc-parte-2-acesso-direto-via-ftp-r" class="nav-link" data-scroll-target="#parte-2-acesso-direto-via-ftp-r"><span class="header-section-number">7.2</span> Parte 2 — Acesso direto via FTP (R)</a></li>
+  <li><a href="#estrutura-do-ftp-do-datasus" id="toc-estrutura-do-ftp-do-datasus" class="nav-link" data-scroll-target="#estrutura-do-ftp-do-datasus"><span class="header-section-number">7.3</span> 2.1 Estrutura do FTP do DATASUS</a></li>
+  <li><a href="#download-via-r" id="toc-download-via-r" class="nav-link" data-scroll-target="#download-via-r"><span class="header-section-number">7.4</span> 2.2 Download via R</a></li>
+  <li><a href="#download-de-múltiplos-anos" id="toc-download-de-múltiplos-anos" class="nav-link" data-scroll-target="#download-de-múltiplos-anos"><span class="header-section-number">7.5</span> 2.3 Download de múltiplos anos</a></li>
+  <li><a href="#download-via-sih-por-mês" id="toc-download-via-sih-por-mês" class="nav-link" data-scroll-target="#download-via-sih-por-mês"><span class="header-section-number">7.6</span> 2.4 Download via SIH (por mês)</a></li>
+  <li><a href="#parte-3-importação-com-pysus-python" id="toc-parte-3-importação-com-pysus-python" class="nav-link" data-scroll-target="#parte-3-importação-com-pysus-python"><span class="header-section-number">7.7</span> Parte 3 — Importação com <code>pysus</code> (Python)</a></li>
+  <li><a href="#instalação-1" id="toc-instalação-1" class="nav-link" data-scroll-target="#instalação-1"><span class="header-section-number">7.8</span> 3.1 Instalação</a></li>
+  <li><a href="#baixando-dados-do-sim" id="toc-baixando-dados-do-sim" class="nav-link" data-scroll-target="#baixando-dados-do-sim"><span class="header-section-number">7.9</span> 3.2 Baixando dados do SIM</a></li>
+  <li><a href="#filtrando-pelo-município-1" id="toc-filtrando-pelo-município-1" class="nav-link" data-scroll-target="#filtrando-pelo-município-1"><span class="header-section-number">7.10</span> 3.3 Filtrando pelo município</a></li>
+  <li><a href="#baixando-dados-do-sih" id="toc-baixando-dados-do-sih" class="nav-link" data-scroll-target="#baixando-dados-do-sih"><span class="header-section-number">7.11</span> 3.4 Baixando dados do SIH</a></li>
+  <li><a href="#salvando-os-dados" id="toc-salvando-os-dados" class="nav-link" data-scroll-target="#salvando-os-dados"><span class="header-section-number">7.12</span> 3.5 Salvando os dados</a></li>
+  <li><a href="#usando-pysus-dentro-do-rstudio-com-reticulate-opcional" id="toc-usando-pysus-dentro-do-rstudio-com-reticulate-opcional" class="nav-link" data-scroll-target="#usando-pysus-dentro-do-rstudio-com-reticulate-opcional"><span class="header-section-number">7.13</span> 3.6 Usando <code>pysus</code> dentro do RStudio com <code>reticulate</code> <em>(opcional)</em></a></li>
+  <li><a href="#parte-4-comparativo-e-boas-práticas" id="toc-parte-4-comparativo-e-boas-práticas" class="nav-link" data-scroll-target="#parte-4-comparativo-e-boas-práticas"><span class="header-section-number">7.14</span> Parte 4 — Comparativo e boas práticas</a></li>
+  <li><a href="#quando-usar-cada-abordagem" id="toc-quando-usar-cada-abordagem" class="nav-link" data-scroll-target="#quando-usar-cada-abordagem"><span class="header-section-number">7.15</span> Quando usar cada abordagem?</a></li>
+  <li><a href="#boas-práticas-gerais" id="toc-boas-práticas-gerais" class="nav-link" data-scroll-target="#boas-práticas-gerais"><span class="header-section-number">7.16</span> Boas práticas gerais</a></li>
+  <li><a href="#resumo-estrutura-de-pastas-sugerida" id="toc-resumo-estrutura-de-pastas-sugerida" class="nav-link" data-scroll-target="#resumo-estrutura-de-pastas-sugerida"><span class="header-section-number">7.17</span> Resumo: estrutura de pastas sugerida</a></li>
+  <li><a href="#exercício-proposto" id="toc-exercício-proposto" class="nav-link" data-scroll-target="#exercício-proposto"><span class="header-section-number">7.18</span> Exercício proposto</a></li>
+  <li><a href="#carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos" id="toc-carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos" class="nav-link" data-scroll-target="#carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos"><span class="header-section-number">7.19</span> Carregando dados locais do município <em>(para equipes com arquivos já em mãos!)</em></a></li>
+  <li><a href="#lendo-arquivos-.dbc" id="toc-lendo-arquivos-.dbc" class="nav-link" data-scroll-target="#lendo-arquivos-.dbc"><span class="header-section-number">7.20</span> 4.1 Lendo arquivos <code>.dbc</code></a></li>
+  <li><a href="#lendo-arquivos-.csv" id="toc-lendo-arquivos-.csv" class="nav-link" data-scroll-target="#lendo-arquivos-.csv"><span class="header-section-number">7.21</span> 4.2 Lendo arquivos <code>.csv</code></a></li>
+  <li><a href="#lendo-múltiplos-arquivos-de-uma-pasta" id="toc-lendo-múltiplos-arquivos-de-uma-pasta" class="nav-link" data-scroll-target="#lendo-múltiplos-arquivos-de-uma-pasta"><span class="header-section-number">7.22</span> 4.3 Lendo múltiplos arquivos de uma pasta</a></li>
+  <li><a href="#filtrando-pelo-código-do-município" id="toc-filtrando-pelo-código-do-município" class="nav-link" data-scroll-target="#filtrando-pelo-código-do-município"><span class="header-section-number">7.23</span> 4.4 Filtrando pelo código do município</a></li>
+  <li><a href="#verificação-e-correção-de-tipos" id="toc-verificação-e-correção-de-tipos" class="nav-link" data-scroll-target="#verificação-e-correção-de-tipos"><span class="header-section-number">7.24</span> 4.5 Verificação e correção de tipos</a></li>
+  <li><a href="#salvando-no-formato-padrão-do-curso" id="toc-salvando-no-formato-padrão-do-curso" class="nav-link" data-scroll-target="#salvando-no-formato-padrão-do-curso"><span class="header-section-number">7.25</span> 4.6 Salvando no formato padrão do curso</a></li>
+  <li><a href="#exercício-proposto-1" id="toc-exercício-proposto-1" class="nav-link" data-scroll-target="#exercício-proposto-1"><span class="header-section-number">7.26</span> Exercício proposto</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Parte 1 — Importação com <code>microdatasus</code> (R)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Nesta prática, trabalharemos com dois sistemas principais do DATASUS:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sistema</th>
+<th>O que contém</th>
+<th>Sigla do arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SIM</td>
+<td>Declarações de Óbito</td>
+<td>DO</td>
+</tr>
+<tr class="even">
+<td>SIH</td>
+<td>Internações Hospitalares</td>
+<td>RD</td>
+</tr>
+</tbody>
+</table>
+<div class="saiba">
+<p><strong>Código do município IBGE:</strong> cada município brasileiro tem um código de 7 dígitos definido pelo IBGE. Exemplo: Rio de Janeiro = <code>3304557</code>. Este código é a chave que usaremos para filtrar os dados para o seu município de interesse. Consulte o código em: <a href="https://www.ibge.gov.br/explica/codigos-dos-municipios.php" class="uri">https://www.ibge.gov.br/explica/codigos-dos-municipios.php</a></p>
+</div>
+<div class="veja">
+<p><strong>Caso já tenha seu dado em mãos, pule para a última seção desta prática!</strong></p>
+</div>
+<hr>
+<p>O <code>microdatasus</code> é um pacote R que automatiza o download e a leitura dos microdados do DATASUS, poupando a necessidade de acessar o FTP manualmente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Imagens/mod1_p2_microdatasus.png" class="img-fluid figure-img"></p>
+<figcaption>Página do pacote microdatasus</figcaption>
+</figure>
+</div>
+<section id="instalação" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="instalação"><span class="header-section-number">7.1</span> 1.1 Instalação</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar o microdatasus (via remotes, pois não está no CRAN)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rfsaldanha/microdatasus"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pacotes auxiliares</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"lubridate"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="warning">
+<p>o <code>microdatasus</code> depende do pacote <code>read.dbc</code>, que requer o <strong>Rtools</strong> (Windows) ou ferramentas de compilação (Linux/macOS). Certifique-se de que estão instalados (ver Prática 1).</p>
+</div>
+<section id="baixando-dados-do-sim-óbitos" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="baixando-dados-do-sim-óbitos"><span class="header-section-number">7.1.1</span> 1.2 Baixando dados do SIM (óbitos)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(microdatasus)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir o município de interesse (código IBGE de 6 dígitos)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo: Rio de Janeiro = 330455</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>cod_municipio <span class="ot">&lt;-</span> <span class="st">"330455"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Baixar dados do SIM para o estado do Rio de Janeiro, anos 2020-2022</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dados_sim <span class="ot">&lt;-</span> <span class="fu">fetch_datasus</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">year_start  =</span> <span class="dv">2020</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">year_end    =</span> <span class="dv">2022</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">uf          =</span> <span class="st">"RJ"</span>,          <span class="co"># sigla do estado</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">information_system =</span> <span class="st">"SIM-DO"</span> <span class="co"># Sistema de Informação sobre Mortalidade</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Processar as variáveis (decodifica categorias, converte datas, etc.)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>dados_sim <span class="ot">&lt;-</span> <span class="fu">process_sim</span>(dados_sim)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dados_sim)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p><code>process_sim()</code> é uma função do próprio <code>microdatasus</code> que transforma o arquivo bruto do SIM em um data frame mais legível e pronto para análise. Entre as principais operações:</p>
+<ul>
+<li><p><strong>Converte datas</strong> — campos como <code>DTOBITO</code>, <code>DTNASC</code> e <code>DTATESTADO</code>, que chegam como texto no formato <code>DDMMAAAA</code>, são convertidos para o tipo <code>Date</code> do R</p></li>
+<li><p><strong>Decodifica categorias</strong> — variáveis codificadas numericamente (como <code>SEXO</code>, <code>RACACOR</code>, <code>CAUSABAS</code>) recebem rótulos descritivos (ex.: <code>1</code> → <code>"Masculino"</code>)</p></li>
+<li><p><strong>Padroniza o código do município</strong> — <code>CODMUNRES</code> e <code>CODMUNOCOR</code> são ajustados para 6 ou 7 dígitos, conforme necessário para cruzamento com tabelas do IBGE</p></li>
+<li><p><strong>Calcula a idade</strong> — quando possível, deriva a variável de idade em anos a partir de <code>DTNASC</code> e <code>DTOBITO</code></p></li>
+</ul>
+</blockquote>
+<div class="dica">
+<p>O argumento <code>uf</code> define o estado de onde os dados serão baixados. Sempre baixe pelo estado e depois filtre pelo município — o DATASUS organiza os arquivos por UF.</p>
+</div>
+</section>
+<section id="filtrando-pelo-município" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="filtrando-pelo-município"><span class="header-section-number">7.1.2</span> 1.3 Filtrando pelo município</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrar pelo código do município (coluna CODMUNRES = município de residência)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dados_sim_municipio <span class="ot">&lt;-</span> dados_sim <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(CODMUNRES <span class="sc">==</span> cod_municipio)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dados_sim_municipio)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dados_sim_municipio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="saiba">
+<p><strong>Variáveis de município no SIM:</strong></p>
+<ul>
+<li><code>CODMUNRES</code> — município de <strong>residência</strong> do falecido</li>
+<li><code>CODMUNOCOR</code> — município de <strong>ocorrência</strong> do óbito</li>
+</ul>
+<p>Para análises de saúde local, utilize <code>CODMUNRES</code>.</p>
+</div>
+</section>
+<section id="baixando-dados-do-sih-internações" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="baixando-dados-do-sih-internações"><span class="header-section-number">7.1.3</span> 1.4 Baixando dados do SIH (internações)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Baixar dados do SIH (Autorização de Internação Hospitalar)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dados_sih <span class="ot">&lt;-</span> <span class="fu">fetch_datasus</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">year_start  =</span> <span class="dv">2020</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">month_start =</span> <span class="dv">1</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">month_end =</span> <span class="dv">3</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">year_end    =</span> <span class="dv">2022</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">uf          =</span> <span class="st">"RJ"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">information_system =</span> <span class="st">"SIH-RD"</span> <span class="co"># Registro de AIH aprovadas</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>dados_sih <span class="ot">&lt;-</span> <span class="fu">process_sih</span>(dados_sih)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrar pelo município de residência do paciente</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>dados_sih_municipio <span class="ot">&lt;-</span> dados_sih <span class="sc">|&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(MUNIC_RES <span class="sc">==</span> cod_municipio)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dados_sih_municipio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>De maneira análoga à <code>process_sim()</code>, a função <code>process_sih()</code> aplica transformações equivalentes aos dados brutos do SIH. As principais:</p>
+<ul>
+<li><p><strong>Converte datas</strong> — campos como <code>DT_INTER</code> (data de internação) e <code>DT_SAIDA</code> (data de saída) são convertidos para o tipo <code>Date</code></p></li>
+<li><p><strong>Calcula o tempo de internação</strong> — deriva automaticamente a variável <code>DIAS_PERM</code> como diferença entre entrada e saída, quando ausente ou inconsistente</p></li>
+<li><p><strong>Decodifica categorias</strong> — variáveis como <code>COBRANCA</code>, <code>COMPLEX</code> e <code>INSTRU</code> recebem rótulos legíveis</p></li>
+<li><p><strong>Padroniza municípios</strong> — <code>MUNIC_RES</code> e <code>MUNIC_MOV</code> são padronizados para cruzamento com o IBGE</p>
+</li></ul></blockquote></section></section></main></div>
+
+
+
+<section id="salvando-os-dados-preparados" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" data-anchor-id="salvando-os-dados-preparados"><span class="header-section-number">7.1.4</span> 1.5 Salvando os dados preparados</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Salvar em formato .rds (compacto, nativo do R)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(dados_sim_municipio,    <span class="st">"dados/sim_municipio.rds"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(dados_sinasc_municipio, <span class="st">"dados/sinasc_municipio.rds"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(dados_sih_municipio,    <span class="st">"dados/sih_municipio.rds"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Ou em .csv para compartilhamento</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(dados_sim_municipio, <span class="st">"dados/sim_municipio.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="explore">
+<p><strong>Explorando mais:</strong> consulte a documentação completa do <code>microdatasus</code> em: <a href="https://rfsaldanha.github.io/microdatasus/" class="uri">https://rfsaldanha.github.io/microdatasus/</a></p>
+</div>
+<hr>
+</section>
+
+<section id="parte-2-acesso-direto-via-ftp-r" class="level2" data-number="7.2">
+<h2 data-number="7.2" data-anchor-id="parte-2-acesso-direto-via-ftp-r"><span class="header-section-number">7.2</span> Parte 2 — Acesso direto via FTP (R)</h2>
+<p>O DATASUS disponibiliza os arquivos <code>.dbc</code> diretamente em seu servidor FTP. Este método é útil quando você já tem um domínio maior sobre os arquivos ou quando o <code>microdatasus</code> não cobre o período desejado.</p>
+</section>
+<section id="estrutura-do-ftp-do-datasus" class="level2" data-number="7.3">
+<h2 data-number="7.3" data-anchor-id="estrutura-do-ftp-do-datasus"><span class="header-section-number">7.3</span> 2.1 Estrutura do FTP do DATASUS</h2>
+<p>O endereço base é: <code>ftp://ftp.datasus.gov.br/dissemin/publicos/</code></p>
+<p>A estrutura dos diretórios segue o padrão:</p>
+<pre><code>ftp://ftp.datasus.gov.br/dissemin/publicos/
+  ├── SIM/
+  │   └── CID10/DORES/        # Óbitos CID-10
+  │       └── DORJ2022.dbc    # DO + UF + ano
+  └── SIHSUS/
+      └── ST/RD/              # AIH aprovadas
+          └── RDRJ2201.dbc    # RD + UF + ano + mês</code></pre>
+<div class="warning">
+<p><strong>Nota sobre o FTP:</strong> o servidor FTP do DATASUS pode apresentar instabilidade. Se o download falhar, aguarde alguns minutos e tente novamente. Para downloads grandes, prefira horários fora do horário comercial.</p>
+</div>
+</section>
+<section id="download-via-r" class="level2" data-number="7.4">
+<h2 data-number="7.4" data-anchor-id="download-via-r"><span class="header-section-number">7.4</span> 2.2 Download via R</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar read.dbc para ler arquivos .dbc</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"read.dbc"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(read.dbc)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Função auxiliar para baixar e ler um arquivo .dbc do FTP</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>baixar_dbc <span class="ot">&lt;-</span> <span class="cf">function</span>(url_ftp, destino) {</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(url_ftp, <span class="at">destfile =</span> destino, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">method =</span> <span class="st">"auto"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.dbc</span>(destino)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo: SIM do Rio de Janeiro, ano 2022</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>url_sim_rj_2022 <span class="ot">&lt;-</span> <span class="st">"ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DORJ2022.dbc"</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>dados_sim_ftp <span class="ot">&lt;-</span> <span class="fu">baixar_dbc</span>(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  url_sim_rj_2022,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">destino =</span> <span class="st">"dados/DORJ2022.dbc"</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dados_sim_ftp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="download-de-múltiplos-anos" class="level2" data-number="7.5">
+<h2 data-number="7.5" data-anchor-id="download-de-múltiplos-anos"><span class="header-section-number">7.5</span> 2.3 Download de múltiplos anos</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir anos de interesse</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>anos <span class="ot">&lt;-</span> <span class="dv">2019</span><span class="sc">:</span><span class="dv">2022</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>uf   <span class="ot">&lt;-</span> <span class="st">"RJ"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Construir URLs e baixar todos os arquivos</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>dados_sim_lista <span class="ot">&lt;-</span> <span class="fu">map</span>(anos, <span class="cf">function</span>(ano) {</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/DO"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    uf, ano, <span class="st">".dbc"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  arquivo <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"dados/DO"</span>, uf, ano, <span class="st">".dbc"</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">"Baixando: "</span>, url)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(url, <span class="at">destfile =</span> arquivo, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.dbc</span>(arquivo)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinar todos os anos</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>dados_sim_ftp_todos <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(dados_sim_lista)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrar pelo município</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>cod_municipio <span class="ot">&lt;-</span> <span class="st">"3304557"</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>dados_sim_ftp_municipio <span class="ot">&lt;-</span> dados_sim_ftp_todos <span class="sc">|&gt;</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(CODMUNRES <span class="sc">==</span> cod_municipio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="download-via-sih-por-mês" class="level2" data-number="7.6">
+<h2 data-number="7.6" data-anchor-id="download-via-sih-por-mês"><span class="header-section-number">7.6</span> 2.4 Download via SIH (por mês)</h2>
+<p>O SIH tem arquivos mensais. O padrão de nome é <code>RD</code> + UF + ano (2 dígitos) + mês (2 dígitos):</p>
+<div class="saiba">
+<p>Veja que a função <code>url_sih</code> é necessária para construir o <code>url</code> correto visto que a partir de 2007 houve uma modificação na base.</p>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>url_sih <span class="ot">&lt;-</span> <span class="cf">function</span>(uf, ano2, mes) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  ano4 <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">paste0</span>(<span class="st">"20"</span>, ano2))  <span class="co"># "22" -&gt; 2022L (inteiro)</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  base <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    ano4 <span class="sc">&gt;=</span> <span class="dv">2008</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/199201_200712/Dados/"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(base, <span class="st">"RD"</span>, <span class="fu">toupper</span>(uf), ano2, mes, <span class="st">".dbc"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo: SIH RJ, janeiro a dezembro de 2022</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>meses <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>ano2  <span class="ot">&lt;-</span> <span class="st">"22"</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>uf    <span class="ot">&lt;-</span> <span class="st">"RJ"</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>dados_sih_lista <span class="ot">&lt;-</span> <span class="fu">map</span>(meses, <span class="cf">function</span>(mes) {</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  url     <span class="ot">&lt;-</span> <span class="fu">url_sih</span>(uf, ano2, mes)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  arquivo <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"dados/RD"</span>, uf, ano2, mes, <span class="st">".dbc"</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">download.file</span>(url, <span class="at">destfile =</span> arquivo, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read.dbc</span>(arquivo)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Não encontrado: "</span>, url)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="cn">NULL</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>dados_sih_lista_<span class="ot">&lt;-</span> dados_sih_lista <span class="sc">|&gt;</span>  </span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(MUNIC_RES <span class="sc">==</span> cod_municipio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="parte-3-importação-com-pysus-python" class="level2" data-number="7.7">
+<h2 data-number="7.7" data-anchor-id="parte-3-importação-com-pysus-python"><span class="header-section-number">7.7</span> Parte 3 — Importação com <code>pysus</code> (Python)</h2>
+<p>O <code>pysus</code> é o equivalente do <code>microdatasus</code> para Python, permitindo baixar e processar dados do DATASUS diretamente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Imagens/mod1_p2_pysus.png" class="img-fluid figure-img"></p>
+<figcaption>Página do pacote PySUS</figcaption>
+</figure>
+</div>
+<div class="warning">
+<p><strong>Seção opcional:</strong> esta parte é indicada para participantes que já trabalham com Python ou querem integrar os dados do DATASUS a um fluxo Python/pandas. Se você usa apenas R, pode pular para a Parte 4 sem prejuízo — os dados produzidos aqui são equivalentes aos das Partes 1 e 2.</p>
+</div>
+</section>
+<section id="instalação-1" class="level2" data-number="7.8">
+<h2 data-number="7.8" data-anchor-id="instalação-1"><span class="header-section-number">7.8</span> 3.1 Instalação</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No terminal (ou prompt de comando)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pysus</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="warning">
+<p><strong>Requisitos:</strong> Python 3.8+ e pip instalados. Recomenda-se usar um ambiente virtual (<code>venv</code> ou <code>conda</code>).</p>
+</div>
+</section>
+<section id="baixando-dados-do-sim" class="level2" data-number="7.9">
+<h2 data-number="7.9" data-anchor-id="baixando-dados-do-sim"><span class="header-section-number">7.9</span> 3.2 Baixando dados do SIM</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pysus.online_data.SIM <span class="im">import</span> download</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir código do município (IBGE, 7 dígitos)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>cod_municipio <span class="op">=</span> <span class="st">"3304557"</span>  <span class="co"># Exemplo: Rio de Janeiro</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>dados_sim <span class="op">=</span> download(</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    states<span class="op">=</span>[<span class="st">"RJ"</span>],</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    years<span class="op">=</span>[<span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>df_sim <span class="op">=</span> dados_sim.to_dataframe()</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sim.shape)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sim.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="filtrando-pelo-município-1" class="level2" data-number="7.10">
+<h2 data-number="7.10" data-anchor-id="filtrando-pelo-município-1"><span class="header-section-number">7.10</span> 3.3 Filtrando pelo município</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_sim_municipio <span class="op">=</span> df_sim[df_sim[<span class="st">"CODMUNRES"</span>] <span class="op">==</span> cod_municipio]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Registros para o município </span><span class="sc">{</span>cod_municipio<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(df_sim_municipio)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="baixando-dados-do-sih" class="level2" data-number="7.11">
+<h2 data-number="7.11" data-anchor-id="baixando-dados-do-sih"><span class="header-section-number">7.11</span> 3.4 Baixando dados do SIH</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pysus.online_data.SIH <span class="im">import</span> download <span class="im">as</span> download_sih</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>dados_sih <span class="op">=</span> download_sih(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    group<span class="op">=</span><span class="st">"RD"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    states<span class="op">=</span>[<span class="st">"RJ"</span>],</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    years<span class="op">=</span>[<span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>],</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    months<span class="op">=</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>df_sih <span class="op">=</span> dados_sih.to_dataframe()</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>df_sih_municipio <span class="op">=</span> df_sih[df_sih[<span class="st">"MUNIC_RES"</span>] <span class="op">==</span> cod_municipio]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="salvando-os-dados" class="level2" data-number="7.12">
+<h2 data-number="7.12" data-anchor-id="salvando-os-dados"><span class="header-section-number">7.12</span> 3.5 Salvando os dados</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parquet (eficiente para grandes volumes)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_sim_municipio.to_parquet(<span class="st">"dados/sim_municipio.parquet"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df_sih_municipio.to_parquet(<span class="st">"dados/sih_municipio.parquet"</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ou em CSV</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>df_sim_municipio.to_csv(<span class="st">"dados/sim_municipio.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="explore">
+<p><strong>Explorando mais:</strong> documentação do <code>pysus</code> em: <a href="https://pysus.readthedocs.io/" class="uri">https://pysus.readthedocs.io/</a></p>
+</div>
+<hr>
+</section>
+<section id="usando-pysus-dentro-do-rstudio-com-reticulate-opcional" class="level2" data-number="7.13">
+<h2 data-number="7.13" data-anchor-id="usando-pysus-dentro-do-rstudio-com-reticulate-opcional"><span class="header-section-number">7.13</span> 3.6 Usando <code>pysus</code> dentro do RStudio com <code>reticulate</code> <em>(opcional)</em></h2>
+<div class="warning">
+<p><strong>Subseção opcional:</strong> esta abordagem é para quem quer rodar código Python diretamente no RStudio, sem sair do ambiente R. Requer Python instalado e o pacote <code>reticulate</code>.</p>
+</div>
+<p>O pacote <code>reticulate</code> permite chamar Python a partir do R, compartilhando objetos entre as duas linguagens na mesma sessão do RStudio. Isso significa que você pode baixar dados com <code>pysus</code> em Python e, em seguida, analisá-los com <code>tidyverse</code> em R — sem precisar salvar e recarregar arquivos.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar o reticulate (se necessário)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"reticulate"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Indicar qual instalação do Python usar.</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Se você usa conda:</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">use_condaenv</span>(<span class="st">"nome-do-seu-ambiente"</span>, <span class="at">required =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Se você usa o Python do sistema ou venv:</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># use_python("/usr/bin/python3", required = TRUE)</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar se o pysus está acessível</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">py_run_string</span>(<span class="st">"import pysus; print(pysus.__version__)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="dica">
+<p>Se não souber o caminho do Python, rode <code>py_discover_config()</code> no console do R — o <code>reticulate</code> lista as instalações encontradas e qual está sendo usada.</p>
+</div>
+<p>Após configurar o <code>reticulate</code>, você pode rodar blocos Python diretamente em um R Markdown (chunk com <code>{python}</code>) ou chamar via <code>py_run_string()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk Python dentro de um R Markdown</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pysus.online_data.SIM <span class="im">import</span> download</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>cod_municipio <span class="op">=</span> <span class="st">"3304557"</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>dados_sim <span class="op">=</span> download(states<span class="op">=</span>[<span class="st">"RJ"</span>], years<span class="op">=</span>[<span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>])</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>df_sim     <span class="op">=</span> dados_sim.to_dataframe()</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>df_sim_municipio <span class="op">=</span> df_sim[df_sim[<span class="st">"CODMUNRES"</span>] <span class="op">==</span> cod_municipio]</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sim_municipio.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Logo após, em um chunk R do mesmo documento, o objeto fica disponível via <code>py$</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessar o DataFrame pandas como tibble no R</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sim_r <span class="ot">&lt;-</span> py<span class="sc">$</span>df_sim_municipio   <span class="co"># py$ converte automaticamente para data.frame</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(sim_r)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Já é possível usar tidyverse normalmente</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>sim_r <span class="sc">|&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(SEXO, <span class="at">name =</span> <span class="st">"obitos"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(obitos))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="explore">
+<p><strong>Explorando mais:</strong> documentação do <code>pysus</code> em: <a href="https://pysus.readthedocs.io/" class="uri">https://pysus.readthedocs.io/</a></p>
+</div>
+<hr>
+</section>
+<section id="parte-4-comparativo-e-boas-práticas" class="level2" data-number="7.14">
+<h2 data-number="7.14" data-anchor-id="parte-4-comparativo-e-boas-práticas"><span class="header-section-number">7.14</span> Parte 4 — Comparativo e boas práticas</h2>
+</section>
+<section id="quando-usar-cada-abordagem" class="level2" data-number="7.15">
+<h2 data-number="7.15" data-anchor-id="quando-usar-cada-abordagem"><span class="header-section-number">7.15</span> Quando usar cada abordagem?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Abordagem</th>
+<th>Vantagens</th>
+<th>Limitações</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>microdatasus</code> (R)</td>
+<td>Simples, processa variáveis automaticamente</td>
+<td>Depende da manutenção do pacote</td>
+</tr>
+<tr class="even">
+<td>FTP direto (R)</td>
+<td>Controle total, funciona offline</td>
+<td>Requer montar as URLs manualmente</td>
+</tr>
+<tr class="odd">
+<td><code>pysus</code> (Python)</td>
+<td>Integração com ecossistema Python/pandas</td>
+<td>Interface muda com frequência</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="boas-práticas-gerais" class="level2" data-number="7.16">
+<h2 data-number="7.16" data-anchor-id="boas-práticas-gerais"><span class="header-section-number">7.16</span> Boas práticas gerais</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R: verificar o número de registros antes e depois do filtro</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Total de registros baixados:"</span>, <span class="fu">nrow</span>(dados_sim), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Registros do município:"</span>, <span class="fu">nrow</span>(dados_sim_municipio), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Proporção:"</span>, <span class="fu">round</span>(<span class="fu">nrow</span>(dados_sim_municipio)<span class="sc">/</span><span class="fu">nrow</span>(dados_sim)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"%</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python: verificar tipos e valores ausentes</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sim_municipio.dtypes)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sim_municipio.isnull().<span class="bu">sum</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="dica">
+<p><strong>Dica para o Módulo 2:</strong> salve sempre os dados filtrados pelo município em uma pasta organizada (ex.: <code>dados/municipio/</code>). No Módulo 2, carregaremos diretamente esses arquivos para análise, sem precisar repetir o download.</p>
+</div>
+<hr>
+</section>
+<section id="resumo-estrutura-de-pastas-sugerida" class="level2" data-number="7.17">
+<h2 data-number="7.17" data-anchor-id="resumo-estrutura-de-pastas-sugerida"><span class="header-section-number">7.17</span> Resumo: estrutura de pastas sugerida</h2>
+<pre><code>projeto/
+├── dados/
+│   ├── brutos/          # arquivos .dbc baixados do FTP
+│   └── municipio/       # dados filtrados pelo código IBGE
+│       ├── sim_municipio.rds
+│       ├── sinasc_municipio.rds
+│       └── sih_municipio.rds
+├── scripts/
+│   ├── 01_importacao.R  # este script
+│   └── 02_analise.R     # Módulo 2
+└── resultados/</code></pre>
+<hr>
+</section>
+<section id="exercício-proposto" class="level2" data-number="7.18">
+<h2 data-number="7.18" data-anchor-id="exercício-proposto"><span class="header-section-number">7.18</span> Exercício proposto</h2>
+<ol type="1">
+<li>Identifique o código IBGE do seu município de interesse.</li>
+<li>Usando uma das três abordagens, baixe os dados do SIM para os anos 2019–2022.</li>
+<li>Filtre pelo código do município e salve o resultado.</li>
+<li>Calcule quantos óbitos foram registrados por ano e apresente em uma tabela simples ou um gráfico.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dica para o exercício (R)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dados_sim_municipio <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ano =</span> lubridate<span class="sc">::</span><span class="fu">year</span>(DTOBITO)) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ano, <span class="at">name =</span> <span class="st">"obitos"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ano)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos" class="level2" data-number="7.19">
+<h2 data-number="7.19" data-anchor-id="carregando-dados-locais-do-município-para-equipes-com-arquivos-já-em-mãos"><span class="header-section-number">7.19</span> Carregando dados locais do município <em>(para equipes com arquivos já em mãos!)</em></h2>
+<div class="saiba">
+<p><strong>Quando usar esta parte:</strong> se a sua equipe já possui arquivos do SIM ou SIH baixados diretamente do DATASUS ou fornecidos pela Secretaria de Saúde, use esta seção diretamente. O resultado final será o mesmo.</p>
+</div>
+</section>
+<section id="lendo-arquivos-.dbc" class="level2" data-number="7.20">
+<h2 data-number="7.20" data-anchor-id="lendo-arquivos-.dbc"><span class="header-section-number">7.20</span> 4.1 Lendo arquivos <code>.dbc</code></h2>
+<p>O formato <code>.dbc</code> é o formato nativo do DATASUS. Para lê-lo diretamente no R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(read.dbc)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ler um arquivo .dbc local</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>sim_local <span class="ot">&lt;-</span> <span class="fu">read.dbc</span>(<span class="st">"caminho/para/DORJ2022.dbc"</span>) <span class="co"># modif</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(sim_local)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lendo-arquivos-.csv" class="level2" data-number="7.21">
+<h2 data-number="7.21" data-anchor-id="lendo-arquivos-.csv"><span class="header-section-number">7.21</span> 4.2 Lendo arquivos <code>.csv</code></h2>
+<p>Secretarias de Saúde frequentemente exportam os dados via TabWin, gerando <code>.csv</code> com separador <code>;</code> e encoding Latin-1:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sim_local <span class="ot">&lt;-</span><span class="fu">read_csv2</span>(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"caminho/para/sim_2022.csv"</span>,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">locale    =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">"c"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="warning">
+<p><strong>Leia sempre como texto primeiro</strong> (<code>col_types = cols(.default = "c")</code>). Deixar o R adivinhar os tipos na leitura é a principal fonte de erros com dados do DATASUS — datas viram números, códigos de município perdem o zero à esquerda.</p>
+</div>
+</section>
+<section id="lendo-múltiplos-arquivos-de-uma-pasta" class="level2" data-number="7.22">
+<h2 data-number="7.22" data-anchor-id="lendo-múltiplos-arquivos-de-uma-pasta"><span class="header-section-number">7.22</span> 4.3 Lendo múltiplos arquivos de uma pasta</h2>
+<p>Se a equipe tiver vários arquivos por ano ou por mês numa mesma pasta:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listar todos os .dbc de uma pasta</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>arquivos_dbc <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">path       =</span> <span class="st">"caminho/para/pasta/"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern    =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.dbc$"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ler e combinar todos</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>sim_local <span class="ot">&lt;-</span> <span class="fu">map</span>(arquivos_dbc, read.dbc) <span class="sc">|&gt;</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># O mesmo funciona para .csv</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>arquivos_csv <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"caminho/para/pasta/"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>sim_local <span class="ot">&lt;-</span> <span class="fu">map</span>(arquivos_csv, <span class="sc">~</span><span class="fu">read_csv2</span>(</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  .x,</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">locale    =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>),</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="st">"c"</span>)</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="filtrando-pelo-código-do-município" class="level2" data-number="7.23">
+<h2 data-number="7.23" data-anchor-id="filtrando-pelo-código-do-município"><span class="header-section-number">7.23</span> 4.4 Filtrando pelo código do município</h2>
+<p>Mesmo que o arquivo já seja do seu município, vale confirmar — arquivos fornecidos por Secretarias Estaduais costumam conter todos os municípios do estado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>cod_municipio <span class="ot">&lt;-</span> <span class="st">"330455"</span>  <span class="co"># substitua pelo código do seu município</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>sim_local <span class="ot">&lt;-</span> sim_local <span class="sc">|&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(CODMUNRES <span class="sc">==</span> cod_municipio)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Registros do município:"</span>, <span class="fu">nrow</span>(sim_local), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="verificação-e-correção-de-tipos" class="level2" data-number="7.24">
+<h2 data-number="7.24" data-anchor-id="verificação-e-correção-de-tipos"><span class="header-section-number">7.24</span> 4.5 Verificação e correção de tipos</h2>
+<p>Após carregar os dados locais, é importante fazer uma verificação mínima nos dados antes de seguir adiante.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visão geral dos tipos atuais</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(sim_local)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>As correções mais comuns nos dados do DATASUS:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sim_local </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Datas: SIM usa formato DDMMAAAA</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">DTOBITO  =</span> <span class="fu">dmy</span>(DTOBITO),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">DTNASC   =</span> <span class="fu">dmy</span>(DTNASC),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Códigos de município: sempre character (zeros à esquerda)</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">CODMUNRES  =</span> <span class="fu">as.character</span>(CODMUNRES),</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">CODMUNOCOR =</span> <span class="fu">as.character</span>(CODMUNOCOR),</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Idade: numérico</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">IDADE =</span> <span class="fu">as.integer</span>(IDADE)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="saiba">
+<p><strong>Datas com formato errado não geram erro — geram <code>NA</code> silenciosamente.</strong> Após a conversão, verifique:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Proporção de datas inválidas</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>sim_local <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_total        =</span> <span class="fu">n</span>(),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">na_dtobito     =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(DTOBITO)),</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_na_dtobito =</span> <span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">is.na</span>(DTOBITO)) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Se <code>pct_na_dtobito</code> for maior que 1–2%, algo está errado — provavelmente o formato da data (<code>dmy</code> vs <code>ymd</code>). Veja a tabela abaixo.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sistema</th>
+<th>Formato original</th>
+<th>Função correta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SIM</td>
+<td><code>"15032022"</code> (DDMMAAAA)</td>
+<td><code>dmy()</code></td>
+</tr>
+<tr class="even">
+<td>SINASC</td>
+<td><code>"15032022"</code> (DDMMAAAA)</td>
+<td><code>dmy()</code></td>
+</tr>
+<tr class="odd">
+<td>SIH</td>
+<td><code>"20220315"</code> (AAAAMMDD)</td>
+<td><code>ymd()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Para o SIH, as correções equivalentes são:</p>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sih_local </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">DT_INTER  =</span> <span class="fu">ymd</span>(DT_INTER),</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">DT_SAIDA  =</span> <span class="fu">ymd</span>(DT_SAIDA),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">DIAS_PERM =</span> <span class="fu">as.integer</span>(DIAS_PERM),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">VAL_TOT   =</span> <span class="fu">as.numeric</span>(VAL_TOT),</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">MUNIC_RES =</span> <span class="fu">as.character</span>(MUNIC_RES),</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">MUNIC_MOV =</span> <span class="fu">as.character</span>(MUNIC_MOV)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="warning">
+<p><strong>Nunca converta códigos de município para <code>numeric</code></strong> — municípios com zero à esquerda (ex.: <code>"050001"</code>) perdem o zero e viram um código inexistente.</p>
+</div>
+</section>
+<section id="salvando-no-formato-padrão-do-curso" class="level2" data-number="7.25">
+<h2 data-number="7.25" data-anchor-id="salvando-no-formato-padrão-do-curso"><span class="header-section-number">7.25</span> 4.6 Salvando no formato padrão do curso</h2>
+<p>Para seguir o mesmo fluxo das Partes 1 e 2 a partir daqui:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(sim_local, <span class="st">"dados/municipio/sim_pronto.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="exercício-proposto-1" class="level2" data-number="7.26">
+<h2 data-number="7.26" data-anchor-id="exercício-proposto-1"><span class="header-section-number">7.26</span> Exercício proposto</h2>
+<ol type="1">
+<li>Identifique o código IBGE do seu município de interesse.</li>
+<li>Calcule quantos óbitos foram registrados por ano e apresente em uma tabela simples ou um gráfico.</li>
+</ol>
+
+
+</section>
+
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../ayrton/pratica1_instalacao_R_RStudio.html" class="pagination-link" aria-label="Introdução ao R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../ayrton/pratica3_redemet.html" class="pagination-link" aria-label="Parte 1 — Conhecendo a REDEMET">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parte 1 — Conhecendo a REDEMET</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+ <!-- /content -->
+
+
+
+
+</body></html>
